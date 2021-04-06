@@ -17,13 +17,18 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
+  plugins: [new webpack.HotModuleReplacementPlugin(), new HtmlWebpackPlugin({
+    template: path.resolve(__dirname, '..', './src/index.html'),
+  }), new CleanWebpackPlugin()],
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, '..', './dist'),
     filename: 'bundle.js',
   },
-  plugins: [new webpack.HotModuleReplacementPlugin(), new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin()],
+  // plugins: [new webpack.HotModuleReplacementPlugin(), new CleanWebpackPlugin(),
+  //   new HtmlWebpackPlugin({
+  //     template: path.resolve(__dirname, '..', './src/index.html'),
+  //   })],
   devServer: {
     contentBase: path.resolve(__dirname, '..', './dist'),
     hot: true,

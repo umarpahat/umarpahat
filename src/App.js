@@ -1,6 +1,13 @@
 import React from 'react';
+import Routes from './routes'
  
-const App = ({ title }) =>
-  <div>{title}</div>;
- 
+function App() {
+ return(
+   <>
+ {/* <div>{title}</div> */}
+ <Routes />
+ </>
+ )
+}
+
 export default App;

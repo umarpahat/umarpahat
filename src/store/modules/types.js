@@ -1,0 +1,12 @@
+export const RECEIVE_API_DATA = "RECEIVE_API_DATA";
+export const REQUEST_API_DATA = "REQUEST_API_DATA";
+export const RECEIVE_PHONE_NUMBER = "RECEIVE_PHONE_NUMBER";
+export const LOGOUT = 'LOGOUT'
+export const LOGIN = 'LOGIN'
+export const HITLOGIN = 'HITLOGIN'
+export const HITLOGOUT = 'HITLOGOUT'
+export const USER_DATA = 'USER_DATA'
+export const HITUSER = 'HITUSER'
+export const HITFORGOTMPIN = 'HITFORGOTMPIN'
+export const USERREFERALCODE = 'USERREFERALCODE'
+export const HITREFERALCODE = 'HITREFERALCODE'
