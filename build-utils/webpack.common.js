@@ -30,7 +30,6 @@ module.exports = {
   plugins: [new webpack.HotModuleReplacementPlugin(), new HtmlWebpackPlugin({
     template: path.resolve(__dirname, '..', './src/index.html'),
   }), new CleanWebpackPlugin()],
-  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, '..', './dist'),
     filename: 'bundle.js',
@@ -40,6 +39,7 @@ module.exports = {
   //     template: path.resolve(__dirname, '..', './src/index.html'),
   //   })],
   devServer: {
+    historyApiFallback: true,
     contentBase: path.resolve(__dirname, '..', './dist'),
     hot: true,
   },

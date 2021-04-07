@@ -8,5 +8,5 @@ module.exports = {
             path: path.resolve(__dirname, '..', './.env.production'),
           })
       ],
-    devtool: 'source-map',
+    // devtool: 'source-map',
   };

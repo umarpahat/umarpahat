@@ -21,6 +21,10 @@ function LoginWithMobMpin(props) {
         props.hitAllUserData({ token: props.token })
         props.history.push({pathname:'/pending-approval'})
       }
+    }
+    if (props.loginError) {
+      setloader(false)
+      seterrorPass(props.loginError)
     } 
 });
 
@@ -110,6 +114,7 @@ const mapStateToProps = state => {
   return {
       token: state.authDetails.token,
       phoneNumber: state.authDetails.phone_number,
+      loginError: state.authDetails.error
   }
 }
 

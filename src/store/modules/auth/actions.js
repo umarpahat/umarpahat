@@ -1,8 +1,14 @@
-import { LOGIN, HITLOGIN, LOGOUT, HITLOGOUT, HITFORGOTMPIN } from  '../types'
+import { LOGIN, HITLOGIN, LOGOUT, HITLOGOUT, HITFORGOTMPIN, LOGINERROR } from  '../types'
 
 export const storeToken = data =>
     ({
       type: LOGIN,
+      payload: data
+    });
+
+export const storeError = data =>
+    ({
+      type: LOGINERROR,
       payload: data
     });
 

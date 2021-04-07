@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import { storeToken, appLogout } from "./actions";
+import { storeToken, appLogout, storeError } from "./actions";
 import { HITLOGIN, HITLOGOUT, HITFORGOTMPIN } from '../types'
 import { getLoginToken } from "./api";
 
@@ -9,6 +9,7 @@ function* getToken(action) {
         console.log(data)
         if (data.data.error) {
             console.log(data.data.error)
+            yield put(storeError({error: data.data.error}));
         } else {
             yield put(storeToken({token:data.data.data.token, phone_number: action.payload.phone_number}));
         }
