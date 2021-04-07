@@ -22,6 +22,7 @@ module.exports = {
         loader: 'url-loader',
       },
     },
+    // {test: /\.(jpe?g|png|gif|ico)$/i, loader: 'file?name=[name].[ext]'},
     ]
   },
   resolve: {
@@ -29,6 +30,7 @@ module.exports = {
   },
   plugins: [new webpack.HotModuleReplacementPlugin(), new HtmlWebpackPlugin({
     template: path.resolve(__dirname, '..', './src/index.html'),
+    favicon: path.resolve(__dirname, '..', './src/images/favicon.ico')
   }), new CleanWebpackPlugin()],
   output: {
     path: path.resolve(__dirname, '..', './dist'),
