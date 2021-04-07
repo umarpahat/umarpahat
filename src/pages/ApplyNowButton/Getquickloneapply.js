@@ -40,7 +40,7 @@ const Getquikloneapply = (props) => {
 
   return (
     <>
-      {!newUser ? <Header /> : null }
+      {/* {!newUser ? <Header /> : null } */}
       <Container>
         {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
         newUser ? <Confirmotpmobile {...props} phone_number={Number(number)} resendOtp={verifyPhone} /> :

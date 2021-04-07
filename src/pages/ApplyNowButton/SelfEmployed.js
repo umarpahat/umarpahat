@@ -79,7 +79,7 @@ const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `ot
   const handleClose = () => setShow(!show);
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Container className="pb-5">
         <div className="form-container formcontainermob  pt-4 pb-5">
           <div className="pt-2">

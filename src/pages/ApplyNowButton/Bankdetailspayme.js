@@ -117,7 +117,7 @@ const promiseTest = bankStatementObj.map((value, index) => {
   
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Container>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
         <div className="kycDeatailsSecondFormsty pb-5">

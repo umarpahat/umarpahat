@@ -50,7 +50,7 @@ function Referralcode(props) {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <div className="form-container formcontainermob  pt-4">
         <div>

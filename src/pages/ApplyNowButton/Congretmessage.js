@@ -6,7 +6,7 @@ import Header from "../../component/Header";
 const Congretmessage = (props) => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Container>
         <div className="form-container formcontainermob  pt-4">
           <form>

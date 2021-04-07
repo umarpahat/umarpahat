@@ -45,7 +45,7 @@ console.log(error)
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <Container>
         <div className="pt-5 ">

@@ -5,7 +5,7 @@ import Header from "../../component/Header";
 function Creatempn() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className="form-container formcontainermob  pt-4 pb-5">
         <div>
           <form>

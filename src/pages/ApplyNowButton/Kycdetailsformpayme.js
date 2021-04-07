@@ -109,7 +109,7 @@ setloader(true)
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <div className="form-container pb-5">
         <div className="pb-4">

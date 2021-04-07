@@ -52,7 +52,7 @@ const verifyOtp = (otp_get) => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <div className="Enter-otp-form">
         <form>

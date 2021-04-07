@@ -17,7 +17,7 @@ const Kycdetailsformpayme = (props) => {
   ];
   return (
     <>
-      <Header />
+      {/* <Header /> */}
 
       <div className="form-container pb-5">
         <div className="pb-4">
