@@ -127,11 +127,6 @@ setloader(true)
  })
   }
 
-  const options = [
-    { value: "male", label: "Male" },
-    { value: "female", label: "Female" },
-    { value: "other", label: "Other" },
-  ];
   return (
     <>
       <Header />
@@ -186,11 +181,19 @@ setloader(true)
               <div class="form-group ms-input-group">
                 <label className="form-label">Gender</label>
                 <div>
-                  <Select isSearchable={false} options={options} value={gender} onChange={(value)=> {
-                    seterrorGender("")
-                    // console.log(222222, value.value)
-                  setgender(value.value)
-                  }} />
+                <select 
+        value={gender}
+        onChange={(value)=> {
+          seterrorGender("")
+        setgender(value.value)
+        }}
+        className="kyc-select-gender"
+      >
+        <option value="">Select Gender</option>
+       <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
                 </div>
                 {errorGender ? <span style={{color:"red"}}>{errorGender}</span> : null}
               </div>

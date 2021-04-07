@@ -143,6 +143,12 @@ input:-webkit-autofill:active {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.kyc-select-gender{
+  border: none;
+  background-color: white;
+  width: 504px !important;
+}
 /* ===================================meadia Query===================================== */
 /* @media (max-width: 600px) {
   .selectParent select {
