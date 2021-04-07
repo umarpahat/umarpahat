@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import Header from "../../component/Header";
@@ -14,10 +14,6 @@ function ChangeMpin(props) {
   const [errorMpinConfirm, seterrorMpinConfirm] = useState(null)
   const [mpinNotMatch, setmpinNotMatch] = useState(null)
   let [loader, setloader] = useState(false);
-
-  useEffect(()=>{
-    console.log(1111111111, props)
-  })
 
   const createNewMpin = (event) => {
     setloader(true)
@@ -44,8 +40,6 @@ function ChangeMpin(props) {
                 } else {
                   props.history.push({pathname: "/kyc-details-form"})
                 }
-                // props.hitLogout()
-                // props.history.push({pathname: '/login-with-mob-mpin', state: { phoneNumber: phoneNumber}})
             } else {
               setmpinNotMatch("Old and new mpin should not be same.")
               setloader(false)

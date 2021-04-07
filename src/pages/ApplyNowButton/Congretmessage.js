@@ -19,9 +19,6 @@ const Congretmessage = (props) => {
                 kindly install PayMe india app from Play store/app store to
                 complete final formalities to avail quick disbursal of the loan.
               </p>
-              {/* <p className="PreApprovePara text-center pt-5 pb-2">
-                Didn’t recieved approval message?
-              </p> */}
               <div className="pt-3">
                 <Link to="/pending-approval" className="submit-btn text-center">
                   <a style={{ color: "#fff" }}>Go To App</a>

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import DragbleImg from "../../component/DragbleImg";
 import { hitAllUserData } from '../../store/modules/userDetails/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -15,18 +13,10 @@ import Loader from '../../component/Loader'
 
 const SelfEmployed = (props) => {
   const [show, setShow] = useState(false);
-  // const [organizationName, setorganizationName] = useState("")
-  // const [errororganizationName, seterrororganizationName] = useState("")
-  // const [salaryDate, setsalaryDate] = useState("")
   const [loader, setloader] = useState(false);
-  // const [errorsalaryDate, seterrorsalaryDate] = useState("")
-  // const [officeAddressLine1, setofficeAddressLine1] = useState("")
-  // const [officeAddressLine2, setofficeAddressLine2] = useState("")
-  // const [officeEmail, setofficeEmail] = useState("")
   const [uploadItr, setuploadItr] = useState({})
   const [signedUrl, setsignedUrl] = useState({})
   const [erroruploadItr, seterroruploadItr] = useState("")
-  // const [uploadOfficeId, setuploadOfficeId] = useState({})
   const [presentAddLine1, setpresentAddLine1] = useState("")
   const [presentAddLine2, setpresentAddLine2] = useState("")
   const [presentPincode, setpresentPincode] = useState("")
@@ -42,7 +32,7 @@ const SelfEmployed = (props) => {
 
   useEffect(() => {
     if (!props.user) {
-      props.history.push({pathname:"/get-quick-loan-apply"})
+      props.history.push({pathname:"/"})
       return;
     }
       getSignedUrl()
@@ -70,12 +60,6 @@ if (!presentAddLine1) {seterrorpresentAddLine1("please enter adress."); return;}
 if (!presentPincode) {seterrorpresentPincode("Please enter pin code"); return;}
 const uploadItrFront = postS3({res:uploadItr, presignedPostData: signedUrl[`other_document/${props.user.id}/latest_itr.pdf`]})
 const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `other_document/${props.user.id}/latest_itr.pdf`})
-// let OfficeDataArr = []
-// if (uploadOfficeId.name) {
-//   const uploadOfficeFront = postS3({res:uploadOfficeId, presignedPostData: signedUrl[`office_id/${props.user.id}/front.jpg`]})
-//   const updateOfficeFrontStatus = updateDocStatus({docType:"office_id", path: `office_id/${props.user.id}/front.jpg`})
-//   OfficeDataArr.push(uploadOfficeFront, updateOfficeFrontStatus)
-// }
  Promise.all([...[uploadItrFront, updateSalaryFrontStatus], ...[updateProfessionalDetails()]]).then((response)=>{
     setloader(false)
     console.log("xvxvxvxvx", response)
@@ -152,7 +136,6 @@ const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `ot
                       id="inlineRadio2"
                       value="option2"
                     />
-
                     <label
                       class="form-check-label form-label"
                       for="inlineRadio2"
@@ -169,9 +152,6 @@ const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `ot
                 <div>
                   <label className="form-label ">Upload Recent ITR </label>
                   <div className="file-uploading-block">
-                    {/* <DragbleImg />
-                    <span className="">or </span> */}
-
                     <a
                       className="upload-btn-text"
                       href="javascript:document.querySelector('input#PAN').click()"
@@ -188,45 +168,7 @@ const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `ot
                       hidden
                     />
                   </div>
-                  {/* <div class="form-group ms-input-group">
-                    <label className="form-label pb-2">
-                      GSTIN Number (optional)
-                    </label>
-                    <input
-                      type="text"
-                      class="form-control ms-form-input"
-                      placeholder="GSTIN Number"
-                    />
-                  </div> */}
                   <div class="form-group ms-input-group">
-                    {/* <div class="form-group ms-input-group">
-                      <label className="form-label">House Type</label>
-                      <div className="pt-3">
-                        <div class="form-check form-check-inline">
-                          <input
-                            id="own"
-                            class="form-check-input"
-                            type="radio"
-                            name="housetype"
-                          />
-                          <label
-                            for="own"
-                            class="form-check-label form-label ml-1 pr-3"
-                          >
-                            Own
-                          </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input id="rented" type="radio" name="housetype" />
-                          <label
-                            for="rented"
-                            class="form-check-label form-label ml-1"
-                          >
-                            Rented
-                          </label>
-                        </div>
-                      </div>
-                    </div> */}
                     <div class="form-group ms-input-group">
                       <label className="form-label">Present Address</label>
                       <input
@@ -275,7 +217,6 @@ const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `ot
   );
 };
 
-// export default SelfEmployed;
 
 const mapStateToProps = state => {
   return {
@@ -288,9 +229,7 @@ const mapStateToProps = state => {
 
 const dispatchToProps = (dispatch) => {
   return bindActionCreators({
-      // hitLogin,
       hitAllUserData,
-      // hitForgotMpin,
   }, dispatch)
 }
 

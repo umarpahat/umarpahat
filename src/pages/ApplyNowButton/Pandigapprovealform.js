@@ -16,28 +16,20 @@ import Progressbar from "../../component/ProgressBar";
 
 const Pandingapprovalform = (props) => {
 
-  // console.log("mlmlm")
-  // console.log(props)
-//   let [loader, setloader] = useState(false);
 const [userbankdetail, setuserbankdetail] = useState({})
 const [userdocumentsmodel, setuserdocumentsmodel] = useState({})
 
   useEffect(() => {
-    console.log("klklklklk")
-    console.log(props)
-    console.log("nmnmnmnm")
     if (!props.token) {
-      props.history.push({pathname: '/get-quick-loan-apply'})
+      props.history.push({pathname: '/'})
     }
     if (Object.keys(props.user).length) {
-      console.log("::::::::::::;")
-      console.log(props)
       setuserdocumentsmodel(props.user.userData.userdocumentsmodel)
       setuserbankdetail(props.user.userData.userbankdetail ? props.user.userData.userbankdetail : {verified:"NOT_SUBMITTED"})
     }
 
 });
-// "/KycDeatails"
+
   return (
     <>
       <Header />
@@ -65,12 +57,10 @@ const [userdocumentsmodel, setuserdocumentsmodel] = useState({})
                     </div>
                    {userdocumentsmodel.adhar_card_verified === 'PENDING_VERIFICATION' ?
                     <span className="reloadicon" id="PAN" style={{opacity:"0.4"}}>
-                    {/* {" "} */}
                     Pending verification
                   </span> : userdocumentsmodel.adhar_card_verified === 'NOT_SUBMITTED' ||
                   userdocumentsmodel.adhar_card_verified === 'NOT_VALID' ? 
                   <span className="reloadicon" id="PAN" style={{cursor:"pointer"}} onClick={()=>props.history.push({pathname:'/kyc-details-form'})}>
-                  {/* {" "} */}
                   Upload
                 </span> : null
                   }
@@ -88,7 +78,6 @@ const [userdocumentsmodel, setuserdocumentsmodel] = useState({})
                     </div>
                    {userdocumentsmodel.pan_card_verified === 'PENDING_VERIFICATION' ?
                     <span className="reloadicon" id="PAN" style={{opacity:"0.4"}}>
-                    {/* {" "} */}
                     Pending verification
                   </span> : userdocumentsmodel.pan_card_verified === 'NOT_SUBMITTED' ||
                   userdocumentsmodel.pan_card_verified === 'NOT_VALID' ? 
@@ -175,7 +164,6 @@ const [userdocumentsmodel, setuserdocumentsmodel] = useState({})
   );
 };
 
-// export default Pandingapprovalform;
 
 const mapStateToProps = state => {
   return {
@@ -188,9 +176,6 @@ const mapStateToProps = state => {
 
 const dispatchToProps = (dispatch) => {
   return bindActionCreators({
-      // hitLogin,
-      // hitAllUserData,
-      // hitForgotMpin,
   }, dispatch)
 }
 

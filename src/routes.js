@@ -4,14 +4,10 @@ import { Route, Switch } from "react-router-dom";
 import "react-input-range/lib/css/index.css";
 import "./style.css";
 import "./App.css";
-import TestBaby from "./component/TestBaby"
 
 import Getquikloneapply from "./pages/ApplyNowButton/Getquickloneapply";
-// import Confirmotpmobile from "./pages/ApplyNowButton/Confirmotpmobile";
 import Getstartpaymeindia from "./pages/ApplyNowButton/Getstartpaymeindia";
 import Referralcode from "./pages/ApplyNowButton/Referralcode";
-// import creatempin from "./pages/ApplyNowButton/Creatempn";
-// import Creatempin from "./pages/ApplyNowButton/Creatempn";
 import Kycdetailsformpayme from "./pages/ApplyNowButton/Kycdetailsformpayme";
 import Bankdetalspayme from "./pages/ApplyNowButton/Bankdetailspayme";
 import Professionaldetailspayme from "./pages/ApplyNowButton/Profeesionaldetailspayme";
@@ -27,18 +23,12 @@ function Routes() {
       <>
         <Switch>
           <Route exact path="/" component={Getquikloneapply} />
-          {/* <Route
-          exact
-          path="/get-quick-loan-apply"
-          component={Getquikloneapply}
-        /> */}
         <Route exact path="/pending-approval" component={Pandingapprovalform} />
              <Route
           exact
           path="/get-start-paymeindia"
           component={Getstartpaymeindia}
         />
-        {/* <Route exact path="/confirm-otp-mobile" component={Confirmotpmobile} /> */}
         <Route exact path="/referral-code" component={Referralcode} />
         <Route exact path="/create-mpin" component={Creatempn} />
         <Route exact path="/bank-details-payme" component={Bankdetalspayme} />

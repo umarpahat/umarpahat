@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 import backicon from "../../component/img/backicon.png";
 
@@ -9,7 +8,6 @@ import { hitAllUserData } from '../../store/modules/userDetails/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import Cancelicon from "../../component/img/Cancelicon.png";
-import ProgressBar from "react-bootstrap/ProgressBar";
 
 import DragbleImg from "../../component/DragbleImg";
 import {getS3SignedUrl, postS3, api} from "../../services/api"
@@ -42,9 +40,7 @@ const Bankdetalspayme = (props) => {
   }
 
   async function updateDocStatus(data){
-    console.log("rrrtttyyy", data)
     return await api.post('/api/update_document_status/', {doc_type: data.docType, path: data.path, password: bankStatementPassword}, {headers: { 'Authorization': 'Token ' + props.token } })
-    // console.log("test1", test1)
   }
 
   async function updateBankDetails() {
@@ -56,7 +52,7 @@ const Bankdetalspayme = (props) => {
 
   useEffect(() => {
     if (!props.user) {
-      props.history.push({pathname:"/get-quick-loan-apply"})
+      props.history.push({pathname:"/"})
       return;
     }
       getSignedUrl()
@@ -80,7 +76,6 @@ const promiseTest = bankStatementObj.map((value, index) => {
 })
  Promise.all([...promiseTest, ...updatedocStatus, ...[updateBankDetails()]]).then((response)=>{
     setloader(false)
-    console.log("xvxvxvxvx", response)
     props.hitAllUserData({ token: props.token })
     if (props.user.userdocumentsmodel && (props.user.userdocumentsmodel.salary_slip_verified !== 'VERIFIED' ||
   props.user.userdocumentsmodel.salary_slip_verified !== 'PENDING_VERIFICATION')) {
@@ -89,7 +84,6 @@ const promiseTest = bankStatementObj.map((value, index) => {
     props.history.push({pathname:'/pending-approval'})
   }
  }).catch((error)=>{
-   console.log(121212,error)
   setloader(false)
  })
   }
@@ -232,40 +226,6 @@ const promiseTest = bankStatementObj.map((value, index) => {
                   />
                 </div>
                 {errorBnakStatement ? <span style={{color:"red"}}>{errorBnakStatement}</span> : null}
-                {/* <div className="d-flex"> */}
-                  {/* <div>
-                    <img src={Pdficon} />
-                  </div> */}
-                  {/* <div className="ml-3 w-100">
-                    <div className="d-flex justify-content-between w-100">
-                      <p className="parastyPdfProgessbar">
-                        Bank Statement 1.pdf
-                      </p>
-                      <p
-                        className="parastyPdfProgessbar pt-1"
-                        style={{ color: "#040B4D", opacity: "0.4" }}
-                      >
-                        {progress}%
-                      </p>
-                    </div>
-
-                    <ProgressBar now={progress} className="progersbarPdf" />
-                  </div> */}
-                {/* </div> */}
-                {/* <div className="d-flex pt-4">
-                  <div>
-                    <img src={Pdficon} />
-                  </div>
-                  <div className="ml-3 w-100">
-                    <div className="d-flex justify-content-between">
-                      <p className="parastyPdfProgessbar">
-                        Bank Statement 1.pdf
-                      </p>
-
-                      <img src={Cancelicon} />
-                    </div>
-                  </div>
-                </div> */}
                 {content}
                 <div class="form-group ms-input-group">
                   <label className="form-label pb-2">
@@ -286,12 +246,6 @@ const promiseTest = bankStatementObj.map((value, index) => {
               className="submit-btn text-center"
               value="Proceed with Bank Details"
             />
-              {/* <Link
-                to="/professional-details-payme"
-                className="submit-btn text-center"
-              >
-                <a style={{ color: "#fff" }}>Proceed</a>
-              </Link> */}
             </div>
           </form>
         </div>}

@@ -1,27 +1,12 @@
 import React, { useState, useEffect } from "react";
-import {
-  faAngleDown,
-  faArrowAltCircleDown,
-  faArrowDown,
-  faCalendarWeek,
-} from "@fortawesome/free-solid-svg-icons";
 import { hitAllUserData } from '../../store/modules/userDetails/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useRef } from "react";
-import { Link } from "react-router-dom";
-import DragbleImg from "../../component/DragbleImg";
 import Header from "../../component/Header";
 import backicon from "../../component/img/backicon.png";
-import { Component } from "react";
-import Select from "react-select";
 import Progressbar from "../../component/ProgressBar";
-import { Form } from "react-bootstrap";
 import {getS3SignedUrl, postS3, api} from "../../services/api"
 import Loader from '../../component/Loader' 
-
-import DatePicker from "react-date-picker";
 
 const Kycdetailsformpayme = (props) => {
   const [show, setShow] = useState(false);
@@ -54,7 +39,7 @@ const Kycdetailsformpayme = (props) => {
 
   useEffect(() => {
     if (!props.user) {
-      props.history.push({pathname:"/get-quick-loan-apply"})
+      props.history.push({pathname:"/"})
       return;
     }
       getSignedUrl()
@@ -77,15 +62,11 @@ const Kycdetailsformpayme = (props) => {
   }
 
   async function updateDocStatus(data){
-    console.log("rrrtttyyy", data)
     return await api.post('/api/update_document_status/', {doc_type: data.docType, path: data.path}, {headers: { 'Authorization': 'Token ' + props.token } })
-    // console.log("test1", test1)
   }
 
   async function updateBasicInfo() {
-    console.log("bhbhbhbhbhbhb")
     return await api.post('/api/offline_manual_kyc/', {dob: date, gender: gender, pan_card_number: panNumber}, {headers: { 'Authorization': 'Token ' + props.token } })
-    // console.log("test2", test2)
   }
 
   const handleSubmit = (event) => {
@@ -122,7 +103,6 @@ setloader(true)
     props.history.push({pathname:'/bank-details-payme'})
   }
  }).catch((error)=>{
-   console.log(121212,error)
   setloader(false)
  })
   }
@@ -213,9 +193,6 @@ setloader(true)
                 Upload a pictue of your PAN card
               </label>
               <div className="file-uploading-block">
-                {/* <DragbleImg /> */}
-                {/* <span className="">or </span> */}
-                {/* <img src={panFile.name} className="img-fluid" /> */}
                 <a
                   className="upload-btn-text"
                   href="javascript:document.querySelector('input#upload-pan').click()"
@@ -237,11 +214,6 @@ setloader(true)
                 </label>
                 <div style={{ display: "flex" }}>
                   <div className="twoboxdregdrop file-uploading-block  mr-2">
-                    {/* <p className="small-text-ms mb-4">Upload Adhaar Front</p> */}
-
-                    {/* <DragbleImg /> */}
-                    {/* <span className="">or </span> */}
-
                     <a
                       className="upload-btn-text"
                       href="javascript:document.querySelector('input#Frontofadhaar').click()"
@@ -264,10 +236,6 @@ setloader(true)
                     for="Backofadhaar"
                     className="file-uploading-block twoboxdregdrop ml-3"
                   >
-                    {/* <p className="small-text-ms mb-4">Back</p> */}
-
-                    {/* <DragbleImg /> */}
-                    {/* <span className="">or </span> */}
                     <a
                       href="javascript:document.querySelector('input#Backofadhaar').click()"
                       className="upload-btn-text"
@@ -308,8 +276,6 @@ setloader(true)
     </>
   );
 };
-
-// export default Kycdetailsformpayme;
 
 const mapStateToProps = state => {
   return {

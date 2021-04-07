@@ -1,34 +1,20 @@
-import {
-  faAngleDown,
-  faArrowAltCircleDown,
-  faArrowDown,
-  faCalendarWeek,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { useState } from "react";
-import { useRef } from "react";
 import { Link } from "react-router-dom";
 import DragbleImg from "../../component/DragbleImg";
 import Header from "../../component/Header";
 import backicon from "../../component/img/backicon.png";
-import { Component } from "react";
 import Select from "react-select";
 import Progressbar from "../../component/ProgressBar";
-import { Form } from "react-bootstrap";
-
-import DatePicker from "react-date-picker";
 
 const Kycdetailsformpayme = (props) => {
   const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(!show);
 
   const options = [
     { value: "male", label: "Male" },
     { value: "femal", label: "Female" },
     { value: "other", label: "Other" },
   ];
-  // const [value, onChange] = useState(new Date());
   return (
     <>
       <Header />
@@ -68,13 +54,6 @@ const Kycdetailsformpayme = (props) => {
               <div>
                 <label className="form-label">DOB(DD/MM/YY)</label>
                 <div>
-                  {/* <DatePicker
-                      onChange={onChange}
-                      className="form-control ms-form-input datepicker"
-                      value={value}
-                      clearIcon={false}
-                      String={"Calendar"}
-                    /> */}
                 </div>
               </div>
               <div class="form-group ms-input-group">
@@ -82,28 +61,6 @@ const Kycdetailsformpayme = (props) => {
                 <div>
                   <Select isSearchable={false} options={options} />
                 </div>
-
-                {/* <form className="">
-                    <div className="">
-                      <div className="selectParent w-100 arrowgendercls">
-                        <select className="w-100">
-                          <option value="1" for="select" className="optioncls ">
-                            Select Gender
-                          </option>
-                          <option value="2">Male</option>
-                          <option value="3">Female</option>
-                          <option value="4">Other</option>
-                        </select>
-  
-                        <span className="genderArrowposition">
-                          <FontAwesomeIcon
-                            icon={faAngleDown}
-                           
-                          />
-                        </span>
-                      </div>
-                    </div>
-                  </form> */}
               </div>
 
               <div class="form-group ms-input-group">
@@ -192,9 +149,6 @@ const Kycdetailsformpayme = (props) => {
 
             <Link
               to="/bank-details-payme"
-              //   onClick={() => {
-              //     setShow(true);
-              //   }}
               className="submit-btn text-center"
             >
               <a style={{ color: "#fff" }}>Proceed</a>

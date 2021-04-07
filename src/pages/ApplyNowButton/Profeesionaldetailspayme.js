@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import DragbleImg from "../../component/DragbleImg";
 import { hitAllUserData } from '../../store/modules/userDetails/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
@@ -55,7 +54,7 @@ const Professionaldetailspayme = (props) => {
 
   useEffect(() => {
     if (!props.user) {
-      props.history.push({pathname:"/get-quick-loan-apply"})
+      props.history.push({pathname:"/"})
       return;
     }
       getSignedUrl()

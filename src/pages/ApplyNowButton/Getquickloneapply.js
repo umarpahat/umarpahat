@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-// import { Link } from "react-router-dom";
 import Header from "../../component/Header";
 import { api } from '../../services/api';
 import Loader from '../../component/Loader'
@@ -25,10 +24,7 @@ const Getquikloneapply = (props) => {
       .then((response) => {
         setloader(false)
         if (response.status === 200 && !response.data.phone_number_verified) {
-          console.log("llllllll111333")
-          console.log(response)
           setnewUser(true)
-          // props.history.push({pathname: '/confirm-otp-mobile', state: { phoneNumber: number}})
         } else if (response.status === 200 && response.data.phone_number_verified) {
           props.history.push({pathname: '/login-with-mob-mpin', state: { phoneNumber: number}})
         } else {

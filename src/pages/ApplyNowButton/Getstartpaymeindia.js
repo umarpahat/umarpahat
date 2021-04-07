@@ -17,8 +17,6 @@ const Getstartpaymeindia = (props) => {
   const [Error, setError] = useState(null);
 
   useEffect(() => {
-    console.log(9999999)
-    console.log(props)
     if (props.token) {
       setloader(false)
       props.hitAllUserData({ token: props.token })
@@ -32,17 +30,12 @@ const Getstartpaymeindia = (props) => {
   }
 
   const responseGoogle = (response) => {
-    console.log(333333)
-    console.log(response)
-    console.log(props.location.state.phoneNumber)
-    console.log(5555)
     try {
       props.hitLogin({ type: 'google', access_token: response.tokenId, phone_number: Number(props.location.state.phoneNumber) })
     } catch (error){
       setloader(false)
 console.log(error)
     }
-    // props.hitLogin({ type: 'google', access_token: response.tokenId, phone_number: Number(props.location.state.phoneNumber) })
   }
 
   const responseGoogleFail = () => {
