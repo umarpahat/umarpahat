@@ -5,6 +5,11 @@ import "react-input-range/lib/css/index.css";
 import "./style.css";
 import "./App.css";
 
+import Error from "./pages/Error";
+import HomePage from "./pages/HomePage"
+import OtherDetalisForm from "./pages/Payrent/OtherDetalisForm";
+import DetailsSummary from "./pages/Payrent/DetailsSummary";
+import TransactionHistory from "./pages/Payrent/TransactionHistory";
 import Getquikloneapply from "./pages/ApplyNowButton/Getquickloneapply";
 import Getstartpaymeindia from "./pages/ApplyNowButton/Getstartpaymeindia";
 import Referralcode from "./pages/ApplyNowButton/Referralcode";
@@ -22,7 +27,9 @@ function Routes() {
     return (
       <>
         <Switch>
-          <Route exact path="/" component={Getquikloneapply} />
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/apply-loan" component={Getquikloneapply} />
+          <Route exact path="/pay-rent" component={Getquikloneapply} />
         <Route exact path="/pending-approval" component={Pandingapprovalform} />
              <Route
           exact
@@ -43,6 +50,18 @@ function Routes() {
           component={Professionaldetailspayme}
         />
         <Route exact path="/kyc-details-form" component={Kycdetailsformpayme} />
+        <Route
+          exact
+          path="/payrent-other-details"
+          component={OtherDetalisForm}
+        />
+        <Route exact path="/detail-summary" component={DetailsSummary} />
+        <Route
+          exact
+          path="/payrent-transaction-history"
+          component={TransactionHistory}
+        />
+        <Route component={Error} />
           </Switch>
           </>
     )

@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
+import { hitAppUseCase } from '../../store/modules/userDetails/actions';
+import { connect } from 'react-redux'
 import Header from "../../component/Header";
 import { api } from '../../services/api';
 import Loader from '../../component/Loader'
@@ -12,6 +14,14 @@ const Getquikloneapply = (props) => {
   let [number, setnumber] = useState(null);
   let [error, seterror] = useState(null);
   let [newUser, setnewUser] = useState(false);
+
+  useEffect(() => {
+if (window.location.pathname === "/apply-loan") {
+  props.hitAppUseCase({ useCase: 'apply-loan' })
+} else if (window.location.pathname === '/pay-rent') {
+  props.hitAppUseCase({ useCase: 'pay-rent' })
+}
+  }, [])
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -83,4 +93,13 @@ const Getquikloneapply = (props) => {
   );
 };
 
-export default Getquikloneapply;
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+
+
+const dispatchToProps = { hitAppUseCase };
+
+export default connect(mapStateToProps, dispatchToProps)(Getquikloneapply)

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { hitLogin } from '../../store/modules/auth/actions'
-import { hitAllUserData } from '../../store/modules/userDetails/actions';
+import { hitAllUserData, hitAppUseCase } from '../../store/modules/userDetails/actions';
 import Confirmotpmobile from "./Confirmotpmobile";
 import Header from "../../component/Header";
 import { api } from '../../services/api';
@@ -18,8 +18,24 @@ function LoginWithMobMpin(props) {
     if (props.token) {
       if (forgotPassword) {props.history.push({pathname:'/change-mpin', state: { forgotPassword: forgotPassword}})}
       else {
-        props.hitAllUserData({ token: props.token })
-        props.history.push({pathname:'/pending-approval'})
+        if (props.user.userData) {
+          setloader(false)
+          console.log("1313131313", props)
+          if (props.user.useCase === 'apply-loan') {
+              props.history.push({pathname:'/pending-approval'})
+          } else if (props.user.useCase === 'pay-rent') {
+            if (props.user.userData.userdocumentsmodel.kyc_verified === 'VERIFIED' || props.user.userData.userdocumentsmodel.kyc_verified === "PENDING_VERIFICATION") {
+              props.history.push({pathname:'/payrent-other-details'})
+            } else {
+              console.log("1414141414", props)
+              props.history.push({pathname:"/kyc-details-form"})
+            }
+          } else {
+            props.history.push({pathname:'/'})
+          }
+        } else {
+          props.hitAllUserData({ token: props.token })
+        }
       }
     }
     if (props.loginError) {
@@ -114,7 +130,8 @@ const mapStateToProps = state => {
   return {
       token: state.authDetails.token,
       phoneNumber: state.authDetails.phone_number,
-      loginError: state.authDetails.error
+      loginError: state.authDetails.error,
+      user: state.user
   }
 }
 

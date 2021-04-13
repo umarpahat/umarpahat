@@ -1,7 +1,7 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import { storeAllUserData, storeReferralCode,
+import { storeAllUserData, storeReferralCode, storeAppUseCase, storePayrentInfo
 } from "./actions";
-import { HITUSER, HITREFERALCODE,
+import { HITUSER, HITREFERALCODE, HITAPPUSECASE, HITPAYRENTINFO, HITPAYRENTINFOAPI
 } from '../types'
 import { getUserData, getUserGeneralDetails
 } from "./api";
@@ -35,6 +35,21 @@ function* getReferal(action) {
     }
 }
 
+function* getUseCase(action) {
+    try {
+        yield put(storeAppUseCase({ useCase: action.payload.useCase }));
+    } catch (e) {
+        yield put(storeAppUseCase({ useCase: 'apply-loan' }));
+    }
+}
+
+// function* storePayRent(action) {
+//     try {
+//         yield put(storePayrentInfo({ payRent: action.payload.payRent }));
+//     } catch (e) {
+//         console.log(e)
+//     }
+// }
 
 export function* watchUserData() {
     yield takeEvery(HITUSER, getData);
@@ -44,3 +59,14 @@ export function* watchReferalCode() {
     yield takeEvery(HITREFERALCODE, getReferal);
 }
 
+export function* watchUserUseCase() {
+    yield takeEvery(HITAPPUSECASE, getUseCase);
+}
+
+// export function* watchUserUseCase() {
+//     yield takeEvery(HITPAYRENTINFO, storePayRent);
+// }
+
+// export function* watchUserUseCase() {
+//     yield takeEvery(HITPAYRENTINFOAPI, postPayRent);
+// }

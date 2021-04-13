@@ -89,6 +89,7 @@ setloader(true)
   updateAdhaarBackStatus, updateAdhaarFrontStatus, updatePanStatus, updateBasicInfo()]).then((response)=>{
     setloader(false)
   props.hitAllUserData({ token: props.token })
+  if (props.useCase === 'apply-loan') {
   if (!props.user.userbankdetail){
     props.history.push({pathname:'/bank-details-payme'})
   } else  if (props.user.userbankdetail.verified === 'VERIFIED' ||
@@ -101,6 +102,10 @@ setloader(true)
     }
   } else{
     props.history.push({pathname:'/bank-details-payme'})
+  }} else if (props.useCase === 'pay-rent') {
+    props.history.push({pathname:'/payrent-other-details'})
+  } else {
+    props.history.push({pathname:'/'})
   }
  }).catch((error)=>{
   setloader(false)
@@ -281,7 +286,8 @@ const mapStateToProps = state => {
   return {
       token: state.authDetails.token,
       phoneNumber: state.authDetails.phone_number,
-      user: state.user.userData
+      user: state.user.userData,
+      userCase: state.user.useCase
   }
 }
 

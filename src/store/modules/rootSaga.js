@@ -1,6 +1,6 @@
 import { all } from 'redux-saga/effects';
 import { watchLogin, watchLogout, watchForgotMpin } from './auth/sagas'
-import { watchUserData, watchReferalCode
+import { watchUserData, watchReferalCode, watchUserUseCase
 } from './userDetails/sagas'
 
 export default function* rootSaga() {
@@ -9,6 +9,7 @@ export default function* rootSaga() {
     watchLogout(),
     watchUserData(),
     watchForgotMpin(),
-    watchReferalCode()
+    watchReferalCode(),
+    watchUserUseCase()
   ]);
 }
