@@ -33,7 +33,7 @@ const TransactionHistory = (props) => {
       <p className="trasaction-subh">{Date(value.created_at)}</p>
     </div>
     <div>
-      <p className="txnfailure">₹{value.payee.transfer_amount}</p>
+      <p className="txnfailure">&#8377;{value.payee.transfer_amount}</p>
       <p className="trasaction-subh">Trxn ID: {value.txn_id}</p>
     </div>
   </div>
@@ -46,7 +46,7 @@ const TransactionHistory = (props) => {
       <p className="trasaction-subh">{Date(value.created_at)}</p>
     </div>
     <div>
-      <p className="txnfailure">₹{value.payee.transfer_amount}</p>
+      <p className="txnfailure">&#8377;{value.payee.transfer_amount}</p>
       <p className="trasaction-subh">Trxn ID: {value.txn_id}</p>
     </div>
   </div>
@@ -59,7 +59,7 @@ const TransactionHistory = (props) => {
       <p className="trasaction-subh">{Date(value.created_at)}</p>
     </div>
     <div>
-      <p className="txnfailure">₹{value.payee.transfer_amount}</p>
+      <p className="txnfailure">&#8377;{value.payee.transfer_amount}</p>
       <p className="trasaction-subh">Trxn ID: {value.txn_id}</p>
     </div>
   </div>
