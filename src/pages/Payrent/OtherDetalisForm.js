@@ -60,9 +60,6 @@ const OtherDetalisForm = (props) => {
     if (!props.token) {
       props.history.push({pathname: '/'})
     }
-    if (props.user.userData && Object.keys(props.user.userData).length) {
-      setuserdocumentsmodel(props.user.userData.userdocumentsmodel)
-    }
 
 });
 
@@ -72,10 +69,9 @@ async function updateDocStatus(data){
 
 
 useEffect(() => {
-  console.log("wwwww", props.user)
   props.user.userData ? setuserdocumentsmodel(props.user.userData.userdocumentsmodel) : null
   getSignedUrl()
-  if (userdocumentsmodel.kyc_verified === 'VERIFIED') {
+  if ((props.user.userData && props.user.userData.userdocumentsmodel.kyc_verified === 'VERIFIED') || userdocumentsmodel.kyc_verified === 'VERIFIED') {
     setkyc_verified(true)
   }
   let url = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`
