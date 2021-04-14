@@ -47,6 +47,7 @@ const OtherDetalisForm = (props) => {
   const [panNumber, setpanNumber] = useState("")
   const [errorpanNumber, seterrorpanNumber] = useState("")
   const [jwtToken, setjwtToken] = useState("")
+  const [transactionHistory, settransactionHistory] = useState({})
   
   async function getSignedUrl() {
     const pathArray = [`pay_rent/${props.user.userData.id}/rent_agreement.jpeg`]
@@ -88,12 +89,10 @@ useEffect(() => {
   // return (dispatch) => new Promise(async (resolve, reject) => {
     axios.get(url, config)
     .then((response) => {
-      setkyc_verified(true)
       setserviceCharge(response.data.service_charge)
     }).catch((err) => {
       console.log(userdocumentsmodel)
       console.log("eeeeee",err)
-      setkyc_verified(false)
     });
 
     let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`
@@ -121,13 +120,13 @@ useEffect(() => {
       // return (dispatch) => new Promise(async (resolve, reject) => {
         axios.get(url3, config3)
         .then((res) => {
-          console.log("history man", res.data)
+          console.log("history man", res.data.results)
+          settransactionHistory(res.data.results)
           // setTransactionHistory(res.data)
           // return resolve(res.data)
         })
         .catch((err) => {
           console.log("history", err)
-          // return reject("err: ", err)
         })
       // })
 
@@ -176,11 +175,6 @@ const payee = {
 if (Number(RentAmount) > 15000) {
   const updateREntAgreementstatus = updateDocStatus({docType:"rent_agreement", path: `pay_rent/${props.user.userData.id}/rent_agreement.jpeg`})
   const uploadREntAgreement = postS3({res:uploadRentAgreement, presignedPostData: signedUrl[`pay_rent/${props.user.userData.id}/rent_agreement.jpeg`]})
-  // let updatedocStatus = []
-  // const promiseTest = uploadRentAgreement.map((value, index) => {
-  // updatedocStatus.push(updateDocStatus({docType:"rent_agreement", path: `pay_rent/${props.user.userData.id}/rent_agreement.jpeg`}))
-  // return postS3({res:value, presignedPostData: signedUrl[`bank_statement/${props.user.id}/${index}.pdf`]})
-  // })
   Promise.all([uploadREntAgreement, updateREntAgreementstatus]).then((response)=>{
     setloader(false)
     props.history.push({pathname:'/detail-summary', state: {payer, payee, serviceCharge, jwt_token:jwtToken}})
@@ -191,29 +185,12 @@ if (Number(RentAmount) > 15000) {
   setloader(false)
   props.history.push({pathname:'/detail-summary', state: {payer, payee, serviceCharge, jwt_token:jwtToken}})
 }
-// let updatedocStatus = []
-// const promiseTest = uploadRentAgreement.map((value, index) => {
-// updatedocStatus.push(updateDocStatus({docType:"rent_agreement", path: `pay_rent/${props.user.userData.id}/rent_agreement.jpeg`}))
-// return postS3({res:value, presignedPostData: signedUrl[`bank_statement/${props.user.id}/${index}.pdf`]})
-// })
-// Promise.all([...promiseTest, ...updatedocStatus, ...[updateBankDetails()]]).then((response)=>{
-//   setloader(false)
-//   props.hitAllUserData({ token: props.token })
-//   if (props.user.userdocumentsmodel && (props.user.userdocumentsmodel.salary_slip_verified !== 'VERIFIED' ||
-// props.user.userdocumentsmodel.salary_slip_verified !== 'PENDING_VERIFICATION')) {
-//   props.history.push({pathname:'/professional-details-payme'})
-// } else{
-//   props.history.push({pathname:'/pending-approval'})
-// }
-// }).catch((error)=>{
-// setloader(false)
-// })
 }
 
   return (
     <>
           {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
-kyc_verified ? 
+// kyc_verified ? 
       <div className="form-container">
         <div className="ms-Tabs">
           <div class="btn-group" role="group" aria-label="Basic example">
@@ -223,11 +200,13 @@ kyc_verified ?
             >
               New Transaction
             </Link>
-            <Link to="/payrent-transaction-history" class="btn  ms-group-btn ">
+            <Link to={{pathname: "/payrent-transaction-history", state: {transactionHistory: transactionHistory}}} 
+            class="btn  ms-group-btn ">
               Transaction History
             </Link>
           </div>
         </div>
+        {kyc_verified ? 
         <form onSubmit={handleSubmit}>
           <div className="Home-contact-form">
             <h4 className="form-heading text-center">
@@ -525,8 +504,7 @@ kyc_verified ?
               <input type="submit" value="Submit" className="getstartbtn fontstyformQuiklone" />
             </div>
           </div>
-        </form>
-      </div> :   <div className="Home-contact-form">
+        </form>:  <div className="Home-contact-form">
             <h4 className="form-heading text-center">
               Your KYC is not verified
             </h4>
@@ -537,6 +515,7 @@ kyc_verified ?
     props.history.push({pathname: "/kyc-details-form"})
     }} style={{margin: "83px 0px 72px 0"}}/>: null}
           </div>}
+      </div>}
     </>
   );
 };
