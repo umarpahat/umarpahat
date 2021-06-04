@@ -168,9 +168,10 @@ setloader(true)
                 <div>
                 <select 
         value={gender}
-        onChange={(event)=> {
+        onChange={(e)=> {
+          console.log(e.target.value)
           seterrorGender("")
-        setgender(event.target.value)
+        setgender(e.target.value)
         }}
         className="kyc-select-gender"
       >

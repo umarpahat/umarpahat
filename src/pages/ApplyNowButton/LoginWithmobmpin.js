@@ -13,7 +13,7 @@ function LoginWithMobMpin(props) {
   let [errorPass, seterrorPass] = useState(null);
   let [password, setpassword] = useState(null);
   let [forgotPassword, setforgotPassword] = useState(false);
-
+console.log(props)
   useEffect(() => {
     if (props.token) {
       if (forgotPassword) {props.history.push({pathname:'/change-mpin', state: { forgotPassword: forgotPassword}})}

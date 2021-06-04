@@ -32,7 +32,8 @@ const Getstartpaymeindia = (props) => {
   const responseGoogle = (response) => {
   
     try {
-      props.hitLogin({ type: 'google', access_token: response.tokenId, phone_number: Number(props.history.location.state.phoneNumber) })
+      props.hitLogin({ type: 'google', access_token: response.tokenId, phone_number: Number(props.history.location.state.phoneNumber)})
+      props.history.push({pathname:'/referral-code'})
     } catch (error){
       setloader(false)
 console.log(error)

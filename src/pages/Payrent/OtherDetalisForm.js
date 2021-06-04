@@ -211,13 +211,13 @@ if (Number(RentAmount) > 15000) {
             <div className="form-block">
               <div class="form-group ms-input-group">
                 <label className="form-label">
-                  Hi XYX, How Much Rent Would You Like To Pay?
+                Hi ,{yourName}, How Much Rent Would You Like To Pay?
                 </label>
               </div>
               <input
                 name="RentAmount"
                 type="text"
-                class="form-control ms-form-input classtextrangrinput"
+                class="form-control ms-form-input"
                 value={RentAmount}
                 onChange={(e) => {
                   seterrorRentAmount("")
@@ -350,7 +350,7 @@ if (Number(RentAmount) > 15000) {
                       +91
                     </span>
                     <input
-                      type="text"
+                      type="number"
                       class="form-control ms-form-input"
                       placeholder="9999999999"
                       value={mobileNumber}
@@ -457,7 +457,7 @@ if (Number(RentAmount) > 15000) {
                 <div class="form-group ms-input-group">
                   <label className="form-label">Confirm Account Number</label>
                   <input
-                    type="text"
+                    type="number"
                     class="form-control ms-form-input"
                     placeholder="Enter 16 digits A/c Number"
                     value={conflandlordActNumber}
@@ -485,7 +485,7 @@ if (Number(RentAmount) > 15000) {
                 <div class="form-group ms-input-group">
                   <label className="form-label">Bank Name</label>
                   <input
-                    type="text"
+                    type="number"
                     class="form-control ms-form-input"
                     placeholder="Enter 16 digits A/c Number"
                     value={bankName}
