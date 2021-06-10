@@ -1290,6 +1290,7 @@ a:hover {
 .ms-Tabs {
   margin-bottom: 3em;
   text-align: center;
+  
 }
 .active-btn {
   background-color: #33658a;
@@ -1516,6 +1517,8 @@ a:hover {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  
+  
 }
 .tabDots {
   width: 8px;
@@ -1788,6 +1791,7 @@ a:hover {
   color: #33658a;
   text-align: center;
   padding-top: 10px;
+  cursor: pointer;
 }
 .styReuplode {
   display: flex;

@@ -25,6 +25,7 @@ function Referralcode(props) {
     console.log(referral.toUpperCase())
     console.log(props.token)
     console.log(44444)
+    
 
     api.post(`/api/referral/referral_code_apply/`, {'referral_code' : referral.toUpperCase()},  { headers: { 'Authorization': 'Token ' + props.token } })
     .then((response) => {
@@ -91,7 +92,7 @@ function Referralcode(props) {
                 </div>
               </div>
               <input type="submit" value="Save" className="submit-btn text-center" style={{"border": "none",
-    "width": "75vh", "color": "white"}}/>
+    "width": "504px","height":"64px", "color": "white"}}/>
               {/* <Link to="/create-mpin" className="submit-btn text-center">
                 <a style={{ color: "#fff" }}>Save</a>
               </Link> */}

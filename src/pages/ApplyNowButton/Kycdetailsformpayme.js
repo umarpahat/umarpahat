@@ -76,8 +76,9 @@ if (!date) {seterrorDob("Please enter date"); return;}
 if (!gender) {seterrorGender("Please enter gender"); return;}
 if (!panNumber) {seterrorPan("Please enter pan number"); return;}
 if (!panFile.name) {seterrorUploadPan("Please upload pan"); return;}
-if (!aadhaarFileBack.name) {seterrorUploadAdhaarBack("Please upload adhaar front"); return;}
-if (!aadhaarFileFront.name) {seterrorUploadAdhaarFront("Please enter adhaar back"); return;}
+if (!aadhaarFileFront.name) {seterrorUploadAdhaarFront("Please upload adhaar front"); return;}
+if (!aadhaarFileBack.name) {seterrorUploadAdhaarBack("Please upload adhaar Back"); return;}
+
 setloader(true)
  const uploadAdhaarBack = postS3({res:aadhaarFileBack, presignedPostData: signedUrl[`adhar_card/${props.user.id}/back.jpg`]})
  const uploadAdhaarFront = postS3({res:aadhaarFileFront, presignedPostData: signedUrl[`adhar_card/${props.user.id}/front.jpg`]})
@@ -91,7 +92,7 @@ setloader(true)
   props.hitAllUserData({ token: props.token })
   if (props.useCase === 'apply-loan') {
   if (!props.user.userbankdetail){
-    props.history.push({pathname:'/bank-details-payme'})
+    props.history.push({pathname:'/pending-approval'})
   } else  if (props.user.userbankdetail.verified === 'VERIFIED' ||
   props.user.userbankdetail.verified === 'PENDING_VERIFICATION'){
     if (props.user.userdocumentsmodel && (props.user.userdocumentsmodel.salary_slip_verified === 'VERIFIED' ||
@@ -275,6 +276,7 @@ setloader(true)
               style={{color:"white", width:"500px"}}
               className="submit-btn text-center"
               value="Proceed with KYC"
+              onChange={handleSubmit}
             />
           </div>
         </form>

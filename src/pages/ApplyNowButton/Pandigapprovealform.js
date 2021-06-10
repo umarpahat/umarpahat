@@ -66,7 +66,7 @@ const [userdocumentsmodel, setuserdocumentsmodel] = useState({})
                   }
                   </div>
 
-                  <div className="classRighticons pt-2" style={{"padding-top": "0px"}}>
+                  <div className="classRighticons pt-2" style={{"paddingTop": "0px"}}>
                   <div style={{display: "flex"}}>
                     <div className="">
                       <img src={userdocumentsmodel.pan_card_verified === 'VERIFIED' ||
