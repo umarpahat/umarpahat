@@ -35,6 +35,10 @@ const Professionaldetailspayme = (props) => {
   const [presentPincode, setpresentPincode] = useState("");
   const [errorpresentAddLine1, seterrorpresentAddLine1] = useState("");
   const [errorpresentPincode, seterrorpresentPincode] = useState("");
+  const [errorOfficePincode, setErrorOfficePincode] = useState("");
+  const [errorworkExp, setErrorworkExp] = useState("");
+  const [errorindustry, setErrorindustry] = useState("");
+  const [errorSalary, setErrorSalary] = useState("");
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -114,24 +118,45 @@ const Professionaldetailspayme = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!industry) {
+      setErrorindustry("Please Select Your Employement ");
+      alert("Please Select Your Employement")
+      return;
+    }
     if (!organizationName) {
       seterrororganizationName("Please enter your oraganization name");
+      alert("Please enter your oraganization name")
+      return;
+    }
+    if (!workExp) {
+      setErrorworkExp("Please Enter Work Experience");
+      alert("Please Enter Work Experience")
+      return;
+    }
+    if (!inhandsalary) {
+      setErrorSalary("Please Enter salary");
+      alert("Please Enter salary")
       return;
     }
     if (!salaryDate) {
       seterrorsalaryDate("Please enter your salary date");
+      alert("Please enter your salary date");
       return;
     }
     if (!uploadSalarySlip.name) {
       seterroruploadSalarySlip("Please upload your latest salary slip");
+      alert("Please upload your latest salary slip")
       return;
     }
     if (!presentAddLine1) {
       seterrorpresentAddLine1("please enter adress.");
+      alert("Please enter adress");
+
       return;
     }
     if (!presentPincode) {
       seterrorpresentPincode("Please enter pin code");
+      alert("Please enter pin code")
       return;
     }
     const uploadSalaryFront = postS3({
@@ -260,6 +285,7 @@ const Professionaldetailspayme = (props) => {
                     <select
                       class="form-control ms-form-input"
                       onChange={(event) => {
+                        setErrorindustry("");
                         setIndustry(event.target.value);
                       }}
                     >
@@ -274,6 +300,9 @@ const Professionaldetailspayme = (props) => {
                           ))
                         : null}
                     </select>
+                    {errorindustry ? (
+                      <span style={{ color: "red" }}>{errorindustry}</span>
+                    ) : null}
                   </div>
                 </div>
                 <div className="form-block">
@@ -305,9 +334,15 @@ const Professionaldetailspayme = (props) => {
                       placeholder="Enter Work Experience"
                       value={workExp}
                       onChange={(event) => {
+                        setErrorworkExp("");
                         setWorkExp(event.target.value);
                       }}
                     />
+                       {errorworkExp ? (
+                      <span style={{ color: "red" }}>
+                        {errorworkExp}
+                      </span>
+                    ) : null}
                   </div>
                   <div class="form-group ms-input-group">
                     <label className="form-label">Salary</label>
@@ -317,9 +352,15 @@ const Professionaldetailspayme = (props) => {
                       placeholder="Enter Salary"
                       value={inhandsalary}
                       onChange={(event) => {
+                        setErrorSalary("");
                         setInhandsalary(event.target.value);
                       }}
                     />
+                       {errorSalary ? (
+                      <span style={{ color: "red" }}>
+                        {errorSalary}
+                      </span>
+                    ) : null}
                   </div>
                   <div class="form-group ms-input-group">
                     <label className="form-label">Office Address</label>
@@ -351,9 +392,15 @@ const Professionaldetailspayme = (props) => {
                       placeholder="Enter Office PinCode"
                       value={officePincode}
                       onChange={(event) => {
+                        setErrorOfficePincode("");
                         setOfficePincode(event.target.value);
                       }}
                     />
+                       {errorOfficePincode ? (
+                      <span style={{ color: "red" }}>
+                        {errorOfficePincode}
+                      </span>
+                    ) : null}
                   </div>
 
                   <div class="form-group ms-input-group">
@@ -377,7 +424,7 @@ const Professionaldetailspayme = (props) => {
                   <div class="form-group ms-input-group">
                     <label className="form-label">Official Email ID</label>
                     <input
-                      type="text"
+                      type="email"
                       class="form-control ms-form-input"
                       placeholder="Enter Email ID"
                       value={officeEmail}

@@ -70,7 +70,7 @@ export async function getData(data) {
 //   })
 // }
 
-export const postS3 = data => {
+export const postS3 = (data) => {
   return new Promise(async (resolve, reject) => {
     console.log("eeeeeeeeeeeeeee")
     console.log(data)

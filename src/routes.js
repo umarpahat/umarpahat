@@ -14,7 +14,7 @@ import Getquikloneapply from "./pages/ApplyNowButton/Getquickloneapply";
 import Getstartpaymeindia from "./pages/ApplyNowButton/Getstartpaymeindia";
 import Referralcode from "./pages/ApplyNowButton/Referralcode";
 import Kycdetailsformpayme from "./pages/ApplyNowButton/Kycdetailsformpayme";
-import Bankdetalspayme from "./pages/ApplyNowButton/Bankdetailspayme";
+import Bankdetailspayme from "./pages/ApplyNowButton/Bankdetailspayme";
 import Professionaldetailspayme from "./pages/ApplyNowButton/Profeesionaldetailspayme";
 import SelfEmployed from "./pages/ApplyNowButton/SelfEmployed";
 import Congretmessage from "./pages/ApplyNowButton/Congretmessage";
@@ -22,6 +22,7 @@ import LoginWithMobMpin from "./pages/ApplyNowButton/LoginWithmobmpin";
 import ChangeMpin from "./pages/ApplyNowButton/ChangeMpin";
 import Pandingapprovalform from "./pages/ApplyNowButton/Pandigapprovealform";
 import Creatempn from "./pages/ApplyNowButton/Creatempn";
+import KycOption from "./pages/ApplyNowButton/KycOption";
 
 function Routes() {
     return (
@@ -38,10 +39,12 @@ function Routes() {
         />
         <Route exact path="/referral-code" component={Referralcode} />
         <Route exact path="/create-mpin" component={Creatempn} />
-        <Route exact path="/bank-details-payme" component={Bankdetalspayme} />
+      
         <Route exact path="/self-employed" component={SelfEmployed} />
         <Route exact path="/congratulations" component={Congretmessage} />
         <Route exact path="/login-with-mob-mpin" component={LoginWithMobMpin} />
+        <Route exact path="/kycoption" component={KycOption} />
+        <Route exact path="/bank-details-payme" component={Bankdetailspayme} />
         <Route exact path="/change-mpin" component={ChangeMpin} />
 
         <Route

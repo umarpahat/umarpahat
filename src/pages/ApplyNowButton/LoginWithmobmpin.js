@@ -15,14 +15,15 @@ function LoginWithMobMpin(props) {
   let [forgotPassword, setforgotPassword] = useState(false);
 console.log(props)
   useEffect(() => {
+    console.log("pramod",props)
     if (props.token) {
       if (forgotPassword) {props.history.push({pathname:'/change-mpin', state: { forgotPassword: forgotPassword}})}
       else {
         if (props.user.userData) {
           setloader(false)
-          console.log("1313131313", props)
+          
           if (props.user.useCase === 'apply-loan') {
-              props.history.push({pathname:'/pending-approval'})
+              props.history.push({pathname:'/kycoption'})
           } else if (props.user.useCase === 'pay-rent') {
             if (props.user.userData.userdocumentsmodel.kyc_verified === 'VERIFIED' || props.user.userData.userdocumentsmodel.kyc_verified === "PENDING_VERIFICATION") {
               props.history.push({pathname:'/payrent-other-details'})
