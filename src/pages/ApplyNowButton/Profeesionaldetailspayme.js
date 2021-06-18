@@ -39,10 +39,14 @@ const Professionaldetailspayme = (props) => {
   const [errorworkExp, setErrorworkExp] = useState("");
   const [errorindustry, setErrorindustry] = useState("");
   const [errorSalary, setErrorSalary] = useState("");
+  const [errorOfficePinCode,setErrorOfficePinCode]=useState("");
+  const [errorPinCode,setErrorPinCode]=useState("");
+  
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    let url = `https://api.staging.paymeindia.in/api/industry_list/`;
+    let url = `https://api.testing.paymeindia.in/api/industry_list/`;
     let config = {
       headers: {
         Authorization: "Token " + props.token,
@@ -391,11 +395,24 @@ const Professionaldetailspayme = (props) => {
                       class="form-control ms-form-input"
                       placeholder="Enter Office PinCode"
                       value={officePincode}
+                      maxLength="6"
                       onChange={(event) => {
+                        if(event.target.value.match(/^[1-9]{1}[0-9]{2}[0-9]{3}$/))
+                        {
+                          setErrorOfficePinCode("")
+                        }
+                        else{
+                          setErrorOfficePinCode("PinCode must have 6 digit")
+                        }
+
+
                         setErrorOfficePincode("");
                         setOfficePincode(event.target.value);
                       }}
                     />
+                    {errorOfficePinCode ? (
+                      <span style={{color:"red"}}>{errorOfficePinCode}</span>
+                    ):null}
                        {errorOfficePincode ? (
                       <span style={{ color: "red" }}>
                         {errorOfficePincode}
@@ -524,12 +541,25 @@ const Professionaldetailspayme = (props) => {
                           type="text"
                           class="form-control ms-form-input"
                           placeholder="110025"
+                          maxLength="6"
                           value={presentPincode}
                           onChange={(event) => {
+
+                            if(event.target.value.match(/^[1-9]{1}[0-9]{2}[0-9]{3}$/))
+                        {
+                          setErrorPinCode("")
+                        }
+                        else{
+                          setErrorPinCode("PinCode must have 6 digit")
+                        }
+
                             seterrorpresentPincode("");
                             setpresentPincode(event.target.value);
                           }}
                         />
+                         {errorPinCode ? (
+                      <span style={{color:"red"}}>{errorPinCode}</span>
+                    ):null}
                         {errorpresentPincode ? (
                           <span style={{ color: "red" }}>
                             {errorpresentPincode}

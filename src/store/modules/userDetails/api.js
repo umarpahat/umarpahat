@@ -19,3 +19,4 @@ export const getUserGeneralDetails = data => {return new Promise(async (resolve,
     return reject(error)
   })
 })}
+
