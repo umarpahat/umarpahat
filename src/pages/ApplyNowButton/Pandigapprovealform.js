@@ -438,11 +438,11 @@ const Pandingapprovalform = (props) => {
         <Congretmessage />
       ) : null}
 
-      {userdocumentsmodel.adhar_card_verified === "VERIFIED" &&
+       {userdocumentsmodel.adhar_card_verified === "VERIFIED" &&
       userdocumentsmodel.pan_card_verified === "VERIFIED" &&
-      props.user.userData.other_documents[0].status === "VERIFIED" ? (
+      props.user.userData?.other_documents[0]?.status === "VERIFIED" ? (
         <Congretmessage />
-      ) : null}
+      ) : null} 
     </>
   );
 };

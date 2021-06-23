@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { connect } from "react-redux";
-import { hitAllUserData } from "../../store/modules/userDetails/actions";
+import {
+  hitAllUserData,
+  hitEkyc,
+} from "../../store/modules/userDetails/actions";
 import { bindActionCreators } from "redux";
+import { getEkyc } from "../../store/modules/userDetails/api";
 import axios from "axios";
 
 const KycOption = (props) => {
-  // console.log(props);
+  console.log("pramodsprops", props);
 
   const [webview, setWebview] = useState();
   const [ekyc, setEkyc] = useState();
-  const[adhaar,setAdhaar] = useState();
+  const [adhaar, setAdhaar] = useState();
+
+  console.log("after ekyc", ekyc);
 
   useEffect(() => {
     let url = `https://api.testing.paymeindia.in/api/webview_url/payme_ekyc/`;
@@ -23,24 +29,44 @@ const KycOption = (props) => {
       .get(url, config)
       .then((res) => {
         setWebview(res.data.url);
+       
       })
+      
       .catch((err) => {
         console.log(err);
       });
+  }, []);
 
-    let url2 = `https://api.testing.paymeindia.in/api/get_document_status/`;
+setInterval(function(){
+  ekycCall();
+},3000);
+
+
+
+  const ekycCall = ()=> {
+
+     let url2 = `https://api.testing.paymeindia.in/api/get_document_status/`;
+     let config = {
+      headers: {
+        Authorization: "Token " + props.token,
+      },
+    };
     axios
       .get(url2, config)
       .then((response) => {
-        setEkyc(response.data.data[0].kyc_verified);
-     
        setAdhaar(response.data.data[0].adhar_card_verified)
+       setEkyc(response.data.data[0].kyc_verified);
         console.log("response ekyc", response.data.data[0]);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+
+  }
+  
+  //  setEkyc(props.ekycData.userdocumentsmodel?.address_proof_verified);
+  //  setAdhaar(props.ekycData.userdocumentsmodel?.kyc_verified)
+
 
   console.log("statys kkyc", ekyc);
   console.log("pramod3", props.user.userbankdetail, props.userCase);
@@ -79,7 +105,10 @@ const KycOption = (props) => {
       "popup",
       "width=600,height=650,left=600,top=150,scrollbars=no,resizable=no"
     );
+    
     return false;
+   
+
   };
   return (
     <>
@@ -181,13 +210,16 @@ const KycOption = (props) => {
     </>
   );
 };
-
+console.log("pramod ");
 const mapStateToProps = (state) => {
   return {
     token: state.authDetails.token,
     phoneNumber: state.authDetails.phone_number,
     user: state.user.userData,
     userCase: state.user.useCase,
+    ekycData:state.ekycData,
+
+    
   };
 };
 
@@ -196,6 +228,8 @@ const dispatchToProps = (dispatch) => {
     {
       // hitLogin,
       hitAllUserData,
+      hitEkyc,
+
       // hitForgotMpin,
     },
     dispatch

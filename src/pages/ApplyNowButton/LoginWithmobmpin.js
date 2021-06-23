@@ -23,7 +23,13 @@ console.log(props)
           setloader(false)
           
           if (props.user.useCase === 'apply-loan') {
+            if(props.user.userData.userdocumentsmodel.kyc_verified === 'VERIFIED')
+            {
+              props.history.push({pathname:'/bank-details-payme'})
+            }
+            else{
               props.history.push({pathname:'/kycoption'})
+            }
           } else if (props.user.useCase === 'pay-rent') {
             if (props.user.userData.userdocumentsmodel.kyc_verified === 'VERIFIED' || props.user.userData.userdocumentsmodel.kyc_verified === "PENDING_VERIFICATION") {
               props.history.push({pathname:'/payrent-other-details'})

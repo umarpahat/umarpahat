@@ -14,6 +14,7 @@ import { getS3SignedUrl, postS3, api } from "../../services/api";
 import Header from "../../component/Header";
 import Progressbar from "../../component/ProgressBar";
 import Loader from "../../component/Loader";
+import axios from "axios";
 
 const Bankdetailspayme = (props) => {
   const [actNumber, setactNumber] = useState("");
@@ -31,10 +32,10 @@ const Bankdetailspayme = (props) => {
   const [loader, setloader] = useState(false);
   const [signedUrl, setsignedUrl] = useState({});
   const [bankStatementPassword, setbankStatementPassword] = useState("");
-  const [ifscCode ,setIfscCode] = useState("");
-  const [correctIfscCode,setCorrectIfscCode]=useState("");
-  const[errorIfscCode,setErrorIfscCode]=useState("");
-  const [validAccount,setValidAccount]=useState("");
+  const [ifscCode, setIfscCode] = useState("");
+  const [correctIfscCode, setCorrectIfscCode] = useState("");
+  const [errorIfscCode, setErrorIfscCode] = useState("");
+  const [validAccount, setValidAccount] = useState("");
   async function getSignedUrl() {
     const pathArray = [
       `bank_statement/${props.user.id}/0.pdf`,
@@ -81,6 +82,11 @@ const Bankdetailspayme = (props) => {
     getSignedUrl();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props]);
+  console.log(props.token)
+
+
+
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -178,6 +184,8 @@ const Bankdetailspayme = (props) => {
     ]);
   };
 
+ 
+
   return (
     <>
       {/* <Header /> */}
@@ -221,21 +229,19 @@ const Bankdetailspayme = (props) => {
                       placeholder="Enter 16 Digit A/C Number"
                       value={actNumber}
                       onChange={(event) => {
-                        if(event.target.value.match(/^\d{9,18}$/))
-                        {
-                          setValidAccount("")
+                        if (event.target.value.match(/^\d{9,18}$/)) {
+                          setValidAccount("");
+                        } else {
+                          setValidAccount("Enter a valid Account Number");
                         }
-                        else{
-                          setValidAccount("Enter a valid Account Number")
-                        }
-                        
+
                         seterrorAct("");
                         setactNumber(event.target.value);
                       }}
                     />
                     {validAccount ? (
-                      <span style={{color:"red"}}>{validAccount}</span>
-                    ):null}
+                      <span style={{ color: "red" }}>{validAccount}</span>
+                    ) : null}
                     {errorAct ? (
                       <span style={{ color: "red" }}>{errorAct}</span>
                     ) : null}
@@ -264,28 +270,28 @@ const Bankdetailspayme = (props) => {
                       placeholder="Enter IFSC Code Here (E.G. KKBK0000430)"
                       value={ifsc}
                       onChange={(event) => {
-                        if(event.target.value !=11){
+                        if (event.target.value != 11) {
                           setIfscCode("IFSC code should be of 11 character");
-                          setCorrectIfscCode("")
+                          setCorrectIfscCode("");
                         }
-                        if(event.target.value.match(/^([A-Z]){4}0([A-Z0-9]){6}$/))
-                        {
+                        if (
+                          event.target.value.match(/^([A-Z]){4}0([A-Z0-9]){6}$/)
+                        ) {
                           setCorrectIfscCode("IFSC Code is Entered Properly");
-                          setErrorIfscCode("")
-                        }
-                        else{
-                          setErrorIfscCode("Please Enter a valid IFSC Code")
+                          setErrorIfscCode("");
+                        } else {
+                          setErrorIfscCode("Please Enter a valid IFSC Code");
                         }
                         setifscErro("");
                         setifsc(event.target.value);
                       }}
                     />
-                    {correctIfscCode?(
-                      <span style={{color:"green"}}>{correctIfscCode}</span>
-                    ):null}
+                    {correctIfscCode ? (
+                      <span style={{ color: "green" }}>{correctIfscCode}</span>
+                    ) : null}
                     {errorIfscCode ? (
-                      <span style={{color:"red"}}>{errorIfscCode}</span>
-                    ):null}
+                      <span style={{ color: "red" }}>{errorIfscCode}</span>
+                    ) : null}
                     {ifscError ? (
                       <span style={{ color: "red" }}>{ifscError}</span>
                     ) : null}
@@ -341,6 +347,7 @@ const Bankdetailspayme = (props) => {
                     </a>
                     <input
                       type="file"
+                      accept="application/pdf"
                       className="custom-file-input"
                       id="bankupload"
                       hidden

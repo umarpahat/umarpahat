@@ -39,9 +39,8 @@ const Professionaldetailspayme = (props) => {
   const [errorworkExp, setErrorworkExp] = useState("");
   const [errorindustry, setErrorindustry] = useState("");
   const [errorSalary, setErrorSalary] = useState("");
-  const [errorOfficePinCode,setErrorOfficePinCode]=useState("");
-  const [errorPinCode,setErrorPinCode]=useState("");
-  
+  const [errorOfficePinCode, setErrorOfficePinCode] = useState("");
+  const [errorPinCode, setErrorPinCode] = useState("");
 
   const [data, setData] = useState([]);
 
@@ -91,9 +90,8 @@ const Professionaldetailspayme = (props) => {
       { headers: { Authorization: "Token " + props.token } }
     );
   }
-  console.log(presentAddLine1, presentPincode);
+
   async function updateProfessionalDetails() {
-    console.log("bh");
     const payload = {
       current_company: organizationName,
       self_employed: false,
@@ -124,22 +122,22 @@ const Professionaldetailspayme = (props) => {
     event.preventDefault();
     if (!industry) {
       setErrorindustry("Please Select Your Employement ");
-      alert("Please Select Your Employement")
+      alert("Please Select Your Employement");
       return;
     }
     if (!organizationName) {
       seterrororganizationName("Please enter your oraganization name");
-      alert("Please enter your oraganization name")
+      alert("Please enter your oraganization name");
       return;
     }
     if (!workExp) {
       setErrorworkExp("Please Enter Work Experience");
-      alert("Please Enter Work Experience")
+      alert("Please Enter Work Experience");
       return;
     }
     if (!inhandsalary) {
       setErrorSalary("Please Enter salary");
-      alert("Please Enter salary")
+      alert("Please Enter salary");
       return;
     }
     if (!salaryDate) {
@@ -149,7 +147,7 @@ const Professionaldetailspayme = (props) => {
     }
     if (!uploadSalarySlip.name) {
       seterroruploadSalarySlip("Please upload your latest salary slip");
-      alert("Please upload your latest salary slip")
+      alert("Please upload your latest salary slip");
       return;
     }
     if (!presentAddLine1) {
@@ -160,7 +158,7 @@ const Professionaldetailspayme = (props) => {
     }
     if (!presentPincode) {
       seterrorpresentPincode("Please enter pin code");
-      alert("Please enter pin code")
+      alert("Please enter pin code");
       return;
     }
     const uploadSalaryFront = postS3({
@@ -342,10 +340,8 @@ const Professionaldetailspayme = (props) => {
                         setWorkExp(event.target.value);
                       }}
                     />
-                       {errorworkExp ? (
-                      <span style={{ color: "red" }}>
-                        {errorworkExp}
-                      </span>
+                    {errorworkExp ? (
+                      <span style={{ color: "red" }}>{errorworkExp}</span>
                     ) : null}
                   </div>
                   <div class="form-group ms-input-group">
@@ -360,10 +356,8 @@ const Professionaldetailspayme = (props) => {
                         setInhandsalary(event.target.value);
                       }}
                     />
-                       {errorSalary ? (
-                      <span style={{ color: "red" }}>
-                        {errorSalary}
-                      </span>
+                    {errorSalary ? (
+                      <span style={{ color: "red" }}>{errorSalary}</span>
                     ) : null}
                   </div>
                   <div class="form-group ms-input-group">
@@ -394,29 +388,26 @@ const Professionaldetailspayme = (props) => {
                       type="number"
                       class="form-control ms-form-input"
                       placeholder="Enter Office PinCode"
+                      maxlength= "6"
                       value={officePincode}
-                      maxLength="6"
                       onChange={(event) => {
-                        if(event.target.value.match(/^[1-9]{1}[0-9]{2}[0-9]{3}$/))
-                        {
-                          setErrorOfficePinCode("")
+                        if (
+                          event.target.value.match(/^[1-9]{1}[0-9]{2}[0-9]{3}$/)
+                        ) {
+                          setErrorOfficePinCode("");
+                        } else {
+                          setErrorOfficePinCode("PinCode must have 6 digit");
                         }
-                        else{
-                          setErrorOfficePinCode("PinCode must have 6 digit")
-                        }
-
 
                         setErrorOfficePincode("");
                         setOfficePincode(event.target.value);
                       }}
                     />
                     {errorOfficePinCode ? (
-                      <span style={{color:"red"}}>{errorOfficePinCode}</span>
-                    ):null}
-                       {errorOfficePincode ? (
-                      <span style={{ color: "red" }}>
-                        {errorOfficePincode}
-                      </span>
+                      <span style={{ color: "red" }}>{errorOfficePinCode}</span>
+                    ) : null}
+                    {errorOfficePincode ? (
+                      <span style={{ color: "red" }}>{errorOfficePincode}</span>
                     ) : null}
                   </div>
 
@@ -544,22 +535,23 @@ const Professionaldetailspayme = (props) => {
                           maxLength="6"
                           value={presentPincode}
                           onChange={(event) => {
-
-                            if(event.target.value.match(/^[1-9]{1}[0-9]{2}[0-9]{3}$/))
-                        {
-                          setErrorPinCode("")
-                        }
-                        else{
-                          setErrorPinCode("PinCode must have 6 digit")
-                        }
+                            if (
+                              event.target.value.match(
+                                /^[1-9]{1}[0-9]{2}[0-9]{3}$/
+                              )
+                            ) {
+                              setErrorPinCode("");
+                            } else {
+                              setErrorPinCode("PinCode must have 6 digit");
+                            }
 
                             seterrorpresentPincode("");
                             setpresentPincode(event.target.value);
                           }}
                         />
-                         {errorPinCode ? (
-                      <span style={{color:"red"}}>{errorPinCode}</span>
-                    ):null}
+                        {errorPinCode ? (
+                          <span style={{ color: "red" }}>{errorPinCode}</span>
+                        ) : null}
                         {errorpresentPincode ? (
                           <span style={{ color: "red" }}>
                             {errorpresentPincode}
