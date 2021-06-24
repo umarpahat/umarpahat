@@ -1,5 +1,5 @@
 import {
-  USER_DATA, LOGOUT, USERAPPUSECASE, STOREPAYRENTDATA
+  USER_DATA, LOGOUT, USERAPPUSECASE, STOREPAYRENTDATA,EKYC
 } from '../types'
 
 const INITIAL_STATE = {};
@@ -15,6 +15,9 @@ export default function auth(state = INITIAL_STATE, action) {
       return { ...state, useCase: action.payload.useCase };
     case STOREPAYRENTDATA:
       return { ...state, payRent : action.payload.payRent };
+    case EKYC:
+      return { ...state, ekycData:action.payload.userData}
+
     default:
       return state;
   }

@@ -19,3 +19,13 @@ export const getUserGeneralDetails = data => {return new Promise(async (resolve,
     return reject(error)
   })
 })}
+
+export const getEkyc = data => new Promise(async (resolve, reject) => {
+  api.get(`https://api.testing.paymeindia.in/api/get_document_status/`, { headers: { 'Authorization': 'Token ' + data.token } })
+    .then((response) => {
+      return resolve(response);
+    })
+    .catch((error) => {
+      return reject(error);
+    });
+});

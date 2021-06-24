@@ -1,6 +1,6 @@
 import { HITUSER, USER_DATA, USERREFERALCODE,
   HITREFERALCODE, USERAPPUSECASE, HITAPPUSECASE,
-  STOREPAYRENTDATA, HITPAYRENTINFO, HITPAYRENTINFOAPI
+  STOREPAYRENTDATA, HITPAYRENTINFO, HITPAYRENTINFOAPI, EKYC
 } from '../types'
 
 export const storeAllUserData = data =>
@@ -57,3 +57,7 @@ export const hitPayrentInfoAPi = data =>
     type: HITPAYRENTINFOAPI,
     payload: data
   });
+export const hitEkyc = data => ({
+  type:EKYC,
+  payload:data
+});

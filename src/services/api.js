@@ -45,7 +45,32 @@ export async function getData(data) {
 // }
 };
 
-export const postS3 = data => {
+
+
+// export const getIndustryList = (token) => {
+//   let url = `${API_ENDPOINT}/api/industry_list/`
+  
+//   let config = {
+//       headers: {
+//         Authorization: "Token " + token,
+//         'Content-Type': "application/json"
+//       }
+//     }
+    
+//   return dispatch => new Promise((resolve, reject) => {
+//       axios.get(url, config)
+//       .then((res) => {
+      
+//           return resolve(res.data)
+//       })
+     
+//       .catch((err) => {
+//           return reject(err)
+//       })
+//   })
+// }
+
+export const postS3 = (data) => {
   return new Promise(async (resolve, reject) => {
     console.log("eeeeeeeeeeeeeee")
     console.log(data)

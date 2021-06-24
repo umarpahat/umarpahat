@@ -20,9 +20,13 @@ const Congretmessage = (props) => {
                 complete final formalities to avail quick disbursal of the loan.
               </p>
               <div className="pt-3">
-                <Link to="/pending-approval" className="submit-btn text-center">
-                  <a style={{ color: "#fff" }}>Go To App</a>
-                </Link>
+                <a
+                  href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
+                  className="submit-btn text-center"
+                  style={{ color: "#fff" }}
+                >
+                  Go To App
+                </a>
               </div>
             </div>
           </form>
