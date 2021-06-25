@@ -1,13 +1,15 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Header from "../../component/Header";
+import Header from "../Header";
+import Footer from "../Footer";
 
 const Congretmessage = (props) => {
   return (
     <>
-      {/* <Header /> */}
-      <Container>
+      <Header />
+      <div style={{backgroundColor:"#f2f2f2"}}>
+      <Container >
         <div className="form-container formcontainermob  pt-4">
           <form>
             <div className="Home-contact-form mt-4">
@@ -32,6 +34,11 @@ const Congretmessage = (props) => {
           </form>
         </div>
       </Container>
+      </div>
+      <div style={{marginTop:"180px"}}>
+
+      <Footer/>
+      </div>
     </>
   );
 };

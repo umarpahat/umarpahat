@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import { hitAllUserData } from "../../store/modules/userDetails/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import Header from "../../component/Header";
 import backicon from "../../component/img/backicon.png";
 import Progressbar from "../../component/ProgressBar";
 // import {getIndustryList} from "../../services/api";
 import { getS3SignedUrl, postS3, api } from "../../services/api";
 import Loader from "../../component/Loader";
 import axios from "axios";
-import { API_ENDPOINT_STAGING } from "../../constant";
+import { API_ENDPOINT } from "../../constant";
+import Header from "../Header";
+import Footer from "../Footer";
 
 const Professionaldetailspayme = (props) => {
   const [inhandsalary, setInhandsalary] = useState("");
@@ -45,7 +46,7 @@ const Professionaldetailspayme = (props) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    let url = `https://api.testing.paymeindia.in/api/industry_list/`;
+    let url = `${API_ENDPOINT}api/industry_list/`;
     let config = {
       headers: {
         Authorization: "Token " + props.token,
@@ -209,7 +210,7 @@ const Professionaldetailspayme = (props) => {
   console.log("pramod", data.data);
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Container className="pb-5">
         {loader ? (
           <div className="loader">
@@ -565,13 +566,15 @@ const Professionaldetailspayme = (props) => {
                   type="submit"
                   style={{ color: "white", width: "500px" }}
                   className="submit-btn text-center"
-                  value="Proceed with Professional Details"
+                  value="Submit"
                 />
               </div>
             </form>
           </div>
         )}
       </Container>
+
+      <Footer/>
     </>
   );
 };
