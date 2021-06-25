@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { hitAppUseCase } from '../../store/modules/userDetails/actions';
 import { connect } from 'react-redux'
-import Header from "../../component/Header";
 import { api } from '../../services/api';
 import Loader from '../../component/Loader'
 import Confirmotpmobile from "./Confirmotpmobile";
 import "../ApplyNowButton/Applybtnallcomponent.css";
+import Header from "../Header";
+import Footer from "../Footer";
 
 const Getquikloneapply = (props) => {
 
@@ -51,7 +52,9 @@ if (window.location.pathname === "/apply-loan") {
   return (
     <>
       {/* {!newUser ? <Header /> : null } */}
-      <Container>
+     <Header/>
+      <Container >
+      
         {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
         newUser ? <Confirmotpmobile {...props} phone_number={Number(number)} resendOtp={verifyPhone} /> :
           <div className="pt-5 ">
@@ -89,6 +92,13 @@ if (window.location.pathname === "/apply-loan") {
           </div>
         }
       </Container>
+
+
+
+<div style={{marginTop:"180px"}}>
+
+      <Footer/>
+      </div>
     </>
   );
 };

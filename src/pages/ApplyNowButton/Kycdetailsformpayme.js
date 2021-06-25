@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import { hitAllUserData } from "../../store/modules/userDetails/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import Header from "../../component/Header";
 import backicon from "../../component/img/backicon.png";
 import Progressbar from "../../component/ProgressBar";
 import { getS3SignedUrl, postS3, api } from "../../services/api";
 import Loader from "../../component/Loader";
+import Header from "../Header";
+import Footer from "../Footer";
 
 const Kycdetailsformpayme = (props) => {
   const [show, setShow] = useState(false);
@@ -220,14 +221,15 @@ const Kycdetailsformpayme = (props) => {
 
   return (
     <>
-      {/* <Header /> */}
+
+      <Header />
       {loader ? (
         <div className="loader">
           {" "}
           <Loader color={"#33658a"} />{" "}
         </div>
       ) : (
-        <div className="form-container pb-5">
+        <div className="form-container pb-5" style={{backgroundColor:"#f2f2f2"}}>
           <div className="pb-4">
             <Progressbar />
           </div>
@@ -375,6 +377,7 @@ const Kycdetailsformpayme = (props) => {
                   ) : null}
                   <input
                     type="file"
+                    accept="image/*"
                     class="custom-file-input"
                     name="Upload PAN"
                     id="upload-pan"
@@ -408,6 +411,7 @@ const Kycdetailsformpayme = (props) => {
                       ) : null}
                       <input
                         type="file"
+                        accept="image/*"
                         class="custom-file-input"
                         id="Frontofadhaar"
                         hidden
@@ -438,6 +442,7 @@ const Kycdetailsformpayme = (props) => {
                       ) : null}
                       <input
                         type="file"
+                        accept="image/*"
                         class="custom-file-input"
                         id="Backofadhaar"
                         hidden
@@ -467,6 +472,7 @@ const Kycdetailsformpayme = (props) => {
 
                     <input
                       type="file"
+                      accept="image/*"
                       class="custom-file-input"
                       name="Upload Profile"
                       id="upload-profile"
@@ -490,13 +496,18 @@ const Kycdetailsformpayme = (props) => {
                 type="submit"
                 style={{ color: "white", width: "500px" }}
                 className="submit-btn text-center"
-                value="Proceed with KYC"
+                value="Save and  Continue"
                 onChange={handleSubmit}
               />
             </div>
           </form>
         </div>
       )}
+
+      <div >
+
+<Footer/>
+</div>
     </>
   );
 };

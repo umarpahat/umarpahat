@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import { hitAllUserData } from '../../store/modules/userDetails/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Header from "../../component/Header";
 import backicon from "../../component/img/backicon.png";
 import Modalkyccomplete from "../../component/modalkyccomplete";
 import Progressbar from "../../component/ProgressBar";
 import {getS3SignedUrl, postS3, api} from "../../services/api"
-import Loader from '../../component/Loader' 
+import Loader from '../../component/Loader' ;
+import Footer from "../Footer";
+import Header from "../Header";
 
 const SelfEmployed = (props) => {
   const [show, setShow] = useState(false);
@@ -79,8 +80,8 @@ const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `ot
   const handleClose = () => setShow(!show);
   return (
     <>
-      {/* <Header /> */}
-      <Container className="pb-5">
+      <Header />
+      <Container className="pb-5" style={{backgroundColor:"#f2f2f2"}}>
         <div className="form-container formcontainermob  pt-4 pb-5">
           <div className="pt-2">
             <div className="pb-4">
@@ -146,7 +147,7 @@ const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `ot
                 </Link>
               </div>
               <h4 className="form-heading text-center">
-                KYC - Business Details
+                Business Details
               </h4>
               <div className="form-block">
                 <div>
@@ -205,7 +206,7 @@ const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `ot
             type="submit"
               style={{color:"white", width:"500px"}}
               className="submit-btn text-center"
-              value="Proceed with Professional Details"
+              value="Submit"
             />
             </div>
           </form>
@@ -213,6 +214,10 @@ const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `ot
       </Container>
 
       <Modalkyccomplete show={show} handleClose={handleClose} />
+      <div style={{marginTop:"180px"}}>
+
+      <Footer/>
+      </div>
     </>
   );
 };

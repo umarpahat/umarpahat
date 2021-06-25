@@ -11,31 +11,33 @@ import Cancelicon from "../../component/img/Cancelicon.png";
 
 import DragbleImg from "../../component/DragbleImg";
 import { getS3SignedUrl, postS3, api } from "../../services/api";
-import Header from "../../component/Header";
 import Progressbar from "../../component/ProgressBar";
 import Loader from "../../component/Loader";
 import axios from "axios";
+import { API_ENDPOINT } from "../../constant";
+import "../../home.css";
+import Header from "../Header";
 
 const Bankdetailspayme = (props) => {
   const [actNumber, setactNumber] = useState("");
   const [ConfrmActNumber, setConfrmActNumber] = useState("");
-  const [ifsc, setifsc] = useState("");
   const [bankName, setbankName] = useState("");
   const [branchName, setbranchName] = useState("");
   const [bankStatementObj, setbankStatementObj] = useState([]);
   const [errorAct, seterrorAct] = useState("");
   const [errorConfAct, seterrorConfAct] = useState("");
   const [ifscError, setifscErro] = useState("");
-  const [errorbankName, seterrorbankName] = useState("");
-  const [errorbranchName, seterrorbranchName] = useState("");
   const [errorBnakStatement, seterrorBnakStatement] = useState("");
   const [loader, setloader] = useState(false);
   const [signedUrl, setsignedUrl] = useState({});
   const [bankStatementPassword, setbankStatementPassword] = useState("");
   const [ifscCode, setIfscCode] = useState("");
-  const [correctIfscCode, setCorrectIfscCode] = useState("");
-  const [errorIfscCode, setErrorIfscCode] = useState("");
   const [validAccount, setValidAccount] = useState("");
+  const [ifscdetail, setifscdetail] = useState("");
+  const [ifscData, setIfscData] = useState([]);
+  const [check, setCheck] = useState(true);
+  const [bankname1, setbankname1] = useState("");
+  const [branchname1, setbranchname1] = useState("");
   async function getSignedUrl() {
     const pathArray = [
       `bank_statement/${props.user.id}/0.pdf`,
@@ -63,12 +65,18 @@ const Bankdetailspayme = (props) => {
   }
 
   async function updateBankDetails() {
+    console.log("hello update",actNumber)
+    console.log("hello update",branchName)
+    console.log("hello update",bankName)
+    console.log("ifsc",ifscdetail);
+    
     const payload = {
       account_number: actNumber,
       bank_address: branchName,
       bank_name: bankName,
-      ifsc_code: ifsc,
+      ifsc_code: ifscdetail,
     };
+    console.log("updatedocument",payload)
     return await api.post("/api/user_details/bank_details/", payload, {
       headers: { Authorization: "Token " + props.token },
     });
@@ -82,11 +90,7 @@ const Bankdetailspayme = (props) => {
     getSignedUrl();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props]);
-  console.log(props.token)
-
-
-
-
+  console.log(props.token);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -104,18 +108,11 @@ const Bankdetailspayme = (props) => {
       );
       return;
     }
-    if (!ifsc) {
+    if (!ifscdetail) {
       setifscErro("Please enter ifsc code");
       return;
     }
-    if (!bankName) {
-      seterrorbankName("Please enter bank name");
-      return;
-    }
-    if (!branchName) {
-      seterrorbranchName("Please enter branch name");
-      return;
-    }
+
     if (!bankStatementObj.length) {
       seterrorBnakStatement("Please upload bank statement");
       return;
@@ -135,17 +132,18 @@ const Bankdetailspayme = (props) => {
           signedUrl[`bank_statement/${props.user.id}/${index}.pdf`],
       });
     });
-    Promise.all([...promiseTest, ...updatedocStatus, ...[updateBankDetails()]])
+    updateBankDetails();
+    Promise.all([...promiseTest, ...updatedocStatus])
       .then((response) => {
         setloader(false);
         props.hitAllUserData({ token: props.token });
         props.history.push({ pathname: "/professional-details-payme" });
-        //   if (props.user.userdocumentsmodel && (props.user.userdocumentsmodel.salary_slip_verified !== 'VERIFIED' ||
-        // props.user.userdocumentsmodel.salary_slip_verified !== 'PENDING_VERIFICATION')) {
-        //   props.history.push({pathname:'/professional-details-payme'})
-        // } else{
-        //   props.history.push({pathname:'/pending-approval'})
-        // }
+          if (props.user.userdocumentsmodel && (props.user.userdocumentsmodel.salary_slip_verified !== 'VERIFIED' ||
+        props.user.userdocumentsmodel.salary_slip_verified !== 'PENDING_VERIFICATION')) {
+          props.history.push({pathname:'/professional-details-payme'})
+        } else{
+          props.history.push({pathname:'/pending-approval'})
+        }
       })
       .catch((error) => {
         setloader(false);
@@ -175,7 +173,10 @@ const Bankdetailspayme = (props) => {
       </div>
     </div>
   ));
-
+  const handleifscDetail = (e) => {
+    setifscdetail(e.target.value);
+    ifscDetail(e.target.value);
+  };
   const handleBankUpload = (event) => {
     seterrorBnakStatement("");
     setbankStatementObj((bankStatementArr) => [
@@ -184,11 +185,39 @@ const Bankdetailspayme = (props) => {
     ]);
   };
 
- 
+  const ifscDetail = (ifscd) => {
+    let url = `${API_ENDPOINT}api/bankdetails_list/`;
+    let data = {
+      ifsc: ifscd,
+    };
+    console.log(url);
+    let config = {
+      headers: {
+        Authorization: "Token " + props.token,
+      },
+    };
+
+    axios
+      .post(url, data, config)
+      .then((res) => {
+        setIfscData(res.data.data);
+        console.log("pramodnew", res);
+      })
+
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  if (ifscData.length == 1 && check) {
+    setbankName(ifscData[0].name);
+    setbranchName(ifscData[0].address);
+    setCheck(false);
+  }
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
+
       <Container>
         {loader ? (
           <div className="loader">
@@ -268,30 +297,23 @@ const Bankdetailspayme = (props) => {
                       type="text"
                       className="form-control ms-form-input"
                       placeholder="Enter IFSC Code Here (E.G. KKBK0000430)"
-                      value={ifsc}
-                      onChange={(event) => {
-                        if (event.target.value != 11) {
-                          setIfscCode("IFSC code should be of 11 character");
-                          setCorrectIfscCode("");
-                        }
-                        if (
-                          event.target.value.match(/^([A-Z]){4}0([A-Z0-9]){6}$/)
-                        ) {
-                          setCorrectIfscCode("IFSC Code is Entered Properly");
-                          setErrorIfscCode("");
-                        } else {
-                          setErrorIfscCode("Please Enter a valid IFSC Code");
-                        }
-                        setifscErro("");
-                        setifsc(event.target.value);
-                      }}
+                      value={ifscdetail}
+                      onChange={handleifscDetail}
                     />
-                    {correctIfscCode ? (
-                      <span style={{ color: "green" }}>{correctIfscCode}</span>
-                    ) : null}
-                    {errorIfscCode ? (
-                      <span style={{ color: "red" }}>{errorIfscCode}</span>
-                    ) : null}
+                    <select
+                      class="list-group"
+                      onChange={(event) => {
+                        setifscdetail(event.target.value);
+                      }}
+                      multiple
+                    >
+                      {ifscData
+                        ? ifscData.map((ifsc) => (
+                            <option key={ifsc.name}>{ifsc.ifsc}</option>
+                          ))
+                        : null}
+                    </select>
+
                     {ifscError ? (
                       <span style={{ color: "red" }}>{ifscError}</span>
                     ) : null}
@@ -304,14 +326,11 @@ const Bankdetailspayme = (props) => {
                         className="form-control ms-form-input"
                         placeholder="Delhi"
                         value={branchName}
-                        onChange={(event) => {
-                          seterrorbranchName("");
-                          setbranchName(event.target.value);
-                        }}
+
+                        // onChange={(e)=>{
+                        //   setbranchName(e.target.value)
+                        // }}
                       />
-                      {errorbranchName ? (
-                        <span style={{ color: "red" }}>{errorbranchName}</span>
-                      ) : null}
                     </div>
                     <div className="form-group ms-input-group col-6">
                       <label className="form-label">Bank Name</label>
@@ -320,14 +339,11 @@ const Bankdetailspayme = (props) => {
                         className="form-control ms-form-input"
                         placeholder="Kotak Mahindra Bank"
                         value={bankName}
-                        onChange={(event) => {
-                          seterrorbankName("");
-                          setbankName(event.target.value);
-                        }}
+
+                        //  onChange={(e)=>{
+                        //   setbankName(e.target.value)
+                        // }}
                       />
-                      {errorbankName ? (
-                        <span style={{ color: "red" }}>{errorbankName}</span>
-                      ) : null}
                     </div>
                   </div>
                 </div>
@@ -377,7 +393,7 @@ const Bankdetailspayme = (props) => {
                   type="submit"
                   style={{ color: "white", width: "500px" }}
                   className="submit-btn text-center"
-                  value="Proceed with Bank Details"
+                  value="Save and  Continue"
                 />
               </div>
             </form>

@@ -23,11 +23,15 @@ import ChangeMpin from "./pages/ApplyNowButton/ChangeMpin";
 import Pandingapprovalform from "./pages/ApplyNowButton/Pandigapprovealform";
 import Creatempn from "./pages/ApplyNowButton/Creatempn";
 import KycOption from "./pages/ApplyNowButton/KycOption";
+import Header from "./pages/Header";
+import Footer from "./pages/Footer";
 
 function Routes() {
     return (
       <>
         <Switch>
+        <Route exact path="/header" component={Header}/>
+        <Route exact path="/footer" component={Footer}/>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/apply-loan" component={Getquikloneapply} />
           <Route exact path="/pay-rent" component={Getquikloneapply} />

@@ -4,9 +4,10 @@ import { connect } from 'react-redux'
 import { hitLogin } from '../../store/modules/auth/actions'
 import { hitAllUserData, hitAppUseCase } from '../../store/modules/userDetails/actions';
 import Confirmotpmobile from "./Confirmotpmobile";
-import Header from "../../component/Header";
 import { api } from '../../services/api';
 import Loader from '../../component/Loader'
+import Header from "../Header";
+import Footer from "../Footer";
 
 function LoginWithMobMpin(props) {
   let [loader, setloader] = useState(false);
@@ -25,7 +26,26 @@ console.log(props)
           if (props.user.useCase === 'apply-loan') {
             if(props.user.userData.userdocumentsmodel.kyc_verified === 'VERIFIED')
             {
+              if(props.user.userData.userbankdetail)
+              {
+                if(props.user.userData.userdocumentsmodel.salary_slip_verified || props.user.userData.other_documents)
+                {
+                  props.history.push({pathname:'/pending-approval'})
+                }
+                else
+                {
+                  props.history.push({pathname:'/professional-details-payme'})
+                }
+              }
+              else{
+
+
               props.history.push({pathname:'/bank-details-payme'})
+              }
+            }
+            else if(props.user.userData.userdocumentsmodel.kyc_verified)
+            {
+              props.history.push({pathname:'/pending-approval'})
             }
             else{
               props.history.push({pathname:'/kycoption'})
@@ -84,9 +104,10 @@ const sendOtp = () => {
   return (
     <>
       {/* {!forgotPassword ? <Header /> : null } */}
+      <Header/>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       forgotPassword ? <Confirmotpmobile {...props} phone_number={Number(props.location.state.phoneNumber)} forget_password={true} resendOtp={sendOtp} /> :
-      <div className="form-container formcontainermob  pt-4">
+      <div className="form-container formcontainermob  pt-4" >
         <div>
         <form onSubmit={handleSubmit}>
             <div className="Home-contact-form mt-4">
@@ -128,6 +149,10 @@ const sendOtp = () => {
           </form>
         </div>
       </div>}
+      <div style={{marginTop:"70px"}}>
+
+<Footer/>
+</div>
     </>
   );
 }

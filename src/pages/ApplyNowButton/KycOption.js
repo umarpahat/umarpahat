@@ -8,6 +8,9 @@ import {
 import { bindActionCreators } from "redux";
 import { getEkyc } from "../../store/modules/userDetails/api";
 import axios from "axios";
+import { API_ENDPOINT } from "../../constant";
+import Header from "../Header";
+import Footer from "../Footer";
 
 const KycOption = (props) => {
   console.log("pramodsprops", props);
@@ -19,7 +22,7 @@ const KycOption = (props) => {
   console.log("after ekyc", ekyc);
 
   useEffect(() => {
-    let url = `https://api.testing.paymeindia.in/api/webview_url/payme_ekyc/`;
+    let url = `${API_ENDPOINT}api/webview_url/payme_ekyc/`;
     let config = {
       headers: {
         Authorization: "Token " + props.token,
@@ -37,7 +40,7 @@ const KycOption = (props) => {
       });
   }, []);
 
-setInterval(function(){
+var time = setInterval(function(){
   ekycCall();
 },3000);
 
@@ -45,7 +48,7 @@ setInterval(function(){
 
   const ekycCall = ()=> {
 
-     let url2 = `https://api.testing.paymeindia.in/api/get_document_status/`;
+     let url2 = `${API_ENDPOINT}api/get_document_status/`;
      let config = {
       headers: {
         Authorization: "Token " + props.token,
@@ -56,27 +59,36 @@ setInterval(function(){
       .then((response) => {
        setAdhaar(response.data.data[0].adhar_card_verified)
        setEkyc(response.data.data[0].kyc_verified);
-        console.log("response ekyc", response.data.data[0]);
       })
       .catch((err) => {
         console.log(err);
       });
 
   }
+
+  if(setEkyc==="VERIFIED")
+  {
+    clearTimeout(time);
+  }
   
   //  setEkyc(props.ekycData.userdocumentsmodel?.address_proof_verified);
   //  setAdhaar(props.ekycData.userdocumentsmodel?.kyc_verified)
 
 
-  console.log("statys kkyc", ekyc);
-  console.log("pramod3", props.user.userbankdetail, props.userCase);
+  
 
   const handleBankDetails = () => {
+
+
+
     if (props.userCase === "apply-loan") {
-      if (!props.user.userbankdetail) {
+
+      if (!props.user.userbankdetail){
+        clearTimeout();
         props.history.push({
           pathname: "/bank-details-payme",
         });
+       
       } else if (
         props.user.userbankdetail.verified === "VERIFIED" ||
         props.user.userbankdetail.verified === "PENDING_VERIFICATION"
@@ -86,10 +98,13 @@ setInterval(function(){
           (props.user.userdocumentsmodel.salary_slip_verified === "VERIFIED" ||
             props.user.userdocumentsmodel.salary_slip_verified ===
               "PENDING_VERIFICATION")
-        ) {
+        ) {clearTimeout();
           props.history.push({ pathname: "/pending-approval" });
+          
         } else {
+          clearTimeout();
           props.history.push({ pathname: "/professional-details-payme" });
+         
         }
       }
     } else if (props.useCase === "pay-rent") {
@@ -112,8 +127,9 @@ setInterval(function(){
   };
   return (
     <>
+    <Header/>
       {ekyc === "VERIFIED" ? (
-        <Container>
+        <Container style={{backgroundColor:"#f2f2f2"}}>
           <div className="pt-5 ">
             <div className="contenertQuicklone">
               <div className="slider-right-block">
@@ -207,6 +223,10 @@ setInterval(function(){
           </div>
         </Container>
       )}
+      <div style={{marginTop:"70px"}}>
+
+      <Footer/>
+      </div>
     </>
   );
 };
