@@ -43,6 +43,10 @@ console.log(props)
               props.history.push({pathname:'/bank-details-payme'})
               }
             }
+            else if(props.user.userData.userdocumentsmodel.kyc_verified)
+            {
+              props.history.push({pathname:'/pending-approval'})
+            }
             else{
               props.history.push({pathname:'/kycoption'})
             }

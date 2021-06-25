@@ -8,7 +8,7 @@ const Congretmessage = (props) => {
   return (
     <>
       <Header />
-      <div style={{backgroundColor:"#f2f2f2"}}>
+      <div>
       <Container >
         <div className="form-container formcontainermob  pt-4">
           <form>
@@ -35,7 +35,7 @@ const Congretmessage = (props) => {
         </div>
       </Container>
       </div>
-      <div style={{marginTop:"180px"}}>
+      <div style={{marginTop:"200px"}}>
 
       <Footer/>
       </div>

@@ -20,6 +20,7 @@ import Footer from "../Footer";
 const Pandingapprovalform = (props) => {
   const [userbankdetail, setuserbankdetail] = useState({});
   const [userdocumentsmodel, setuserdocumentsmodel] = useState({});
+  
 
   useEffect(() => {
     if (!props.token) {
@@ -227,7 +228,8 @@ const Pandingapprovalform = (props) => {
                         </p>
                       </div>
                     ) : userdocumentsmodel.bank_statement_verified ===
-                      "VERIFIED" ? (
+                      "VERIFIED" || props.user.userData.other_documents[0].status
+                      ==="VERIFIED" ? (
                       <div>
                         <img src={Righticons1} />
                         <span className="reloadicon" id="PAN">
@@ -395,7 +397,7 @@ const Pandingapprovalform = (props) => {
                           Pending verification
                         </span>
                       ) : props.user.userData.professionaldetails.verified ===
-                          "NOT_SUBMITTED" ||
+                          "NOT_SUBMITTED" || 
                         props.user.userData.professionaldetails.verified ===
                           "NOT_VALID" ? (
                         <div className="reloadicon">
@@ -415,7 +417,7 @@ const Pandingapprovalform = (props) => {
                           </p>
                         </div>
                       ) : props.user.userData.professionaldetails.verified ===
-                        "VERIFIED" ? (
+                        "VERIFIED" || props.user.userData.other_documents[0].status === "VERIFIED" ? (
                         <div>
                           <img src={Righticons1} />
                           <span className="reloadicon" id="PAN">
@@ -433,23 +435,21 @@ const Pandingapprovalform = (props) => {
           </form>
         </div>
       </Container>
+      <Footer/>
 
       {userdocumentsmodel.adhar_card_verified === "VERIFIED" &&
       userdocumentsmodel.pan_card_verified === "VERIFIED" &&
       userdocumentsmodel.salary_slip_verified === "VERIFIED" &&
       userdocumentsmodel.bank_statement_verified === "VERIFIED" ? (
-        <Congretmessage />
+        props.history.push({pathname:"/congratulations"})
       ) : null}
 
       {userdocumentsmodel.adhar_card_verified === "VERIFIED" &&
       userdocumentsmodel.pan_card_verified === "VERIFIED" &&
       props.user.userData?.other_documents[0]?.status === "VERIFIED" ? (
-        <Congretmessage />
+        props.history.push({pathname:"/congratulations"})
       ) : null}
-      <div style={{marginTop:"90px"}}>
-
-<Footer/>
-</div>
+   
     </>
   );
 };
