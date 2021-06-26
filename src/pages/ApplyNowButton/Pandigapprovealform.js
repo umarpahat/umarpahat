@@ -461,9 +461,3 @@ const mapStateToProps = (state) => {
     user: state.user,
   };
 };
-
-const dispatchToProps = (dispatch) => {
-  return bindActionCreators({}, dispatch);
-};
-
-export default connect(mapStateToProps, dispatchToProps)(Pandingapprovalform);
