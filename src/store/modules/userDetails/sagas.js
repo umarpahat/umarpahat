@@ -3,7 +3,7 @@ import { storeAllUserData, storeReferralCode, storeAppUseCase, storePayrentInfo
 } from "./actions";
 import { HITUSER, HITREFERALCODE, HITAPPUSECASE, HITPAYRENTINFO, HITPAYRENTINFOAPI,EKYC
 } from '../types'
-import { getUserData, getUserGeneralDetails,getEkyc
+import { getUserData, getUserGeneralDetails
 } from "./api";
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
@@ -21,19 +21,19 @@ function* getData(action) {
     }
 }
 
-function* getEkycData(action) {
-    try {
-        console.log("?redudxp")
-        const data = yield call(getEkyc, action.payload);
-        console.log("redux?????")
-        console.log(data)
-        //TODO
-        //Put error check on data and then yield
-        yield put(hitEkyc(data.data.data));
-    } catch (e) {
-        console.log(e);
-    }
-}
+// function* getEkycData(action) {
+//     try {
+//         console.log("?redudxp")
+//         const data = yield call(getEkyc, action.payload);
+//         console.log("redux?????")
+//         console.log(data)
+//         //TODO
+//         //Put error check on data and then yield
+//         yield put(hitEkyc(data.data.data));
+//     } catch (e) {
+//         console.log(e);
+//     }
+// }
 
 
 function* getReferal(action) {
@@ -68,9 +68,9 @@ function* getUseCase(action) {
 export function* watchUserData() {
     yield takeEvery(HITUSER, getData);
 }
-export function* watchEkycData(){
-    yield takeEvery(EKYC,getEkycData);
-}
+// export function* watchEkycData(){
+//     yield takeEvery(EKYC,getEkycData);
+// }
 
 export function* watchReferalCode() {
     yield takeEvery(HITREFERALCODE, getReferal);
