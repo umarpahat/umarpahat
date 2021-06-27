@@ -76,11 +76,11 @@ const Faq = (props) => {
                         <h4>FAQ</h4>
                         <span className="reg-second-subheading">Here are some frequently asked questions</span>
                     </div>
-                    <div className="row  p-b-30">
-                        <div className="col col-md-6 text-center main-img"><img width='300' alt="About us"
+                    <div className="row p-b-30">
+                        <div className="col col-md-6 col-xd-12 text-center main-img"><img width='300' alt="About us"
                                                                                 src="https://www.paymeindia.in/assets/images/faq/1.png"/>
                         </div>
-                        <div className="col col-md-6">
+                        <div className="col col-md-6 col-xd-12">
                             <h6>Reach us out for any queries/concerns</h6>
                             <Accordion defaultActiveKey="0">
                                 <Card>

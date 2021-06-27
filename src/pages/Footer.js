@@ -153,8 +153,9 @@ const Footer =(props)=> {
                
 
             </div>
-            <div className="ol col-md-4 text-center"><img className="middle_ssl_image"  width="100" src={sslLogo}  alt="PayMeIndia"/></div>
-            <div className="ol col-md-4 ">
+            <div className="ol col-md-4 text-center d-none d-sm-block"><img className="middle_ssl_image"  width="100" src={sslLogo}  alt="PayMeIndia"/></div>
+            <div className="ol col-md-4 d-block d-sm-none"><img className="middle_ssl_image"  width="100" src={sslLogo}  alt="PayMeIndia"/></div>
+            <div className="ol col-md-4 col-xd-12">
                 <p className="p-t-20">Copyright@2021 Huey Tech Pvt. Ltd.</p>
             </div>
         </div>
