@@ -1191,5 +1191,9 @@ a {
         margin-right: 50px;
     }
     #menuToggle {
-        top: 15px;}
+        top: 20px;
+    }
+    #menuToggle span {
+        height: 1px;
+    }
 }
