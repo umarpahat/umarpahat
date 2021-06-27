@@ -797,11 +797,6 @@ hr.style {
   background: #999;
 }
 
-.card {
-  border-radius: 6px;
-  box-shadow: 0 1px 10px #e8e8e8, -5px -5px 10px #f6f6f6;
-}
-
 .product-link {
   cursor: pointer;
 }
@@ -1024,15 +1019,10 @@ footer ul li {
   right:80%;
 }
 .card {
-  box-shadow: 0 4px 8px 0 #33658a           ;
-  border: 1px solid #ddd;
   border-radius: 5px!important;
   margin-bottom: 20px;
 }
-.card {
-  margin-bottom: 22%;
-  width: 200px;
-}
+
 .over-box {
   position: relative;
   width: 100%;
@@ -1080,4 +1070,19 @@ footer ul li {
 }
 a {
   color: #33658a;
+}
+.contact-payme {
+  width: 30px;
+  margin-top: 7px;
+}
+.card-header::after {
+  content: '';
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  float: right;
+  margin-top: 5px;
 }

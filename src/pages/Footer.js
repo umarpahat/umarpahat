@@ -53,7 +53,7 @@ const Footer =(props)=> {
                     <li><a href="/about">About us</a></li>
                     <li><a href="#how-we-work">How we work</a></li>
                     <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact-us">Contact us</a></li>
+                    <li><a href="/contact">Contact us</a></li>
                     <li><a href="#join-us">Join us</a></li>
                 </ul>
 
@@ -72,7 +72,7 @@ const Footer =(props)=> {
                     <li><a href="#terms-conditions">Terms &amp; Conditions</a></li>
                     <li><a href="#privacy-policy">Privacy Policy</a></li>
                     <li><a href="#refund-policy">Refund Policy</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="/faq">FAQ</a></li>
                     <li><a href="#disclaimer">Disclaimer</a></li>
                     <li><a href="#sitemap">Sitemap</a></li>
                 </ul>

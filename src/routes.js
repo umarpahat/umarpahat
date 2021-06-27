@@ -8,6 +8,8 @@ import "./App.css";
 import Error from "./pages/Error";
 import HomePage from "./pages/HomePage"
 import about from "./pages/about"
+import contact from "./pages/contact"
+import faq from "./pages/faq"
 import OtherDetalisForm from "./pages/Payrent/OtherDetalisForm";
 import DetailsSummary from "./pages/Payrent/DetailsSummary";
 import TransactionHistory from "./pages/Payrent/TransactionHistory";
@@ -44,7 +46,9 @@ function Routes() {
         />
         <Route exact path="/referral-code" component={Referralcode} />
         <Route exact path="/create-mpin" component={Creatempn} />
-       <Route exact path="/about" component={about} />
+        <Route exact path="/about" component={about} />
+        <Route exact path="/contact" component={contact} />
+        <Route exact path="/faq" component={faq} />
         <Route exact path="/self-employed" component={SelfEmployed} />
         <Route exact path="/congratulations" component={Congretmessage} />
         <Route exact path="/login-with-mob-mpin" component={LoginWithMobMpin} />
