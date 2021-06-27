@@ -7,28 +7,11 @@ import "./ApplyNowButton/Applybtnallcomponent.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import '../../src/home.css';
-import saltlogo from "../images/salt-logo.png";
-import appIcon from "../images/app-icon.png";
-import loginImg from "../images/login.png";
-import assementImg from "../images/assement.png";
-import aprovedImg from "../images/aproved.png";
-import serviceImg from "../images/services.png";
-import advisoryImg from "../images/advisory.png";
-import shortImg from "../images/short.png";
-import corporateImg from "../images/corporate.png";
-import userIcon from "../images/user-icon.png";
-import register from "../images/register.png";
-import uploadImg from "../images/upload-doc.png";
-import eligibilityImg from "../images/eligibility.png";
-import promptImg from "../images/prompt.png";
-import instantFund from "../images/instant-fund.png";
-import easyRepay from "../images/easy-repay.png";
-import CibilImg from "../images/cibil.png";
-// import corporateImg from "../images/corporate-loan.svg";
-//  import InstantCash from "../images/instant-cash.svg"
 import {Link} from "react-router-dom";
 import $ from "jquery";
 import logo from "../images/logo.png";
+import vision from "../images/vision.png";
+import team from "../images/team.png";
 
 
 const About = (props) => {
@@ -46,7 +29,7 @@ const About = (props) => {
                     <div className="container">
                         <div className="row">
                             <div className="col-auto me-auto">
-                                <a href="/"> <img className="home_logo" src={logo} alt="Pay Me India"/> </a>
+                                <a href="/"> <img className="home_logo img-fluid" src={logo} alt="Pay Me India"/> </a>
                             </div>
                             <div className="col-auto p-t-10">
                                 <Link onClick={() => {
@@ -96,10 +79,10 @@ const About = (props) => {
                         <span className="reg-second-subheading">PayMeIndia is an innovative FinTech organization</span>
                     </div>
                     <div className="row align-items-center p-b-30">
-                        <div className="col col-md-6 text-center main-img"><img width='200' alt="About us"
+                        <div className="col-lg-6 col-md-6 col-sm-8 col-xs-8 text-center main-img"><img className="img-fluid" width='200' alt="About us"
                                                                                 src="https://www.paymeindia.in/assets/images/About-us/6.webp"/>
                         </div>
-                        <div className="col col-md-6">
+                        <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 textAlign">
                             <h3 className="heading3">About Us</h3>
                             <p> PayMeIndia is an innovative FinTech organization that offers advance salary
                                 loans, instant payday loans, short term cash loans to the salaried corporate
@@ -114,24 +97,24 @@ const About = (props) => {
             <div className="services">
                 <div className="container p-b-30 p-t-40">
                     <div className="row align-items-center pb-3">
-                        <div className="col col-md-6">
+                        <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 textAlign">
                             <h3 className="heading3">Our Mission and Vision</h3>
                             <p> Payme India prefers to be prominent financial solution provider across the segment by
                                 offering ground-breaking products. We visualize growth in leaps while being present in
                                 every aspect of your life with our best in class services.</p>
 
                         </div>
-                        <div className="col col-md-6 text-center main-img"><img alt="CIBIL"
-                                                                                src="https://www.paymeindia.in/assets/images/About-us/7.webp"/>
+                        <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 imgLarge textAlign"><img className="img-fluid" alt="CIBIL"
+                                                                                src={vision}/>
                         </div>
 
                     </div>
                 </div>
             </div>
-            <div className="services p-t-40 text-center">
+            <div className="services p-t-40 ">
                 <div className="container">
                     <div className="row justify-content-md-center">
-                        <div className="col-md-8">
+                        <div className="col-md-8 text-center">
                             <h3 className="heading3">Our Promise</h3>
                             <p>
                                 At PayMe we are passionate to win trust of our customers and make our organization
@@ -142,47 +125,43 @@ const About = (props) => {
                         </div>
                     </div>
                     <div className="row p-t-40 p-b-30">
-                        <div className="col-lg-6 col-md-6 col-sm-6">
-                            <div className="box">
-                                <div className="row">
-                                    <div className="col-lg-2 col-md-2 col-sm-2 col-xs-4 text-center">
-                                        <img src="https://www.paymeindia.in/assets/images/About-us/12.png"
-                                             alt="paymeindia"/>
-                                    </div>
-                                    <div className="col-lg-10 col-md-10 col-sm-10 col-xs-8">
+                        <div className="col-lg-4 col-md-4 col-sm-4">
+                            <div className="box justify-content-md-center">
+
+                                        <div className="icon-left">
+                                            <img className="img-fluid" src="https://www.paymeindia.in/assets/images/About-us/12.png"
+                                                 alt="paymeindia"/>
+                                        </div>
+                                <div className="icon-left-content">
                                         <h3>Will never say no</h3>
                                         <p> Fast hassle free instant loan disbursal</p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6 col-sm-6">
-                            <div className="box">
-                                <div className="row">
-                                    <div className="col-lg-2 col-md-2 col-sm-2 col-xs-4 text-center">
-                                        <img src="https://www.paymeindia.in/assets/images/About-us/14.png"
-                                             alt="paymeindia"/>
                                     </div>
-                                    <div className="col-lg-10 col-md-10 col-sm-10 col-xs-8">
+
+                        </div>
+                        <div className="col-lg-4 col-md-4 col-sm-4">
+                            <div className="box justify-content-md-center">
+
+                                        <div className="icon-left">
+                                            <img className="img-fluid" src="https://www.paymeindia.in/assets/images/About-us/14.png"
+                                                 alt="paymeindia"/>
+                                        </div>
                                         <h3>Will always trust </h3>
                                         <p>Reliable and secured lending process</p>
                                     </div>
-                                </div>
-                            </div>
+
                         </div>
-                        <div className="col-lg-12 col-md-12 col-sm-12 text-center">
-                            <div className="box">
-                                <div className="row">
-                                    <div className="col-lg-2 col-md-2 col-sm-2 col-xs-4 text-center">
-                                        <img src="https://www.paymeindia.in/assets/images/About-us/13.png"
-                                             alt="paymeindia"/>
-                                    </div>
-                                    <div className="col-lg-10 col-md-10 col-sm-10 col-xs-8">
+                        <div className="col-lg-4 col-md-4 col-sm-4">
+                            <div className="box justify-content-md-center">
+
+                                        <div className="icon-left">
+                                            <img className="img-fluid" src="https://www.paymeindia.in/assets/images/About-us/13.png"
+                                                 alt="paymeindia"/>
+                                        </div>
                                         <h3>Will stand by you</h3>
                                         <p>We are here to assist you, Always!</p>
                                     </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -198,49 +177,10 @@ const About = (props) => {
 
                         </div>
                     </div>
-                    <div className="row p-t-40 text-center">
-                        <div className="col col-md-3">
-                            <div className="card">
-                                <img src="https://www.paymeindia.in/assets/images/te/MAHESH-SHUKLA1.png"
-                                     alt="paymeteam"/>
-                                <div className="over-box">
-                                    <h2>Mahesh Shukla</h2>
-                                    <p className="title">Founder</p>
-                                </div>
-                            </div>
+                    <div className="row p-t-40 text-center p-b-30">
+                        <div className="col-lg-12 text-center">
+                            <img class="img-fluid" src={team} alt="Team"/>
                         </div>
-                        <div className="col col-md-3">
-                            <div className="card">
-                                <img src="https://www.paymeindia.in/assets/images/te/VISHAL-SINGH1.png"
-                                     alt="payme team"/>
-                                <div className="over-box">
-                                    <h2>Vishal Singh</h2>
-                                    <p className="title">Operations Team</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col col-md-3">
-                            <div className="card">
-                                <img src="https://www.paymeindia.in/assets/images/te/Vishal-Gupta1.png"
-                                     alt="payme team"/>
-                                <div className="over-box">
-                                    <h2>Vishal Gupta</h2>
-                                    <p className="title">Technical Lead</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col col-md-3">
-                            <div className="card">
-                                <img src="https://www.paymeindia.in/assets/images/te/Sumit-nagar1.png"
-                                     alt="payme team"/>
-                                <div className="over-box">
-                                    <h2>Sumit Nagar</h2>
-                                    <p className="title">Operations Team</p>
-                                </div>
-                            </div>
-
-                        </div>
-
                     </div>
                 </div>
             </div><div className="services">

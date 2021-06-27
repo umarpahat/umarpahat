@@ -96,66 +96,54 @@ const Contact = (props) => {
                         <span className="reg-second-subheading">We are just a whisper away</span>
                     </div>
                     <div className="row align-items-center p-b-30">
-                        <div className="col col-md-6 text-center main-img"><img width='300' alt="About us"
-                                                                                src="https://www.paymeindia.in/assets/images/Contact-us/1.webp"/>
+                        <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center main-img"><img width='300'
+                                                                                                         alt="About us"
+                                                                                                         src="https://www.paymeindia.in/assets/images/Contact-us/1.webp"/>
                         </div>
-                        <div className="col col-md-6">
-                            <h6 >Reach us out for any queries/concerns</h6>
-                            <div className="col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <h6>Reach us out for any queries/concerns</h6>
                                 <div className="row p-t-20">
-                                    <div className="col col-md-2 ">
-                                        <img src="https://www.paymeindia.in/assets/images/Contact-us/2.png"
-                                             alt="paymeindia" className="contact-payme"/>
-                                    </div>
-                                    <div className="col col-md-10 ">
-                                        <p>5th Floor, Devasthali Corporate Tower, A- 42/5, Vishwakarma Rd, Block A,
+                                    <div className="col-md-10 col-sm-8 col-xd-8 ">
+                                        <div className="icon-left">
+                                            <img src="https://www.paymeindia.in/assets/images/Contact-us/2.png"
+                                                 alt="paymeindia" className="contact-payme"/>
+                                        </div>
+                                        <p className="icon-left-content">5th Floor, Devasthali Corporate Tower, A- 42/5, Vishwakarma Rd, Block A,
                                             Industrial Area, Sector 62, Noida, Uttar Pradesh 201309</p>
                                     </div>
                                 </div>
                                 <div className="row p-t-20">
-                                    <div className="col col-md-2 ">
-                                        <img src="https://www.paymeindia.in/assets/images/Contact-us/3.png"
-                                             alt="paymeindia" className="contact-payme"/>
-                                    </div>
-                                    <div className="col col-md-10 ">
-                                        <p>Tel 0120-690 5690</p>
-                                    </div>
-                                </div>
-                                <div className="row p-t-20">
-                                    <div className="col col-md-2 ">
-                                        <img src="https://www.paymeindia.in/assets/images/Contact-us/4.png"
-                                             alt="paymeindia" className="contact-payme"/>
-                                    </div>
-                                    <div className="col col-md-10 ">
-                                        <p>Fax 120-428-0000</p>
+                                    <div className="col-md-10 col-sm-8 col-xd-8 ">
+                                        <div className="icon-left">
+                                            <img src="https://www.paymeindia.in/assets/images/Contact-us/3.png"
+                                                 alt="paymeindia" className="contact-payme"/>
+                                        </div>
+                                        <p className="icon-left-content">Tel 0120-690 5690</p>
                                     </div>
                                 </div>
                                 <div className="row p-t-20">
-                                    <div className="col col-md-2 ">
-                                        <img
-                                            src="https://www.paymeindia.in/assets/images/Contact-us/passage-of-time.png"
-                                            alt="paymeindia" className="contact-payme"/>
-                                    </div>
-                                    <div className="col col-md-10 ">
-                                        <p>Working Hrs.: 10.00AM - 7.00PM (Monday – Friday)</p>
+                                    <div className="col-md-10 col-sm-8 col-xd-8 ">
+                                        <div className="icon-left">
+                                            <img src="https://www.paymeindia.in/assets/images/Contact-us/4.png"
+                                                 alt="paymeindia" className="contact-payme"/>
+                                        </div>
+                                        <p className="icon-left-content">Fax 120-428-0000</p>
                                     </div>
                                 </div>
-
-                            </div>
+                                <div className="row p-t-20">
+                                    <div className="col-md-10 col-sm-10">
+                                        <div className="icon-left">
+                                            <img src="https://www.paymeindia.in/assets/images/Contact-us/passage-of-time.png"
+                                                alt="paymeindia" className="contact-payme"/>
+                                        </div>
+                                        <p className="icon-left-content">Working Hrs.: 10.00AM - 7.00PM (Monday – Friday)</p>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="services">
-                <div className="container p-b-30 p-t-40">
-                    <div className="row align-items-center pb-3">
-                        <div className="col col-md-12 text-center main-img"><img
-                            src="https://www.paymeindia.in/assets/images/Contact-us/escalation.webp"/>
-                        </div>
 
-                    </div>
-                </div>
-            </div>
             <div className="services">
                 <div className="container">
                     <div className="row justify-content-md-center">
