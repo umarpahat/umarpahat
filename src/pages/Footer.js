@@ -50,7 +50,7 @@ const Footer =(props)=> {
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="#media">Media</a></li>
-                    <li><a href="#about-us">About us</a></li>
+                    <li><a href="/about">About us</a></li>
                     <li><a href="#how-we-work">How we work</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact-us">Contact us</a></li>
