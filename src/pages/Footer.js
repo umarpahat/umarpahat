@@ -82,7 +82,7 @@ const Footer =(props)=> {
         <div className="row p-t-20">
             <div className="ol col-md-4 ">
                  {/* Modal */}
-                <div className="modal fade" id="slidingModal" tabindex="-1" role="dialog"
+                <div className="modal fade" id="slidingModal" tabIndex="-1" role="dialog"
                      aria-labelledby="slidingModal" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
@@ -96,11 +96,11 @@ const Footer =(props)=> {
                                 <div className="modal-body">
 
                                     <div className="form-group-item">
-                                        <label for="mobile" className="col-form-label">Mobile No:</label>
+                                        <label htmlFor="mobile" className="col-form-label">Mobile No:</label>
                                         <input type="text" className="form-control" id="mobile"/>
                                     </div>
                                     <div className="form-group-item">
-                                        <label for="pan" className="col-form-label">Pan No:</label>
+                                        <label htmlFor="pan" className="col-form-label">Pan No:</label>
                                         <input type="text" className="form-control" id="pan"/>
                                     </div>
 
@@ -114,7 +114,7 @@ const Footer =(props)=> {
                     </div>
                 </div>
 
-                <div className="modal fade bd-example-modal-lg" id="referModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div className="modal fade bd-example-modal-lg" id="referModal" tabIndex="-1" role="dialog" aria-hidden="true">
                     <div className="modal-dialog modal-lg" role="document">
                         <div className="modal-content">
                             <button type="button" className="close btn-position" data-dismiss="modal" aria-label="Close">

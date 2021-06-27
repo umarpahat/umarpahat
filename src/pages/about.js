@@ -41,14 +41,14 @@ const About = (props) => {
 
             {/* <Header />  */}
 
-            <div class="sticky-top">
+            <div className="sticky-top">
                 <header className="header">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-auto me-auto">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-auto me-auto">
                                 <a href="/"> <img className="home_logo" src={logo} alt="Pay Me India"/> </a>
                             </div>
-                            <div class="col-auto p-t-10">
+                            <div className="col-auto p-t-10">
                                 <Link onClick={() => {
                                     props.hitAppUseCase({useCase: 'apply-loan'})
                                     props.history.push({pathname: '/apply-loan'})
@@ -135,9 +135,7 @@ const About = (props) => {
                             <h3 className="heading3">Our Promise</h3>
                             <p>
                                 At PayMe we are passionate to win trust of our customers and make our organization
-                                reliable for
-                                any
-                                of their financial need. We have designed this new concept of lending to help them
+                                reliable for any of their financial need. We have designed this new concept of lending to help them
                                 manage their
                                 financial challenges.
                             </p>
