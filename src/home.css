@@ -1143,23 +1143,53 @@ a {
         font-size: 20px;
         line-height: 24px;
     }
+
     .reg-second-heading h4 {
         font-size: 21px;
         line-height: 24px;
     }
+
     .box h3 {
-        font-size:14px;
+        font-size: 14px;
         font-weight: 600;
         line-height: 20px;
     }
-    .reg-second-heading{
+
+    .reg-second-heading {
         line-height: 24px;
     }
-    .textAlign{
+
+    .textAlign {
         text-align: center;
         margin: auto;
     }
-    .imgLarge{
+
+    .imgLarge {
         max-width: 60%;
     }
+
+    .home_logo {
+        max-width: 60px;
+    }
+
+    a.button {
+        font-size: 11px;
+        height: 32px;
+        line-height: 32px;
+        min-width: 70px;
+        padding: 0 10px;
+        margin-right: 10px;
+
+    }
+
+    header {
+        height: 50px;
+    }
+
+    header .p-t-10 {
+        padding-top: 0;
+        margin-right: 50px;
+    }
+    #menuToggle {
+        top: 15px;}
 }
