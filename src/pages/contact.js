@@ -7,7 +7,7 @@ import "./ApplyNowButton/Applybtnallcomponent.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import '../../src/home.css';
-import saltlogo from "../images/salt-logo.png";
+import contact from "../images/contact.png";
 import appIcon from "../images/app-icon.png";
 import loginImg from "../images/login.png";
 import assementImg from "../images/assement.png";
@@ -102,7 +102,7 @@ const Contact = (props) => {
                     <div className="row align-items-center p-b-30">
                         <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center main-img"><img width='300'
                                                                                                          alt="About us"
-                                                                                                         src="https://www.paymeindia.in/assets/images/Contact-us/1.webp"/>
+                                                                                                         src={contact}/>
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <h6>Reach us out for any queries/concerns</h6>

@@ -15,6 +15,7 @@ import team from "../images/team.png";
 import thumbnail from "../images/thumbup.png";
 import heart from "../images/heart.png";
 import people from "../images/people.png";
+import about from "../images/about-us.png";
 
 
 const About = (props) => {
@@ -83,7 +84,7 @@ const About = (props) => {
                     </div>
                     <div className="row align-items-center p-b-30">
                         <div className="col-lg-6 col-md-6 col-sm-8 col-xs-8 text-center main-img"><img className="img-fluid" width='200' alt="About us"
-                                                                                src="https://www.paymeindia.in/assets/images/About-us/6.webp"/>
+                                                                                src={about}/>
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 textAlign">
                             <h3 className="heading3">About Us</h3>

@@ -20,21 +20,21 @@ const Header =(props)=> {
         <div class="container">
             <div class="row">
                 <div class="col-auto me-auto">
-                    <a href="/"> <img className="home_logo" src={logo} alt="Pay Me India"/> </a>
+                    <Link to="/"> <img className="home_logo" src={logo} alt="Pay Me India"/> </Link>
                 </div>
                 <div class="col-auto p-t-10">
-                <Link onClick={()=>{
+                <Link className="button" onClick={()=>{
                       props.hitAppUseCase({ useCase: 'apply-loan' })
                       props.history.push({pathname: '/apply-loan'})
                       }}>
                       
-                <a href="#" className="button">Apply Loan</a>
+               Apply Loan
                 </Link>
-                <Link onClick={()=>{
+                <Link className="button" onClick={()=>{
                       props.hitAppUseCase({ useCase: 'pay-rent' })
                       props.history.push({pathname: '/pay-rent'})
                       }}>
-                 <a href="#" className="button">Pay Rent</a>
+                 Pay Rent
                  </Link>
                  </div>
               
@@ -45,18 +45,18 @@ const Header =(props)=> {
                 <input type="checkbox"/>
                 <span></span> <span></span> <span></span>
                 <ul id="menu">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#media">Media</a></li>
-                    <li><a href="#about-us">About us</a></li>
-                    <li><a href="#corporate">Corporate</a></li>
-                    <li><a href="#how-we-work">How we work</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact-us">Contact us</a></li>
-                    <li><a href="#join-us">Join us</a></li>
-                    <li><a href="#nbfc">Our NBFC Partners</a></li>
-                    <li><a href="#advance-salary-loan">Advance Salary Loan</a></li>
-                    <li><a href="#loans-for-low-salary">Loan For Low Salary</a></li>
-                    <li><a href="#short-term-loans">Short Term Cash Loans</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="#media">Media</Link></li>
+                    <li><Link to="#about-us">About us</Link></li>
+                    <li><Link to="#corporate">Corporate</Link></li>
+                    <li><Link to="#how-we-work">How we work</Link></li>
+                    <li><Link to="#blog">Blog</Link></li>
+                    <li><Link to="#contact-us">Contact us</Link></li>
+                    <li><Link to="#join-us">Join us</Link></li>
+                    <li><Link to="#nbfc">Our NBFC Partners</Link></li>
+                    <li><Link to="#advance-salary-loan">Advance Salary Loan</Link></li>
+                    <li><Link to="#loans-for-low-salary">Loan For Low Salary</Link></li>
+                    <li><Link to="#short-term-loans">Short Term Cash Loans</Link></li>
                 </ul>
             </div>
         </nav>
