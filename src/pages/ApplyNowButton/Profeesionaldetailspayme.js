@@ -210,7 +210,7 @@ const Professionaldetailspayme = (props) => {
   console.log("pramod", data.data);
   return (
     <>
-      <Header />
+      <Header {...props}/>
       <Container className="pb-5">
         {loader ? (
           <div className="loader">

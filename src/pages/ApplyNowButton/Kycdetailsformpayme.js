@@ -222,7 +222,7 @@ const Kycdetailsformpayme = (props) => {
   return (
     <>
 
-      <Header />
+      <Header {...props} />
       {loader ? (
         <div className="loader">
           {" "}

@@ -2,10 +2,11 @@ import React, {useState} from "react";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
-import Header from "../../component/Header";
 import Referral from "../../component/img/Referral.png";
 import Loader from '../../component/Loader'
 import { api } from '../../services/api';
+import Header from "../Header";
+import Footer from "../Footer";
 
 function Referralcode(props) {
 
@@ -51,7 +52,7 @@ function Referralcode(props) {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header {...props}/>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <div className="form-container formcontainermob  pt-4">
         <div>
@@ -105,6 +106,9 @@ function Referralcode(props) {
           <p className="Skipsty" onClick={()=>props.history.push({pathname:'/change-mpin', state: { forgotPassword: false}})}>Skip</p>
         {/* </Link> */}
       </div>
+      <div style={{marginTop:"8%"}}>
+<Footer/>
+</div>
     </>
   );
 }

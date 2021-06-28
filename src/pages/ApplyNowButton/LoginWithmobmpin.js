@@ -16,7 +16,7 @@ function LoginWithMobMpin(props) {
   let [forgotPassword, setforgotPassword] = useState(false);
 console.log(props)
   useEffect(() => {
-    console.log("pramod",props)
+    
     if (props.token) {
       if (forgotPassword) {props.history.push({pathname:'/change-mpin', state: { forgotPassword: forgotPassword}})}
       else {
@@ -28,7 +28,7 @@ console.log(props)
             {
               if(props.user.userData.userbankdetail)
               {
-                if(props.user.userData.userdocumentsmodel.salary_slip_verified || props.user.userData.other_documents)
+                if(props.user.userData.userdocumentsmodel.salary_slip_verified==="VERIFIED" || props.user.userData.userdocumentsmodel.salary_slip_verified==="PENDING_VERIFICATION" || props.user.userData.other_documents[0].doc_type==="ITR")
                 {
                   props.history.push({pathname:'/pending-approval'})
                 }
@@ -43,10 +43,7 @@ console.log(props)
               props.history.push({pathname:'/bank-details-payme'})
               }
             }
-            else if(props.user.userData.userdocumentsmodel.kyc_verified)
-            {
-              props.history.push({pathname:'/pending-approval'})
-            }
+         
             else{
               props.history.push({pathname:'/kycoption'})
             }
@@ -104,7 +101,7 @@ const sendOtp = () => {
   return (
     <>
       {/* {!forgotPassword ? <Header /> : null } */}
-      <Header/>
+      <Header {...props}/>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       forgotPassword ? <Confirmotpmobile {...props} phone_number={Number(props.location.state.phoneNumber)} forget_password={true} resendOtp={sendOtp} /> :
       <div className="form-container formcontainermob  pt-4" >
@@ -149,10 +146,11 @@ const sendOtp = () => {
           </form>
         </div>
       </div>}
-      <div style={{marginTop:"70px"}}>
-
+      
+      <div style={{marginTop:"1.3%"}}>
 <Footer/>
 </div>
+
     </>
   );
 }

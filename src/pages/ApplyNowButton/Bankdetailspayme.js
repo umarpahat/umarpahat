@@ -17,8 +17,11 @@ import axios from "axios";
 import { API_ENDPOINT } from "../../constant";
 import "../../home.css";
 import Header from "../Header";
+import Footer from "../Footer";
 
 const Bankdetailspayme = (props) => {
+  
+  // console.log("props bank", props);
   const [actNumber, setactNumber] = useState("");
   const [ConfrmActNumber, setConfrmActNumber] = useState("");
   const [bankName, setbankName] = useState("");
@@ -35,7 +38,6 @@ const Bankdetailspayme = (props) => {
   const [validAccount, setValidAccount] = useState("");
   const [ifscdetail, setifscdetail] = useState("");
   const [ifscData, setIfscData] = useState([]);
-  const [check, setCheck] = useState(true);
   const [bankname1, setbankname1] = useState("");
   const [branchname1, setbranchname1] = useState("");
   async function getSignedUrl() {
@@ -49,7 +51,7 @@ const Bankdetailspayme = (props) => {
       payload: { s3_path: pathArray, bucket_name: "payme-test-documents" },
     });
     setsignedUrl(signedUrlObj.data.data);
-    console.log(343434, signedUrlObj.data.data);
+    // console.log(343434, signedUrlObj.data.data);
   }
 
   async function updateDocStatus(data) {
@@ -65,18 +67,13 @@ const Bankdetailspayme = (props) => {
   }
 
   async function updateBankDetails() {
-    console.log("hello update",actNumber)
-    console.log("hello update",branchName)
-    console.log("hello update",bankName)
-    console.log("ifsc",ifscdetail);
-    
     const payload = {
       account_number: actNumber,
       bank_address: branchName,
       bank_name: bankName,
       ifsc_code: ifscdetail,
     };
-    console.log("updatedocument",payload)
+    // console.log("updatedocument", payload);
     return await api.post("/api/user_details/bank_details/", payload, {
       headers: { Authorization: "Token " + props.token },
     });
@@ -90,7 +87,6 @@ const Bankdetailspayme = (props) => {
     getSignedUrl();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props]);
-  console.log(props.token);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -136,13 +132,20 @@ const Bankdetailspayme = (props) => {
     Promise.all([...promiseTest, ...updatedocStatus])
       .then((response) => {
         setloader(false);
-        props.hitAllUserData({ token: props.token });
-        props.history.push({ pathname: "/professional-details-payme" });
-          if (props.user.userdocumentsmodel && (props.user.userdocumentsmodel.salary_slip_verified !== 'VERIFIED' ||
-        props.user.userdocumentsmodel.salary_slip_verified !== 'PENDING_VERIFICATION')) {
-          props.history.push({pathname:'/professional-details-payme'})
-        } else{
-          props.history.push({pathname:'/pending-approval'})
+
+      // props.history.push({ pathname: "/professional-details-payme" });
+
+        if (
+          props.user.userData.professionaldetails.verified === "VERIFIED" ||
+          props.user.userData.prolfessionaldetails.verified ===
+            "PENDING_VERIFICATION" ||
+          props.user.userData.other_documents[0].doc_type === "ITR"
+        ) {
+          console.log("pending approval pramod ");
+          props.history.push({ pathname: "/pending-approval" });
+        } else {
+          console.log("else else");
+          props.history.push({ pathname: "/professional-details-payme" });
         }
       })
       .catch((error) => {
@@ -177,6 +180,11 @@ const Bankdetailspayme = (props) => {
     setifscdetail(e.target.value);
     ifscDetail(e.target.value);
   };
+
+  const handleSelect = (e) => {
+    setifscdetail(e.target.value);
+    ifscDetail(e.target.value)
+  };
   const handleBankUpload = (event) => {
     seterrorBnakStatement("");
     setbankStatementObj((bankStatementArr) => [
@@ -186,11 +194,12 @@ const Bankdetailspayme = (props) => {
   };
 
   const ifscDetail = (ifscd) => {
+    // console.log("ifscdetail",ifscd)
     let url = `${API_ENDPOINT}api/bankdetails_list/`;
     let data = {
       ifsc: ifscd,
     };
-    console.log(url);
+
     let config = {
       headers: {
         Authorization: "Token " + props.token,
@@ -200,23 +209,30 @@ const Bankdetailspayme = (props) => {
     axios
       .post(url, data, config)
       .then((res) => {
+        console.log(res.data.data)
         setIfscData(res.data.data);
-        console.log("pramodnew", res);
+        if (res.data.data.length == 1) {
+          setbankName(res.data.data[0].name);
+          setbranchName(res.data.data[0].address);
+         
+        }
+        else{
+          setbankName("");
+          setbranchName("");
+        }
       })
 
       .catch((err) => {
         console.log(err);
       });
+
+
   };
-  if (ifscData.length == 1 && check) {
-    setbankName(ifscData[0].name);
-    setbranchName(ifscData[0].address);
-    setCheck(false);
-  }
+
 
   return (
     <>
-      <Header />
+      <Header {...props}/>
 
       <Container>
         {loader ? (
@@ -300,19 +316,17 @@ const Bankdetailspayme = (props) => {
                       value={ifscdetail}
                       onChange={handleifscDetail}
                     />
-                    <select
-                      class="list-group"
-                      onChange={(event) => {
-                        setifscdetail(event.target.value);
-                      }}
-                      multiple
-                    >
+                    <div className="select_css">
+                    <select 
+                    
+                    onChange={handleSelect} multiple>
                       {ifscData
                         ? ifscData.map((ifsc) => (
                             <option key={ifsc.name}>{ifsc.ifsc}</option>
                           ))
                         : null}
                     </select>
+                    </div>
 
                     {ifscError ? (
                       <span style={{ color: "red" }}>{ifscError}</span>
@@ -400,6 +414,7 @@ const Bankdetailspayme = (props) => {
           </div>
         )}
       </Container>
+      <Footer/>
     </>
   );
 };
