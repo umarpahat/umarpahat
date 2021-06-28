@@ -29,6 +29,10 @@ import CibilImg from "../images/cibil.png";
 import {Link} from "react-router-dom";
 import $ from "jquery";
 import logo from "../images/logo.png";
+import pointer from "../images/pointer.png";
+import phone from "../images/phone.png";
+import printer from "../images/printer.png";
+import timer from "../images/timer.png";
 
 
 const Contact = (props) => {
@@ -105,7 +109,7 @@ const Contact = (props) => {
                                 <div className="row p-t-20">
                                     <div className="col-md-10 col-sm-8 col-xd-8 ">
                                         <div className="icon-left">
-                                            <img src="https://www.paymeindia.in/assets/images/Contact-us/2.png"
+                                            <img src={pointer}
                                                  alt="paymeindia" className="contact-payme"/>
                                         </div>
                                         <p className="icon-left-content">5th Floor, Devasthali Corporate Tower, A- 42/5, Vishwakarma Rd, Block A,
@@ -115,7 +119,7 @@ const Contact = (props) => {
                                 <div className="row p-t-20">
                                     <div className="col-md-10 col-sm-8 col-xd-8 ">
                                         <div className="icon-left">
-                                            <img src="https://www.paymeindia.in/assets/images/Contact-us/3.png"
+                                            <img src={phone}
                                                  alt="paymeindia" className="contact-payme"/>
                                         </div>
                                         <p className="icon-left-content">Tel 0120-690 5690</p>
@@ -124,7 +128,7 @@ const Contact = (props) => {
                                 <div className="row p-t-20">
                                     <div className="col-md-10 col-sm-8 col-xd-8 ">
                                         <div className="icon-left">
-                                            <img src="https://www.paymeindia.in/assets/images/Contact-us/4.png"
+                                            <img src={printer}
                                                  alt="paymeindia" className="contact-payme"/>
                                         </div>
                                         <p className="icon-left-content">Fax 120-428-0000</p>
@@ -133,7 +137,7 @@ const Contact = (props) => {
                                 <div className="row p-t-20">
                                     <div className="col-md-10 col-sm-10">
                                         <div className="icon-left">
-                                            <img src="https://www.paymeindia.in/assets/images/Contact-us/passage-of-time.png"
+                                            <img src={timer}
                                                 alt="paymeindia" className="contact-payme"/>
                                         </div>
                                         <p className="icon-left-content">Working Hrs.: 10.00AM - 7.00PM (Monday – Friday)</p>

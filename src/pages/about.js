@@ -12,6 +12,9 @@ import $ from "jquery";
 import logo from "../images/logo.png";
 import vision from "../images/vision.png";
 import team from "../images/team.png";
+import thumbnail from "../images/thumbup.png";
+import heart from "../images/heart.png";
+import people from "../images/people.png";
 
 
 const About = (props) => {
@@ -129,7 +132,7 @@ const About = (props) => {
                             <div className="box justify-content-md-center">
 
                                         <div className="icon-left">
-                                            <img className="img-fluid" src="https://www.paymeindia.in/assets/images/About-us/12.png"
+                                            <img className="img-fluid" src={thumbnail}
                                                  alt="paymeindia"/>
                                         </div>
                                 <div className="icon-left-content">
@@ -143,7 +146,7 @@ const About = (props) => {
                             <div className="box justify-content-md-center">
 
                                         <div className="icon-left">
-                                            <img className="img-fluid" src="https://www.paymeindia.in/assets/images/About-us/14.png"
+                                            <img className="img-fluid" src={heart}
                                                  alt="paymeindia"/>
                                         </div>
                                         <h3>Will always trust </h3>
@@ -155,7 +158,7 @@ const About = (props) => {
                             <div className="box justify-content-md-center">
 
                                         <div className="icon-left">
-                                            <img className="img-fluid" src="https://www.paymeindia.in/assets/images/About-us/13.png"
+                                            <img className="img-fluid" src={people}
                                                  alt="paymeindia"/>
                                         </div>
                                         <h3>Will stand by you</h3>
