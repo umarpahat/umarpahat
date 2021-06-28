@@ -50,10 +50,10 @@ const Footer =(props)=> {
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="#media">Media</a></li>
-                    <li><a href="#about-us">About us</a></li>
+                    <li><a href="/about">About us</a></li>
                     <li><a href="#how-we-work">How we work</a></li>
                     <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact-us">Contact us</a></li>
+                    <li><a href="/contact">Contact us</a></li>
                     <li><a href="#join-us">Join us</a></li>
                 </ul>
 
@@ -72,7 +72,7 @@ const Footer =(props)=> {
                     <li><a href="#terms-conditions">Terms &amp; Conditions</a></li>
                     <li><a href="#privacy-policy">Privacy Policy</a></li>
                     <li><a href="#refund-policy">Refund Policy</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="/faq">FAQ</a></li>
                     <li><a href="#disclaimer">Disclaimer</a></li>
                     <li><a href="#sitemap">Sitemap</a></li>
                 </ul>
@@ -82,7 +82,7 @@ const Footer =(props)=> {
         <div className="row p-t-20">
             <div className="ol col-md-4 ">
                  {/* Modal */}
-                <div className="modal fade" id="slidingModal" tabindex="-1" role="dialog"
+                <div className="modal fade" id="slidingModal" tabIndex="-1" role="dialog"
                      aria-labelledby="slidingModal" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
@@ -96,11 +96,11 @@ const Footer =(props)=> {
                                 <div className="modal-body">
 
                                     <div className="form-group-item">
-                                        <label for="mobile" className="col-form-label">Mobile No:</label>
+                                        <label htmlFor="mobile" className="col-form-label">Mobile No:</label>
                                         <input type="text" className="form-control" id="mobile"/>
                                     </div>
                                     <div className="form-group-item">
-                                        <label for="pan" className="col-form-label">Pan No:</label>
+                                        <label htmlFor="pan" className="col-form-label">Pan No:</label>
                                         <input type="text" className="form-control" id="pan"/>
                                     </div>
 
@@ -114,7 +114,7 @@ const Footer =(props)=> {
                     </div>
                 </div>
 
-                <div className="modal fade bd-example-modal-lg" id="referModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div className="modal fade bd-example-modal-lg" id="referModal" tabIndex="-1" role="dialog" aria-hidden="true">
                     <div className="modal-dialog modal-lg" role="document">
                         <div className="modal-content">
                             <button type="button" className="close btn-position" data-dismiss="modal" aria-label="Close">
@@ -153,8 +153,9 @@ const Footer =(props)=> {
                
 
             </div>
-            <div className="ol col-md-4 text-center"><img className="middle_ssl_image"  width="100" src={sslLogo}  alt="PayMeIndia"/></div>
-            <div className="ol col-md-4 ">
+            <div className="ol col-md-4 text-center d-none d-sm-block"><img className="middle_ssl_image"  width="100" src={sslLogo}  alt="PayMeIndia"/></div>
+            <div className="ol col-md-4 d-block d-sm-none"><img className="middle_ssl_image"  width="100" src={sslLogo}  alt="PayMeIndia"/></div>
+            <div className="ol col-md-4 col-xd-12">
                 <p className="p-t-20">Copyright@2021 Huey Tech Pvt. Ltd.</p>
             </div>
         </div>
