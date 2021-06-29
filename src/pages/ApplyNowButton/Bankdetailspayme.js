@@ -20,7 +20,6 @@ import Header from "../Header";
 import Footer from "../Footer";
 
 const Bankdetailspayme = (props) => {
-  
   // console.log("props bank", props);
   const [actNumber, setactNumber] = useState("");
   const [ConfrmActNumber, setConfrmActNumber] = useState("");
@@ -34,12 +33,12 @@ const Bankdetailspayme = (props) => {
   const [loader, setloader] = useState(false);
   const [signedUrl, setsignedUrl] = useState({});
   const [bankStatementPassword, setbankStatementPassword] = useState("");
-  const [ifscCode, setIfscCode] = useState("");
+  const [volidIfscCode, setValidIfscCode] = useState("");
   const [validAccount, setValidAccount] = useState("");
   const [ifscdetail, setifscdetail] = useState("");
   const [ifscData, setIfscData] = useState([]);
-  const [bankname1, setbankname1] = useState("");
-  const [branchname1, setbranchname1] = useState("");
+
+
   async function getSignedUrl() {
     const pathArray = [
       `bank_statement/${props.user.id}/0.pdf`,
@@ -131,17 +130,22 @@ const Bankdetailspayme = (props) => {
     updateBankDetails();
     Promise.all([...promiseTest, ...updatedocStatus])
       .then((response) => {
-        setloader(false);
+        setloader(true);
 
-      // props.history.push({ pathname: "/professional-details-payme" });
-
-        if (
-          props.user.userData.professionaldetails.verified === "VERIFIED" ||
-          props.user.userData.prolfessionaldetails.verified ===
-            "PENDING_VERIFICATION" ||
-          props.user.userData.other_documents[0].doc_type === "ITR"
+        console.log(
+          "bank if else",
+          props.user.professionaldetails?.verified,
+          props.user.professionaldetails?.verified,
+          props.user?.other_documents[0]?.doc_type
+        );
+        if (true) {
+          console.log("efelse");
+        }
+        if (props.user.prolfessionaldetails.verified === "PENDING_VERIFICATION"
         ) {
           console.log("pending approval pramod ");
+          props.history.push({ pathname: "/pending-approval" });
+        } else if (props.user?.other_documents[0]?.doc_type === "ITR") {
           props.history.push({ pathname: "/pending-approval" });
         } else {
           console.log("else else");
@@ -177,13 +181,20 @@ const Bankdetailspayme = (props) => {
     </div>
   ));
   const handleifscDetail = (e) => {
+
+    // if(e.target.value.match(/^[A-Z]{4}0[A-Z0-9]{6}$/)){
+    //   setValidIfscCode("")
+    // }
+    // else{
+    //   setValidIfscCode("IFSC should be 4 letters, followed by 7 letters or digits")
+    // }
     setifscdetail(e.target.value);
     ifscDetail(e.target.value);
   };
 
   const handleSelect = (e) => {
     setifscdetail(e.target.value);
-    ifscDetail(e.target.value)
+    ifscDetail(e.target.value);
   };
   const handleBankUpload = (event) => {
     seterrorBnakStatement("");
@@ -209,14 +220,12 @@ const Bankdetailspayme = (props) => {
     axios
       .post(url, data, config)
       .then((res) => {
-        console.log(res.data.data)
+        console.log(res.data.data);
         setIfscData(res.data.data);
         if (res.data.data.length == 1) {
           setbankName(res.data.data[0].name);
           setbranchName(res.data.data[0].address);
-         
-        }
-        else{
+        } else {
           setbankName("");
           setbranchName("");
         }
@@ -225,14 +234,11 @@ const Bankdetailspayme = (props) => {
       .catch((err) => {
         console.log(err);
       });
-
-
   };
-
 
   return (
     <>
-      <Header {...props}/>
+      <Header {...props} />
 
       <Container>
         {loader ? (
@@ -309,6 +315,9 @@ const Bankdetailspayme = (props) => {
                   </div>
                   <div className="form-group ms-input-group">
                     <label className="form-label">Bank IFSC Code </label>
+                    {/* {volidIfscCode ? (
+                      <span style={{ color: "red" }}>{volidIfscCode}</span>
+                    ) : null} */}
                     <input
                       type="text"
                       className="form-control ms-form-input"
@@ -316,16 +325,15 @@ const Bankdetailspayme = (props) => {
                       value={ifscdetail}
                       onChange={handleifscDetail}
                     />
+                   
                     <div className="select_css">
-                    <select 
-                    
-                    onChange={handleSelect} multiple>
-                      {ifscData
-                        ? ifscData.map((ifsc) => (
-                            <option key={ifsc.name}>{ifsc.ifsc}</option>
-                          ))
-                        : null}
-                    </select>
+                      <select onChange={handleSelect} multiple>
+                        {ifscData
+                          ? ifscData.map((ifsc) => (
+                              <option key={ifsc.name}>{ifsc.ifsc}</option>
+                            ))
+                          : null}
+                      </select>
                     </div>
 
                     {ifscError ? (
@@ -340,10 +348,10 @@ const Bankdetailspayme = (props) => {
                         className="form-control ms-form-input"
                         placeholder="Delhi"
                         value={branchName}
-
                         // onChange={(e)=>{
                         //   setbranchName(e.target.value)
                         // }}
+                        readOnly
                       />
                     </div>
                     <div className="form-group ms-input-group col-6">
@@ -353,6 +361,7 @@ const Bankdetailspayme = (props) => {
                         className="form-control ms-form-input"
                         placeholder="Kotak Mahindra Bank"
                         value={bankName}
+                        readOnly
 
                         //  onChange={(e)=>{
                         //   setbankName(e.target.value)
@@ -414,7 +423,7 @@ const Bankdetailspayme = (props) => {
           </div>
         )}
       </Container>
-      <Header {...props} />
+      <Footer />
     </>
   );
 };
