@@ -1210,6 +1210,23 @@ a {
 
     #menuToggle {
         top: 20px;
+        right: 15px;
+    }
+
+    .form-pricing {
+        padding: 0;
+    }
+
+    .form-group1 {
+        width: auto;
+    }
+
+    .banner .p-t-40 {
+        padding-top: 20px;
+    }
+
+    .banner .m-t-40 {
+        margin-top: 20px;
     }
 
     #menuToggle span {
