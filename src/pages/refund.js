@@ -26,8 +26,8 @@ const Refund = (props) => {
     return (
         <>
 
-            {/* <Header />  */}
-
+            <Header {...props}/>
+            <div className='content'>
             <div className="sticky-top">
                 <header className="header">
                     <div className="container">
@@ -102,6 +102,7 @@ const Refund = (props) => {
                     </div>
 
                 </div>
+            </div>
             </div>
             <Footer {...props} />
         </>

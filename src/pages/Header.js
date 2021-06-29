@@ -34,7 +34,7 @@ const Header = (props) => {
                 >
                   Apply Loan
                 </Link>
-                <Link
+             {/*   <Link
                   className="button"
                   onClick={() => {
                     props.hitAppUseCase({ useCase: "pay-rent" });
@@ -42,7 +42,7 @@ const Header = (props) => {
                   }}
                 >
                   Pay Rent
-                </Link>
+                </Link>*/}
               </div>
             </div>
           </div>
@@ -54,25 +54,28 @@ const Header = (props) => {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
-                <li>
+              {/*  <li>
                   <Link to="#media">Media</Link>
-                </li>
+                </li>*/}
                 <li>
                   <Link to="/about">About us</Link>
                 </li>
-                <li>
+               {/* <li>
                   <Link to="#corporate">Corporate</Link>
                 </li>
                 <li>
                   <Link to="#how-we-work">How we work</Link>
-                </li>
-                <li>
+                </li>*/}
+               {/* <li>
                   <Link to="#blog">Blog</Link>
-                </li>
+                </li>*/}
                 <li>
                   <Link to="/contact">Contact us</Link>
                 </li>
                 <li>
+                  <Link to="/faq">Faq</Link>
+                </li>
+              {/*  <li>
                   <Link to="#join-us">Join us</Link>
                 </li>
                 <li>
@@ -86,7 +89,7 @@ const Header = (props) => {
                 </li>
                 <li>
                   <Link to="#short-term-loans">Short Term Cash Loans</Link>
-                </li>
+                </li>*/}
               </ul>
             </div>
           </nav>
