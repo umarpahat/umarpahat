@@ -25,11 +25,8 @@ const Terms = (props) => {
 
     return (
         <>
-
-            <Header {...props} /> 
-
-           
-
+            <Header {...props} />
+            <div className='content'>
             <div className="services">
                 <div className="container p-t-40 p-b-30">
                     <p className='p-t-30'><strong>1. GENERAL</strong></p>
@@ -1222,6 +1219,7 @@ const Terms = (props) => {
                     </div>
 
                 </div>
+            </div>
             </div>
             <Footer {...props} />
         </>

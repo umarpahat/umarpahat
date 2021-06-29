@@ -23,7 +23,7 @@ const Disclaimer = (props) => {
   return (
     <>
       <Header {...props} />
-
+      <div className='content'>
       <div className="services">
         <div className="container">
           <div className="row align-items-center p-t-40 p-b-30">
@@ -161,6 +161,7 @@ const Disclaimer = (props) => {
             </div>
           </div>
         </div>
+      </div>
       </div>
       <Footer />
     </>

@@ -131,24 +131,12 @@ const Bankdetailspayme = (props) => {
     Promise.all([...promiseTest, ...updatedocStatus])
       .then((response) => {
         setloader(true);
-
-        console.log(
-          "bank if else",
-          props.user.professionaldetails?.verified,
-          props.user.professionaldetails?.verified,
-          props.user?.other_documents[0]?.doc_type
-        );
-        if (true) {
-          console.log("efelse");
+console.log("pramodsjkslks")
+        if (props.user.professionaldetails?.verified === "PENDING_VERIFICATION" || props.user?.other_documents[0]?.doc_type === "ITR"
+        || props.user.professionaldetails?.verified === "VERIFIED") {
+           props.history.push({ pathname: "/pending-approval" });
         }
-        if (props.user.prolfessionaldetails.verified === "PENDING_VERIFICATION"
-        ) {
-          console.log("pending approval pramod ");
-          props.history.push({ pathname: "/pending-approval" });
-        } else if (props.user?.other_documents[0]?.doc_type === "ITR") {
-          props.history.push({ pathname: "/pending-approval" });
-        } else {
-          console.log("else else");
+        else {
           props.history.push({ pathname: "/professional-details-payme" });
         }
       })
@@ -190,11 +178,14 @@ const Bankdetailspayme = (props) => {
     // }
     setifscdetail(e.target.value);
     ifscDetail(e.target.value);
+    e.preventDefault();
+    $('.select_css').show();
   };
 
   const handleSelect = (e) => {
     setifscdetail(e.target.value);
-    ifscDetail(e.target.value);
+    ifscDetail(e.target.value)
+    $('.select_css').hide();
   };
   const handleBankUpload = (event) => {
     seterrorBnakStatement("");
@@ -325,15 +316,16 @@ const Bankdetailspayme = (props) => {
                       value={ifscdetail}
                       onChange={handleifscDetail}
                     />
-                   
-                    <div className="select_css">
-                      <select onChange={handleSelect} multiple>
-                        {ifscData
-                          ? ifscData.map((ifsc) => (
-                              <option key={ifsc.name}>{ifsc.ifsc}</option>
-                            ))
-                          : null}
-                      </select>
+                    <div className="select_css" style={{'display':'none'}}>
+                    <select 
+                    
+                    onChange={handleSelect} multiple>
+                      {ifscData
+                        ? ifscData.map((ifsc) => (
+                            <option key={ifsc.name}>{ifsc.ifsc}</option>
+                          ))
+                        : null}
+                    </select>
                     </div>
 
                     {ifscError ? (

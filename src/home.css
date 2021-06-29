@@ -9,36 +9,44 @@ body {
   font-family: Poppins, sans-serif;
   padding: 0;
   margin: 0;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
 }
 .select_css select {
-  width: 190px;
-  height: 234px;
-  font-size: 16px;
-  overflow: hidden;
-  border: transparent;
-  background-color: transparent;
+  border: 0;
+  z-index: 1111;
+  position: absolute;
+  font-size: 11px;
+  margin-top: -4px;
+  height: 321px!important;
+  box-shadow: 0 4px 4px #ddd;
+}
+.select_css select option{
+  padding: 5px 15px;
 }
 .select_css {
-  height: 200px;
   margin-top: 5px;
-  margin-right: 0px;
-  margin-left: 0px;
+  margin-right: 0;
+  margin-left: 0;
   width: 500px;
   height: 34px;
   border-radius: 3px;
   overflow: hidden;
 }
-.footer {
-  min-height: 100%;
-  top: 100%;
-  height: auto !important;
-  margin-bottom: 0px;
-  font-family: Poppins, sans-serif;
-  padding: 0;
-  margin: 0;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.5;
+
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+}
+.footer{
+  flex-shrink: 0;
 }
 
 a.button {
@@ -418,7 +426,6 @@ a.button-small:hover {
 
 .product-link {
   padding: 10px 20px;
-  margin-bottom: 15px;
   min-height: 70px;
   border-radius: 1px;
   display: block;
@@ -764,7 +771,7 @@ h4.great {
   width: 100%;
   height: 70px;
   border-radius: 6px;
-  background-color: rgb(255 255 255 / 20%);
+  background-color: rgb(255 255 255, 0.2);
 }
 
 .form-group1 {
@@ -942,6 +949,7 @@ nav a:hover {
   transform: scale(1, 1);
   opacity: 1;
 }
+
 
 footer {
   font-size: 12px;
@@ -1125,7 +1133,7 @@ footer ul li {
 }
 
 .svg-text {
-  max-width: 200px;
+    max-width: 200px;
 }
 
 .box p {
@@ -1233,9 +1241,26 @@ a {
     margin-right: 40px;
   }
 
-  #menuToggle {
-    top: 20px;
-  }
+    #menuToggle {
+        top: 20px;
+        right: 15px;
+    }
+
+    .form-pricing {
+        padding: 0;
+    }
+
+    .form-group1 {
+        width: auto;
+    }
+
+    .banner .p-t-40 {
+        padding-top: 20px;
+    }
+
+    .banner .m-t-40 {
+        margin-top: 20px;
+    }
 
   #menuToggle span {
     height: 1px;

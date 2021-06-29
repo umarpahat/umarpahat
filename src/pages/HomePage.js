@@ -24,10 +24,9 @@ import promptImg from "../images/prompt.png";
 import instantFund from "../images/instant-fund.png";
 import easyRepay from "../images/easy-repay.png";
 import CibilImg from "../images/cibil.png";
-// import corporateImg from "../images/corporate-loan.svg";
 import InstantCash from "../images/instant-cash.svg"
 import {Link} from "react-router-dom";
-// import logo from "../images/logo.png";
+
 
 
 
@@ -39,9 +38,8 @@ const HomePage = (props) => {
 
     return (
         <>
-
-            <Header {...props}/> 
-
+            <Header {...props}/>
+            <div className='content'>
             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                 <ol className="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
@@ -428,7 +426,10 @@ const HomePage = (props) => {
                     </div>
                 </div>
             </div>
+            </div>
+            
             <Footer/>
+           
         </>
     );
 };

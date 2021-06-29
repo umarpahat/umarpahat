@@ -147,9 +147,9 @@ const sendOtp = () => {
         </div>
       </div>}
       
-      <div style={{marginTop:"1.3%"}}>
-<Footer/>
-</div>
+  
+<Footer css="fixed-bottom"/>
+
 
     </>
   );

@@ -17,7 +17,7 @@ const Faq = (props) => {
   return (
     <>
       <Header {...props} />
-
+      <div className='content'>
       <div className="services">
         <div className="container">
           <div className="col col-md-12 reg-second-heading">
@@ -216,6 +216,7 @@ const Faq = (props) => {
             </div>
           </div>
         </div>
+      </div>
       </div>
       <Footer />
     </>
