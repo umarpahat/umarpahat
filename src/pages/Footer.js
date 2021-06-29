@@ -13,11 +13,11 @@ import sslLogo from "../images/ssl-logo.png";
 
 
 const Footer = (props) => {
-    console.log(`${props.css}`)
+  
     
     return (
         <div className="footer" style={{backgroundColor: "#F1F3F5"}}>
-            <footer className={props.css}>
+            <footer>
                 <div className="container">
                     <div className="row">
                         <div className="ol col-md-4">

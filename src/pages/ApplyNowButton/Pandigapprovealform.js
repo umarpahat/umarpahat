@@ -372,7 +372,9 @@ const Pandingapprovalform = (props) => {
         </div>
       </Container>
       </div>
-      <Footer css="fixed-bottom" />
+      <div style={{marginTop:"11%"}}>
+      <Footer/>
+      </div>
 
       {userdocumentsmodel.adhar_card_verified === "VERIFIED" &&
       userdocumentsmodel.pan_card_verified === "VERIFIED" &&
