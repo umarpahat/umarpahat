@@ -28,7 +28,7 @@ console.log(props)
             {
               if(props.user.userData.userbankdetail)
               {
-                if(props.user.userData.userdocumentsmodel.salary_slip_verified==="VERIFIED" || props.user.userData.userdocumentsmodel.salary_slip_verified==="PENDING_VERIFICATION" || props.user.userData.other_documents[0].doc_type==="ITR")
+                if(props.user.userData.userdocumentsmodel.salary_slip_verified==="VERIFIED" || props.user.userData.userdocumentsmodel.salary_slip_verified==="PENDING_VERIFICATION" || props.user.userData.other_documents[0]?.doc_type==="ITR")
                 {
                   props.history.push({pathname:'/pending-approval'})
                 }
