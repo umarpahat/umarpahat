@@ -24,10 +24,9 @@ import promptImg from "../images/prompt.png";
 import instantFund from "../images/instant-fund.png";
 import easyRepay from "../images/easy-repay.png";
 import CibilImg from "../images/cibil.png";
-// import corporateImg from "../images/corporate-loan.svg";
 import InstantCash from "../images/instant-cash.svg"
 import {Link} from "react-router-dom";
-// import logo from "../images/logo.png";
+
 
 
 
@@ -428,7 +427,9 @@ const HomePage = (props) => {
                 </div>
             </div>
             </div>
+            
             <Footer/>
+           
         </>
     );
 };

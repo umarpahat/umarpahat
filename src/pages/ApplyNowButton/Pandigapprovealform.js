@@ -36,6 +36,7 @@ const Pandingapprovalform = (props) => {
   return (
     <>
       <Header {...props}/>
+      <div className="content">
       <Container>
         <div className="form-container formcontainermob  pt-4">
           <form>
@@ -370,7 +371,10 @@ const Pandingapprovalform = (props) => {
           </form>
         </div>
       </Container>
-      <Footer />
+      </div>
+      <div style={{marginTop:"11%"}}>
+      <Footer/>
+      </div>
 
       {userdocumentsmodel.adhar_card_verified === "VERIFIED" &&
       userdocumentsmodel.pan_card_verified === "VERIFIED" &&
