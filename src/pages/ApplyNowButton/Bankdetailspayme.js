@@ -414,7 +414,7 @@ const Bankdetailspayme = (props) => {
           </div>
         )}
       </Container>
-      <Footer/>
+      <Header {...props} />
     </>
   );
 };

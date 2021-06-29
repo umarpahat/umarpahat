@@ -45,6 +45,7 @@ function Creatempn() {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

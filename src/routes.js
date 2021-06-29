@@ -10,6 +10,10 @@ import HomePage from "./pages/HomePage"
 import about from "./pages/about"
 import contact from "./pages/contact"
 import faq from "./pages/faq"
+import disclaimer from "./pages/disclaimer"
+import refund from "./pages/refund"
+import policy from "./pages/policy"
+import terms from "./pages/terms"
 import OtherDetalisForm from "./pages/Payrent/OtherDetalisForm";
 import DetailsSummary from "./pages/Payrent/DetailsSummary";
 import TransactionHistory from "./pages/Payrent/TransactionHistory";
@@ -49,6 +53,10 @@ function Routes() {
         <Route exact path="/about" component={about} />
         <Route exact path="/contact" component={contact} />
         <Route exact path="/faq" component={faq} />
+        <Route exact path="/disclaimer" component={disclaimer} />
+        <Route exact path="/refund" component={refund} />
+        <Route exact path="/policy" component={policy} />
+        <Route exact path="/terms" component={terms} />
         <Route exact path="/self-employed" component={SelfEmployed} />
         <Route exact path="/congratulations" component={Congretmessage} />
         <Route exact path="/login-with-mob-mpin" component={LoginWithMobMpin} />

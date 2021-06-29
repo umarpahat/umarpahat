@@ -15,11 +15,11 @@ body {
   height: 234px;
   font-size: 16px;
   overflow: hidden;
-  border:transparent;
+  border: transparent;
   background-color: transparent;
 }
 .select_css {
-    height: 200PX;
+  height: 200px;
   margin-top: 5px;
   margin-right: 0px;
   margin-left: 0px;
@@ -28,15 +28,21 @@ body {
   border-radius: 3px;
   overflow: hidden;
 }
-.footer{
-    min-height: 100%;
-    top: 100%;
-    height: auto !important;
-    margin-bottom: 0px;
+.footer {
+  min-height: 100%;
+  top: 100%;
+  height: auto !important;
+  margin-bottom: 0px;
+  font-family: Poppins, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 a.button {
-  background-color: #fff;
+  box-shadow: -4px -4px 8px #2f5d7f, 4px 4px 8px #376d95;
   color: #fff;
   display: inline-block;
   font-size: 16px;
@@ -51,6 +57,10 @@ a.button {
   border-radius: 3px;
   background: #33658a;
   box-shadow: -4px -4px 8px #2f5d7f, 4px 4px 8px #376d95;
+}
+
+.box {
+  font-size: 14px;
 }
 
 a.button:hover {
@@ -253,7 +263,7 @@ a.button-small:hover {
 
 .banner {
   padding: 20px 0 30px;
-  background: #829aae url("images/banner-img.png") no-repeat center 0;
+  background: #829aae url("./images/banner-img.png") no-repeat center 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0 8px 5px -5px;
 }
 
@@ -871,8 +881,8 @@ nav a:hover {
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  background: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
 #menuToggle span:first-child {
@@ -1108,10 +1118,14 @@ footer ul li {
 
 .box h3 {
   margin-top: 10px;
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 500;
   line-height: 1.25;
   letter-spacing: 1.2px;
+}
+
+.svg-text {
+  max-width: 200px;
 }
 
 .box p {
@@ -1141,6 +1155,7 @@ a {
 
 .card {
 }
+
 .accordion .card {
   border: 0;
 }
@@ -1150,6 +1165,10 @@ a {
   margin-bottom: 0;
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.paragraphText p {
+  margin-bottom: 10px !important;
 }
 
 @media (max-width: 600px) {
@@ -1211,12 +1230,44 @@ a {
 
   header .p-t-10 {
     padding-top: 0;
-    margin-right: 50px;
+    margin-right: 40px;
   }
+
   #menuToggle {
     top: 20px;
   }
+
   #menuToggle span {
     height: 1px;
+  }
+
+  .farmer {
+    max-width: 200px;
+    margin: 20px auto;
+  }
+
+  .home-steps .red-arrow,
+  .home-steps .red-arrow-bottom {
+    display: none;
+  }
+
+  a.button-large {
+    font-size: 14px;
+    line-height: 18px;
+    height: 20px;
+    margin: 0 auto;
+  }
+
+  .price-slider .relative {
+    margin-left: 40px;
+  }
+
+  .p-l-30 {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .p-l-30 h3 {
+    padding-bottom: 0;
   }
 }

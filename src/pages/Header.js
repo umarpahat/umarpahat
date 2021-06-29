@@ -5,48 +5,43 @@ import "../../src/home.css";
 import logo from "../images/logo.png";
 import Loader from "../component/Loader";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
 
-
-//  let[loader,setloader]=useState(false);
 const Header = (props) => {
-    
+  console.log("props", props);
   return (
     <>
-      <div className="sticky-top">
+      <div class="sticky-top">
         <header className="header">
-          <div className="container">
-            <div className="row">
-              <div className="col-auto me-auto">
-                <a href="/">
+          <div class="container">
+            <div class="row">
+              <div class="col-auto me-auto">
+                <Link to="/">
                   {" "}
                   <img
                     className="home_logo"
                     src={logo}
                     alt="Pay Me India"
                   />{" "}
-                </a>
+                </Link>
               </div>
-              <div className="col-auto p-t-10">
+              <div class="col-auto p-t-10">
                 <Link
+                  className="button"
                   onClick={() => {
                     props.hitAppUseCase({ useCase: "apply-loan" });
                     props.history.push({ pathname: "/apply-loan" });
                   }}
                 >
-                  <a href="#" className="button">
-                    Apply Loan
-                  </a>
+                  Apply Loan
                 </Link>
                 <Link
+                  className="button"
                   onClick={() => {
                     props.hitAppUseCase({ useCase: "pay-rent" });
                     props.history.push({ pathname: "/pay-rent" });
                   }}
                 >
-                  <a href="#" className="button">
-                    Pay Rent
-                  </a>
+                  Pay Rent
                 </Link>
               </div>
             </div>
@@ -57,40 +52,40 @@ const Header = (props) => {
               <span></span> <span></span> <span></span>
               <ul id="menu">
                 <li>
-                  <a href="/">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="#media">Media</a>
+                  <Link to="#media">Media</Link>
                 </li>
                 <li>
-                  <a href="#about-us">About us</a>
+                  <Link to="/about">About us</Link>
                 </li>
                 <li>
-                  <a href="#corporate">Corporate</a>
+                  <Link to="#corporate">Corporate</Link>
                 </li>
                 <li>
-                  <a href="#how-we-work">How we work</a>
+                  <Link to="#how-we-work">How we work</Link>
                 </li>
                 <li>
-                  <a href="#blog">Blog</a>
+                  <Link to="#blog">Blog</Link>
                 </li>
                 <li>
-                  <a href="#contact-us">Contact us</a>
+                  <Link to="/contact">Contact us</Link>
                 </li>
                 <li>
-                  <a href="#join-us">Join us</a>
+                  <Link to="#join-us">Join us</Link>
                 </li>
                 <li>
-                  <a href="#nbfc">Our NBFC Partners</a>
+                  <Link to="#nbfc">Our NBFC Partners</Link>
                 </li>
                 <li>
-                  <a href="#advance-salary-loan">Advance Salary Loan</a>
+                  <Link to="#advance-salary-loan">Advance Salary Loan</Link>
                 </li>
                 <li>
-                  <a href="#loans-for-low-salary">Loan For Low Salary</a>
+                  <Link to="#loans-for-low-salary">Loan For Low Salary</Link>
                 </li>
                 <li>
-                  <a href="#short-term-loans">Short Term Cash Loans</a>
+                  <Link to="#short-term-loans">Short Term Cash Loans</Link>
                 </li>
               </ul>
             </div>

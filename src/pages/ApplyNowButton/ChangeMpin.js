@@ -105,6 +105,7 @@ function ChangeMpin(props) {
           </form>
         </div>
       </div>}
+      <Header {...props}/>
     </>
   );
 }
