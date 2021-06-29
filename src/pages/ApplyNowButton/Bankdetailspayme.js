@@ -179,11 +179,14 @@ const Bankdetailspayme = (props) => {
   const handleifscDetail = (e) => {
     setifscdetail(e.target.value);
     ifscDetail(e.target.value);
+    e.preventDefault();
+    $('.select_css').show();
   };
 
   const handleSelect = (e) => {
     setifscdetail(e.target.value);
     ifscDetail(e.target.value)
+    $('.select_css').hide();
   };
   const handleBankUpload = (event) => {
     seterrorBnakStatement("");
@@ -316,7 +319,7 @@ const Bankdetailspayme = (props) => {
                       value={ifscdetail}
                       onChange={handleifscDetail}
                     />
-                    <div className="select_css">
+                    <div className="select_css" style={{'display':'none'}}>
                     <select 
                     
                     onChange={handleSelect} multiple>
@@ -414,7 +417,7 @@ const Bankdetailspayme = (props) => {
           </div>
         )}
       </Container>
-      <Header {...props} />
+      <Footer {...props} />
     </>
   );
 };
