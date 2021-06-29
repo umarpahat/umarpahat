@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import OtpInput from "react-otp-input";
 import { Link } from "react-router-dom";
-import Header from "../../component/Header";
 import { hitLogin, hitForgotMpin } from '../../store/modules/auth/actions'
 import Loader from '../../component/Loader'
 import { api } from '../../services/api';
@@ -52,7 +51,7 @@ const verifyOtp = (otp_get) => {
 
   return (
     <>
-      {/* <Header /> */}
+   
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <div className="Enter-otp-form">
         <form>

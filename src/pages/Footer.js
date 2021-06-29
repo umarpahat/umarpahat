@@ -14,7 +14,7 @@ import sslLogo from "../images/ssl-logo.png";
 
 const Footer =(props)=> {
     return (
-        <div>
+        <div className="footer" style={{backgroundColor:"#F1F3F5"}}>
         
 
 <footer>

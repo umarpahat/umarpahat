@@ -7,7 +7,7 @@ import Footer from "../Footer";
 const Congretmessage = (props) => {
   return (
     <>
-      <Header />
+      <Header {...props} />
       <div>
       <Container >
         <div className="form-container formcontainermob  pt-4">
@@ -35,7 +35,7 @@ const Congretmessage = (props) => {
         </div>
       </Container>
       </div>
-      <div style={{marginTop:"200px"}}>
+      <div style={{marginTop:"14.3%"}}>
 
       <Footer/>
       </div>
