@@ -127,7 +127,7 @@ var time = setInterval(function(){
   };
   return (
     <>
-    <Header/>
+    <Header {...props}/>
       {ekyc === "VERIFIED" ? (
         <Container style={{backgroundColor:"#f2f2f2"}}>
           <div className="pt-5 ">

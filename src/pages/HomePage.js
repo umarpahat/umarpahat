@@ -27,8 +27,9 @@ import CibilImg from "../images/cibil.png";
 // import corporateImg from "../images/corporate-loan.svg";
 import InstantCash from "../images/instant-cash.svg"
 import {Link} from "react-router-dom";
-import $ from "jquery";
-import logo from "../images/logo.png";
+// import logo from "../images/logo.png";
+
+
 
 
 const HomePage = (props) => {
@@ -38,63 +39,8 @@ const HomePage = (props) => {
 
     return (
         <>
-
-            {/* <Header />  */}
-
-            <div className="sticky-top">
-                <header className="header">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-auto me-auto">
-                                <Link to="/"> <img className="home_logo" src={logo} alt="Pay Me India"/> </Link>
-                            </div>
-                            <div className="col-auto p-t-10">
-                                <Link className="button" onClick={() => {
-                                    props.hitAppUseCase({useCase: 'apply-loan'})
-                                    props.history.push({pathname: '/apply-loan'})
-                                }}>
-
-                                    Apply Loan
-                                </Link>
-                                <Link className="button" onClick={() => {
-                                    props.hitAppUseCase({useCase: 'pay-rent'})
-                                    props.history.push({pathname: '/pay-rent'})
-                                }}>
-                                    Pay Rent
-                                </Link>
-                            </div>
-
-                        </div>
-                    </div>
-                    <nav role='navigation'>
-                        <div id="menuToggle">
-                            <input type="checkbox"/>
-                            <span></span> <span></span> <span></span>
-                            <ul id="menu">
-                                <li><Link to='/'>Home</Link></li>
-                                <li><Link to="/media">Media</Link></li>
-                                <li><Link to="/about" onClick={() => {
-                                    props.hitAppUseCase({useCase: 'about'})
-                                    props.history.push({pathname: '/about'})
-                                }}>About us</Link></li>
-                                <li><Link to="#corporate">Corporate</Link></li>
-                                <li><Link to="#how-we-work">How we work</Link></li>
-                                <li><Link to="#blog">Blog</Link></li>
-                                <li><Link to="/contact" onClick={() => {
-                                    props.hitAppUseCase({useCase: 'contact'})
-                                    props.history.push({pathname: '/contact'})
-                                }}>Contact us</Link></li>
-                                <li><Link to="#join-us">Join us</Link></li>
-                                <li><Link to="#nbfc">Our NBFC Partners</Link></li>
-                                <li><Link to="#advance-salary-loan">Advance Salary Loan</Link></li>
-                                <li><Link to="#loans-for-low-salary">Loan For Low Salary</Link></li>
-                                <li><Link to="#short-term-loans">Short Term Cash Loans</Link></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-            </div>
-
+            <Header {...props}/>
+            <div className='content'>
             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                 <ol className="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
@@ -480,6 +426,7 @@ const HomePage = (props) => {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
             <Footer/>
         </>

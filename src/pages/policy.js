@@ -26,8 +26,8 @@ const Policy = (props) => {
     return (
         <>
 
-            {/* <Header />  */}
-
+            <Header {...props}/>
+            <div className='content'>
             <div className="sticky-top">
                 <header className="header">
                     <div className="container">
@@ -127,7 +127,8 @@ const Policy = (props) => {
 
                 </div>
             </div>
-            <Footer/>
+            </div>
+            <Footer />
         </>
     )
 };

@@ -11,8 +11,6 @@ import Congretmessage from "../../pages/ApplyNowButton/Congretmessage";
 import reloadeicon from "../../component/img/reloadeicon.png";
 import Loader from "../../component/Loader";
 
-
-
 import Progressbar from "../../component/ProgressBar";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -20,7 +18,6 @@ import Footer from "../Footer";
 const Pandingapprovalform = (props) => {
   const [userbankdetail, setuserbankdetail] = useState({});
   const [userdocumentsmodel, setuserdocumentsmodel] = useState({});
-  
 
   useEffect(() => {
     if (!props.token) {
@@ -38,15 +35,14 @@ const Pandingapprovalform = (props) => {
 
   return (
     <>
-      <Header />
+      <Header {...props}/>
       <Container>
         <div className="form-container formcontainermob  pt-4">
           <form>
             <div className="Home-contact-form mt-4">
               <h4 className="form-heading text-center">Pending Approval</h4>
               <p className="PreApprovePara">
-                Please provide the rejected documents again. Reason for
-                rejections is provided
+                Please provide the rejected documents again.
               </p>
               <div className="form-block">
                 <div>
@@ -94,11 +90,11 @@ const Pandingapprovalform = (props) => {
                             })
                           }
                         >
-                          Upload Again
+                          Upload Again{" "}
+                          <span style={{ fontSize: "10px", color: "red" }}>
+                            (Rejected)
+                          </span>
                         </span>
-                        <p style={{ fontSize: "10px", color: "black" }}>
-                          (Your Dcument is rejected)
-                        </p>
                       </div>
                     ) : userdocumentsmodel.adhar_card_verified === "VERIFIED" &&
                       userdocumentsmodel.pan_card_verified === "VERIFIED" ? (
@@ -118,10 +114,8 @@ const Pandingapprovalform = (props) => {
                       <div className="">
                         <img
                           src={
-                            userbankdetail.verified ===
-                              "VERIFIED" ||
-                              userbankdetail.verified ===
-                              "PENDING_VERIFICATION"
+                            userbankdetail.verified === "VERIFIED" ||
+                            userbankdetail.verified === "PENDING_VERIFICATION"
                               ? Righticons1
                               : Righticons
                           }
@@ -132,8 +126,7 @@ const Pandingapprovalform = (props) => {
                         <p className="form-label ml-2">Bank Details</p>
                       </div>
                     </div>
-                    {userbankdetail.verified ===
-                    "PENDING_VERIFICATION" ? (
+                    {userbankdetail.verified === "PENDING_VERIFICATION" ? (
                       <span
                         className="reloadicon"
                         id="PAN"
@@ -142,10 +135,8 @@ const Pandingapprovalform = (props) => {
                         {/* {" "} */}
                         Pending verification
                       </span>
-                    ) : userbankdetail.verified ===
-                        "NOT_SUBMITTED" ||
-                      userbankdetail.verified ===
-                        "NOT_VALID" ? (
+                    ) : userbankdetail.verified === "NOT_SUBMITTED" ||
+                      userbankdetail.verified === "NOT_VALID" ? (
                       <div className="reloadicon">
                         <span
                           id="PAN"
@@ -157,14 +148,13 @@ const Pandingapprovalform = (props) => {
                           }
                         >
                           {/* {" "} */}
-                          Upload Again
+                          Upload Again{" "}
+                          <span style={{ fontSize: "10px", color: "red" }}>
+                            (Rejected)
+                          </span>
                         </span>
-                        <p style={{ fontSize: "10px", color: "black" }}>
-                          (Your Dcument is rejected)
-                        </p>
                       </div>
-                    ) : userbankdetail.verified ===
-                      "VERIFIED" ? (
+                    ) : userbankdetail.verified === "VERIFIED" ? (
                       <div>
                         <img src={Righticons1} />
                         <span className="reloadicon" id="PAN">
@@ -190,67 +180,133 @@ const Pandingapprovalform = (props) => {
                             alt="tick-icon"
                           />
                         </div>
-                      
 
-            <div>
-                        <p className="form-label ml-2">Bank Statement</p>
+                        <div>
+                          <p className="form-label ml-2">Bank Statement</p>
+                        </div>
                       </div>
-                    </div>
-                    {userdocumentsmodel.bank_statement_verified ===
-                    "PENDING_VERIFICATION" ? (
-                      <span
-                        className="reloadicon"
-                        id="PAN"
-                        style={{ opacity: "0.4" }}
-                      >
-                        {/* {" "} */}
-                        Pending verification
-                      </span>
-                    ) : userdocumentsmodel.bank_statement_verified ===
-                        "NOT_SUBMITTED" ||
-                      userdocumentsmodel.bank_statement_verified ===
-                        "NOT_VALID" ? (
-                      <div className="reloadicon">
+                      {userdocumentsmodel.bank_statement_verified ===
+                      "PENDING_VERIFICATION" ? (
                         <span
+                          className="reloadicon"
                           id="PAN"
-                          style={{ cursor: "pointer" }}
-                          onClick={() =>
-                            props.history.push({
-                              pathname: "/bank-details-payme",
-                            })
-                          }
+                          style={{ opacity: "0.4" }}
                         >
                           {/* {" "} */}
-                          Upload Again
+                          Pending verification
                         </span>
-                        <p style={{ fontSize: "10px", color: "black" }}>
-                          (Your Dcument is rejected)
-                        </p>
-                      </div>
-                    ) : userdocumentsmodel.bank_statement_verified ===
-                      "VERIFIED" || props.user.userData.other_documents[0].status
-                      ==="VERIFIED" ? (
-                      <div>
-                        <img src={Righticons1} />
-                        <span className="reloadicon" id="PAN">
-                          {" "}
-                          Bank Statement Verified
-                        </span>
-                      </div>
-                    ) : null}
-                  </div>
+                      ) : userdocumentsmodel.bank_statement_verified ===
+                          "NOT_SUBMITTED" ||
+                        userdocumentsmodel.bank_statement_verified ===
+                          "NOT_VALID" ? (
+                        <div className="reloadicon">
+                          <span
+                            id="PAN"
+                            style={{ cursor: "pointer" }}
+                            onClick={() =>
+                              props.history.push({
+                                pathname: "/bank-details-payme",
+                              })
+                            }
+                          >
+                            {/* {" "} */}
+                            Upload Again
+                          </span>
+                          <p style={{ fontSize: "10px", color: "black" }}>
+                            (Rejected)
+                          </p>
+                        </div>
+                      ) : userdocumentsmodel.bank_statement_verified ===
+                          "VERIFIED" ||
+                        props.user.userData?.other_documents[0]?.status ===
+                          "VERIFIED" ? (
+                        <div>
+                          <img src={Righticons1} />
+                          <span className="reloadicon" id="PAN">
+                            {" "}
+                            Bank Statement Verified
+                          </span>
+                        </div>
+                      ) : null}
+                    </div>
 
-                  {!props.user.userData.other_documents[0] ? (
-                    <div>
+                    {!props.user.userData?.other_documents[0] ? (
+                      <div>
+                        <div className="classRighticons">
+                          <div style={{ display: "flex" }}>
+                            <div className="">
+                              <img
+                                src={
+                                  userdocumentsmodel.salary_slip_verified ===
+                                    "VERIFIED" ||
+                                  userdocumentsmodel.salary_slip_verified ===
+                                    "PENDING_VERIFICATION"
+                                    ? Righticons1
+                                    : Righticons
+                                }
+                                alt="tick-icon"
+                              />
+                            </div>
+                            <div>
+                              <p className="form-label ml-2">
+                                Professional Details
+                              </p>
+                            </div>
+                          </div>
+                          {userdocumentsmodel.salary_slip_verified ===
+                          "PENDING_VERIFICATION" ? (
+                            <span
+                              className="reloadicon"
+                              id="PAN"
+                              style={{ opacity: "0.4" }}
+                            >
+                              {/* {" "} */}
+                              Pending verification
+                            </span>
+                          ) : userdocumentsmodel.salary_slip_verified ===
+                              "NOT_SUBMITTED" ||
+                            userdocumentsmodel.salary_slip_verified ===
+                              "NOT_VALID" ? (
+                            <div className="reloadicon">
+                              <span
+                                id="PAN"
+                                style={{ cursor: "pointer" }}
+                                onClick={() =>
+                                  props.history.push({
+                                    pathname: "/professional-details-payme",
+                                  })
+                                }
+                              >
+                                Upload Again{" "}
+                                <span
+                                  style={{ fontSize: "10px", color: "red" }}
+                                >
+                                  (Rejected)
+                                </span>
+                              </span>
+                            </div>
+                          ) : userdocumentsmodel.salary_slip_verified ===
+                            "VERIFIED" ? (
+                            <div>
+                              <img src={Righticons1} />
+                              <span className="reloadicon" id="PAN">
+                                {" "}
+                                ProfessionalDetails Verified
+                              </span>
+                            </div>
+                          ) : null}
+                        </div>
+                      </div>
+                    ) : (
                       <div className="classRighticons">
                         <div style={{ display: "flex" }}>
                           <div className="">
                             <img
                               src={
-                                userdocumentsmodel.salary_slip_verified ===
-                                  "VERIFIED" ||
-                                userdocumentsmodel.salary_slip_verified ===
-                                  "PENDING_VERIFICATION"
+                                props.user.userData.professionaldetails
+                                  .verified === "VERIFIED" ||
+                                props.user.userData.professionaldetails
+                                  .verified === "PENDING_VERIFICATION"
                                   ? Righticons1
                                   : Righticons
                               }
@@ -263,7 +319,7 @@ const Pandingapprovalform = (props) => {
                             </p>
                           </div>
                         </div>
-                        {userdocumentsmodel.salary_slip_verified ===
+                        {props.user.userData.professionaldetails.verified ===
                         "PENDING_VERIFICATION" ? (
                           <span
                             className="reloadicon"
@@ -273,9 +329,9 @@ const Pandingapprovalform = (props) => {
                             {/* {" "} */}
                             Pending verification
                           </span>
-                        ) : userdocumentsmodel.salary_slip_verified ===
+                        ) : props.user.userData.professionaldetails.verified ===
                             "NOT_SUBMITTED" ||
-                          userdocumentsmodel.salary_slip_verified ===
+                          props.user.userData.professionaldetails.verified ===
                             "NOT_VALID" ? (
                           <div className="reloadicon">
                             <span
@@ -288,168 +344,47 @@ const Pandingapprovalform = (props) => {
                               }
                             >
                               Upload Again
+                              <span style={{ fontSize: "10px", color: "red" }}>
+                                (Rejected)
+                              </span>
                             </span>
-                            <p style={{ fontSize: "10px", color: "black" }}>
-                              (Your Dcument is rejected)
-                            </p>
                           </div>
-                        ) : userdocumentsmodel.salary_slip_verified ===
-                          "VERIFIED" ? (
+                        ) : props.user.userData.professionaldetails.verified ===
+                            "VERIFIED" ||
+                          props.user.userData?.other_documents[0]?.status ===
+                            "VERIFIED" ? (
                           <div>
                             <img src={Righticons1} />
                             <span className="reloadicon" id="PAN">
                               {" "}
-                              ProfessionalDetails Verified
+                              Professional Details Verified
                             </span>
                           </div>
                         ) : null}
                       </div>
-                      <div className="classRighticons">
-                        <div style={{ display: "flex" }}>
-                          <div className="">
-                            <img
-                              src={
-                                userdocumentsmodel.office_id_verified ===
-                                  "VERIFIED" ||
-                                userdocumentsmodel.office_id_verified ===
-                                  "PENDING_VERIFICATION"
-                                  ? Righticons1
-                                  : Righticons
-                              }
-                              alt="tick-icon"
-                            />
-                          </div>
-                          <div>
-                            <p className="form-label ml-2">
-                              Office ID-Card (Optional)
-                            </p>
-                          </div>
-                        </div>
-                        {userdocumentsmodel.office_id_verified ===
-                        "PENDING_VERIFICATION" ? (
-                          <span
-                            className="reloadicon"
-                            id="PAN"
-                            style={{ opacity: "0.4" }}
-                          >
-                            {/* {" "} */}
-                            Pending verification
-                          </span>
-                        ) : userdocumentsmodel.office_id_verified ===
-                            "NOT_SUBMITTED" ||
-                          userdocumentsmodel.office_id_verified ===
-                            "NOT_VALID" ? (
-                          <span
-                            className="reloadicon"
-                            id="PAN"
-                            style={{ cursor: "pointer" }}
-                            onClick={() =>
-                              props.history.push({
-                                pathname: "/professional-details-payme",
-                              })
-                            }
-                          >
-                            {/* {" "} */}
-                            Upload
-                          </span>
-                        ) : userdocumentsmodel.office_id_verified ===
-                          "VERIFIED" ? (
-                          <div>
-                            <img src={Righticons1} />
-                            <span className="reloadicon" id="PAN">
-                              {" "}
-                              Office Id Verified
-                            </span>
-                          </div>
-                        ) : null}
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="classRighticons">
-                      <div style={{ display: "flex" }}>
-                        <div className="">
-                          <img
-                            src={
-                              props.user.userData.professionaldetails.verified ===
-                                "VERIFIED" ||
-                              props.user.userData.professionaldetails.verified ===
-                                "PENDING_VERIFICATION"
-                                ? Righticons1
-                                : Righticons
-                            }
-                            alt="tick-icon"
-                          />
-                        </div>
-                        <div>
-                          <p className="form-label ml-2">
-                            Professional Details
-                          </p>
-                        </div>
-                      </div>
-                      {props.user.userData.professionaldetails.verified ===
-                      "PENDING_VERIFICATION" ? (
-                        <span
-                          className="reloadicon"
-                          id="PAN"
-                          style={{ opacity: "0.4" }}
-                        >
-                          {/* {" "} */}
-                          Pending verification
-                        </span>
-                      ) : props.user.userData.professionaldetails.verified ===
-                          "NOT_SUBMITTED" || 
-                        props.user.userData.professionaldetails.verified ===
-                          "NOT_VALID" ? (
-                        <div className="reloadicon">
-                          <span
-                            id="PAN"
-                            style={{ cursor: "pointer" }}
-                            onClick={() =>
-                              props.history.push({
-                                pathname: "/professional-details-payme",
-                              })
-                            }
-                          >
-                            Upload Again
-                          </span>
-                          <p style={{ fontSize: "10px", color: "black" }}>
-                            (Your Dcument is rejected)
-                          </p>
-                        </div>
-                      ) : props.user.userData.professionaldetails.verified ===
-                        "VERIFIED" || props.user.userData.other_documents[0].status === "VERIFIED" ? (
-                        <div>
-                          <img src={Righticons1} />
-                          <span className="reloadicon" id="PAN">
-                            {" "}
-                            Professional Details Verified
-                          </span>
-                        </div>
-                      ) : null}
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
           </form>
         </div>
       </Container>
-      <Footer/>
+      <Footer />
 
       {userdocumentsmodel.adhar_card_verified === "VERIFIED" &&
       userdocumentsmodel.pan_card_verified === "VERIFIED" &&
-      userdocumentsmodel.salary_slip_verified === "VERIFIED" &&
-      userdocumentsmodel.bank_statement_verified === "VERIFIED" ? (
-        props.history.push({pathname:"/congratulations"})
-      ) : null}
+      userbankdetail.verified === "VERIFIED" &&
+      userdocumentsmodel.bank_statement_verified === "VERIFIED"
+        ? props.history.push({ pathname: "/congratulations" })
+        : null}
 
       {userdocumentsmodel.adhar_card_verified === "VERIFIED" &&
       userdocumentsmodel.pan_card_verified === "VERIFIED" &&
-      props.user.userData?.other_documents[0]?.status === "VERIFIED" ? (
-        props.history.push({pathname:"/congratulations"})
-      ) : null}
-   
+      userbankdetail.verified === "VERIFIED" &&
+      props.user.userData?.other_documents[0]?.status === "VERIFIED"
+        ? props.history.push({ pathname: "/congratulations" })
+        : null}
     </>
   );
 };

@@ -6,9 +6,10 @@ import { hitAllUserData } from '../../store/modules/userDetails/actions';
 import { hitLogin } from '../../store/modules/auth/actions'
 import googleimg from "../../component/img/googleimg.png";
 import { GoogleLogin } from 'react-google-login';
-import Header from "../../component/Header";
 import Loader from '../../component/Loader'
 import "../ApplyNowButton/Applybtnallcomponent.css";
+import Header from "../Header";
+import Footer from "../Footer";
 
 const Getstartpaymeindia = (props) => {
   console.log(props.history.location.state.phoneNumber);
@@ -47,7 +48,7 @@ console.log(error)
 
   return (
     <>
-      {/* <Header /> */}
+      <Header {...props} />
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <Container>
         <div className="pt-5 ">
@@ -111,6 +112,9 @@ console.log(error)
           </div>
         </div>
       </Container>}
+      <div style={{marginTop:"8%"}}>
+<Footer/>
+</div>
     </>
   );
 };

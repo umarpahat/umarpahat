@@ -52,7 +52,7 @@ if (window.location.pathname === "/apply-loan") {
   return (
     <>
       {/* {!newUser ? <Header /> : null } */}
-     <Header/>
+     <Header {...props}/>
       <Container >
       
         {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
@@ -95,7 +95,7 @@ if (window.location.pathname === "/apply-loan") {
 
 
 
-<div style={{marginTop:"180px"}}>
+      <div style={{marginTop:"9.2%"}}>
 
       <Footer/>
       </div>

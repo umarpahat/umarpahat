@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-import Header from "../../component/Header";
 import { hitLogout } from '../../store/modules/auth/actions'
 import { api } from '../../services/api';
-import Loader from '../../component/Loader'
+import Loader from '../../component/Loader';
+import Header from "../Header";
 
 function ChangeMpin(props) {
 
@@ -54,7 +54,7 @@ function ChangeMpin(props) {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header {...props} />
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <div className="form-container formcontainermob  pt-4">
         <div>
@@ -105,6 +105,7 @@ function ChangeMpin(props) {
           </form>
         </div>
       </div>}
+      <Header {...props}/>
     </>
   );
 }

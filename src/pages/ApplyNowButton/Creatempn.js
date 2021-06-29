@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../../component/Header";
+import Header from "../Header";
 
 function Creatempn() {
   return (
     <>
-      {/* <Header /> */}
+      <Header {...props}/>
       <div className="form-container formcontainermob  pt-4 pb-5">
         <div>
           <form>
@@ -45,6 +45,7 @@ function Creatempn() {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

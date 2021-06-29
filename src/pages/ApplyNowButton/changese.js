@@ -2,10 +2,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import DragbleImg from "../../component/DragbleImg";
-import Header from "../../component/Header";
 import backicon from "../../component/img/backicon.png";
 import Select from "react-select";
 import Progressbar from "../../component/ProgressBar";
+import Header from "../Header";
+import Footer from "../Footer";
 
 const Kycdetailsformpayme = (props) => {
   const [show, setShow] = useState(false);
@@ -17,7 +18,7 @@ const Kycdetailsformpayme = (props) => {
   ];
   return (
     <>
-      {/* <Header /> */}
+      <Header {...props}/>
 
       <div className="form-container pb-5">
         <div className="pb-4">
@@ -156,6 +157,7 @@ const Kycdetailsformpayme = (props) => {
           </div>
         </form>
       </div>
+      <Header/>
     </>
   );
 };
