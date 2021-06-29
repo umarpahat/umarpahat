@@ -50,16 +50,10 @@ const Footer =(props)=> {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     {/*<li><Link to="#media">Media</Link></li>*/}
-                    <li><Link to="/about" onClick={()=>{
-                        props.hitAppUseCase({ useCase: 'about' })
-                        props.history.push({pathname: '/about'})
-                    }}>About us</Link></li>
+                    <li><Link to="/about" >About us</Link></li>
                     {/*<li><Link to="#how-we-work">How we work</Link></li>*/}
                     {/*<li><Link to="#blog">Blog</Link></li>*/}
-                    <li><Link to="/contact" onClick={()=>{
-                        props.hitAppUseCase({ useCase: 'contact' })
-                        props.history.push({pathname: '/contact'})
-                    }}>Contact us</Link></li>
+                    <li><Link to="/contact" >Contact us</Link></li>
                     {/*<li><Link to="#join-us">Join us</Link></li>*/}
                 </ul>
 
@@ -71,32 +65,17 @@ const Footer =(props)=> {
                     <li><Link to="#advance-salary-loan">Advance Salary Loan</Link></li>
                     <li><Link to="#loans-for-low-salary">Loan For Low Salary</Link></li>
                     <li><Link to="#short-term-loans">Short Term Cash Loans</Link></li>*/}
-                    <li><Link to="/faq" onClick={()=>{
-                        props.hitAppUseCase({ useCase: 'faq' })
-                        props.history.push({pathname: '/faq'})
-                    }}>FAQ</Link></li>
+                    <li><Link to="/faq" >FAQ</Link></li>
 
-                    <li><Link to="#sitemap">Sitemap</Link></li>
+                    {/* <li><Link to="#sitemap">Sitemap</Link></li> */}
                 </ul>
             </div>
             <div className="ol col-md-4">
                 <ul>
-                    <li><Link to="/terms" onClick={()=>{
-                        props.hitAppUseCase({ useCase: 'terms' })
-                        props.history.push({pathname: '/terms'})
-                    }}>Terms &amp; Conditions</Link></li>
-                    <li><Link to="/policy" onClick={()=>{
-                        props.hitAppUseCase({ useCase: 'policy' })
-                        props.history.push({pathname: '/policy'})
-                    }}>Privacy Policy</Link></li>
-                    <li><Link to="/refund" onClick={()=>{
-                        props.hitAppUseCase({ useCase: 'refund' })
-                        props.history.push({pathname: '/refund'})
-                    }}>Refund Policy</Link></li>
-                    <li><Link to="/disclaimer" onClick={()=>{
-                        props.hitAppUseCase({ useCase: 'disclaimer' })
-                        props.history.push({pathname: '/disclaimer'})
-                    }}>Disclaimer</Link></li>
+                    <li><Link to="/terms">Terms &amp; Conditions</Link></li>
+                    <li><Link to="/policy" >Privacy Policy</Link></li>
+                    <li><Link to="/refund">Refund Policy</Link></li>
+                    <li><Link to="/disclaimer" >Disclaimer</Link></li>
 
                 </ul>
 

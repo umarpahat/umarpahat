@@ -18,7 +18,7 @@ body {
   height: 234px;
   font-size: 16px;
   overflow: hidden;
-  border:transparent;
+  border: transparent;
   background-color: transparent;
 }
 .select_css {
@@ -34,10 +34,11 @@ body {
     min-height: 100%;
     top: 100%;
     height: auto !important;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 a.button {
+  box-shadow: -4px -4px 8px #2f5d7f, 4px 4px 8px #376d95;
   color: #fff;
   display: inline-block;
   font-size: 16px;
@@ -55,7 +56,7 @@ a.button {
 }
 
 .box {
-    font-size: 14px
+  font-size: 14px;
 }
 
 a.button:hover {
@@ -258,7 +259,7 @@ a.button-small:hover {
 
 .banner {
   padding: 20px 0 30px;
-  background: #829aae url("images/banner-img.png") no-repeat center 0;
+  background: #829aae url("./images/banner-img.png") no-repeat center 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0 8px 5px -5px;
 }
 
@@ -875,8 +876,8 @@ nav a:hover {
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  background: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
 #menuToggle span:first-child {
@@ -1111,11 +1112,11 @@ footer ul li {
 }
 
 .box h3 {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.25;
-    letter-spacing: 1.2px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 1.2px;
 }
 
 .svg-text {
@@ -1162,7 +1163,7 @@ a {
 }
 
 .paragraphText p {
-    margin-bottom: 10px !important;
+  margin-bottom: 10px !important;
 }
 
 @media (max-width: 600px) {
@@ -1222,10 +1223,10 @@ a {
     height: 50px;
   }
 
-    header .p-t-10 {
-        padding-top: 0;
-        margin-right: 40px;
-    }
+  header .p-t-10 {
+    padding-top: 0;
+    margin-right: 40px;
+  }
 
     #menuToggle {
         top: 20px;
@@ -1248,36 +1249,37 @@ a {
         margin-top: 20px;
     }
 
-    #menuToggle span {
-        height: 1px;
-    }
+  #menuToggle span {
+    height: 1px;
+  }
 
-    .farmer {
-        max-width: 200px;
-        margin: 20px auto;
-    }
+  .farmer {
+    max-width: 200px;
+    margin: 20px auto;
+  }
 
-    .home-steps .red-arrow, .home-steps .red-arrow-bottom {
-        display: none;
-    }
+  .home-steps .red-arrow,
+  .home-steps .red-arrow-bottom {
+    display: none;
+  }
 
-    a.button-large {
-        font-size: 14px;
-        line-height: 18px;
-        height: 20px;
-        margin: 0 auto;
-    }
+  a.button-large {
+    font-size: 14px;
+    line-height: 18px;
+    height: 20px;
+    margin: 0 auto;
+  }
 
-    .price-slider .relative {
-        margin-left: 40px;
-    }
+  .price-slider .relative {
+    margin-left: 40px;
+  }
 
-    .p-l-30 {
-        padding-left: 0;
-        text-align: center;
-    }
+  .p-l-30 {
+    padding-left: 0;
+    text-align: center;
+  }
 
-    .p-l-30 h3 {
-        padding-bottom: 0;
-    }
+  .p-l-30 h3 {
+    padding-bottom: 0;
+  }
 }

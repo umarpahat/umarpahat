@@ -103,7 +103,7 @@ const Refund = (props) => {
 
                 </div>
             </div>
-            <Footer/>
+            <Footer {...props} />
         </>
     )
 };

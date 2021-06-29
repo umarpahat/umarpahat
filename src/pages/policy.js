@@ -127,7 +127,7 @@ const Policy = (props) => {
 
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
     )
 };

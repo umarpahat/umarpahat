@@ -157,7 +157,7 @@ const Kycdetailsformpayme = (props) => {
           </div>
         </form>
       </div>
-      <Footer/>
+      <Header/>
     </>
   );
 };
