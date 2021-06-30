@@ -65,14 +65,14 @@ const Bankdetailspayme = (props) => {
     );
   }
 
-  async function updateBankDetails() {
+  const  updateBankDetails =async()=>{
     const payload = {
       account_number: actNumber,
       bank_address: branchName,
       bank_name: bankName,
       ifsc_code: ifscdetail,
     };
-    // console.log("updatedocument", payload);
+    console.log("updatedocument", payload);
     return await api.post("/api/user_details/bank_details/", payload, {
       headers: { Authorization: "Token " + props.token },
     });
@@ -130,10 +130,11 @@ const Bankdetailspayme = (props) => {
     updateBankDetails();
     Promise.all([...promiseTest, ...updatedocStatus])
       .then((response) => {
-        setloader(true);
-console.log("pramodsjkslks")
+        setloader(false);
+console.log("pramodsjkslks",response)
         if (props.user.professionaldetails?.verified === "PENDING_VERIFICATION" || props.user?.other_documents[0]?.doc_type === "ITR"
         || props.user.professionaldetails?.verified === "VERIFIED") {
+          console.log("bnnnnnnnnnnnnnnnnnnnk")
            props.history.push({ pathname: "/pending-approval" });
         }
         else {

@@ -5,6 +5,7 @@ import { hitLogout } from '../../store/modules/auth/actions'
 import { api } from '../../services/api';
 import Loader from '../../component/Loader';
 import Header from "../Header";
+import Footer from "../Footer";
 
 function ChangeMpin(props) {
 
@@ -105,7 +106,7 @@ function ChangeMpin(props) {
           </form>
         </div>
       </div>}
-      <Header {...props}/>
+      <Footer />
     </>
   );
 }

@@ -213,9 +213,9 @@ const Pandingapprovalform = (props) => {
                             {/* {" "} */}
                             Upload Again
                           </span>
-                          <p style={{ fontSize: "10px", color: "black" }}>
+                          <span style={{ fontSize: "10px", color: "red" }}>
                             (Rejected)
-                          </p>
+                          </span>
                         </div>
                       ) : userdocumentsmodel.bank_statement_verified ===
                           "VERIFIED" ||
@@ -280,8 +280,7 @@ const Pandingapprovalform = (props) => {
                               >
                                 Upload Again{" "}
                                 <span
-                                  style={{ fontSize: "10px", color: "red" }}
-                                >
+                                  style={{ fontSize: "10px", color: "red" }}>
                                   (Rejected)
                                 </span>
                               </span>
