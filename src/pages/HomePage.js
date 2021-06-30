@@ -6,6 +6,7 @@ import Loader from '../component/Loader'
 import "./ApplyNowButton/Applybtnallcomponent.css";
 import Footer from "./Footer";
 import Header from "./Header";
+import Slider from "./Slider";
 import '../../src/home.css';
 import saltlogo from "../images/salt-logo.png";
 import appIcon from "../images/app-icon.png";
@@ -103,13 +104,13 @@ const HomePage = (props) => {
                                     <div className="price-slider">
                                         <h4>How much cash do you need?</h4>
                                         <div className="relative">
-                                            <div id="slider"></div>
+                                            <Slider />
                                         </div>
                                     </div>
                                     <div className="price-slider">
                                         <h4>For how long?</h4>
                                         <div className="relative">
-                                            <div id="slider2"></div>
+                                            <Slider />
                                         </div>
                                     </div>
                                     <p className="text"><span id="amount-label1"></span> over a period of <span
@@ -138,7 +139,9 @@ const HomePage = (props) => {
                                                    className="col-sm-12 control-label">REPAYMENT &#8377; </label>
                                             <div className="col-sm-12">
                                                 <input type="hidden" id="amount" className="form-control"/>
-                                                <p className="price lead" id="amount-label"></p>
+                                                <p className="price lead" id="amount-label">
+
+                                                </p>
                                                 <span className="price"></span>
                                             </div>
                                         </div>
