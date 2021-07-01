@@ -42,29 +42,32 @@ const HomePage = (props) => {
     }));
     const classes = useStyles();
     let [loader, setloader] = useState(false);
-    const [amount, setAmount] = useState(500);
-    const [time, setTime] = useState("");
+    const [amount, setAmount] = useState(0);
+    const [time, setTime] = useState(0);
     const [result, setResult] = useState("");
     const [rateofinterest, setrateofinterest] = useState(0.01);
     function valuetext(value1) {
         setAmount(value1);
-        $("#total-label").text(amount);
+        $("#total-amount1").text(amount);
         $("#total-amount").text(amount);
         console.log(amount)
     }
 
     function valuetext2(value2) {
         setTime(value2);
-        $("#duration-label").text(time);
+        $("#duration-month").text(time);
     }
 
     function handleResult() {
-        let roi = Number(0.06);
+        let roi = Number(15.2);
+        let pfee = Number(500);
         console.log(roi, amount, time)
         const result =
-            Math.round(amount * ((roi * (1 + roi) * time) / ((1 + roi) * time - 1)));
+            Math.round((amount * roi*time)/1200);
         $('#interest').text(result)
-        let repay = result + amount + 500;
+        $('#roi').text(roi)
+        $('#pfee').text(pfee)
+        let repay = result + amount + pfee;
         $('#repayment').text(repay);
         return result;
     }
@@ -171,9 +174,9 @@ const HomePage = (props) => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <p className="text"><span id="total-label"></span> over a period of <span
-                                            id="duration-label"></span> months at a rate of 16.7%, Processing Fee:
-                                            400.00
+                                        <p className="text"><span id="total-amount1"></span> over a period of <span
+                                            id="duration-month"></span> months at a rate of <span id="roi"></span>%, Processing Fee:
+                                             <span id="pfee"></span>
                                         </p>
                                         <div className="price-form">
                                             <div className="form-group1">
