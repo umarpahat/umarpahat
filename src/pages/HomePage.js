@@ -71,10 +71,10 @@ const HomePage = (props) => {
                     <div className="carousel-item black-bg p-b-30">
                         <div className="container">
                             <div className="row align-items-center pb-3 text-center">
-                                <div className="col col-md-12 p-t-20 animate__animated animate__slideInDown">
+                                <div className="col-sm-12 col-md-12 p-t-20 animate__animated animate__slideInDown">
                                     <img className="img-fluid svg-text" alt="CIBIL" src={saltlogo}/>
                                 </div>
-                                <div className="col col-md-12">
+                                <div className="col-sm-12 col-md-12">
                                     <h3 className="heading2 animate__animated animate__slideInDown white-color">Use as
                                         much as
                                         you need

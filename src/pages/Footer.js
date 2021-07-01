@@ -19,17 +19,6 @@ const Footer = (props) => {
             <div >
                 <div className="container">
                     <div className="row">
-                        <div className="ol col-md-4">
-                            <h6>About</h6>
-                        </div>
-                        <div className="ol col-md-4">
-                            <h6>FAQ</h6>
-                        </div>
-                        <div className="ol col-md-4">
-                            <h6>Policies</h6>
-                        </div>
-                    </div>
-                    <div className="row">
                         {/* <div className="ol col-md-3">
                 <ul>
                     <li><Link to="#" data-toggle="modal" data-target="#slidingModal">Seo link 1</Link></li>
@@ -41,6 +30,7 @@ const Footer = (props) => {
                 </ul>
             </div>*/}
                         <div className="ol col-md-4">
+                            <h6 className='head6'>About</h6>
                             <ul>
                                 <li><Link to="/">Home</Link></li>
                                 {/*<li><Link to="#media">Media</Link></li>*/}
@@ -53,6 +43,7 @@ const Footer = (props) => {
 
                         </div>
                         <div className="ol col-md-4">
+                            <h6 className='head6'>FAQ</h6>
                             <ul>
                                 {/* <li><Link to="#corporate">Corporate</Link></li>
                     <li><Link to="#nbfc">Our NBFC Partners</Link></li>
@@ -65,6 +56,7 @@ const Footer = (props) => {
                             </ul>
                         </div>
                         <div className="ol col-md-4">
+                            <h6 className='head6'>Policies</h6>
                             <ul>
                                 <li><Link to="/terms">Terms &amp; Conditions</Link></li>
                                 <li><Link to="/policy">Privacy Policy</Link></li>

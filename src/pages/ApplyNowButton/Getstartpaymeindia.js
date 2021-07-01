@@ -49,6 +49,7 @@ console.log(error)
   return (
     <>
       <Header {...props} />
+      <div className='content'>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <Container>
         <div className="pt-5 ">
@@ -116,9 +117,8 @@ console.log(error)
           </div>
         </div>
       </Container>}
-      
-<Footer cssname="fixed-bottom"/>
-
+      </div>
+      <Footer/>
     </>
   );
 };

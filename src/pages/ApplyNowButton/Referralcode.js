@@ -53,6 +53,7 @@ function Referralcode(props) {
   return (
     <>
       <Header {...props}/>
+        <div className='content'>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <div className="form-container formcontainermob  pt-4">
         <div>
@@ -106,9 +107,8 @@ function Referralcode(props) {
           <p className="Skipsty" onClick={()=>props.history.push({pathname:'/change-mpin', state: { forgotPassword: false}})}>Skip</p>
         {/* </Link> */}
       </div>
-      <div style={{marginTop:"8%"}}>
-<Footer/>
-</div>
+        </div>
+        <Footer/>
     </>
   );
 }

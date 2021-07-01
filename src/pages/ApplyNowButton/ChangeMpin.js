@@ -56,6 +56,7 @@ function ChangeMpin(props) {
   return (
     <>
       <Header {...props} />
+        <div className='content'>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <div className="form-container formcontainermob  pt-4">
         <div>
@@ -106,6 +107,7 @@ function ChangeMpin(props) {
           </form>
         </div>
       </div>}
+        </div>
       <Footer />
     </>
   );

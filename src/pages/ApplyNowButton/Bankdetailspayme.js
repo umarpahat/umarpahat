@@ -233,7 +233,7 @@ const Bankdetailspayme = (props) => {
   return (
     <>
       <Header {...props} />
-
+      <div className='content'>
       <Container>
         {loader ? (
           <div className="loader">
@@ -418,6 +418,7 @@ const Bankdetailspayme = (props) => {
           </div>
         )}
       </Container>
+    </div>
       <Footer />
     </>
   );

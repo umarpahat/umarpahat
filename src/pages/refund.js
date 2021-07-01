@@ -25,15 +25,15 @@ const Refund = (props) => {
 
     return (
         <>
-
             <Header {...props}/>
-            
-
+            <div className='content'>
             <div className="services">
                 <div className="container">
-                    <div className="row align-items-center p-t-40 p-b-30">
-                        <div className="col-lg-12  col-md-12  col-sm-12 col-xs-12 textAlign paragraphText">
-                            <h5 className="heading5 p-t-30">Refund Policy:</h5>
+                    <div className="row align-items-center p-b-30">  <div className="col col-md-12 reg-second-heading">
+                        <h4>Refund Policy</h4>
+                    </div>
+                        <div className="col-lg-12  col-md-12  col-sm-12 col-xs-12 paragraphText">
+                            <h5 className="heading5">Refund:</h5>
                             <p>At Payme India we value our customers and are committed to providing best services. Refund process will only be initiated by PayMe India in following conditions:</p>
                             <p>We will not pass your details on to any third party.</p>
                             <p>(i)If repayment of the loan has been done by the borrower twice by any means.</p>
@@ -56,8 +56,8 @@ const Refund = (props) => {
 
                 </div>
             </div>
-        
-            <Footer cssname="fixed-bottom" />
+            </div>
+            <Footer/>
         </>
     )
 };

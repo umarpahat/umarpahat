@@ -101,12 +101,12 @@ const sendOtp = () => {
 
   return (
     <>
-      {/* {!forgotPassword ? <Header /> : null } */}
       <Header {...props}/>
+      <div className='content'>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       forgotPassword ? <Confirmotpmobile {...props} phone_number={Number(props.location.state.phoneNumber)} forget_password={true} resendOtp={sendOtp} /> :
-      <div className="form-container formcontainermob  pt-4" >
-        <div>
+      <div className="form-container formcontainermob pt-4 " >
+        <div className='p-b-30'>
         <form onSubmit={handleSubmit}>
             <div className="Home-contact-form mt-4">
               <div className="form-block">
@@ -147,14 +147,9 @@ const sendOtp = () => {
           </form>
         </div>
       </div>
-      
-       }
-       <Footer cssname="fixed-bottom" style={{backgroundColor: "#F1F3F5"}}/>
-      
-  
-
-
-
+      }
+      </div>
+       <Footer/>
     </>
   );
 }

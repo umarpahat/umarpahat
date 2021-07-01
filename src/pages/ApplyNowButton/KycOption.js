@@ -128,6 +128,7 @@ var time = setInterval(function(){
   return (
     <>
     <Header {...props}/>
+      <div className='content'>
       {ekyc === "VERIFIED" ? (
         <Container style={{backgroundColor:"#f2f2f2"}}>
           <div className="pt-5 ">
@@ -223,9 +224,8 @@ var time = setInterval(function(){
           </div>
         </Container>
       )}
-      
-      <Footer cssname="fixed-bottom"/>
-     
+      </div>
+      <Footer/>
     </>
   );
 };

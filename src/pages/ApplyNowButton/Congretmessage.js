@@ -8,9 +8,9 @@ const Congretmessage = (props) => {
   return (
     <>
       <Header {...props} />
-      <div>
+      <div className='content'>
       <Container >
-        <div className="form-container formcontainermob  pt-4">
+        <div className="form-container formcontainermob  pt-4 p-b-30">
           <form>
             <div className="Home-contact-form mt-4">
               <h4 className="form-heading text-center pb-3">
@@ -35,10 +35,7 @@ const Congretmessage = (props) => {
         </div>
       </Container>
       </div>
-      <div style={{marginTop:"14.3%"}}>
-
-      <Footer cssname="fixed-bottom"/>
-      </div>
+      <Footer/>
     </>
   );
 };

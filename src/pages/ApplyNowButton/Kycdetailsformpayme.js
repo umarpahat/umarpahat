@@ -228,6 +228,7 @@ const Kycdetailsformpayme = (props) => {
     <>
 
       <Header {...props} />
+      <div className='content'>
       {loader ? (
         <div className="loader">
           {" "}
@@ -509,11 +510,8 @@ const Kycdetailsformpayme = (props) => {
           </form>
         </div>
       )}
-
-      <div >
-
-<Footer/>
-</div>
+      </div>
+    <Footer/>
     </>
   );
 };

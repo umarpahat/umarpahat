@@ -26,9 +26,12 @@ const Disclaimer = (props) => {
       <div className='content'>
       <div className="services">
         <div className="container">
-          <div className="row align-items-center p-t-40 p-b-30">
-            <div className="col-lg-12  col-md-12  col-sm-12 col-xs-12 textAlign paragraphText">
-              <h5 className="heading5 p-t-30">DATA Protection Notice</h5>
+          <div className="row align-items-center p-b-30">
+            <div className="col col-md-12 reg-second-heading">
+              <h4>Disclaimer</h4>
+            </div>
+            <div className="col-lg-12 col-md-12  col-sm-12 col-xs-12 paragraphText">
+              <h5 className="heading5">DATA Protection Notice</h5>
               <p>
                 Details of your name, e-mail address and any other personal
                 information about you which you include in response to parts of
