@@ -59,7 +59,7 @@ if (window.location.pathname === "/apply-loan") {
       
         {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
         newUser ? <Confirmotpmobile {...props} phone_number={Number(number)} resendOtp={verifyPhone} /> :
-          <div className="pt-5 ">
+          <div className="pt-5 p-b-30">
             <div className="contenertQuicklone">
               <div className="slider-right-block">
                 <form onSubmit={handleSubmit}>
@@ -95,11 +95,7 @@ if (window.location.pathname === "/apply-loan") {
         }
       </Container>
       </div>
-      <div style={{marginTop:"11%"}}>
-     <Footer cssname="fixed-bottom"/>
-     </div>
-   
-      
+     <Footer/>
     </>
   );
 };

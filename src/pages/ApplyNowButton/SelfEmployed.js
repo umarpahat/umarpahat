@@ -116,6 +116,7 @@ const SelfEmployed = (props) => {
   return (
     <>
       <Header {...props} />
+      <div className='content'>
       <Container className="pb-5" style={{ backgroundColor: "#f2f2f2" }}>
         <div className="form-container formcontainermob  pt-4 pb-5">
           <div className="pt-2">
@@ -286,11 +287,9 @@ const SelfEmployed = (props) => {
           </form>
         </div>
       </Container>
-
       <Modalkyccomplete show={show} handleClose={handleClose} />
-      <div style={{ marginTop: "180px" }}>
-        <Footer />
       </div>
+        <Footer />
     </>
   );
 };

@@ -16,10 +16,11 @@ function Referralcode(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    referral.length ? handleReferral() : seterror("Please enter referral code or press skip")
+    referral.length ? handleReferral() : seterror("Please enter valid referral code or press skip")
   }
 
   const handleReferral = () => {
+   
     setloader(true)
     console.log(3333333)
     console.log(referral)
@@ -40,6 +41,7 @@ function Referralcode(props) {
           console.log(response.status)
         } else {
             console.log(response.status)
+            seterror("Enter a valid Referal Code");
         }
       return response;
     })
@@ -53,6 +55,7 @@ function Referralcode(props) {
   return (
     <>
       <Header {...props}/>
+        <div className='content'>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <div className="form-container formcontainermob  pt-4">
         <div>
@@ -106,9 +109,8 @@ function Referralcode(props) {
           <p className="Skipsty" onClick={()=>props.history.push({pathname:'/change-mpin', state: { forgotPassword: false}})}>Skip</p>
         {/* </Link> */}
       </div>
-      <div style={{marginTop:"8%"}}>
-<Footer/>
-</div>
+        </div>
+        <Footer/>
     </>
   );
 }

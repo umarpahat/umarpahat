@@ -137,7 +137,7 @@ const About = (props) => {
           </div>
           <div className="row p-t-40 text-center p-b-30">
             <div className="col-lg-12 text-center">
-              <img class="img-fluid" src={team} alt="Team" />
+              <img className="img-fluid" src={team} alt="Team" />
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ const About = (props) => {
               <h4 className="heading4">Contact Us</h4>
               <p>
                 Please contact us at{" "}
-                <a href="mailto: admin@paymeindia.in">admin@paymeindia.in</a>
+                <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
               </p>
             </div>
           </div>

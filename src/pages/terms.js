@@ -28,8 +28,11 @@ const Terms = (props) => {
             <Header {...props} />
             <div className='content'>
             <div className="services">
-                <div className="container p-t-40 p-b-30">
-                    <p className='p-t-30'><strong>1. GENERAL</strong></p>
+                <div className="container p-b-30">
+                    <div className="col col-md-12 reg-second-heading">
+                        <h4>Terms & Conditions</h4>
+                    </div>
+                    <p><strong>1. GENERAL</strong></p>
                     <p> This Agreement is a contract between you and PayMeIndia and applies to your use of the
                         PayMeIndia Services (the "Services"). By registering for the Services, you must read, agree
                         with and accept all of the terms and conditions contained in this Agreement. You agree that
@@ -1213,7 +1216,7 @@ const Terms = (props) => {
                     <div className="row justify-content-md-center">
                         <div className="col col-md-8 text-center p-t-30 p-b-30">
                             <h4 className="heading4">Contact Us</h4>
-                            <p>Please contact us at <a href="mailto: admin@paymeindia.in">admin@paymeindia.in</a></p>
+                            <p>Please contact us at <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a></p>
 
                         </div>
                     </div>
@@ -1221,7 +1224,7 @@ const Terms = (props) => {
                 </div>
             </div>
             </div>
-            <Footer {...props} />
+            <Footer/>
         </>
     )
 };

@@ -212,6 +212,7 @@ const Professionaldetailspayme = (props) => {
   return (
     <>
       <Header {...props}/>
+      <div className='content'>
       <Container className="pb-5">
         {loader ? (
           <div className="loader">
@@ -577,7 +578,7 @@ const Professionaldetailspayme = (props) => {
           </div>
         )}
       </Container>
-
+      </div>
       <Footer/>
     </>
   );

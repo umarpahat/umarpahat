@@ -7,6 +7,7 @@ function Creatempn() {
   return (
     <>
       <Header {...props}/>
+      <div className="content">
       <div className="form-container formcontainermob  pt-4 pb-5">
         <div>
           <form>
@@ -46,7 +47,8 @@ function Creatempn() {
           </form>
         </div>
       </div>
-      <Footer cssname="fixed-bottom"/>
+      </div>
+      <Footer/>
     </>
   );
 }

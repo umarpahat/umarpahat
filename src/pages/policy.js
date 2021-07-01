@@ -25,62 +25,16 @@ const Policy = (props) => {
 
     return (
         <>
-
-            
+            <Header {...props} />
             <div className='content'>
-            <div className="sticky-top">
-                <header className="header">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-auto me-auto">
-                                <a href="/"> <img className="home_logo img-fluid" src={logo} alt="Pay Me India"/> </a>
-                            </div>
-                            <div className="col-auto p-t-10">
-                                <Link onClick={() => {
-                                    props.hitAppUseCase({useCase: 'apply-loan'})
-                                    props.history.push({pathname: '/apply-loan'})
-                                }}>
-
-                                    <a href="#" className="button">Apply Loan</a>
-                                </Link>
-                                <Link onClick={() => {
-                                    props.hitAppUseCase({useCase: 'pay-rent'})
-                                    props.history.push({pathname: '/pay-rent'})
-                                }}>
-                                    <a href="#" className="button">Pay Rent</a>
-                                </Link>
-                            </div>
-
-                        </div>
-                    </div>
-                    <nav role='navigation'>
-                        <div id="menuToggle">
-                            <input type="checkbox"/>
-                            <span></span> <span></span> <span></span>
-                            <ul id="menu">
-                                <li><a href="/">Home</a></li>
-                                <li><a href="#media">Media</a></li>
-                                <li><a href="#about-us">About us</a></li>
-                                <li><a href="#corporate">Corporate</a></li>
-                                <li><a href="#how-we-work">How we work</a></li>
-                                <li><a href="#blog">Blog</a></li>
-                                <li><a href="#contact-us">Contact us</a></li>
-                                <li><a href="#join-us">Join us</a></li>
-                                <li><a href="#nbfc">Our NBFC Partners</a></li>
-                                <li><a href="#advance-salary-loan">Advance Salary Loan</a></li>
-                                <li><a href="#loans-for-low-salary">Loan For Low Salary</a></li>
-                                <li><a href="#short-term-loans">Short Term Cash Loans</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-            </div>
-
             <div className="services">
                 <div className="container">
-                    <div className="row align-items-center p-t-40 p-b-30">
-                        <div className="col-lg-12  col-md-12  col-sm-12 col-xs-12 textAlign paragraphText">
-                            <h5 className="heading5 p-t-30">DATA Protection Notice</h5>
+                    <div className="row align-items-center p-b-30">
+                        <div className="col col-md-12 reg-second-heading">
+                            <h4>Privacy Policy</h4>
+                        </div>
+                        <div className="col-lg-12  col-md-12  col-sm-12 col-xs-12 paragraphText">
+                            <h5 className="heading5">DATA Protection Notice</h5>
                             <p>Details of your name, e-mail address and any other personal information about you which you include in response to parts of this website comprise "personal data" for the purposes of the Data Protection Act 1998. We therefore require you to give you the following information.</p>
                             <p>We will not pass your details on to any third party.</p>
                             <p>If you ask to be included on the list to receive any of our newsletters, we will use this personal data to send them to you each quarter.</p>
@@ -120,7 +74,7 @@ const Policy = (props) => {
                     <div className="row justify-content-md-center">
                         <div className="col col-md-8 text-center p-t-30 p-b-30">
                             <h4 className="heading4">Contact Us</h4>
-                            <p>Please contact us at <a href="mailto: admin@paymeindia.in">admin@paymeindia.in</a></p>
+                            <p>Please contact us at <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a></p>
 
                         </div>
                     </div>

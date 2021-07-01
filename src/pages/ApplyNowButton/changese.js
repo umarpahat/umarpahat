@@ -19,7 +19,7 @@ const Kycdetailsformpayme = (props) => {
   return (
     <>
       <Header {...props}/>
-
+      <div className='content'>
       <div className="form-container pb-5">
         <div className="pb-4">
           <Progressbar />
@@ -156,6 +156,7 @@ const Kycdetailsformpayme = (props) => {
             </Link>
           </div>
         </form>
+      </div>
       </div>
       <Footer/>
     </>
