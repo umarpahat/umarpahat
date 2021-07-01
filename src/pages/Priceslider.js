@@ -27,9 +27,9 @@ export default function DiscreteSlider() {
         defaultValue={0}
         getAriaValueText={valuetext}
         aria-labelledby="discrete-slider-always"
-        step={500}
-        min={0}
-        max={200000}
+        step={1}
+        min={2}
+        max={24}
         valueLabelDisplay="on"
       />
     </div>

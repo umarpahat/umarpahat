@@ -257,7 +257,7 @@ const Professionaldetailspayme = (props) => {
                     />
                     <label
                       class="form-check-label form-label pr-5"
-                      for="inlineRadio1"
+                      htmlFor="inlineRadio1"
                     >
                       Salaried
                     </label>
@@ -274,7 +274,7 @@ const Professionaldetailspayme = (props) => {
 
                       <label
                         class="form-check-label form-label"
-                        for="inlineRadio2"
+                        htmlFor="inlineRadio2"
                       >
                         Self-Employed
                       </label>

@@ -7,6 +7,7 @@ import "./ApplyNowButton/Applybtnallcomponent.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import Slider from "./Slider";
+import Priceslider from "./Priceslider"
 import '../../src/home.css';
 import saltlogo from "../images/salt-logo.png";
 import appIcon from "../images/app-icon.png";
@@ -27,6 +28,7 @@ import easyRepay from "../images/easy-repay.png";
 import CibilImg from "../images/cibil.png";
 import InstantCash from "../images/instant-cash.svg"
 import {Link} from "react-router-dom";
+
 
 
 
@@ -109,7 +111,7 @@ const HomePage = (props) => {
                                     <div className="price-slider">
                                         <h4>For how long?</h4>
                                         <div className="relative">
-                                            <Slider />
+                                            <Priceslider />
                                         </div>
                                     </div>
                                     <p className="text"><span id="amount-label1"></span> over a period of <span
