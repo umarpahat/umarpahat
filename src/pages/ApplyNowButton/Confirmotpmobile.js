@@ -89,7 +89,7 @@ const Confirmotpmobile = (props) => {
         <>
          
 
-          <div className="Enter-otp-form">
+          <div className="Enter-otp-form" style={{position:'relative', paddingBottom:90}} >
             <form>
               <div className="Home-contact-form">
                 <h4 className="form-heading text-center">
