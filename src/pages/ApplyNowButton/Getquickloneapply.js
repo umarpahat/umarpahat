@@ -8,6 +8,7 @@ import Confirmotpmobile from "./Confirmotpmobile";
 import "../ApplyNowButton/Applybtnallcomponent.css";
 import Header from "../Header";
 import Footer from "../Footer";
+import "../../home.css";
 
 const Getquikloneapply = (props) => {
 
@@ -95,7 +96,7 @@ if (window.location.pathname === "/apply-loan") {
       </Container>
       </div>
       <div style={{marginTop:"11%"}}>
-     <Footer/>
+     <Footer cssname="fixed-bottom"/>
      </div>
    
       

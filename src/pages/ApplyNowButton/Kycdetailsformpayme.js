@@ -33,6 +33,7 @@ const Kycdetailsformpayme = (props) => {
   const [correctPan,setcorrectPan] = useState("");
 
   console.log("props.useCase", props.userCase);
+  
 
   const handleClose = () => setShow(!show);
 

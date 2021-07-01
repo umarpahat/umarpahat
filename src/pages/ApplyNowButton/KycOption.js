@@ -223,9 +223,9 @@ var time = setInterval(function(){
           </div>
         </Container>
       )}
-      <div style={{marginTop:"70px"}}>
-      <Footer/>
-      </div>
+      
+      <Footer cssname="fixed-bottom"/>
+     
     </>
   );
 };

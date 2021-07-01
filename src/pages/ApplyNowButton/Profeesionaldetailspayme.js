@@ -316,7 +316,6 @@ const Professionaldetailspayme = (props) => {
                     </label>
                     <input
                       type="text"
-                      onKeyPress={event => (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)}
                       class="form-control ms-form-input"
                       placeholder="Enter Organization Name"
                       value={organizationName}
@@ -466,6 +465,7 @@ const Professionaldetailspayme = (props) => {
                       ) : null}
                       <input
                         type="file"
+                        accept=".pdf"
                         class="custom-file-input"
                         id="uploadsalary"
                         onChange={handlesalaryUpload}

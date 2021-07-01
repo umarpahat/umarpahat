@@ -14,11 +14,16 @@ const useStyles = makeStyles((theme) => ({
 
 function valuetext(value) {
   $("#total-label").text(value);
-  return `${value}`;
+  $("#total-amount").text(value);
+  var amount= `${value}`
 
+  return `${value}`;
+  
 }
 
-export default function DiscreteSlider() {
+
+
+export  function AmountSlider() {
   const classes = useStyles();
 
   return (
@@ -28,8 +33,31 @@ export default function DiscreteSlider() {
         getAriaValueText={valuetext}
         aria-labelledby="discrete-slider-always"
         step={500}
-        min={0}
+        min={500}
         max={200000}
+        valueLabelDisplay="on"
+      />
+    </div>
+  );
+}
+function valuetext2(value) {
+  $("#duration-label").text(value);
+  return `${value}`;
+
+}
+
+export  function TimeSlider() {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root}>
+      <Slider
+        defaultValue={0}
+        getAriaValueText={valuetext2}
+        aria-labelledby="discrete-slider-always"
+        step={1}
+        min={2}
+        max={24}
         valueLabelDisplay="on"
       />
     </div>

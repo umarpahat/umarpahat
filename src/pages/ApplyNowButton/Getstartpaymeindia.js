@@ -72,7 +72,7 @@ console.log(error)
                         <u> Privacy Policy, </u>
                       </span></Link>
                       <Link  to='/terms'><span style={{ color: "black" }}>
-                        <u> T&C's </u>
+                        <u>T&C's</u>
                       </span>
                       </Link>
                       and authorize us to retreieve your Credit report and
@@ -116,9 +116,9 @@ console.log(error)
           </div>
         </div>
       </Container>}
-      <div style={{marginTop:"8%"}}>
-<Footer/>
-</div>
+      
+<Footer cssname="fixed-bottom"/>
+
     </>
   );
 };

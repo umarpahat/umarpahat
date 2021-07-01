@@ -13,12 +13,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function valuetext(value) {
-  $("#total-label").text(value);
+  $("#duration-label").text(value);
   return `${value}`;
 
 }
 
-export default function DiscreteSlider() {
+export  function DiscreteSlider() {
   const classes = useStyles();
 
   return (
