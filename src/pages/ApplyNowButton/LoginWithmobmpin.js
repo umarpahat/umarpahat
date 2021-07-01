@@ -8,6 +8,7 @@ import { api } from '../../services/api';
 import Loader from '../../component/Loader'
 import Header from "../Header";
 import Footer from "../Footer";
+import "../../home.css";
 
 function LoginWithMobMpin(props) {
   let [loader, setloader] = useState(false);
@@ -145,10 +146,13 @@ const sendOtp = () => {
             </div>
           </form>
         </div>
-      </div>}
+      </div>
+      
+       }
+       <Footer cssname="fixed-bottom" style={{backgroundColor: "#F1F3F5"}}/>
       
   
-<Footer css="fixed-bottom"/>
+
 
 
     </>

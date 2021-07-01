@@ -3,39 +3,65 @@ import { Container } from "react-bootstrap";
 // import { Link } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-
+import { hitAllUserData } from "../../store/modules/userDetails/actions";
 import DragbleImg from "../../component/DragbleImg";
 import Righticons from "../../component/img/Righticons.png";
 import Righticons1 from "../../component/img/Righticons1.png";
 import Congretmessage from "../../pages/ApplyNowButton/Congretmessage";
 import reloadeicon from "../../component/img/reloadeicon.png";
 import Loader from "../../component/Loader";
+import { API_ENDPOINT } from "../../constant";
+import axios from "axios";
 
 import Progressbar from "../../component/ProgressBar";
 import Header from "../Header";
 import Footer from "../Footer";
 
 const Pandingapprovalform = (props) => {
-  const [userbankdetail, setuserbankdetail] = useState({});
-  const [userdocumentsmodel, setuserdocumentsmodel] = useState({});
+
+  console.log("latest",props)
+  const [documentstatus, setDocumentstatus] = useState({});
+  const [userdocumentsmodel,setuserdocumentsmodel]=useState({});
+  const[userbankdetail,setuserbankdetail]=useState({});
 
   useEffect(() => {
     if (!props.token) {
       props.history.push({ pathname: "/" });
     }
+    // ekycCall();
     if (Object.keys(props.user).length) {
       setuserdocumentsmodel(props.user.userData.userdocumentsmodel);
       setuserbankdetail(
         props.user.userData.userbankdetail
-          ? props.user.userData.userbankdetail
-          : { verified: "NOT_SUBMITTED" }
+         
       );
     }
   });
 
+ useEffect(()=> {
+   
+    let url2 = `${API_ENDPOINT}api/get_document_status/`;
+    let config = {
+     headers: {
+       Authorization: "Token " + props.token,
+     },
+   };
+   axios
+     .get(url2, config)
+     .then((response) => {
+       console.log("pendingstatus",response)
+      setDocumentstatus(response.data.data[0]);
+      
+     })
+     .catch((err) => {
+       console.log(err);
+     });
+
+ }
+ ,[]);
   return (
     <>
-      <Header {...props} />
+      <Header {...props}/>
       <div className="content">
         <Container>
           <div className="form-container formcontainermob  pt-4">
@@ -53,10 +79,8 @@ const Pandingapprovalform = (props) => {
                         <div className="">
                           <img
                             src={
-                              userdocumentsmodel.adhar_card_verified ===
-                                "VERIFIED" ||
-                              userdocumentsmodel.adhar_card_verified ===
-                                "PENDING_VERIFICATION"
+                             documentstatus.kyc_verified === "PENDING_VERIFICATION" 
+                             || documentstatus.kyc_verified==="VERIFIED"
                                 ? Righticons1
                                 : Righticons
                             }
@@ -67,25 +91,22 @@ const Pandingapprovalform = (props) => {
                           <p className="form-label ml-2">KYC</p>
                         </div>
                       </div>
-                      {userdocumentsmodel.adhar_card_verified ===
-                        "PENDING_VERIFICATION" &&
-                      userdocumentsmodel.pan_card_verified ===
-                        "PENDING_VERIFICATION" ? (
+                      {documentstatus.kyc_verified === "PENDING_VERIFICATION" ? (
                         <span
                           className="reloadicon"
                           id="PAN"
                           style={{ opacity: "0.4" ,cursor:"pointer" }}
                           onClick={() =>
                             props.history.push({
-                              pathname: "/kyc-details-form",
+                              pathname: "/kycoption",
                             })
                           }
                         >
                           Pending KYC verification
                         </span>
-                      ) : userdocumentsmodel.adhar_card_verified ===
+                      ) : documentstatus.kyc_verified ===
                           "NOT_SUBMITTED" ||
-                        userdocumentsmodel.adhar_card_verified ===
+                        documentstatus.kyc_verified ===
                           "NOT_VALID" ? (
                         <div className="reloadicon">
                           <span
@@ -93,7 +114,7 @@ const Pandingapprovalform = (props) => {
                             style={{ cursor: "pointer" }}
                             onClick={() =>
                               props.history.push({
-                                pathname: "/kyc-details-form",
+                                pathname: "/kycoption",
                               })
                             }
                           >
@@ -103,9 +124,7 @@ const Pandingapprovalform = (props) => {
                             </span>
                           </span>
                         </div>
-                      ) : userdocumentsmodel.adhar_card_verified ===
-                          "VERIFIED" &&
-                        userdocumentsmodel.pan_card_verified === "VERIFIED" ? (
+                      ) : documentstatus.kyc_verified === "VERIFIED" ? (
                         <div>
                           <img src={Righticons1} alt="tick-icon" />
                           <span className="reloadicon" id="PAN">
@@ -122,8 +141,8 @@ const Pandingapprovalform = (props) => {
                         <div className="">
                           <img
                             src={
-                              userbankdetail.verified === "VERIFIED" ||
-                              userbankdetail.verified === "PENDING_VERIFICATION"
+                             documentstatus.bank_details_verified=== "VERIFIED" ||
+                              documentstatus.bank_details_verified === "PENDING_VERIFICATION"
                                 ? Righticons1
                                 : Righticons
                             }
@@ -134,7 +153,7 @@ const Pandingapprovalform = (props) => {
                           <p className="form-label ml-2">Bank Details</p>
                         </div>
                       </div>
-                      {userbankdetail.verified === "PENDING_VERIFICATION" ? (
+                      {documentstatus.bank_details_verified === "PENDING_VERIFICATION" ? (
                         <span
                           className="reloadicon"
                           id="PAN"
@@ -148,8 +167,8 @@ const Pandingapprovalform = (props) => {
                           {/* {" "} */}
                           Pending verification
                         </span>
-                      ) : userbankdetail.verified === "NOT_SUBMITTED" ||
-                        userbankdetail.verified === "NOT_VALID" ? (
+                      ) : documentstatus.bank_details_verified === "NOT_SUBMITTED" ||
+                      documentstatus.bank_details_verified === "NOT_VALID" ? (
                         <div className="reloadicon">
                           <span
                             id="PAN"
@@ -167,7 +186,7 @@ const Pandingapprovalform = (props) => {
                             </span>
                           </span>
                         </div>
-                      ) : userbankdetail.verified === "VERIFIED" ? (
+                      ) : documentstatus.bank_details_verified === "VERIFIED" ? (
                         <div>
                           <img src={Righticons1} />
                           <span className="reloadicon" id="PAN">
@@ -183,9 +202,9 @@ const Pandingapprovalform = (props) => {
                           <div className="">
                             <img
                               src={
-                                userdocumentsmodel.bank_statement_verified ===
+                                documentstatus.bank_statement_verified ===
                                   "VERIFIED" ||
-                                userdocumentsmodel.bank_statement_verified ===
+                                 documentstatus.bank_statement_verified ===
                                   "PENDING_VERIFICATION"
                                   ? Righticons1
                                   : Righticons
@@ -198,7 +217,7 @@ const Pandingapprovalform = (props) => {
                             <p className="form-label ml-2">Bank Statement</p>
                           </div>
                         </div>
-                        {userdocumentsmodel.bank_statement_verified ===
+                        { documentstatus.bank_statement_verified ===
                         "PENDING_VERIFICATION" ? (
                           <span
                             className="reloadicon"
@@ -213,9 +232,9 @@ const Pandingapprovalform = (props) => {
                             {/* {" "} */}
                             Pending verification
                           </span>
-                        ) : userdocumentsmodel.bank_statement_verified ===
+                        ) :  documentstatus.bank_statement_verified ===
                             "NOT_SUBMITTED" ||
-                          userdocumentsmodel.bank_statement_verified ===
+                           documentstatus.bank_statement_verified ===
                             "NOT_VALID" ? (
                           <div className="reloadicon">
                             <span
@@ -234,10 +253,8 @@ const Pandingapprovalform = (props) => {
                               (Rejected)
                             </span>
                           </div>
-                        ) : userdocumentsmodel.bank_statement_verified ===
-                            "VERIFIED" ||
-                          props.user.userData?.other_documents[0]?.status ===
-                            "VERIFIED" ? (
+                        ) :  documentstatus.bank_statement_verified ===
+                            "VERIFIED"  ? (
                           <div>
                             <img src={Righticons1} />
                             <span className="reloadicon" id="PAN">
@@ -326,10 +343,8 @@ const Pandingapprovalform = (props) => {
                             <div className="">
                               <img
                                 src={
-                                  props.user.userData.professionaldetails
-                                    .verified === "VERIFIED" ||
-                                  props.user.userData.professionaldetails
-                                    .verified === "PENDING_VERIFICATION"
+                                 documentstatus.professional_details_verified === "VERIFIED" ||
+                                 documentstatus.professional_details_verified  === "PENDING_VERIFICATION"
                                     ? Righticons1
                                     : Righticons
                                 }
@@ -342,7 +357,7 @@ const Pandingapprovalform = (props) => {
                               </p>
                             </div>
                           </div>
-                          {props.user.userData.professionaldetails.verified ===
+                          {documentstatus.professional_details_verified  ===
                           "PENDING_VERIFICATION" ? (
                             <span
                               className="reloadicon"
@@ -357,9 +372,8 @@ const Pandingapprovalform = (props) => {
                               {/* {" "} */}
                               Pending verification
                             </span>
-                          ) : props.user.userData.professionaldetails
-                              .verified === "NOT_SUBMITTED" ||
-                            props.user.userData.professionaldetails.verified ===
+                          ) : documentstatus.professional_details_verified  === "NOT_SUBMITTED" ||
+                          documentstatus.professional_details_verified  ===
                               "NOT_VALID" ? (
                             <div className="reloadicon">
                               <span
@@ -379,8 +393,7 @@ const Pandingapprovalform = (props) => {
                                 </span>
                               </span>
                             </div>
-                          ) : props.user.userData.professionaldetails
-                              .verified === "VERIFIED" ||
+                          ) : documentstatus.professional_details_verified  === "VERIFIED" ||
                             props.user.userData?.other_documents[0]?.status ===
                               "VERIFIED" ? (
                             <div>
@@ -401,20 +414,19 @@ const Pandingapprovalform = (props) => {
           </div>
         </Container>
       </div>
-      <div style={{ marginTop: "11%" }}>
-        <Footer />
-      </div>
+     
+        <Footer cssname="fixed-bottom"/>
+     
 
-      {userdocumentsmodel.adhar_card_verified === "VERIFIED" &&
-      userdocumentsmodel.pan_card_verified === "VERIFIED" &&
-      userbankdetail.verified === "VERIFIED" &&
-      userdocumentsmodel.bank_statement_verified === "VERIFIED"
+      {documentstatus.kyc_verified === "VERIFIED" &&
+      documentstatus.bank_details_verified === "VERIFIED" &&
+      documentstatus.bank_statement_verified === "VERIFIED" &&
+      documentstatus.professional_details_verified === "VERIFIED"
         ? props.history.push({ pathname: "/congratulations" })
         : null}
 
-      {userdocumentsmodel.adhar_card_verified === "VERIFIED" &&
-      userdocumentsmodel.pan_card_verified === "VERIFIED" &&
-      userbankdetail.verified === "VERIFIED" &&
+      {documentstatus.kyc_verified === "VERIFIED" &&
+      documentstatus.bank_details_verified === "VERIFIED" &&
       props.user.userData?.other_documents[0]?.status === "VERIFIED"
         ? props.history.push({ pathname: "/congratulations" })
         : null}
@@ -427,11 +439,19 @@ const mapStateToProps = (state) => {
     token: state.authDetails.token,
     phoneNumber: state.authDetails.phone_number,
     user: state.user,
+    userCase: state.user.useCase,
   };
 };
 
 const dispatchToProps = (dispatch) => {
-  return bindActionCreators({}, dispatch);
+  return bindActionCreators(
+    {
+      // hitLogin,
+      hitAllUserData,
+      // hitForgotMpin,
+    },
+    dispatch
+  );
 };
 
 export default connect(mapStateToProps, dispatchToProps)(Pandingapprovalform);

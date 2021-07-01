@@ -6,7 +6,7 @@ import Loader from '../component/Loader'
 import "./ApplyNowButton/Applybtnallcomponent.css";
 import Footer from "./Footer";
 import Header from "./Header";
-import Slider from "./Slider";
+import {AmountSlider,TimeSlider} from "./Slider";
 import '../../src/home.css';
 import saltlogo from "../images/salt-logo.png";
 import appIcon from "../images/app-icon.png";
@@ -32,14 +32,18 @@ import {Link} from "react-router-dom";
 
 
 
-const HomePage = (props) => {
 
+const HomePage = (props) => {
     let [loader, setloader] = useState(false);
+    const [amount,setAmount]=useState("");
+    const[duration,setDuration]=useState("");
+   
+    console.log("home",$("#total-label").text());
+
 
 
     return (
-        <>
-            <Header {...props}/>
+        <> <Header {...props}/>
             <div className='content'>
             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                 <ol className="carousel-indicators">
@@ -103,17 +107,17 @@ const HomePage = (props) => {
                                     <div className="price-slider">
                                         <h4>How much cash do you need?</h4>
                                         <div className="relative">
-                                            <Slider />
+                                            <AmountSlider {...props}/>
                                         </div>
                                     </div>
                                     <div className="price-slider">
                                         <h4>For how long?</h4>
                                         <div className="relative">
-                                            <Slider />
+                                            <TimeSlider {...props} />
                                         </div>
                                     </div>
-                                    <p className="text"><span id="amount-label1"></span> over a period of <span
-                                        id="duration-label1"></span> months at a rate of 16.7%, Processing Fee: 400.00
+                                    <p className="text"><span id="total-label"></span> over a period of <span
+                                        id="duration-label"></span> months at a rate of 16.7%, Processing Fee: 400.00
                                     </p>
                                     <div className="price-form">
                                         <div className="form-group1">
@@ -121,7 +125,7 @@ const HomePage = (props) => {
                                                 AMOUNT &#8377;</label>
                                             <div className="col-sm-12">
                                                 <input type="hidden" id="total" className="form-control"/>
-                                                <p className="price lead" id="total-label"></p>
+                                                <p className="price lead" id="total-amount"></p>
                                                 <span className="price"></span>
                                             </div>
                                         </div>

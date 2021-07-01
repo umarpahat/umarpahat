@@ -13,11 +13,10 @@ import sslLogo from "../images/ssl-logo.png";
 
 
 const Footer = (props) => {
-  
-    
     return (
         <div className="footer" style={{backgroundColor: "#F1F3F5"}}>
-            <footer>
+            <footer className={props.cssname} >
+            <div >
                 <div className="container">
                     <div className="row">
                         <div className="ol col-md-4">
@@ -146,15 +145,15 @@ const Footer = (props) => {
                             {/* <div className="sticky-bot black-bg-btn" data-toggle="modal" data-target="#referModal">Get
                                 Rs.500
                             </div> */}
-                            <Link to="https://www.facebook.com/PayMeIndia.in/" target="_blank">
+                            <a href="https://www.facebook.com/PayMeIndia.in/" target="_blank">
                                 <img className="social-img" src={Facebook} alt="payme-india"/>
-                            </Link>
-                            <Link to="https://twitter.com/PayMeIndia" target="_blank">
-                                <img className="social-img" src={Twitter} alt="payme-india"/></Link>
-                            <Link to="https://www.linkedin.com/company/payme-india" target="_blank">
-                                <img className="social-img" src={Linkedin} alt="payme-india"/></Link>
-                            <Link to="https://www.instagram.com/paymeindia/" target="_blank">
-                                <img className="social-img" src={instagram} alt="payme-india"/></Link>
+                            </a>
+                            <a href="https://twitter.com/PayMeIndia" target="_blank">
+                                <img className="social-img" src={Twitter} alt="payme-india"/></a>
+                            <a href="https://www.linkedin.com/company/payme-india" target="_blank">
+                                <img className="social-img" src={Linkedin} alt="payme-india"/> </a>
+                            <a href="https://www.instagram.com/paymeindia/" target="_blank">
+                                <img className="social-img" src={instagram} alt="payme-india"/></a>
                         </div>
                         <div className="ol col-md-4 text-center d-none d-sm-block"><img className="middle_ssl_image"
                                                                                         width="100" src={sslLogo}
@@ -165,6 +164,7 @@ const Footer = (props) => {
                             <p className="p-t-20">Copyright@2021 Huey Tech Pvt. Ltd.</p>
                         </div>
                     </div>
+                </div>
                 </div>
             </footer>
         </div>

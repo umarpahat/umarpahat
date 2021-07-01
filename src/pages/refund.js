@@ -27,54 +27,7 @@ const Refund = (props) => {
         <>
 
             <Header {...props}/>
-            <div className='content'>
-            <div className="sticky-top">
-                <header className="header">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-auto me-auto">
-                                <a href="/"> <img className="home_logo img-fluid" src={logo} alt="Pay Me India"/> </a>
-                            </div>
-                            <div className="col-auto p-t-10">
-                                <Link onClick={() => {
-                                    props.hitAppUseCase({useCase: 'apply-loan'})
-                                    props.history.push({pathname: '/apply-loan'})
-                                }}>
-
-                                    <a href="#" className="button">Apply Loan</a>
-                                </Link>
-                                <Link onClick={() => {
-                                    props.hitAppUseCase({useCase: 'pay-rent'})
-                                    props.history.push({pathname: '/pay-rent'})
-                                }}>
-                                    <a href="#" className="button">Pay Rent</a>
-                                </Link>
-                            </div>
-
-                        </div>
-                    </div>
-                    <nav role='navigation'>
-                        <div id="menuToggle">
-                            <input type="checkbox"/>
-                            <span></span> <span></span> <span></span>
-                            <ul id="menu">
-                                <li><a href="/">Home</a></li>
-                                <li><a href="#media">Media</a></li>
-                                <li><a href="#about-us">About us</a></li>
-                                <li><a href="#corporate">Corporate</a></li>
-                                <li><a href="#how-we-work">How we work</a></li>
-                                <li><a href="#blog">Blog</a></li>
-                                <li><a href="#contact-us">Contact us</a></li>
-                                <li><a href="#join-us">Join us</a></li>
-                                <li><a href="#nbfc">Our NBFC Partners</a></li>
-                                <li><a href="#advance-salary-loan">Advance Salary Loan</a></li>
-                                <li><a href="#loans-for-low-salary">Loan For Low Salary</a></li>
-                                <li><a href="#short-term-loans">Short Term Cash Loans</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-            </div>
+            
 
             <div className="services">
                 <div className="container">
@@ -103,8 +56,8 @@ const Refund = (props) => {
 
                 </div>
             </div>
-            </div>
-            <Footer {...props} />
+        
+            <Footer cssname="fixed-bottom" />
         </>
     )
 };

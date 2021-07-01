@@ -65,7 +65,7 @@ const Bankdetailspayme = (props) => {
     );
   }
 
-  const  updateBankDetails =async()=>{
+  const  updateBankDetails = async() =>{
     const payload = {
       account_number: actNumber,
       bank_address: branchName,
@@ -131,7 +131,7 @@ const Bankdetailspayme = (props) => {
     Promise.all([...promiseTest, ...updatedocStatus])
       .then((response) => {
         setloader(false);
-console.log("pramodsjkslks",response)
+// console.log("pramodsjkslks",response)
         if (props.user.professionaldetails?.verified === "PENDING_VERIFICATION" || props.user?.other_documents[0]?.doc_type === "ITR"
         || props.user.professionaldetails?.verified === "VERIFIED") {
           console.log("bnnnnnnnnnnnnnnnnnnnk")
@@ -181,6 +181,7 @@ console.log("pramodsjkslks",response)
     ifscDetail(e.target.value);
     e.preventDefault();
     $('.select_css').show();
+  
   };
 
   const handleSelect = (e) => {
@@ -215,6 +216,7 @@ console.log("pramodsjkslks",response)
         console.log(res.data.data);
         setIfscData(res.data.data);
         if (res.data.data.length == 1) {
+          $('.select_css').hide();
           setbankName(res.data.data[0].name);
           setbranchName(res.data.data[0].address);
         } else {
@@ -323,7 +325,7 @@ console.log("pramodsjkslks",response)
                     onChange={handleSelect} multiple>
                       {ifscData
                         ? ifscData.map((ifsc) => (
-                            <option key={ifsc.name}>{ifsc.ifsc}</option>
+                            <option>{ifsc.ifsc}</option>
                           ))
                         : null}
                     </select>

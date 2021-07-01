@@ -33,6 +33,7 @@ const Kycdetailsformpayme = (props) => {
   const [correctPan,setcorrectPan] = useState("");
 
   console.log("props.useCase", props.userCase);
+  
 
   const handleClose = () => setShow(!show);
 
@@ -325,9 +326,9 @@ const Kycdetailsformpayme = (props) => {
                     maxLength="10"
                     value={panNumber}
                     onChange={(event) => {
-                      if (event.target.value != 10) {
+                      if (event.target.value != 6) {
                         seterrorPan1(
-                          "Pancard Number should be of 10 characters"
+                          "Pancard Number should be  6 digit's"
                         );
                         setcorrectPan("");
                       }

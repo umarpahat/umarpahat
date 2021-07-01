@@ -37,7 +37,7 @@ const Congretmessage = (props) => {
       </div>
       <div style={{marginTop:"14.3%"}}>
 
-      <Footer/>
+      <Footer cssname="fixed-bottom"/>
       </div>
     </>
   );

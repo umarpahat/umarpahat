@@ -4,6 +4,9 @@ header {
     border-radius: 0;
     background: #33658a;
 }
+.fixed-bottom{
+    background-color:#F1F3F5;
+}
 
 body {
     font-family: Poppins, sans-serif;
