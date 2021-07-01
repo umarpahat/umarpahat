@@ -211,7 +211,7 @@ const Faq = (props) => {
               <h4 className="heading4">Contact Us</h4>
               <p>
                 Please contact us at{" "}
-                <a href="mailto: admin@paymeindia.in">admin@paymeindia.in</a>
+                <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
               </p>
             </div>
           </div>
