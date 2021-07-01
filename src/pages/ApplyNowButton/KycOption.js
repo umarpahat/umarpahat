@@ -224,7 +224,7 @@ var time = setInterval(function(){
         </Container>
       )}
       
-      <Footer cssname="fixed-bottom"/>
+      <Footer/>
      
     </>
   );

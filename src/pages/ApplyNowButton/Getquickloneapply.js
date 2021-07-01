@@ -96,7 +96,7 @@ if (window.location.pathname === "/apply-loan") {
       </Container>
       </div>
       <div style={{marginTop:"11%"}}>
-     <Footer cssname="fixed-bottom"/>
+     <Footer/>
      </div>
    
       

@@ -6,7 +6,7 @@ import Loader from '../component/Loader'
 import "./ApplyNowButton/Applybtnallcomponent.css";
 import Footer from "./Footer";
 import Header from "./Header";
-import {AmountSlider,TimeSlider} from "./Slider";
+//import Slider1 from "./Slider";
 import '../../src/home.css';
 import saltlogo from "../images/salt-logo.png";
 import appIcon from "../images/app-icon.png";
@@ -26,21 +26,50 @@ import instantFund from "../images/instant-fund.png";
 import easyRepay from "../images/easy-repay.png";
 import CibilImg from "../images/cibil.png";
 import InstantCash from "../images/instant-cash.svg"
-import {Link} from "react-router-dom";
-
-
-
-
-
-
+import {Link} from "react-router-dom"
+import { makeStyles } from "@material-ui/core/styles";
+// import Typography from "@material-ui/core/Typography";
+import Slider from "@material-ui/core/Slider";
+import { propTypes } from "react-bootstrap/esm/Image";
 const HomePage = (props) => {
+const useStyles = makeStyles((theme) => ({
+        root: {
+          width: 300,
+        },
+        margin: {
+          height: theme.spacing(3),
+        },
+      }));
+    const classes = useStyles();
     let [loader, setloader] = useState(false);
-    const [amount,setAmount]=useState("");
-    const[duration,setDuration]=useState("");
+    const [amount,setAmount]=useState(500);
+    const [time,setTime]=useState("");
+    const[result,setResult]=useState("");
+    const[rateofinterest,setrateofinterest]=useState(0.01);
+
    
     console.log("home",$("#total-label").text());
-
-
+    function valuetext(value1){
+        setAmount(value1);
+        $("#total-label").text(amount);
+        $("#total-amount").text(amount);
+        console.log(amount)
+      }
+      function valuetext2(value2) {
+        setTime(value2);
+        $("#duration-label").text(time);
+       }
+  function handleResult(){   
+       console.log('ajhjaska')
+      let roi=Number(0.03);
+      console.log(roi,amount,time)
+   
+    const result = 
+        amount *((roi * (1 + roi) * time) / ((1 + roi) * time - 1));
+        console.log("reesult",result)
+       $()
+    return result;
+  }
 
     return (
         <> <Header {...props}/>
@@ -107,13 +136,34 @@ const HomePage = (props) => {
                                     <div className="price-slider">
                                         <h4>How much cash do you need?</h4>
                                         <div className="relative">
-                                            <AmountSlider {...props}/>
+                                        <div className={classes.root}>
+      <Slider
+        defaultValue={0}
+        getAriaValueText={valuetext}
+        aria-labelledby="discrete-slider-always"
+        step={500}
+        min={500}
+        max={200000}
+        valueLabelDisplay="on"
+      />
+    </div>
+                                            
                                         </div>
                                     </div>
                                     <div className="price-slider">
                                         <h4>For how long?</h4>
                                         <div className="relative">
-                                            <TimeSlider {...props} />
+                                        <div className={classes.root}>
+      <Slider
+        defaultValue={0}
+        getAriaValueText={valuetext2}
+        aria-labelledby="discrete-slider-always"
+        step={1}
+        min={2}
+        max={24}
+        valueLabelDisplay="on"
+      />
+    </div>
                                         </div>
                                     </div>
                                     <p className="text"><span id="total-label"></span> over a period of <span
@@ -124,7 +174,7 @@ const HomePage = (props) => {
                                             <label htmlFor="total" className="col-sm-12 control-label">TOTAL
                                                 AMOUNT &#8377;</label>
                                             <div className="col-sm-12">
-                                                <input type="hidden" id="total" className="form-control"/>
+                                                <input type="hidden" value={handleResult()} className="form-control"/>
                                                 <p className="price lead" id="total-amount"></p>
                                                 <span className="price"></span>
                                             </div>
@@ -135,13 +185,14 @@ const HomePage = (props) => {
                                             <div className="col-sm-12">
                                                 <input type="hidden" id="duration" className="form-control"/>
                                                 <p className="price lead" id="duration-label"></p>
+                                                <input type="text" value={handleResult()}/>
                                             </div>
                                         </div>
                                         <div className="form-group1">
-                                            <label htmlFor="amount"
+                                            <label htmlFor="repaymentamount"
                                                    className="col-sm-12 control-label">REPAYMENT &#8377; </label>
                                             <div className="col-sm-12">
-                                                <input type="hidden" id="amount" className="form-control"/>
+                                                <input type="hidden" id="repaymentamount" className="form-control"/>
                                                 <p className="price lead" id="amount-label">
 
                                                 </p>

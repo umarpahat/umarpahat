@@ -149,7 +149,7 @@ const sendOtp = () => {
       </div>
       
        }
-       <Footer cssname="fixed-bottom" style={{backgroundColor: "#F1F3F5"}}/>
+       <Footer />
       
   
 

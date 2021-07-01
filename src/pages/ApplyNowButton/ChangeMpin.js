@@ -106,7 +106,7 @@ function ChangeMpin(props) {
           </form>
         </div>
       </div>}
-      <Footer />
+      <Footer cssname="fixed-bottom" />
     </>
   );
 }

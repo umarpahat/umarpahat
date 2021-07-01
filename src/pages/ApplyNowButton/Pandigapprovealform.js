@@ -415,7 +415,7 @@ const Pandingapprovalform = (props) => {
         </Container>
       </div>
      
-        <Footer cssname="fixed-bottom"/>
+        <Footer />
      
 
       {documentstatus.kyc_verified === "VERIFIED" &&

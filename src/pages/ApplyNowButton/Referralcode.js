@@ -16,10 +16,11 @@ function Referralcode(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    referral.length ? handleReferral() : seterror("Please enter referral code or press skip")
+    referral.length ? handleReferral() : seterror("Please enter valid referral code or press skip")
   }
 
   const handleReferral = () => {
+   
     setloader(true)
     console.log(3333333)
     console.log(referral)
@@ -40,6 +41,7 @@ function Referralcode(props) {
           console.log(response.status)
         } else {
             console.log(response.status)
+            seterror("Enter a valid Referal Code");
         }
       return response;
     })
