@@ -224,13 +224,12 @@ var time = setInterval(function(){
         </Container>
       )}
       <div style={{marginTop:"70px"}}>
-
       <Footer/>
       </div>
     </>
   );
 };
-console.log("pramod ");
+
 const mapStateToProps = (state) => {
   return {
     token: state.authDetails.token,

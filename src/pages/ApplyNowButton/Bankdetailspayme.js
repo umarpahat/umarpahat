@@ -65,14 +65,14 @@ const Bankdetailspayme = (props) => {
     );
   }
 
-  async function updateBankDetails() {
+  const  updateBankDetails =async()=>{
     const payload = {
       account_number: actNumber,
       bank_address: branchName,
       bank_name: bankName,
       ifsc_code: ifscdetail,
     };
-    // console.log("updatedocument", payload);
+    console.log("updatedocument", payload);
     return await api.post("/api/user_details/bank_details/", payload, {
       headers: { Authorization: "Token " + props.token },
     });
@@ -130,10 +130,11 @@ const Bankdetailspayme = (props) => {
     updateBankDetails();
     Promise.all([...promiseTest, ...updatedocStatus])
       .then((response) => {
-        setloader(true);
-console.log("pramodsjkslks")
+        setloader(false);
+console.log("pramodsjkslks",response)
         if (props.user.professionaldetails?.verified === "PENDING_VERIFICATION" || props.user?.other_documents[0]?.doc_type === "ITR"
         || props.user.professionaldetails?.verified === "VERIFIED") {
+          console.log("bnnnnnnnnnnnnnnnnnnnk")
            props.history.push({ pathname: "/pending-approval" });
         }
         else {
@@ -266,7 +267,7 @@ console.log("pramodsjkslks")
                   <div className="form-group ms-input-group">
                     <label className="form-label">Account Number</label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control ms-form-input"
                       placeholder="Enter 16 Digit A/C Number"
                       value={actNumber}
@@ -291,7 +292,7 @@ console.log("pramodsjkslks")
                   <div className="form-group ms-input-group">
                     <label className="form-label">Confirm Account Number</label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control ms-form-input"
                       placeholder="Enter 16 Digit A/C Number"
                       value={ConfrmActNumber}
@@ -406,8 +407,8 @@ console.log("pramodsjkslks")
                 </div>
                 <input
                   type="submit"
-                  style={{ color: "white", width: "500px" }}
-                  className="submit-btn text-center"
+                  style={{ color: "white"}}
+                  className="getstartbtn fontstyformQuiklone"
                   value="Save and  Continue"
                 />
               </div>

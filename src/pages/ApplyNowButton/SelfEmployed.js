@@ -59,6 +59,7 @@ const SelfEmployed = (props) => {
 if (!uploadItr.name) {seterroruploadItr("Please upload your latest ITR"); return;}
 if (!presentAddLine1) {seterrorpresentAddLine1("please enter adress."); return;}
 if (!presentPincode) {seterrorpresentPincode("Please enter pin code"); return;}
+if(!erroruploadItr){seterroruploadItr("Please Upload ITR ")}
 const uploadItrFront = postS3({res:uploadItr, presignedPostData: signedUrl[`other_document/${props.user.id}/latest_itr.pdf`]})
 const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `other_document/${props.user.id}/latest_itr.pdf`})
  Promise.all([...[uploadItrFront, updateSalaryFrontStatus], ...[updateProfessionalDetails()]]).then((response)=>{
@@ -160,6 +161,7 @@ const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `ot
                       Upload
                     </a>
                      <br/>
+                     {erroruploadItr ? <span styl={{color:"red"}}>{erroruploadItr}</span> :null}
                       {uploadItr.name ? <span style={{color:"black"}} className="">{uploadItr.name}</span>:null}
                     <input
                       type="file"
@@ -191,9 +193,10 @@ const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `ot
                     <div class="form-group ms-input-group">
                       <label className="form-label">Present Pin Code</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form-control ms-form-input"
                         placeholder="110025"
+                        maxLength={6}
                         value={presentPincode}
                         onChange={(event)=>{seterrorpresentPincode(""); setpresentPincode(event.target.value)}}
                       />
@@ -204,8 +207,8 @@ const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `ot
               </div>
               <input
             type="submit"
-              style={{color:"white", width:"500px"}}
-              className="submit-btn text-center"
+              style={{color:"white",}}
+              className="getstartbtn fontstyformQuiklone"
               value="Submit"
             />
             </div>

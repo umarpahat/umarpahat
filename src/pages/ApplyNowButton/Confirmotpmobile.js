@@ -79,7 +79,7 @@ const Confirmotpmobile = (props) => {
 
   return (
     <>
-     <Header {...props} />
+    
       {loader ? (
         <div className="loader">
           {" "}
@@ -142,7 +142,7 @@ const Confirmotpmobile = (props) => {
           </div>
         </>
       )}
-      <Footer />
+  
     </>
   );
 };

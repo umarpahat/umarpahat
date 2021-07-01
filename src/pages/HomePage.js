@@ -58,7 +58,7 @@ const HomePage = (props) => {
                                         </h3>
                                         <h3 className="heading3"><span className="col-orange">ABSOLUTELY FREE </span>
                                         </h3>
-                                        <Link to='/' className="button-large m-t-40">Get CIBIL report</Link>
+                                        <Link to='/' className="button-large m-t-40">Coming Soon</Link>
                                     </div>
                                 </div>
                             </div>
@@ -75,8 +75,7 @@ const HomePage = (props) => {
                                         much as
                                         you need
                                     </h3>
-                                    <Link to='/' className="button-blue m-t-40 animate__animated animate__slideInUp">Know
-                                        More</Link>
+                                    <Link to='/' className="button-blue m-t-40 animate__animated animate__slideInUp">Coming Soon </Link>
                                 </div>
                             </div>
                         </div>
