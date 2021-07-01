@@ -10,6 +10,7 @@ import Loader from '../../component/Loader'
 import "../ApplyNowButton/Applybtnallcomponent.css";
 import Header from "../Header";
 import Footer from "../Footer";
+import { Link } from "react-router-dom";
 
 const Getstartpaymeindia = (props) => {
   console.log(props.history.location.state.phoneNumber);

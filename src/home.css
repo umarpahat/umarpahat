@@ -779,18 +779,16 @@ h4.great {
     box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 
-.PrivateValueLabel-offset-5 {
+.PrivateValueLabel-offset-7 {
     top: 5px !important;
 }
 .MuiSlider-markActive{
     display: none;
 }
-.PrivateValueLabel-circle-6 {
+.PrivateValueLabel-circle-8 {
     width: 60px !important;
-    display: flex;
     transform: rotate(0deg) !important;
     border-radius: 20px !important;
-    justify-content: center;
     color: #fff;
     padding: 0;
     text-align: center;
@@ -800,11 +798,7 @@ h4.great {
     box-shadow: 2px 2px 4px #b8b9be, -2px -2px 4px #fff;
 }
 
-.PrivateValueLabel-thumb-3.PrivateValueLabel-open-4 .PrivateValueLabel-offset-5 {
-    transform: scale(0) translateY(1) !important
-}
-
-.PrivateValueLabel-label-7 {
+.PrivateValueLabel-label-9 {
     color: #0a0a0a !important;
     transform: rotate(0deg) !important;
 }
