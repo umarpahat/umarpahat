@@ -143,9 +143,9 @@ const Footer = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="sticky-bot black-bg-btn" data-toggle="modal" data-target="#referModal">Get
+                            {/* <div className="sticky-bot black-bg-btn" data-toggle="modal" data-target="#referModal">Get
                                 Rs.500
-                            </div>
+                            </div> */}
                             <Link to="https://www.facebook.com/PayMeIndia.in/" target="_blank">
                                 <img className="social-img" src={Facebook} alt="payme-india"/>
                             </Link>

@@ -26,7 +26,7 @@ const Policy = (props) => {
     return (
         <>
 
-            <Header {...props}/>
+            
             <div className='content'>
             <div className="sticky-top">
                 <header className="header">

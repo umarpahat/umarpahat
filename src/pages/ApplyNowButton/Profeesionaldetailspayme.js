@@ -162,6 +162,7 @@ const Professionaldetailspayme = (props) => {
       alert("Please enter pin code");
       return;
     }
+    
     const uploadSalaryFront = postS3({
       res: uploadSalarySlip,
       presignedPostData: signedUrl[`salary_slip/${props.user.id}/front.jpg`],
@@ -315,6 +316,7 @@ const Professionaldetailspayme = (props) => {
                     </label>
                     <input
                       type="text"
+                      onKeyPress={event => (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)}
                       class="form-control ms-form-input"
                       placeholder="Enter Organization Name"
                       value={organizationName}
@@ -389,7 +391,8 @@ const Professionaldetailspayme = (props) => {
                       type="number"
                       class="form-control ms-form-input"
                       placeholder="Enter Office PinCode"
-                      maxlength= "6"
+                      pattern="^[0-9]{6}"
+                      maxLength="6"
                       value={officePincode}
                       onChange={(event) => {
                         if (
@@ -403,6 +406,7 @@ const Professionaldetailspayme = (props) => {
                         setErrorOfficePincode("");
                         setOfficePincode(event.target.value);
                       }}
+                  
                     />
                     {errorOfficePinCode ? (
                       <span style={{ color: "red" }}>{errorOfficePinCode}</span>
@@ -530,10 +534,10 @@ const Professionaldetailspayme = (props) => {
                       <div class="form-group ms-input-group">
                         <label className="form-label">Present Pin Code</label>
                         <input
-                          type="text"
+                          type="number"
                           class="form-control ms-form-input"
                           placeholder="110025"
-                          maxLength="6"
+                          pattern={/^[0-9]{6}$/}
                           value={presentPincode}
                           onChange={(event) => {
                             if (

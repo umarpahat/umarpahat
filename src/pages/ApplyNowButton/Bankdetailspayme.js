@@ -267,7 +267,7 @@ console.log("pramodsjkslks",response)
                   <div className="form-group ms-input-group">
                     <label className="form-label">Account Number</label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control ms-form-input"
                       placeholder="Enter 16 Digit A/C Number"
                       value={actNumber}
@@ -292,7 +292,7 @@ console.log("pramodsjkslks",response)
                   <div className="form-group ms-input-group">
                     <label className="form-label">Confirm Account Number</label>
                     <input
-                      type="text"
+                      type="number"
                       className="form-control ms-form-input"
                       placeholder="Enter 16 Digit A/C Number"
                       value={ConfrmActNumber}
@@ -407,8 +407,8 @@ console.log("pramodsjkslks",response)
                 </div>
                 <input
                   type="submit"
-                  style={{ color: "white", width: "500px" }}
-                  className="submit-btn text-center"
+                  style={{ color: "white"}}
+                  className="getstartbtn fontstyformQuiklone"
                   value="Save and  Continue"
                 />
               </div>

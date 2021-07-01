@@ -36,6 +36,10 @@ const Kycdetailsformpayme = (props) => {
 
   const handleClose = () => setShow(!show);
 
+  // const handleOnKeyPress =(event)=> {
+  //   return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)
+  // }
+
   async function getSignedUrl() {
     const pathArray = [
       `adhar_card/${props.user.id}/back.jpg`,
@@ -251,9 +255,9 @@ const Kycdetailsformpayme = (props) => {
 
           <form onSubmit={handleSubmit}>
             <div className="Home-contact-form">
-              <h4 className="form-heading text-center">
+              {/* <h4 className="form-heading text-center">
                 Tell Us about Yourself
-              </h4>
+              </h4> */}
               <div className="form-block">
                 <div class="form-group ms-input-group">
                   <label className="form-label">Your Name</label>
@@ -261,6 +265,7 @@ const Kycdetailsformpayme = (props) => {
                     type="text"
                     class="form-control ms-form-input"
                     placeholder="Enter Your Name"
+                    
                     value={name}
                     onChange={(event) => {
                       seterrorName("");
@@ -273,7 +278,7 @@ const Kycdetailsformpayme = (props) => {
                 </div>
                 <div>
                   <div class="form-group ms-input-group">
-                    <label className="form-label">DOB(YY/MM/DD)</label>
+                    <label className="form-label">DOB(DD/MM/YYYY)</label>
                     <input
                       type="date"
                       class="form-control ms-form-input"
@@ -425,7 +430,7 @@ const Kycdetailsformpayme = (props) => {
                     </div>
 
                     <div
-                      for="Backofadhaar"
+                      htmlFor="Backofadhaar"
                       className="file-uploading-block twoboxdregdrop ml-3"
                     >
                       <a

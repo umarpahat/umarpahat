@@ -68,9 +68,13 @@ console.log(error)
                   <div>
                     <p className="stylepara">
                       By continuing, you agree to our
-                      <span style={{ color: "black" }}>
-                        <u> Privacy Policy, T&C's </u>
+                     <Link to='/policy'> <span style={{ color: "black" }}>
+                        <u> Privacy Policy, </u>
+                      </span></Link>
+                      <Link  to='/terms'><span style={{ color: "black" }}>
+                        <u> T&C's </u>
                       </span>
+                      </Link>
                       and authorize us to retreieve your Credit report and
                       communicate with you via phone, Email, sms, Whatsapp, etc.
                     </p>

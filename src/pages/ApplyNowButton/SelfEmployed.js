@@ -193,9 +193,10 @@ const updateSalaryFrontStatus = updateDocStatus({docType:"latest_itr", path: `ot
                     <div class="form-group ms-input-group">
                       <label className="form-label">Present Pin Code</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form-control ms-form-input"
                         placeholder="110025"
+                        maxLength={6}
                         value={presentPincode}
                         onChange={(event)=>{seterrorpresentPincode(""); setpresentPincode(event.target.value)}}
                       />
