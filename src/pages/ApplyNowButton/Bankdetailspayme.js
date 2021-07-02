@@ -215,7 +215,7 @@ const Bankdetailspayme = (props) => {
       .then((res) => {
         console.log(res.data.data);
         setIfscData(res.data.data);
-        if (res.data.data.length == 1 && res.data.data.length ==0 ) {
+        if (res.data.data.length == 1 || res.data.data.length ==0 ) {
           $('.select_css').hide();
           setbankName(res.data.data[0].name);
           setbranchName(res.data.data[0].address);
