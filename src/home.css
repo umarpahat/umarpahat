@@ -762,13 +762,6 @@ h4.great {
     color: #292929;
 }
 
-/*
-.price-slider span {
-  font-weight: 200;
-  display: inline-block;
-  color: #7f8c8d;
-  font-size: 13px;
-}*/
 .MuiSlider-rail {
     border: 1px solid #fff;
     background: #33658a;
@@ -779,13 +772,16 @@ h4.great {
     box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 
-.PrivateValueLabel-offset-7 {
-    top: 5px !important;
+.MuiSlider-valueLabel{
+    transform: rotate(0deg) !important;
+    transition: transform !important;
+    top: -3px !important;
 }
+
 .MuiSlider-markActive{
     display: none;
 }
-.PrivateValueLabel-circle-8 {
+.MuiSlider-valueLabel > span{
     width: 60px !important;
     transform: rotate(0deg) !important;
     border-radius: 20px !important;
@@ -798,7 +794,7 @@ h4.great {
     box-shadow: 2px 2px 4px #b8b9be, -2px -2px 4px #fff;
 }
 
-.PrivateValueLabel-label-9 {
+.MuiSlider-valueLabel > span > span{
     color: #0a0a0a !important;
     transform: rotate(0deg) !important;
 }
