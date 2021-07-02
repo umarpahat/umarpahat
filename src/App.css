@@ -102,12 +102,12 @@ p {
 
 .sizeh6 {
   font-size: inherit;
-  font-weight: 490 !important;
+  font-weight: 500 !important;
 }
 .h6,
 h6 {
   font-size: 1rem;
-  font-weight: 490 !important;
+  font-weight: 400 !important;
   outline: none !important;
 }
 
@@ -130,7 +130,7 @@ h6 {
   color: #040b4d !important;
   background: none !important;
   font-weight: 600;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   border: none;
 }
 .Btndrop:hover > .dropdown-menu {
@@ -229,7 +229,7 @@ h6 {
 .navteaxt {
   color: #040b4d !important;
   font-weight: 600;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 #dropdown-item-button {
   color: #040b4d !important;
@@ -266,7 +266,7 @@ h6 {
   padding-top: 20px;
 }
 .textstyparaFaqs {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: rgba(4, 11, 77, 0.6);
 
   font-size: 1em;
@@ -373,7 +373,7 @@ a:hover {
   padding-top: 10px;
   font-size: large;
   font-weight: 500;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .btnapply {
@@ -431,10 +431,10 @@ a:hover {
 .parataxtspan {
   font-weight: bold;
   color: #040b4d;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .fontallpraeligibale {
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-size: 20px;
   line-height: 50px;
@@ -570,7 +570,7 @@ a:hover {
 
   padding: 10px;
   font-size: 0.8em;
-  font-family: "Nunito";
+  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   letter-spacing: 1px;
 }
@@ -630,7 +630,7 @@ a:hover {
 .maptext {
   font-weight: 700;
   color: #536596;
-  font-family: "Inter", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .mapnumbrsty {
   color: #040b4d;
@@ -840,7 +840,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   padding: 30px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: rgba(4, 11, 77, 0.8);
   font-weight: 600;
   font-size: 20px;
@@ -1128,7 +1128,7 @@ a:hover {
   padding-top: 10px;
   font-size: 20px;
   font-weight: 600;
-  font-family: "Nunito";
+  font-family: 'Montserrat', sans-serif;
   color: #040b4d;
 }
 .btnapplyPreApproved {
@@ -1170,7 +1170,7 @@ a:hover {
   font-weight: 700;
 }
 .quicklistpara {
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   color: #040b4d;
   opacity: 0.6;
@@ -1182,7 +1182,7 @@ a:hover {
   flex-direction: column;
 }
 .paraBenefits {
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: large;
   color: rgba(4, 11, 77, 0.6);
@@ -1256,8 +1256,8 @@ a:hover {
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-family: "Nunito", sans-serif;
-  font-weight: 800px !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800 !important;
   font-size: 1.2em !important;
   line-height: 30px !important;
   padding: 20px;
@@ -1357,7 +1357,7 @@ a:hover {
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   padding-top: 20px;
   margin-left: 250px;
   margin-right: 250px;
@@ -1558,7 +1558,6 @@ a:hover {
   font-weight: bold;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .colstyworkit {
   display: flex;
@@ -1605,18 +1604,18 @@ a:hover {
 .fontstyformQuiklone {
   font-size: 20px;
   font-weight: 800;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .Emailtext {
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   color: #040b4d;
   opacity: 0.4;
   padding-top: 5px;
 }
 .fonstyAlreadyLongin {
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 700;
 }
@@ -1670,25 +1669,25 @@ a:hover {
   font-size: 20px;
   font-weight: 700;
   color: #040b4d;
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
 }
 .PreApprovePara {
   font-size: 16px;
   font-weight: 600;
   color: #040b4d;
-  font-family: "Nunito";
+  font-family: 'Montserrat', sans-serif;
   opacity: 0.7;
 }
 .preApprovNo {
   font-size: 32px;
   font-weight: 700;
   color: #040b4d;
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
 }
 .paraPreApproed {
   font-size: 16px;
   font-weight: 600;
-  font-family: "Nunito";
+  font-family: 'Montserrat', sans-serif;
   color: #040b4d;
   opacity: 0.8;
 }
@@ -1700,7 +1699,7 @@ a:hover {
   font-size: 20px;
   font-weight: 800;
   border-color: inherit;
-  font-family: "Nunito";
+  font-family: 'Montserrat', sans-serif;
 
   padding: 1em 7em;
 }
@@ -1723,7 +1722,7 @@ a:hover {
   width: 600px;
   margin: auto;
   padding: 40px;
-  padding-bottom: 0px !important;
+  padding-bottom: 0 !important;
 }
 .classRighticons {
   display: flex;
@@ -1746,7 +1745,7 @@ a:hover {
   color: #33658a;
   font-size: 20px;
   font-weight: 800 !important;
-  font-family: "Nunito";
+  font-family: 'Montserrat', sans-serif;
   margin: 5px;
 }
 .kycDeatailsSecondFormsty {
@@ -1762,7 +1761,7 @@ a:hover {
 .parastyPdfProgessbar {
   font-size: 14px;
   font-weight: 600;
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   color: #33658a;
 }
 .progersbarPdf {
@@ -1783,7 +1782,7 @@ a:hover {
 .Skipsty {
   font-size: 20px;
   font-weight: 800;
-  font-family: "Nunito";
+  font-family: 'Montserrat', sans-serif;
   color: #33658a;
   text-align: center;
   padding-top: 10px;
@@ -1825,7 +1824,7 @@ a:hover {
   background-color: #33658a !important ;
   font-size: 1.2em;
   font-weight: 800;
-  font-family: "Nunito";
+  font-family: 'Montserrat', sans-serif;
 }
 .input-range__slider {
   width: 20px;
@@ -2742,7 +2741,7 @@ header {
 }
 
 body {
-  font-family: Poppins, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   padding: 0;
   margin: 0
 }
@@ -2990,7 +2989,7 @@ a.button-small:hover {
 
 .home-steps,
 .reg-second-subheading {
-  font-family: Poppins, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-align: center
 }
 
@@ -3706,7 +3705,7 @@ footer ul li {
   line-height: 24pt;
   opacity: 1;
   filter: alpha(opacity=100);
-  font-family: Apercu, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .full-height{
    display: table;
