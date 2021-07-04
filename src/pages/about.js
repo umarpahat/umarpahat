@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import $ from "jquery";
 import logo from "../images/logo.png";
 import vision from "../images/vision.png";
-import team from "../images/team.png";
+import team from "../images/team.jpg";
 import thumbnail from "../images/thumbup.png";
 import heart from "../images/heart.png";
 import people from "../images/people.png";
