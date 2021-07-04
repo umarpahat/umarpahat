@@ -115,7 +115,7 @@ button:focus {
   color: #363c71;
   margin-top: 30px;
   font-weight: 600;
-  font-family: "Nunito";
+  font-family: 'Montserrat', sans-serif;
 }
 .section-heading {
   text-align: center;

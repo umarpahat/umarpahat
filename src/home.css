@@ -9,7 +9,7 @@ header {
 }
 
 body {
-    font-family: Poppins, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     padding: 0;
     margin: 0;
     font-size: 18px;
@@ -171,15 +171,17 @@ button.button-gray:hover {
     color: #365171;
     line-height: 40px;
     padding-bottom: 10px;
-    font-weight: 500;
+    font-weight: 100;
 }
-
+.heading4{
+    font-weight: 300;
+}
 .heading1 {
     font-size: 40px;
     color: #fff;
     line-height: 40px;
     padding-bottom: 20px;
-    font-weight: 100;
+    font-weight: 200;
 }
 
 .heading2 {
@@ -187,7 +189,7 @@ button.button-gray:hover {
     color: #111;
     line-height: 50px;
     padding-bottom: 20px;
-    font-weight: 400;
+    font-weight: 100;
 }
 
 .para-13 {
@@ -215,7 +217,7 @@ a.button-blue {
     padding: 0 30px;
     text-align: center;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 300;
     border-radius: 6px;
     background: linear-gradient(315deg, #040b17, #040d1b);
     box-shadow: -6px -6px 5px #030913, 6px 6px 5px #050f1f;
@@ -226,6 +228,9 @@ a.button-blue:hover {
     background: linear-gradient(145deg, #040b17, #040d1b);
     box-shadow: 6px 6px 5px #030913, -6px -6px 5px #050f1f;
     text-decoration: none;
+}
+.carousel-item h3{
+    font-weight: 2 00;
 }
 
 a.button-large {
@@ -238,7 +243,7 @@ a.button-large {
     padding: 0 30px;
     text-align: center;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 300;
     border-radius: 3px;
     color: #31344b;
     background-color: #e6e7ee;
@@ -293,6 +298,7 @@ a.button-small:hover {
     font-size: 40px;
     margin: 0;
     padding: 0;
+    font-weight: 200;
 }
 
 .reg-second-heading {
@@ -305,12 +311,12 @@ a.button-small:hover {
 
 .reg-second-subheading {
     font-size: 14px;
-    color: #707070;
+    color: #303030;
 }
 
 .home-steps,
 .reg-second-subheading {
-    font-family: Poppins, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
 }
 
@@ -332,7 +338,7 @@ a.button-small:hover {
 
 .home-steps .home-steps-in {
     font-size: 13px;
-    color: #030303;
+    color: #1f1d1d;
 }
 
 .home-steps .home-steps-in {
@@ -352,7 +358,7 @@ a.button-small:hover {
 .loan-features .content-box h4 {
     font-size: 14px;
     margin-top: 5px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .loan-features .content-box p {
@@ -483,12 +489,18 @@ a.button-small:hover {
     font-size: 14px;
     padding-bottom: 0;
     margin-bottom: 0;
+    font-weight: 100;
 }
 
+.product-link h3.heading3 {
+    font-weight: 500;
+}
 .boxlink p {
     font-size: 11px;
     max-width: 300px;
     margin-bottom: 20px;
+    color: #1f1d1d;
+
 }
 
 .testimonial {
@@ -556,11 +568,11 @@ a.button-small:hover {
 
 .owl-carousel span {
     padding-top: 10px;
-    color: #707070;
+    color: #1f1d1d;
 }
 
 .owl-carousel .content {
-    color: #707070;
+    color: #1f1d1d;
     font-size: 11px;
 }
 
@@ -713,7 +725,7 @@ button:focus {
 
 .lead p,
 .price {
-    font-weight: 600 !important;
+    font-weight: 400 !important;
     font-size: 18px !important;
     display: inline-block;
     line-height: 30px;
@@ -760,6 +772,7 @@ h4.great {
     padding-bottom: 10px;
     font-size: 18px;
     color: #292929;
+    font-weight: 400;
 }
 
 .MuiSlider-rail {
@@ -821,7 +834,7 @@ h4.great {
     width: 100%;
     height: 70px;
     border-radius: 6px;
-    background-color: rgb(255 255 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .form-group1 {
@@ -1011,7 +1024,7 @@ footer {
 
 footer a {
     font-size: 12px;
-    color: #333;
+    color: #020202;
     text-decoration: none;
 }
 
@@ -1062,8 +1075,7 @@ footer ul li {
     line-height: 24pt;
     opacity: 1;
     filter: alpha(opacity=100);
-    font-family: Apercu, -apple-system, BlinkMacSystemFont, Helvetica Neue,
-    Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .full-height {
@@ -1178,7 +1190,7 @@ footer ul li {
 .box h3 {
     margin-top: 10px;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.25;
     letter-spacing: 1.2px;
 }
