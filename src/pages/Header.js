@@ -75,6 +75,9 @@ const Header = (props) => {
                 <li>
                   <Link to="/faq">Faq</Link>
                 </li>
+                <li>
+                  <Link to="/ourNbfcPartners">Our NBFC Partners</Link>
+                </li>
               {/*  <li>
                   <Link to="#join-us">Join us</Link>
                 </li>
