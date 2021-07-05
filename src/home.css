@@ -888,7 +888,29 @@ h4.great {
     margin-bottom: 5px;
     color: #fff;
 }
+.box-shadow {
+    border-radius: 10px;
+    background-color: #fff;
+    margin-bottom: 0;
+    margin-top: 5%;
+    width: 470px;
+    text-align: center;
+    display: inline-block;
+    border: 10px solid #fff;
+    box-shadow: 0 8px 20px 2px rgba(224, 224, 224, 0.7);
+}
 
+.box-shadow img {
+    width: 400px;
+    max-height: 100px;
+}
+.nbfc {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+    font-weight: 400;
+}
 .text {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -1393,6 +1415,17 @@ a {
     }
     #menuToggle span {
         width: 24px;
+    }
+    .box-shadow {
+        width: 100%;
+    }
+    .nbfc {
+        margin-top: 10px;
+        padding-bottom: 15px;
+    }
+    .box-shadow img {
+        width: 230px;
+        max-height: 80px;
     }
 
 }
