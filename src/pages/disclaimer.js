@@ -78,20 +78,20 @@ const Disclaimer = (props) => {
                 please contact one of our lawyers listed.
               </p>
               <p>
-                PayMeIndia assumes no responsibility for information contained
+                PayMe India assumes no responsibility for information contained
                 on this site and disclaims all liability in respect of such
                 information.
               </p>
               <p>Copyright© 2021 PayMeIndia.in</p>
               <p>
-                PayMeIndia has no control over, and will accept no
+                PayMe India has no control over, and will accept no
                 responsibility or liability in respect of, material on any web
-                site that is not under the control of PayMeIndia.
+                site that is not under the control of PayMe India.
               </p>
               <p>
                 The inclusion of links to Third Party Web Sites does not imply
                 any endorsement of the material on them or any association with
-                their operators. PayMeIndia is not responsible for the privacy
+                their operators. PayMe India is not responsible for the privacy
                 or data protection practices of third party websites.
               </p>
               <p>
@@ -114,7 +114,7 @@ const Disclaimer = (props) => {
               </p>
               <ol type="a">
                 <li>
-                  you acknowledge PayMeindia web pages as the source of the
+                  you acknowledge PayMe India web pages as the source of the
                   material. You must include such acknowledgement and Batchelors
                   Solicitors web address ({" "}
                   <a href="https://www.paymeindia.in/">
@@ -128,7 +128,7 @@ const Disclaimer = (props) => {
                   to recopy does not permit incorporation of the material or any
                   part of it in any other work or publication, whether in hard
                   copy or electronic or any other form. In particular (but
-                  without limitation) no part of the PayMeindia web pages may be
+                  without limitation) no part of the PayMe India web pages may be
                   distributed or copied for any commercial purpose.
                 </li>
               </ol>

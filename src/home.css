@@ -17,6 +17,10 @@ body {
     line-height: 1.5;
 }
 
+.darkBg{
+    background: #829aae url("./images/banner-img.png") no-repeat center 0 fixed;
+}
+
 .select_css select {
     border: 0;
     z-index: 1111;
@@ -59,7 +63,6 @@ body {
 }
 
 a.button {
-    box-shadow: -4px -4px 8px #2f5d7f, 4px 4px 8px #376d95;
     color: #fff;
     display: inline-block;
     font-size: 16px;
@@ -171,17 +174,17 @@ button.button-gray:hover {
     color: #365171;
     line-height: 40px;
     padding-bottom: 10px;
-    font-weight: 100;
+    font-weight: 400;
 }
 .heading4{
-    font-weight: 300;
+    font-weight: 400;
 }
 .heading1 {
     font-size: 40px;
     color: #fff;
     line-height: 40px;
     padding-bottom: 20px;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .heading2 {
@@ -189,11 +192,11 @@ button.button-gray:hover {
     color: #111;
     line-height: 50px;
     padding-bottom: 20px;
-    font-weight: 100;
+    font-weight: 400;
 }
 
 .para-13 {
-    font-size: 13px;
+    font-size: 14px;
     color: #fff;
     padding-bottom: 30px;
 }
@@ -230,7 +233,7 @@ a.button-blue:hover {
     text-decoration: none;
 }
 .carousel-item h3{
-    font-weight: 2 00;
+    font-weight: 400;
 }
 
 a.button-large {
@@ -298,7 +301,7 @@ a.button-small:hover {
     font-size: 40px;
     margin: 0;
     padding: 0;
-    font-weight: 200;
+    font-weight: 500;
 }
 
 .reg-second-heading {
@@ -310,8 +313,9 @@ a.button-small:hover {
 }
 
 .reg-second-subheading {
-    font-size: 14px;
+    font-size: 16px;
     color: #303030;
+    font-weight: 500;
 }
 
 .home-steps,
@@ -337,7 +341,7 @@ a.button-small:hover {
 }
 
 .home-steps .home-steps-in {
-    font-size: 13px;
+    font-size: 16px;
     color: #1f1d1d;
 }
 
@@ -348,22 +352,23 @@ a.button-small:hover {
 }
 
 .home-steps .home-steps-in .steps-heading {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
     padding-top: 10px;
-    font-weight: 200;
+    font-weight: 400;
     color: #35668b;
 }
 
 .loan-features .content-box h4 {
-    font-size: 14px;
+    font-size: 18px;
     margin-top: 5px;
     font-weight: 500;
 }
 
 .loan-features .content-box p {
-    font-size: 12px;
+    font-size: 16px;
     margin: 0;
+    font-weight: 400;
 }
 
 .loan-features .feature-box {
@@ -371,9 +376,14 @@ a.button-small:hover {
     padding: 45px 25px 25px;
     min-height: 200px;
     border-radius: 1px;
+    font-size: 14px;
     margin: 0;
-    color: #333;
+    color: #000;
     background: rgba(251, 230, 167, 0.4);
+}
+.no-more-text{
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .loan-features .feature-box .content-box:before {
@@ -445,7 +455,7 @@ a.button-small:hover {
     border-radius: 1px;
     display: block;
     margin: 0;
-    color: #333;
+    color: #000;
     font-size: 11px;
     position: relative;
 }
@@ -486,17 +496,17 @@ a.button-small:hover {
 }
 
 .boxlink h3.heading3 {
-    font-size: 14px;
+    font-size: 18px;
     padding-bottom: 0;
     margin-bottom: 0;
-    font-weight: 100;
+    font-weight: 400;
 }
 
 .product-link h3.heading3 {
     font-weight: 500;
 }
 .boxlink p {
-    font-size: 11px;
+    font-size: 16px;
     max-width: 300px;
     margin-bottom: 20px;
     color: #1f1d1d;
@@ -573,7 +583,7 @@ a.button-small:hover {
 
 .owl-carousel .content {
     color: #1f1d1d;
-    font-size: 11px;
+    font-size: 16px;
 }
 
 .owl-carousel .owl-nav button.owl-next,
@@ -771,8 +781,8 @@ h4.great {
 .price-slider h4 {
     padding-bottom: 10px;
     font-size: 18px;
-    color: #292929;
-    font-weight: 400;
+    color: #fff;
+    font-weight: 500;
 }
 
 .MuiSlider-rail {
@@ -808,8 +818,10 @@ h4.great {
 }
 
 .MuiSlider-valueLabel > span > span{
+    font-family: 'Montserrat', sans-serif;
     color: #0a0a0a !important;
     transform: rotate(0deg) !important;
+    font-weight: 500;
 }
 
 .MuiSlider-root {
@@ -852,7 +864,7 @@ h4.great {
 }
 
 .form-group1 span.price {
-    font-weight: 200;
+    font-weight: 400;
     display: inline-block;
     color: #7f8c8d;
     font-size: 14px;
@@ -864,14 +876,14 @@ h4.great {
     margin-bottom: 10px;
     color: #737373;
     position: absolute;
-    font-weight: 200;
+    font-weight: 400;
     text-align: right;
     width: 188px;
 }
 
 .price-form label {
     font-weight: 400;
-    font-size: 10px;
+    font-size: 12px;
     padding-top: 10px;
     margin-bottom: 5px;
     color: #fff;
@@ -880,7 +892,7 @@ h4.great {
 .text {
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
 }
 
@@ -912,6 +924,7 @@ nav a {
     color: #33658a;
     padding: 5px 5px 5px 15px;
     transition: color 0.3s ease;
+    font-weight: 400;
 }
 
 nav a:hover {
@@ -1017,7 +1030,7 @@ nav a:hover {
 
 footer {
     font-size: 12px;
-    color: #333;
+    color: #000;
     text-decoration: none;
     padding: 20px;
 }
@@ -1236,6 +1249,7 @@ a {
     margin-bottom: 0;
     background-color: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    font-weight: 500;
 }
 
 .paragraphText p {

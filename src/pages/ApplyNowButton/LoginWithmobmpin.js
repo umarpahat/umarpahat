@@ -102,7 +102,7 @@ const sendOtp = () => {
   return (
     <>
       <Header {...props}/>
-      <div className='content'>
+      <div className='content darkBg'>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       forgotPassword ? <Confirmotpmobile {...props} phone_number={Number(props.location.state.phoneNumber)} forget_password={true} resendOtp={sendOtp} /> :
       <div className="form-container formcontainermob pt-4 " >

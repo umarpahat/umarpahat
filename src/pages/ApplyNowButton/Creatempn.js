@@ -7,7 +7,7 @@ function Creatempn() {
   return (
     <>
       <Header {...props}/>
-      <div className="content">
+      <div className='content darkBg'>
       <div className="form-container formcontainermob  pt-4 pb-5">
         <div>
           <form>

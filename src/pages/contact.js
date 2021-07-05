@@ -54,13 +54,13 @@ const Contact = (props) => {
               <img width="300" alt="About us" src={contact} />
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-              <h6>Reach us out for any queries/concerns</h6>
+              <h5>Reach us out for any queries/concerns</h5>
               <div className="row p-t-20">
                 <div className="col-md-10 col-sm-8 col-xd-8 ">
                   <div className="icon-left">
                     <img
                       src={pointer}
-                      alt="paymeindia"
+                      alt="PayMe India"
                       className="contact-payme"
                     />
                   </div>
@@ -76,7 +76,7 @@ const Contact = (props) => {
                   <div className="icon-left">
                     <img
                       src={phone}
-                      alt="paymeindia"
+                      alt="PayMe India"
                       className="contact-payme"
                     />
                   </div>
@@ -88,7 +88,7 @@ const Contact = (props) => {
                   <div className="icon-left">
                     <img
                       src={printer}
-                      alt="paymeindia"
+                      alt="PayMe India"
                       className="contact-payme"
                     />
                   </div>
@@ -100,7 +100,7 @@ const Contact = (props) => {
                   <div className="icon-left">
                     <img
                       src={timer}
-                      alt="paymeindia"
+                      alt="PayMe India"
                       className="contact-payme"
                     />
                   </div>

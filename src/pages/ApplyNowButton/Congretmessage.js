@@ -8,7 +8,7 @@ const Congretmessage = (props) => {
   return (
     <>
       <Header {...props} />
-      <div className='content'>
+      <div className='content darkBg'>
       <Container >
         <div className="form-container formcontainermob  pt-4 p-b-30">
           <form>
@@ -18,7 +18,7 @@ const Congretmessage = (props) => {
               </h4>
               <p className="PreApprovePara text-capitalize">
                 Congratulations! you have successfully completed the process.
-                kindly install PayMe india app from Play store/app store to
+                kindly install PayMe India app from Play store/app store to
                 complete final formalities to avail quick disbursal of the loan.
               </p>
               <div className="pt-3">

@@ -8,7 +8,7 @@ import instagram from "../images/instagram.png";
 import Linkedin from "../images/linkdin.png";
 import Twitter from "../images/twitter.png";
 import Facebook from "../images/facebook.png";
-import sslLogo from "../images/ssl-logo.png";
+import sslLogo from "../images/ssl-security-plan.png";
 // let[loader,setloader]=useState(false);
 
 
@@ -43,14 +43,14 @@ const Footer = (props) => {
 
                         </div>
                         <div className="ol col-md-4">
-                            <h6 className='head6'>FAQ</h6>
+                            <h6 className='head6'>FAQs</h6>
                             <ul>
                                 {/* <li><Link to="#corporate">Corporate</Link></li>
                     <li><Link to="#nbfc">Our NBFC Partners</Link></li>
                     <li><Link to="#advance-salary-loan">Advance Salary Loan</Link></li>
                     <li><Link to="#loans-for-low-salary">Loan For Low Salary</Link></li>
                     <li><Link to="#short-term-loans">Short Term Cash Loans</Link></li>*/}
-                                <li><Link to="/faq">FAQ</Link></li>
+                                <li><Link to="/faq">FAQs</Link></li>
 
                                 {/* <li><Link to="#sitemap">Sitemap</Link></li> */}
                             </ul>
@@ -137,21 +137,21 @@ const Footer = (props) => {
                             {/* <div className="sticky-bot black-bg-btn" data-toggle="modal" data-target="#referModal">Get
                                 Rs.500
                             </div> */}
-                            <a href="https://www.facebook.com/PayMeIndia.in/" target="_blank">
-                                <img className="social-img" src={Facebook} alt="payme-india"/>
+                            <a href="https://www.facebook.com/PaymeIndiaofficial/" target="_blank">
+                                <img className="social-img" src={Facebook} alt="PayMe india Facebook"/>
                             </a>
-                            <a href="https://twitter.com/PayMeIndia" target="_blank">
-                                <img className="social-img" src={Twitter} alt="payme-india"/></a>
+                            <a href="https://twitter.com/PayMeIndia?s=08" target="_blank">
+                                <img className="social-img" src={Twitter} alt="PayMe india Twitter"/></a>
                             <a href="https://www.linkedin.com/company/payme-india" target="_blank">
-                                <img className="social-img" src={Linkedin} alt="payme-india"/> </a>
+                                <img className="social-img" src={Linkedin} alt="PayMe india Linkedin"/> </a>
                             <a href="https://www.instagram.com/paymeindia/" target="_blank">
-                                <img className="social-img" src={instagram} alt="payme-india"/></a>
+                                <img className="social-img" src={instagram} alt="PayMe india Instagram"/></a>
                         </div>
                         <div className="ol col-md-4 text-center d-none d-sm-block"><img className="middle_ssl_image"
                                                                                         width="100" src={sslLogo}
-                                                                                        alt="PayMeIndia"/></div>
+                                                                                        alt="PayMe India"/></div>
                         <div className="ol col-md-4 d-block d-sm-none"><img className="middle_ssl_image" width="100"
-                                                                            src={sslLogo} alt="PayMeIndia"/></div>
+                                                                            src={sslLogo} alt="PayMe India"/></div>
                         <div className="ol col-md-4 col-xd-12">
                             <p className="p-t-20">Copyright@2021 Huey Tech Pvt. Ltd.</p>
                         </div>

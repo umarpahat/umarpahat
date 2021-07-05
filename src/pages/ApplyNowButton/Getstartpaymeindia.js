@@ -50,7 +50,7 @@ console.log(error)
   return (
     <>
       <Header {...props} />
-      <div className='content'>
+        <div className='content darkBg'>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <Container>
         <div className="pt-5 ">
@@ -58,7 +58,7 @@ console.log(error)
             <div className="slider-right-block">
               <div className="Home-contact-form">
                 <h4 className="form-heading fornheadding pb-3">
-                  Get Started With Payme India
+                  Get Started With PayMe India
                 </h4>
                 <div className="d-flex pt-5">
                   <div className="pt-4 pr-3">

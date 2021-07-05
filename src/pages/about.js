@@ -27,9 +27,9 @@ const About = (props) => {
       <div className="services">
         <div className="container">
           <div className="col col-md-12 reg-second-heading">
-            <h4>How we are</h4>
+            <h4>Who we are</h4>
             <span className="reg-second-subheading">
-              PayMeIndia is an innovative FinTech organization
+              PayMe India is an innovative FinTech organization
             </span>
           </div>
           <div className="row align-items-center p-b-30">
@@ -45,8 +45,8 @@ const About = (props) => {
               <h3 className="heading3">About Us</h3>
               <p>
                 {" "}
-                PayMeIndia is an innovative FinTech organization that offers
-                advance salary loans, instant payday loans, short term cash
+                PayMe India  is an innovative FinTech organization that offers
+                advance salary loans, instant credit line loans, short term cash
                 loans to the salaried corporate employees at lowest interest
                 rates. These loans are designed to meet all your short term
                 financial needs such as medical emergency or any other personal
@@ -63,7 +63,7 @@ const About = (props) => {
               <h3 className="heading3">Our Mission and Vision</h3>
               <p>
                 {" "}
-                Payme India prefers to be prominent financial solution provider
+                PayMe India prefers to be prominent financial solution provider
                 across the segment by offering ground-breaking products. We
                 visualize growth in leaps while being present in every aspect of
                 your life with our best in class services.
@@ -81,7 +81,7 @@ const About = (props) => {
             <div className="col-md-8 text-center">
               <h3 className="heading3">Our Promise</h3>
               <p>
-                At PayMe we are passionate to win trust of our customers and
+                At PayMe India we are passionate to win trust of our customers and
                 make our organization reliable for any of their financial need.
                 We have designed this new concept of lending to help them manage
                 their financial challenges.
@@ -92,7 +92,7 @@ const About = (props) => {
             <div className="col-lg-4 col-md-4 col-sm-4">
               <div className="box justify-content-md-center">
                 <div className="icon-left">
-                  <img className="img-fluid" src={thumbnail} alt="paymeindia" />
+                  <img className="img-fluid" src={thumbnail} alt="PayMe India" />
                 </div>
                 <div className="icon-left-content">
                   <h3>Will never say no</h3>
@@ -103,7 +103,7 @@ const About = (props) => {
             <div className="col-lg-4 col-md-4 col-sm-4">
               <div className="box justify-content-md-center">
                 <div className="icon-left">
-                  <img className="img-fluid" src={heart} alt="paymeindia" />
+                  <img className="img-fluid" src={heart} alt="PayMe India" />
                 </div>
                 <h3>Will always trust </h3>
                 <p>Reliable and secured lending process</p>
@@ -112,7 +112,7 @@ const About = (props) => {
             <div className="col-lg-4 col-md-4 col-sm-4">
               <div className="box justify-content-md-center">
                 <div className="icon-left">
-                  <img className="img-fluid" src={people} alt="paymeindia" />
+                  <img className="img-fluid" src={people} alt="PayMe India" />
                 </div>
                 <h3>Will stand by you</h3>
                 <p>We are here to assist you, Always!</p>

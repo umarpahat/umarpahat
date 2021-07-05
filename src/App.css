@@ -1715,7 +1715,7 @@ a:hover {
   font-size: 14px;
   font-weight: 600;
   opacity: 0.6;
-  color: #000000;
+  color: #000;
 }
 .SecondPreApproved {
   background: #edf1fc;
@@ -3045,7 +3045,7 @@ a.button-small:hover {
   min-height: 200px;
   border-radius: 1px;
   margin: 0;
-  color: #333;
+  color: #000
   background: rgba(251, 230, 167, .4)
 }
 
@@ -3119,7 +3119,7 @@ a.button-small:hover {
   border-radius: 1px;
   display: block;
   margin: 0;
-  color: #333;
+  color: #000
   font-size: 11px;
   position: relative
 }
@@ -3644,14 +3644,14 @@ nav a:hover {
 
 footer {
   font-size: 12px;
-  color: #333;
+  color: #000
   text-decoration: none;
   padding: 20px;
 }
 
 footer a {
   font-size: 12px;
-  color: #333;
+  color: #000
   text-decoration: none;
 }
 

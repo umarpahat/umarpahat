@@ -33,8 +33,8 @@ const Terms = (props) => {
                         <h4>Terms & Conditions</h4>
                     </div>
                     <p><strong>1. GENERAL</strong></p>
-                    <p> This Agreement is a contract between you and PayMeIndia and applies to your use of the
-                        PayMeIndia Services (the "Services"). By registering for the Services, you must read, agree
+                    <p> This Agreement is a contract between you and PayMe India and applies to your use of the
+                        PayMe India Services (the "Services"). By registering for the Services, you must read, agree
                         with and accept all of the terms and conditions contained in this Agreement. You agree that
                         any use by you of the Services shall constitute your acceptance of the Agreement and we
                         recommend that you store or print-off a copy of the Agreement (including all policies) for
@@ -43,7 +43,7 @@ const Terms = (props) => {
                         records in various statutes as amended by the Information Technology Act, 2000. This
                         document is published in accordance with the provisions of Rule 3 (1) of the Information
                         Technology (Intermediaries guidelines) Rules, 2011 that require publishing the rules and
-                        regulations, privacy policy and Terms of Use for access or usage of www.PayMeIndia.in
+                        regulations, privacy policy and Terms of Use for access or usage of www.PayMe India.in
                         website and the mobile application (hereinafter referred to as “Website”, or “App”, or
                         “Mobile App” or “Platform”). Please read this Agreement carefully and make sure that you
                         understand it fully before using the Services.</p>
@@ -53,11 +53,11 @@ const Terms = (props) => {
                         under Indian Contract Act, 1872. Persons who are "incompetent to contract" within the
                         meaning of the Indian Contract Act, 1872 including minors, un-discharged insolvents etc.
                         are not eligible to use the Website. If you are a minor i.e. under the age of 18 years,
-                        you shall not register as a User of the PayMeIndia website and shall not transact on or
+                        you shall not register as a User of the PayMe India website and shall not transact on or
                         use the website. As a minor if you wish to use or transact on website, such use or
-                        transaction may be made by your legal guardian or parents on the Website. PayMeIndia
+                        transaction may be made by your legal guardian or parents on the Website. PayMe India
                         serves the right to terminate your membership and / or refuse to provide you with access
-                        to the Website if it is brought to PayMeIndia's notice or if it is discovered that you
+                        to the Website if it is brought to PayMe India's notice or if it is discovered that you
                         are under the age of 18 years.</p>
 
                     <p className='p-t-30'><strong>3. PRIVACY</strong></p>
@@ -67,7 +67,7 @@ const Terms = (props) => {
                     </p>
 
                     <p className='p-t-30'><strong>4. REGISTRATION</strong></p>
-                    <p>To use PayMeIndia Services and access certain portions of the Website, you will
+                    <p>To use PayMe India Services and access certain portions of the Website, you will
                         need to register and obtain an account, username and password. When you
                         register, the information you provide to us during the registration process will
                         help us in offering content, service, and management of your account. You are
@@ -107,7 +107,7 @@ const Terms = (props) => {
                             short term loans, through our NBFC Partners.
                         </li>
 
-                        <li> PayMeIndia is not and cannot be a party to or control in any manner
+                        <li> PayMe India is not and cannot be a party to or control in any manner
                             any transaction between the Website's Users.
                         </li>
 
@@ -115,27 +115,27 @@ const Terms = (props) => {
                             between Customers and NBFC alone.
                         </li>
 
-                        <li>PayMeIndia does not have any control or does not determine or advise
+                        <li>PayMe India does not have any control or does not determine or advise
                             or in any way involve itself in the offering or acceptance of such
                             commercial/contractual terms between the Customers and NBFC.
                         </li>
 
-                        <li>PayMeIndia is not responsible for any non-performance or breach of
-                            any contract entered into between Customers and NBFC. PayMeIndia
+                        <li>PayMe India is not responsible for any non-performance or breach of
+                            any contract entered into between Customers and NBFC. PayMe India
                             cannot and does not guarantee that the concerned Customers and NBFC
                             will perform any transaction concluded on the Website.
                         </li>
 
-                        <li>PayMeIndia, through the Services, may allow the Customers to apply
+                        <li>PayMe India, through the Services, may allow the Customers to apply
                             for the Loan, subject to the fulfilment of the eligibility criteria
-                            laid down by PayMeIndia. You understand that PayMeIndia and / or the
+                            laid down by PayMe India. You understand that PayMe India and / or the
                             NBFC may collect, authenticate, track your location, verify and
                             confirm the User Data, documents and details as may be required to
                             sanction the Loan.
                         </li>
 
                         <li>In order to avail the Services, you are required to register with
-                            PayMeIndia by logging in through your Third Party Platforms (“User
+                            PayMe India by logging in through your Third Party Platforms (“User
                             Account”). During the Application process, you shall be required to
                             share and upload the User Data on the Website or the Mobile
                             Application Form. User Data shall include personal information
@@ -155,9 +155,9 @@ const Terms = (props) => {
                             may receive such updated information from Third Party Platforms.
                         </li>
 
-                        <li>All transactions undertaken on your behalf by PayMeIndia will be on
+                        <li>All transactions undertaken on your behalf by PayMe India will be on
                             the basis of your express instructions/consent and will be strictly
-                            on a non-discretionary basis. You also authorise PayMeIndia to get
+                            on a non-discretionary basis. You also authorise PayMe India to get
                             your credit information report from one or more Credit Information
                             Companies as decided by the Company from time to time. Once you
                             verify and upload the User Data and/or other documents and details
@@ -166,10 +166,10 @@ const Terms = (props) => {
                             to you, subject to fitting eligibility criteria and other conditions
                             set forth by NBFC for sanctioning the Loan. Thereafter, you are
                             required to fill and upload the ECS/NACH mandate form/Cheque or any
-                            other document as may be required by NBFC. PayMeIndia may collect
+                            other document as may be required by NBFC. PayMe India may collect
                             the physical documents including signatures on those documents
                             required for sanctioning and processing the Loan. Upon the
-                            collection of documents by PayMeIndia, NBFC shall disburse the Loan
+                            collection of documents by PayMe India, NBFC shall disburse the Loan
                             subject to the terms and conditions of the Loan Agreement.
                         </li>
 
@@ -179,7 +179,7 @@ const Terms = (props) => {
                             date(s) mentioned in the platform.
                         </li>
 
-                        <li>You understand and acknowledge that PayMeIndia reserves the right to
+                        <li>You understand and acknowledge that PayMe India reserves the right to
                             track your location (“Track”) during the provision of Services, and
                             also in the event that you stop, cease, discontinue to use or avail
                             the Services, through deletion or uninstallation of Mobile App or
@@ -192,12 +192,12 @@ const Terms = (props) => {
 
                         <li>You understand and acknowledge that you shall be solely responsible
                             for all the activities that occur under your User Account while
-                            availing the Services. You undertake that PayMeIndia shall not be
+                            availing the Services. You undertake that PayMe India shall not be
                             responsible and liable for any claims, damages, disputes arising out
                             of use or misuse of the Services. By usage of the Services, you
                             shall be solely responsible for maintaining the confidentiality of
                             the User Account and for all other related activities under your
-                            User Account. PayMeIndia reserves the right to accept or reject your
+                            User Account. PayMe India reserves the right to accept or reject your
                             registration for the Services without obligation of explanation.
                         </li>
 
@@ -218,20 +218,20 @@ const Terms = (props) => {
                             updates with regards to your credentials.
                         </li>
 
-                        <li>PayMeIndia does not make any representation or warranty as to the
+                        <li>PayMe India does not make any representation or warranty as to the
                             item-specifics (such as legal title, creditworthiness, identity,
                             etc) of any of its Users. You are advised to independently verify
                             the bona fides of any particular User that You choose to deal with
                             on the Website and use Your best judgment in that behalf.
                         </li>
 
-                        <li>At no time shall PayMeIndia hold any right, title or interest over
-                            the products nor shall PayMeIndia have any obligations or
+                        <li>At no time shall PayMe India hold any right, title or interest over
+                            the products nor shall PayMe India have any obligations or
                             liabilities in respect of such contract entered into between
                             Customers and NBFC.
                         </li>
 
-                        <li>You release and indemnify PayMeIndia and/or any of its officers and
+                        <li>You release and indemnify PayMe India and/or any of its officers and
                             representatives from any cost, damage, liability or other
                             consequence of any of the actions of the Users of the Website and
                             specifically waive any claims that you may have in this behalf under
@@ -244,7 +244,7 @@ const Terms = (props) => {
                     <p className='p-t-30'><strong>7. INDEMNITY AND DISCLAIMER OF WARRANTY</strong></p>
                     <ol type="a" className='p-t-30'>
 
-                        <li>You shall indemnify and hold harmless PayMeIndia, its owner,
+                        <li>You shall indemnify and hold harmless PayMe India, its owner,
                             licensee, affiliates, subsidiaries, group companies (as
                             applicable) and their respective officers, directors, agents,
                             and employees, from any claim or demand, or actions including
@@ -256,7 +256,7 @@ const Terms = (props) => {
                         </li>
 
                         <li>The Website and all content and services provided on the Website
-                            are provided on an "as is" and "as available" basis. PayMeIndia
+                            are provided on an "as is" and "as available" basis. PayMe India
                             expressly disclaims all warranties of any kind, whether express
                             or implied, including, but not limited to, the implied
                             warranties of merchantability, fitness for a particular purpose,
@@ -265,7 +265,7 @@ const Terms = (props) => {
                             course of performance.
                         </li>
 
-                        <li>PayMeIndia makes no warranty, and expressly disclaims any
+                        <li>PayMe India makes no warranty, and expressly disclaims any
                             obligation, that:
 
                             <ol className='p-t-20'>
@@ -299,7 +299,7 @@ const Terms = (props) => {
 
                     <ol type="a" className='p-t-30'>
 
-                        <li>This platform is controlled and operated by PayMeIndia and
+                        <li>This platform is controlled and operated by PayMe India and
                             all material on this site, including images, illustrations,
                             audio clips, and video clips, are protected by copyrights,
                             trademarks, and other intellectual property rights.
@@ -330,14 +330,14 @@ const Terms = (props) => {
                     <p className='p-t-30'><strong>9. INTELLECTUAL PROPERTY AND TRADEMARK INFRINGEMENT
                         COMPLAINTS</strong></p>
                     <p>
-                        PayMeIndia respects the intellectual property of others. In
+                        PayMe India respects the intellectual property of others. In
                         case You feel that Your Trademark or Intellectual Property
                         Rights have been infringed, You can write to us at <a
                         href="mailto:support@paymeindia.in">support@paymeindia.in</a>.
                     </p>
 
                     <p className='p-t-30'><strong>10. DESCRIPTION</strong></p>
-                    <p>PayMeIndia does not warrant that Product and / or
+                    <p>PayMe India does not warrant that Product and / or
                         Services description or other content of this Website is
                         accurate, complete, reliable, current, or error-free and
                         assumes no liability in this regard.</p>
@@ -346,14 +346,14 @@ const Terms = (props) => {
 
                     <ol type="a" className='p-t-30'>
 
-                        <li>IN NO EVENT SHALL PAYMEINDIA BE LIABLE FOR ANY
+                        <li>IN NO EVENT SHALL PayMe India BE LIABLE FOR ANY
                             SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL
                             DAMAGES OF ANY KIND IN CONNECTION WITH THESE
                             TERMS OF USE, EVEN IF USER HAS BEEN INFORMED IN
                             ADVANCE OF THE POSSIBILITY OF SUCH DAMAGES.
                         </li>
 
-                        <li>PayMeIndia (including its officers, directors,
+                        <li>PayMe India (including its officers, directors,
                             employees, representatives, affiliates, and
                             providers) will not be responsible or liable for
                             <ol className='p-t-10'>
@@ -393,15 +393,15 @@ const Terms = (props) => {
                         </li>
 
                         <li>The website may provide links to other third
-                            party websites. However since PayMeIndia has no
+                            party websites. However since PayMe India has no
                             control over such third party websites, you
-                            acknowledge and agree that PayMeIndia is not
+                            acknowledge and agree that PayMe India is not
                             responsible for the availability of such third
                             party websites, and does not endorse and is not
                             responsible or liable for any content,
                             advertising, products or other materials on or
                             available from such third party websites. You
-                            further acknowledge and agree that PayMeIndia
+                            further acknowledge and agree that PayMe India
                             shall not be responsible or liable, directly or
                             indirectly, for any damage or loss caused or
                             alleged to be caused by or in connection with
@@ -419,38 +419,38 @@ const Terms = (props) => {
                         <li>The User acknowledges and confirms that
                             he/she is well aware of the
                             rules &amp; regulations and the risks
-                            involved in services offered by PayMeIndia.
+                            involved in services offered by PayMe India.
                             Changes are periodically added to the
                             information herein.
                         </li>
 
-                        <li>PayMeIndia may make improvements and/or
+                        <li>PayMe India may make improvements and/or
                             changes on this web site at any time. We
                             will not be responsible for any data
                             accessed / mis-utilized by unauthorized use
-                            of PayMeIndia website by third party due to
+                            of PayMe India website by third party due to
                             user's neglect or due to allowing access to
                             personal data to third party intentionally
                             or unintentionally.
                         </li>
 
-                        <li> PayMeIndia will not be involved in any
+                        <li> PayMe India will not be involved in any
                             financial handling. The user hereby agrees
                             not to raise any claim or dispute against
-                            PayMeIndia and its directors, officers,
+                            PayMe India and its directors, officers,
                             employees or agents against any breach of
                             law which is done by user or money changers
-                            which is beyond the control of PayMeIndia.
+                            which is beyond the control of PayMe India.
                         </li>
 
                         <li>No legal right is there to any member or
-                            user of PayMeIndia to raise dispute against
-                            PayMeIndia. PayMeIndia shall have the
+                            user of PayMe India to raise dispute against
+                            PayMe India. PayMe India shall have the
                             absolute discretion to amend or supplement
                             any of the Terms at any time. We may
                             communicate the amended terms by hosting the
                             same on the Website or in any other manner
-                            as decided by PayMeIndia. The user shall be
+                            as decided by PayMe India. The user shall be
                             responsible for regularly reviewing these
                             terms including amendments thereto as may be
                             posted on the Website.
@@ -462,7 +462,7 @@ const Terms = (props) => {
                     <p className='p-t-30'><strong>13. LINKS TO OTHER SITES</strong></p>
                     <p>Our Website links to other websites that may
                         collect personally identifiable information
-                        about you. PayMeIndia is not responsible for
+                        about you. PayMe India is not responsible for
                         the privacy practices or the content of
                         those linked websites.</p>
 
