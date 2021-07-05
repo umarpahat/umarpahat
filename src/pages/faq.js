@@ -10,6 +10,7 @@ import "../../src/home.css";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 import logo from "../images/logo.png";
+import faqImg from "../images/faq.png";
 
 const Faq = (props) => {
   let [loader, setloader] = useState(false);
@@ -31,7 +32,7 @@ const Faq = (props) => {
               <img
                 width="300"
                 alt="About us"
-                src="https://www.paymeindia.in/assets/images/faq/1.png"
+                src={faqImg}
               />
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
