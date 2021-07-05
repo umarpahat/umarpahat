@@ -54,7 +54,7 @@ if (window.location.pathname === "/apply-loan") {
     <>
       {/* {!newUser ? <Header /> : null } */}
      <Header {...props}/>
-     <div className="content">
+     <div className="content darkBg">
       <Container >
       
         {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :

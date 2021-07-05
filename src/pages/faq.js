@@ -10,7 +10,7 @@ import "../../src/home.css";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 import logo from "../images/logo.png";
-import faqImg from "../images/faq.png";
+import faqImg from "../images/faqs.png";
 
 const Faq = (props) => {
   let [loader, setloader] = useState(false);
@@ -22,7 +22,7 @@ const Faq = (props) => {
       <div className="services">
         <div className="container">
           <div className="col col-md-12 reg-second-heading">
-            <h4>FAQ</h4>
+            <h4>FAQs</h4>
             <span className="reg-second-subheading">
               Here are some frequently asked questions
             </span>
@@ -36,7 +36,7 @@ const Faq = (props) => {
               />
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-              <h6>Reach us out for any queries/concerns</h6>
+              <h6 className='p-b-30'>Reach us out for any queries/concerns</h6>
               <Accordion defaultActiveKey="0">
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="0">

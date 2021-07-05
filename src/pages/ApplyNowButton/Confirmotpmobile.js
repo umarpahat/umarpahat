@@ -79,7 +79,7 @@ const Confirmotpmobile = (props) => {
 
   return (
     <>
-    
+      <div className='content darkBg'>
       {loader ? (
         <div className="loader">
           {" "}
@@ -87,8 +87,6 @@ const Confirmotpmobile = (props) => {
         </div>
       ) : (
         <>
-         
-
           <div className="Enter-otp-form" style={{position:'relative', paddingBottom:90}} >
             <form>
               <div className="Home-contact-form">
@@ -142,7 +140,7 @@ const Confirmotpmobile = (props) => {
           </div>
         </>
       )}
-  
+      </div>
     </>
   );
 };

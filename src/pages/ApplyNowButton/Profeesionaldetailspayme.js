@@ -212,7 +212,7 @@ const Professionaldetailspayme = (props) => {
   return (
     <>
       <Header {...props}/>
-      <div className='content'>
+      <div className='content darkBg'>
       <Container className="pb-5">
         {loader ? (
           <div className="loader">

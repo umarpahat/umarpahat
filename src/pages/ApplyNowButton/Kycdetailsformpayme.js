@@ -228,7 +228,7 @@ const Kycdetailsformpayme = (props) => {
     <>
 
       <Header {...props} />
-      <div className='content'>
+      <div className='content darkBg'>
       {loader ? (
         <div className="loader">
           {" "}

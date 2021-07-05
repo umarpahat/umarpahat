@@ -233,7 +233,7 @@ const Bankdetailspayme = (props) => {
   return (
     <>
       <Header {...props} />
-      <div className='content'>
+      <div className='content darkBg'>
       <Container>
         {loader ? (
           <div className="loader">

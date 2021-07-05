@@ -19,7 +19,7 @@ const Kycdetailsformpayme = (props) => {
   return (
     <>
       <Header {...props}/>
-      <div className='content'>
+      <div className='content darkBg'>
       <div className="form-container pb-5">
         <div className="pb-4">
           <Progressbar />
@@ -149,7 +149,7 @@ const Kycdetailsformpayme = (props) => {
             </div>
 
             <Link
-              to="/bank-details-payme"
+              to="/bank-details-PayMe India"
               className="submit-btn text-center"
             >
               <a style={{ color: "#fff" }}>Proceed</a>

@@ -221,7 +221,7 @@ const HomePage = (props) => {
                             <div className="col-sm-12 col-md-6">
                                 <h3 className="heading1">Get Instant Loan Approval</h3>
                                 <h3 className="heading2"> Personal Loan upto 2 Lacs with Small Processing Fees</h3>
-                                <p className="para-13">No more financial crunch. Payme India gives you the amount of
+                                <p className="no-more-text">No more financial crunch. PayMe India gives you the amount of
                                     loan
                                     you require,
                                     anytime-anywhere</p>
@@ -252,7 +252,7 @@ const HomePage = (props) => {
                                             </div>
                                         </div>
                                         <div className="price-slider">
-                                            <h4>For how long?</h4>
+                                            <h4>For how long?(Months)</h4>
                                             <div className="relative">
                                                 <div className={classes.root}>
                                                     <Slider
@@ -321,7 +321,7 @@ const HomePage = (props) => {
                 <div className="loan-features">
                     <div className="container">
                         <div className="col col-md-12 reg-second-heading">
-                            <h4>Benefits of Payme India</h4>
+                            <h4>Benefits of PayMe India</h4>
                             <span className="reg-second-subheading">If access to money is holding you back, were here to help</span>
                         </div>
 
@@ -457,7 +457,7 @@ const HomePage = (props) => {
                                     professional and got the job done quickly. The support staff is very courteous
                                     and the transfer of money is lightening fast and easy documentation as well. Looking
                                     forward for
-                                    continued business. Thank you team Payme India.</p>
+                                    continued business. Thank you team PayMe India.</p>
                             </div>
                         </div>
                         <div className="item next text-left">
@@ -507,7 +507,7 @@ const HomePage = (props) => {
                                 <p className="content mb-5 mx-2 pt-3">Very fast service If anyone in urgently need in
                                     money
                                     then dont waste
-                                    your time in anywhere for cash loan. Just register with paymeindia and get a loan.
+                                    your time in anywhere for cash loan. Just register with PayMe India and get a loan.
                                     Team
                                     is
                                     supportive and provide very fast service.</p>
