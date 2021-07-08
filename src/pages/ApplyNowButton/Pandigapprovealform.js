@@ -40,7 +40,7 @@ const Pandingapprovalform = (props) => {
 
  useEffect(()=> {
    
-    let url2 = `${API_ENDPOINT}api/get_document_status/`;
+    let url2 = `${API_ENDPOINT}/api/get_document_status/`;
     let config = {
      headers: {
        Authorization: "Token " + props.token,

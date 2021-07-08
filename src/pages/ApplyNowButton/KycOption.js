@@ -22,7 +22,7 @@ const KycOption = (props) => {
   console.log("after ekyc", ekyc);
 
   useEffect(() => {
-    let url = `${API_ENDPOINT}api/webview_url/payme_ekyc/`;
+    let url = `${API_ENDPOINT}/api/webview_url/payme_ekyc/`;
     let config = {
       headers: {
         Authorization: "Token " + props.token,
@@ -48,7 +48,7 @@ var time = setInterval(function(){
 
   const ekycCall = ()=> {
 
-     let url2 = `${API_ENDPOINT}api/get_document_status/`;
+     let url2 = `${API_ENDPOINT}/api/get_document_status/`;
      let config = {
       headers: {
         Authorization: "Token " + props.token,

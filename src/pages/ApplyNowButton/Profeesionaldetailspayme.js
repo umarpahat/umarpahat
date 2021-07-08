@@ -46,7 +46,7 @@ const Professionaldetailspayme = (props) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    let url = `${API_ENDPOINT}api/industry_list/`;
+    let url = `${API_ENDPOINT}/api/industry_list/`;
     let config = {
       headers: {
         Authorization: "Token " + props.token,

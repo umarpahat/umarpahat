@@ -199,7 +199,7 @@ const Bankdetailspayme = (props) => {
 
   const ifscDetail = (ifscd) => {
     // console.log("ifscdetail",ifscd)
-    let url = `${API_ENDPOINT}api/bankdetails_list/`;
+    let url = `${API_ENDPOINT}/api/bankdetails_list/`;
     let data = {
       ifsc: ifscd,
     };
