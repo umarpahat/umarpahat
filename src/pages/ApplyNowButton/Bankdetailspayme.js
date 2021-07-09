@@ -325,6 +325,7 @@ const Bankdetailspayme = (props) => {
                       placeholder="Enter IFSC Code Here (E.G. KKBK0000430)"
                       value={ifscdetail}
                       onChange={handleifscDetail}
+                      maxLength={11}
                     />
                      {validIfscCode ? <span style={{ color: "red" }}>{validIfscCode}</span> : null}
                     <div className="select_css" style={{'display':'none'}}>
