@@ -33,7 +33,7 @@ const Bankdetailspayme = (props) => {
   const [loader, setloader] = useState(false);
   const [signedUrl, setsignedUrl] = useState({});
   const [bankStatementPassword, setbankStatementPassword] = useState("");
-  const [volidIfscCode, setValidIfscCode] = useState("");
+  const [validIfscCode, setValidIfscCode] = useState("");
   const [validAccount, setValidAccount] = useState("");
   const [ifscdetail, setifscdetail] = useState("");
   const [ifscData, setIfscData] = useState([]);
@@ -107,6 +107,11 @@ const Bankdetailspayme = (props) => {
       setifscErro("Please enter ifsc code");
       return;
     }
+    if(validIfscCode)
+    {
+      setifscError("IFSC should be 4 letters, followed by 7 letters or digits");
+      return;
+    }
 
     if (!bankStatementObj.length) {
       seterrorBnakStatement("Please upload bank statement");
@@ -171,12 +176,16 @@ const Bankdetailspayme = (props) => {
   ));
   const handleifscDetail = (e) => {
 
-    // if(e.target.value.match(/^[A-Z]{4}0[A-Z0-9]{6}$/)){
-    //   setValidIfscCode("")
-    // }
-    // else{
-    //   setValidIfscCode("IFSC should be 4 letters, followed by 7 letters or digits")
-    // }
+    if(e.target.value.match(/^[A-Z]{4}0[A-Z0-9]{6}$/)){
+      setValidIfscCode("")
+    }
+  else if(e.target.value==="")
+  {
+    setValidIfscCode("");
+  }
+    else{
+      setValidIfscCode("IFSC should be 4 letters, followed by 7 letters or digits")
+    }
     setifscdetail(e.target.value);
     ifscDetail(e.target.value);
     e.preventDefault();
@@ -309,9 +318,7 @@ const Bankdetailspayme = (props) => {
                   </div>
                   <div className="form-group ms-input-group">
                     <label className="form-label">Bank IFSC Code </label>
-                    {/* {volidIfscCode ? (
-                      <span style={{ color: "red" }}>{volidIfscCode}</span>
-                    ) : null} */}
+                   
                     <input
                       type="text"
                       className="form-control ms-form-input"
@@ -319,6 +326,7 @@ const Bankdetailspayme = (props) => {
                       value={ifscdetail}
                       onChange={handleifscDetail}
                     />
+                     {validIfscCode ? <span style={{ color: "red" }}>{validIfscCode}</span> : null}
                     <div className="select_css" style={{'display':'none'}}>
                     <select 
                     
