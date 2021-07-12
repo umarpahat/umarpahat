@@ -4,10 +4,11 @@ import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
 import {getS3SignedUrl, postS3, api} from "../../services/api"
 import { hitAllUserData, hitAppUseCase } from '../../store/modules/userDetails/actions';
-import Header from "../../component/Header";
+import Header from "../Header";
 import Loader from '../../component/Loader'
 import axios from 'axios'
-import {API_ENDPOINT_STAGING} from "../../constant" 
+import {API_ENDPOINT_STAGING} from "../../constant" ;
+import Footer from "../Footer";
 
 const DetailsSummary = (props) => {
 
@@ -46,8 +47,9 @@ const DetailsSummary = (props) => {
 
   return (
     <>
+   
       <Header />
-
+      <div className='content darkBg'>
       <div className="form-container">
         <div className="ms-Tabs">
           <h4 className="form-heading text-center">Summary Of All Details</h4>
@@ -108,6 +110,7 @@ const DetailsSummary = (props) => {
           </div>
         </form>
       </div>
+      </div>
       <div className="pb-5">
         <div className="custopaddingcls">
           <Link
@@ -122,6 +125,8 @@ const DetailsSummary = (props) => {
           </Link>
         </div>
       </div>
+      <Footer/>
+    
     </>
   );
 };

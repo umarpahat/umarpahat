@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import Header from "../../component/Header";
-
+import Header from "../Header";
+import Footer from "../Footer";
 const TransactionHistory = (props) => {
 
   const [successTrans, setsuccessTrans] = useState([])
@@ -67,6 +67,7 @@ const TransactionHistory = (props) => {
 
   return (
     <>
+    <div className='content darkBg'>
       <Header />
       <div className="form-container">
         <div className="ms-Tabs">
@@ -102,6 +103,8 @@ const TransactionHistory = (props) => {
             </div>
           </div>
         </form>
+      </div>
+      <Footer/>
       </div>
     </>
   );
