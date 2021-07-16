@@ -44,13 +44,9 @@ const About = (props) => {
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 textAlign">
               <h3 className="heading3">About Us</h3>
               <p>
-                {" "}
-                PayMe India  is an innovative FinTech organization that offers
-                advance salary loans, instant credit line loans, short term cash
-                loans to the salaried corporate employees at lowest interest
-                rates. These loans are designed to meet all your short term
-                financial needs such as medical emergency or any other personal
-                needs.
+                PayMe India was founded in 2016, with an aim to eliminate the barrier of getting financial help by enabling frictionless transactions & revolutionizing the way people take loans. We are striving to endow advanced salary loans to bourgeois or any salaried employee who faces financial constraints.
+              </p>
+              <p className='p-t-30'>PayMe India is an RBI registered NBFC company striving to simplify financial services by providing <strong>online loans</strong> to corporate employees at the lowest interest rate. Our lending model empowers customers to borrow easy, fast, safe & affordable <strong>personal loans</strong>. With a commitment to drive credit penetration & financial inclusion. We are collaborating technology, money, design & data in the form of App, to lend money online in a time of need, by being your financial backup. We have a team of 100 passionate members who strive to endow you with a platform where you can get easy & hassle-free personal loans.
               </p>
             </div>
           </div>
@@ -62,12 +58,9 @@ const About = (props) => {
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 textAlign">
               <h3 className="heading3">Our Mission and Vision</h3>
               <p>
-                {" "}
-                PayMe India prefers to be prominent financial solution provider
-                across the segment by offering ground-breaking products. We
-                visualize growth in leaps while being present in every aspect of
-                your life with our best in class services.
+                PayMe India wants to accelerate the digital transformation of the financial industry by providing loans from Rs500 to Rs 2,00,000. Our vision is to be the leader of a fintech hub by utilizing the latest financial technologies to future-proof PayMe India pillars to develop a vibrant platform to facilitate acceleration in lending loans.
               </p>
+              <p className='p-t-30'>Our Mission is to bring effectiveness, efficiency, & excellence to our lending process by outperforming ourselves every day by leveraging our customers with a unique platform where they can get <strong>quick loans</strong>. And our unique platform helps our users in their financial journey by being present in every aspect of their life with our best-in-class service. We promise to ensure you complete privacy & customer safety through our modern infrastructure & secure online system.</p>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 imgLarge textAlign">
               <img className="img-fluid" alt="CIBIL" src={vision} />
@@ -81,10 +74,7 @@ const About = (props) => {
             <div className="col-md-8 text-center">
               <h3 className="heading3">Our Promise</h3>
               <p>
-                At PayMe India we are passionate to win trust of our customers and
-                make our organization reliable for any of their financial need.
-                We have designed this new concept of lending to help them manage
-                their financial challenges.
+                PayMe India promises to stay with you in every step by offering you a truly modern solution for <strong>a personal loan</strong>. Without lengthy paperwork with instant processing time, attractive interest rate & without prepayment charges. The only thing we ask in return is your trust, & believe us your trust in our service is our biggest asset. Don't believe in words 1st try & then trust. So next time when you are facing a financial crunch either in rent payment, utility bills, or looking for an impromptu vacation or season sale, PayMe India is there for you in every step as your financial backup.
               </p>
             </div>
           </div>

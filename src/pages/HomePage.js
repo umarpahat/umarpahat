@@ -322,8 +322,8 @@ const HomePage = (props) => {
                     <div className="container">
                         <div className="col col-md-12 reg-second-heading">
                             <h4>Benefits of PayMe India</h4>
-                            <span className="reg-second-subheading">If access to money is holding you back, were here to help</span>
                         </div>
+                        <p className='text-center p-b-30'>PayMe India is here to endow you with an extensive range of benefits. Whether it's last-minute rent payment, utility bills or an impromptu vacation, or even flash sale online, PayMe India has a loan for all processes. Let’s get a quick sneak peek of the benefits you'll experience on your financial journey with PayMe India.</p>
 
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-6">
@@ -419,7 +419,7 @@ const HomePage = (props) => {
                 </div>
                 <div className="container-fluid px-3 px-sm-5 text-center testimonial">
                     <div className="col-sm-12 col-md-12 reg-second-heading">
-                        <h4>Testimonials</h4>
+                        <h4>An experience people love to talk about</h4>
                         <span className="reg-second-subheading">Our Success Stories</span>
                     </div>
                     <div className="owl-carousel owl-theme">
@@ -528,10 +528,8 @@ const HomePage = (props) => {
                                     <div className="red-arrow hidden-xs"></div>
                                     <div className="red-arrow-bottom hidden-xs"></div>
                                     <div className="home-steps-in">
-                                        <div className="steps-heading"><strong>Registration and Login</strong></div>
-                                        <p>Register online with your email id and mobile no. to get instant approval for
-                                            upto Rs.2
-                                            lacs</p>
+                                        <div className="steps-heading"><strong>Registration & login</strong></div>
+                                        <p>Do easy registration with your email id & mobile number to get instant approval of your loan amount.</p>
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-md-4 home-steps"><img className="icon" src={uploadImg}
@@ -539,22 +537,16 @@ const HomePage = (props) => {
                                     <div className="red-arrow hidden-xs"></div>
                                     <div className="red-arrow-bottom hidden-xs"></div>
                                     <div className="home-steps-in">
-                                        <div className="steps-heading"><strong>Upload Document Swiftly</strong></div>
-                                        <p>Uploading Documents. I have a hard copy of my document, how can I upload it?
-                                            One
-                                            of the
-                                            easiest ways.
-                                        </p>
+                                        <div className="steps-heading"><strong>Swiftly upload your document</strong></div>
+                                        <p>Simply, upload your document via an app for credit assessment and instant loan disbursement.</p>
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-md-4 home-steps"><img className="icon"
                                                                                     src={eligibilityImg}
                                                                                     alt="Check Eligibility"/>
                                     <div className="home-steps-in">
-                                        <div className="steps-heading"><strong>Check Eligibility</strong></div>
-                                        <p>the fact of having the necessary qualities or satisfying the necessary
-                                            conditions: I'll have
-                                            to check her eligibility to take part.</p>
+                                        <div className="steps-heading"><strong>Check eligibility</strong></div>
+                                        <p>Easily check eligibility by uploading the documents and the loan amount you are eligible for?</p>
                                     </div>
                                 </div>
                             </div>
@@ -577,22 +569,15 @@ const HomePage = (props) => {
                                     <div className="red-arrow hidden-xs"></div>
                                     <div className="red-arrow-bottom hidden-xs"></div>
                                     <div className="home-steps-in">
-                                        <div className="steps-heading"><strong>Instant Fund Transfer</strong></div>
-                                        <p>Instant Money Transfer (IMT) is an innovative domestic service that allows
-                                            you to
-                                            send cash
-                                            to a receiver
-                                        </p>
+                                        <div className="steps-heading"><strong>Instant Fund transfer</strong></div>
+                                        <p>Once your document is verified, get an instant fund transfer to your bank account.</p>
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-md-4 home-steps"><img className="icon" src={easyRepay}
                                                                                     alt="easy-repay"/>
                                     <div className="home-steps-in">
                                         <div className="steps-heading"><strong>Easy Repayment</strong></div>
-                                        <p>Repayment is the act of paying back money borrowed from a lender in
-                                            accordance
-                                            with a
-                                            loan's.</p>
+                                        <p>PayMe India endows you with easy repayment by availing of different payment modes.</p>
                                     </div>
                                 </div>
                             </div>
