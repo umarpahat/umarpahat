@@ -41,26 +41,26 @@ const HowWeWork = (props) => {
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 textAlign">
                                 <h4>Apply for loan</h4>
-                                <li>
+                                <p>
                                     <strong> Download our App- </strong>
                                     Simply, download our app from the google play store or app store.
-                                </li> <li>
+                                </p> <p>
                                 <strong> Registration & login-</strong>
                                 Do easy registration with your email id & mobile number to get instant approval of your
                                 loan amount.
-                            </li> <li>
+                            </p> <p>
                                 <strong> Swiftly upload your document- </strong> Simply, upload your document via an app
                                 for credit assessment and instant loan disbursement.
-                            </li> <li>
+                            </p> <p>
                                 <strong> Check eligibility - </strong> Easily check eligibility by uploading the
                                 documents and the loan amount you are eligible for?
-                            </li> <li>
+                            </p> <p>
                                 <strong>Instant Fund transfer-</strong> Once your document is verified, get an instant
                                 fund transfer to your bank account.
-                            </li> <li>
+                            </p> <p>
                                 <strong>Easy Repayment-</strong> PayMe India endows you with easy repayment by availing
                                 of different payment modes.
-                            </li>
+                            </p>
                             </div>
                         </div>
                     </div>
