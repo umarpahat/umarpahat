@@ -15,6 +15,7 @@ import refund from "./pages/refund"
 import policy from "./pages/policy"
 import terms from "./pages/terms"
 import OurNbfcPartners from "./pages/OurNbfcPartners"
+import HowWeWork from "./pages/HowWeWork"
 import OtherDetalisForm from "./pages/Payrent/OtherDetalisForm";
 import DetailsSummary from "./pages/Payrent/DetailsSummary";
 import TransactionHistory from "./pages/Payrent/TransactionHistory";
@@ -59,6 +60,7 @@ function Routes() {
         <Route exact path="/policy" component={policy} />
         <Route exact path="/terms" component={terms} />
         <Route exact path="/ourNbfcPartners" component={OurNbfcPartners} />
+        <Route exact path="/how-we-work" component={HowWeWork} />
         <Route exact path="/self-employed" component={SelfEmployed} />
         <Route exact path="/congratulations" component={Congretmessage} />
         <Route exact path="/login-with-mob-mpin" component={LoginWithMobMpin} />
