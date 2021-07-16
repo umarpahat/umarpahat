@@ -54,21 +54,9 @@ const Header = (props) => {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
-              {/*  <li>
-                  <Link to="#media">Media</Link>
-                </li>*/}
                 <li>
                   <Link to="/about">About us</Link>
                 </li>
-               {/* <li>
-                  <Link to="#corporate">Corporate</Link>
-                </li>
-                <li>
-                  <Link to="#how-we-work">How we work</Link>
-                </li>*/}
-               {/* <li>
-                  <Link to="#blog">Blog</Link>
-                </li>*/}
                 <li>
                   <Link to="/contact">Contact us</Link>
                 </li>
@@ -78,21 +66,18 @@ const Header = (props) => {
                 <li>
                   <Link to="/ourNbfcPartners">Our NBFC Partners</Link>
                 </li>
-              {/*  <li>
-                  <Link to="#join-us">Join us</Link>
+                <li>
+                  <Link to="/how-we-work">How We Work</Link>
                 </li>
                 <li>
-                  <Link to="#nbfc">Our NBFC Partners</Link>
+                  <Link to="/pay-rent-details">Pay rent</Link>
                 </li>
                 <li>
-                  <Link to="#advance-salary-loan">Advance Salary Loan</Link>
+                  <Link to="/media-coverage">Media Coverage</Link>
                 </li>
                 <li>
-                  <Link to="#loans-for-low-salary">Loan For Low Salary</Link>
+                  <Link to="/offerings">Offerings</Link>
                 </li>
-                <li>
-                  <Link to="#short-term-loans">Short Term Cash Loans</Link>
-                </li>*/}
               </ul>
             </div>
           </nav>
