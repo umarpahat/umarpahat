@@ -69,15 +69,15 @@ const Header = (props) => {
                 <li>
                   <Link to="/how-we-work">How We Work</Link>
                 </li>
-                <li>
+                {/*<li>
                   <Link to="/pay-rent-details">Pay rent</Link>
-                </li>
+                </li>*/}
                 <li>
                   <Link to="/media-coverage">Media Coverage</Link>
                 </li>
-                <li>
+                {/*<li>
                   <Link to="/offerings">Offerings</Link>
-                </li>
+                </li>*/}
               </ul>
             </div>
           </nav>
