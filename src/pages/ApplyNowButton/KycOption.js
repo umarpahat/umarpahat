@@ -127,10 +127,13 @@ var time = setInterval(function(){
   };
   return (
     <>
+   
+    <div className='content darkBg'>
     <Header {...props}/>
-      <div className='content darkBg'>
+    <div class="navbar navbar-default navbar-fixed-top" id="topnavbar"  >
+    <div className="slider-right-block"  style={{marginBottom:"50px"}}>
       {ekyc === "VERIFIED" ? (
-        <Container style={{backgroundColor:"#f2f2f2"}}>
+        <Container >
           <div className="pt-5 ">
             <div className="contenertQuicklone">
               <div className="slider-right-block">
@@ -141,7 +144,7 @@ var time = setInterval(function(){
                   <a
                     type="button"
                     className="getstartbtn fontstyformQuiklone"
-                    style={{ margin: "83px 0px 72px 0" }}
+                    style={{ margin: "83px 0px 72px 0",color:"white" }}
                     target="popup"
                     onClick={handleBankDetails}
                   >
@@ -225,7 +228,14 @@ var time = setInterval(function(){
         </Container>
       )}
       </div>
-      <Footer/>
+      </div>
+      <div >
+      </div>
+      </div>
+      <div >
+       <Footer/>
+       </div>
+     
     </>
   );
 };

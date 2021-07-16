@@ -297,7 +297,7 @@ const Kycdetailsformpayme = (props) => {
                 </div>
                 <div class="form-group ms-input-group">
                   <label className="form-label">Gender</label>
-                  <div>
+                  <div class="form-group ms-input-group">
                     <select
                       value={gender}
                       onChange={(e) => {
@@ -305,7 +305,7 @@ const Kycdetailsformpayme = (props) => {
                         seterrorGender("");
                         setgender(e.target.value);
                       }}
-                      className="kyc-select-gender"
+                      className="form-label"
                     >
                       <option value="">Select Gender</option>
                       <option value="male">Male</option>
@@ -450,7 +450,7 @@ const Kycdetailsformpayme = (props) => {
                       <input
                         type="file"
                         accept="image/*"
-                        class="custom-file-input"
+                        className="custom-file-input"
                         id="Backofadhaar"
                         hidden
                         onChange={handleAadhaarUploadBack}
@@ -480,7 +480,7 @@ const Kycdetailsformpayme = (props) => {
                     <input
                       type="file"
                       accept="image/*"
-                      class="custom-file-input"
+                      className="custom-file-input"
                       name="Upload Profile"
                       id="upload-profile"
                       onChange={handleProfileUpload}

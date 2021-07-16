@@ -103,28 +103,31 @@ const DetailsSummary = (props) => {
                 <h4>Landlord's Account Number</h4>
                 <p>{props.location.state.payee.account_number}</p>
               </div>
-              <div className="">
-              <input type="submit" value="Proceed To Payment" className="getstartbtn fontstyformQuiklone" />
-              </div>
+              
             </div>
           </div>
+          <div className="">
+              <input type="submit" value="Proceed To Payment" className="getstartbtn fontstyformQuiklone" />
+              </div>
         </form>
-      </div>
-      </div>
-      <div className="pb-5">
-        <div className="custopaddingcls">
+        <div className="pb-5">
+        <div >
           <Link
             to="/payrent-other-details"
-            style={{
-              color: "#33658A",
-              fontWeight: "700",
-              fontSize: 18,
-            }}
+        
           >
-            Back
+             <button
+                     
+                      className="getstartbtn fontstyformQuiklone"
+                    >
+                    Back
+                    </button>
           </Link>
         </div>
       </div>
+      </div>
+      </div>
+     
       <Footer/>
     
     </>
