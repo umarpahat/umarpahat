@@ -38,10 +38,8 @@ console.log(props)
                   props.history.push({pathname:'/professional-details-payme'})
                 }
               }
-              else{
-
-
-              props.history.push({pathname:'/bank-details-payme'})
+              else{   
+                   props.history.push({pathname:'/bank-details-payme'})
               }
             }
          
@@ -49,11 +47,12 @@ console.log(props)
               props.history.push({pathname:'/kycoption'})
             }
           } else if (props.user.useCase === 'pay-rent') {
-            if (props.user.userData.userdocumentsmodel.kyc_verified === 'VERIFIED' || props.user.userData.userdocumentsmodel.kyc_verified === "PENDING_VERIFICATION") {
+            console.log("payrent kyc",props.user.userData.userdocumentsmodel)
+            if (props.user.userData.userdocumentsmodel.kyc_verified === 'VERIFIED' || props.user.userData.userdocumentsmodel.kyc_verified === "PENDING_VERIFICATION" ) {
               props.history.push({pathname:'/payrent-other-details'})
             } else {
               console.log("1414141414", props)
-              props.history.push({pathname:"/kyc-details-form"})
+              props.history.push({pathname:"/payrent-other-details"})
             }
           } else {
             props.history.push({pathname:'/'})

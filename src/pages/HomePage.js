@@ -273,7 +273,7 @@ const HomePage = (props) => {
                                         </p>
                                         <div className="price-form">
                                             <div className="form-group1">
-                                                <label htmlFor="total" className="col-sm-12 control-label">TOTAL
+                                                <label htmlFor="total" className="col-sm-12 control-label">
                                                     AMOUNT &#8377;</label>
                                                 <div className="col-sm-12">
                                                     <input type="hidden" value={handleResult()}
