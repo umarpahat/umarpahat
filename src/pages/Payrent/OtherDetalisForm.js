@@ -158,8 +158,8 @@ const OtherDetalisForm = (props) => {
   }, []);
 
   const handleName = () => {
-    setName(props.user.userData.basic_info[0].first_name);
-    setLastName(props.user.userData.basic_info[0].last_name);
+    setName(props.user?.userData.basic_info[0]?.first_name);
+    setLastName(props.user?.userData.basic_info[0]?.last_name);
   };
 
   const handleScreen2 = () => {
@@ -296,7 +296,7 @@ const OtherDetalisForm = (props) => {
       });
     }
   };
-  console.log("name", name, lastName);
+  console.log("name", name, kyc_verified, props.user.userData.userdocumentsmodel.kyc_verified);
 
   return (
     <>
@@ -722,7 +722,7 @@ const OtherDetalisForm = (props) => {
               <h4 className="form-heading text-center">
                 Your KYC is not verified
               </h4>
-              <p>Kyc status: {userdocumentsmodel.kyc_verified}</p>
+              <span  className="reloadicon" style={{ opacity: "0.59",right:"200px" }}>Kyc status: {userdocumentsmodel.kyc_verified}</span>
               {userdocumentsmodel.kyc_verified === "PENDING_VERIFICATION" ? (
                 <p>We are verifying your details.</p>
               ) : null}
@@ -733,7 +733,7 @@ const OtherDetalisForm = (props) => {
                   className="getstartbtn fontstyformQuiklone"
                   onClick={() => {
                     props.hitAppUseCase({ useCase: "pay-rent" });
-                    props.history.push({ pathname: "/kyc-details-form" });
+                    props.history.push({ pathname: "/kycoption" });
                   }}
                   style={{ margin: "83px 0px 72px 0" }}
                 />

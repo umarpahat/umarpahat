@@ -94,10 +94,10 @@ var time = setInterval(function(){
         props.user.userbankdetail.verified === "PENDING_VERIFICATION"
       ) {
         if (
-          props.user.userdocumentsmodel &&
+         
           (props.user.userdocumentsmodel.salary_slip_verified === "VERIFIED" ||
             props.user.userdocumentsmodel.salary_slip_verified ===
-              "PENDING_VERIFICATION")
+              "PENDING_VERIFICATION"  || props.user.professionaldetails.verified ==="VERIFIED" || props.user.professionaldetails.verified ==="PENDING_VERIFICATION" )
         ) {clearTimeout();
           props.history.push({ pathname: "/pending-approval" });
           
@@ -203,8 +203,8 @@ var time = setInterval(function(){
                     style={{ margin: "83px 0px 32px 0" }}
                     onClick={() => {
                       if (
-                        !props.user.userdocumentsmodel.adhar_card_front_url ||
-                        !props.user.userdocumentsmodel.adhar_card_back_url
+                        props.user.userdocumentsmodel.kyc_verified ==="NOT_SUBMITTED" ||
+                        props.user.userdocumentsmodel.kyc_verified ==="NOT_VALID"
                       ) {
                         props.history.push({ pathname: "/kyc-details-form" });
                       } else if (!props.user.userbankdetail) {
