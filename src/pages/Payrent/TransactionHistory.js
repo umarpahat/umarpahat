@@ -64,11 +64,12 @@ const TransactionHistory = (props) => {
     </div>
   </div>
   ))
+ 
 
   return (
     <>
     <div className='content darkBg'>
-      <Header />
+      <Header {...props}/>
       <div className="form-container">
         <div className="ms-Tabs">
           <div class="btn-group" role="group" aria-label="Basic example">
@@ -87,12 +88,14 @@ const TransactionHistory = (props) => {
           <div className="Home-contact-form">
             <h4 className="form-heading ">Pending Transaction</h4>
             <div className="form-block">
+           {(PensindTransTrack.length===0)?<span>No Pending Transaction</span>:null}
               {PensindTransTrack}
             </div>
           </div>
           <div className="Home-contact-form mt-4">
             <h4 className="form-heading ">Completed Transaction</h4>
             <div className="form-block">
+            {(SuccessTransTrack.length===0)?<span>No Success Transaction</span>:null}
               {SuccessTransTrack}
             </div>
           </div>

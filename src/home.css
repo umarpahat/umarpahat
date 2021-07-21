@@ -19,6 +19,11 @@ body {
 
 .darkBg{
     background: #829aae url("./images/banner-img.png") no-repeat center 0 fixed;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 
 .select_css select {

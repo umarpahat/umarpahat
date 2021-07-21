@@ -358,7 +358,7 @@ const OtherDetalisForm = (props) => {
                       {errorRentAmount ? (
                         <span style={{ color: "red" }}>{errorRentAmount}</span>
                       ) : null}
-
+                      <br></br>
                       <div className="ms-range-slider">
                         <div className="py-3">
                           <InputRange
@@ -369,6 +369,7 @@ const OtherDetalisForm = (props) => {
                             onChange={(value) => setRentAmount(value)}
                           />
                         </div>
+                        <br></br>
 
                         <div
                           style={{
@@ -399,19 +400,22 @@ const OtherDetalisForm = (props) => {
                               </span>
                             ) : null}
                           </div>
+                          <br></br>
                           <label className="form-label">
                             <h4 className="form-heading">
                               Your Rent Agreement
                             </h4>
                           </label>
+                          <br></br>
                           <label className="form-label ">
                             Kindly Upload Your Rent Agreement Here
                           </label>
-
+                          <br></br>
                           <div className="file-uploading-block">
                             <p className="small-text-ms">
                               Upload Rent Agreement (.jpg, .pdf upto 20MB)
                             </p>
+                            <br></br>
                             <a
                               className="upload-btn-text"
                               href="javascript:document.querySelector('input#PAN').click()"
@@ -440,6 +444,7 @@ const OtherDetalisForm = (props) => {
               </Link>
             )} */}
                   </div>
+                
                   <button
                     onClick={handleScreen2}
                     className="getstartbtn fontstyformQuiklone"
@@ -722,9 +727,23 @@ const OtherDetalisForm = (props) => {
               <h4 className="form-heading text-center">
                 Your KYC is not verified
               </h4>
-              <span  className="reloadicon" style={{ opacity: "0.59",right:"200px" }}>Kyc status: {userdocumentsmodel.kyc_verified}</span>
+              <br></br>
+              {userdocumentsmodel.kyc_verified=== "NOT_SUBMITTED" || userdocumentsmodel.kyc_verified===  "NOT_VALID" ?
+              
+              (<div><span  className="reloadicon" style={{ opacity: "0.59",right:"200px" , fontFamily: "Montserrat"}}>Kyc status: </span>
+              <span  className="reloadicon" style={{color:"red",opacity: "0.59",right:"200px" , fontFamily: "Montserrat"}}>{userdocumentsmodel.kyc_verified}</span>
+             </div> ):null }
+
+             {userdocumentsmodel.kyc_verified===  "PENDING_VERIFICATION"  ?
+              
+              (<div><span  className="reloadicon" style={{ opacity: "0.59",right:"200px" , fontFamily: "Montserrat"}}>Kyc status: </span>
+              <span  className="reloadicon" style={{color:"#ff8000",opacity: "0.59",right:"200px" , fontFamily: "Montserrat"}}>{userdocumentsmodel.kyc_verified}</span>
+             </div> ):null }              
+             
               {userdocumentsmodel.kyc_verified === "PENDING_VERIFICATION" ? (
-                <p>We are verifying your details.</p>
+                 <div><br></br>
+                <p style={{ fontFamily: "Montserrat"}}>We are verifying your details.</p>
+                </div>
               ) : null}
               {userdocumentsmodel.kyc_verified !== "PENDING_VERIFICATION" ? (
                 <input
@@ -743,6 +762,7 @@ const OtherDetalisForm = (props) => {
       
         </div>
       )}
+      
       <Footer/>
       </div>
     </>

@@ -35,6 +35,7 @@ const Congretmessage = (props) => {
         </div>
       </Container>
       </div>
+      <br></br>
       <Footer/>
     </>
   );
