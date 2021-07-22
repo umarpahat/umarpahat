@@ -527,7 +527,7 @@ const HomePage = (props) => {
                                                                                     alt="Check Eligibility"/>
                                     <div className="home-steps-in">
                                         <div className="steps-heading"><strong>Check eligibility</strong></div>
-                                        <p>Easily check eligibility by uploading the documents. Once it is verified you will get to know the loan amount you are eligible for.</p>
+                                        <p>Easily check eligibility by uploading the documents. Once it is verified the credit limit would automatically be assigned to you.</p>
                                     </div>
                                 </div>
                             </div>
@@ -538,7 +538,7 @@ const HomePage = (props) => {
                                     <div className="red-arrow-bottom hidden-xs"></div>
                                     <div className="home-steps-in">
                                         <div className="steps-heading"><strong>Loan Application</strong></div>
-                                        <p>Once you get your credit limit, Apply the loan of desired about within minutes.</p>
+                                        <p>Once you get your credit limit, Apply the loan of desired within minutes.</p>
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-md-4 home-steps"><img className="icon" src={instantFund}
