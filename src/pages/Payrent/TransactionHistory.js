@@ -102,6 +102,7 @@ const TransactionHistory = (props) => {
           <div className="Home-contact-form mt-4">
             <h4 className="form-heading ">Cancelled Transaction</h4>
             <div className="form-block">
+            {(failedTRanstrack.length===0)?<span>No Failed Transaction</span>:null}
               {failedTRanstrack}
             </div>
           </div>
