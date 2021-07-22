@@ -41,7 +41,7 @@ const HowWeWork = (props) => {
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 textAlign">
                                 <h4>Apply for loan</h4>
-                                <ul className='listing p-t-20'>
+                                <ul className='listing p-t-10'>
                                 <li>
                                     <strong>Registration & login: </strong>
                                     Do easy registration with your email id & mobile number to get instant approval of your loan amount.
@@ -50,10 +50,10 @@ const HowWeWork = (props) => {
                                     Simply, upload your document via app/web for credit assessment and instant loan disbursement.
                             </li> <li>
                                 <strong>Check eligibility:  </strong>
-                                    Easily check eligibility by uploading the documents. Once it is verified you will get to know the loan amount you are eligible for.
+                                    Easily check eligibility by uploading the documents. Once it is verified the credit limit would automatically be assigned to you.
                             </li> <li>
                                 <strong>Loan Application: </strong>
-                                    Once you get your credit limit, Apply the loan of desired about within minutes.
+                                    Once you get your credit limit, Apply the loan of desired within minutes.
                             </li> <li>
                                 <strong>Instant Disbursal: </strong>
                                     You are done! Get an instant disbursal directly in your bank account.
