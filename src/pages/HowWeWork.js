@@ -41,6 +41,7 @@ const HowWeWork = (props) => {
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 textAlign">
                                 <h4>Apply for loan</h4>
+                                <ul className='listing'>
                                 <li>
                                     <strong> Download our App- </strong>
                                     Simply, download our app from the google play store or app store.
@@ -61,6 +62,7 @@ const HowWeWork = (props) => {
                                 <strong>Easy Repayment-</strong> PayMe India endows you with easy repayment by availing
                                 of different payment modes.
                             </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

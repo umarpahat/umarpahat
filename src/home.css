@@ -141,11 +141,67 @@ button.button-gray:hover {
     color: #f7f7f7;
     text-decoration: none;
 }
+.btn {
+    color: #fff;
+    width: 110px;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 20px;
+    min-width: 80px;
+    padding: 0 10px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 400;
+    border-radius: 3px;
+    background: #33658a;
+    border: 1px solid #51748e;
+}
+
+.btn:hover {
+    color: #f7f7f7;
+    text-decoration: none;
+}
+.relative{
+    position: relative;
+}
+.imgCenter{
+    position:absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    max-width: 50px; /*requires explicit height*/
+}
+
 
 .p-t-10 {
     padding-top: 10px;
 }
 
+.p-t-15 {
+    padding-top: 15px;
+}
+
+.content.mb-5 a{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.date{
+    font-size: 12px;
+    text-align: right;
+}
+
+.listing {
+    padding: 0;
+    margin: 0;
+}
+
+.listing li {
+    padding: 0 0 15px;
+    margin: 0;
+}
 .p-t-40 {
     padding-top: 40px;
 }

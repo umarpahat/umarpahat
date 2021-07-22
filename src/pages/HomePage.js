@@ -171,8 +171,8 @@ const HomePage = (props) => {
             <div className='content'>
                 <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                     <ol className="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        {/*<li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>*/}
+                        {/*<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>*/}
                     </ol>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
@@ -190,25 +190,6 @@ const HomePage = (props) => {
                                             </h3>
                                             <a href='https://cibil.paymeindia.in/v1/fullfill_offer_form' target='_blank' className="button-large m-t-40">Download Now</a>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="carousel-item black-bg p-b-30">
-                            <div className="container">
-                                <div className="row align-items-center pb-3 text-center">
-                                    <div className="col-sm-12 col-md-12 p-t-20 animate__animated animate__slideInDown">
-                                        <img className="img-fluid svg-text" alt="CIBIL" src={saltlogo}/>
-                                    </div>
-                                    <div className="col-sm-12 col-md-12">
-                                        <h3 className="heading2 animate__animated animate__slideInDown white-color">Use
-                                            as
-                                            much as
-                                            you need
-                                        </h3>
-                                        <Link to='/'
-                                              className="button-blue m-t-40 animate__animated animate__slideInUp">Coming
-                                            Soon </Link>
                                     </div>
                                 </div>
                             </div>

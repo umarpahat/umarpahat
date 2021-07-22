@@ -55,13 +55,13 @@ const Header = (props) => {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to="/about">About us</Link>
+                  <Link to="/about">About Us</Link>
                 </li>
                 <li>
-                  <Link to="/contact">Contact us</Link>
+                  <Link to="/contact">Contact Us</Link>
                 </li>
                 <li>
-                  <Link to="/faq">Faq</Link>
+                  <Link to="/faq">FAQ</Link>
                 </li>
                 <li>
                   <Link to="/ourNbfcPartners">Our NBFC Partners</Link>
