@@ -1015,6 +1015,10 @@ nav a:hover {
     color: #000;
 }
 
+.card.py-3 h5.p-t-10{
+min-height: 85px;
+}
+
 #menuToggle {
     display: block;
     position: absolute;
