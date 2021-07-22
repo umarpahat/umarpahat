@@ -143,7 +143,6 @@ button.button-gray:hover {
 }
 .btn {
     color: #fff;
-    width: 110px;
     font-size: 12px;
     height: 30px;
     line-height: 30px;
@@ -196,6 +195,8 @@ button.button-gray:hover {
 .listing {
     padding: 0;
     margin: 0;
+    text-align: left;
+    list-style: disc;
 }
 
 .listing li {
@@ -483,7 +484,7 @@ a.button-small:hover {
 
 .loan-features .content-box {
     position: relative;
-    min-height: 145px;
+    min-height: 170px;
 }
 
 .loan-features .feature-box img {
@@ -1339,7 +1340,13 @@ a {
     margin-bottom: 10px !important;
 }
 
+.nbfcWidth {
+    width: 470px;
+}
 @media (max-width: 600px) {
+    .nbfcWidth{
+     width: 100%;
+    }
     .heading1 {
         font-size: 24px;
         line-height: 28px;
