@@ -114,7 +114,7 @@ const HowWeWork = (props) => {
                                         <a target='_blank'
                                            href='https://www.cnbctv18.com/personal-finance/as-interest-on-epf-over-rs-25-lakh-is-taxable-now-find-out-if-you-should-voluntarily-contribute-8210951.htm'>Budget
                                             2021 has proposed to restrict tax exemption for interest income earned on
-                                            employees’</a></p>
+                                            employees</a></p>
                                     <p className='date'>05th Feb 2021</p>
                                 </div>
                             </div>
