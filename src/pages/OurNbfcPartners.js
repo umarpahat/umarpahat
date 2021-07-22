@@ -30,13 +30,13 @@ const OurNbfcPartners = (props) => {
               <div className="box-shadow">
                 <img src={arvog} alt="paymeindia"/>
               </div>
-              <div className="nbfc"><p>Finkurve Financial Services Ltd</p></div>
+              <div className="nbfc nbfcWidth"><p>Finkurve Financial Services Ltd</p></div>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
               <div className="box-shadow">
                 <img src={money2me} alt="paymeindia"/>
               </div>
-              <div className="nbfc"><p>Money2me Finance Private Limited</p></div>
+              <div className="nbfc nbfcWidth"><p>Money2me Finance Private Limited</p></div>
             </div>
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
               <div className="box-shadow">

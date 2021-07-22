@@ -171,8 +171,8 @@ const HomePage = (props) => {
             <div className='content'>
                 <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                     <ol className="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        {/*<li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>*/}
+                        {/*<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>*/}
                     </ol>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
@@ -190,25 +190,6 @@ const HomePage = (props) => {
                                             </h3>
                                             <a href='https://cibil.paymeindia.in/v1/fullfill_offer_form' target='_blank' className="button-large m-t-40">Download Now</a>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="carousel-item black-bg p-b-30">
-                            <div className="container">
-                                <div className="row align-items-center pb-3 text-center">
-                                    <div className="col-sm-12 col-md-12 p-t-20 animate__animated animate__slideInDown">
-                                        <img className="img-fluid svg-text" alt="CIBIL" src={saltlogo}/>
-                                    </div>
-                                    <div className="col-sm-12 col-md-12">
-                                        <h3 className="heading2 animate__animated animate__slideInDown white-color">Use
-                                            as
-                                            much as
-                                            you need
-                                        </h3>
-                                        <Link to='/'
-                                              className="button-blue m-t-40 animate__animated animate__slideInUp">Coming
-                                            Soon </Link>
                                     </div>
                                 </div>
                             </div>
@@ -235,7 +216,7 @@ const HomePage = (props) => {
                                 <div className="price-box">
                                     <form className="form-horizontal form-pricing" role="form">
                                         <div className="price-slider">
-                                            <h4>How much cash do you need?</h4>
+                                            <h4>Personal Loan Amount</h4>
                                             <div className="relative">
                                                 <div className={classes.root}>
                                                     <Slider
@@ -252,7 +233,7 @@ const HomePage = (props) => {
                                             </div>
                                         </div>
                                         <div className="price-slider">
-                                            <h4>For how long?(Months)</h4>
+                                            <h4>Tenure (Months)</h4>
                                             <div className="relative">
                                                 <div className={classes.root}>
                                                     <Slider
@@ -337,7 +318,7 @@ const HomePage = (props) => {
                                             <div className="content-box"><img src={loginImg} alt="Easy Login"/>
                                                 <h4>Easy Login</h4>
                                                 <p>Walk a mile in few steps with unique mobile app based login
-                                                    process</p>
+                                                    process.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -356,7 +337,7 @@ const HomePage = (props) => {
                                         <div className="convinient-repayment feature-box feature-box3">
                                             <div className="content-box"><img src={aprovedImg} alt="Swift Approval"/>
                                                 <h4>Swift Approval</h4>
-                                                <p>You will never be in queue again</p>
+                                                <p>You will never be in queue again.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -366,7 +347,7 @@ const HomePage = (props) => {
 
                                                 <img src={InstantCash} alt="Instant Cash"/>
                                                 <h4>Instant Cash</h4>
-                                                <p>Don't let your dreams and needs wait for cash</p>
+                                                <p>Don't let your dreams and needs wait for cash.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -379,7 +360,7 @@ const HomePage = (props) => {
                     <div className="container">
                         <div className="col col-md-12 reg-second-heading">
                             <h4>Services</h4>
-                            <span className="reg-second-subheading">Best services we have provided</span>
+                            <span className="reg-second-subheading">Our offerings</span>
                         </div>
                         <div className="row align-items-center">
                             <div id="boxlink0" className="boxlink">
@@ -519,8 +500,8 @@ const HomePage = (props) => {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col col-md-12 reg-second-heading">
-                                <h4>How Payme Works</h4>
-                                <span className="reg-second-subheading">Apply for loan</span>
+                                <h4>How it works?</h4>
+                                <span className="reg-second-subheading">End to end process for applying a loan</span>
                             </div>
                             <div className="row">
                                 <div className="col-sm-12 col-md-4 home-steps"><img className="icon" src={register}
@@ -538,7 +519,7 @@ const HomePage = (props) => {
                                     <div className="red-arrow-bottom hidden-xs"></div>
                                     <div className="home-steps-in">
                                         <div className="steps-heading"><strong>Swiftly upload your document</strong></div>
-                                        <p>Simply, upload your document via an app for credit assessment and instant loan disbursement.</p>
+                                        <p>Simply, upload your document via app/web for credit assessment and instant loan disbursement.</p>
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-md-4 home-steps"><img className="icon"
@@ -546,7 +527,7 @@ const HomePage = (props) => {
                                                                                     alt="Check Eligibility"/>
                                     <div className="home-steps-in">
                                         <div className="steps-heading"><strong>Check eligibility</strong></div>
-                                        <p>Easily check eligibility by uploading the documents and the loan amount you are eligible for?</p>
+                                        <p>Easily check eligibility by uploading the documents. Once it is verified you will get to know the loan amount you are eligible for.</p>
                                     </div>
                                 </div>
                             </div>
@@ -556,12 +537,8 @@ const HomePage = (props) => {
                                     <div className="red-arrow hidden-xs"></div>
                                     <div className="red-arrow-bottom hidden-xs"></div>
                                     <div className="home-steps-in">
-                                        <div className="steps-heading"><strong>Prompt Verification</strong></div>
-                                        <p>We recommend Google prompts instead of text message (SMS) verification codes
-                                            to
-                                            help you:
-                                            Avoid phone.
-                                        </p>
+                                        <div className="steps-heading"><strong>Loan Application</strong></div>
+                                        <p>Once you get your credit limit, Apply the loan of desired about within minutes.</p>
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-md-4 home-steps"><img className="icon" src={instantFund}
@@ -569,15 +546,15 @@ const HomePage = (props) => {
                                     <div className="red-arrow hidden-xs"></div>
                                     <div className="red-arrow-bottom hidden-xs"></div>
                                     <div className="home-steps-in">
-                                        <div className="steps-heading"><strong>Instant Fund transfer</strong></div>
-                                        <p>Once your document is verified, get an instant fund transfer to your bank account.</p>
+                                        <div className="steps-heading"><strong>Instant Disbursal</strong></div>
+                                        <p>You are done! Get an instant disbursal directly in your bank account.</p>
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-md-4 home-steps"><img className="icon" src={easyRepay}
                                                                                     alt="easy-repay"/>
                                     <div className="home-steps-in">
                                         <div className="steps-heading"><strong>Easy Repayment</strong></div>
-                                        <p>PayMe India endows you with easy repayment by availing of different payment modes.</p>
+                                        <p>PayMe India endows you with easy repayment by offering different payment modes.</p>
                                     </div>
                                 </div>
                             </div>

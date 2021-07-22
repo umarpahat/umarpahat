@@ -30,7 +30,7 @@ const Footer = (props) => {
                 </ul>
             </div>*/}
                         <div className="ol col-md-4">
-                            <h6 className='head6'>About</h6>
+                            <h6 className='head6'>About Us</h6>
                             <ul>
                                 <li><Link to="/">Home</Link></li>
                                 {/*<li><Link to="#media">Media</Link></li>*/}
@@ -43,16 +43,12 @@ const Footer = (props) => {
 
                         </div>
                         <div className="ol col-md-4">
-                            <h6 className='head6'>FAQs</h6>
+                            <h6 className='head6'>Others</h6>
                             <ul>
-                                {/* <li><Link to="#corporate">Corporate</Link></li>
-                    <li><Link to="#nbfc">Our NBFC Partners</Link></li>
-                    <li><Link to="#advance-salary-loan">Advance Salary Loan</Link></li>
-                    <li><Link to="#loans-for-low-salary">Loan For Low Salary</Link></li>
-                    <li><Link to="#short-term-loans">Short Term Cash Loans</Link></li>*/}
                                 <li><Link to="/faq">FAQs</Link></li>
-
-                                {/* <li><Link to="#sitemap">Sitemap</Link></li> */}
+                                <li><Link to="/how-we-work">How it works?</Link></li>
+                                <li><Link to="/ourNbfcPartners">Our NBFC Partners</Link></li>
+                                <li><Link to="/media-coverage">Media Coverage</Link></li>
                             </ul>
                         </div>
                         <div className="ol col-md-4">
