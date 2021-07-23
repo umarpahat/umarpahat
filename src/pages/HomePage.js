@@ -538,7 +538,7 @@ const HomePage = (props) => {
                                     <div className="red-arrow-bottom hidden-xs"></div>
                                     <div className="home-steps-in">
                                         <div className="steps-heading"><strong>Loan Application</strong></div>
-                                        <p>Once you get your credit limit, Apply the loan of desired within minutes.</p>
+                                        <p>Once you get your credit limit, apply the loan of desired amount within minutes.</p>
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-md-4 home-steps"><img className="icon" src={instantFund}
