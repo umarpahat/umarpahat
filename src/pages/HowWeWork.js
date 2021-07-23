@@ -53,7 +53,7 @@ const HowWeWork = (props) => {
                                     Easily check eligibility by uploading the documents. Once it is verified the credit limit would automatically be assigned to you.
                             </li> <li>
                                 <strong>Loan Application: </strong>
-                                    Once you get your credit limit, Apply the loan of desired within minutes.
+                                    Once you get your credit limit, apply the loan of desired amount within minutes.
                             </li> <li>
                                 <strong>Instant Disbursal: </strong>
                                     You are done! Get an instant disbursal directly in your bank account.

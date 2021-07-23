@@ -30,19 +30,16 @@ const HowWeWork = (props) => {
                                                 src="https://yourstory.com/logos/logo_yourstory.svg"
                                                 className="img-fluid imgCenter"/>
                                             </div>
-                                            PayMe India receives NBFC certificate from RBI
+                                            Launched by bankers, how PayMe India has transformed into...
                                         </h5>
                                     </div>
                                     <p className="content mb-5 mx-2 pt-3">
                                         <a target='_blank'
-                                           href='https://www.thenewsminute.com/article/payme-india-receives-nbfc-certificate-rbi-106687'>PayMe
-                                            India, one of the country’s eminent FinTech establishments, has recently
-                                            acquired NBFC licence from the nation’s apex financial institution, the
-                                            Reserve Bank of India (RBI) under Section 45(1A). After obtaining NBFC
-                                            status, PayMe India is eligible to offer</a></p>
+                                           href='https://yourstory.com/2021/06/payme-india-transformed-full-stack-personal-loan-startup/amp'>When Mahesh Shukla moved to Delhi from a small town in UP, he was disappointed to see how cumbersome and expensive it was to avail a credit card or personal loan. This in spite of him being in the banking sector, working for leading brands like Bank of America, DB, and Barclays</a></p>
                                     <p className='date'>8th Jun 2021</p>
                                 </div>
                             </div>
+
                             <div className="col-sm-4 col-md-4">
                                 <div className="card py-3 px-4">
                                     <div className="">
@@ -143,24 +140,20 @@ const HowWeWork = (props) => {
 
                         </div>
                         <div className="row p-t-15">
-
                             <div className="col-sm-4 col-md-4">
                                 <div className="card py-3 px-4">
                                     <div className="">
                                         <h5 className='p-t-10'>
-                                            <div className="profile-pic float-left relative"><img
-                                                src="https://images.newindianexpress.com/images/FrontEnd/images/new_logo.jpg"
+                                            <div className="profile-pic float-left relative black-bg"><img
+                                                src="https://www.thenewsminute.com/sites/all/themes/tnm/The-News-Minute-Logo_mob.png"
                                                 className="img-fluid imgCenter"/>
                                             </div>
-                                            PayMe India seeks to extend credit to the under-served
+                                            PayMe India receives NBFC certificate from RBI
                                         </h5>
                                     </div>
                                     <p className="content mb-5 mx-2 pt-3">
                                         <a target='_blank'
-                                           href='https://www.newindianexpress.com/business/2019/oct/05/payme-india-seeks-to-extend-credit-to-the-under-served-2043438.html'>While
-                                            still in college in 2004, Mahesh Shukla, co-founder of PayMe India aspired
-                                            to make an impact by offering financial services even in India’s remote
-                                            areas.</a></p>
+                                           href='https://www.thenewsminute.com/article/payme-india-receives-nbfc-certificate-rbi-106687'>After obtaining NBFC status, PayMe India is eligible to offer secured and unsecured financial products like short-term Personal Loan, Business Loan, Education Loan, Credit Cards</a></p>
                                     <p className='date'>05th Aug 2019</p>
                                 </div>
                             </div>
@@ -177,7 +170,7 @@ const HowWeWork = (props) => {
                                     </div>
                                     <p className="content mb-5 mx-2 pt-3">
                                         <a target='_blank'
-                                           href='entrepreneur.com/article/333278'>A customer-centric approach, real-time data integration, cost optimization, and advanced security are those topmost needs.</a></p>
+                                           href='https://www.entrepreneur.com/article/333278'>A customer-centric approach, real-time data integration, cost optimization, and advanced security are those topmost needs.</a></p>
                                     <p className='date'>4th May 2019</p>
                                 </div>
                             </div>
