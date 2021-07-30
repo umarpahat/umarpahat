@@ -11,9 +11,7 @@ function App() {
                 cookieName="myAwesomeCookieName2"
                 style={{ background: "#2B373B",fontSize: "13px" }}
                 buttonStyle={{ color: "#fff", fontSize: "13px",background:'#33658a' }}
-                expires={365} enableDeclineButton
-                onDecline={() => {
-                }} >This site uses cookies. By continuing to use this website, you agree to their use.</CookieConsent>
+                enableDeclineButton >This site uses cookies. By continuing to use this website, you agree to their use.</CookieConsent>
 
         </>
     )
