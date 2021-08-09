@@ -340,7 +340,7 @@ const Professionaldetailspayme = (props) => {
                       value={workExp}
                       onChange={(event) => {
                         setErrorworkExp("");
-                        setWorkExp(event.target.value);
+                        setWorkExp(event.target.value.slice(0,2));
                       }}
                     />
                     {errorworkExp ? (
@@ -356,7 +356,7 @@ const Professionaldetailspayme = (props) => {
                       value={inhandsalary}
                       onChange={(event) => {
                         setErrorSalary("");
-                        setInhandsalary(event.target.value);
+                        setInhandsalary(event.target.value.slice(0,10));
                       }}
                     />
                     {errorSalary ? (
@@ -392,7 +392,7 @@ const Professionaldetailspayme = (props) => {
                       class="form-control ms-form-input"
                       placeholder="Enter Office PinCode"
                       pattern="^[0-9]{6}"
-                      maxLength="6"
+                      maxLength={6}
                       value={officePincode}
                       onChange={(event) => {
                         if (
@@ -404,7 +404,7 @@ const Professionaldetailspayme = (props) => {
                         }
 
                         setErrorOfficePincode("");
-                        setOfficePincode(event.target.value);
+                        setOfficePincode(event.target.value.slice(0,6));
                       }}
                   
                     />
@@ -535,6 +535,7 @@ const Professionaldetailspayme = (props) => {
                       <div class="form-group ms-input-group">
                         <label className="form-label">Present Pin Code</label>
                         <input
+                          maxLength={6}
                           type="number"
                           class="form-control ms-form-input"
                           placeholder="110025"
@@ -552,7 +553,7 @@ const Professionaldetailspayme = (props) => {
                             }
 
                             seterrorpresentPincode("");
-                            setpresentPincode(event.target.value);
+                            setpresentPincode(event.target.value.slice(0,6));
                           }}
                         />
                         {errorPinCode ? (

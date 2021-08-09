@@ -34,7 +34,7 @@ const Header = (props) => {
                 >
                   Apply Loan
                 </Link>
-               {/*<Link
+               <Link
                   className="button"
                   onClick={() => {
                     props.hitAppUseCase({ useCase: "pay-rent" });
@@ -42,7 +42,7 @@ const Header = (props) => {
                   }}
                 >
                   Pay Rent
-                </Link>*/}
+                </Link>
               </div>
             </div>
           </div>

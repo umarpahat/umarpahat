@@ -62,7 +62,7 @@ const Pandingapprovalform = (props) => {
   return (
     <>
       <Header {...props}/>
-        <div className='content darkBg'>
+        <div className='content darkBg' style={{paddingBottom:"90px",paddingTop:"20px"}}>
         <Container>
           <div className="form-container formcontainermob  pt-4">
             <form className='p-b-30'>

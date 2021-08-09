@@ -290,7 +290,7 @@ const Bankdetailspayme = (props) => {
                         }
 
                         seterrorAct("");
-                        setactNumber(event.target.value);
+                        setactNumber(event.target.value.slice(0,22));
                       }}
                     />
                     {validAccount ? (
@@ -309,7 +309,7 @@ const Bankdetailspayme = (props) => {
                       value={ConfrmActNumber}
                       onChange={(event) => {
                         seterrorConfAct("");
-                        setConfrmActNumber(event.target.value);
+                        setConfrmActNumber(event.target.value.slice(0,22));
                       }}
                     />
                     {errorConfAct ? (

@@ -167,7 +167,8 @@ const HomePage = (props) => {
 
 
     return (
-        <> <Header {...props}/>
+        <> 
+        <Header {...props}/>
             <div className='content'>
                 <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                     <ol className="carousel-indicators">
