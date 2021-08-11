@@ -147,6 +147,36 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-118897695-1');
+        
+        !(function () {
+        let e = document.createElement("script"),
+                t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+                "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.0/lib/index.js"),
+                (e.async = !0),
+                (e.onload = () => {
+                  window.WebChat.default(
+                          {
+                            customData: { language: "en" },
+                            socketUrl: "https://bot.paymeindia.in",
+                            initPayload: "/welcome",
+                            interval: 1000, // 1000 ms between each message
+                            title: "Buff",
+                            subtitle: "Payme India's Bot",
+                            inputTextFieldHint: "Type a message...",
+                            connectingText: "Waiting for server...",
+                            hideWhenNotConnected: true,
+                            fullScreenMode: false,
+                            //profileAvatar: "static/chatbot-face.jpg",
+                            //openLauncherImage: "static/chatbot-face.jpg",
+                            //closeLauncherImage: "static/chatbot-face.jpg",
+                            //displayUnreadCount: true,
+                          },
+                          null
+                  );
+                }),
+                t.insertBefore(e, t.firstChild);
+      })();
       </script>
     </div>
   </body>
