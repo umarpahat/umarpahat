@@ -33,6 +33,7 @@ import Congretmessage from "./pages/ApplyNowButton/Congretmessage";
 import LoginWithMobMpin from "./pages/ApplyNowButton/LoginWithmobmpin";
 import ChangeMpin from "./pages/ApplyNowButton/ChangeMpin";
 import Pandingapprovalform from "./pages/ApplyNowButton/Pandigapprovealform";
+import SocialInitiative from "./pages/SocialInitiative";
 import Creatempn from "./pages/ApplyNowButton/Creatempn";
 import KycOption from "./pages/ApplyNowButton/KycOption";
 import Header from "./pages/Header";
@@ -65,6 +66,7 @@ function Routes() {
         <Route exact path="/ourNbfcPartners" component={OurNbfcPartners} />
         <Route exact path="/how-we-work" component={HowWeWork} />
         <Route exact path="/media-coverage" component={MediaCoverage} />
+        <Route exact path="/social-initiative" component={SocialInitiative} />
         <Route exact path="/pay-rent-details" component={PayRent} />
         <Route exact path="/offerings" component={Offerings} />
         <Route exact path="/self-employed" component={SelfEmployed} />
