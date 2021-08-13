@@ -1351,14 +1351,14 @@ a {
     max-width: 500px;
 }
 .initiative p{
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 28px;
 }
 @media (max-width: 600px) {
 
     .initiative p{
-        font-size: 16px;
-        line-height: 28px;
+        font-size: 14px;
+        line-height: 26px;
     }
     .maxLimitWidth {
         max-width: 300px;
