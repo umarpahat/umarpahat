@@ -44,21 +44,21 @@ const SocialInitiative = (props) => {
                                     Covid-19 </h4>
 
 
-                                <p className='p-t-20'> The COVID-19 pandemic left many family's life voids with grief.
+                                <p className='p-t-15'> The COVID-19 pandemic left many family's life voids with grief.
                                     Each death due
                                     to this
                                     pandemic is a tragedy that is irreplaceable. The fatality rate in India used to
                                     almost peak and
                                     cross 4,000 daily.
                                 </p>
-                                <p className='p-t-20'> For Many shattered families, these numbers represent working
+                                <p className='p-t-15'> For Many shattered families, these numbers represent working
                                     members, whose
                                     absence
                                     constitutes working members whose absence left them financially bereft. Many of
                                     these families
                                     were already struggling to make their financial ends meet.
                                 </p>
-                                <p className='p-t-20'> Amidst this, Noida-based fintech company PAYME INDIA led by
+                                <p className='p-t-15'> Amidst this, Noida-based fintech company PAYME INDIA led by
                                     Mahesh Shukla is
                                     launching an
                                     initiative to ease the pain of the Covid-19 affected families. The initiative is
@@ -67,14 +67,14 @@ const SocialInitiative = (props) => {
                                     disease. This initiative
                                     focuses to mitigate financial difficulties that may be faced by them.
                                 </p>
-                                <p className='p-t-20'> Under _____, Payme India will focus on Family Strengthening, in
+                                <p className='p-t-15'> Under _____, Payme India will focus on Family Strengthening, in
                                     which Covid
                                     affected families,
                                     who are struggling to meet their financial needs after the departure of their
                                     primary or only
                                     earning members to Covid-19 will be trained to provide employment options.
                                 </p>
-                                <p className='p-t-20 p-b-30'> After losing Breadwinning loved ones “The roles and
+                                <p className='p-t-15 p-b-30'> After losing Breadwinning loved ones “The roles and
                                     responsibilities of many
                                     families changed
                                     overnight. Small term relief measures which are provided by the government and
