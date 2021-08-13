@@ -75,6 +75,9 @@ const Header = (props) => {
                 <li>
                   <Link to="/media-coverage">Media Coverage</Link>
                 </li>
+                <li>
+                  <Link to="/social-initiative">Social Initiative</Link>
+                </li>
                 {/*<li>
                   <Link to="/offerings">Offerings</Link>
                 </li>*/}

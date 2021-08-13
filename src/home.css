@@ -1346,7 +1346,23 @@ a {
 .nbfcWidth {
     width: 470px;
 }
+
+.maxLimitWidth{
+    max-width: 500px;
+}
+.initiative p{
+    font-size: 20px;
+    line-height: 32px;
+}
 @media (max-width: 600px) {
+
+    .initiative p{
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .maxLimitWidth {
+        max-width: 300px;
+    }
     .nbfcWidth{
      width: 100%;
     }
