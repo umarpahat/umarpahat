@@ -7,15 +7,6 @@ import "./ApplyNowButton/Applybtnallcomponent.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import "../../src/home.css";
-import {Link} from "react-router-dom";
-import $ from "jquery";
-import logo from "../images/logo.png";
-import vision from "../images/vision.png";
-import team from "../images/team.jpg";
-import apply from "../images/advisory.png";
-import thumbnail from "../images/aproved.png";
-import heart from "../images/corporate.png";
-import people from "../images/instant-cash.png";
 import sarthi from "../images/sarthi-logo.png";
 
 const SocialInitiative = (props) => {
@@ -38,7 +29,7 @@ const SocialInitiative = (props) => {
                                     src={sarthi}
                                 />
                             </div>
-                            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 textAlign initiative ">
+                            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12  initiative" style={{textAlign:"justify"}}>
                                 <h4>Initiative to provide Sustainable Job Opportunities to families Who Lost Their
                                     breadwinner to
                                     Covid-19 </h4>
@@ -62,12 +53,12 @@ const SocialInitiative = (props) => {
                                     Mahesh Shukla is
                                     launching an
                                     initiative to ease the pain of the Covid-19 affected families. The initiative is
-                                    known as ‘____’ will
+                                    known as Payme India will
                                     help families, who lost their earning members in the family to Coronavirus
                                     disease. This initiative
                                     focuses to mitigate financial difficulties that may be faced by them.
                                 </p>
-                                <p className='p-t-15'> Under _____, Payme India will focus on Family Strengthening, in
+                                <p className='p-t-15'> Under Mahesh Shukla, Payme India will focus on Family Strengthening, in
                                     which Covid
                                     affected families,
                                     who are struggling to meet their financial needs after the departure of their
