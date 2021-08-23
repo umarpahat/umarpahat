@@ -17,6 +17,7 @@ import terms from "./pages/terms"
 import OurNbfcPartners from "./pages/OurNbfcPartners"
 import HowWeWork from "./pages/HowWeWork"
 import NotFoundPage from "./pages/NotFoundPage"
+import Sitemap from "./pages/Sitemap"
 import MediaCoverage from "./pages/MediaCoverage"
 import PayRent from "./pages/PayRent"
 import Offerings from "./pages/Offerings"
@@ -77,6 +78,7 @@ function Routes() {
         <Route exact path="/bank-details-payme" component={Bankdetailspayme} />
         <Route exact path="/change-mpin" component={ChangeMpin} />
             <Route exact path="/404" component={NotFoundPage} />
+            <Route exact path="/sitemap" component={Sitemap} />
 
         <Route
           exact

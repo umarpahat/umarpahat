@@ -33,12 +33,9 @@ const Footer = (props) => {
                             <h6 className='head6'>About Us</h6>
                             <ul>
                                 <li><Link to="/">Home</Link></li>
-                                {/*<li><Link to="#media">Media</Link></li>*/}
                                 <li><Link to="/about">About us</Link></li>
-                                {/*<li><Link to="#how-we-work">How we work</Link></li>*/}
-                                {/*<li><Link to="#blog">Blog</Link></li>*/}
                                 <li><Link to="/contact">Contact us</Link></li>
-                                {/*<li><Link to="#join-us">Join us</Link></li>*/}
+                                <li><Link to="/sitemap">Sitemap</Link></li>
                             </ul>
 
                         </div>

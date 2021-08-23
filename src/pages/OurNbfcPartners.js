@@ -31,7 +31,7 @@ const OurNbfcPartners = (props) => {
       <div className="services">
         <div className="container">
           <div className="col col-md-12 reg-second-heading">
-            <h4>Our NBFC Partners</h4>
+            <h1 className='heading1 blue-color'>Our NBFC Partners</h1>
           </div>
           <div className="row p-b-30">
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">

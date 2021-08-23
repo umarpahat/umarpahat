@@ -37,7 +37,7 @@ const About = (props) => {
       <div className="services">
         <div className="container">
           <div className="col col-md-12 reg-second-heading">
-            <h4>Who we are</h4>
+            <h1 className='heading1 blue-color'>Who we are</h1>
             <span className="reg-second-subheading">
               PayMe India is an innovative FinTech organization
             </span>

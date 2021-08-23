@@ -54,7 +54,7 @@ const Contact = (props) => {
       <div className="services">
         <div className="container">
           <div className="col col-md-12 reg-second-heading">
-            <h4>Contact Info</h4>
+            <h1 className='heading1 blue-color'>Contact Info</h1>
             <span className="reg-second-subheading">
               We are just a whisper away
             </span>

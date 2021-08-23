@@ -615,6 +615,9 @@ a.button-small:hover {
 .white-color {
     color: #fff;
 }
+.blue-color {
+    color: #33658a;
+}
 
 .productlist img {
     max-height: 50px;

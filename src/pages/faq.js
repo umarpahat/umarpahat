@@ -30,7 +30,7 @@ const Faq = (props) => {
       <div className="services">
         <div className="container">
           <div className="col col-md-12 reg-second-heading">
-            <h4>FAQs</h4>
+            <h1 className='heading1 blue-color'>FAQs</h1>
             <span className="reg-second-subheading">
               Here are some frequently asked questions
             </span>

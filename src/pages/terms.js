@@ -38,7 +38,7 @@ const Terms = (props) => {
             <div className="services">
                 <div className="container p-b-30">
                     <div className="col col-md-12 reg-second-heading">
-                        <h4>Terms & Conditions</h4>
+                        <h1 className='heading1 blue-color'>Terms & Conditions</h1>
                     </div>
                     <p><strong>1. GENERAL</strong></p>
                     <p> This Agreement is a contract between you and PayMe India and applies to your use of the

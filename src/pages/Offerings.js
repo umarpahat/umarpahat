@@ -38,7 +38,7 @@ const HowWeWork = (props) => {
                 <div className="services">
                     <div className="container">
                         <div className="col col-md-12 reg-second-heading">
-                            <h4>How PayMe Works</h4>
+                            <h1 className='heading1 blue-color'>How PayMe Works</h1>
                         </div>
                         <div className="row align-items-center p-b-30">
                             <div className="col-lg-6 col-md-6 col-sm-8 col-xs-8 text-center main-img">

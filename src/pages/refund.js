@@ -37,7 +37,7 @@ const Refund = (props) => {
             <div className="services">
                 <div className="container">
                     <div className="row align-items-center p-b-30">  <div className="col col-md-12 reg-second-heading">
-                        <h4>Refund Policy</h4>
+                        <h1 className='heading1 blue-color'>Refund Policy</h1>
                     </div>
                         <div className="col-lg-12  col-md-12  col-sm-12 col-xs-12 paragraphText">
                             <h5 className="heading5">Refund:</h5>

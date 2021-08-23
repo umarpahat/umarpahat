@@ -24,7 +24,7 @@ const HowWeWork = (props) => {
             <div className='content'>
                 <div className="container-fluid px-3 px-sm-5  testimonial">
                     <div className="col-sm-12 col-md-12 reg-second-heading">
-                        <h4>Media Coverage</h4>
+                        <h1 className='heading1 blue-color'>Media Coverage</h1>
                         <span className="reg-second-subheading ">Know what the world is Buzzing about PayMe India
                         </span>
                     </div>

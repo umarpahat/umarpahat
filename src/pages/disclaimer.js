@@ -36,7 +36,7 @@ const Disclaimer = (props) => {
         <div className="container">
           <div className="row align-items-center p-b-30">
             <div className="col col-md-12 reg-second-heading">
-              <h4>Disclaimer</h4>
+              <h1 className='heading1 blue-color'>Disclaimer</h1>
             </div>
             <div className="col-lg-12 col-md-12  col-sm-12 col-xs-12 paragraphText">
               <h5 className="heading5">DATA Protection Notice</h5>

@@ -26,7 +26,7 @@ const SocialInitiative = (props) => {
                 <div className="services">
                     <div className="container">
                         <div className="col col-md-12 reg-second-heading">
-                            <h4>Social Initiative</h4>
+                            <h1 className='heading1 blue-color'>Social Initiative</h1>
                         </div>
                         <div className="row align-items-center p-b-30">
                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
