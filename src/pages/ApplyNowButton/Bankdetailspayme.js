@@ -159,7 +159,7 @@ const Bankdetailspayme = (props) => {
   const content = bankStatementObj.map((value, index) => (
     <div className="d-flex pt-4" key={index.toString()}>
       <div>
-        <img src={Pdficon} alt="pdf-icon" />
+        <img src={Pdficon} alt="pdf-icon"  />
       </div>
       <div className="ml-3 w-100">
         <div className="d-flex justify-content-between">
@@ -264,7 +264,7 @@ const Bankdetailspayme = (props) => {
                 style={{ cursor: "pointer" }}
               >
                 <div className="m-1">
-                  <img src={backicon} className="img-fluid" />
+                  <img src={backicon} alt='back Icon' className="img-fluid" />
                 </div>
                 <div>
                   <h6 className="backbtnsty">Back</h6>

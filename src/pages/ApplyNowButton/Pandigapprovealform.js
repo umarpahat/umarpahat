@@ -188,7 +188,7 @@ const Pandingapprovalform = (props) => {
                         </div>
                       ) : documentstatus.bank_details_verified === "VERIFIED" ? (
                         <div>
-                          <img src={Righticons1} />
+                          <img src={Righticons1} alt='Right icon' />
                           <span className="reloadicon" id="PAN">
                             {" "}
                             Bank Details Verified
@@ -256,7 +256,7 @@ const Pandingapprovalform = (props) => {
                         ) :  documentstatus.bank_statement_verified ===
                             "VERIFIED"  ? (
                           <div>
-                            <img src={Righticons1} />
+                            <img src={Righticons1} alt='Right Icon' />
                             <span className="reloadicon" id="PAN">
                               {" "}
                               Bank Statement Verified
@@ -328,7 +328,7 @@ const Pandingapprovalform = (props) => {
                             ) : userdocumentsmodel.salary_slip_verified ===
                               "VERIFIED" ? (
                               <div>
-                                <img src={Righticons1} />
+                                <img src={Righticons1} alt='Right Icon' />
                                 <span className="reloadicon" id="PAN">
                                   {" "}
                                   ProfessionalDetails Verified
@@ -397,7 +397,7 @@ const Pandingapprovalform = (props) => {
                             props.user.userData?.other_documents[0]?.status ===
                               "VERIFIED" ? (
                             <div>
-                              <img src={Righticons1} />
+                              <img src={Righticons1} alt='Right Icon' />
                               <span className="reloadicon" id="PAN">
                                 {" "}
                                 Professional Details Verified

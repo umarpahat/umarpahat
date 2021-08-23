@@ -75,7 +75,7 @@ function Referralcode(props) {
                 >
                   <img
                     src={Referral}
-                    alt="referralimg"
+                    alt="Referral"
                     className="img-fluid py-5"
                   />
                 </div>

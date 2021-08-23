@@ -36,6 +36,7 @@ const HowWeWork = (props) => {
                                         <h5 className='p-t-10'>
                                             <div className="profile-pic float-left relative"><img
                                                 src="https://yourstory.com/logos/logo_yourstory.svg"
+                                                alt='your story logo'
                                                 className="img-fluid imgCenter"/>
                                             </div>
                                             Launched by bankers, how PayMe India has transformed into...
@@ -54,6 +55,7 @@ const HowWeWork = (props) => {
                                         <h5 className='p-t-10'>
                                             <div className="profile-pic float-left relative"><img
                                                 src="https://trak.in/wp-content/uploads/2017/07/Trak-Logo-Underline-small.png"
+                                                alt='Trak underline'
                                                 className="img-fluid imgCenter"/>
                                             </div>
                                             Citi Bank India Shuts Down Entire Banking Operations...
@@ -71,6 +73,7 @@ const HowWeWork = (props) => {
                                         <h5 className='p-t-10'>
                                             <div className="profile-pic float-left relative black-bg"><img
                                                 src="https://assets.entrepreneur.com/static/20190308060624-ENT-India-Logo-White.svg"
+                                                alt='ENT india logo'
                                                 className="img-fluid imgCenter"/>
                                             </div>
                                             PayMe India Secures Pre-Series A Angel Funding
@@ -92,6 +95,7 @@ const HowWeWork = (props) => {
                                     <div className="">
                                         <h5 className='p-t-10'>
                                             <div className="profile-pic float-left relative"><img
+                                                alt='Vcc logo'
                                                 src="https://staticassets.vccircle.com/images/VCC-logo.svg"
                                                 className="img-fluid imgCenter"/>
                                             </div>
@@ -109,6 +113,7 @@ const HowWeWork = (props) => {
                                     <div className="">
                                         <h5 className='p-t-10'>
                                             <div className="profile-pic float-left relative"><img
+                                                alt='Google user content'
                                                 src="https://play-lh.googleusercontent.com/50DCCw3YkXDw31At02T9alk9x2gmhapha-MP_d8p8A3zTK9A6rrxSzA4NSkWenSUpA"
                                                 className="img-fluid imgCenter"/>
                                             </div>
@@ -129,6 +134,7 @@ const HowWeWork = (props) => {
                                         <h5 className='p-t-10'>
                                             <div className="profile-pic float-left relative"><img
                                                 src="https://images.newindianexpress.com/images/FrontEnd/images/new_logo.jpg"
+                                                alt='New India express'
                                                 className="img-fluid imgCenter"/>
                                             </div>
                                             PayMe India seeks to extend credit to the under-served
@@ -153,6 +159,7 @@ const HowWeWork = (props) => {
                                     <div className="">
                                         <h5 className='p-t-10'>
                                             <div className="profile-pic float-left relative black-bg"><img
+                                                alt='the news minute'
                                                 src="https://www.thenewsminute.com/sites/all/themes/tnm/The-News-Minute-Logo_mob.png"
                                                 className="img-fluid imgCenter"/>
                                             </div>
@@ -170,6 +177,7 @@ const HowWeWork = (props) => {
                                     <div className="">
                                         <h5 className='p-t-10'>
                                             <div className="profile-pic float-left relative black-bg"><img
+                                                alt='entrepreneur logo'
                                                 src="https://assets.entrepreneur.com/static/20190308060624-ENT-India-Logo-White.svg"
                                                 className="img-fluid imgCenter"/>
                                             </div>
@@ -187,6 +195,7 @@ const HowWeWork = (props) => {
                                     <div className="">
                                         <h5 className='p-t-10'>
                                             <div className="profile-pic float-left relative"><img
+                                                alt='Your story logo'
                                                 src="https://images.yourstory.com/logos/svg/logo_yourstory.svg"
                                                 className="img-fluid imgCenter"/>
                                             </div>
@@ -207,6 +216,7 @@ const HowWeWork = (props) => {
                                     <div className="">
                                         <h5 className='p-t-10'>
                                             <div className="profile-pic float-left relative"><img
+                                                alt='toi img logo'
                                                 src="https://static.toiimg.com/thumb/msid-47529300,imgsize-110164,width-400,resizemode-4/47529300.jpg"
                                                 className="img-fluid imgCenter"/>
                                             </div>
