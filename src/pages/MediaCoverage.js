@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import "../../src/home.css";
 import userIcon from "../images/user-icon.png";
+import MetaTags from "react-meta-tags";
 
 const HowWeWork = (props) => {
     let [loader, setloader] = useState(false);
@@ -13,6 +14,13 @@ const HowWeWork = (props) => {
     return (
         <>
             <Header {...props} />
+            <MetaTags>
+                <title>Instant Personal Loans Online | Small Personal Loans - PayMe India</title>
+                <meta name="description" content="Instant personal loans online at an attractive interest rates.
+		Apply small personal loans and get your loan approve instantly. Download PayMe India app now!!" />
+                <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+                <meta property="og:title" content="Instant Personal Loans Online | Small Personal Loans - PayMe India" />
+            </MetaTags>
             <div className='content'>
                 <div className="container-fluid px-3 px-sm-5  testimonial">
                     <div className="col-sm-12 col-md-12 reg-second-heading">

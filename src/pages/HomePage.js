@@ -30,6 +30,7 @@ import {Link} from "react-router-dom"
 import {makeStyles} from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
 import {propTypes} from "react-bootstrap/esm/Image";
+import MetaTags from 'react-meta-tags';
 
 const HomePage = (props) => {
     const useStyles = makeStyles((theme) => ({
@@ -46,7 +47,7 @@ const HomePage = (props) => {
     const [time, setTime] = useState(0);
     const [result, setResult] = useState("");
     const [rateofinterest, setrateofinterest] = useState(0.01);
-    
+
     function getProcessFees(amount) {
         if (amount < 500){
            return 100
@@ -152,7 +153,7 @@ const HomePage = (props) => {
 
     function handleResult() {
         let roi = Number(0.03);
-        let pfee = getProcessFees(amount) 
+        let pfee = getProcessFees(amount)
 
         console.log(roi, amount, time)
         const result =
@@ -168,6 +169,13 @@ const HomePage = (props) => {
 
     return (
         <> <Header {...props}/>
+            <MetaTags>
+                <title>Instant Personal Loans Online | Small Personal Loans - PayMe India</title>
+                <meta name="description" content="Instant personal loans online at an attractive interest rates.
+		Apply small personal loans and get your loan approve instantly. Download PayMe India app now!!" />
+                <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+                <meta property="og:title" content="Instant Personal Loans Online | Small Personal Loans - PayMe India" />
+            </MetaTags>
             <div className='content'>
                 <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                     <ol className="carousel-indicators">
@@ -200,7 +208,7 @@ const HomePage = (props) => {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-6">
-                                <h3 className="heading1">Get Instant Loan Approval</h3>
+                                <h1 className="heading1">Get Instant Loan Approval</h1>
                                 <h3 className="heading2"> Personal Loan upto 2 Lacs with Small Processing Fees</h3>
                                 <p className="no-more-text">No more financial crunch. PayMe India gives you the amount of
                                     loan

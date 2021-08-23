@@ -16,6 +16,7 @@ import thumbnail from "../images/thumbup.png";
 import heart from "../images/heart.png";
 import people from "../images/people.png";
 import about from "../images/about-us.png";
+import MetaTags from "react-meta-tags";
 
 
 const Refund = (props) => {
@@ -26,6 +27,12 @@ const Refund = (props) => {
     return (
         <>
             <Header {...props}/>
+            <MetaTags>
+                <title>Refund Policy - PayMeIndia</title>
+                <meta name="description" content="Refund Policy - The following statement is about information regarding refund - PayMeIndia." />
+                <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+                <meta property="og:title" content="Refund Policy - PayMeIndia" />
+            </MetaTags>
             <div className='content'>
             <div className="services">
                 <div className="container">

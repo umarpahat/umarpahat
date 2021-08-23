@@ -33,6 +33,7 @@ import pointer from "../images/pointer.png";
 import phone from "../images/phone.png";
 import printer from "../images/printer.png";
 import timer from "../images/timer.png";
+import MetaTags from "react-meta-tags";
 
 const Contact = (props) => {
   let [loader, setloader] = useState(false);
@@ -40,6 +41,15 @@ const Contact = (props) => {
   return (
     <>
       <Header {...props} />
+      <MetaTags>
+        <title>Contact Us - PayMeIndia</title>
+        <meta name="description" content="PayMeIndia is a direct lender providing short terms and instant personal
+              loans to the salaries employees at low interest rates. We offer advance salary loans, instant
+        flexi loans, quick short term loans online. Contact us now via mail at support@paymeindia.in
+        or on call at +91-1206748963." />
+        <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+        <meta property="og:title" content="Contact Us - PayMeIndia" />
+      </MetaTags>
       <div className='content'>
       <div className="services">
         <div className="container">

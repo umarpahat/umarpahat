@@ -16,6 +16,7 @@ import thumbnail from "../images/thumbup.png";
 import heart from "../images/heart.png";
 import people from "../images/people.png";
 import about from "../images/about-us.png";
+import MetaTags from "react-meta-tags";
 
 
 const Policy = (props) => {
@@ -26,6 +27,13 @@ const Policy = (props) => {
     return (
         <>
             <Header {...props} />
+            <MetaTags>
+                <title>Privacy Policy - PayMeIndia</title>
+                <meta name="description" content="Privacy Policy - The following statement is about our information gathering and dissemination
+			practices - PayMeIndia." />
+                <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+                <meta property="og:title" content="Privacy Policy - PayMeIndia" />
+            </MetaTags>
             <div className='content'>
             <div className="services">
                 <div className="container">

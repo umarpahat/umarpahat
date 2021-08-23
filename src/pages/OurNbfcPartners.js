@@ -12,6 +12,7 @@ import $ from "jquery";
 import arvog from "../images/arvog.jpg";
 import money2me from "../images/money2me.jpg";
 import paymeindia from "../images/paymeindia.png";
+import MetaTags from "react-meta-tags";
 
 const OurNbfcPartners = (props) => {
   let [loader, setloader] = useState(false);
@@ -19,6 +20,13 @@ const OurNbfcPartners = (props) => {
   return (
     <>
       <Header {...props} />
+      <MetaTags>
+        <title>NBFC Partners - PayMeIndia</title>
+        <meta name="description" content="No more financial crunch. PayMeIndia gives you the amount of loan you require,
+		anytime-anywhere. Fill the application to apply now!" />
+        <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+        <meta property="og:title" content="NBFC Partners - PayMeIndia" />
+      </MetaTags>
       <div className='content'>
       <div className="services">
         <div className="container">

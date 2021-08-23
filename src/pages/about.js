@@ -16,6 +16,7 @@ import thumbnail from "../images/thumbup.png";
 import heart from "../images/heart.png";
 import people from "../images/people.png";
 import about from "../images/about-us.png";
+import MetaTags from "react-meta-tags";
 
 const About = (props) => {
   let [loader, setloader] = useState(false);
@@ -23,6 +24,15 @@ const About = (props) => {
   return (
     <>
       <Header {...props} />
+      <MetaTags>
+        <title>About Us - PayMeIndia</title>
+        <meta name="description" content="PayMeIndia is an innovative FinTech organization that offers advance salary
+              loans, instant flexi loans, short term cash loans to the salaried corporate employees at
+        lowest interest rates. These loans are designed to meet all your short term financial needs such
+        as medical emergency or any other personal needs." />
+        <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+        <meta property="og:title" content="About Us - PayMeIndia" />
+      </MetaTags>
       <div className='content'>
       <div className="services">
         <div className="container">
