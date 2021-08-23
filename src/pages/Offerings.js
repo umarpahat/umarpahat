@@ -17,6 +17,7 @@ import thumbnail from "../images/aproved.png";
 import heart from "../images/corporate.png";
 import people from "../images/instant-cash.png";
 import howWeWork from "../images/how-we-work.png";
+import MetaTags from "react-meta-tags";
 
 const HowWeWork = (props) => {
     let [loader, setloader] = useState(false);
@@ -24,11 +25,20 @@ const HowWeWork = (props) => {
     return (
         <>
             <Header {...props} />
+            <MetaTags>
+            <title>Corporate - Instant Loans for Corporate - PayMeIndia</title>
+            <meta name="description" content="PayMeIndia offers an exclusive lending programme for the corporate
+			employees of organisations that are partnered or not partnered with PayMeIndia for Advance
+			Salary. We allow them to borrow up to a whopping 50% of their net monthly income, payable
+			against the following month’s salary." />
+            <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+            <meta property="og:title" content="Corporate - Instant Loans for Corporate - PayMeIndia" />
+        </MetaTags>
             <div className='content'>
                 <div className="services">
                     <div className="container">
                         <div className="col col-md-12 reg-second-heading">
-                            <h4>How PayMe Works</h4>
+                            <h1 className='heading1 blue-color'>How PayMe Works</h1>
                         </div>
                         <div className="row align-items-center p-b-30">
                             <div className="col-lg-6 col-md-6 col-sm-8 col-xs-8 text-center main-img">

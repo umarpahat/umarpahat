@@ -25,7 +25,7 @@ function DragbleImg() {
           <p>Drop the Image here...</p>
         ) : (
           <div>
-            <img src={Camra} style={{ padding: "10px" }} />
+            <img src={Camra} alt='Drop the Image' style={{ padding: "10px" }} />
             <p>Drag and Drop </p>
           </div>
         )}

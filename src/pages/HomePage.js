@@ -30,6 +30,7 @@ import {Link} from "react-router-dom"
 import {makeStyles} from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
 import {propTypes} from "react-bootstrap/esm/Image";
+import MetaTags from 'react-meta-tags';
 
 const HomePage = (props) => {
     const useStyles = makeStyles((theme) => ({
@@ -46,7 +47,7 @@ const HomePage = (props) => {
     const [time, setTime] = useState(0);
     const [result, setResult] = useState("");
     const [rateofinterest, setrateofinterest] = useState(0.01);
-    
+
     function getProcessFees(amount) {
         if (amount < 500){
            return 100
@@ -152,7 +153,7 @@ const HomePage = (props) => {
 
     function handleResult() {
         let roi = Number(0.03);
-        let pfee = getProcessFees(amount) 
+        let pfee = getProcessFees(amount)
 
         console.log(roi, amount, time)
         const result =
@@ -168,6 +169,13 @@ const HomePage = (props) => {
 
     return (
         <> <Header {...props}/>
+            <MetaTags>
+                <title>Instant Personal Loans Online | Small Personal Loans - PayMe India</title>
+                <meta name="description" content="Instant personal loans online at an attractive interest rates.
+		Apply small personal loans and get your loan approve instantly. Download PayMe India app now!!" />
+                <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+                <meta property="og:title" content="Instant Personal Loans Online | Small Personal Loans - PayMe India" />
+            </MetaTags>
             <div className='content'>
                 <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                     <ol className="carousel-indicators">
@@ -200,7 +208,7 @@ const HomePage = (props) => {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-6">
-                                <h3 className="heading1">Get Instant Loan Approval</h3>
+                                <h1 className="heading1">Get Instant Loan Approval</h1>
                                 <h3 className="heading2"> Personal Loan upto 2 Lacs with Small Processing Fees</h3>
                                 <p className="no-more-text">No more financial crunch. PayMe India gives you the amount of
                                     loan
@@ -309,7 +317,7 @@ const HomePage = (props) => {
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-6">
                                 <div className="farmer text-center"><img src={appIcon} className="farmer-img img-fluid"
-                                                                         alt="app"/></div>
+                                                                         alt="App Icon"/></div>
                             </div>
                             <div className="col-sm-12 col-md-6">
                                 <div className="row">
@@ -366,26 +374,26 @@ const HomePage = (props) => {
                             <div id="boxlink0" className="boxlink">
                                 <div className="container">
                                     <div className="row align-items-center pb-3">
-                                        <div className="col-sm-12 col-md-6 text-center main-img"><img alt="CIBIL"
+                                        <div className="col-sm-12 col-md-6 text-center main-img"><img alt="CIBIL Service"
                                                                                                       src={serviceImg}/>
                                             <img
                                                 id="boxlink1" className="boxlink" alt="CIBIL"/> <img
-                                                id="boxlink2" className="boxlink" alt="CIBIL" src={advisoryImg}/></div>
+                                                id="boxlink2" className="boxlink" alt="CIBIL Advisory" src={advisoryImg}/></div>
                                         <div className="col-sm-12 col-md-6">
-                                            <Link to='/' id="link0" className="product-link active"> <img alt="CIBIL"
+                                            <Link to='/' id="link0" className="product-link active"> <img alt="CIBIL Short"
                                                                                                           src={shortImg}/>
                                                 <h3 className="heading3">Short Term Loans</h3>
                                                 <p> A loan provided to a salaried individual for 2 - 24 months.</p>
                                             </Link>
                                             <Link to='/' id="link1" className="product-link product-link1"> <img
-                                                alt="CIBIL"
+                                                alt="CIBIL Corporate"
                                                 src={corporateImg}/>
                                                 <h3 className="heading3">Corporate Loans</h3>
                                                 <p>When the existing businesses or industrial houses need to generate
                                                     funds.</p>
                                             </Link>
                                             <Link to='/' id="link2" className="product-link product-link2"> <img
-                                                alt="CIBIL"
+                                                alt="CIBIL Advisory"
                                                 src={advisoryImg}/>
                                                 <h3 className="heading3">Loan Advisory</h3>
                                                 <p>Business Lending for Independent Advisors - Get expert guidance on
@@ -407,7 +415,7 @@ const HomePage = (props) => {
                         <div className="item first prev text-left">
                             <div className="card  py-3 px-4">
                                 <div className="">
-                                    <div className="profile-pic float-left"><img src={userIcon} className="img-fluid"/>
+                                    <div className="profile-pic float-left"><img src={userIcon}  alt='User Icon' className="img-fluid"/>
                                     </div>
                                     <h6>Aghilesh Nair</h6>
                                     <span>(Bengaluru)</span>
@@ -426,7 +434,7 @@ const HomePage = (props) => {
                         <div className="item show text-left">
                             <div className="card  py-3 px-4">
                                 <div className="">
-                                    <div className="profile-pic float-left"><img src={userIcon} className="img-fluid"/>
+                                    <div className="profile-pic float-left"><img src={userIcon} alt='User Icon' className="img-fluid"/>
                                     </div>
                                     <h6>Sakar Verma</h6>
                                     <span>(New Delhi)</span>
@@ -444,7 +452,7 @@ const HomePage = (props) => {
                         <div className="item next text-left">
                             <div className="card  py-3 px-4">
                                 <div className="">
-                                    <div className="profile-pic float-left"><img src={userIcon} className="img-fluid"/>
+                                    <div className="profile-pic float-left"><img src={userIcon} alt='User Icon' className="img-fluid"/>
                                     </div>
                                     <h6>Nasrin Jahan</h6>
                                     <span>(New Delhi)</span>
@@ -461,7 +469,7 @@ const HomePage = (props) => {
                         <div className="item next text-left">
                             <div className="card  py-3 px-4">
                                 <div className="">
-                                    <div className="profile-pic float-left"><img src={userIcon} className="img-fluid"/>
+                                    <div className="profile-pic float-left"><img src={userIcon} alt='User Icon' className="img-fluid"/>
                                     </div>
                                     <h6>Vikram Singh</h6>
                                     <span>(New Delhi)</span>
@@ -480,7 +488,7 @@ const HomePage = (props) => {
                         <div className="item last text-left">
                             <div className="card  py-3 px-4">
                                 <div className="">
-                                    <div className="profile-pic float-left"><img src={userIcon} className="img-fluid"/>
+                                    <div className="profile-pic float-left"><img src={userIcon} alt='User icon' className="img-fluid"/>
                                     </div>
                                     <h6>Ranjeeta Naik</h6>
                                     <span>(Mumbai)</span>

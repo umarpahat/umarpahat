@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import $ from "jquery";
 import logo from "../images/logo.png";
 import faqImg from "../images/faqs.png";
+import MetaTags from "react-meta-tags";
 
 const Faq = (props) => {
   let [loader, setloader] = useState(false);
@@ -18,11 +19,18 @@ const Faq = (props) => {
   return (
     <>
       <Header {...props} />
+      <MetaTags>
+        <title>Frequently Asked Questions - PayMeIndia</title>
+        <meta name="description" content="Do you have questions about how the loan app works? Frequently asked questions for all
+			loan related queries - PayMeIndia." />
+        <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+        <meta property="og:title" content="Frequently Asked Questions - PayMeIndia" />
+      </MetaTags>
       <div className='content'>
       <div className="services">
         <div className="container">
           <div className="col col-md-12 reg-second-heading">
-            <h4>FAQs</h4>
+            <h1 className='heading1 blue-color'>FAQs</h1>
             <span className="reg-second-subheading">
               Here are some frequently asked questions
             </span>

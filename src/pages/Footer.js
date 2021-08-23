@@ -19,30 +19,26 @@ const Footer = (props) => {
             <div >
                 <div className="container">
                     <div className="row">
-                        {/* <div className="ol col-md-3">
+                         <div className="ol col-md-3">
+                             <h6 className='head6'>Apply Loan</h6>
                 <ul>
-                    <li><Link to="#" data-toggle="modal" data-target="#slidingModal">Seo link 1</Link></li>
-                    <li><Link to="#">Seo link 2</Link></li>
-                    <li><Link to="#">Seo link 3</Link></li>
-                    <li><Link to="#">Seo link 4</Link></li>
-                    <li><Link to="#">Seo link 5</Link></li>
-                    <li><Link to="#">Seo link 6</Link></li>
+                    <li><Link to="/apply-loan">Instant loan in Delhi</Link></li>
+                    <li><Link to="/apply-loan">Instant loan in NCR/NOIDA</Link></li>
+                    <li><Link to="/apply-loan">Instant loan in Bangalore</Link></li>
+                    <li><Link to="apply-loan">Instant loan in Mumbai</Link></li>
                 </ul>
-            </div>*/}
-                        <div className="ol col-md-4">
+            </div>
+                        <div className="ol col-md-3">
                             <h6 className='head6'>About Us</h6>
                             <ul>
                                 <li><Link to="/">Home</Link></li>
-                                {/*<li><Link to="#media">Media</Link></li>*/}
                                 <li><Link to="/about">About us</Link></li>
-                                {/*<li><Link to="#how-we-work">How we work</Link></li>*/}
-                                {/*<li><Link to="#blog">Blog</Link></li>*/}
                                 <li><Link to="/contact">Contact us</Link></li>
-                                {/*<li><Link to="#join-us">Join us</Link></li>*/}
+                                <li><Link to="/sitemap">Sitemap</Link></li>
                             </ul>
 
                         </div>
-                        <div className="ol col-md-4">
+                        <div className="ol col-md-3">
                             <h6 className='head6'>Others</h6>
                             <ul>
                                 <li><Link to="/faq">FAQs</Link></li>
@@ -51,7 +47,7 @@ const Footer = (props) => {
                                 <li><Link to="/media-coverage">Media Coverage</Link></li>
                             </ul>
                         </div>
-                        <div className="ol col-md-4">
+                        <div className="ol col-md-3">
                             <h6 className='head6'>Policies</h6>
                             <ul>
                                 <li><Link to="/terms">Terms &amp; Conditions</Link></li>

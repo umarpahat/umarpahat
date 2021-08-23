@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import "../../src/home.css";
 import saarthi from "../images/sarthi-logo.png";
+import MetaTags from "react-meta-tags";
 
 const SocialInitiative = (props) => {
     let [loader, setloader] = useState(false);
@@ -15,11 +16,17 @@ const SocialInitiative = (props) => {
     return (
         <>
             <Header {...props} />
+            <MetaTags>
+                <title>Social Initiative</title>
+                <meta name="description" content="PayMe India launches project ‘Saarthi’ to support families impacted by Coivd-19, through skill building and creation of employment opportunities." />
+                <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+                <meta property="og:title" content="Social Initiative" />
+            </MetaTags>
             <div className='content'>
                 <div className="services">
                     <div className="container">
                         <div className="col col-md-12 reg-second-heading">
-                            <h4>Social Initiative</h4>
+                            <h1 className='heading1 blue-color'>Social Initiative</h1>
                         </div>
                         <div className="row align-items-center p-b-30">
                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">

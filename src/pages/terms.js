@@ -16,6 +16,7 @@ import thumbnail from "../images/thumbup.png";
 import heart from "../images/heart.png";
 import people from "../images/people.png";
 import about from "../images/about-us.png";
+import MetaTags from "react-meta-tags";
 
 
 const Terms = (props) => {
@@ -26,11 +27,18 @@ const Terms = (props) => {
     return (
         <>
             <Header {...props} />
+            <MetaTags>
+                <title>Terms and Conditions - PayMeIndia</title>
+                <meta name="description" content="Read PayMeIndia  Terms and Conditions now. This Agreement is a contract between customer
+			and PayMeIndia for using PayMeIndia Services." />
+                <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+                <meta property="og:title" content="Terms and Conditions - PayMeIndia" />
+            </MetaTags>
             <div className='content'>
             <div className="services">
                 <div className="container p-b-30">
                     <div className="col col-md-12 reg-second-heading">
-                        <h4>Terms & Conditions</h4>
+                        <h1 className='heading1 blue-color'>Terms & Conditions</h1>
                     </div>
                     <p><strong>1. GENERAL</strong></p>
                     <p> This Agreement is a contract between you and PayMe India and applies to your use of the
