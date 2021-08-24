@@ -510,7 +510,43 @@ button:focus {
   padding: 6em 6em;
 }
 
+.tableDesign{
+  display: flex;
+}
+
+.tableDesign > div{
+  padding-left: 20px;
+    width: 100%;
+}
+
+.tableDesign > div:first-child{
+    padding-left: 0;
+}
+.submitBtn{
+  background: #33658a;
+  border: 0;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff!important;
+}
+
+#register,#volunteer{
+  margin: 0 5px 0 15px;
+}
 /* Extra small devices (phones, 600px and down) */
+@media (max-width: 767px) {
+    .tableDesign{
+        display: block;
+    }
+
+    .tableDesign > div{
+        padding-left: 0;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+}
 @media (max-width: 450px) {
 }
 

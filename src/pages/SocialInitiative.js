@@ -9,9 +9,60 @@ import Header from "./Header";
 import "../../src/home.css";
 import saarthi from "../images/sarthi-logo.png";
 import MetaTags from "react-meta-tags";
+import {API_ENDPOINT} from "../constant";
+import axios from "axios";
 
 const SocialInitiative = (props) => {
     let [loader, setloader] = useState(false);
+    const [toggle, setToggle] = useState("");
+    const [fName, setFName] = useState("");
+    const [mName, setMName] = useState("");
+    const [lName, setLName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [topic, setTopic] = useState("");
+    let data = {
+        name: {
+            first: fName,
+            middle: mName,
+            last: lName,
+        },
+        email: email,
+        phone: phone,
+        topic: topic,
+    };
+
+    let config = {
+        headers: {
+            Authorization: "Token " + props.token,
+        },
+    };
+
+    const postVolunteer = () => {
+        let url = `http://3.6.55.160:3000/api/register-volunteer`;
+        axios
+            .post(url, data, config)
+            .then((res) => {
+                console.log(res.data.data);
+            })
+
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+    const postTraineeVolunteer = () => {
+        let url = `http://3.6.55.160:3000/api/register-trainee`;
+        axios
+            .post(url, data, config)
+            .then((res) => {
+                console.log(res.data.data);
+            })
+
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
     return (
         <>
@@ -44,6 +95,120 @@ const SocialInitiative = (props) => {
                                 <p className='p-t-15'>While PayMe India appreciates the relief measures extended by state and central governments, which has indeed provided immediate support to the families, however a long term support infrastructure has to be built through creation of new employment. This is where project ‘Saarthi’ will play a critical role, by empowering people with necessary skill set to increase their employability and then assisting them in securing an employment.</p>
                                 <p className='p-t-15'>Through project ‘Saarthi’, PayMe India will provide free of cost skill development training to one member from each beleaguered family and further assist them in securing work opportunities. PayMe India have themselves pledged to directly employ people from this program.</p>
                                 <p className='p-t-15 p-b-30'>Driven by strong social values and a pledge to give back to the society, PayMe India is determined be a forerunner in supporting the nation through these testing times. Project ‘Saarthi’ will surely bring hope and relief to numerous families!</p>
+                            </div>
+                            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12  initiative"
+                                 style={{textAlign: "justify"}}>
+                                <form>
+                                    <div className="Home-contact-form mt-4">
+                                        <h4 className="form-heading text-center">Volunteer and Trainee Registration</h4>
+
+                                        <div className="form-block">
+                                            <div className="form-group ms-input-group">
+                                                <input type="radio" id="volunteer" name="registration"
+                                                       onChange={(e) => {
+                                                           setToggle('true');
+                                                       }}
+                                                       value="Volunteer"/>
+                                                <label htmlFor="volunteer">Volunteer</label>
+                                                <input type="radio" id="register" name="registration" defaultChecked='true'
+                                                       onChange={(e) => {
+                                                           setToggle('false');
+                                                       }}
+                                                       value="Trainee Registration"/>
+                                                <label htmlFor="register">Trainee Registration</label>
+                                            </div>
+                                            <div className="form-group ms-input-group">
+                                                <label className="form-label pb-2">Name</label>
+                                                <div className='tableDesign'>
+                                                    <div>
+                                                        <input
+                                                            name='fName'
+                                                            type="text"
+                                                            className="form-control ms-form-input"
+                                                            placeholder="Enter First Name"
+                                                            onChange={(e) => {
+                                                                setFName(e.target.value);
+                                                            }}
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <input
+                                                            name='mName'
+                                                            type="text"
+                                                            className="form-control ms-form-input"
+                                                            placeholder="Enter Middle Name"
+                                                            onChange={(e) => {
+                                                                setMName(e.target.value);
+                                                            }}
+                                                        /></div>
+                                                    <div>
+                                                        <input
+                                                            name='lName'
+                                                            type="text"
+                                                            className="form-control ms-form-input"
+                                                            placeholder="Enter Last Name"
+                                                            onChange={(e) => {
+                                                                setLName(e.target.value);
+                                                            }}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="form-group ms-input-group">
+                                                <label className="form-label pb-2">Email</label>
+                                                <input
+                                                    name='email'
+                                                    type="text"
+                                                    className="form-control ms-form-input"
+                                                    placeholder="Enter Email"
+                                                    onChange={(e) => {
+                                                        setEmail(e.target.value);
+                                                    }}
+                                                />
+                                            </div>
+                                            <div className="form-group ms-input-group">
+                                                <label className="form-label pb-2">Phone</label>
+                                                <input
+                                                    name='phone'
+                                                    type="text"
+                                                    className="form-control ms-form-input"
+                                                    placeholder="Enter Phone"
+                                                    onChange={(e) => {
+                                                        setPhone(e.target.value);
+                                                    }}
+                                                />
+                                            </div>
+                                            <div className="form-group ms-input-group">
+                                                <label className="form-label pb-2">Topic</label>
+                                                <input
+                                                    name='topic'
+                                                    type="text"
+                                                    className="form-control ms-form-input"
+                                                    placeholder="Enter Topic"
+                                                    onChange={(e) => {
+                                                        setTopic(e.target.value);
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
+                                        { (toggle==='true')? <input
+                                            name='topic'
+                                            type="button"
+                                            className="submitBtn text-center"
+                                            placeholder="Enter Email"
+                                            value='Submit'
+                                            onClick={postVolunteer}
+                                        />  :
+                                            <input
+                                            name='topic'
+                                            type="button"
+                                            className="submitBtn text-center"
+                                            placeholder="Enter Email"
+                                            value='Submit'
+                                            onClick={postTraineeVolunteer}
+                                        /> }
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
