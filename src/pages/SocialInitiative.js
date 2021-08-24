@@ -15,44 +15,31 @@ import axios from "axios";
 const SocialInitiative = (props) => {
     let [loader, setloader] = useState(false);
     const [toggle, setToggle] = useState("");
-    const [fName, setFName] = useState("");
-    const [mName, setMName] = useState("");
-    const [lName, setLName] = useState("");
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [topic, setTopic] = useState("");
-    let data = {
-        name: {
-            first: fName,
-            middle: mName,
-            last: lName,
-        },
-        email: email,
-        phone: phone,
-        topic: topic,
-    };
-
-    let config = {
-        headers: {
-            Authorization: "Token " + props.token,
-        },
-    };
+    let url = '';
 
     const postVolunteer = () => {
-        let url = `http://3.6.55.160:3000/api/register-volunteer`;
-        axios
-            .post(url, data, config)
-            .then((res) => {
-                console.log(res.data.data);
-            })
+        if(toggle==='true'){
+             url  = `http://3.6.55.160:3000/api/register-volunteer`;
+        } else {
+             url  = `http://3.6.55.160:3000/api/register-trainee`;
+        }
+        let data = {
+            name: name,
+            email: email,
+            phone: phone,
+            topic: topic,
+        };
 
-            .catch((err) => {
-                console.log(err);
-            });
-    };
+        let config = {
+            headers: {
+                Authorization: "Token " + props.token,
+            },
+        };
 
-    const postTraineeVolunteer = () => {
-        let url = `http://3.6.55.160:3000/api/register-trainee`;
         axios
             .post(url, data, config)
             .then((res) => {
@@ -119,40 +106,16 @@ const SocialInitiative = (props) => {
                                             </div>
                                             <div className="form-group ms-input-group">
                                                 <label className="form-label pb-2">Name</label>
-                                                <div className='tableDesign'>
-                                                    <div>
-                                                        <input
-                                                            name='fName'
-                                                            type="text"
-                                                            className="form-control ms-form-input"
-                                                            placeholder="Enter First Name"
-                                                            onChange={(e) => {
-                                                                setFName(e.target.value);
-                                                            }}
-                                                        />
-                                                    </div>
-                                                    <div>
-                                                        <input
-                                                            name='mName'
-                                                            type="text"
-                                                            className="form-control ms-form-input"
-                                                            placeholder="Enter Middle Name"
-                                                            onChange={(e) => {
-                                                                setMName(e.target.value);
-                                                            }}
-                                                        /></div>
-                                                    <div>
-                                                        <input
-                                                            name='lName'
-                                                            type="text"
-                                                            className="form-control ms-form-input"
-                                                            placeholder="Enter Last Name"
-                                                            onChange={(e) => {
-                                                                setLName(e.target.value);
-                                                            }}
-                                                        />
-                                                    </div>
-                                                </div>
+                                                <input
+                                                    name='name'
+                                                    type="text"
+                                                    className="form-control ms-form-input"
+                                                    placeholder="Enter Full Name"
+                                                    onChange={(e) => {
+                                                        setName(e.target.value);
+                                                    }}
+                                                />
+
                                             </div>
                                             <div className="form-group ms-input-group">
                                                 <label className="form-label pb-2">Email</label>
@@ -191,22 +154,14 @@ const SocialInitiative = (props) => {
                                                 />
                                             </div>
                                         </div>
-                                        { (toggle==='true')? <input
-                                            name='topic'
-                                            type="button"
-                                            className="submitBtn text-center"
-                                            placeholder="Enter Email"
-                                            value='Submit'
-                                            onClick={postVolunteer}
-                                        />  :
                                             <input
                                             name='topic'
                                             type="button"
                                             className="submitBtn text-center"
                                             placeholder="Enter Email"
                                             value='Submit'
-                                            onClick={postTraineeVolunteer}
-                                        /> }
+                                            onClick={postVolunteer}
+                                        />
                                     </div>
                                 </form>
                             </div>
