@@ -510,17 +510,8 @@ button:focus {
   padding: 6em 6em;
 }
 
-.tableDesign{
-  display: flex;
-}
-
-.tableDesign > div{
-  padding-left: 20px;
-    width: 100%;
-}
-
-.tableDesign > div:first-child{
-    padding-left: 0;
+input:invalid {
+    border: 1px solid red;
 }
 .submitBtn{
   background: #33658a;
