@@ -510,6 +510,9 @@ button:focus {
   padding: 6em 6em;
 }
 
+input:invalid {
+    border: 1px solid red;
+}
 .submitBtn{
   background: #33658a;
   border: 0;
