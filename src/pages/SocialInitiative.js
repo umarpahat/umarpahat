@@ -29,7 +29,8 @@ const SocialInitiative = (props) => {
     const [phone, setPhone] = useState("");
     const [topic, setTopic] = useState("");
     let url = '';
-
+    let reg = /^[0-9]{1,10}$/;
+    let emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     const postVolunteer = () => {
         if (name.length === 0) {
             toast.error("Name can't be empty");
@@ -47,10 +48,29 @@ const SocialInitiative = (props) => {
              toast.error("Email should contain at least one dot");
             return false
         }
+        if (!emailReg.test(email)) {
+            toast.error("Email id is Invalid");
+            return false
+        }
+
         if (phone.length === 0) {
              toast.error("Phone can't be empty");
             return false
         }
+        if (phone.length < 10) {
+             toast.error("Phone should be 10 digit");
+            return false
+        }
+        if (phone.length > 10) {
+             toast.error("Phone should be 10 digit");
+            return false
+        }
+
+        if (!reg.test(phone)) {
+             toast.error("Phone number is Invalid");
+            return false
+        }
+
         if (topic.length === 0) {
              toast.error("Topic can't be empty");
             return false
@@ -146,7 +166,7 @@ const SocialInitiative = (props) => {
                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12  initiative"
                                  style={{textAlign: "justify"}}>
                                 <form id='form' name='form'>
-                                    <div className="Home-contact-form mt-4">
+                                    <div className="Home-contact-form mt-4" style={{maxWidth:600, margin:'auto'}}>
                                         <h4 className="form-heading text-center">Volunteer and Trainee Registration</h4>
 
                                         <div className="form-block">
