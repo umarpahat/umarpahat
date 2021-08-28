@@ -58,7 +58,7 @@ const Sitemap = (props) => {
                             <li><Link to="/policy">Privacy Policy</Link></li>
                             <li><Link to="/refund">Refund Policy</Link></li>
                             <li><Link to="/disclaimer">Disclaimer</Link></li>
-                            <li><Link to="https://creditscore.paymeindia.in" target='_blank'>Get CIBIL Score </Link></li>
+                            <li><a href="https://creditscore.paymeindia.in"  target="_blank">Get CIBIL Score </a></li>
                         </ul>
 
                     </div>
