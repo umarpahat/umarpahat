@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {hitAppUseCase} from "../store/modules/userDetails/actions";
 import {connect} from "react-redux";
-import {Container} from "react-bootstrap";
 import Loader from "../component/Loader";
 import "./ApplyNowButton/Applybtnallcomponent.css";
 import Footer from "./Footer";
@@ -9,7 +8,7 @@ import Header from "./Header";
 import "../../src/home.css";
 import saarthi from "../images/sarthi-logo.png";
 import MetaTags from "react-meta-tags";
-import {API_ENDPOINT} from "../constant";
+import {API_ENDPOINT_SAARTHI} from "../constant";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -78,9 +77,9 @@ const SocialInitiative = (props) => {
 
 
         if (toggle === 'true') {
-            url = `http://3.6.55.160:3000/api/register-volunteer`;
+            url = `${API_ENDPOINT_SAARTHI}/api/register-volunteer`;
         } else {
-            url = `http://3.6.55.160:3000/api/register-trainee`;
+            url = `${API_ENDPOINT_SAARTHI}/api/register-trainee`;
         }
         let data = {
             name: name,
