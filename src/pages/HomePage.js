@@ -196,7 +196,7 @@ const HomePage = (props) => {
                                             <h3 className="heading3"><span
                                                 className="col-orange">ABSOLUTELY FREE </span>
                                             </h3>
-                                            <a href='https://cibil.paymeindia.in/v1/fullfill_offer_form' target='_blank' className="button-large m-t-40">Download Now</a>
+                                            <a href='https://creditscore.paymeindia.in' target='_blank' className="button-large m-t-40">Download Now</a>
                                         </div>
                                     </div>
                                 </div>

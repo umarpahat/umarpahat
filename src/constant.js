@@ -5,3 +5,4 @@ export const API_ENDPOINT = 'https://api.paymeindia.in'
 //export const API_ENDPOINT = 'http://testing.paymeindia.in';
 
 export const API_ENDPOINT_STAGING = "https://apiv2.paymeindia.in";
+export const API_ENDPOINT_SAARTHI = 'https://api-csr.paymeindia.in'
