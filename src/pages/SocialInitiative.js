@@ -97,7 +97,7 @@ const SocialInitiative = (props) => {
         axios
             .post(url, data, config)
             .then(function (response) {
-                toast.success('Success Submitted');
+                toast.success('Thank you for registering');
                 document.getElementById("form").reset();
             })
             .catch(function (error) {
