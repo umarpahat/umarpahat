@@ -1,5 +1,4 @@
 import React from "react"
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Switch } from "react-router-dom";
 import "react-input-range/lib/css/index.css";
 import "./style.css";
