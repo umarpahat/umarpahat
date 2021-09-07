@@ -241,10 +241,24 @@ button.button-gray:hover {
 .heading1 {
     font-size: 40px;
     line-height: 40px;
-    padding-bottom: 20px;
     font-weight: 600;
-    line-height: 150.5%;
     color: #000000;
+}
+
+.contactInfo {
+    background: #2F9297;
+    border-radius: 10px 0 0 10px;
+    padding: 50px 20px 50px 50px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.contactInfo h5 {
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+    font-weight: 600;
 }
 
 .btnLarge {
@@ -1709,7 +1723,7 @@ hr.style {
 
 .icon-left {
     float: left;
-    width: 50px;
+    width: 30px;
 }
 
 .icon-left-content {
@@ -1779,7 +1793,6 @@ a {
 }
 
 .contact-payme {
-    width: 30px;
     margin-top: 7px;
 }
 
@@ -1827,9 +1840,27 @@ a {
 @media (max-width: 600px) {
     .mailPic, .contact {
         width: 100%;
-        padding: 0;
     }
 
+    .contactLine {
+        display: block !important;
+    }
+    .mailPic {
+        padding-right: 42px;
+    }
+    .contact:before {
+        margin: auto;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: -210px;
+    }
+    .contactLine:before {
+        width: 92%;
+        margin: 0 auto;
+        right: 0;
+        left: 0;
+    }
     .initiative p {
         font-size: 14px;
         line-height: 26px;

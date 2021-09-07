@@ -511,11 +511,6 @@ nav a:hover {
     position: relative;
 }
 
-.icon-left {
-    float: left;
-    width: 50px;
-}
-
 .icon-left-content {
     width: calc(100% - 50px);
     float: left;
