@@ -229,7 +229,7 @@ button.button-gray:hover {
 }
 
 .heading4 {
-    font-weight: 400;
+    font-size: 32px;
 }
 
 .scoreAnimate {
@@ -283,6 +283,225 @@ button.button-gray:hover {
 
 .col-sky {
     color: #00a2d1;
+}
+
+.promise {
+    padding: 0 0 30px;
+    margin: auto;
+    font-size: 16px;
+    position: relative;
+    background: #33658A;
+}
+
+.promise:after {
+    content: '';
+    height: 144px;
+    width: 38px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    z-index: 0;
+    background: url('images/svg/left-shape.svg') no-repeat 0 0;
+}
+
+.box-align {
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.21);
+    min-height: 250px;
+    padding: 30px 10px;
+    font-size: 14px;
+    line-height: 20px;
+    position: relative;
+}
+
+.box-align:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(2, 198, 80, 0.3);
+}
+
+.box-align-second:after {
+    background: #02C650;
+}
+
+.team-section {
+    padding: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    color: rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+
+.team-section:after {
+    content: '';
+    height: 118px;
+    width: 81px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: -5px;
+    top: 150px;
+    z-index: -1;
+    background: url('images/svg/green-line.svg') no-repeat 0 0;
+}
+
+.team-section:before {
+    content: '';
+    height: 87px;
+    width: 20px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 55%;
+    z-index: -1;
+    background: url('images/svg/right-half.svg') no-repeat 0 0;
+}
+
+.team-pic {
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.contactBox {
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.contactBox:after {
+    content: '';
+    height: 144px;
+    width: 38px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    z-index: -1;
+    background: url('images/svg/left-shape.svg') no-repeat 0 0;
+}
+
+.contactBox:before {
+    content: '';
+    height: 86px;
+    width: 68px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+    z-index: -1;
+    background: url('images/svg/green-right-line.svg') no-repeat 0 0;
+}
+
+.contact {
+    margin-top: 65px;
+    width: 50%;
+    margin-right: 20px;
+    padding: 70px 50px 0;
+    background: rgba(2, 198, 80, 0.3);
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.09);
+    border-radius: 10px 10px 0 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #33658A;
+    line-height: 30px;
+    text-align: left;
+    position: relative;
+
+
+}
+
+.mailPic {
+    padding-right: 50px;
+    width: 50%;
+    margin-bottom: -35px;
+}
+
+.contact:before {
+    content: '';
+    height: 134px;
+    width: 137px;
+    margin: 0;
+    position: absolute;
+    right: -71px;
+    bottom: 52px;
+    z-index: 0;
+    background: url('images/svg/email.svg') no-repeat 0 0;
+}
+
+.contactLine:before {
+    content: '';
+    height: 30px;
+    width: 75%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: rgba(181, 138, 0, 0.6);
+}
+
+.contact a {
+    font-size: 20px;
+    line-height: 39px;
+    color: #33658A;
+}
+
+.contact a:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+.contact .heading4 {
+    padding-bottom: 30px;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #33658A;
+}
+
+.box-align h3 {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+}
+
+.promise-mission {
+    padding: 0 0 30px;
+    margin: auto;
+    font-size: 16px;
+    position: relative;
+}
+
+.promise-mission:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 60%;
+    width: 100%;
+    background: #FAFAFA;
+}
+
+.img-box {
+    min-height: 70px;
+    vertical-align: middle;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.boxes {
+    margin-top: -120px;
 }
 
 .loan-blue-benefit {
@@ -374,6 +593,50 @@ a.button-small:hover {
     rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
     text-decoration: none;
     color: #fff;
+}
+
+.aboutUs {
+    padding: 20px 0 30px;
+    position: relative;
+}
+
+.aboutUs:before {
+    content: '';
+    height: 144px;
+    width: 38px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    z-index: -1;
+    background: url('images/svg/left-shape.svg') no-repeat 0 0;
+}
+
+.aboutUs:after {
+    content: '';
+    height: 86px;
+    width: 68px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 240px;
+    z-index: -1;
+    background: url('images/svg/green-right-line.svg') no-repeat 0 0;
+}
+
+.mission:after {
+    content: '';
+    height: 86px;
+    width: 79px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: -62px;
+    z-index: -1;
+    background: url('images/svg/right-up-arrow.svg') no-repeat 0 0;
 }
 
 .banner {
@@ -537,6 +800,27 @@ a.button-small:hover {
 
 .services {
     margin-bottom: 10px;
+    position: relative;
+    background: #FAFAFA;
+    font-size: 16px;
+}
+
+
+.services:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 53px;
+    height: 178px;
+    background: url("images/svg/helf-circle-right.svg") no-repeat 0 0;
+}
+
+.mission {
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 16px;
 }
 
 .main-img img {
@@ -1161,6 +1445,17 @@ h4.great {
     background: url('images/svg/right-shape.svg') no-repeat 0 0;
 }
 
+.circle-small-shape {
+    height: 45px;
+    width: 45px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: -27px;
+    top: 10px;
+    background: url('images/svg/small-circle.svg') no-repeat 0 0;
+}
+
 .price-form label {
     padding-top: 10px;
     margin-bottom: 5px;
@@ -1530,6 +1825,10 @@ a {
 }
 
 @media (max-width: 600px) {
+    .mailPic, .contact {
+        width: 100%;
+        padding: 0;
+    }
 
     .initiative p {
         font-size: 14px;
@@ -1693,12 +1992,15 @@ a {
     .advertise div {
         padding: 30px;
     }
-    .bg-in-mobile{
+
+    .bg-in-mobile {
         background: #33658A;
     }
-    .loan-features{
+
+    .loan-features {
         margin-top: -65px;
     }
+
     .home-steps:nth-child(1):after {
         display: none;
     }
