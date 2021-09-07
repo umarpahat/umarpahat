@@ -398,7 +398,7 @@ const HomePage = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="services">
+                <div className="clearfix">
                     <div className="container">
                         <div className="col col-md-12 reg-second-heading ">
                             <h4 className='p-t-40'>Services we offer</h4>
