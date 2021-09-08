@@ -133,16 +133,6 @@ button.button-gray:hover {
     position: relative;
 }
 
-.imgCenter {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    max-width: 50px; /*requires explicit height*/
-}
-
 
 .p-t-10 {
     padding-top: 10px;
@@ -150,18 +140,6 @@ button.button-gray:hover {
 
 .p-t-15 {
     padding-top: 15px;
-}
-
-.content.mb-5 a {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.date {
-    font-size: 12px;
-    text-align: right;
 }
 
 .listing {
@@ -340,9 +318,11 @@ button.button-gray:hover {
     background: rgba(2, 198, 80, 0.3);
 }
 
-.box-align-second:after {
+.box-align:hover::after {
+    cursor: pointer;
     background: #02C650;
 }
+
 
 .team-section {
     padding: 30px;
@@ -1629,6 +1609,114 @@ hr.style {
     min-height: 515px;
 }
 
+.mediaCover {
+    background: #fff;
+    position: relative;
+
+}
+
+.mediaCover .card {
+    border-radius: 0 !important;
+    border: 0;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.mediaCover .card:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(2, 198, 80, 0.3);
+}
+
+.mediaCover .card:hover::after {
+    background: #02C650;
+    cursor: pointer;
+}
+
+.headStripe {
+    background: rgba(2, 198, 80, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.headStripe:hover {
+    background: #02C650
+}
+
+.headStripe img {
+    max-height: 30px;
+}
+
+.mediaCover .card p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+}
+
+.mediaCover:before {
+    content: '';
+    height: 86px;
+    width: 68px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    background: url('images/svg/green-right-line.svg') no-repeat 0 0;
+}
+
+.mediaCover:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 50%;
+    z-index: 0;
+    width: 53px;
+    height: 178px;
+    background: url("images/svg/helf-circle-right.svg") no-repeat 0 0;
+}
+
+
+.mediaCover .card p a {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.mediaCover .card p a:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.mediaCover .card h5 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    color: #000000;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.date {
+    padding-top: 20px;
+    font-size: 12px!important;
+    text-align: right;
+    display: none !important;
+}
+
 .blog {
     font-size: 16px;
     line-height: 172.4%;
@@ -1845,9 +1933,11 @@ a {
     .contactLine {
         display: block !important;
     }
+
     .mailPic {
         padding-right: 42px;
     }
+
     .contact:before {
         margin: auto;
         bottom: 0;
@@ -1855,12 +1945,14 @@ a {
         left: 0;
         top: -210px;
     }
+
     .contactLine:before {
         width: 92%;
         margin: 0 auto;
         right: 0;
         left: 0;
     }
+
     .initiative p {
         font-size: 14px;
         line-height: 26px;
