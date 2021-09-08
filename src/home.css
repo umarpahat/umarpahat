@@ -514,7 +514,32 @@ button.button-gray:hover {
     width: 100%;
     z-index: -2;
 }
+.loan-rent-benefit {
+    padding: 0 0 30px;
+    margin: auto;
+    position: relative;
+}
 
+.loan-rent-benefit:before {
+    content: '';
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: #030B1A;
+    height: 530px;
+    width: 100%;
+    z-index: -2;
+}
+.loan-rent-benefit:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    bottom: 24px;
+    z-index: -3;
+    width: 123px;
+    height: 86px;
+    background: url("images/svg/right-side-line.svg") no-repeat 0 0;
+}
 a.button-blue {
     display: inline-block;
     color: #fff;
@@ -2308,7 +2333,10 @@ a {
     .bg-in-mobile {
         background: #33658A;
     }
-
+    .bg-in-mobile-black {
+        background: #030B1A;
+        padding-bottom: 30px;
+    }
     .loan-features {
         margin-top: -65px;
     }
