@@ -10,8 +10,10 @@ import "../../src/home.css";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 import logo from "../images/logo.png";
-import faqImg from "../images/faqs.png";
+import faqImg from "../images/svg/faqs.svg";
 import MetaTags from "react-meta-tags";
+import mailBox from "../images/svg/mail-box.svg";
+import mediaCover from "../images/svg/media-cover.svg";
 
 const Faq = (props) => {
   let [loader, setloader] = useState(false);
@@ -27,24 +29,29 @@ const Faq = (props) => {
         <meta property="og:title" content="Frequently Asked Questions - PayMeIndia" />
       </MetaTags>
       <div className='content'>
-      <div className="services">
-        <div className="container">
-          <div className="col col-md-12 reg-second-heading">
-            <h1 className='heading1 blue-color'>FAQs</h1>
-            <span className="reg-second-subheading">
-              Here are some frequently asked questions
-            </span>
-          </div>
-          <div className="row p-b-30">
-            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center main-img">
-              <img
-                width="300"
-                alt="About us"
-                src={faqImg}
-              />
+        <div className="banner">
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-sm-12 col-md-6">
+                <h1 className="heading1 blue-color">FAQs</h1>
+                <p className="no-more-text">Here are some frequently asked questions</p>
+              </div>
+              <div className="col-sm-12 col-md-1 ">
+                &nbsp;
+              </div>
+              <div className="col-sm-12 col-md-5 m-t-40">
+                <img className="img-fluid"
+                     alt="Media"
+                     src={faqImg}/>
+              </div>
             </div>
-            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-              <h6 className='p-b-30'>Reach us out for any queries/concerns</h6>
+          </div>
+        </div>
+      <div className="faqSection">
+        <div className="container">
+          <div className="row p-b-30 p-t-80">
+
+            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <Accordion defaultActiveKey="0">
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="0">
@@ -213,19 +220,23 @@ const Faq = (props) => {
           </div>
         </div>
       </div>
-      <div className="services">
-        <div className="container">
-          <div className="row justify-content-md-center">
-            <div className="col col-md-8 text-center p-t-30 p-b-30">
-              <h4 className="heading4">Contact Us</h4>
-              <p>
-                Please contact us at{" "}
-                <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
-              </p>
+        <div className="contactBox p-t-80">
+          <div className="container">
+            <div className="row justify-content-md-center">
+              <div className="col-md-9 text-center p-t-30 p-b-30 d-flex contactLine">
+                <div className='mailPic'>
+                  <img className="img-fluid" src={mailBox} alt="Mail"/>
+                </div>
+                <div className='contact'>
+                  <h4 className="heading4">Contact Us</h4>
+                  <p>Please contact us at<br/>
+                    <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
       <Footer />
     </>

@@ -1010,6 +1010,34 @@ a.button-small:hover {
     color: #33658A;
 }
 
+.faqSection {
+    position: relative;
+}
+
+.faqSection:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
+    z-index: 0;
+    width: 53px;
+    height: 178px;
+    background: url("images/svg/helf-circle-right.svg") no-repeat 0 0;
+}
+
+.faqSection:before {
+    content: '';
+    height: 86px;
+    width: 79px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 20%;
+    z-index: -1;
+    background: url('images/svg/right-up-arrow.svg') no-repeat 0 0;
+}
+
 .boxlink {
     display: none;
 }
@@ -1928,9 +1956,9 @@ a {
 .card-header::after {
     content: "";
     border: solid rgba(0, 0, 0, 0.7);
-    border-width: 0 1px 1px 0;
+    border-width: 0 2px 2px 0;
     display: inline-block;
-    padding: 3px;
+    padding: 4px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     float: right;
@@ -1939,14 +1967,29 @@ a {
 
 .accordion .card {
     border: 0;
+    background: #fff;
+    box-shadow: 0 0 14px rgba(137, 137, 137, 0.25);
+    border-radius: 6px !important;
+    margin-bottom: 30px;
+}
+
+.accordion .card-body {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: -15px;
+    padding-bottom: 25px;
 }
 
 .card-header {
-    padding: 0.5rem 1rem;
+    padding: 20px 1rem;
     margin-bottom: 0;
     background-color: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    border-bottom: none !important;
     font-weight: 500;
+    border-radius: 6px !important;
+    font-size: 20px;
 }
 
 .paragraphText p {
