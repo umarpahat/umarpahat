@@ -957,6 +957,10 @@ a.button-small:hover {
     position: relative;
 }
 
+.nbfc_img img {
+    max-height: 100px;
+}
+
 .product-link h5.heading5 {
     font-weight: 500;
     font-size: 22px;
@@ -967,6 +971,43 @@ a.button-small:hover {
 .product-link p {
     font-size: 16px;
     color: #333;
+}
+
+.partners {
+    position: relative;
+}
+
+.partners:after {
+    content: '';
+    height: 118px;
+    width: 81px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: -5px;
+    top: 100px;
+    z-index: -1;
+    background: url('images/svg/green-line.svg') no-repeat 0 0;
+}
+
+.partners:before {
+    content: '';
+    height: 86px;
+    width: 68px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 30%;
+    z-index: -1;
+    background: url('images/svg/green-right-line.svg') no-repeat 0 0;
+}
+
+.partners .heading4 {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: #33658A;
 }
 
 .boxlink {
@@ -1712,7 +1753,7 @@ hr.style {
 
 .date {
     padding-top: 20px;
-    font-size: 12px!important;
+    font-size: 12px !important;
     text-align: right;
     display: none !important;
 }
@@ -1912,10 +1953,6 @@ a {
     margin-bottom: 10px !important;
 }
 
-.nbfcWidth {
-    width: 470px;
-}
-
 .maxLimitWidth {
     max-width: 500px;
 }
@@ -1960,10 +1997,6 @@ a {
 
     .maxLimitWidth {
         max-width: 300px;
-    }
-
-    .nbfcWidth {
-        width: 100%;
     }
 
     .heading1 {
@@ -2087,20 +2120,6 @@ a {
 
     #menuToggle span {
         width: 24px;
-    }
-
-    .box-shadow {
-        width: 100%;
-    }
-
-    .nbfc {
-        margin-top: 10px;
-        padding-bottom: 15px;
-    }
-
-    .box-shadow img {
-        width: 230px;
-        max-height: 80px;
     }
 
     .steps {
