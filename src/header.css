@@ -215,35 +215,12 @@ button.button-gray:hover {
     position: relative;
 }
 
-.imgCenter {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    max-width: 50px; /*requires explicit height*/
-}
-
-
 .p-t-10 {
     padding-top: 10px;
 }
 
 .p-t-15 {
     padding-top: 15px;
-}
-
-.content.mb-5 a {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.date {
-    font-size: 12px;
-    text-align: right;
 }
 
 .listing {

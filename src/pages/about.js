@@ -140,7 +140,7 @@ const About = (props) => {
                                     </div>
                                     <div className="col-lg-4 col-md-4 col-sm-12">
                                         <div
-                                            className="box-align box-align-second justify-content-md-center text-center">
+                                            className="box-align justify-content-md-center text-center">
                                             <div className='img-box d-flex align-items-center justify-content-center'>
                                                 <img src={goldStarIcon} alt='Star' className="img-fluid"/>
                                                 <img src={goldStarIcon} alt='Star' className="img-fluid"/>
