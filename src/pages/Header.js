@@ -37,7 +37,7 @@ const Header = (props) => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className="button" to="/pay-rent">
+                                        <Link className="button" to="/pay-rent-details">
                                             Pay Rent
                                         </Link>
                                     </li>

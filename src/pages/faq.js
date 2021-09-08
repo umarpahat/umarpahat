@@ -47,7 +47,7 @@ const Faq = (props) => {
             </div>
           </div>
         </div>
-      <div className="faqSection">
+        <div className="faqSection">
         <div className="container">
           <div className="row p-b-30 p-t-80">
 
