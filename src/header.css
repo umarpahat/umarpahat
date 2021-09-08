@@ -515,9 +515,6 @@ a {
         max-width: 300px;
     }
 
-    .nbfcWidth {
-        width: 100%;
-    }
 
 
     .textAlign {
@@ -627,19 +624,6 @@ a {
         width: 24px;
     }
 
-    .box-shadow {
-        width: 100%;
-    }
-
-    .nbfc {
-        margin-top: 10px;
-        padding-bottom: 15px;
-    }
-
-    .box-shadow img {
-        width: 230px;
-        max-height: 80px;
-    }
 
 }
 
