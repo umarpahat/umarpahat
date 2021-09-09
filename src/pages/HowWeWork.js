@@ -8,16 +8,16 @@ import Footer from "./Footer";
 import Header from "./Header";
 import "../../src/home.css";
 import {Link} from "react-router-dom";
-import $ from "jquery";
-import logo from "../images/logo.png";
-import vision from "../images/vision.png";
-import team from "../images/team.jpg";
-import apply from "../images/advisory.png";
-import thumbnail from "../images/aproved.png";
-import heart from "../images/corporate.png";
-import people from "../images/instant-cash.png";
-import howWeWork from "../images/dashboard.png";
+import career from "../images/svg/career.svg";
+import craftsmanship from "../images/svg/craftman.svg";
+import workspace from "../images/svg/workspace.svg";
+import awesomness from "../images/svg/awsomework.svg";
+import happyWork from "../images/svg/happy-work.svg";
+import tea from "../images/svg/tea.svg";
 import MetaTags from "react-meta-tags";
+import thumbnail from "../images/svg/thumb.svg";
+import goldStarIcon from "../images/svg/star.svg";
+import people from "../images/svg/will-stand.svg";
 
 const HowWeWork = (props) => {
     let [loader, setloader] = useState(false);
@@ -30,119 +30,210 @@ const HowWeWork = (props) => {
                 <meta name="description" content="PayMeIndia offers a unique money lending program to the salaried
 			employees. We take care of your urgent cash needs in just 4 easy steps. Apply online and your
 			loans will get approved in an instant. Visit us now and get quick and fast solution for your
-			financial crunch!" />
-                <meta property="og:title" content="How We Works - PayMeIndia" />
+			financial crunch!"/>
+                <meta property="og:title" content="How We Works - PayMeIndia"/>
             </MetaTags>
             <div className='content'>
-                <div className="services">
+                <div className="banner">
                     <div className="container">
-                        <div className="col col-md-12 reg-second-heading">
-                            <h1 className='heading1 blue-color'>How it works?</h1>
-                        </div>
-                        <div className="row align-items-center p-b-30">
-                            <div className="col-lg-6 col-md-6 col-sm-8 col-xs-8 text-center main-img">
-                                <img
-                                    className="img-fluid"
-                                    width="200"
-                                    alt="How We Work"
-                                    src={howWeWork}
-                                />
+                        <div className="row align-items-center">
+                            <div className="col-sm-12 col-md-5">
+                                <h1 className="heading1">Explore Career Opportunity</h1>
+                                <p className="no-more-text">Ea doloremque dolores id. Omnis iste itaque voluptas. Esse
+                                    aperiam non minus. Enim id velit deserunt hic veniam quia dolorem repellendus
+                                    ducimus. Perferendis molestias error dolores qui veniam molestias voluptas. Maiores
+                                    fuga aut.</p>
+                                <br/>
+                                <br/>
+                                <Link className="btnLarge" onClick={() => {
+                                    props.hitAppUseCase({useCase: 'apply-loan'})
+                                    props.history.push({pathname: '/apply-loan'})
+                                }}>
+                                    Explore openings
+                                </Link>
                             </div>
-                            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 textAlign">
-                                <h4>Apply for loan</h4>
-                                <ul className='listing p-t-10'>
-                                <li>
-                                    <strong>Registration & login: </strong>
-                                    Do easy registration with your email id & mobile number to get instant approval of your loan amount.
-                                </li> <li>
-                                <strong> Swiftly upload your document: </strong>
-                                    Simply, upload your document via app/web for credit assessment and instant loan disbursement.
-                            </li> <li>
-                                <strong>Check eligibility:  </strong>
-                                    Easily check eligibility by uploading the documents. Once it is verified the credit limit would automatically be assigned to you.
-                            </li> <li>
-                                <strong>Loan Application: </strong>
-                                    Once you get your credit limit, apply the loan of desired amount within minutes.
-                            </li> <li>
-                                <strong>Instant Disbursal: </strong>
-                                    You are done! Get an instant disbursal directly in your bank account.
-                            </li> <li>
-                                <strong>Easy Repayment: </strong>
-                                    PayMe India endows you with easy repayment by offering different payment modes.
-                            </li>
-                                </ul>
+                            <div className="col-sm-12 col-md-2 ">
+                                &nbsp;
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="services">
-                    <div className="container p-b-30 p-t-40">
-                        <div className="row align-items-center pb-3">
-                            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 textAlign">
-                                <h3 className="heading3">Easy Steps to Follow</h3>
-                                <p>
-                                    Your urgent cash needs will be funded by following easy steps while registering through our application.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="row p-t-40 p-b-30">
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                                <div className="box justify-content-md-center">
-                                    <div className="icon-left">
-                                        <img className="img-fluid" src={apply} alt="PayMe India"/>
-                                    </div>
-                                    <div className="icon-left-content">
-                                        <h3>Apply</h3>
-                                        <p>online now</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                                <div className="box justify-content-md-center">
-                                    <div className="icon-left">
-                                        <img className="img-fluid" src={thumbnail} alt="PayMe India"/>
-                                    </div>
-                                    <div className="icon-left-content">
-                                        <h3>Approved</h3>
-                                        <p>instantly</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                                <div className="box justify-content-md-center">
-                                    <div className="icon-left">
-                                        <img className="img-fluid" src={heart} alt="PayMe India"/>
-                                    </div>
-                                    <h3>Funded</h3>
-                                    <p>today or overnight</p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                                <div className="box justify-content-md-center">
-                                    <div className="icon-left">
-                                        <img className="img-fluid" src={people} alt="PayMe India"/>
-                                    </div>
-                                    <h3>Repay</h3>
-                                    <p>on next pay period</p>
-                                </div>
+                            <div className="col-sm-12 col-md-5 m-t-40">
+                                <img className="img-fluid scoreAnimate"
+                                     alt="Career "
+                                     src={career}/>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="services">
-                    <div className="container">
-                        <div className="row justify-content-md-center">
-                            <div className="col col-md-8 text-center p-t-30 p-b-30">
-                                <h4 className="heading4">Contact Us</h4>
-                                <p>
-                                    Please contact us at{" "}
-                                    <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
-                                </p>
+                -------------------
+                <div className="carousel p-b-30">
+                    <div className="container p-b-30">
+                        <div className="row align-items-center pb-3">
+                            <div className="col-sm-12 col-md-6 p-t-40"><img className="img-fluid"
+                                                                            alt="Craftsmanship"
+                                                                            src={craftsmanship}/></div>
+                            <div className="col-sm-12 col-md-1 ">
+                                &nbsp;
+                            </div>
+                            <div className="col-sm-12 col-md-5">
+                                <h3 className="heading3 relative">Craftsmanship
+                                </h3>
+                                <p className="heading6">Whether it’s our in-house coffee, onboarding service, or sales
+                                    experience—we strive to be world-class in everything we do. “Am I proud to put my
+                                    name on my work?” is the mantra we live by.</p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div className="banner p-b-30">
+                    <div className="container p-b-30">
+                        <div className="row align-items-center">
+                            <div className="col-sm-12 col-md-5">
+                                <h1 className="heading1 relative">Happy “Work”
+                                    Environment</h1>
+                                <p className="no-more-text">We choose career paths that play to our strengths and
+                                    operate as one collaborative unit with diverse perspectives and backgrounds. The
+                                    work we do here doesn’t just pay the bills; it makes us happy.</p>
+
+                            </div>
+                            <div className="col-sm-12 col-md-2 ">
+                                &nbsp;
+                            </div>
+                            <div className="col-sm-12 col-md-5 m-t-40">
+                                <img className="img-fluid"
+                                     alt="Matual Fund"
+                                     src={happyWork}/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="carousel p-b-30">
+                    <div className="container p-b-30">
+                        <div className="row align-items-center pb-3">
+                            <div className="col-sm-12 col-md-6 p-t-40"><img className="img-fluid"
+                                                                            alt="Pay Rent using Payme app"
+                                                                            src={workspace}/></div>
+                            <div className="col-sm-12 col-md-1 ">
+                                &nbsp;
+                            </div>
+                            <div className="col-sm-12 col-md-5">
+                                <h3 className="heading3 relative">Friendly Workspace
+                                </h3>
+                                <p className="heading6">Whether it’s our in-house coffee, onboarding service, or sales
+                                    experience—we strive to be world-class in everything we do. “Am I proud to put my
+                                    name on my work?” is the mantra we live by.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                ------------------
+                <div className="perks-we-offer">
+                    <div className="container">
+                        <div className="row p-t-20 ">
+                            <div className="col-lg-12 col-md-12 col-sm-12 text-center p-t-30">
+                                <h3 className="heading3 relative">Perks we Offer</h3>
+                            </div>
+                        </div>
+                        <div className="row justify-content-md-center p-b-30">
+                            <div className="col-lg-12 col-md-12 col-sm-12">
+                                <div className="row justify-content-md-center boxes" style={{marginTop: 30}}>
+                                    <div className="col-lg-4 col-md-4 col-sm-12">
+                                        <div className="box-offer justify-content-md-center text-center">
+                                            <div className='img-box d-flex align-items-center justify-content-center'>
+                                                <img className="img-fluid" src={tea} alt="PayMe India"/>
+                                            </div>
+                                            <h3>Coffee and Snacks</h3>
+                                            <p>Repellendus qui nisi rem. Tempora eum vel ut aspernatur repellat est et. Quia dicta at ut consequatur dolorum omnis. </p>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-4 col-md-4 col-sm-12">
+                                        <div
+                                            className="box-offer justify-content-md-center text-center">
+                                            <div className='img-box d-flex align-items-center justify-content-center'>
+                                                <img src={goldStarIcon} alt='Star' className="img-fluid"/>
+                                                <img src={goldStarIcon} alt='Star' className="img-fluid"/>
+                                                <img src={goldStarIcon} alt='Star' className="img-fluid"/>
+                                                <img src={goldStarIcon} alt='Star' className="img-fluid"/>
+                                                <img src={goldStarIcon} alt='Star' className="img-fluid"/>
+                                            </div>
+                                            <h3>Remote works</h3>
+                                            <p>Repellendus qui nisi rem. Tempora eum vel ut aspernatur repellat est et. Quia dicta at ut consequatur dolorum omnis.</p>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-4 col-md-4 col-sm-12">
+                                        <div className="box-offer justify-content-md-center text-center">
+                                            <div className='img-box d-flex align-items-center justify-content-center'>
+                                                <img className="img-fluid" src={people} alt="PayMe India"/>
+                                            </div>
+                                            <h3>Flexible Timeline</h3>
+                                            <p>Repellendus qui nisi rem. Tempora eum vel ut aspernatur repellat est et. Quia dicta at ut consequatur dolorum omnis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row justify-content-md-center boxes" style={{marginTop: 30}}>
+                                    <div className="col-lg-4 col-md-4 col-sm-12">
+                                        <div className="box-offer justify-content-md-center text-center">
+                                            <div className='img-box d-flex align-items-center justify-content-center'>
+                                                <img className="img-fluid" src={thumbnail} alt="PayMe India"/>
+                                            </div>
+                                            <h3>Travel allowance</h3>
+                                            <p>Repellendus qui nisi rem. Tempora eum vel ut aspernatur repellat est et. Quia dicta at ut consequatur dolorum omnis.  </p>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-4 col-md-4 col-sm-12">
+                                        <div
+                                            className="box-offer justify-content-md-center text-center">
+                                            <div className='img-box d-flex align-items-center justify-content-center'>
+                                                <img src={goldStarIcon} alt='Star' className="img-fluid"/>
+                                                <img src={goldStarIcon} alt='Star' className="img-fluid"/>
+                                                <img src={goldStarIcon} alt='Star' className="img-fluid"/>
+                                                <img src={goldStarIcon} alt='Star' className="img-fluid"/>
+                                                <img src={goldStarIcon} alt='Star' className="img-fluid"/>
+                                            </div>
+                                            <h3>Health allowance</h3>
+                                            <p>Repellendus qui nisi rem. Tempora eum vel ut aspernatur repellat est et. Quia dicta at ut consequatur dolorum omnis.</p>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-4 col-md-4 col-sm-12">
+                                        <div className="box-offer justify-content-md-center text-center">
+                                            <div className='img-box d-flex align-items-center justify-content-center'>
+                                                <img className="img-fluid" src={people} alt="PayMe India"/>
+                                            </div>
+                                            <h3>Cool Environment</h3>
+                                            <p>Repellendus qui nisi rem. Tempora eum vel ut aspernatur repellat est et. Quia dicta at ut consequatur dolorum omnis.
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="banner" style={{paddingBottom: 0}}>
+                    <div className="container">
+                        <div className="row align-items-center">
+
+
+                            <div className="col-sm-12 col-md-6 m-t-40">
+                                <img className="img-fluid "
+                                     alt="Career "
+                                     src={awesomness}/>
+                            </div>
+                            <div className="col-sm-12 col-md-6">
+                                <h2 className="heading2">Keep the awesomness in your work</h2>
+                                <br/>
+                                <Link className="btnLarge" onClick={() => {
+                                    props.hitAppUseCase({useCase: 'apply-loan'})
+                                    props.history.push({pathname: '/apply-loan'})
+                                }}>
+                                    Apply Now
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
             <Footer/>
         </>
