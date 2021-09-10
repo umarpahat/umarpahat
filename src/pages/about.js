@@ -58,21 +58,8 @@ const About = (props) => {
                                 </h3>
                             </div>
                             <div className="col-lg-8 col-md-8 col-sm-8 textAlign">
-                                <p className='p-t-10'>
-                                    PayMe India was founded in 2016, with an aim to eliminate the barrier of getting
-                                    financial help by enabling frictionless transactions & revolutionizing the way
-                                    people take loans. We are striving to endow advanced salary loans to bourgeois or
-                                    any salaried employee who faces financial constraints.
-                                </p>
-                                <p className='p-t-30'>PayMe India is an RBI registered NBFC company striving to simplify
-                                    financial services by providing <strong>online loans</strong> to corporate employees
-                                    at the lowest interest rate. Our lending model empowers customers to borrow easy,
-                                    fast, safe & affordable <strong>personal loans</strong>. With a commitment to drive
-                                    credit penetration & financial inclusion. We are collaborating technology, money,
-                                    design & data in the form of App, to lend money online in a time of need, by being
-                                    your financial backup. We have a team of 100 passionate members who strive to endow
-                                    you with a platform where you can get easy & hassle-free personal loans.
-                                </p>
+                                <p className='p-t-10'>PayMe India is an innovative fin-tech company, founded in 2016, with an aim to eliminate the barrier of getting financial help by enabling frictionless transactions & revolutionizing the way people take loans. We are striving to provide advanced salary loans to bourgeois or any salaried employee who faces financial constraints.</p>
+                                <p className='p-t-30'>PayMe India is an RBI registered NBFC company striving to simplify financial services by providing online instant loans to corporate employees at the lowest interest rate. Our lending model empowers customers to borrow easy, fast, safe & affordable personal loans. With a commitment to drive credit penetration & financial inclusion. We are collaborating technology, money, design & data in the form of App, to lend money online in a time of need, by being your financial backup. PayMe India works towards creating a company culture that encourages a healthy work-life. We have a team of 150 passionate members who strive to enrich you with a platform where you can get easy & hassle-free instant personal loans.</p>
                             </div>
                         </div>
                     </div>
@@ -82,20 +69,8 @@ const About = (props) => {
                         <div className="row align-items-center pb-3">
                             <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 textAlign">
                                 <h4 className="heading4 blue-color">Our Mission and Vision</h4>
-                                <p className='p-t-10'>
-                                    PayMe India wants to accelerate the digital transformation of the financial industry
-                                    by providing loans from Rs500 to Rs 2,00,000. Our vision is to be the leader of a
-                                    fintech hub by utilizing the latest financial technologies to future-proof PayMe
-                                    India pillars to develop a vibrant platform to facilitate acceleration in lending
-                                    loans.
-                                </p>
-                                <p className='p-t-30'>Our Mission is to bring effectiveness, efficiency, & excellence to
-                                    our lending process by outperforming ourselves every day by leveraging our customers
-                                    with a unique platform where they can get <strong>quick loans</strong>. And our
-                                    unique platform helps our users in their financial journey by being present in every
-                                    aspect of their life with our best-in-class service. We promise to ensure you
-                                    complete privacy & customer safety through our modern infrastructure & secure online
-                                    system.</p>
+                                <p className='p-t-10'>PayMe India wants to accelerate the digital transformation of the financial industry by providing loans from Rs500 to Rs 2,00,000. Our vision is to be the leader of a fintech hub by utilizing the latest financial technologies to build future-proof PayMe India pillars, carving a vibrant platform to facilitate acceleration in lending instant loans.</p>
+                                <p className='p-t-30'>Our Mission is to bring effectiveness, efficiency, & excellence to our lending process by outperforming ourselves every day by leveraging our customers with a unique platform where they can get quick loans. And our unique platform helps our users in their financial journey by being present in every aspect of their life with our best-in-class service. We promise to ensure you complete privacy & customer safety through our modern infrastructure & secure online system.</p>
                             </div>
                             <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 imgLarge textAlign">
                                 <img className="img-fluid" alt="CIBIL" src={vision}/>
@@ -108,14 +83,7 @@ const About = (props) => {
                         <div className="row justify-content-md-center">
                             <div className="col-sm-12 col-md-9 white-color text-center p-t-40 p-b-30">
                                 <h4 className='heading4'>Our Promise</h4>
-                                <p className='p-b-30  p-t-30 white-color relative'>PayMe India promises to stay with
-                                    you in every step by offering you a truly modern solution for a personal loan.
-                                    Without lengthy paperwork with instant processing time, attractive interest rate &
-                                    without prepayment charges. The only thing we ask in return is your trust, & believe
-                                    us your trust in our service is our biggest asset. Don't believe in words 1st try &
-                                    then trust. So next time when you are facing a financial crunch either in rent
-                                    payment, utility bills, or looking for an impromptu vacation or season sale, PayMe
-                                    India is there for you in every step as your financial backup.</p>
+                                <p className='p-b-30  p-t-30 white-color relative'>PayMe India promises to stay with you in every step by offering you a truly modern solution for an instant personal loan. With the paperless fully digitalized process, with instant processing time, attractive interest rate, and without repayment charges. The only thing we ask in return is your trust, & believe us your trust in our service is our biggest asset. Don't believe in words 1st try & then trust. So next time when you are facing a financial crunch either in rent payment, utility bills, or looking for an impromptu vacation or season sale, PayMe India is there for you in every step as your financial backup.</p>
                                 <br/>
                                 <br/>
                                 <br/>
@@ -135,7 +103,7 @@ const About = (props) => {
                                                 <img className="img-fluid" src={thumbnail} alt="PayMe India"/>
                                             </div>
                                             <h3>Will never say no</h3>
-                                            <p>Fast hassle free instant loan disbursal</p>
+                                            <p>Fast hassle-free instant loan disbursal.</p>
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-4 col-sm-12">
@@ -148,8 +116,8 @@ const About = (props) => {
                                                 <img src={goldStarIcon} alt='Star' className="img-fluid"/>
                                                 <img src={goldStarIcon} alt='Star' className="img-fluid"/>
                                             </div>
-                                            <h3>Will always trust </h3>
-                                            <p>Reliable and secured lending process</p>
+                                            <h3>Will always trust</h3>
+                                            <p>Reliable and secured lending process.</p>
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-4 col-sm-12">
@@ -158,7 +126,7 @@ const About = (props) => {
                                                 <img className="img-fluid" src={people} alt="PayMe India"/>
                                             </div>
                                             <h3>Will stand by you</h3>
-                                            <p>We are here to assist you, Always!</p>
+                                            <p>We are available to assist you, Always!.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -172,12 +140,7 @@ const About = (props) => {
                         <div className="row justify-content-md-center">
                             <div className="col col-md-8 text-center p-t-40">
                                 <h4 className="heading4 blue-color">Our Team</h4>
-                                <p className='p-t-10'>
-                                    Team PayMe India is a set of customer oriented people who find
-                                    their passion in helping out users to get over their financial
-                                    crunches. Team strives to provide the best experience to our
-                                    customers with their loan disbursal process.
-                                </p>
+                                <p className='p-t-10'>Team PayMe India is a set of customer-oriented personalities, who find their passion in helping out users to get over their financial crunches. Our team of hard-working people strives to provide the best experience to our customers with their loan disbursal process.</p>
                             </div>
                         </div>
                         <div className="row justify-content-md-center p-t-40 text-center p-b-30">

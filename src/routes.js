@@ -14,7 +14,7 @@ import refund from "./pages/refund"
 import policy from "./pages/policy"
 import terms from "./pages/terms"
 import OurNbfcPartners from "./pages/OurNbfcPartners"
-import HowWeWork from "./pages/HowWeWork"
+import Career from "./pages/Career"
 import NotFoundPage from "./pages/NotFoundPage"
 import Sitemap from "./pages/Sitemap"
 import MediaCoverage from "./pages/MediaCoverage"
@@ -66,7 +66,7 @@ function Routes() {
         <Route exact path="/policy" component={policy} />
         <Route exact path="/terms" component={terms} />
         <Route exact path="/ourNbfcPartners" component={OurNbfcPartners} />
-        <Route exact path="/how-we-work" component={HowWeWork} />
+        <Route exact path="/career" component={Career} />
         <Route exact path="/media-coverage" component={MediaCoverage} />
         <Route exact path="/social-initiative" component={SocialInitiative} />
         <Route exact path="/pay-rent-details" component={PayRent} />

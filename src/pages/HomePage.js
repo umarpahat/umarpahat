@@ -15,7 +15,7 @@ import blogPic from "../images/svg/blog-pic.svg";
 import aprovedImg from "../images/svg/swift-transfer.svg";
 import advisoryImg from "../images/svg/advisory-loan.svg";
 import shortImg from "../images/svg/short-loan.svg";
-import corporateImg from "../images/svg/corpaorate-loan.svg";
+import corporateImg from "../images/svg/corporate-loan.svg";
 import goldStarIcon from "../images/svg/star.svg";
 import userIcon from "../images/svg/user-icon.svg";
 import register from "../images/svg/signup-icon.svg";
@@ -190,16 +190,15 @@ const HomePage = (props) => {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-6">
-                                <h1 className="heading1">Get Instant Loan Apprval, and personal loan upto 2L</h1>
-                                <p className="no-more-text">No more financial crunch. PayMe India gives you the amount
-                                    of loan you require, anytime-anywhere</p>
+                                <h1 className="heading1">Get Instant Loan Approval</h1>
+                                <p className="no-more-text">Avail personal loan upto 2 lakhs with PayMe India. Get instant Loans anytime-anywhere</p>
                                 <br/>
                                 <br/>
                                 <Link className="btnLarge" onClick={() => {
                                     props.hitAppUseCase({useCase: 'apply-loan'})
                                     props.history.push({pathname: '/apply-loan'})
                                 }}>
-                                    Apply Loan
+                                    Apply now
                                 </Link>
                             </div>
                             <div className="col-sm-12 col-md-1 ">
@@ -295,6 +294,11 @@ const HomePage = (props) => {
                 <div className="carousel">
                     <div className="container">
                         <div className="row align-items-center pb-3">
+                            <div className="col col-md-12 reg-second-heading">
+                                <h4>Check Your Cibil Score Online </h4>
+                            </div>
+                        </div>
+                        <div className="row align-items-center pb-3">
                             <div className="col-sm-12 col-md-6 p-t-40"><img className="img-fluid scoreAnimate"
                                                                             alt="CIBIL"
                                                                             src={scoreAnimation}/></div>
@@ -302,14 +306,10 @@ const HomePage = (props) => {
                                 &nbsp;
                             </div>
                             <div className="col-sm-12 col-md-5">
-                                <h3 className="heading3 relative"><span className='circle-small'></span> CIBIL Score &
-                                    Report</h3>
+                                <h3 className="heading3 relative"><span className='circle-small'></span> Get CIBIL Report worth Rs 1500</h3>
                                 <h3 className="heading3"><span
-                                    className="blue-color">ABSOLUTELY FREE </span>
-                                </h3> <p className="heading6">
-                                Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt aliquam. Totam
-                                quae eos et aut rerum maxime. Provident id non.
-                            </p>
+                                    className="blue-color">Absolutely Free! </span>
+                                </h3> <p className="heading6">A credit score is more than just a number. Know your Cibil score completely free with PayMe India.</p>
                                 <a href='https://creditscore.paymeindia.in' target='_blank'
                                    className="btnLarge m-t-40">Get App Now</a>
                             </div>
@@ -328,12 +328,8 @@ const HomePage = (props) => {
                                                                          alt="App Icon"/></div>
                             </div>
                             <div className="col-sm-12 col-md-6 bg-in-mobile">
-                                <p className='p-b-30 white-color relative'>
-                                    <span className='font110'>“</span>PayMe India is here to endow you with an extensive
-                                    range of benefits. Whether it's last-minute rent payment, utility bills or an
-                                    impromptu vacation, or even flash sale online, PayMe India has a loan for all
-                                    processes. Let’s get a quick sneak peek of the benefits you'll experience on your
-                                    financial journey with PayMe India. <span className='font110 transform'>“</span></p>
+                                <p className='p-b-30  relative'>
+                                    <a className='white-color' href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia' target='_blank'> <span className='font110'>“</span>PayMe India is a one-stop answer for your financial crunches, Benefit yourself with an in-depth range of benefits. Whether it’s shopping, planning a vacation, paying rents, or any other money requirement to satisfy your needs. PayMe India features a loan for all processes. Experience a smooth financial journey with PayMe India.<span className='font110 transform'>“</span></a></p>
                                 <br/>
                                 <br/>
                                 <br/>
@@ -360,8 +356,7 @@ const HomePage = (props) => {
                                                 </div>
                                                 <div>
                                                     <h4>Easy Login</h4>
-                                                    <p>Walk a mile in few steps with unique mobile app based login
-                                                        process.</p>
+                                                    <p>Walk a mile in a few steps with a unique mobile app-based login process.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -386,8 +381,8 @@ const HomePage = (props) => {
                                                 <div>
                                                     <img src={aprovedImg} alt="Swift Approval"/>
                                                 </div>
-                                                <div><h4>Swift Approval</h4>
-                                                    <p>You will never be in queue again.</p>
+                                                <div><h4>Swift approval</h4>
+                                                    <p>Get prompt loan approval and money in your account</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -399,7 +394,7 @@ const HomePage = (props) => {
                                                     <img src={InstantCash} alt="Instant Cash"/>
                                                 </div>
                                                 <div><h4>Instant Cash</h4>
-                                                    <p>Don't let your dreams and needs wait for cash.</p>
+                                                    <p>Don't let your dreams and wishes await cash.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -420,17 +415,16 @@ const HomePage = (props) => {
                                     <Link to='/' className="product-link"> <img
                                         alt="CIBIL Short"
                                         src={shortImg}/>
-                                        <h5 className="heading5">Short Term Loans</h5>
-                                        <p> A loan provided to a salaried individual for 2 - 24 months.</p>
+                                        <h5 className="heading5">Short term loans</h5>
+                                        <p>For instant money needs, get a loan at attractive interest rates.</p>
                                     </Link>
                                 </div>
                                 <div className="col-sm-12 col-md-4">
                                     <Link to='/' id="link1" className="product-link product-link1"> <img
                                         alt="CIBIL Corporate"
                                         src={corporateImg}/>
-                                        <h5 className="heading5">Corporate Loans</h5>
-                                        <p>When the existing businesses or industrial houses need to generate
-                                            funds.</p>
+                                        <h5 className="heading5">Corporate loans</h5>
+                                        <p>Achieve new milestones in your existing business.</p>
                                     </Link>
                                 </div>
                                 <div className="col-sm-12 col-md-4">
@@ -438,8 +432,7 @@ const HomePage = (props) => {
                                         alt="CIBIL Advisory"
                                         src={advisoryImg}/>
                                         <h5 className="heading5">Loan Advisory</h5>
-                                        <p>Business Lending for Independent Advisors - Get expert guidance on
-                                            Conventional.</p>
+                                        <p>Business lending for an independent advisory- Get expert advice on your financial needs.</p>
                                     </Link>
                                 </div>
                             </div>
@@ -545,7 +538,7 @@ const HomePage = (props) => {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col col-md-12 reg-second-heading">
-                                <h4>How to Get started</h4>
+                                <h4>How to get started</h4>
                             </div>
                             <div className="steps">
                                 <div className="home-steps relative">
@@ -554,7 +547,7 @@ const HomePage = (props) => {
                                     </div>
                                     <div className="home-steps-in">
                                         <h5 className="steps-heading">Create an account</h5>
-                                        <p>Sign up to the app</p>
+                                        <p>Sign up to the App. Fill in the basic details.</p>
                                     </div>
                                 </div>
                                 <div className="home-steps relative">
@@ -564,7 +557,7 @@ const HomePage = (props) => {
                                     </div>
                                     <div className="home-steps-in">
                                         <h5 className="steps-heading">Get your KYC done</h5>
-                                        <p>Provide your Aadhaar and PAN details</p>
+                                        <p>Upload your Aadhaar and Pan details for an instant loan.</p>
                                     </div>
                                 </div>
 
@@ -574,7 +567,7 @@ const HomePage = (props) => {
                                     </div>
                                     <div className="home-steps-in">
                                         <h5 className="steps-heading">Provide Bank details</h5>
-                                        <p>Bank account details & bank statement</p>
+                                        <p>Provide Bank account details and bank statement to facilitate the disbursement.</p>
                                     </div>
                                 </div>
 
@@ -584,7 +577,7 @@ const HomePage = (props) => {
                                              alt="Get boost limit & benefits"/></div>
                                     <div className="home-steps-in">
                                         <h5 className="steps-heading">Get boost limit & benefits</h5>
-                                        <p>Provide your salary slip and form 16</p>
+                                        <p>Provide your Salary slip and get a boost limit.</p>
                                     </div>
                                 </div>
                             </div>

@@ -298,6 +298,35 @@ button.button-gray:hover {
     background: url('images/svg/left-shape.svg') no-repeat 0 0;
 }
 
+.box-offer {
+    background: #fff;
+    min-height: 350px;
+    padding: 30px 20px;
+    position: relative;
+    box-shadow: 0 3px 24px rgba(192, 192, 192, 0.25);
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.box-offer h3 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #000;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.box-offer .img-box {
+    min-height: 90px;
+}
+
+
 .box-align {
     background: #fff;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.21);
@@ -487,6 +516,41 @@ button.button-gray:hover {
     background: #FAFAFA;
 }
 
+.perks-we-offer {
+    padding: 0 0 30px;
+    margin: auto;
+    font-size: 16px;
+    position: relative;
+    background: rgba(51, 101, 138, 0.2);
+}
+
+.search_icon {
+    width: 90%;
+    border: 1px solid #E6E6E6;
+    box-sizing: border-box;
+    border-radius: 6px;
+    height: 55px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height:30px;
+    padding: 20px 20px 20px 60px;
+    letter-spacing: 0.02em;
+    color: #000000;
+    background: #fff url("images/svg/search.svg") no-repeat 20px center;
+}
+
+.search_icon:focus, .search_icon:active, .search_icon:hover {
+    outline: none;
+}
+
+.discover {
+    padding: 0 0 30px;
+    margin: auto;
+    font-size: 16px;
+    position: relative;
+    background: rgba(2, 198, 80, 0.1);
+}
+
 .img-box {
     min-height: 70px;
     vertical-align: middle;
@@ -514,6 +578,7 @@ button.button-gray:hover {
     width: 100%;
     z-index: -2;
 }
+
 .loan-rent-benefit {
     padding: 0 0 30px;
     margin: auto;
@@ -530,6 +595,7 @@ button.button-gray:hover {
     width: 100%;
     z-index: -2;
 }
+
 .loan-rent-benefit:after {
     content: '';
     position: absolute;
@@ -540,6 +606,7 @@ button.button-gray:hover {
     height: 86px;
     background: url("images/svg/right-side-line.svg") no-repeat 0 0;
 }
+
 a.button-blue {
     display: inline-block;
     color: #fff;
@@ -833,7 +900,7 @@ a.button-small:hover {
     z-index: 0;
     width: 53px;
     height: 178px;
-    background: url("images/svg/helf-circle-right.svg") no-repeat 0 0;
+    background: url("images/svg/half-circle-right.svg") no-repeat 0 0;
 }
 
 .mission {
@@ -1052,7 +1119,7 @@ a.button-small:hover {
     z-index: 0;
     width: 53px;
     height: 178px;
-    background: url("images/svg/helf-circle-right.svg") no-repeat 0 0;
+    background: url("images/svg/half-circle-right.svg") no-repeat 0 0;
 }
 
 .faqSection:before {
@@ -1097,7 +1164,7 @@ a.button-small:hover {
     z-index: 0;
     width: 53px;
     height: 178px;
-    background: url("images/svg/helf-circle-right.svg") no-repeat 0 0;
+    background: url("images/svg/half-circle-right.svg") no-repeat 0 0;
 }
 
 .payRentSection:before {
@@ -1830,7 +1897,7 @@ hr.style {
     z-index: 0;
     width: 53px;
     height: 178px;
-    background: url("images/svg/helf-circle-right.svg") no-repeat 0 0;
+    background: url("images/svg/half-circle-right.svg") no-repeat 0 0;
 }
 
 
@@ -1969,7 +2036,7 @@ hr.style {
 
 .green-btn {
     background: #02C650;
-    border-radius: 20px;
+    border-radius: 25px;
     color: #fff;
     display: inline-block;
     height: 49px;
@@ -2333,10 +2400,12 @@ a {
     .bg-in-mobile {
         background: #33658A;
     }
+
     .bg-in-mobile-black {
         background: #030B1A;
         padding-bottom: 30px;
     }
+
     .loan-features {
         margin-top: -65px;
     }
