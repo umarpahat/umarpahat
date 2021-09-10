@@ -19,7 +19,7 @@ const Offerings = (props) => {
 
     return (
         <>
-            <Header {...props} />
+            <Header {...props} active="offer"/>
             <MetaTags>
             <title>Corporate - Instant Loans for Corporate - PayMeIndia</title>
             <meta name="description" content="PayMeIndia offers an exclusive lending programme for the corporate
