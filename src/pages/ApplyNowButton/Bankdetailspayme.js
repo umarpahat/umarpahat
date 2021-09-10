@@ -187,7 +187,7 @@ console.log(errbackend)
   const content = bankStatementObj.map((value, index) => (
     <div className="d-flex pt-4" key={index.toString()}>
       <div>
-        <img src={Pdficon} alt="pdf-icon" />
+        <img src={Pdficon} alt="pdf-icon"  />
       </div>
       <div className="ml-3 w-100">
         <div className="d-flex justify-content-between">

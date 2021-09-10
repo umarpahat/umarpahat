@@ -16,6 +16,7 @@ import thumbnail from "../images/thumbup.png";
 import heart from "../images/heart.png";
 import people from "../images/people.png";
 import about from "../images/about-us.png";
+import MetaTags from "react-meta-tags";
 
 const Disclaimer = (props) => {
   let [loader, setloader] = useState(false);
@@ -23,12 +24,19 @@ const Disclaimer = (props) => {
   return (
     <>
       <Header {...props} />
+      <MetaTags>
+        <title>Disclaimer - Data Protection Notice - PayMeIndia</title>
+        <meta name="description" content="Disclaimer - Data protection notice - PayMe would not pass your details, name, e-mail
+			address and any other personal information, to any third party." />
+        <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+        <meta property="og:title" content="Disclaimer - Data Protection Notice - PayMeIndia" />
+      </MetaTags>
       <div className='content'>
       <div className="services">
         <div className="container">
           <div className="row align-items-center p-b-30">
             <div className="col col-md-12 reg-second-heading">
-              <h4>Disclaimer</h4>
+              <h1 className='heading1 blue-color'>Disclaimer</h1>
             </div>
             <div className="col-lg-12 col-md-12  col-sm-12 col-xs-12 paragraphText">
               <h5 className="heading5">DATA Protection Notice</h5>

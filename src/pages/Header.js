@@ -1,101 +1,121 @@
-import React, { useState } from "react";
-import { hitAppUseCase } from "../store/modules/userDetails/actions";
-import { connect } from "react-redux";
-import "../../src/home.css";
-import logo from "../images/logo.png";
-import Loader from "../component/Loader";
-import { Link } from "react-router-dom";
-import Cookies from 'universal-cookie';
- 
-const cookies = new Cookies()
+import React, {useState} from "react";
+import {hitAppUseCase} from "../store/modules/userDetails/actions";
+import {connect} from "react-redux";
+import "../header.css";
+import logo from "../images/svg/payme-logo.svg";
+import appStore from "../images/svg/app-store.svg";
+import googlePay from "../images/svg/google-play.svg";
+import {Link} from "react-router-dom";
 
 const Header = (props) => {
-  console.log("props", props);
-function logOut(){
-  cookies.remove('token', { path: '/' })
-  props.history.push("/");
-}
-  return (
-    <>
-      <div className="sticky-top">
-        <header className="header">
-          <div className="container">
-            <div className="row">
-              <div className="col-auto me-auto">
-                <Link to="#" onClick={logOut}>
-                  {" "}
-                  <img
-                    className="home_logo"
-                    src={logo}
-                    alt="Pay Me India"
-                  />{" "}
-                </Link>
-              </div>
-              <div className="col-auto p-t-10">
-                <Link
-                  className="button"
-                  onClick={() => {
-                    props.hitAppUseCase({ useCase: "apply-loan" });
-                    props.history.push({ pathname: "/apply-loan" });
-                  }}
-                >
-                  Apply Loan
-                </Link>
-               <Link
-                  className="button"
-                  onClick={() => {
-                    props.hitAppUseCase({ useCase: "pay-rent" });
-                    props.history.push({ pathname: "/pay-rent" });
-                  }}
-                >
-                  Pay Rent
-                </Link>
-              </div>
+    console.log("props", props);
+    return (
+        <>
+            <div className="sticky-top">
+                <header className="header">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-2 col-sm-2 p-t-10">
+                                <Link to="/">
+                                    <img
+                                        className="home_logo"
+                                        src={logo}
+                                        alt="Pay Me India"
+                                    />
+                                </Link>
+                            </div>
+                            <div className="col-md-10 p-t-13 p-r-80">
+                                <ul className='navigationLink'>
+                                    <li>
+                                        <Link className="button active" to="/apply-loan">
+                                            Apply Loan
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="button" to="/login">
+                                            Login
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="button" to="/pay-rent-details">
+                                            Pay Rent
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="button" to="/offerings">
+                                            Offerings
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="button" to="/">
+                                            Home
+                                        </Link>
+                                    </li>
+                                </ul>
+                                <nav role="navigation">
+                                    <div id="menuToggle">
+                                        <input type="checkbox"/>
+                                        <span></span> <span></span> <span></span>
+                                        <ul id="menu">
+                                            <li>
+                                                <Link to="/">Home</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/about">About Us</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/contact">Contact Us</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/faq">FAQs</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/ourNbfcPartners">Our NBFC Partners</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/how-we-work">How it works?</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/media-coverage">Media Coverage</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/social-initiative">Social Initiative</Link>
+                                            </li>
+                                            <li className='border-top'>
+                                                <h3>Get Our App on</h3>
+                                                <div className='tabularLess'>
+
+                                                    <div>
+                                                        <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia' target='_blank'>
+                                                        <img
+                                                            className="img_google"
+                                                            src={googlePay}
+                                                            alt="Pay Me India"
+                                                        /></a>
+                                                    </div>
+                                                    <div>
+                                                        <img
+                                                            className="img_google"
+                                                            src={appStore}
+                                                            alt="Pay Me India"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
             </div>
-          </div>
-          <nav role="navigation">
-            <div id="menuToggle">
-              <input type="checkbox" />
-              <span></span> <span></span> <span></span>
-              <ul id="menu">
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/about">About Us</Link>
-                </li>
-                <li>
-                  <Link to="/contact">Contact Us</Link>
-                </li>
-                <li>
-                  <Link to="/faq">FAQs</Link>
-                </li>
-                <li>
-                  <Link to="/ourNbfcPartners">Our NBFC Partners</Link>
-                </li>
-                <li>
-                  <Link to="/how-we-work">How it works?</Link>
-                </li>
-                {/*<li>
-                  <Link to="/pay-rent-details">Pay rent</Link>
-                </li>*/}
-                <li>
-                  <Link to="/media-coverage">Media Coverage</Link>
-                </li>
-                {/*<li>
-                  <Link to="/offerings">Offerings</Link>
-                </li>*/}
-              </ul>
-            </div>
-          </nav>
-        </header>
-      </div>
-    </>
-  );
+        </>
+    );
 };
 const mapStateToProps = (state) => {
-  return {};
+    return {};
 };
 
-const dispatchToProps = { hitAppUseCase };
+const dispatchToProps = {hitAppUseCase};
 export default connect(mapStateToProps, dispatchToProps)(Header);

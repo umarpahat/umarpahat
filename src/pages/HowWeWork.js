@@ -17,6 +17,7 @@ import thumbnail from "../images/aproved.png";
 import heart from "../images/corporate.png";
 import people from "../images/instant-cash.png";
 import howWeWork from "../images/dashboard.png";
+import MetaTags from "react-meta-tags";
 
 const HowWeWork = (props) => {
     let [loader, setloader] = useState(false);
@@ -24,11 +25,19 @@ const HowWeWork = (props) => {
     return (
         <>
             <Header {...props} />
+            <MetaTags>
+                <title>How We Works - PayMeIndia</title>
+                <meta name="description" content="PayMeIndia offers a unique money lending program to the salaried
+			employees. We take care of your urgent cash needs in just 4 easy steps. Apply online and your
+			loans will get approved in an instant. Visit us now and get quick and fast solution for your
+			financial crunch!" />
+                <meta property="og:title" content="How We Works - PayMeIndia" />
+            </MetaTags>
             <div className='content'>
                 <div className="services">
                     <div className="container">
                         <div className="col col-md-12 reg-second-heading">
-                            <h4>How it works?</h4>
+                            <h1 className='heading1 blue-color'>How it works?</h1>
                         </div>
                         <div className="row align-items-center p-b-30">
                             <div className="col-lg-6 col-md-6 col-sm-8 col-xs-8 text-center main-img">

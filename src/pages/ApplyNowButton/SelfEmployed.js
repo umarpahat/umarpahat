@@ -131,7 +131,7 @@ const SelfEmployed = (props) => {
               to="#"
               style={{ cursor: "pointer" }}>
               <div className="m-1">
-                <img src={backicon} className="img-fluid" />
+                <img src={backicon} alt='back Icon' className="img-fluid" />
               </div>
               <div>
                 <h6 className="backbtnsty">Back</h6>

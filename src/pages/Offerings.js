@@ -8,147 +8,119 @@ import Footer from "./Footer";
 import Header from "./Header";
 import "../../src/home.css";
 import {Link} from "react-router-dom";
-import $ from "jquery";
-import logo from "../images/logo.png";
-import vision from "../images/vision.png";
-import team from "../images/team.jpg";
-import apply from "../images/advisory.png";
-import thumbnail from "../images/aproved.png";
-import heart from "../images/corporate.png";
-import people from "../images/instant-cash.png";
-import howWeWork from "../images/how-we-work.png";
+import instantLoan from "../images/svg/instant-loan.svg";
+import mutualFund from "../images/svg/matual-fund.svg";
+import MetaTags from "react-meta-tags";
+import payRentLink from "../images/svg/pay-rent-link.svg";
+import benefit from "../images/svg/benefit.svg";
 
-const HowWeWork = (props) => {
+const Offerings = (props) => {
     let [loader, setloader] = useState(false);
 
     return (
         <>
             <Header {...props} />
+            <MetaTags>
+            <title>Corporate - Instant Loans for Corporate - PayMeIndia</title>
+            <meta name="description" content="PayMeIndia offers an exclusive lending programme for the corporate
+			employees of organisations that are partnered or not partnered with PayMeIndia for Advance
+			Salary. We allow them to borrow up to a whopping 50% of their net monthly income, payable
+			against the following month’s salary." />
+            <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+            <meta property="og:title" content="Corporate - Instant Loans for Corporate - PayMeIndia" />
+        </MetaTags>
             <div className='content'>
-                <div className="services">
+                <div className="banner">
                     <div className="container">
-                        <div className="col col-md-12 reg-second-heading">
-                            <h4>How PayMe Works</h4>
-                        </div>
-                        <div className="row align-items-center p-b-30">
-                            <div className="col-lg-6 col-md-6 col-sm-8 col-xs-8 text-center main-img">
-                                <img
-                                    className="img-fluid"
-                                    width="200"
-                                    alt="How We Work"
-                                    src={howWeWork}
-                                />
+                        <div className="row align-items-center">
+                            <div className="col-sm-12 col-md-5">
+                                <h1 className="heading1">Get Instant Loan Apprval, and personal loan upto 2L</h1>
+                                <p className="no-more-text">No more financial crunch. PayMe India gives you the amount of loan you require, anytime-anywhere</p>
+                                <br/>
+                                <br/>
+                                <Link className="btnLarge" onClick={() => {
+                                    props.hitAppUseCase({useCase: 'apply-loan'})
+                                    props.history.push({pathname: '/apply-loan'})
+                                }}>
+                                    Get Instant Loan
+                                </Link>
                             </div>
-                            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 textAlign">
-                                <h4>Apply for loan</h4>
-                                <p>
-                                    <strong> Download our App- </strong>
-                                    Simply, download our app from the google play store or app store.
-                                </p> <p>
-                                <strong> Registration & login-</strong>
-                                Do easy registration with your email id & mobile number to get instant approval of your
-                                loan amount.
-                            </p> <p>
-                                <strong> Swiftly upload your document- </strong> Simply, upload your document via an app
-                                for credit assessment and instant loan disbursement.
-                            </p> <p>
-                                <strong> Check eligibility - </strong> Easily check eligibility by uploading the
-                                documents and the loan amount you are eligible for?
-                            </p> <p>
-                                <strong>Instant Fund transfer-</strong> Once your document is verified, get an instant
-                                fund transfer to your bank account.
-                            </p> <p>
-                                <strong>Easy Repayment-</strong> PayMe India endows you with easy repayment by availing
-                                of different payment modes.
-                            </p>
+                            <div className="col-sm-12 col-md-2 ">
+                                &nbsp;
+                            </div>
+                            <div className="col-sm-12 col-md-5 m-t-40">
+                                <img className="img-fluid scoreAnimate"
+                                     alt="Instant Loan"
+                                     src={instantLoan}/>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="services">
-                    <div className="container p-b-30 p-t-40">
+                <div className="carousel p-b-30">
+                    <div className="container p-b-30" >
                         <div className="row align-items-center pb-3">
-                            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 textAlign">
-                                <h3 className="heading3">Easy Steps to Follow</h3>
-                                <p>
-                                    Your urgent cash needs will be funded following easy steps while registering through
-                                    our application
-                                </p>
+                            <div className="col-sm-12 col-md-6 p-t-40"><img className="img-fluid"
+                                                                            alt="Pay Rent using Payme app"
+                                                                            src={payRentLink}/></div>
+                            <div className="col-sm-12 col-md-1 ">
+                                &nbsp;
                             </div>
-                        </div>
-                        <div className="row p-t-40 p-b-30">
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                                <div className="box justify-content-md-center">
-                                    <div className="icon-left">
-                                        <img className="img-fluid" src={apply} alt="PayMe India"/>
-                                    </div>
-                                    <div className="icon-left-content">
-                                        <h3>Apply</h3>
-                                        <p>online now</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                                <div className="box justify-content-md-center">
-                                    <div className="icon-left">
-                                        <img className="img-fluid" src={thumbnail} alt="PayMe India"/>
-                                    </div>
-                                    <div className="icon-left-content">
-                                        <h3>Approved</h3>
-                                        <p>instantly</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                                <div className="box justify-content-md-center">
-                                    <div className="icon-left">
-                                        <img className="img-fluid" src={heart} alt="PayMe India"/>
-                                    </div>
-                                    <h3>Funded</h3>
-                                    <p>today or overnight</p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                                <div className="box justify-content-md-center">
-                                    <div className="icon-left">
-                                        <img className="img-fluid" src={people} alt="PayMe India"/>
-                                    </div>
-                                    <h3>Repay</h3>
-                                    <p>on next pay period</p>
-                                </div>
+                            <div className="col-sm-12 col-md-5">
+                                <h3 className="heading3 relative"><span className='circle-small'></span> Pay Rent using Payme app and get rewards</h3>
+                                <p className="heading6">Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
+                                <a href='https://creditscore.paymeindia.in' target='_blank'
+                                   className="btnLarge m-t-40">Get App Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="services p-t-40 ">
+                <div className="loan-rent-benefit m-t-40">
                     <div className="container">
-                        <div className="row justify-content-md-center">
-                            <div className="col-md-8 text-center">
-                                <h3 className="heading3">Approval Process</h3>
-                                <p className='text-left p-t-10'>
-                                    Loan will be approved within few minutes Once all the details are filled and
-                                    documents are uploaded.
-                                </p>
-                                <p className='text-left p-t-10'>Improve your credit score by paying on time.</p>
-                                <p className='text-left p-b-30 p-t-10'>No documentation hassles and other benefits while applying for the next loan.</p>
+                        <div className="row align-items-center p-t-80">
+                            <div className="col-sm-12 col-md-6">
+                                <div className="farmer text-center"><img src={benefit} className="farmer-img img-fluid"
+                                                                         alt="App Icon"/></div>
+                            </div>
+                            <div className="col-sm-12 col-md-6 bg-in-mobile-black">
+                                <h6 className="heading6 relative white-color">SALT- Buy Now Pay Later</h6>
+                                <h3 className="heading3 relative white-color">Buy Products of your choice now and pay them later</h3>
+                                <p className="white-color">Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
+                                <a href='https://creditscore.paymeindia.in' target='_blank'
+                                   className="btnLarge m-t-40">Get App Now</a>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="banner p-b-30">
+                    <div className="container p-b-30">
+                        <div className="row align-items-center">
+                            <div className="col-sm-12 col-md-5">
+                                <h1 className="heading1 relative"><span className='circle-small'></span> Start investing in mutal Funds using our New App</h1>
+                                <p className="no-more-text">Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
+                                <br/>
+                                <br/>
+                                <Link className="btnLarge" onClick={() => {
+                                    props.hitAppUseCase({useCase: 'apply-loan'})
+                                    props.history.push({pathname: '/apply-loan'})
+                                }}>
+                                    Explore now
+                                </Link>
+                            </div>
+                            <div className="col-sm-12 col-md-2 ">
+                                &nbsp;
+                            </div>
+                            <div className="col-sm-12 col-md-5 m-t-40">
+                                <img className="img-fluid"
+                                     alt="Matual Fund"
+                                     src={mutualFund}/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    </div>
-                </div>
-                <div className="services">
-                    <div className="container">
-                        <div className="row justify-content-md-center">
-                            <div className="col col-md-8 text-center p-t-30 p-b-30">
-                                <h4 className="heading4">Contact Us</h4>
-                                <p>
-                                    Please contact us at{" "}
-                                    <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
+
             </div>
             <Footer/>
         </>
@@ -160,4 +132,4 @@ const mapStateToProps = (state) => {
 
 const dispatchToProps = {hitAppUseCase};
 
-export default connect(mapStateToProps, dispatchToProps)(HowWeWork);
+export default connect(mapStateToProps, dispatchToProps)(Offerings);

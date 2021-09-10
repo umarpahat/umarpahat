@@ -1,5 +1,4 @@
 import React from "react"
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Switch } from "react-router-dom";
 import "react-input-range/lib/css/index.css";
 import "./style.css";
@@ -16,6 +15,8 @@ import policy from "./pages/policy"
 import terms from "./pages/terms"
 import OurNbfcPartners from "./pages/OurNbfcPartners"
 import HowWeWork from "./pages/HowWeWork"
+import NotFoundPage from "./pages/NotFoundPage"
+import Sitemap from "./pages/Sitemap"
 import MediaCoverage from "./pages/MediaCoverage"
 import PayRent from "./pages/PayRent"
 import Offerings from "./pages/Offerings"
@@ -33,6 +34,7 @@ import Congretmessage from "./pages/ApplyNowButton/Congretmessage";
 import LoginWithMobMpin from "./pages/ApplyNowButton/LoginWithmobmpin";
 import ChangeMpin from "./pages/ApplyNowButton/ChangeMpin";
 import Pandingapprovalform from "./pages/ApplyNowButton/Pandigapprovealform";
+import SocialInitiative from "./pages/SocialInitiative";
 import Creatempn from "./pages/ApplyNowButton/Creatempn";
 import KycOption from "./pages/ApplyNowButton/KycOption";
 import Header from "./pages/Header";
@@ -66,6 +68,7 @@ function Routes() {
         <Route exact path="/ourNbfcPartners" component={OurNbfcPartners} />
         <Route exact path="/how-we-work" component={HowWeWork} />
         <Route exact path="/media-coverage" component={MediaCoverage} />
+        <Route exact path="/social-initiative" component={SocialInitiative} />
         <Route exact path="/pay-rent-details" component={PayRent} />
         <Route exact path="/offerings" component={Offerings} />
         <Route exact path="/self-employed" component={SelfEmployed} />
@@ -74,6 +77,8 @@ function Routes() {
         <Route exact path="/kycoption" component={KycOption} />
         <Route exact path="/bank-details-payme" component={Bankdetailspayme} />
         <Route exact path="/change-mpin" component={ChangeMpin} />
+            <Route exact path="/404" component={NotFoundPage} />
+            <Route exact path="/sitemap" component={Sitemap} />
 
         <Route
           exact
