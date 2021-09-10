@@ -524,6 +524,33 @@ button.button-gray:hover {
     background: rgba(51, 101, 138, 0.2);
 }
 
+.search_icon {
+    width: 90%;
+    border: 1px solid #E6E6E6;
+    box-sizing: border-box;
+    border-radius: 6px;
+    height: 55px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height:30px;
+    padding: 20px 20px 20px 60px;
+    letter-spacing: 0.02em;
+    color: #000000;
+    background: #fff url("images/svg/search.svg") no-repeat 20px center;
+}
+
+.search_icon:focus, .search_icon:active, .search_icon:hover {
+    outline: none;
+}
+
+.discover {
+    padding: 0 0 30px;
+    margin: auto;
+    font-size: 16px;
+    position: relative;
+    background: rgba(2, 198, 80, 0.1);
+}
+
 .img-box {
     min-height: 70px;
     vertical-align: middle;

@@ -44,7 +44,7 @@ const Footer = () => {
                         <h6 className='head6'>Others</h6>
                         <ul>
                             <li><Link to="/faq">FAQs</Link></li>
-                            <li><Link to="/how-we-work">How it works?</Link></li>
+                            <li><Link to="/career">Career</Link></li>
                             <li><Link to="/ourNbfcPartners">Our NBFC Partners</Link></li>
                             <li><Link to="/media-coverage">Media Coverage</Link></li>
                         </ul>
