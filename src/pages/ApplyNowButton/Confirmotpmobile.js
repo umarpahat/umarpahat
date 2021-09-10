@@ -14,6 +14,7 @@ const Confirmotpmobile = (props) => {
   const [loader, setloader] = useState(false);
   const [otpError, setotpError] = useState(null);
 
+
   const verifyOtpNewUser = (otp_get) => {
     setloader(true);
     api
@@ -79,7 +80,7 @@ const Confirmotpmobile = (props) => {
 
   return (
     <>
-      <div className='content darkBg'>
+      <div className='content darkBg' style={{paddingTop:"50px"}}>
       {loader ? (
         <div className="loader">
           {" "}

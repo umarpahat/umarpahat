@@ -11,8 +11,11 @@ import { getS3SignedUrl, postS3, api } from "../../services/api";
 import Loader from "../../component/Loader";
 import Footer from "../Footer";
 import Header from "../Header";
-
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies()
 const SelfEmployed = (props) => {
+  const token = cookies.get('token')
   const [show, setShow] = useState(false);
   const [loader, setloader] = useState(false);
   const [uploadItr, setuploadItr] = useState({});
@@ -28,7 +31,7 @@ const SelfEmployed = (props) => {
   async function getSignedUrl() {
     const pathArray = [`other_document/${props.user.id}/latest_itr.pdf`];
     const signedUrlObj = await getS3SignedUrl({
-      token: props.token,
+      token: token,
       payload: { s3_path: pathArray, bucket_name: "payme-test-documents" },
     });
     setsignedUrl(signedUrlObj.data.data);
@@ -49,7 +52,7 @@ const SelfEmployed = (props) => {
     return await api.post(
       "/api/update_document_status/",
       { doc_type: data.docType, path: data.path },
-      { headers: { Authorization: "Token " + props.token } }
+      { headers: { Authorization: "Token " + token } }
     );
   }
 
@@ -61,7 +64,7 @@ const SelfEmployed = (props) => {
       present_pincode: presentPincode,
     };
     return await api.post("/api/user_details/professional_details/", payload, {
-      headers: { Authorization: "Token " + props.token },
+      headers: { Authorization: "Token " + token },
     });
   }
 
@@ -79,9 +82,7 @@ const SelfEmployed = (props) => {
       seterrorpresentPincode("Please enter pin code");
       return;
     }
-    if (!erroruploadItr) {
-      seterroruploadItr("Please Upload ITR ");
-    }
+ 
     const uploadItrFront = postS3({
       res: uploadItr,
       presignedPostData:
@@ -98,7 +99,7 @@ const SelfEmployed = (props) => {
       .then((response) => {
         setloader(false);
         console.log("xvxvxvxvx", response);
-        props.hitAllUserData({ token: props.token });
+        props.hitAllUserData({ token: token });
         props.history.push({ pathname: "/pending-approval" });
       })
       .catch((error) => {
@@ -123,14 +124,12 @@ const SelfEmployed = (props) => {
             <div className="pb-4">
               <Progressbar />
             </div>
-            <div
-              className="d-flex"
+            <div className="d-flex"
               onClick={() => {
                 props.history.goBack();
               }}
               to="#"
-              style={{ cursor: "pointer" }}
-            >
+              style={{ cursor: "pointer" }}>
               <div className="m-1">
                 <img src={backicon} alt='back Icon' className="img-fluid" />
               </div>
@@ -140,9 +139,9 @@ const SelfEmployed = (props) => {
             </div>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className="Home-contact-form mt-4">
+            <div classNaEmploymentme="Home-contact-form mt-4">
               <div class="form-group ms-input-group">
-                <label className="form-label">Employment Status</label>
+                <label className="form-label"> Status </label>
               </div>
               <div className="py-4">
                 <Link to="/professional-details-payme">

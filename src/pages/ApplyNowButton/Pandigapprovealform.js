@@ -16,25 +16,33 @@ import axios from "axios";
 import Progressbar from "../../component/ProgressBar";
 import Header from "../Header";
 import Footer from "../Footer";
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies();
+
 
 const Pandingapprovalform = (props) => {
-
-  console.log("latest",props)
+ const token = cookies.get('token')
+  console.log("latest",token)
   const [documentstatus, setDocumentstatus] = useState({});
   const [userdocumentsmodel,setuserdocumentsmodel]=useState({});
   const[userbankdetail,setuserbankdetail]=useState({});
+  const[professionalStatus,setProfessionalStatus]=useState("");
 
   useEffect(() => {
-    if (!props.token) {
+   
+    if (!token) {
       props.history.push({ pathname: "/" });
     }
     // ekycCall();
     if (Object.keys(props.user).length) {
+     
       setuserdocumentsmodel(props.user.userData.userdocumentsmodel);
       setuserbankdetail(
         props.user.userData.userbankdetail
          
       );
+     
     }
   });
 
@@ -43,17 +51,23 @@ const Pandingapprovalform = (props) => {
     let url2 = `${API_ENDPOINT}/api/get_document_status/`;
     let config = {
      headers: {
-       Authorization: "Token " + props.token,
+       Authorization: "Token " + token,
      },
    };
    axios
      .get(url2, config)
      .then((response) => {
-       console.log("pendingstatus",response)
-      setDocumentstatus(response.data.data[0]);
+       
+       
+      setDocumentstatus(response.data.data[0]); 
+      setProfessionalStatus(response.data.data[0].professional_details_verified)
       
      })
      .catch((err) => {
+      if(err.response.status===401){
+        cookies.remove('token', { path: '/' })
+        props.history.push("/");
+      }
        console.log(err);
      });
 
@@ -62,7 +76,7 @@ const Pandingapprovalform = (props) => {
   return (
     <>
       <Header {...props}/>
-        <div className='content darkBg'>
+        <div className='content darkBg' style={{paddingBottom:"90px",paddingTop:"20px"}}>
         <Container>
           <div className="form-container formcontainermob  pt-4">
             <form className='p-b-30'>
@@ -272,9 +286,9 @@ const Pandingapprovalform = (props) => {
                               <div className="">
                                 <img
                                   src={
-                                    userdocumentsmodel.salary_slip_verified ===
+                                    professionalStatus ===
                                       "VERIFIED" ||
-                                    userdocumentsmodel.salary_slip_verified ===
+                                    professionalStatus ===
                                       "PENDING_VERIFICATION"
                                       ? Righticons1
                                       : Righticons
@@ -288,7 +302,7 @@ const Pandingapprovalform = (props) => {
                                 </p>
                               </div>
                             </div>
-                            {userdocumentsmodel.salary_slip_verified ===
+                            {professionalStatus ===
                             "PENDING_VERIFICATION" ? (
                               <span
                                 className="reloadicon"
@@ -303,9 +317,9 @@ const Pandingapprovalform = (props) => {
                                 {/* {" "} */}
                                 Pending verification
                               </span>
-                            ) : userdocumentsmodel.salary_slip_verified ===
+                            ) : professionalStatus ===
                                 "NOT_SUBMITTED" ||
-                              userdocumentsmodel.salary_slip_verified ===
+                              professionalStatus ===
                                 "NOT_VALID" ? (
                               <div className="reloadicon">
                                 <span
@@ -325,7 +339,7 @@ const Pandingapprovalform = (props) => {
                                   </span>
                                 </span>
                               </div>
-                            ) : userdocumentsmodel.salary_slip_verified ===
+                            ) : professionalStatus ===
                               "VERIFIED" ? (
                               <div>
                                 <img src={Righticons1} alt='Right Icon' />

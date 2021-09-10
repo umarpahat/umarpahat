@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { hitAllUserData } from "../../store/modules/userDetails/actions";
+import { hitAllUserData,hitAppUseCase  } from "../../store/modules/userDetails/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import backicon from "../../component/img/backicon.png";
@@ -8,8 +8,13 @@ import { getS3SignedUrl, postS3, api } from "../../services/api";
 import Loader from "../../component/Loader";
 import Header from "../Header";
 import Footer from "../Footer";
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies()
 
 const Kycdetailsformpayme = (props) => {
+  console.log("kyc now ",props)
+  const token = cookies.get('token')
   const [show, setShow] = useState(false);
   const [name, setname] = useState("");
   const [date, setdate] = useState("");
@@ -31,6 +36,19 @@ const Kycdetailsformpayme = (props) => {
   const [profile, setProfile] = useState({});
   const [errorProfile, seterrorProfile] = useState("");
   const [correctPan,setcorrectPan] = useState("");
+  const [refresh,setRefresh]=useState(true);
+
+
+  function refreshhi(){
+    props.hitAllUserData({ token: token });
+    props.hitAppUseCase()
+    }
+  if(refresh){
+    refreshhi();
+    setRefresh(false)
+    
+  }
+
 
   console.log("props.useCase", props.userCase);
   
@@ -49,7 +67,7 @@ const Kycdetailsformpayme = (props) => {
       `user_image/${props.user.id}/user_profile_photo.jpg`,
     ];
     const signedUrlObj = await getS3SignedUrl({
-      token: props.token,
+      token: token,
       payload: { s3_path: pathArray, bucket_name: "payme-test-documents" },
     });
     setsignedUrl(signedUrlObj.data.data);
@@ -57,7 +75,8 @@ const Kycdetailsformpayme = (props) => {
   }
 
   useEffect(() => {
-    if (!props.user) {
+  
+    if (!token) {
       props.history.push({ pathname: "/" });
       return;
     }
@@ -88,7 +107,7 @@ const Kycdetailsformpayme = (props) => {
     return await api.post(
       "/api/update_document_status/",
       { doc_type: data.docType, path: data.path },
-      { headers: { Authorization: "Token " + props.token } }
+      { headers: { Authorization: "Token " + token } }
     );
   }
 
@@ -96,7 +115,7 @@ const Kycdetailsformpayme = (props) => {
     return await api.post(
       "/api/offline_manual_kyc/",
       { dob: date, gender: gender, pan_card_number: panNumber },
-      { headers: { Authorization: "Token " + props.token } }
+      { headers: { Authorization: "Token " + token } }
     );
   }
 
@@ -187,7 +206,8 @@ const Kycdetailsformpayme = (props) => {
     ])
       .then((response) => {
         setloader(false);
-        props.hitAllUserData({ token: props.token });
+        
+        props.hitAllUserData({ token: token });
 
         if (props.userCase === "apply-loan") {
           if (!props.user.userbankdetail) {
@@ -219,10 +239,14 @@ const Kycdetailsformpayme = (props) => {
         }
       })
       .catch((error) => {
+        if(error.response.status===401)
+        {
+          cookies.remove('token', { path: '/' })
+        }
         setloader(false);
       });
   };
-  console.log(props);
+ 
 
   return (
     <>
@@ -530,6 +554,7 @@ const dispatchToProps = (dispatch) => {
     {
       // hitLogin,
       hitAllUserData,
+      hitAppUseCase ,
       // hitForgotMpin,
     },
     dispatch

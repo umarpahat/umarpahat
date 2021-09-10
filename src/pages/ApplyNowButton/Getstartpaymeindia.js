@@ -11,17 +11,21 @@ import "../ApplyNowButton/Applybtnallcomponent.css";
 import Header from "../Header";
 import Footer from "../Footer";
 import { Link } from "react-router-dom";
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies()
 
 const Getstartpaymeindia = (props) => {
+  const token = cookies.get('token')
   console.log(props.history.location.state.phoneNumber);
   let [loader, setloader] = useState(false);
   const [acceptTandC, setacceptTandC] = useState(false)
   const [Error, setError] = useState(null);
 
   useEffect(() => {
-    if (props.token) {
+    if (token) {
       setloader(false)
-      props.hitAllUserData({ token: props.token })
+      props.hitAllUserData({ token: token })
         props.history.push({pathname:'/referral-code'})
     } 
 });
@@ -37,6 +41,10 @@ const Getstartpaymeindia = (props) => {
       props.hitLogin({ type: 'google', access_token: response.tokenId, phone_number: Number(props.history.location.state.phoneNumber)})
       props.history.push({pathname:'/referral-code'})
     } catch (error){
+      if(error.response.status===401)
+      {
+        cookies.remove('token', { path: '/' })
+      }
       setloader(false)
 console.log(error)
     }

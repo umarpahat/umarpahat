@@ -161,6 +161,17 @@ const HomePage = (props) => {
         let repay = result + amount + pfee;
         $('#repayment').text(repay);
         return result;
+
+    }
+    const handleCibilWeb =()=>{
+        window.open(
+            "https://creditscore.paymeindia.in/",
+            "popup",
+            "width=600,height=650,left=600,top=150,scrollbars=no,resizable=no"
+          );
+          
+          return false;
+
     }
 
 

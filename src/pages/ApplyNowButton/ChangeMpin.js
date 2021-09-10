@@ -6,6 +6,9 @@ import { api } from '../../services/api';
 import Loader from '../../component/Loader';
 import Header from "../Header";
 import Footer from "../Footer";
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies()
 
 function ChangeMpin(props) {
 
@@ -17,6 +20,7 @@ function ChangeMpin(props) {
   let [loader, setloader] = useState(false);
 
   const createNewMpin = (event) => {
+    const token = cookies.get('token');
     setloader(true)
     event.preventDefault();
     if (!/^\d{6}$/.test(mpin)){
@@ -30,7 +34,7 @@ function ChangeMpin(props) {
       setloader(false)
     }else {
       console.log("every thing woirked")
-         api.post(`api/authentication/create_or_update_mpin/`, { 'mpin': mpin }, { headers: { 'Authorization': 'Token ' + props.token } })
+         api.post(`api/authentication/create_or_update_mpin/`, { 'mpin': mpin }, { headers: { 'Authorization': 'Token ' + token } })
         .then((response) => {
             if (response.status === 200) {
                 setloader(false)

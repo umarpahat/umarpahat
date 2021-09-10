@@ -40,6 +40,7 @@ import KycOption from "./pages/ApplyNowButton/KycOption";
 import Header from "./pages/Header";
 import Footer from "./pages/Footer";
 
+
 function Routes() {
     return (
       <>
@@ -96,6 +97,7 @@ function Routes() {
           path="/payrent-transaction-history"
           component={TransactionHistory}
         />
+       
         <Route component={Error} />
           </Switch>
           </>

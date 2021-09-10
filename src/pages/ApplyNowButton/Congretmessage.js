@@ -3,6 +3,9 @@ import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies()
 
 const Congretmessage = (props) => {
   return (

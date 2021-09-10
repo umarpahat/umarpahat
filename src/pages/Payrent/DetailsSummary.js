@@ -10,10 +10,15 @@ import axios from 'axios'
 import {API_ENDPOINT_STAGING} from "../../constant" ;
 import Footer from "../Footer";
 
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies()
+
 const DetailsSummary = (props) => {
+  const token = cookies.get('token')
 
   useEffect(() => {
-    if (!props.token) {
+    if (!token) {
       props.history.push({pathname: '/'})
     }
 
@@ -28,7 +33,7 @@ const DetailsSummary = (props) => {
     let url = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`
     let config = {
       headers: {
-        Authorization: "Token " + props.token,
+        Authorization: "Token " + token,
         'Content-Type' : "application/json"
       }
     }
@@ -41,6 +46,10 @@ const DetailsSummary = (props) => {
         props.history.push({pathname:"/payrent-other-details"})
       })
       .catch((err) => {
+        if(err.response.status===401)
+        {
+          cookies.remove('token', { path: '/' })
+        }
         console.log("eeee", err)
       })
   }
