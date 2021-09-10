@@ -29,8 +29,8 @@ const HowWeWork = (props) => {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-6">
-                                <h1 className="heading1 blue-color">Media Coverage</h1>
-                                <p className="no-more-text">Know what the world is Buzzing about PayMe India</p>
+                                <h1 className="heading1 blue-color">MEDIA COVERAGE</h1>
+                                <p className="no-more-text">Know what the world is buzzing about PayMe India. Our new and exciting innovation always keeps us in media coverage.</p>
                             </div>
                             <div className="col-sm-12 col-md-1 ">
                                 &nbsp;

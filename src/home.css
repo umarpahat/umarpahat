@@ -900,7 +900,7 @@ a.button-small:hover {
     z-index: 0;
     width: 53px;
     height: 178px;
-    background: url("images/svg/helf-circle-right.svg") no-repeat 0 0;
+    background: url("images/svg/half-circle-right.svg") no-repeat 0 0;
 }
 
 .mission {
@@ -1119,7 +1119,7 @@ a.button-small:hover {
     z-index: 0;
     width: 53px;
     height: 178px;
-    background: url("images/svg/helf-circle-right.svg") no-repeat 0 0;
+    background: url("images/svg/half-circle-right.svg") no-repeat 0 0;
 }
 
 .faqSection:before {
@@ -1164,7 +1164,7 @@ a.button-small:hover {
     z-index: 0;
     width: 53px;
     height: 178px;
-    background: url("images/svg/helf-circle-right.svg") no-repeat 0 0;
+    background: url("images/svg/half-circle-right.svg") no-repeat 0 0;
 }
 
 .payRentSection:before {
@@ -1897,7 +1897,7 @@ hr.style {
     z-index: 0;
     width: 53px;
     height: 178px;
-    background: url("images/svg/helf-circle-right.svg") no-repeat 0 0;
+    background: url("images/svg/half-circle-right.svg") no-repeat 0 0;
 }
 
 
@@ -2036,7 +2036,7 @@ hr.style {
 
 .green-btn {
     background: #02C650;
-    border-radius: 20px;
+    border-radius: 25px;
     color: #fff;
     display: inline-block;
     height: 49px;

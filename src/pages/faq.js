@@ -33,8 +33,9 @@ const Faq = (props) => {
           <div className="container">
             <div className="row align-items-center">
               <div className="col-sm-12 col-md-6">
-                <h1 className="heading1 blue-color">FAQs</h1>
-                <p className="no-more-text">Here are some frequently asked questions</p>
+                <h1 className="heading1 blue-color">FAQ</h1>
+                <p className="no-more-text">Here are the answers to all questions</p>
+                <p className="no-more-text p-t-15">We have set down many of the frequently raised questions by our users. Here’s everything you would like to know about our products & services. Go ahead, feel free to ask us anything!</p>
               </div>
               <div className="col-sm-12 col-md-1 ">
                 &nbsp;

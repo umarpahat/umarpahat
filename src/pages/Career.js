@@ -17,15 +17,12 @@ import tea from "../images/svg/tea.svg";
 import timeline from "../images/svg/timeline.svg";
 import lead from "../images/svg/lead.svg";
 import backend from "../images/svg/backend.svg";
-import bussiness from "../images/svg/bussiness.svg";
+import business from "../images/svg/business.svg";
 import remote from "../images/svg/remote.svg";
 import allowance from "../images/svg/health.svg";
 import health from "../images/svg/health.svg";
-import environment from "../images/svg/enviroment.svg";
+import environment from "../images/svg/environment.svg";
 import MetaTags from "react-meta-tags";
-import thumbnail from "../images/svg/thumb.svg";
-import goldStarIcon from "../images/svg/star.svg";
-import people from "../images/svg/will-stand.svg";
 
 const Career = (props) => {
     let [loader, setloader] = useState(false);
@@ -45,13 +42,9 @@ const Career = (props) => {
                 <div className="banner">
                     <div className="container">
                         <div className="row align-items-center">
-                            <div className="col-sm-12 col-md-5">
+                            <div className="col-sm-12 col-md-5 p-t-30">
                                 <h1 className="heading1">Explore Career Opportunity</h1>
-                                <p className="no-more-text p-t-15">Ea doloremque dolores id. Omnis iste itaque voluptas.
-                                    Esse
-                                    aperiam non minus. Enim id velit deserunt hic veniam quia dolorem repellendus
-                                    ducimus. Perferendis molestias error dolores qui veniam molestias voluptas. Maiores
-                                    fuga aut.</p>
+                                <p className="no-more-text p-t-15">At PayMe India, we visualize bringing financial freedom and independence to our valuable customers and liberating them from financial limitations. We allow them to manage credit with ease, whenever they need it. Every single member of our team of PayMe India aims to positively impact the lives of our consumers. If you are enthusiastic and passionate to make a difference in the lives of customers and look forward to working with the best in the company, Join us in our journey.</p>
                                 <br/>
                                 <br/>
                                 <Link className="btnLarge" onClick={() => {
@@ -94,12 +87,10 @@ const Career = (props) => {
                                     <div className="col-lg-4 col-md-4 col-sm-12">
                                         <div className="box-offer justify-content-md-center text-center">
                                             <div className='img-box d-flex align-items-center justify-content-center'>
-                                                <img className="img-fluid" src={bussiness} alt="PayMe India"/>
+                                                <img className="img-fluid" src={business} alt="PayMe India"/>
                                             </div>
                                             <h3>Business Developer</h3>
-                                            <p className='p-b-30'>Cutting-edge online training modules with the power to
-                                                manage and
-                                                centralize data.</p>
+                                            <p className='p-b-30'>Interested in working as a Business Developer. Our business development team is hiring. Do share your resume with us.</p>
                                             <Link to='/' className='green-btn'>Apply Now</Link>
                                         </div>
                                     </div>
@@ -111,9 +102,7 @@ const Career = (props) => {
                                             </div>
 
                                             <h3>Lead Visual Designer</h3>
-                                            <p className='p-b-30'>Empowers managers to review their team’s expertise and
-                                                aptitudes in real
-                                                time.</p>
+                                            <p className='p-b-30'>Have a zeal in designing that inspires, engages, and excites users? Do share your resume with us.</p>
                                             <Link to='/' className='green-btn'>Apply Now</Link>
                                         </div>
                                     </div>
@@ -123,9 +112,7 @@ const Career = (props) => {
                                                 <img className="img-fluid" src={backend} alt="Flexible Timeline"/>
                                             </div>
                                             <h3>Backend Developer</h3>
-                                            <p className='p-b-30'>Brings the entire gamut of process stakeholders on one
-                                                same platform,
-                                                offering.</p>
+                                            <p className='p-b-30'>Passionate to work in backend development? We might be a match! Do share your resume with us.</p>
                                             <Link to='/' className='green-btn'>Apply Now</Link>
                                         </div>
                                     </div>
@@ -134,70 +121,16 @@ const Career = (props) => {
                                     <div className="col-lg-4 col-md-4 col-sm-12">
                                         <div className="box-offer justify-content-md-center text-center">
                                             <div className='img-box d-flex align-items-center justify-content-center'>
-                                                <img className="img-fluid" src={bussiness} alt="PayMe India"/>
+                                                <img className="img-fluid" src={business} alt="PayMe India"/>
                                             </div>
-                                            <h3>Business Developer</h3>
-                                            <p className='p-b-30'>Cutting-edge online training modules with the power to
-                                                manage and
-                                                centralize data.</p>
-                                            <Link to='/' className='green-btn'>Apply Now</Link>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4 col-md-4 col-sm-12">
-                                        <div
-                                            className="box-offer justify-content-md-center text-center">
-                                            <div className='img-box d-flex align-items-center justify-content-center'>
-                                                <img className="img-fluid" src={lead} alt="Remote works"/>
-                                            </div>
-
-                                            <h3>Lead Visual Designer</h3>
-                                            <p className='p-b-30'>Empowers managers to review their team’s expertise and
-                                                aptitudes in real
-                                                time.</p>
-                                            <Link to='/' className='green-btn'>Apply Now</Link>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4 col-md-4 col-sm-12">
-                                        <div className="box-offer justify-content-md-center text-center">
-                                            <div className='img-box d-flex align-items-center justify-content-center'>
-                                                <img className="img-fluid" src={backend} alt="Flexible Timeline"/>
-                                            </div>
-                                            <h3>Backend Developer</h3>
-                                            <p className='p-b-30'>Brings the entire gamut of process stakeholders on one
-                                                same platform,
-                                                offering.</p>
+                                            <h3>Front-End designer</h3>
+                                            <p className='p-b-30'>Enthusiastic to Contribute in Front end development?
+                                                Do share your resume with us.</p>
                                             <Link to='/' className='green-btn'>Apply Now</Link>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="row justify-content-md-center boxes" style={{marginTop: 30}}>
-                                    <div className="col-lg-4 col-md-4 col-sm-12">
-                                        <div className="box-offer justify-content-md-center text-center">
-                                            <div className='img-box d-flex align-items-center justify-content-center'>
-                                                <img className="img-fluid" src={bussiness} alt="PayMe India"/>
-                                            </div>
-                                            <h3>Business Developer</h3>
-                                            <p className='p-b-30'>Cutting-edge online training modules with the power to
-                                                manage and
-                                                centralize data.</p>
-                                            <Link to='/' className='green-btn'>Apply Now</Link>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4 col-md-4 col-sm-12">
-                                        <div
-                                            className="box-offer justify-content-md-center text-center">
-                                            <div className='img-box d-flex align-items-center justify-content-center'>
-                                                <img className="img-fluid" src={lead} alt="Remote works"/>
-                                            </div>
 
-                                            <h3>Lead Visual Designer</h3>
-                                            <p className='p-b-30'>Empowers managers to review their team’s expertise and
-                                                aptitudes in real
-                                                time.</p>
-                                            <Link to='/' className='green-btn'>Apply Now</Link>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -220,9 +153,7 @@ const Career = (props) => {
                             <div className="col-sm-12 col-md-5">
                                 <h3 className="heading4 relative">Craftsmanship
                                 </h3>
-                                <p className="heading6">Whether it’s our in-house coffee, onboarding service, or sales
-                                    experience—we strive to be world-class in everything we do. “Am I proud to put my
-                                    name on my work?” is the mantra we live by.</p>
+                                <p className="heading6">At PayMe India we work towards making a company that motivates a healthy work-life balance giving a creative environment to our workforce. We promote a friendly ambiance for the PayMe India family that nourishes and encourages free-flowing ideas and unity.</p>
                             </div>
                         </div>
                     </div>
@@ -231,11 +162,8 @@ const Career = (props) => {
                     <div className="container p-b-30">
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-5">
-                                <h1 className="heading4 relative">Happy “Work”
-                                    Environment</h1>
-                                <p className="no-more-text">We choose career paths that play to our strengths and
-                                    operate as one collaborative unit with diverse perspectives and backgrounds. The
-                                    work we do here doesn’t just pay the bills; it makes us happy.</p>
+                                <h1 className="heading4 relative">Happy “Work” Environment</h1>
+                                <p className="no-more-text">Our employees explore various opportunities and platforms, where they upgrade their innovative skills. PayMe India believes in creating a cheerful and respectful environment for our employees. Our strong, positive corporate culture helps our employees to offer their best performance at work with integrity.</p>
 
                             </div>
                             <div className="col-sm-12 col-md-2 ">
@@ -259,11 +187,8 @@ const Career = (props) => {
                                 &nbsp;
                             </div>
                             <div className="col-sm-12 col-md-5">
-                                <h3 className="heading4 relative">Friendly Workspace
-                                </h3>
-                                <p className="heading6">Whether it’s our in-house coffee, onboarding service, or sales
-                                    experience—we strive to be world-class in everything we do. “Am I proud to put my
-                                    name on my work?” is the mantra we live by.</p>
+                                <h3 className="heading4 relative">Friendly Workspace</h3>
+                                <p className="heading6">PayMe India firmly believes that our work culture is an intangible ecosystem where leaders and employees maintain a clear and inclusive relationship. We provide a friendly workspace to the employees, which provides them the liberty to work. We are an organization committed to work towards inclusivity and encourage our employees to return up in various forms.</p>
                             </div>
                         </div>
                     </div>
@@ -284,8 +209,7 @@ const Career = (props) => {
                                                 <img className="img-fluid" src={tea} alt="PayMe India"/>
                                             </div>
                                             <h3>Coffee and Snacks</h3>
-                                            <p>Repellendus qui nisi rem. Tempora eum vel ut aspernatur repellat est et.
-                                                Quia dicta at ut consequatur dolorum omnis. </p>
+                                            <p>Keeping our employees Refreshed while they work.</p>
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-4 col-sm-12">
@@ -296,8 +220,7 @@ const Career = (props) => {
                                             </div>
 
                                             <h3>Remote works</h3>
-                                            <p>Repellendus qui nisi rem. Tempora eum vel ut aspernatur repellat est et.
-                                                Quia dicta at ut consequatur dolorum omnis.</p>
+                                            <p>PayMe India allows employees to work from anywhere other than the office home.</p>
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-4 col-sm-12">
@@ -306,8 +229,7 @@ const Career = (props) => {
                                                 <img className="img-fluid" src={timeline} alt="Flexible Timeline"/>
                                             </div>
                                             <h3>Flexible Timeline</h3>
-                                            <p>Repellendus qui nisi rem. Tempora eum vel ut aspernatur repellat est et.
-                                                Quia dicta at ut consequatur dolorum omnis.</p>
+                                            <p>The working pattern at PayMe India allows employees to fall outside traditional office hours job responsibilities.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -318,8 +240,7 @@ const Career = (props) => {
                                                 <img className="img-fluid" src={allowance} alt="PayMe India"/>
                                             </div>
                                             <h3>Travel allowance</h3>
-                                            <p>Repellendus qui nisi rem. Tempora eum vel ut aspernatur repellat est et.
-                                                Quia dicta at ut consequatur dolorum omnis. </p>
+                                            <p>We pay our employees in respect of traveling expenses for business purposes.</p>
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-4 col-sm-12">
@@ -329,8 +250,7 @@ const Career = (props) => {
                                                 <img className="img-fluid" src={health} alt="Health allowance"/>
                                             </div>
                                             <h3>Health allowance</h3>
-                                            <p>Repellendus qui nisi rem. Tempora eum vel ut aspernatur repellat est et.
-                                                Quia dicta at ut consequatur dolorum omnis.</p>
+                                            <p>At PayMe India employees get the advantage of a Health allowance.</p>
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-4 col-sm-12">
@@ -339,10 +259,7 @@ const Career = (props) => {
                                                 <img className="img-fluid" src={environment} alt="Cool Environment"/>
                                             </div>
                                             <h3>Cool Environment</h3>
-                                            <p>Repellendus qui nisi rem. Tempora eum vel ut aspernatur repellat est et.
-                                                Quia dicta at ut consequatur dolorum omnis.
-
-                                            </p>
+                                            <p>Our employees explore various chances with a friendly environment.</p>
                                         </div>
                                     </div>
                                 </div>
