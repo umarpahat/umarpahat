@@ -13,8 +13,12 @@ import { API_ENDPOINT_STAGING } from "../../constant";
 //import Header from "../../component/Header";
 import Header from "../Header";
 import Footer from "../Footer";
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies()
 
 const OtherDetalisForm = (props) => {
+  const token = cookies.get('token')
   // const [logintoken, setlogintoken] = usest
   const [serviceCharge, setserviceCharge] = useState(0);
   const [kyc_verified, setkyc_verified] = useState(false);
@@ -64,7 +68,7 @@ const OtherDetalisForm = (props) => {
       `pay_rent/${props.user.userData.id}/rent_agreement.jpeg`,
     ];
     const signedUrlObj = await getS3SignedUrl({
-      token: props.token,
+      token: token,
       payload: { s3_path: pathArray, bucket_name: "payme-test-documents" },
     });
     setsignedUrl(signedUrlObj.data.data);
@@ -72,7 +76,7 @@ const OtherDetalisForm = (props) => {
   }
 
   useEffect(() => {
-    if (!props.token) {
+    if (!token) {
       props.history.push({ pathname: "/" });
     }
   });
@@ -82,7 +86,7 @@ const OtherDetalisForm = (props) => {
     return await api.post(
       "/api/update_document_status/",
       { doc_type: data.docType, path: data.path },
-      { headers: { Authorization: "Token " + props.token } }
+      { headers: { Authorization: "Token " + token } }
     );
   }
 
@@ -104,7 +108,7 @@ const OtherDetalisForm = (props) => {
     console.log("eerererer", url);
     let config = {
       headers: {
-        Authorization: "Token " + props.token,
+        Authorization: "Token " + token,
         "Content-Type": "application/json",
       },
     };
@@ -115,6 +119,10 @@ const OtherDetalisForm = (props) => {
         setserviceCharge(response.data.service_charge);
       })
       .catch((err) => {
+        if(err.response.status===401)
+        {
+          cookies.remove('token', { path: '/' })
+        }
         console.log(userdocumentsmodel);
         console.log("eeeeee", err);
       });
@@ -122,7 +130,7 @@ const OtherDetalisForm = (props) => {
     let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`;
     // let config = {
     //   headers: {
-    //     Authorization: "Token " + props.token,
+    //     Authorization: "Token " + token,
     //     'Content-Type': "application/json"
     //   }
     // }
@@ -139,7 +147,7 @@ const OtherDetalisForm = (props) => {
     let url3 = `${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`;
     let config3 = {
       headers: {
-        Authorization: "Token " + props.token,
+        Authorization: "Token " + token,
       },
     };
     // return (dispatch) => new Promise(async (resolve, reject) => {

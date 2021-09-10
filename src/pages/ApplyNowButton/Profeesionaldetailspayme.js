@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { hitAllUserData } from "../../store/modules/userDetails/actions";
+import { hitAllUserData,hitAppUseCase } from "../../store/modules/userDetails/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import backicon from "../../component/img/backicon.png";
@@ -13,8 +13,14 @@ import axios from "axios";
 import { API_ENDPOINT } from "../../constant";
 import Header from "../Header";
 import Footer from "../Footer";
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies()
+
+
 
 const Professionaldetailspayme = (props) => {
+  console.log("professional details",props)
   const [inhandsalary, setInhandsalary] = useState("");
   const [industry, setIndustry] = useState("");
   const [workExp, setWorkExp] = useState("");
@@ -45,11 +51,15 @@ const Professionaldetailspayme = (props) => {
 
   const [data, setData] = useState([]);
 
+  const token = cookies.get('token')
+  
   useEffect(() => {
+    props.hitAllUserData({ token: token });
+    props.hitAppUseCase()
     let url = `${API_ENDPOINT}/api/industry_list/`;
     let config = {
       headers: {
-        Authorization: "Token " + props.token,
+        Authorization: "Token " + token,
       },
     };
     // return (dispatch) => new Promise(async (resolve, reject) => {
@@ -76,7 +86,7 @@ const Professionaldetailspayme = (props) => {
       `office_id/${props.user.id}/front.jpg`,
     ];
     const signedUrlObj = await getS3SignedUrl({
-      token: props.token,
+      token: token,
       payload: { s3_path: pathArray, bucket_name: "payme-test-documents" },
     });
     setsignedUrl(signedUrlObj.data.data);
@@ -88,7 +98,7 @@ const Professionaldetailspayme = (props) => {
     return await api.post(
       "/api/update_document_status/",
       { doc_type: data.docType, path: data.path },
-      { headers: { Authorization: "Token " + props.token } }
+      { headers: { Authorization: "Token " + token } }
     );
   }
 
@@ -106,12 +116,13 @@ const Professionaldetailspayme = (props) => {
       industry: Number(industry),
     };
     return await api.post("/api/user_details/professional_details/", payload, {
-      headers: { Authorization: "Token " + props.token },
+      headers: { Authorization: "Token " + token },
     });
   }
 
   useEffect(() => {
-    if (!props.user) {
+    
+    if (!token) {
       props.history.push({ pathname: "/" });
       return;
     }
@@ -120,6 +131,7 @@ const Professionaldetailspayme = (props) => {
   }, [props]);
 
   const handleSubmit = (event) => {
+   
     event.preventDefault();
     if (!industry) {
       setErrorindustry("Please Select Your Employement ");
@@ -162,7 +174,7 @@ const Professionaldetailspayme = (props) => {
       alert("Please enter pin code");
       return;
     }
-    
+     setloader(true);
     const uploadSalaryFront = postS3({
       res: uploadSalarySlip,
       presignedPostData: signedUrl[`salary_slip/${props.user.id}/front.jpg`],
@@ -191,10 +203,14 @@ const Professionaldetailspayme = (props) => {
       .then((response) => {
         setloader(false);
         console.log("xvxvxvxvx", response);
-        props.hitAllUserData({ token: props.token });
-        props.history.push({ pathname: "/pending-approval" });
+        props.hitAllUserData({ token: token });
+        props.history.push({pathname: "/pending-approval"});
       })
       .catch((error) => {
+        if(error.response.status===401)
+        {
+          cookies.remove('token', { path: '/' })
+        }
         console.log(121212, error);
         setloader(false);
       });
@@ -443,8 +459,7 @@ const Professionaldetailspayme = (props) => {
                       value={officeEmail}
                       onChange={(event) => {
                         setofficeEmail(event.target.value);
-                      }}
-                    />
+                      }}/>
                   </div>
                   <div>
                     <label className="form-label">
@@ -598,6 +613,7 @@ const dispatchToProps = (dispatch) => {
     {
       // hitLogin,
       hitAllUserData,
+      hitAppUseCase,
       // hitForgotMpin,
     },
     dispatch

@@ -2,11 +2,15 @@ import { call, put, takeEvery } from "redux-saga/effects";
 import { storeToken, appLogout, storeError } from "./actions";
 import { HITLOGIN, HITLOGOUT, HITFORGOTMPIN } from '../types'
 import { getLoginToken } from "./api";
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies();
 
 function* getToken(action) {
     try {
         const data = yield call(getLoginToken, action.payload);
-        console.log(data)
+        cookies.set('token', data.data.data.token);
+        console.log("hitlogin",data.data.data.token)
         if (data.data.error) {
             console.log(data.data.error)
             yield put(storeError({error: data.data.error}));

@@ -163,6 +163,17 @@ const HomePage = (props) => {
         let repay = result + amount + pfee;
         $('#repayment').text(repay);
         return result;
+
+    }
+    const handleCibilWeb =()=>{
+        window.open(
+            "https://creditscore.paymeindia.in/",
+            "popup",
+            "width=600,height=650,left=600,top=150,scrollbars=no,resizable=no"
+          );
+          
+          return false;
+
     }
 
 
@@ -189,7 +200,7 @@ const HomePage = (props) => {
                                             <h3 className="heading3"><span
                                                 className="col-orange">ABSOLUTELY FREE </span>
                                             </h3>
-                                            <a href='https://cibil.paymeindia.in/v1/fullfill_offer_form' target='_blank' className="button-large m-t-40">Download Now</a>
+                                            <a onClick={handleCibilWeb} target='_blank' className="button-large m-t-40">Download Now</a>
                                         </div>
                                     </div>
                                 </div>

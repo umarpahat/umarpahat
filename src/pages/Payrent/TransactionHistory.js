@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 
 import Header from "../Header";
 import Footer from "../Footer";
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies()
 const TransactionHistory = (props) => {
+  const token = cookies.get('token')
 
   const [successTrans, setsuccessTrans] = useState([])
   const [failedTrans, setfailedTrans] = useState([])
@@ -11,17 +15,17 @@ const TransactionHistory = (props) => {
 
   useEffect(()=>{
 
-    console.log("opopopopo")
+    console.log("opopopopo",props)
     console.log(props.location.state.transactionHistory)
-    props.location.state.transactionHistory.forEach(element => {
-      console.log(">>>>>", element)
-      if (element.payee.txn_status_code === "Failed") {
-        setfailedTrans(failedTrans => [...failedTrans, element])
-      }else if (element.payee.txn_status_code === "Success") {
-        setsuccessTrans(successTrans => [...successTrans, element])
-      }  if (element.payee.txn_status_code === "In Process") {
-        setpendingTrans(pendingTrans => [...pendingTrans, element])
-      }
+    props.location.state.transactionHistory?.forEach(element => {
+    console.log(">>>>>", element)
+    if (element.payee.txn_status_code === "Failed") {
+    setfailedTrans(failedTrans => [...failedTrans, element])
+    }else if (element.payee.txn_status_code === "Success") {
+    setsuccessTrans(successTrans => [...successTrans, element])
+    }if(element.payee.txn_status_code === "In Process") {
+    setpendingTrans(pendingTrans => [...pendingTrans, element])
+    }
     });
 
   }, [])

@@ -12,15 +12,19 @@ import Loader from "../../component/Loader";
 import Header from "../Header";
 import Footer from "../Footer";
 import "../../home.css";
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies()
 
 function LoginWithMobMpin(props) {
+  const token = cookies.get('token')
   let [loader, setloader] = useState(false);
   let [errorPass, seterrorPass] = useState(null);
   let [password, setpassword] = useState(null);
   let [forgotPassword, setforgotPassword] = useState(false);
   console.log(props);
   useEffect(() => {
-    if (props.token) {
+    if (token) {
       if (forgotPassword) {
         props.history.push({
           pathname: "/change-mpin",
@@ -74,7 +78,7 @@ function LoginWithMobMpin(props) {
             props.history.push({ pathname: "/" });
           }
         } else {
-          props.hitAllUserData({ token: props.token });
+          props.hitAllUserData({ token: token });
         }
       }
     }
@@ -213,7 +217,7 @@ const dispatchToProps = (dispatch) => {
   return bindActionCreators(
     {
       hitLogin,
-      hitAllUserData,
+      hitAllUserData
     },
     dispatch
   );

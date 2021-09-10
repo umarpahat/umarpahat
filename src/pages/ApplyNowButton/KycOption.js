@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import {
   hitAllUserData,
   hitEkyc,
+  hitAppUseCase
 } from "../../store/modules/userDetails/actions";
 import { bindActionCreators } from "redux";
 import { getEkyc } from "../../store/modules/userDetails/api";
@@ -11,21 +12,43 @@ import axios from "axios";
 import { API_ENDPOINT } from "../../constant";
 import Header from "../Header";
 import Footer from "../Footer";
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies()
+
 
 const KycOption = (props) => {
+  
+
+  const token = cookies.get('token')
   console.log("pramodsprops", props);
 
   const [webview, setWebview] = useState();
   const [ekyc, setEkyc] = useState();
   const [adhaar, setAdhaar] = useState();
+  const [refresh,setRefresh]=useState(true);
+  const [status,setStatus]=useState(true)
+  function refreshhi(){
+    props.hitAllUserData({ token: token });
+    props.hitAppUseCase()
+    }
+  if(refresh){
+    refreshhi();
+    setRefresh(false)
+    
+  }
+
 
   console.log("after ekyc", ekyc);
+   
+ 
+
 
   useEffect(() => {
     let url = `${API_ENDPOINT}/api/webview_url/payme_ekyc/`;
     let config = {
       headers: {
-        Authorization: "Token " + props.token,
+        Authorization: "Token " + token,
       },
     };
     axios
@@ -37,11 +60,17 @@ const KycOption = (props) => {
       
       .catch((err) => {
         console.log(err);
+        if(err.response.status===401)
+        {
+          cookies.remove('token', { path: '/' })
+        }
       });
   }, []);
 
 var time = setInterval(function(){
+  if(status){
   ekycCall();
+  }
 },3000);
 
 
@@ -51,7 +80,7 @@ var time = setInterval(function(){
      let url2 = `${API_ENDPOINT}/api/get_document_status/`;
      let config = {
       headers: {
-        Authorization: "Token " + props.token,
+        Authorization: "Token " + token,
       },
     };
     axios
@@ -205,9 +234,11 @@ var time = setInterval(function(){
                     style={{ height: "25px" }}
                     style={{ margin: "83px 0px 32px 0" }}
                     onClick={() => {
+                      clearTimeout();
+                     setStatus(false)
                       if (
                         props.user.userdocumentsmodel.kyc_verified ==="NOT_SUBMITTED" ||
-                        props.user.userdocumentsmodel.kyc_verified ==="NOT_VALID"
+                        props.user.userdocumentsmodel.kyc_verified ==="NOT_VALID" || props.user.userdocumentsmodel.kyc_verified ==="PENDING_VERIFICATION"
                       ) {
                         props.history.push({ pathname: "/kyc-details-form" });
                       } else if (!props.user.userbankdetail) {
@@ -258,7 +289,7 @@ const dispatchToProps = (dispatch) => {
       // hitLogin,
       hitAllUserData,
       hitEkyc,
-
+      hitAppUseCase,
       // hitForgotMpin,
     },
     dispatch

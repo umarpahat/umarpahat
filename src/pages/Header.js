@@ -5,9 +5,16 @@ import "../../src/home.css";
 import logo from "../images/logo.png";
 import Loader from "../component/Loader";
 import { Link } from "react-router-dom";
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies()
 
 const Header = (props) => {
   console.log("props", props);
+function logOut(){
+  cookies.remove('token', { path: '/' })
+  props.history.push("/");
+}
   return (
     <>
       <div className="sticky-top">
@@ -15,7 +22,7 @@ const Header = (props) => {
           <div className="container">
             <div className="row">
               <div className="col-auto me-auto">
-                <Link to="/">
+                <Link to="#" onClick={logOut}>
                   {" "}
                   <img
                     className="home_logo"

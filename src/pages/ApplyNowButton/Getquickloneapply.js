@@ -57,6 +57,10 @@ const Getquikloneapply = (props) => {
         return response;
       })
       .catch((error) => {
+        if(error.response.status===401)
+        {
+          cookies.remove('token', { path: '/' })
+        }
         console.log(error);
         setloader(false);
       });
@@ -96,7 +100,7 @@ const Getquikloneapply = (props) => {
                           <input
                             
                             type="number"
-                            maxLength={10}
+                            minLength={10}
                             className="form-control ms-form-input"
                             placeholder="Enter Your Mobile Number"
                             value={number || ""}

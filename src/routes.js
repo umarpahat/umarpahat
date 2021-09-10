@@ -37,6 +37,7 @@ import Creatempn from "./pages/ApplyNowButton/Creatempn";
 import KycOption from "./pages/ApplyNowButton/KycOption";
 import Header from "./pages/Header";
 import Footer from "./pages/Footer";
+import CibilReports from "./pages/Payrent/CibilReports"
 
 function Routes() {
     return (
@@ -91,6 +92,7 @@ function Routes() {
           path="/payrent-transaction-history"
           component={TransactionHistory}
         />
+        <Route exact path="/cibilreport" component={CibilReports}/>
         <Route component={Error} />
           </Switch>
           </>
