@@ -31,11 +31,11 @@ const Header = (props) => {
                                             Apply Loan
                                         </Link>
                                     </li>
-                                    <li>
+                                   {/* <li>
                                         <Link className="button" to="/login">
                                             Login
                                         </Link>
-                                    </li>
+                                    </li>*/}
                                     <li>
                                         <Link className="button" to="/pay-rent-details">
                                             Pay Rent
@@ -73,7 +73,7 @@ const Header = (props) => {
                                                 <Link to="/ourNbfcPartners">Our NBFC Partners</Link>
                                             </li>
                                             <li>
-                                                <Link to="/how-we-work">How it works?</Link>
+                                                <Link to="/career">Career</Link>
                                             </li>
                                             <li>
                                                 <Link to="/media-coverage">Media Coverage</Link>
