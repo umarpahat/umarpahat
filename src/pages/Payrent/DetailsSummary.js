@@ -11,7 +11,7 @@ import {API_ENDPOINT_STAGING} from "../../constant" ;
 import Footer from "../Footer";
 
 import Cookies from 'universal-cookie';
- 
+import tip from "../../images/svg/tip.png";
 const cookies = new Cookies()
 
 const DetailsSummary = (props) => {
@@ -56,9 +56,16 @@ const DetailsSummary = (props) => {
 
   return (
     <>
-   
+
       <Header />
       <div className='content darkBg'>
+        <Container>
+        <div className="row">
+          <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+            <br/>
+            <a className='back-arrow' href=''>Back</a>
+          </div>
+          <div className="col-lg-5 col-md-5 col-sm-12 text-center">
       <div className="form-container">
         <div className="ms-Tabs">
           <h4 className="form-heading text-center">Summary Of All Details</h4>
@@ -112,7 +119,7 @@ const DetailsSummary = (props) => {
                 <h4>Landlord's Account Number</h4>
                 <p>{props.location.state.payee.account_number}</p>
               </div>
-              
+
             </div>
           </div>
           <div className="">
@@ -123,10 +130,10 @@ const DetailsSummary = (props) => {
         <div >
           <Link
             to="/payrent-other-details"
-        
+
           >
              <button
-                     
+
                       className="getstartbtn "
                     >
                     Back
@@ -136,9 +143,27 @@ const DetailsSummary = (props) => {
       </div>
       </div>
       </div>
-     
-      <Footer/>
-    
+      <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+        <div className='height100'>
+          <div>
+            <div className='circle-half'>
+              <div className='full-circle'>
+                <img src={tip} alt='Icon'/>
+              </div>
+              <div className='full-text text-left'>
+                <h5>Tips</h5>
+                <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
+                  rerum nulla ea veniam facilis et. </p>
+              </div>
+            </div>
+            <div className='circle-half'>
+              <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+        </Container></div>
     </>
   );
 };

@@ -14,7 +14,9 @@ import { API_ENDPOINT_STAGING } from "../../constant";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from 'universal-cookie';
- 
+import { Container } from "react-bootstrap";
+import tip from "../../images/svg/tip.png";
+
 const cookies = new Cookies()
 
 const OtherDetalisForm = (props) => {
@@ -231,7 +233,7 @@ const OtherDetalisForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-  
+
     if (!landlordActNumber) {
       seterrorlandlordActNumber("Please enter landlord account number");
       return;
@@ -317,7 +319,13 @@ const OtherDetalisForm = (props) => {
         </div>
       ) : (
         // kyc_verified ?
-
+          <Container>
+          <div className="row">
+            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+              <br/>
+              <a className='back-arrow' href=''>Back</a>
+            </div>
+            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
         <div className="form-container">
           <div className="ms-Tabs">
             <div class="btn-group" role="group" aria-label="Basic example">
@@ -445,14 +453,8 @@ const OtherDetalisForm = (props) => {
                         </div>
                       )}
                     </div>
-
-                    {/* {RentAmount <= 15000 && (
-              <Link to="/detail-summary" className="submit-btn text-center">
-                <a style={{ color: "#fff" }}>Submit</a>
-              </Link>
-            )} */}
                   </div>
-                
+
                   <button
                     onClick={handleScreen2}
                     className="getstartbtn "
@@ -737,17 +739,17 @@ const OtherDetalisForm = (props) => {
               </h4>
               <br></br>
               {userdocumentsmodel.kyc_verified=== "NOT_SUBMITTED" || userdocumentsmodel.kyc_verified===  "NOT_VALID" ?
-              
+
               (<div><span  className="reloadicon" style={{ opacity: "0.59",right:"200px" , fontFamily: "Montserrat"}}>Kyc status: </span>
               <span  className="reloadicon" style={{color:"red",opacity: "0.59",right:"200px" , fontFamily: "Montserrat"}}>{userdocumentsmodel.kyc_verified}</span>
              </div> ):null }
 
              {userdocumentsmodel.kyc_verified===  "PENDING_VERIFICATION"  ?
-              
+
               (<div><span  className="reloadicon" style={{ opacity: "0.59",right:"200px" , fontFamily: "Montserrat"}}>Kyc status: </span>
               <span  className="reloadicon" style={{color:"#ff8000",opacity: "0.59",right:"200px" , fontFamily: "Montserrat"}}>{userdocumentsmodel.kyc_verified}</span>
-             </div> ):null }              
-             
+             </div> ):null }
+
               {userdocumentsmodel.kyc_verified === "PENDING_VERIFICATION" ? (
                  <div><br></br>
                 <p style={{ fontFamily: "Montserrat"}}>We are verifying your details.</p>
@@ -767,11 +769,31 @@ const OtherDetalisForm = (props) => {
               ) : null}
             </div>
           )}
-      
+
         </div>
+        </div>
+        <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+        <div className='height100'>
+        <div>
+        <div className='circle-half'>
+        <div className='full-circle'>
+        <img src={tip} alt='Icon'/>
+        </div>
+        <div className='full-text text-left'>
+        <h5>Tips</h5>
+        <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
+        rerum nulla ea veniam facilis et. </p>
+        </div>
+        </div>
+        <div className='circle-half'>
+        <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+          </Container>
       )}
-      
-      <Footer/>
       </div>
     </>
   );
