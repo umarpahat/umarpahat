@@ -89,21 +89,21 @@ const TransactionHistory = (props) => {
           </div>
         </div>
         <form>
-          <div className="Home-contact-form">
+          <div className="home-contact-form">
             <h4 className="form-heading ">Pending Transaction</h4>
             <div className="form-block">
            {(PensindTransTrack.length===0)?<span>No Pending Transaction</span>:null}
               {PensindTransTrack}
             </div>
           </div>
-          <div className="Home-contact-form mt-4">
+          <div className="home-contact-form mt-4">
             <h4 className="form-heading ">Completed Transaction</h4>
             <div className="form-block">
             {(SuccessTransTrack.length===0)?<span>No Success Transaction</span>:null}
               {SuccessTransTrack}
             </div>
           </div>
-          <div className="Home-contact-form mt-4">
+          <div className="home-contact-form mt-4">
             <h4 className="form-heading ">Cancelled Transaction</h4>
             <div className="form-block">
             {(failedTRanstrack.length===0)?<span>No Failed Transaction</span>:null}

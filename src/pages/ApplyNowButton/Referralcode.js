@@ -60,7 +60,7 @@ function Referralcode(props) {
       <div className="form-container formcontainermob  pt-4">
         <div>
           <form onSubmit={handleSubmit}>
-            <div className="Home-contact-form mt-4">
+            <div className="home-contact-form mt-4">
               <h4 className="form-heading text-center">Referral Code</h4>
               <div class="form-group ms-input-group">
                 <div className="topnoticreferral">
@@ -110,7 +110,6 @@ function Referralcode(props) {
         {/* </Link> */}
       </div>
         </div>
-        <Footer/>
     </>
   );
 }

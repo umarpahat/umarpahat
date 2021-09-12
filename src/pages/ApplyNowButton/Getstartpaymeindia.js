@@ -64,7 +64,7 @@ console.log(error)
         <div className="pt-5 ">
           <div className="contenertQuicklone">
             <div className="slider-right-block">
-              <div className="Home-contact-form">
+              <div className="home-contact-form">
                 <h4 className="form-heading fornheadding pb-3">
                   Get Started With PayMe India
                 </h4>
@@ -127,7 +127,6 @@ console.log(error)
         </div>
       </Container>}
       </div>
-      <Footer/>
     </>
   );
 };

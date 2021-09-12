@@ -165,7 +165,7 @@ const SocialInitiative = (props) => {
                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12  initiative"
                                  style={{textAlign: "justify"}}>
                                 <form id='form' name='form'>
-                                    <div className="Home-contact-form mt-4" style={{maxWidth:600, margin:'auto'}}>
+                                    <div className="home-contact-form mt-4" style={{maxWidth:600, margin:'auto'}}>
                                         <h4 className="form-heading text-center">Volunteer and Trainee Registration</h4>
 
                                         <div className="form-block">

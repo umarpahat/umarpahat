@@ -80,7 +80,7 @@ const Pandingapprovalform = (props) => {
         <Container>
           <div className="form-container formcontainermob  pt-4">
             <form className='p-b-30'>
-              <div className="Home-contact-form mt-4">
+              <div className="home-contact-form mt-4">
                 <h4 className="form-heading text-center">Pending Approval</h4>
                 <p className="PreApprovePara">
                   Please provide the rejected documents again.
@@ -428,8 +428,7 @@ const Pandingapprovalform = (props) => {
           </div>
         </Container>
       </div>
-      <Footer/>
-     
+
 
       {documentstatus.kyc_verified === "VERIFIED" &&
       documentstatus.bank_details_verified === "VERIFIED" &&

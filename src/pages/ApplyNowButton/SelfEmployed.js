@@ -139,7 +139,7 @@ const SelfEmployed = (props) => {
             </div>
           </div>
           <form onSubmit={handleSubmit}>
-            <div classNaEmploymentme="Home-contact-form mt-4">
+            <div classNaEmploymentme="home-contact-form mt-4">
               <div class="form-group ms-input-group">
                 <label className="form-label"> Status </label>
               </div>
@@ -288,7 +288,6 @@ const SelfEmployed = (props) => {
       </Container>
       <Modalkyccomplete show={show} handleClose={handleClose} />
       </div>
-        <Footer />
     </>
   );
 };

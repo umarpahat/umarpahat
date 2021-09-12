@@ -64,7 +64,7 @@ const DetailsSummary = (props) => {
           <h4 className="form-heading text-center">Summary Of All Details</h4>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="Home-contact-form p-3 px-5">
+          <div className="home-contact-form p-3 px-5">
             <div className="form-block m-0">
               <div className="details-block">
                 <h4>Rent Amount</h4>
@@ -80,7 +80,7 @@ const DetailsSummary = (props) => {
               </div>
             </div>
           </div>
-          <div className="Home-contact-form mt-4  p-3 px-5">
+          <div className="home-contact-form mt-4  p-3 px-5">
             <h4 className="form-heading">Landlord's Details</h4>
             <div className="form-block m-0">
               <div className="details-block">
@@ -97,7 +97,7 @@ const DetailsSummary = (props) => {
               </div>
             </div>
           </div>
-          <div className=" mt-4 Home-contact-form p-3 px-5">
+          <div className=" mt-4 home-contact-form p-3 px-5">
             <h4 className="form-heading">Landlord's Bank Details</h4>
             <div className="form-block">
               <div className="details-block">

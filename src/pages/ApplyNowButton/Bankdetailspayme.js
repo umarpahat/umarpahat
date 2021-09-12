@@ -297,7 +297,7 @@ console.log(errbackend)
                 </div>
               </div>
               <form onSubmit={handleSubmit}>
-                <div className="Home-contact-form mt-4">
+                <div className="home-contact-form mt-4">
                   <h4 className="form-heading text-center">Bank Details</h4>
                   {errbackend ? (
                     <span style={{ color: "red" }}>{errbackend}</span>

@@ -70,7 +70,8 @@ const Getquikloneapply = (props) => {
     <>
       {/* {!newUser ? <Header /> : null } */}
       <Header {...props} />
-      <div className="content darkBg" style={{paddingBottom:"110px",paddingTop:"20px"}}>
+      <div className="content darkBg">
+        <div className='info'>Make sure the mobile number is associated in this  specific device, we will send and verify the new number with reverse OTP.</div>
         <Container>
           {loader ? (
             <div className="loader">
@@ -84,50 +85,73 @@ const Getquikloneapply = (props) => {
               resendOtp={verifyPhone}
             />
           ) : (
-            <div className="pt-5 p-b-30">
-              <div className="contenertQuicklone">
-                <div className="slider-right-block">
-                  <form onSubmit={handleSubmit}>
-                    <div className="Home-contact-form">
-                      <h4 className="form-heading fornheadding">
-                        Let's Get Started
-                      </h4>
+              <div className="row">
+                  <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                    <br/>
+                    <a className='back-arrow' href=''>Back</a>
+                  </div>
+                  <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                          <div className="contenertQuicklone">
+                              <div className="slider-right-block">
+                                  <form onSubmit={handleSubmit}>
+                                      <div className="home-contact-form">
+                                          <h4 className="form-heading fornheadding">
+                                              Let's Get Started
+                                          </h4>
 
-                      <div className="form-block">
-                        <div className="form-group ms-input-group">
-                          <label className="form-label">Mobile Number</label>
+                                          <div className="form-block">
+                                              <div className="form-group ms-input-group">
+                                                  <label className="form-label">Mobile Number</label>
 
-                          <input
-                            
-                            type="number"
-                            minLength={10}
-                            className="form-control ms-form-input"
-                            placeholder="Enter Your Mobile Number"
-                            value={number || ""}
-                            onChange={(event) => {setnumber(event.target.value.slice(0,10))
-                          if(event.target.value.length===0 || event.target.value.length===10)
-                          {
-                            seterror("");
-                          }}}
-                          />
-                          {error ? (
-                            <span style={{ color: "red" }}>{error}</span>
-                          ) : null}
-                        </div>
+                                                  <input
+
+                                                      type="number"
+                                                      minLength={10}
+                                                      className="form-control ms-form-input"
+                                                      placeholder="Enter new mobile number"
+                                                      value={number || ""}
+                                                      onChange={(event) => {setnumber(event.target.value.slice(0,10))
+                                                          if(event.target.value.length===0 || event.target.value.length===10)
+                                                          {
+                                                              seterror("");
+                                                          }}}
+                                                  />
+                                                  {error ? (
+                                                      <span style={{ color: "red" }}>{error}</span>
+                                                  ) : null}
+                                              </div>
+                                          </div>
+                                          <div className="pt-3">
+                                              <label></label>
+                                              <input
+                                                  type="submit"
+                                                  value="Continue"
+                                                  className="getstartbtn fontstyformQuiklone"
+                                              />
+                                          </div>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                  </div>
+                  <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+
+                    <div className='height100'>
+                    <div className='circle-half'>
+                      <div className='full-circle'>
+                        <img src='' alt='Icon' />
                       </div>
-                      <div className="pt-3">
-                        <label></label>
-                        <input
-                          type="submit"
-                          value="Continue"
-                          className="getstartbtn fontstyformQuiklone"
-                        />
+                      <div className='full-text text-left'>
+                        <h5>Tips</h5>
+                        <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem rerum nulla ea veniam facilis et. </p>
                       </div>
                     </div>
-                  </form>
-                </div>
+                      <div className='circle-half'>
+                        <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem rerum nulla ea veniam facilis et. </p>
+                    </div>
+                  </div>
+                  </div>
               </div>
-            </div>
           )}
         </Container>
       </div>

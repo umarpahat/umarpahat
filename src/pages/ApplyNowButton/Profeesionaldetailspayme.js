@@ -258,7 +258,7 @@ const Professionaldetailspayme = (props) => {
               </div>
             </div>
             <form onSubmit={handleSubmit}>
-              <div className="Home-contact-form ">
+              <div className="home-contact-form ">
                 <div class="form-group ms-input-group">
                   <label className="form-label">Employment Status</label>
                 </div>
@@ -595,7 +595,6 @@ const Professionaldetailspayme = (props) => {
         )}
       </Container>
       </div>
-      <Footer/>
     </>
   );
 };

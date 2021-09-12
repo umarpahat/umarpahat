@@ -149,7 +149,7 @@ function LoginWithMobMpin(props) {
           <div className="form-container formcontainermob pt-4 ">
             <div className="p-b-30">
               <form onSubmit={handleSubmit}>
-                <div className="Home-contact-form mt-4">
+                <div className="home-contact-form mt-4">
                   <div className="form-block">
                     <div className="form-group ms-input-group">
                       <label className="form-label pb-2">Mobile Number</label>
@@ -199,7 +199,6 @@ function LoginWithMobMpin(props) {
           </div>
         )}
       </div>
-      <Footer />
     </>
   );
 }

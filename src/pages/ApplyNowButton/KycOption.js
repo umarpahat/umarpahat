@@ -166,7 +166,7 @@ var time = setInterval(function(){
           <div className="pt-5 ">
             <div className="contenertQuicklone">
               <div className="slider-right-block">
-                <div className="Home-contact-form">
+                <div className="home-contact-form">
                   <h4 className="form-heading fornheadding">
                     Congratulation Your Kyc is verified click below to continue.
                   </h4>
@@ -189,7 +189,7 @@ var time = setInterval(function(){
           <div className="pt-5 ">
             <div className="contenertQuicklone">
               <div className="slider-right-block">
-                <div className="Home-contact-form">
+                <div className="home-contact-form">
                   <h4 className="form-heading fornheadding">
                     Your Kyc is Pending click below to complete
                   </h4>
@@ -213,7 +213,7 @@ var time = setInterval(function(){
           <div className="pt-5 ">
             <div className="contenertQuicklone">
               <div className="slider-right-block">
-                <div className="Home-contact-form">
+                <div className="home-contact-form">
                   <h4 className="form-heading fornheadding">
                     Choose from the preferred option below to proceed.
                   </h4>
@@ -263,10 +263,6 @@ var time = setInterval(function(){
       <div >
       </div>
       </div>
-      <div >
-       <Footer/>
-       </div>
-     
     </>
   );
 };

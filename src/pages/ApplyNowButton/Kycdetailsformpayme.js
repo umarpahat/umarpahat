@@ -280,7 +280,7 @@ const Kycdetailsformpayme = (props) => {
           </div>
 
           <form onSubmit={handleSubmit}>
-            <div className="Home-contact-form">
+            <div className="home-contact-form">
               {/* <h4 className="form-heading text-center">
                 Tell Us about Yourself
               </h4> */}
@@ -535,7 +535,6 @@ const Kycdetailsformpayme = (props) => {
         </div>
       )}
       </div>
-    <Footer/>
     </>
   );
 };

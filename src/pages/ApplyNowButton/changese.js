@@ -41,7 +41,7 @@ const Kycdetailsformpayme = (props) => {
         </div>
 
         <form>
-          <div className="Home-contact-form">
+          <div className="home-contact-form">
             <h4 className="form-heading text-center">Tell Us about Yourself</h4>
             <div className="form-block">
               <div class="form-group ms-input-group">
@@ -158,7 +158,6 @@ const Kycdetailsformpayme = (props) => {
         </form>
       </div>
       </div>
-      <Footer/>
     </>
   );
 };

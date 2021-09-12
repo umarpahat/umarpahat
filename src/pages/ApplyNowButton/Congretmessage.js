@@ -15,7 +15,7 @@ const Congretmessage = (props) => {
       <Container >
         <div className="form-container formcontainermob  pt-4 p-b-30">
           <form>
-            <div className="Home-contact-form mt-4">
+            <div className="home-contact-form mt-4">
               <h4 className="form-heading text-center pb-3">
                 Your documents have been submitted
               </h4>
@@ -38,8 +38,6 @@ const Congretmessage = (props) => {
         </div>
       </Container>
       </div>
-      <br></br>
-      <Footer/>
     </>
   );
 };

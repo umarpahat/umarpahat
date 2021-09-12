@@ -18,15 +18,6 @@ body {
     line-height: 1.5;
 }
 
-.darkBg {
-    background: #829aae url("./images/banner-img.png") no-repeat center 0 fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
-}
-
 .border-top {
     margin-top: 20px;
     padding: 10px !important;

@@ -172,20 +172,29 @@ h6 {
   outline: none;
   border: none;
 }
-.form-control:focus {
-  border-color: inherit;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
+
 .btn-primary.focus,
 .btn-primary:focus {
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+.form-control {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #6F6F6F;
+  outline: 0;
+}
+
 .form-control:focus {
-  color: #495057;
-  background-color: #fff !important;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
   outline: 0;
 }
 /*--------------------header------------------------------------*/
@@ -921,14 +930,18 @@ a:hover {
   padding-bottom: 10px;
 }
 .getstartbtn {
-  background: #33658a !important;
   display: block;
   width: 100%;
-  padding: 20px;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
+  padding:5px 20px;
   color: #fff;
+  height: 48px;
+  background: #1DBF73 !important;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  border: none;
+  cursor: pointer;
 }
 .Milestons-block-section {
   display: flex;
@@ -1287,7 +1300,7 @@ a:hover {
 .ms-Tabs {
   margin-bottom: 3em;
   text-align: center;
-  
+
 }
 .active-btn {
   background-color: #33658a;
@@ -1513,8 +1526,8 @@ a:hover {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
-  
+
+
 }
 .tabDots {
   width: 8px;
@@ -1589,7 +1602,7 @@ a:hover {
   letter-spacing: 1px;
 }
 .contenertQuicklone {
-  width: 550px;
+  width: 100%;
   margin: auto;
 }
 .signupbtnsty {
@@ -2286,7 +2299,7 @@ select option {
   .small-heading-topslider {
     font-size: 12px !important;
   }
-  .Home-contact-form {
+  .home-contact-form {
     padding: 1em;
   }
   .top-logo {
@@ -2364,7 +2377,7 @@ select option {
   }
   .resent-btn {
     font-size: 14px;
-    
+
   }
 
   /*  Career Advisory */
@@ -2633,7 +2646,7 @@ select option {
     width: auto;
     margin: 0px !important;
   }
-  .Home-contact-form {
+  .home-contact-form {
     padding: 2em;
   }
   .containerkycprogress {
@@ -2660,7 +2673,7 @@ select option {
   .file-uploading-block {
     padding: 0px !important;
   }
-  .Home-contact-form {
+  .home-contact-form {
     padding: 1em !important;
   }
   .mobProgressBar {

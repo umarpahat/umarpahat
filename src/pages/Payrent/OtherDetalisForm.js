@@ -342,7 +342,7 @@ const OtherDetalisForm = (props) => {
             <form onSubmit={handleSubmit}>
               {screen1 ? (
                 <div>
-                  <div className="Home-contact-form">
+                  <div className="home-contact-form">
                     <h4 className="form-heading text-center">
                       Fill Out The Following Details
                     </h4>
@@ -465,7 +465,7 @@ const OtherDetalisForm = (props) => {
               <div>
                 {screen2 ? (
                   <div>
-                    <div className="Home-contact-form mt-4">
+                    <div className="home-contact-form mt-4">
                       <h4 className="form-heading">Details</h4>
                       <div className="form-block">
                         <div class="form-group ms-input-group">
@@ -640,7 +640,7 @@ const OtherDetalisForm = (props) => {
 
                 {screen3 ? (
                   <div>
-                    <div className="Home-contact-form mt-4">
+                    <div className="home-contact-form mt-4">
                       <h4 className="form-heading">Landlord's Bank Details</h4>
                       <div className="form-block">
                         <div class="form-group ms-input-group">
@@ -731,7 +731,7 @@ const OtherDetalisForm = (props) => {
               </div>
             </form>
           ) : (
-            <div className="Home-contact-form">
+            <div className="home-contact-form">
               <h4 className="form-heading text-center">
                 Your KYC is not verified
               </h4>

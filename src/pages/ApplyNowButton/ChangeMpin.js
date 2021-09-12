@@ -65,7 +65,7 @@ function ChangeMpin(props) {
       <div className="form-container formcontainermob  pt-4">
         <div>
         <form onSubmit={createNewMpin}>
-            <div className="Home-contact-form mt-4">
+            <div className="home-contact-form mt-4">
               <h4 className="form-heading text-center">MPIN CHANGE</h4>
 
               <div className="form-block">
@@ -112,7 +112,6 @@ function ChangeMpin(props) {
         </div>
       </div>}
         </div>
-      <Footer />
     </>
   );
 }
