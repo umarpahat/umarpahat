@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from 'universal-cookie';
- 
+import { Container } from "react-bootstrap";
+import tip from "../../images/svg/tip.png";
 const cookies = new Cookies()
 const TransactionHistory = (props) => {
   const token = cookies.get('token')
@@ -68,12 +69,19 @@ const TransactionHistory = (props) => {
     </div>
   </div>
   ))
- 
+
 
   return (
     <>
     <div className='content darkBg'>
       <Header {...props}/>
+      <Container>
+      <div className="row">
+        <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+          <br/>
+          <a className='back-arrow' href=''>Back</a>
+        </div>
+        <div className="col-lg-5 col-md-5 col-sm-12 text-center">
       <div className="form-container">
         <div className="ms-Tabs">
           <div class="btn-group" role="group" aria-label="Basic example">
@@ -112,8 +120,29 @@ const TransactionHistory = (props) => {
           </div>
         </form>
       </div>
-      <Footer/>
+    </div>
+    <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+      <div className='height100'>
+        <div>
+          <div className='circle-half'>
+            <div className='full-circle'>
+              <img src={tip} alt='Icon'/>
+            </div>
+            <div className='full-text text-left'>
+              <h5>Tips</h5>
+              <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
+                rerum nulla ea veniam facilis et. </p>
+            </div>
+          </div>
+          <div className='circle-half'>
+            <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
+          </div>
+        </div>
       </div>
+    </div>
+      </div>
+      </Container>
+    </div>
     </>
   );
 };

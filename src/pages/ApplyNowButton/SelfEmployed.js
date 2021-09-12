@@ -12,7 +12,8 @@ import Loader from "../../component/Loader";
 import Footer from "../Footer";
 import Header from "../Header";
 import Cookies from 'universal-cookie';
- 
+import tip from "../../images/svg/tip.png";
+
 const cookies = new Cookies()
 const SelfEmployed = (props) => {
   const token = cookies.get('token')
@@ -27,7 +28,7 @@ const SelfEmployed = (props) => {
   const [errorpresentAddLine1, seterrorpresentAddLine1] = useState("");
   const [errorpresentPincode, seterrorpresentPincode] = useState("");
   const [errorPinCode, setErrorPinCode] = useState("");
- 
+
   async function getSignedUrl() {
     const pathArray = [`other_document/${props.user.id}/latest_itr.pdf`];
     const signedUrlObj = await getS3SignedUrl({
@@ -82,7 +83,7 @@ const SelfEmployed = (props) => {
       seterrorpresentPincode("Please enter pin code");
       return;
     }
- 
+
     const uploadItrFront = postS3({
       res: uploadItr,
       presignedPostData:
@@ -118,8 +119,13 @@ const SelfEmployed = (props) => {
     <>
       <Header {...props} />
       <div className='content darkBg'>
-      <Container className="pb-5" style={{ backgroundColor: "#f2f2f2" }}>
-        <div className="form-container formcontainermob  pt-4 pb-5">
+      <Container>
+          <div className="row">
+            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+              <br/>
+              <a className='back-arrow' href=''>Back</a>
+            </div>
+            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
           <div className="pt-2">
             <div className="pb-4">
               <Progressbar />
@@ -247,7 +253,7 @@ const SelfEmployed = (props) => {
                         maxLength={6}
                         value={presentPincode}
                         onChange={(event) => {
-                         
+
                           if (
                               event.target.value.match(
                                 /^[1-9]{1}[0-9]{2}[0-9]{3}$/
@@ -262,7 +268,7 @@ const SelfEmployed = (props) => {
                           setpresentPincode(event.target.value);
                         }}
                       />
-                    
+
 
                       {errorPinCode ? (
                         <span style={{ color: "red" }}>{errorPinCode}</span>
@@ -284,7 +290,27 @@ const SelfEmployed = (props) => {
               />
             </div>
           </form>
-        </div>
+            </div>
+            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+              <div className='height100'>
+                <div>
+                  <div className='circle-half'>
+                    <div className='full-circle'>
+                      <img src={tip} alt='Icon'/>
+                    </div>
+                    <div className='full-text text-left'>
+                      <h5>Tips</h5>
+                      <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
+                        rerum nulla ea veniam facilis et. </p>
+                    </div>
+                  </div>
+                  <div className='circle-half'>
+                    <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </Container>
       <Modalkyccomplete show={show} handleClose={handleClose} />
       </div>
