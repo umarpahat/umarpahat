@@ -929,14 +929,13 @@ a:hover {
 .getstartbtn {
   display: block;
   width: 100%;
-  padding:5px 20px;
-  color: #fff;
-  height: 48px;
+  padding:10px 20px;
+  color: #fff!important;
   background: #1DBF73 !important;
   border-radius: 6px;
   font-weight: 600;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 28px;
   border: none;
   cursor: pointer;
 }

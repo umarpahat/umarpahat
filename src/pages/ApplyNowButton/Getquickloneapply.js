@@ -5,11 +5,11 @@ import { connect } from "react-redux";
 import { api } from "../../services/api";
 import Loader from "../../component/Loader";
 import Confirmotpmobile from "./Confirmotpmobile";
-import tip from "../../images/svg/tip.png";
 import "../ApplyNowButton/Applybtnallcomponent.css";
 import Header from "../Header";
 import Footer from "../Footer";
 import "../../home.css";
+import letsStart from "../../images/animated/lets-start-animation.gif";
 
 const Getquikloneapply = (props) => {
   let [loader, setloader] = useState(false);
@@ -140,7 +140,7 @@ const Getquikloneapply = (props) => {
                     <div>
                       <div className='circle-half'>
                         <div className='full-circle'>
-                          <img src={tip} alt='Icon'/>
+                          <img src={letsStart} className='img-fluid max-width70' alt='Icon'/>
                         </div>
                         <div className='full-text text-left'>
                           <h5>Tips</h5>

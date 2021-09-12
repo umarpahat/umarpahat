@@ -139,7 +139,7 @@ button.button-gray:hover {
 }
 
 .p-a-10 {
-    padding: 10px 30px;
+    padding: 15px 30px 0;
 }
 
 .full-circle {
@@ -329,6 +329,7 @@ button.button-gray:hover {
     line-height: 50px;
     background: #02C650;
     border-radius: 60px;
+    border: 0;
 }
 
 .heading2 {
@@ -2293,7 +2294,7 @@ a {
 }
 
 .maxLimitWidth {
-    max-width: 500px;
+    max-width: 400px;
 }
 
 .initiative p {
