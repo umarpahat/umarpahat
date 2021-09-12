@@ -12,7 +12,8 @@ import Header from "../Header";
 import Footer from "../Footer";
 import { Link } from "react-router-dom";
 import Cookies from 'universal-cookie';
- 
+import tip from "../../images/svg/tip.png";
+
 const cookies = new Cookies()
 
 const Getstartpaymeindia = (props) => {
@@ -27,7 +28,7 @@ const Getstartpaymeindia = (props) => {
       setloader(false)
       props.hitAllUserData({ token: token })
         props.history.push({pathname:'/referral-code'})
-    } 
+    }
 });
 
   const acceptTermsAndCond = (props) => {
@@ -36,7 +37,7 @@ const Getstartpaymeindia = (props) => {
   }
 
   const responseGoogle = (response) => {
-  
+
     try {
       props.hitLogin({ type: 'google', access_token: response.tokenId, phone_number: Number(props.history.location.state.phoneNumber)})
       props.history.push({pathname:'/referral-code'})
@@ -61,6 +62,12 @@ console.log(error)
         <div className='content darkBg'>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <Container>
+          <div className="row">
+            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+              <br/>
+              <a className='back-arrow' href=''>Back</a>
+            </div>
+            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
         <div className="pt-5 ">
           <div className="contenertQuicklone">
             <div className="slider-right-block">
@@ -125,6 +132,27 @@ console.log(error)
             </div>
           </div>
         </div>
+            </div>
+            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+              <div className='height100'>
+                <div>
+                  <div className='circle-half'>
+                    <div className='full-circle'>
+                      <img src={tip} alt='Icon'/>
+                    </div>
+                    <div className='full-text text-left'>
+                      <h5>Tips</h5>
+                      <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
+                        rerum nulla ea veniam facilis et. </p>
+                    </div>
+                  </div>
+                  <div className='circle-half'>
+                    <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </Container>}
       </div>
     </>

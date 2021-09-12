@@ -449,7 +449,7 @@ console.log(errbackend)
                   <input
                     type="submit"
                     style={{ color: "white" }}
-                    className="getstartbtn fontstyformQuiklone"
+                    className="getstartbtn "
                     value="Save and  Continue"
                   />
                 </div>

@@ -8,6 +8,8 @@ import Loader from "../../component/Loader";
 import { api } from "../../services/api";
 import Header from "../Header";
 import Footer from "../Footer";
+import phone from "../../images/svg/phone.svg";
+import { Container } from "react-bootstrap";
 
 const Confirmotpmobile = (props) => {
   const [otp, setotp] = useState("");
@@ -80,7 +82,7 @@ const Confirmotpmobile = (props) => {
 
   return (
     <>
-      <div className='content darkBg' style={{paddingTop:"50px"}}>
+      <div className='content darkBg'>
       {loader ? (
         <div className="loader">
           {" "}
@@ -88,57 +90,71 @@ const Confirmotpmobile = (props) => {
         </div>
       ) : (
         <>
-          <div className="Enter-otp-form" style={{position:'relative', paddingBottom:90}} >
-            <form>
-              <div className="home-contact-form">
-                <h4 className="form-heading text-center">
-                  OTP Sent On {props.phone_number}
-                </h4>
-
-                <div className="form-block">
-                  <div className="form-group ms-input-group">
-                    <label className="form-label montserrat-600">
-                      Enter OTP Here
-                    </label>
-                    <OtpInput
-                      isInputNum
-                      containerStyle="otp-input-container"
-                      inputStyle="otp-input "
-                      value={otp}
-                      onChange={(otp) => {
-                        setotpError(null);
-                        otp.length === 4
-                          ? props.forget_password
-                            ? verifyOtp(otp)
-                            : verifyOtpNewUser(otp)
-                          : setotp(otp);
-                      }}
-                      numInputs={4}
-                    />
-                    {otpError ? (
-                      <span style={{ color: "red" }}>{otpError}</span>
-                    ) : null}
-                  </div>
-                </div>
-
-                <div className="resent-btn">
-                  <div className="">
-                    <p
-                      style={{
-                        color: "#33658A",
-                        fontWeight: "700",
-                        cursor: "pointer",
-                        fontSize: "18px",
-                      }}
-                      onClick={props.resendOtp}
-                    >
-                      Resend OTP
+          <Container>
+            <div className="row">
+              <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                <br/>
+                <a className='back-arrow' href=''>Back</a>
+              </div>
+              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                <form>
+                  <div className="home-contact-form">
+                    <h4 className="form-heading fornheadding">
+                      OTP Sent On {props.phone_number}
+                    </h4>
+                    <p>
+                      22:01
                     </p>
+
+                    <div className="form-block">
+                      <div className="form-group ms-input-group">
+
+                        <OtpInput
+                            isInputNum
+                            containerStyle="otp-input-container"
+                            inputStyle="otp-input "
+                            value={otp}
+                            onChange={(otp) => {
+                              setotpError(null);
+                              otp.length === 4
+                                  ? props.forget_password
+                                  ? verifyOtp(otp)
+                                  : verifyOtpNewUser(otp)
+                                  : setotp(otp);
+                            }}
+                            numInputs={4}
+                        />
+                        {otpError ? (
+                            <span style={{color: "red"}}>{otpError}</span>
+                        ) : null}
+                      </div>
+                      <div className="green-text">
+                        Didn’t recived OTP?
+                      </div>
+                      <div className="resent-btn" onClick={props.resendOtp}>
+                        Resend OTP
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                <div className='height100'>
+                  <div>
+                    <div className='circle-half'>
+                      <div className='full-circle'>
+                        <img src={phone} alt='Icon'/>
+                      </div>
+                      <div className='full-text text-left'>
+                        <h5>Tips</h5>
+                        <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem rerum nulla ea veniam facilis et. </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </form>
-          </div>
+              </div>
+          </Container>
         </>
       )}
       </div>

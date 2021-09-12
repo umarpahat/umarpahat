@@ -17,9 +17,9 @@ import Progressbar from "../../component/ProgressBar";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from 'universal-cookie';
- 
-const cookies = new Cookies();
 
+const cookies = new Cookies();
+import tip from "../../images/svg/tip.png";
 
 const Pandingapprovalform = (props) => {
  const token = cookies.get('token')
@@ -30,24 +30,24 @@ const Pandingapprovalform = (props) => {
   const[professionalStatus,setProfessionalStatus]=useState("");
 
   useEffect(() => {
-   
+
     if (!token) {
       props.history.push({ pathname: "/" });
     }
     // ekycCall();
     if (Object.keys(props.user).length) {
-     
+
       setuserdocumentsmodel(props.user.userData.userdocumentsmodel);
       setuserbankdetail(
         props.user.userData.userbankdetail
-         
+
       );
-     
+
     }
   });
 
  useEffect(()=> {
-   
+
     let url2 = `${API_ENDPOINT}/api/get_document_status/`;
     let config = {
      headers: {
@@ -57,11 +57,11 @@ const Pandingapprovalform = (props) => {
    axios
      .get(url2, config)
      .then((response) => {
-       
-       
-      setDocumentstatus(response.data.data[0]); 
+
+
+      setDocumentstatus(response.data.data[0]);
       setProfessionalStatus(response.data.data[0].professional_details_verified)
-      
+
      })
      .catch((err) => {
       if(err.response.status===401){
@@ -78,11 +78,17 @@ const Pandingapprovalform = (props) => {
       <Header {...props}/>
         <div className='content darkBg' style={{paddingBottom:"90px",paddingTop:"20px"}}>
         <Container>
+                <div className="row">
+                    <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                        <br/>
+                        <a className='back-arrow' href=''>Back</a>
+                    </div>
+                    <div className="col-lg-5 col-md-5 col-sm-12 text-center">
           <div className="form-container formcontainermob  pt-4">
             <form className='p-b-30'>
               <div className="home-contact-form mt-4">
                 <h4 className="form-heading text-center">Pending Approval</h4>
-                <p className="PreApprovePara">
+                <p className="preApprovePara">
                   Please provide the rejected documents again.
                 </p>
                 <div className="form-block">
@@ -93,7 +99,7 @@ const Pandingapprovalform = (props) => {
                         <div className="">
                           <img
                             src={
-                             documentstatus.kyc_verified === "PENDING_VERIFICATION" 
+                             documentstatus.kyc_verified === "PENDING_VERIFICATION"
                              || documentstatus.kyc_verified==="VERIFIED"
                                 ? Righticons1
                                 : Righticons
@@ -426,6 +432,27 @@ const Pandingapprovalform = (props) => {
               </div>
             </form>
           </div>
+                    </div>
+                    <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                        <div className='height100'>
+                            <div>
+                                <div className='circle-half'>
+                                    <div className='full-circle'>
+                                        <img src={tip} alt='Icon'/>
+                                    </div>
+                                    <div className='full-text text-left'>
+                                        <h5>Tips</h5>
+                                        <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
+                                            rerum nulla ea veniam facilis et. </p>
+                                    </div>
+                                </div>
+                                <div className='circle-half'>
+                                    <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </Container>
       </div>
 

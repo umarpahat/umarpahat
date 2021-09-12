@@ -586,7 +586,7 @@ const Professionaldetailspayme = (props) => {
                 <input
                   type="submit"
                   style={{ color: "white"}}
-                  className="getstartbtn fontstyformQuiklone"
+                  className="getstartbtn "
                   value="Submit"
                 />
               </div>
