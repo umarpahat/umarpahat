@@ -176,7 +176,7 @@ const HomePage = (props) => {
 
 
     return (
-        <> <Header {...props}/>
+        <> <Header {...props} active="home"/>
             <MetaTags>
                 <title>Instant Personal Loans Online | Small Personal Loans - PayMe India</title>
                 <meta name="description" content="Instant personal loans online at an attractive interest rates.

@@ -24,7 +24,7 @@ const PayRent = (props) => {
 
     return (
         <>
-            <Header {...props} />
+            <Header {...props} active="payrent" />
             <MetaTags>
                 <title>Frequently Asked Questions - PayMeIndia</title>
                 <meta name="description" content="Do you have questions about how the loan app works? Frequently asked questions for all

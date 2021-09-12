@@ -94,6 +94,11 @@ var time = setInterval(function(){
       });
 
   }
+  var time = setInterval(function(){
+    if(status){
+    ekycCall();
+    }
+  },3000);
 
   if(setEkyc==="VERIFIED")
   {
