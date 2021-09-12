@@ -172,7 +172,7 @@ var time = setInterval(function(){
                   </h4>
                   <a
                     type="button"
-                    className="getstartbtn fontstyformQuiklone"
+                    className="getstartbtn "
                     style={{ margin: "83px 0px 72px 0",color:"white" }}
                     target="popup"
                     onClick={handleBankDetails}
@@ -195,7 +195,7 @@ var time = setInterval(function(){
                   </h4>
                   <a
                     type="button"
-                    className="getstartbtn fontstyformQuiklone"
+                    className="getstartbtn "
                     style={{ margin: "83px 0px 72px 0" }}
                     href={webview}
                     target="popup"
@@ -219,7 +219,7 @@ var time = setInterval(function(){
                   </h4>
                   <a
                     type="button"
-                    className="getstartbtn fontstyformQuiklone"
+                    className="getstartbtn "
                     style={{ margin: "83px 0px 72px 0" }}
                     href={webview}
                     target="popup"
@@ -230,7 +230,7 @@ var time = setInterval(function(){
                   <input
                     type="button"
                     value="Manual Kyc"
-                    className="getstartbtn fontstyformQuiklone"
+                    className="getstartbtn "
                     style={{ height: "25px" }}
                     style={{ margin: "83px 0px 32px 0" }}
                     onClick={() => {

@@ -380,18 +380,6 @@ nav a:hover {
     box-shadow: 0 6px 64px rgba(0, 0, 0, 0.25);
 }
 
-/*
-#menuToggle input:checked ~ ul, #menuToggle:before{
-    content: '';
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.75);
-    left: 0;
-    top: 0;
-}
-*/
-
 #menu ul {
     max-height: 100vh;
     overflow-y: auto;
@@ -615,7 +603,14 @@ a {
         width: 24px;
     }
 
+    #menu {
+        right: -100px;
+    }
 
+    #menuToggle input:checked ~ ul {
+        right: 0;
+        top: 69px
+    }
 }
 
 @media (min-width: 1400px) {

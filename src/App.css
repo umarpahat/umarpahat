@@ -1614,11 +1614,7 @@ a:hover {
   line-height: 1.5;
   color: #fff;
 }
-.fontstyformQuiklone {
-  font-size: 20px;
-  font-weight: 800;
-  font-family: 'Montserrat', sans-serif;
-}
+
 .Emailtext {
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
@@ -1684,12 +1680,11 @@ a:hover {
   color: #040b4d;
   font-family: 'Montserrat', sans-serif;
 }
-.PreApprovePara {
-  font-size: 16px;
-  font-weight: 600;
-  color: #040b4d;
-  font-family: 'Montserrat', sans-serif;
-  opacity: 0.7;
+.preApprovePara {
+  font-size: 14px;
+  line-height: 26px;
+  text-align: center;
+  color: #6F6F6F;
 }
 .preApprovNo {
   font-size: 32px;
@@ -2311,9 +2306,6 @@ select option {
   .ms-form-input {
     height: 50px;
   }
-  .submit-btn {
-    padding: 12px;
-  }
 
   /* Benifits Block */
   .section-heading {
@@ -2357,28 +2349,16 @@ select option {
   .Enter-otp-form {
     padding: 15px;
   }
-  .otp-input {
-    width: 40px !important;
-    margin: auto;
-    height: 40px !important;
-  }
+
   .form-label {
     font-size: 15px !important;
   }
-  .form-heading {
-    font-size: 16px;
-  }
+
   .form-block {
     margin-top: 0em;
   }
-  .submit-btn {
-    padding: 14px;
-    font-size: 14px;
-  }
-  .resent-btn {
-    font-size: 14px;
 
-  }
+
 
   /*  Career Advisory */
 
@@ -2638,10 +2618,7 @@ select option {
   .signupbtnsty {
     width: 200px;
   }
-  .fontstyformQuiklone {
-    font-size: unset;
-    font-weight: unset;
-  }
+
   .howMuchLoneFormConte {
     width: auto;
     margin: 0px !important;
@@ -2747,7 +2724,7 @@ select option {
 
 }
 
-/* 
+/*
 header {
   height: 80px;
   padding-top: 10px;

@@ -526,7 +526,7 @@ const Kycdetailsformpayme = (props) => {
               <input
                 type="submit"
                 style={{ color: "white" }}
-                className="getstartbtn fontstyformQuiklone"
+                className="getstartbtn "
                 value="Save and  Continue"
                 onChange={handleSubmit}
               />

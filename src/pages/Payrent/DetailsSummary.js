@@ -116,7 +116,7 @@ const DetailsSummary = (props) => {
             </div>
           </div>
           <div className="">
-              <input type="submit" value="Proceed To Payment" className="getstartbtn fontstyformQuiklone" />
+              <input type="submit" value="Proceed To Payment" className="getstartbtn " />
               </div>
         </form>
         <div className="pb-5">
@@ -127,7 +127,7 @@ const DetailsSummary = (props) => {
           >
              <button
                      
-                      className="getstartbtn fontstyformQuiklone"
+                      className="getstartbtn "
                     >
                     Back
                     </button>

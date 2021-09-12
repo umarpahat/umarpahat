@@ -455,7 +455,7 @@ const OtherDetalisForm = (props) => {
                 
                   <button
                     onClick={handleScreen2}
-                    className="getstartbtn fontstyformQuiklone"
+                    className="getstartbtn "
                   >
                     Save & Continue
                   </button>
@@ -631,7 +631,7 @@ const OtherDetalisForm = (props) => {
                     </div>
                     <button
                       onClick={handleScreen3}
-                      className="getstartbtn fontstyformQuiklone"
+                      className="getstartbtn "
                     >
                       Save & Continue
                     </button>
@@ -723,7 +723,7 @@ const OtherDetalisForm = (props) => {
                       <input
                         type="submit"
                         value="Submit"
-                        className="getstartbtn fontstyformQuiklone"
+                        className="getstartbtn "
                       />
                     </div>
                   </div>
@@ -757,7 +757,7 @@ const OtherDetalisForm = (props) => {
                 <input
                   type="button"
                   value="CLICK HERE TO DO KYC AGAIN"
-                  className="getstartbtn fontstyformQuiklone"
+                  className="getstartbtn "
                   onClick={() => {
                     props.hitAppUseCase({ useCase: "pay-rent" });
                     props.history.push({ pathname: "/kycoption" });

@@ -97,7 +97,7 @@
       -webkit-appearance: none;
       margin: 0;
     }
-    
+
     /* Firefox */
     input[type=number] {
       -moz-appearance: textfield;
@@ -108,23 +108,24 @@
   <body>
       <div id="app">
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+        <style>
+          /* Chrome, Safari, Edge, Opera */
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          /* Firefox */
+          input[type=number] {
+            -moz-appearance: textfield;
+          }
+        </style>
     <script type="text/javascript">
         $(document).ready(function () {
            $('.carousel').carousel()
            $("#slider").slider({
-            <style>
-      /* Chrome, Safari, Edge, Opera */
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-      
-      /* Firefox */
-      input[type=number] {
-        -moz-appearance: textfield;
-      }
-      </style> animate: true,
+           animate: true,
                value: 1,
                min: 0,
                max: 200000,
@@ -154,7 +155,7 @@
 
            update();
        });
-       
+
        //changed. now with parameter
        function update(slider, val) {
            //changed. Now, directly take value from ui.value. if not set (initial, will use current value.)
@@ -169,7 +170,7 @@
            $("#duration-label1").text($duration);
            $("#total").val($total);
            $("#total-label").text($total);
-       
+
            $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + $amount + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
            $('#slider2 a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + $duration + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
        }
@@ -182,7 +183,7 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-118897695-1');
-        
+
         !(function () {
         let e = document.createElement("script"),
                 t = document.head || document.getElementsByTagName("head")[0];
