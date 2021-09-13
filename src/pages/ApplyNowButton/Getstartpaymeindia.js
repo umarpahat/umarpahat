@@ -12,7 +12,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import { Link } from "react-router-dom";
 import Cookies from 'universal-cookie';
-import tip from "../../images/svg/tip.png";
+import letsStart from "../../images/animated/lets-start-animation.gif";
 
 const cookies = new Cookies()
 
@@ -140,7 +140,7 @@ console.log(error)
                 <div>
                   <div className='circle-half'>
                     <div className='full-circle'>
-                      <img src={tip} alt='Icon'/>
+                      <img src={letsStart} alt='Icon'/>
                     </div>
                     <div className='full-text text-left'>
                       <h5>Tips</h5>
