@@ -89,7 +89,7 @@ const Getquikloneapply = (props) => {
               <div className="row">
                   <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                     <br/>
-                    <a className='back-arrow' href=''>Back</a>
+                    <a className='back-arrow' onClick={() => {props.history.push({ pathname: "/" });}}>Back</a>
                   </div>
                   <div className="col-lg-5 col-md-5 col-sm-12 text-center">
                           <div className="contenertQuicklone">
