@@ -490,12 +490,6 @@ a {
         line-height: 26px;
     }
 
-    .maxLimitWidth {
-        max-width: 300px;
-    }
-
-
-
     .textAlign {
         text-align: center;
         margin: auto;
