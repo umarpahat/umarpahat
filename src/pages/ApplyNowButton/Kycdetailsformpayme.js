@@ -9,7 +9,9 @@ import Loader from "../../component/Loader";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from 'universal-cookie';
- 
+import tip from "../../images/svg/tip.png";
+import {Container} from "react-bootstrap";
+
 const cookies = new Cookies()
 
 const Kycdetailsformpayme = (props) => {
@@ -46,12 +48,12 @@ const Kycdetailsformpayme = (props) => {
   if(refresh){
     refreshhi();
     setRefresh(false)
-    
+
   }
 
 
   console.log("props.useCase", props.userCase);
-  
+
 
   const handleClose = () => setShow(!show);
 
@@ -75,7 +77,7 @@ const Kycdetailsformpayme = (props) => {
   }
 
   useEffect(() => {
-  
+
     if (!token) {
       props.history.push({ pathname: "/" });
       return;
@@ -206,7 +208,7 @@ const Kycdetailsformpayme = (props) => {
     ])
       .then((response) => {
         setloader(false);
-        
+
         props.hitAllUserData({ token: token });
 
         if (props.userCase === "apply-loan") {
@@ -246,7 +248,7 @@ const Kycdetailsformpayme = (props) => {
         setloader(false);
       });
   };
- 
+
 
   return (
     <>
@@ -259,31 +261,24 @@ const Kycdetailsformpayme = (props) => {
           <Loader color={"#33658a"} />{" "}
         </div>
       ) : (
-        <div className="form-container pb-5" style={{backgroundColor:"#f2f2f2"}}>
+
+          <Container>
+            <div className="row">
+              <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                <br/>
+                <a className='back-arrow'  onClick={() => {
+                  props.history.goBack();
+                }}>Back</a>
+              </div>
+              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+
           <div className="pb-4">
             <Progressbar />
           </div>
-          <div
-            className="d-flex"
-            onClick={() => {
-              props.history.goBack();
-            }}
-            to="#"
-            style={{ cursor: "pointer" }}
-          >
-            <div className="m-1">
-              <img src={backicon} alt='Back iocn' className="img-fluid" />
-            </div>
-            <div>
-              <h6 className="backbtnsty">Back</h6>
-            </div>
-          </div>
+
 
           <form onSubmit={handleSubmit}>
             <div className="home-contact-form">
-              {/* <h4 className="form-heading text-center">
-                Tell Us about Yourself
-              </h4> */}
               <div className="form-block">
                 <div class="form-group ms-input-group">
                   <label className="form-label">Your Name</label>
@@ -291,7 +286,7 @@ const Kycdetailsformpayme = (props) => {
                     type="text"
                     class="form-control ms-form-input"
                     placeholder="Enter Your Name"
-                    
+
                     value={name}
                     onChange={(event) => {
                       seterrorName("");
@@ -357,23 +352,23 @@ const Kycdetailsformpayme = (props) => {
                         );
                         setcorrectPan("");
                       }
-                     
-                      
+
+
                       if (
                         event.target.value.match(
                           /^([A-Z]){5}([0-9]){4}([A-Z]){1}$/
                         )
                       ) {
-                        
+
                         setcorrectPan(
                           "Pan Number Entered Properly"
                         );
                         seterrorPan1("");
-                        
+
                       } else {
                         seterrorPan1("Please Enter a valid PanCard Number");
                       }
-                      
+
                       seterrorPan("");
                       setpanNumber(event.target.value);
                     }}
@@ -532,7 +527,30 @@ const Kycdetailsformpayme = (props) => {
               />
             </div>
           </form>
-        </div>
+              </div>
+              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                <div className='height100' style={{height:'100vh'}}>
+                  <div>
+                    <div className='circle-half'>
+                      <div className='full-circle'>
+                        <img src={tip} alt='Icon'/>
+                      </div>
+                      <div className='full-text text-left'>
+                        <h5>Tips</h5>
+                        <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non
+                          labore exercitationem
+                          rerum nulla ea veniam facilis et. </p>
+                      </div>
+                    </div>
+                    <div className='circle-half'>
+                      <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores
+                        perspiciatis. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Container>
       )}
       </div>
     </>

@@ -1840,7 +1840,7 @@ a:hover {
   flex-direction: row !important;
 }
 select {
-  width: 480px !important;
+  width:100% !important;
   height: 60px !important;
 }
 

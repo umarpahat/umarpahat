@@ -182,6 +182,7 @@ button.button-gray:hover {
     color: #333333;
     margin-bottom: 30px;
     display: inline-block;
+    cursor: pointer;
 }
 
 .btn {
