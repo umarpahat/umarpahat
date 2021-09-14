@@ -24,7 +24,8 @@ function* getToken(action) {
 
 function* getTokenForgotMpin(action) {
     try {
-        console.log("check my action man baby")
+        cookies.set('token', action.payload.token);
+        console.log("check my action man baby",action.payload.token)
         console.log(action)
         console.log("teret teret teret")
         yield put(storeToken({token:action.payload.token, phone_number: action.payload.phone_number}))

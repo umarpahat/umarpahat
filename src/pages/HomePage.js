@@ -318,8 +318,8 @@ const HomePage = (props) => {
                                 <h3 className="heading3"><span
                                     className="blue-color">Absolutely Free! </span>
                                 </h3> <p className="heading6">A credit score is more than just a number. Know your Cibil score completely free with PayMe India.</p>
-                                <a href='https://creditscore.paymeindia.in' target='_blank'
-                                   className="btnLarge m-t-40">Get App Now</a>
+                                <a onClick={handleCibilWeb} target='_blank'
+                                   className="btnLarge m-t-40" style={{color:"#fff", cursor:"pointer"}}>Get App Now</a>
                             </div>
                         </div>
                     </div>

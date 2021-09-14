@@ -20,6 +20,7 @@ const cookies = new Cookies()
 
 function LoginWithMobMpin(props) {
   const token = cookies.get('token')
+  const userCase = cookies.get("userCase");
   let [loader, setloader] = useState(false);
   let [errorPass, seterrorPass] = useState(null);
   let [password, setpassword] = useState(null);
@@ -36,7 +37,7 @@ function LoginWithMobMpin(props) {
         if (props.user.userData) {
           setloader(false);
 
-          if (props.user.useCase === "apply-loan") {
+          if (userCase === "apply-loan") {
             if (
               props.user.userData.userdocumentsmodel?.kyc_verified ===
                 "VERIFIED" ||
@@ -63,7 +64,7 @@ function LoginWithMobMpin(props) {
             } else {
               props.history.push({ pathname: "/kycoption" });
             }
-          } else if (props.user.useCase === "pay-rent") {
+          } else if (userCase === "pay-rent") {
             console.log("payrent kyc", props.user.userData.userdocumentsmodel);
             if (
               props.user.userData.userdocumentsmodel.kyc_verified ===

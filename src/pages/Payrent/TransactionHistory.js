@@ -15,7 +15,9 @@ const TransactionHistory = (props) => {
   const [pendingTrans, setpendingTrans] = useState([])
 
   useEffect(()=>{
-
+    if (!token) {
+      props.history.push({pathname: '/'})
+    }
     console.log("opopopopo",props)
     console.log(props.location.state.transactionHistory)
     props.location.state.transactionHistory?.forEach(element => {

@@ -25,6 +25,7 @@ const cookies = new Cookies();
 const Bankdetailspayme = (props) => {
 
   const token = cookies.get("token");
+  const userCase = cookies.get("userCase");
  
   const [actNumber, setactNumber] = useState("");
   const [ConfrmActNumber, setConfrmActNumber] = useState("");

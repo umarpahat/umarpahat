@@ -33,7 +33,7 @@ const KycOption = (props) => {
 
     function refreshhi() {
         props.hitAllUserData({token: token});
-        props.hitAppUseCase()
+      
     }
 
     if (refresh) {
@@ -111,7 +111,7 @@ const KycOption = (props) => {
     const handleBankDetails = () => {
 
 
-        if (props.userCase === "apply-loan") {
+        if (props.useCase === "apply-loan") {
 
             if (!props.user.userbankdetail) {
                 clearTimeout();
@@ -356,7 +356,7 @@ const mapStateToProps = (state) => {
         token: state.authDetails.token,
         phoneNumber: state.authDetails.phone_number,
         user: state.user.userData,
-        userCase: state.user.useCase,
+        useCase: state.user.useCase,
         ekycData: state.ekycData,
 
 
