@@ -121,7 +121,8 @@ console.log(error)
         "backgroundColor": "rgb(51, 101, 138)",
         "width": "453px",
         "height": "65px",
-        "margin": "0px 0px 0px 0px"}} disabled={renderProps.disabled}> <img src={googleimg} alt="google"/> Sign Up with Google</button>
+        "margin": "0px 0px 0px 0px",
+      cursor:"pointer"}} disabled={renderProps.disabled}> <img src={googleimg} alt="google"/> Sign Up with Google</button>
     )}
     onSuccess={responseGoogle}
     onFailure={responseGoogleFail}

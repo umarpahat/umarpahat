@@ -15,6 +15,7 @@ import {Container} from "react-bootstrap";
 const cookies = new Cookies()
 
 const Kycdetailsformpayme = (props) => {
+  const userCase = cookies.get("userCase")
   console.log("kyc now ",props)
   const token = cookies.get('token')
   const [show, setShow] = useState(false);
@@ -52,7 +53,7 @@ const Kycdetailsformpayme = (props) => {
   }
 
 
-  console.log("props.useCase", props.userCase);
+  console.log("userCase", userCase);
 
 
   const handleClose = () => setShow(!show);
@@ -80,7 +81,7 @@ const Kycdetailsformpayme = (props) => {
 
     if (!token) {
       props.history.push({ pathname: "/" });
-      return;
+      
     }
     getSignedUrl();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -211,7 +212,7 @@ const Kycdetailsformpayme = (props) => {
 
         props.hitAllUserData({ token: token });
 
-        if (props.userCase === "apply-loan") {
+        if (userCase === "apply-loan") {
           if (!props.user.userbankdetail) {
             props.history.push({
               pathname: "/bank-details-payme",
@@ -234,7 +235,7 @@ const Kycdetailsformpayme = (props) => {
           } else {
             props.history.push({ pathname: "/bank-details-payme" });
           }
-        } else if (props.useCase === "pay-rent") {
+        } else if (userCase === "pay-rent") {
           props.history.push({ pathname: "/payrent-other-details" });
         } else {
           props.history.push({ pathname: "/" });
@@ -562,7 +563,7 @@ const mapStateToProps = (state) => {
     token: state.authDetails.token,
     phoneNumber: state.authDetails.phone_number,
     user: state.user.userData,
-    userCase: state.user.useCase,
+    useCase: state.user.useCase,
   };
 };
 

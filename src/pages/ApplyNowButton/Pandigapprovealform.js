@@ -477,7 +477,7 @@ const mapStateToProps = (state) => {
         token: state.authDetails.token,
         phoneNumber: state.authDetails.phone_number,
         user: state.user,
-        userCase: state.user.useCase,
+        useCase: state.user.useCase,
     };
 };
 
