@@ -42,7 +42,15 @@ const HomePage = (props) => {
     const [time, setTime] = useState(0);
     const [result, setResult] = useState("");
     const [rateofinterest, setrateofinterest] = useState(0.01);
+    const [posts, setPosts] = useState([]);
 
+    useEffect(()=>{
+        const url= "https://blog.paymeindia.in/?json=get_recent_posts&count=3"
+        fetch(url)
+            .then(res => res.json())
+            .then(res => setPosts(res.posts))
+            // .then(res => console.log('umar',res.posts))
+    })
     function getProcessFees(amount) {
         if (amount < 500) {
             return 100
@@ -590,30 +598,12 @@ const HomePage = (props) => {
                     </div>
                     <div className="container p-t-40">
                         <div className="row">
-                            <div className="col-sm-12 col-md-4">
-                                <div className="blogPic"><img src={blogPic} alt='blog'
-                                                              className="img-fluid"/></div>
-                                <h5>Quaerat quas fugiat est.</h5>
-                                <p>Quis natus facere quis vero expedita eos fugiat. Vel expedita ut corrupti et.
-                                    Molestiae saepe repellendus ratione et est eligendi.</p>
-                                <Link to='/' className='green-link'>Read More</Link>
-                            </div>
-                            <div className="col-sm-12 col-md-4">
-                                <div className="blogPic"><img src={blogPic} alt='blog'
-                                                              className="img-fluid"/></div>
-                                <h5>Quaerat quas fugiat est.</h5>
-                                <p>Quis natus facere quis vero expedita eos fugiat. Vel expedita ut corrupti et.
-                                    Molestiae saepe repellendus ratione et est eligendi.</p>
-                                <Link to='/' className='green-link'>Read More</Link>
-                            </div>
-                            <div className="col-sm-12 col-md-4">
-                                <div className="blogPic"><img src={blogPic} alt='blog'
-                                                              className="img-fluid"/></div>
-                                <h5>Quaerat quas fugiat est.</h5>
-                                <p>Quis natus facere quis vero expedita eos fugiat. Vel expedita ut corrupti et.
-                                    Molestiae saepe repellendus ratione et est eligendi.</p>
-                                <Link to='/' className='green-link'>Read More</Link>
-                            </div>
+
+
+                            {
+                                posts.map(post => <div className="col-sm-12 col-md-4"><div className="blogPic"><img src={post.attachments[0]?.url} alt='blog' className="img-fluid"/></div><h5>{post.title} </h5><div className='line-clamp' dangerouslySetInnerHTML={ {__html: post.content} } /><a href={post.url} target='_blank' className='green-link'>Read More</a></div>)
+                            }
+
                         </div>
                     </div>
                 </div>

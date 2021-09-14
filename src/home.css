@@ -17,7 +17,7 @@ body {
 }
 
 .darkBg .container {
-   padding-top: 30px;
+    padding-top: 30px;
 
 }
 
@@ -49,6 +49,28 @@ body {
     height: 34px;
     border-radius: 3px;
     overflow: hidden;
+}
+
+.line-clamp {
+min-height: 80px;
+}
+
+.line-clamp img, .line-clamp h1,.line-clamp figure, .line-clamp ul, .line-clamp ol {
+    display: none;
+}
+.line-clamp p{
+    display: none;
+}
+
+.line-clamp p:first-of-type {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 html, body {
@@ -153,7 +175,8 @@ button.button-gray:hover {
     align-items: center;
     vertical-align: middle;
 }
-.full-circle img{
+
+.full-circle img {
     margin: 0 auto;
 }
 
@@ -1322,9 +1345,11 @@ a.button-small:hover {
 .blue-color {
     color: #33658a;
 }
-.max-width70{
+
+.max-width70 {
     max-width: 100px;
 }
+
 .productlist img {
     max-height: 50px;
     display: inline-block;
@@ -2151,15 +2176,14 @@ hr.style {
     color: #000;
     padding: 20px 0;
     margin: 0;
-}
-
-.blog p {
-    padding: 0 0 10px;
-    margin: 0;
+    min-height: 130px;
 }
 
 .blog .blogPic {
     border-radius: 9px;
+    overflow: hidden;
+    max-height: 100px;
+    min-height: 100px;
 }
 
 .green-link {
@@ -2382,10 +2406,12 @@ a {
     .home_logo {
         max-width: 140px;
     }
+
     .darkBg .container {
         padding-top: 0;
     }
-    .height100{
+
+    .height100 {
         padding-top: 30px;
         height: auto;
     }
