@@ -70,6 +70,7 @@ const SelfEmployed = (props) => {
   }
 
   const handleSubmit = (event) => {
+    setloader(true)
     event.preventDefault();
     if (!uploadItr.name) {
       seterroruploadItr("Please upload your latest ITR");
@@ -118,6 +119,12 @@ const SelfEmployed = (props) => {
   return (
     <>
       <Header {...props} />
+      {loader ?  (
+          <div className="loader">
+            {" "}
+            <Loader color={"#33658a"} />{" "}
+          </div>
+        ) : (
       <div className='content darkBg'>
       <Container>
           <div className="row">
@@ -265,7 +272,7 @@ const SelfEmployed = (props) => {
                             }
 
                           seterrorpresentPincode("");
-                          setpresentPincode(event.target.value);
+                          setpresentPincode(event.target.value.slice(0,6));
                         }}
                       />
 
@@ -313,7 +320,7 @@ const SelfEmployed = (props) => {
           </div>
       </Container>
       <Modalkyccomplete show={show} handleClose={handleClose} />
-      </div>
+      </div>)}
     </>
   );
 };
