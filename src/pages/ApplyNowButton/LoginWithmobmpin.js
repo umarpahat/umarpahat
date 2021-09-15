@@ -20,6 +20,7 @@ const cookies = new Cookies()
 
 function LoginWithMobMpin(props) {
   const token = cookies.get('token')
+  console.log(token)
   const userCase = cookies.get("userCase");
   let [loader, setloader] = useState(false);
   let [errorPass, seterrorPass] = useState(null);
@@ -129,7 +130,7 @@ function LoginWithMobMpin(props) {
       type: "",
       phone_number: Number(props.location.state.phoneNumber),
       mpin: Number(password),
-    });
+    })
   };
 
   return (
@@ -180,7 +181,12 @@ function LoginWithMobMpin(props) {
                             placeholder="Enter 6 digit MPIN"
                             value={password || ""}
                             onChange={(event) => {
+                              if(event.target.value.match(/^[0-9]+$/)){
                               setpassword(event.target.value);
+                              }
+                              else if(event.target.value.length===0){
+                                setpassword(event.target.value);
+                              }
                               seterrorPass(null);
                             }}
                         />

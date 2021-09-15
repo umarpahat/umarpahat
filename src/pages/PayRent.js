@@ -182,7 +182,7 @@ const PayRent = (props) => {
                                             <label className="form-label pb-2">Phone Number</label>
                                             <input
                                                 name='phone'
-                                                type="tel"
+                                                type="number"
                                                 maxLength='10'
                                                 pattern="[0-9]+"
                                                 className="form-control input-field"

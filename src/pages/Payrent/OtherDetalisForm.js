@@ -65,6 +65,14 @@ const OtherDetalisForm = (props) => {
   const [screen2, setScreen2] = useState(false);
   const [screen3, setScreen3] = useState(false);
 
+
+  useEffect(() => {
+   
+    !token ? props.history.push({ pathname: "/" }): null;
+    props.hitAllUserData({ token: token })
+   
+ },[]);
+
   async function getSignedUrl() {
     const pathArray = [
       `pay_rent/${props.user.userData.id}/rent_agreement.jpeg`,
@@ -77,12 +85,7 @@ const OtherDetalisForm = (props) => {
     console.log(343434, signedUrlObj.data.data);
   }
 
-  useEffect(() => {
-   
-     !token ? props.history.push({ pathname: "/" }): null;
-     props.hitAllUserData({ token: token })
-    
-  });
+
  
 
   async function updateDocStatus(data) {
@@ -102,7 +105,7 @@ const OtherDetalisForm = (props) => {
     getSignedUrl();
     if (
       (props.user.userData &&
-        props.user.userData.userdocumentsmodel.kyc_verified === "VERIFIED") ||
+        props.user?.userData?.userdocumentsmodel.kyc_verified === "VERIFIED") ||
       userdocumentsmodel.kyc_verified === "VERIFIED"
     ) {
       setkyc_verified(true);
@@ -168,8 +171,8 @@ const OtherDetalisForm = (props) => {
   }, []);
 
   const handleName = () => {
-    setName(props.user?.userData.basic_info[0]?.first_name);
-    setLastName(props.user?.userData.basic_info[0]?.last_name);
+    setName(props.user?.userData?.basic_info[0]?.first_name);
+    setLastName(props.user?.userData?.basic_info[0]?.last_name);
   };
 
   const handleScreen2 = () => {
@@ -309,13 +312,14 @@ const OtherDetalisForm = (props) => {
     "name",
     name,
     kyc_verified,
-    props.user.userData.userdocumentsmodel.kyc_verified
+    props?.user?.userData?.userdocumentsmodel.kyc_verified
   );
 
   return (
     <>
+     <Header {...props} />
       <div className="content darkBg">
-        <Header {...props} />
+       
         {loader ? (
           <div className="loader">
             {" "}
