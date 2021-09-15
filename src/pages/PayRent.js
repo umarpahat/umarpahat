@@ -14,17 +14,89 @@ import homeIcon from "../images/svg/home-icon.svg";
 import starIconLight from "../images/svg/light-star.svg";
 import starIconAqua from "../images/svg/start-aqua.svg";
 import starIconGreen from "../images/svg/green-star.svg";
+import { api } from "../services/api";
+import Loader from "../component/Loader";
+import Confirmotpmobile from "./ApplyNowButton/Confirmotpmobile";
+
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 
 import {Link} from "react-router-dom"
 
 
 const PayRent = (props) => {
+
+   cookies.set('userCase', "pay-rent");
+    
+    console.log("cookies user case",cookies.get("userCase"))
     let [loader, setloader] = useState(false);
+    let [number, setnumber] = useState(null);
+    let [error, seterror] = useState(null);
+    let [newUser, setnewUser] = useState(false);
+  
+ 
+  
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      /^[6-9]\d{9}$/.test(number)
+        ? verifyPhone()
+        : seterror("Please input valid 10 digit mobile number");
+    };
+  
+    const verifyPhone = () => {
+      setloader(true);
+      api
+        .post(
+          `api/authentication/phone_no_verify/`,
+          { phone_number: Number(number) },
+          {}
+        )
+        .then((response) => {
+          setloader(false);
+          if (response.status === 200 && !response.data.phone_number_verified) {
+            setnewUser(true);
+          } else if (
+            response.status === 200 &&
+            response.data.phone_number_verified
+          ) {
+            props.history.push({
+              pathname: "/login-with-mob-mpin",
+              state: { phoneNumber: number },
+            });
+          } else {
+            console.log(response.status);
+          }
+          return response;
+        })
+        .catch((error) => {
+          if(error.response.status===401)
+          {
+            cookies.remove('token', { path: '/' })
+          }
+          console.log(error);
+          setloader(false);
+        });
+    };
 
     return (
         <>
             <Header {...props} active="payrent" />
+
+                <div className='info'>Make sure the mobile number is associated in this  specific device, we will send and verify the new number with reverse OTP.</div>
+    
+          {loader ? (
+            <div className="loader">
+              {" "}
+              <Loader color={"#33658a"} />{" "}
+            </div>
+          ) : newUser ? (
+            <Confirmotpmobile
+              {...props}
+              phone_number={Number(number)}
+              resendOtp={verifyPhone}
+            />
+          ):(<div>
             <MetaTags>
                 <title>Frequently Asked Questions - PayMeIndia</title>
                 <meta name="description" content="Do you have questions about how the loan app works? Frequently asked questions for all
@@ -105,50 +177,31 @@ const PayRent = (props) => {
                                     </div>
                                     <form id='form' name='form'>
 
-                                        <div className="form-group ms-input-group">
-                                            <label className="form-label pb-2">Your Full Name</label>
-                                            <input
-                                                name='name'
-                                                type="text"
-                                                className="form-control input-field"
-                                                placeholder="Enter Your Full Name"
-                                                onChange={(e) => {
-                                                    setName(e.target.value);
-                                                }}
-                                                required=""/>
-
-                                        </div>
+                                  
                                         <div className="form-group ms-input-group">
                                             <label className="form-label pb-2">Phone Number</label>
                                             <input
                                                 name='phone'
-                                                type="tel"
+                                                type="number"
                                                 maxLength='10'
                                                 pattern="[0-9]+"
-                                                onChange={(e) => {
-                                                    e.target.value =
-                                                        e.target.value.replace(/[^0-9.]{10}/g, '').replace(/(\..*)\./g, '$1')
-                                                    setPhone(e.target.value)
-                                                }}
                                                 className="form-control input-field"
                                                 placeholder="Enter Phone"
-                                            />
+                                                value={number || ""}
+                                                      onChange={(event) => {setnumber(event.target.value.slice(0,10))
+                                                          if(event.target.value.length===0 || event.target.value.length===10)
+                                                          {
+                                                              seterror("");
+                                                          }}}
+                                                  />
+                                                  {error ? (
+                                                      <span style={{ color: "red" }}>{error}</span>
+                                                  ) : null}
+                                                
+                                           
                                         </div>
-                                        <div className="form-group ms-input-group">
-                                            <label className="form-label pb-2">Email</label>
-                                            <input
-                                                name='email'
-                                                type="email"
-                                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                                                className="form-control input-field"
-                                                placeholder="Enter Email"
-                                                onChange={(e) => {
-                                                    setEmail(e.target.value);
-                                                }}
-                                            />
-                                        </div>
-
-                                        <a className="btnLarge m-t-40" href="/" style={{display:"block"}}>Get Started</a>
+                                       
+                                        <a className="btnLarge m-t-40" onClick={handleSubmit} style={{display:"block",cursor:"pointer",color:"#fff"}}>Get Started</a>
 
                                     </form>
                                 </div>
@@ -298,6 +351,7 @@ const PayRent = (props) => {
                 </div>
             </div>
             <Footer/>
+            </div> )}
         </>
     );
 };

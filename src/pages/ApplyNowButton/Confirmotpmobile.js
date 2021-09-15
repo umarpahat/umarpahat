@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import OtpInput from "react-otp-input";
@@ -10,14 +10,49 @@ import Header from "../Header";
 import Footer from "../Footer";
 import phone from "../../images/svg/phone.svg";
 import { Container } from "react-bootstrap";
+import reactOtpTimer from "react-otp-timer";
+
 
 const Confirmotpmobile = (props) => {
+
+  console.log("confirm otp",props);
   const [otp, setotp] = useState("");
   const [loader, setloader] = useState(false);
   const [otpError, setotpError] = useState(null);
+  const [counter, setCounter] = useState(59);
+
+
+
+  useEffect(() => {
+
+    const timer =
+      counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+    return () => clearInterval(timer);
+  }, [counter]);
+
+
+  const handleResend = () => {
+    setCounter(59)
+    setOtp("");
+    let phone_number = phone;
+    let data = {
+      phone_number,
+    };
+    props
+      .sendOtp(data)
+      .then((res) => {
+        if (res.status === 200) {
+          setMessage(res.data.message);
+        }
+      })
+      .catch((err) => {
+     
+      });
+  };
 
 
   const verifyOtpNewUser = (otp_get) => {
+   console.log("newuser",otp_get)
     setloader(true);
     api
       .post(
@@ -103,7 +138,7 @@ const Confirmotpmobile = (props) => {
                       OTP Sent On {props.phone_number}
                     </h4>
                     <p>
-                      22:01
+                    00: {counter>9 ? <span>{counter}</span> : <span>0{counter}</span>}
                     </p>
 
                     <div className="form-block">
@@ -128,12 +163,15 @@ const Confirmotpmobile = (props) => {
                             <span style={{color: "red"}}>{otpError}</span>
                         ) : null}
                       </div>
-                      <div className="green-text">
+                      <div className="resent-btn" style={{cursor:"not-allowed"}}>
                         Didn’t recived OTP?
                       </div>
-                      <div className="resent-btn" onClick={props.resendOtp}>
+                      {counter === 0 ? (  <Link>
+                      <div className="green-text" onClick={handleResend}>
                         Resend OTP
-                      </div>
+                      </div></Link>):( <div className="green-text" style={{cursor:"not-allowed",color:"#6F6F6F"}} >
+                        Resend OTP
+                      </div>)}
                     </div>
                   </div>
                 </form>

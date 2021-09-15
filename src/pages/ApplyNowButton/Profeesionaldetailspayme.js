@@ -338,8 +338,9 @@ const Professionaldetailspayme = (props) => {
                       value={organizationName}
                       onChange={(event) => {
                         seterrororganizationName("");
+                        if(event.target.value.match(/^[A-Za-z{" "}]+$/)){ 
                         setorganizationName(event.target.value);
-                      }}
+                      }}}
                     />
                     {errororganizationName ? (
                       <span style={{ color: "red" }}>

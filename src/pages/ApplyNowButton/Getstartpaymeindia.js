@@ -65,7 +65,9 @@ console.log(error)
           <div className="row">
             <div className="col-lg-2 col-md-2 col-sm-12 text-center">
               <br/>
-              <a className='back-arrow' href=''>Back</a>
+              <a onClick={() => {
+              props.history.push('/');
+            }} className='back-arrow' >Back</a>
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12 text-center">
         <div className="pt-5 ">
@@ -119,7 +121,8 @@ console.log(error)
         "backgroundColor": "rgb(51, 101, 138)",
         "width": "453px",
         "height": "65px",
-        "margin": "0px 0px 0px 0px"}} disabled={renderProps.disabled}> <img src={googleimg} alt="google"/> Sign Up with Google</button>
+        "margin": "0px 0px 0px 0px",
+      cursor:"pointer"}} disabled={renderProps.disabled}> <img src={googleimg} alt="google"/> Sign Up with Google</button>
     )}
     onSuccess={responseGoogle}
     onFailure={responseGoogleFail}

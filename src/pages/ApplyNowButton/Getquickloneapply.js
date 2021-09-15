@@ -10,8 +10,13 @@ import Header from "../Header";
 import Footer from "../Footer";
 import "../../home.css";
 import letsStart from "../../images/animated/lets-start-animation.gif";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 const Getquikloneapply = (props) => {
+ cookies.set('userCase', "apply-loan");
+ const userCase = cookies.get("userCase")
+ console.log("apply loan",userCase)
   let [loader, setloader] = useState(false);
   let [number, setnumber] = useState(null);
   let [error, seterror] = useState(null);
@@ -20,7 +25,7 @@ const Getquikloneapply = (props) => {
   useEffect(() => {
     if (window.location.pathname === "/apply-loan") {
       props.hitAppUseCase({ useCase: "apply-loan" });
-    } else if (window.location.pathname === "/pay-rent") {
+    } else if (window.location.pathname === "/pay-rent-details") {
       props.hitAppUseCase({ useCase: "pay-rent" });
     }
   }, []);

@@ -13,7 +13,7 @@ import tip from "../../images/svg/tip.png";
 const cookies = new Cookies()
 
 function ChangeMpin(props) {
-
+    const userCase = cookies.get("userCase");
     const [mpin, setmpin] = useState("")
     const [confirmMpin, setconfirmMpin] = useState("")
     const [errorMpin, seterrorMpin] = useState(null)
@@ -44,8 +44,11 @@ function ChangeMpin(props) {
                         if (props.location.state.forgotPassword) {
                             props.hitLogout()
                             props.history.push({pathname: '/login-with-mob-mpin', state: {phoneNumber: phoneNumber}})
-                        } else {
+                        } else if(userCase==="apply-loan") {
                             props.history.push({pathname: "/kyc-details-form"})
+                        }
+                        else if(userCase==="pay-rent"){
+                            props.history.push({pathname:"/payrent-other-details"})
                         }
                     } else {
                         setmpinNotMatch("Old and new mpin should not be same.")
