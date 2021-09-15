@@ -7,33 +7,13 @@ import "./ApplyNowButton/Applybtnallcomponent.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import "../../src/home.css";
-import contact from "../images/contact.png";
-import appIcon from "../images/app-icon.png";
-import loginImg from "../images/login.png";
-import assementImg from "../images/assement.png";
-import aprovedImg from "../images/aproved.png";
-import serviceImg from "../images/services.png";
-import advisoryImg from "../images/advisory.png";
-import shortImg from "../images/short.png";
-import corporateImg from "../images/corporate.png";
-import userIcon from "../images/user-icon.png";
-import register from "../images/register.png";
-import uploadImg from "../images/upload-doc.png";
-import eligibilityImg from "../images/eligibility.png";
-import promptImg from "../images/prompt.png";
-import instantFund from "../images/instant-fund.png";
-import easyRepay from "../images/easy-repay.png";
-import CibilImg from "../images/cibil.png";
-// import corporateImg from "../images/corporate-loan.svg";
-//  import InstantCash from "../images/instant-cash.svg"
-import { Link } from "react-router-dom";
-import $ from "jquery";
-import logo from "../images/logo.png";
-import pointer from "../images/pointer.png";
-import phone from "../images/phone.png";
-import printer from "../images/printer.png";
-import timer from "../images/timer.png";
+import contact from "../images/svg/contact-us.svg";
+import pointer from "../images/svg/map-pin.svg";
+import phone from "../images/svg/phone-call.svg";
+import printer from "../images/svg/printer.svg";
+import timer from "../images/svg/clock.svg";
 import MetaTags from "react-meta-tags";
+import mailBox from "../images/svg/mail-box.svg";
 
 const Contact = (props) => {
   let [loader, setloader] = useState(false);
@@ -51,22 +31,23 @@ const Contact = (props) => {
         <meta property="og:title" content="Contact Us - PayMeIndia" />
       </MetaTags>
       <div className='content'>
-      <div className="services">
-        <div className="container">
+        <div className="container p-b-30">
           <div className="col col-md-12 reg-second-heading">
             <h1 className='heading1 blue-color'>Contact Info</h1>
             <span className="reg-second-subheading">
               We are just a whisper away
             </span>
           </div>
-          <div className="row align-items-center p-b-30">
-            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center main-img">
-              <img width="300" alt="About us" src={contact} />
+          <div className="row align-items-center p-b-30 p-t-30">
+            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center main-img p-t-20">
+              <img alt="About us" src={contact} />
             </div>
-            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div className="col-lg-1 col-md-1 col-sm-12 col-xs-12 "></div>
+            <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 p-t-20">
+            <div className="contactInfo white-color">
               <h5>Reach us out for any queries/concerns</h5>
               <div className="row p-t-20">
-                <div className="col-md-10 col-sm-8 col-xd-8 ">
+                <div className="col-md-12 col-sm-12 col-xd-12 ">
                   <div className="icon-left">
                     <img
                       src={pointer}
@@ -82,7 +63,7 @@ const Contact = (props) => {
                 </div>
               </div>
               <div className="row p-t-20">
-                <div className="col-md-10 col-sm-8 col-xd-8 ">
+                <div className="col-md-12 col-sm-12 col-xd-12">
                   <div className="icon-left">
                     <img
                       src={phone}
@@ -94,7 +75,7 @@ const Contact = (props) => {
                 </div>
               </div>
               <div className="row p-t-20">
-                <div className="col-md-10 col-sm-8 col-xd-8 ">
+                <div className="col-md-12 col-sm-12 col-xd-12">
                   <div className="icon-left">
                     <img
                       src={printer}
@@ -106,7 +87,7 @@ const Contact = (props) => {
                 </div>
               </div>
               <div className="row p-t-20">
-                <div className="col-md-10 col-sm-10">
+                <div className="col-md-12 col-sm-12 col-xd-12">
                   <div className="icon-left">
                     <img
                       src={timer}
@@ -120,23 +101,26 @@ const Contact = (props) => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="services">
-        <div className="container">
-          <div className="row justify-content-md-center">
-            <div className="col col-md-8 text-center p-t-30 p-b-30">
-              <h4 className="heading4">Contact Us</h4>
-              <p>
-                Please contact us at{" "}
-                <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
-              </p>
             </div>
           </div>
         </div>
-      </div>
+        <div className="contactBox p-t-80">
+          <div className="container">
+            <div className="row justify-content-md-center">
+              <div className="col-md-9 text-center p-t-30 p-b-30 d-flex contactLine">
+                <div className='mailPic'>
+                  <img className="img-fluid" src={mailBox} alt="Mail"/>
+                </div>
+                <div className='contact'>
+                  <h4 className="heading4">Contact Us</h4>
+                  <p>Please contact us at<br/>
+                    <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <Footer/>
     </>

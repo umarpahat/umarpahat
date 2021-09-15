@@ -26,7 +26,7 @@ const Progressbar = () => {
   return (
     <>
       <Container>
-        <div className="pt-5 mobProgressBar ">
+        <div className="mobProgressBar ">
           <div className="" style={{ position: "relative" }}>
             <ProgressBar now={progress} />
             <div className="d-flex containerCircle">

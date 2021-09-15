@@ -11,8 +11,12 @@ import { getS3SignedUrl, postS3, api } from "../../services/api";
 import Loader from "../../component/Loader";
 import Footer from "../Footer";
 import Header from "../Header";
+import Cookies from 'universal-cookie';
+import tip from "../../images/svg/tip.png";
 
+const cookies = new Cookies()
 const SelfEmployed = (props) => {
+  const token = cookies.get('token')
   const [show, setShow] = useState(false);
   const [loader, setloader] = useState(false);
   const [uploadItr, setuploadItr] = useState({});
@@ -24,11 +28,11 @@ const SelfEmployed = (props) => {
   const [errorpresentAddLine1, seterrorpresentAddLine1] = useState("");
   const [errorpresentPincode, seterrorpresentPincode] = useState("");
   const [errorPinCode, setErrorPinCode] = useState("");
- 
+
   async function getSignedUrl() {
     const pathArray = [`other_document/${props.user.id}/latest_itr.pdf`];
     const signedUrlObj = await getS3SignedUrl({
-      token: props.token,
+      token: token,
       payload: { s3_path: pathArray, bucket_name: "payme-test-documents" },
     });
     setsignedUrl(signedUrlObj.data.data);
@@ -49,7 +53,7 @@ const SelfEmployed = (props) => {
     return await api.post(
       "/api/update_document_status/",
       { doc_type: data.docType, path: data.path },
-      { headers: { Authorization: "Token " + props.token } }
+      { headers: { Authorization: "Token " + token } }
     );
   }
 
@@ -61,11 +65,12 @@ const SelfEmployed = (props) => {
       present_pincode: presentPincode,
     };
     return await api.post("/api/user_details/professional_details/", payload, {
-      headers: { Authorization: "Token " + props.token },
+      headers: { Authorization: "Token " + token },
     });
   }
 
   const handleSubmit = (event) => {
+    setloader(true)
     event.preventDefault();
     if (!uploadItr.name) {
       seterroruploadItr("Please upload your latest ITR");
@@ -79,9 +84,7 @@ const SelfEmployed = (props) => {
       seterrorpresentPincode("Please enter pin code");
       return;
     }
-    if (!erroruploadItr) {
-      seterroruploadItr("Please Upload ITR ");
-    }
+
     const uploadItrFront = postS3({
       res: uploadItr,
       presignedPostData:
@@ -98,7 +101,7 @@ const SelfEmployed = (props) => {
       .then((response) => {
         setloader(false);
         console.log("xvxvxvxvx", response);
-        props.hitAllUserData({ token: props.token });
+        props.hitAllUserData({ token: token });
         props.history.push({ pathname: "/pending-approval" });
       })
       .catch((error) => {
@@ -116,21 +119,30 @@ const SelfEmployed = (props) => {
   return (
     <>
       <Header {...props} />
+      {loader ?  (
+          <div className="loader">
+            {" "}
+            <Loader color={"#33658a"} />{" "}
+          </div>
+        ) : (
       <div className='content darkBg'>
-      <Container className="pb-5" style={{ backgroundColor: "#f2f2f2" }}>
-        <div className="form-container formcontainermob  pt-4 pb-5">
+      <Container>
+          <div className="row">
+            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+              <br/>
+              <a className='back-arrow' href=''>Back</a>
+            </div>
+            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
           <div className="pt-2">
             <div className="pb-4">
               <Progressbar />
             </div>
-            <div
-              className="d-flex"
+            <div className="d-flex"
               onClick={() => {
                 props.history.goBack();
               }}
               to="#"
-              style={{ cursor: "pointer" }}
-            >
+              style={{ cursor: "pointer" }}>
               <div className="m-1">
                 <img src={backicon} alt='back Icon' className="img-fluid" />
               </div>
@@ -140,9 +152,9 @@ const SelfEmployed = (props) => {
             </div>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className="Home-contact-form mt-4">
+            <div classNaEmploymentme="home-contact-form mt-4">
               <div class="form-group ms-input-group">
-                <label className="form-label">Employment Status</label>
+                <label className="form-label"> Status </label>
               </div>
               <div className="py-4">
                 <Link to="/professional-details-payme">
@@ -248,7 +260,7 @@ const SelfEmployed = (props) => {
                         maxLength={6}
                         value={presentPincode}
                         onChange={(event) => {
-                         
+
                           if (
                               event.target.value.match(
                                 /^[1-9]{1}[0-9]{2}[0-9]{3}$/
@@ -260,10 +272,10 @@ const SelfEmployed = (props) => {
                             }
 
                           seterrorpresentPincode("");
-                          setpresentPincode(event.target.value);
+                          setpresentPincode(event.target.value.slice(0,6));
                         }}
                       />
-                    
+
 
                       {errorPinCode ? (
                         <span style={{ color: "red" }}>{errorPinCode}</span>
@@ -280,16 +292,35 @@ const SelfEmployed = (props) => {
               <input
                 type="submit"
                 style={{ color: "white" }}
-                className="getstartbtn fontstyformQuiklone"
+                className="getstartbtn "
                 value="Submit"
               />
             </div>
           </form>
-        </div>
+            </div>
+            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+              <div className='height100'>
+                <div>
+                  <div className='circle-half'>
+                    <div className='full-circle'>
+                      <img src={tip} alt='Icon'/>
+                    </div>
+                    <div className='full-text text-left'>
+                      <h5>Tips</h5>
+                      <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
+                        rerum nulla ea veniam facilis et. </p>
+                    </div>
+                  </div>
+                  <div className='circle-half'>
+                    <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </Container>
       <Modalkyccomplete show={show} handleClose={handleClose} />
-      </div>
-        <Footer />
+      </div>)}
     </>
   );
 };

@@ -17,6 +17,8 @@ import heart from "../images/heart.png";
 import people from "../images/people.png";
 import about from "../images/about-us.png";
 import MetaTags from "react-meta-tags";
+import mailBox from "../images/svg/mail-box.svg";
+import  termsCondition from "../images/svg/terms-and-condition.svg";
 
 
 const Terms = (props) => {
@@ -37,26 +39,36 @@ const Terms = (props) => {
             <div className='content'>
             <div className="services">
                 <div className="container p-b-30">
-                    <div className="col col-md-12 reg-second-heading">
-                        <h1 className='heading1 blue-color'>Terms & Conditions</h1>
+                    <div className="row">
+                        <div className="col col-md-12 reg-second-heading">
+                            <h1 className='heading1 blue-color'>Terms & Conditions</h1>
+                        </div>
                     </div>
-                    <p><strong>1. GENERAL</strong></p>
-                    <p> This Agreement is a contract between you and PayMe India and applies to your use of the
-                        PayMe India Services (the "Services"). By registering for the Services, you must read, agree
-                        with and accept all of the terms and conditions contained in this Agreement. You agree that
-                        any use by you of the Services shall constitute your acceptance of the Agreement and we
-                        recommend that you store or print-off a copy of the Agreement (including all policies) for
-                        your records. This document is an electronic record in terms of Information Technology Act,
-                        2000 and rules there under as applicable and the amended provisions pertaining to electronic
-                        records in various statutes as amended by the Information Technology Act, 2000. This
-                        document is published in accordance with the provisions of Rule 3 (1) of the Information
-                        Technology (Intermediaries guidelines) Rules, 2011 that require publishing the rules and
-                        regulations, privacy policy and Terms of Use for access or usage of www.PayMe India.in
-                        website and the mobile application (hereinafter referred to as “Website”, or “App”, or
-                        “Mobile App” or “Platform”). Please read this Agreement carefully and make sure that you
-                        understand it fully before using the Services.</p>
+                    <div className="row">
+                        <div className="col col-md-5 reg-second-heading">
+                            <img className="img-fluid" src={termsCondition} alt="Icons"/>
+                        </div>
+                        <div className="col col-md-7">
+                            <h5 className='blue-color h3'>1. GENERAL</h5>
+                            <p className='p-t-10'> This Agreement is a contract between you and PayMe India and applies to your use of the
+                                PayMe India Services (the "Services"). By registering for the Services, you must read, agree
+                                with and accept all of the terms and conditions contained in this Agreement. You agree that
+                                any use by you of the Services shall constitute your acceptance of the Agreement and we
+                                recommend that you store or print-off a copy of the Agreement (including all policies) for
+                                your records. This document is an electronic record in terms of Information Technology Act,
+                                2000 and rules there under as applicable and the amended provisions pertaining to electronic
+                                records in various statutes as amended by the Information Technology Act, 2000. This
+                                document is published in accordance with the provisions of Rule 3 (1) of the Information
+                                Technology (Intermediaries guidelines) Rules, 2011 that require publishing the rules and
+                                regulations, privacy policy and Terms of Use for access or usage of www.PayMe India.in
+                                website and the mobile application (hereinafter referred to as “Website”, or “App”, or
+                                “Mobile App” or “Platform”). Please read this Agreement carefully and make sure that you
+                                understand it fully before using the Services.</p>
+                        </div>
+                    </div>
 
-                    <p className='p-t-30'><strong>2. ELIGIBILITY</strong></p>
+
+                    <h5 className='blue-color h3 p-t-30'>2. ELIGIBILITY</h5>
                     <p>Use of the Website is available only to persons who can form legally binding contracts
                         under Indian Contract Act, 1872. Persons who are "incompetent to contract" within the
                         meaning of the Indian Contract Act, 1872 including minors, un-discharged insolvents etc.
@@ -68,36 +80,43 @@ const Terms = (props) => {
                         to the Website if it is brought to PayMe India's notice or if it is discovered that you
                         are under the age of 18 years.</p>
 
-                    <p className='p-t-30'><strong>3. PRIVACY</strong></p>
+                    <h5 className='blue-color h3 p-t-20'>3. PRIVACY</h5>
                     <p>Any personal information submitted in connection with your use of the Offerings or
                         the Site is subject to Our Privacy Policy, located at <a
                             href="https://www.paymeindia.in/privacy-policy">paymeindia.in/privacy-policy</a>
                     </p>
+                    <div className="row">
+                        <div className="col col-md-5 reg-second-heading">
+                            <img className="img-fluid" src={termsCondition} alt="Icons"/>
+                        </div>
+                        <div className="col col-md-7">
+                            <h5 className='blue-color h3 p-t-20'>4. REGISTRATION</h5>
+                            <p >To use PayMe India Services and access certain portions of the Website, you will
+                                need to register and obtain an account, username and password. When you
+                                register, the information you provide to us during the registration process will
+                                help us in offering content, service, and management of your account. You are
+                                solely responsible for maintaining the confidentiality of your account,
+                                username, and password and for all activities associated with or occurring under
+                                your Account. You represent and warrant that your Account information will be
+                                accurate at all times. You agree that if You provide any information that is
+                                untrue, inaccurate, not current or incomplete or We have reasonable grounds to
+                                suspect that such information is untrue, inaccurate, not current or incomplete,
+                                or not in accordance with the this Terms of Use, We shall have the right to
+                                indefinitely suspend or terminate or block access of your membership on the
+                                Website and refuse to provide You with access to the Website. You must notify us
+                                (a) immediately of any unauthorized use of your account and any other breach of
+                                security, and (b) ensure that you exit from your account at the end of each use
+                                of the Offerings. We cannot and will not be responsible for any loss or damage
+                                arising from your failure to comply with the foregoing requirements or as a
+                                result of use of your account, either with or without your knowledge, prior to
+                                your notifying us of unauthorized access to your account. You may not transfer
+                                your account to any other person and you may not use anyone else's account at
+                                any time without the permission of the account holder.</p>
+                        </div>
+                    </div>
 
-                    <p className='p-t-30'><strong>4. REGISTRATION</strong></p>
-                    <p>To use PayMe India Services and access certain portions of the Website, you will
-                        need to register and obtain an account, username and password. When you
-                        register, the information you provide to us during the registration process will
-                        help us in offering content, service, and management of your account. You are
-                        solely responsible for maintaining the confidentiality of your account,
-                        username, and password and for all activities associated with or occurring under
-                        your Account. You represent and warrant that your Account information will be
-                        accurate at all times. You agree that if You provide any information that is
-                        untrue, inaccurate, not current or incomplete or We have reasonable grounds to
-                        suspect that such information is untrue, inaccurate, not current or incomplete,
-                        or not in accordance with the this Terms of Use, We shall have the right to
-                        indefinitely suspend or terminate or block access of your membership on the
-                        Website and refuse to provide You with access to the Website. You must notify us
-                        (a) immediately of any unauthorized use of your account and any other breach of
-                        security, and (b) ensure that you exit from your account at the end of each use
-                        of the Offerings. We cannot and will not be responsible for any loss or damage
-                        arising from your failure to comply with the foregoing requirements or as a
-                        result of use of your account, either with or without your knowledge, prior to
-                        your notifying us of unauthorized access to your account. You may not transfer
-                        your account to any other person and you may not use anyone else's account at
-                        any time without the permission of the account holder.</p>
 
-                    <p className='p-t-30'><strong>5. COMMUNICATIONS</strong></p>
+                    <h5 className='blue-color h3  p-t-20'>5. COMMUNICATIONS</h5>
                     <p>When You use the Website or send emails or other data, information or
                         communication to us, You agree and understand that You are communicating
                         with Us through electronic records and You consent to receive communications
@@ -106,9 +125,9 @@ const Terms = (props) => {
                         electronic or otherwise
                     </p>
 
-                    <p className='p-t-30'><strong>6. TRANSACTION AND COMMUNICATION PLATFORM</strong></p>
+                    <h5 className='blue-color h3  p-t-20'>6. TRANSACTION AND COMMUNICATION PLATFORM</h5>
 
-                    <ol type="a" className='p-t-30'>
+                    <ol type="a" >
                         <li>The Website is a platform that Users utilize to meet and interact
                             with one another or with third party Vendor(s) for their
                             transactions including services of granting, sanctioning, lending of
@@ -249,8 +268,8 @@ const Terms = (props) => {
                     </ol>
                     <p></p>
 
-                    <p className='p-t-30'><strong>7. INDEMNITY AND DISCLAIMER OF WARRANTY</strong></p>
-                    <ol type="a" className='p-t-30'>
+                    <h5 className='blue-color h3  p-t-20'>7. INDEMNITY AND DISCLAIMER OF WARRANTY</h5>
+                    <ol type="a" >
 
                         <li>You shall indemnify and hold harmless PayMe India, its owner,
                             licensee, affiliates, subsidiaries, group companies (as
@@ -303,9 +322,9 @@ const Terms = (props) => {
                     </ol>
                     <p></p>
 
-                    <p className='p-t-30'><strong>8. INTELLECTUAL PROPERTY RIGHTS</strong></p>
+                    <h5 className='blue-color h3  p-t-20'>8. INTELLECTUAL PROPERTY RIGHTS</h5>
 
-                    <ol type="a" className='p-t-30'>
+                    <ol type="a" >
 
                         <li>This platform is controlled and operated by PayMe India and
                             all material on this site, including images, illustrations,
@@ -335,8 +354,8 @@ const Terms = (props) => {
                     </ol>
                     <p></p>
 
-                    <p className='p-t-30'><strong>9. INTELLECTUAL PROPERTY AND TRADEMARK INFRINGEMENT
-                        COMPLAINTS</strong></p>
+                    <h5 className='blue-color h3  p-t-20'>9. INTELLECTUAL PROPERTY AND TRADEMARK INFRINGEMENT COMPLAINTS</h5>
+
                     <p>
                         PayMe India respects the intellectual property of others. In
                         case You feel that Your Trademark or Intellectual Property
@@ -344,15 +363,14 @@ const Terms = (props) => {
                         href="mailto:support@paymeindia.in">support@paymeindia.in</a>.
                     </p>
 
-                    <p className='p-t-30'><strong>10. DESCRIPTION</strong></p>
+                    <h5 className='blue-color h3  p-t-20'>10. DESCRIPTION</h5>
+
                     <p>PayMe India does not warrant that Product and / or
                         Services description or other content of this Website is
                         accurate, complete, reliable, current, or error-free and
                         assumes no liability in this regard.</p>
-
-                    <p  className='p-t-30'><strong>11. LIMITATION OF LIABILITY</strong></p>
-
-                    <ol type="a" className='p-t-30'>
+                    <h5 className='blue-color h3  p-t-20'>11. LIMITATION OF LIABILITY</h5>
+                    <ol type="a" >
 
                         <li>IN NO EVENT SHALL PayMe India BE LIABLE FOR ANY
                             SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL
@@ -420,9 +438,8 @@ const Terms = (props) => {
                     </ol>
                     <p></p>
 
-                    <p className='p-t-30'><strong>12. DISCLAIMER</strong></p>
-                    <p>
-                    </p>
+                    <h5 className='blue-color h3  p-t-20'>12. DISCLAIMER</h5>
+
                     <ol type="a">
                         <li>The User acknowledges and confirms that
                             he/she is well aware of the
@@ -467,23 +484,25 @@ const Terms = (props) => {
                     </ol>
                     <p></p>
 
-                    <p className='p-t-30'><strong>13. LINKS TO OTHER SITES</strong></p>
+                    <h5 className='blue-color h3  p-t-20'>13. LINKS TO OTHER SITES</h5>
+
                     <p>Our Website links to other websites that may
                         collect personally identifiable information
                         about you. PayMe India is not responsible for
                         the privacy practices or the content of
                         those linked websites.</p>
 
-                    <p className='p-t-30'><strong>14. APPLICABLE LAW AND
-                        JURISDICTION</strong></p>
+                    <h5 className='blue-color h3  p-t-20'>14. APPLICABLE LAW AND JURISDICTION</h5>
+
                     <p>These Terms of Use shall be governed by
                         and interpreted and construed in
                         accordance with the laws of India. The
                         place of jurisdiction shall be
                         exclusively in Delhi.</p>
 
-                    <p className='p-t-30'><strong>15. INDIA ONLY</strong></p>
-                    <h6>Unless otherwise specified, the
+                    <h5 className='blue-color h3  p-t-20'>15. INDIA ONLY</h5>
+
+                    <p>Unless otherwise specified, the
                         material on the Website or App is
                         presented solely for the purpose of
                         sale in India. PayMeIndia make no
@@ -502,9 +521,10 @@ const Terms = (props) => {
                         locations/Countries other than
                         India, compliance with local laws,
                         if and to the extent local laws are
-                        applicable.</h6>
+                        applicable.</p>
 
-                    <p className='p-t-30'><strong>16 PLATFORM USE</strong></p>
+                    <h5 className='blue-color h3  p-t-20'>16. PLATFORM USE</h5>
+
                     <p>You agree, undertake and confirm
                         that Your use of platform shall
                         be strictly governed by the
@@ -1219,18 +1239,23 @@ const Terms = (props) => {
 
                 </div>
             </div>
-            <div className="services">
-                <div className="container">
-                    <div className="row justify-content-md-center">
-                        <div className="col col-md-8 text-center p-t-30 p-b-30">
-                            <h4 className="heading4">Contact Us</h4>
-                            <p>Please contact us at <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a></p>
-
+                <div className="contactBox p-t-80">
+                    <div className="container">
+                        <div className="row justify-content-md-center">
+                            <div className="col-md-9 text-center p-t-30 p-b-30 d-flex contactLine">
+                                <div className='mailPic'>
+                                    <img className="img-fluid" src={mailBox} alt="Mail"/>
+                                </div>
+                                <div className='contact'>
+                                    <h4 className="heading4">Contact Us</h4>
+                                    <p>Please contact us at<br/>
+                                        <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                 </div>
-            </div>
             </div>
             <Footer/>
         </>

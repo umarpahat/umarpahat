@@ -1,5 +1,4 @@
 import React from "react"
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Switch } from "react-router-dom";
 import "react-input-range/lib/css/index.css";
 import "./style.css";
@@ -15,7 +14,7 @@ import refund from "./pages/refund"
 import policy from "./pages/policy"
 import terms from "./pages/terms"
 import OurNbfcPartners from "./pages/OurNbfcPartners"
-import HowWeWork from "./pages/HowWeWork"
+import Career from "./pages/Career"
 import NotFoundPage from "./pages/NotFoundPage"
 import Sitemap from "./pages/Sitemap"
 import MediaCoverage from "./pages/MediaCoverage"
@@ -40,6 +39,7 @@ import Creatempn from "./pages/ApplyNowButton/Creatempn";
 import KycOption from "./pages/ApplyNowButton/KycOption";
 import Header from "./pages/Header";
 import Footer from "./pages/Footer";
+
 
 function Routes() {
     return (
@@ -66,7 +66,7 @@ function Routes() {
         <Route exact path="/policy" component={policy} />
         <Route exact path="/terms" component={terms} />
         <Route exact path="/ourNbfcPartners" component={OurNbfcPartners} />
-        <Route exact path="/how-we-work" component={HowWeWork} />
+        <Route exact path="/career" component={Career} />
         <Route exact path="/media-coverage" component={MediaCoverage} />
         <Route exact path="/social-initiative" component={SocialInitiative} />
         <Route exact path="/pay-rent-details" component={PayRent} />
@@ -97,6 +97,7 @@ function Routes() {
           path="/payrent-transaction-history"
           component={TransactionHistory}
         />
+       
         <Route component={Error} />
           </Switch>
           </>

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { hitAllUserData } from "../../store/modules/userDetails/actions";
+import {
+  hitAllUserData,
+  hitAppUseCase,
+} from "../../store/modules/userDetails/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import backicon from "../../component/img/backicon.png";
@@ -8,8 +11,16 @@ import { getS3SignedUrl, postS3, api } from "../../services/api";
 import Loader from "../../component/Loader";
 import Header from "../Header";
 import Footer from "../Footer";
+import Cookies from "universal-cookie";
+import tip from "../../images/svg/tip.png";
+import { Container } from "react-bootstrap";
+
+const cookies = new Cookies();
 
 const Kycdetailsformpayme = (props) => {
+  const userCase = cookies.get("userCase");
+  console.log("kyc now ", props);
+  const token = cookies.get("token");
   const [show, setShow] = useState(false);
   const [name, setname] = useState("");
   const [date, setdate] = useState("");
@@ -30,10 +41,19 @@ const Kycdetailsformpayme = (props) => {
   const [loader, setloader] = useState(false);
   const [profile, setProfile] = useState({});
   const [errorProfile, seterrorProfile] = useState("");
-  const [correctPan,setcorrectPan] = useState("");
+  const [correctPan, setcorrectPan] = useState("");
+  const [refresh, setRefresh] = useState(true);
 
-  console.log("props.useCase", props.userCase);
-  
+  function refreshhi() {
+    props.hitAllUserData({ token: token });
+    props.hitAppUseCase();
+  }
+  if (refresh) {
+    refreshhi();
+    setRefresh(false);
+  }
+
+  console.log("userCase", userCase);
 
   const handleClose = () => setShow(!show);
 
@@ -49,7 +69,7 @@ const Kycdetailsformpayme = (props) => {
       `user_image/${props.user.id}/user_profile_photo.jpg`,
     ];
     const signedUrlObj = await getS3SignedUrl({
-      token: props.token,
+      token: token,
       payload: { s3_path: pathArray, bucket_name: "payme-test-documents" },
     });
     setsignedUrl(signedUrlObj.data.data);
@@ -57,9 +77,8 @@ const Kycdetailsformpayme = (props) => {
   }
 
   useEffect(() => {
-    if (!props.user) {
+    if (!token) {
       props.history.push({ pathname: "/" });
-      return;
     }
     getSignedUrl();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -88,7 +107,7 @@ const Kycdetailsformpayme = (props) => {
     return await api.post(
       "/api/update_document_status/",
       { doc_type: data.docType, path: data.path },
-      { headers: { Authorization: "Token " + props.token } }
+      { headers: { Authorization: "Token " + token } }
     );
   }
 
@@ -96,7 +115,7 @@ const Kycdetailsformpayme = (props) => {
     return await api.post(
       "/api/offline_manual_kyc/",
       { dob: date, gender: gender, pan_card_number: panNumber },
-      { headers: { Authorization: "Token " + props.token } }
+      { headers: { Authorization: "Token " + token } }
     );
   }
 
@@ -187,9 +206,10 @@ const Kycdetailsformpayme = (props) => {
     ])
       .then((response) => {
         setloader(false);
-        props.hitAllUserData({ token: props.token });
 
-        if (props.userCase === "apply-loan") {
+        props.hitAllUserData({ token: token });
+
+        if (userCase === "apply-loan") {
           if (!props.user.userbankdetail) {
             props.history.push({
               pathname: "/bank-details-payme",
@@ -212,306 +232,327 @@ const Kycdetailsformpayme = (props) => {
           } else {
             props.history.push({ pathname: "/bank-details-payme" });
           }
-        } else if (props.useCase === "pay-rent") {
+        } else if (userCase === "pay-rent") {
           props.history.push({ pathname: "/payrent-other-details" });
         } else {
           props.history.push({ pathname: "/" });
         }
       })
       .catch((error) => {
+        if (error.response.status === 401) {
+          cookies.remove("token", { path: "/" });
+        }
         setloader(false);
       });
   };
-  console.log(props);
 
   return (
     <>
-
       <Header {...props} />
-      <div className='content darkBg'>
-      {loader ? (
-        <div className="loader">
-          {" "}
-          <Loader color={"#33658a"} />{" "}
-        </div>
-      ) : (
-        <div className="form-container pb-5" style={{backgroundColor:"#f2f2f2"}}>
-          <div className="pb-4">
-            <Progressbar />
+      <div className="content darkBg">
+        {loader ? (
+          <div className="loader">
+            {" "}
+            <Loader color={"#33658a"} />{" "}
           </div>
-          <div
-            className="d-flex"
-            onClick={() => {
-              props.history.goBack();
-            }}
-            to="#"
-            style={{ cursor: "pointer" }}
-          >
-            <div className="m-1">
-              <img src={backicon} alt='Back iocn' className="img-fluid" />
-            </div>
-            <div>
-              <h6 className="backbtnsty">Back</h6>
-            </div>
-          </div>
-
-          <form onSubmit={handleSubmit}>
-            <div className="Home-contact-form">
-              {/* <h4 className="form-heading text-center">
-                Tell Us about Yourself
-              </h4> */}
-              <div className="form-block">
-                <div class="form-group ms-input-group">
-                  <label className="form-label">Your Name</label>
-                  <input
-                    type="text"
-                    class="form-control ms-form-input"
-                    placeholder="Enter Your Name"
-                    
-                    value={name}
-                    onChange={(event) => {
-                      seterrorName("");
-                      setname(event.target.value);
-                    }}
-                  />
-                  {errorName ? (
-                    <span style={{ color: "red" }}>{errorName}</span>
-                  ) : null}
-                </div>
-                <div>
-                  <div class="form-group ms-input-group">
-                    <label className="form-label">DOB(DD/MM/YYYY)</label>
-                    <input
-                      type="date"
-                      class="form-control ms-form-input"
-                      value={date}
-                      onChange={(event) => {
-                        seterrorDob("");
-                        setdate(event.target.value);
-                      }}
-                    />
-                    {errorDob ? (
-                      <span style={{ color: "red" }}>{errorDob}</span>
-                    ) : null}
-                  </div>
-                </div>
-                <div class="form-group ms-input-group">
-                  <label className="form-label">Gender</label>
-                  <div class="form-group ms-input-group">
-                    <select
-                      value={gender}
-                      onChange={(e) => {
-                        console.log(e.target.value);
-                        seterrorGender("");
-                        setgender(e.target.value);
-                      }}
-                      className="form-label"
-                    >
-                      <option value="">Select Gender</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  {errorGender ? (
-                    <span style={{ color: "red" }}>{errorGender}</span>
-                  ) : null}
+        ) : (
+          <Container>
+            <div className="row">
+              <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                <br />
+                <a
+                  className="back-arrow"
+                  onClick={() => {
+                    props.history.goBack();
+                  }}
+                >
+                  Back
+                </a>
+              </div>
+              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                <div className="pb-4">
+                  <Progressbar />
                 </div>
 
-                <div class="form-group ms-input-group">
-                  <label className="form-label">Pan Number</label>
-                  <input
-                    type="text"
-                    class="form-control ms-form-input"
-                    placeholder="AJTPN9876M"
-                    maxLength="10"
-                    value={panNumber}
-                    onChange={(event) => {
-                      if (event.target.value != 6) {
-                        seterrorPan1(
-                          "Pancard Number should be  6 digit's"
-                        );
-                        setcorrectPan("");
-                      }
-                     
-                      
-                      if (
-                        event.target.value.match(
-                          /^([A-Z]){5}([0-9]){4}([A-Z]){1}$/
-                        )
-                      ) {
-                        
-                        setcorrectPan(
-                          "Pan Number Entered Properly"
-                        );
-                        seterrorPan1("");
-                        
-                      } else {
-                        seterrorPan1("Please Enter a valid PanCard Number");
-                      }
-                      
-                      seterrorPan("");
-                      setpanNumber(event.target.value);
-                    }}
-                  />
-                   {correctPan ? (
-                    <span style={{ color: "green" }}>{correctPan}</span>
-                  ) : null}
+                <form onSubmit={handleSubmit}>
+                  <div className="home-contact-form">
+                    <div className="form-block">
+                      <div class="form-group ms-input-group">
+                        <label className="form-label">Your Name</label>
+                        <input
+                          class="form-control ms-form-input"
+                          placeholder="Enter  Your Name"
+                          value={name}
+                          onChange={(event) => {
+                            seterrorName("");
+                            if(event.target.value.match(/^[A-Za-z{" "}]+$/)){
+                            setname(event.target.value);
+                          }
+                        else if(event.target.value.length===0){
+                          setname(event.target.value);
+                        }}}
+                        />
+                        {errorName ? (
+                          <span style={{ color: "red" }}>{errorName}</span>
+                        ) : null}
+                      </div>
+                      <div>
+                        <div class="form-group ms-input-group">
+                          <label className="form-label">DOB(DD/MM/YYYY)</label>
+                          <input
+                            type="date"
+                            class="form-control ms-form-input"
+                            value={date}
+                            onChange={(event) => {
+                              seterrorDob("");
+                              setdate(event.target.value);
+                            }}
+                          />
+                          {errorDob ? (
+                            <span style={{ color: "red" }}>{errorDob}</span>
+                          ) : null}
+                        </div>
+                      </div>
+                      <div class="form-group ms-input-group">
+                        <label className="form-label">Gender</label>
+                        <div class="form-group ms-input-group">
+                          <select
+                            value={gender}
+                            onChange={(e) => {
+                              console.log(e.target.value);
+                              seterrorGender("");
+                              setgender(e.target.value);
+                            }}
+                            className="form-label"
+                          >
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
+                        {errorGender ? (
+                          <span style={{ color: "red" }}>{errorGender}</span>
+                        ) : null}
+                      </div>
 
-                  {errorPan1 ? (
-                    <span style={{ color: "red" }}>{errorPan1}</span>
-                  ) : null}
+                      <div class="form-group ms-input-group">
+                        <label className="form-label">Pan Number</label>
+                        <input
+                          type="text"
+                          class="form-control ms-form-input"
+                          placeholder="AJTPN9876M"
+                          maxLength="10"
+                          value={panNumber}
+                          onChange={(event) => {
+                            if (event.target.value != 6) {
+                              seterrorPan1(
+                                "Pancard Number should be  6 digit's"
+                              );
+                              setcorrectPan("");
+                            }
 
-                  {errorPan ? (
-                    <span style={{ color: "red" }}>{errorPan}</span>
-                  ) : null}
-                </div>
-                <label className="form-label">
-                  Upload a pictue of your PAN card
-                </label>
-                <div className="file-uploading-block">
-                  <a
-                    className="upload-btn-text"
-                    href="javascript:document.querySelector('input#upload-pan').click()"
-                  >
-                    Upload PAN
-                  </a>
-                  <br />
-                  {panFile.name ? (
-                    <span style={{ color: "black" }} className="">
-                      {panFile.name}
-                    </span>
-                  ) : null}
-                  <input
-                    type="file"
-                    accept="image/*"
-                    class="custom-file-input"
-                    name="Upload PAN"
-                    id="upload-pan"
-                    onChange={handlePanUpload}
-                  />
-                  {errorUploadPan ? (
-                    <span style={{ color: "red" }}>{errorUploadPan}</span>
-                  ) : null}
-                </div>
-                <div class="form-group ms-input-group">
-                  <div className="pb-1">
-                    <label className="form-label ">Adhaar Card</label>
-                  </div>
+                            if (
+                              event.target.value.match(
+                                /^([A-Z]){5}([0-9]){4}([A-Z]){1}$/
+                              )
+                            ) {
+                              setcorrectPan("Pan Number Entered Properly");
+                              seterrorPan1("");
+                            } else {
+                              seterrorPan1(
+                                "Please Enter a valid PanCard Number"
+                              );
+                            }
 
-                  <label className="form-label">
-                    Upload a pictue of your Aadhar card
-                  </label>
-                  <div style={{ display: "flex" }}>
-                    <div className="twoboxdregdrop file-uploading-block  mr-2">
-                      <a
-                        className="upload-btn-text"
-                        href="javascript:document.querySelector('input#Frontofadhaar').click()"
-                      >
-                        Upload Adhaar Front
-                      </a>
-                      <br />
-                      {aadhaarFileFront.name ? (
-                        <span style={{ color: "black" }} className="">
-                          {aadhaarFileFront.name}
-                        </span>
-                      ) : null}
-                      <input
-                        type="file"
-                        accept="image/*"
-                        class="custom-file-input"
-                        id="Frontofadhaar"
-                        hidden
-                        onChange={handleAadhaarUploadFront}
-                      />
-                      {errorUploadAdhaarFront ? (
-                        <span style={{ color: "red" }}>
-                          {errorUploadAdhaarFront}
-                        </span>
-                      ) : null}
+                            seterrorPan("");
+                            setpanNumber(event.target.value);
+                          }}
+                        />
+                        {correctPan ? (
+                          <span style={{ color: "green" }}>{correctPan}</span>
+                        ) : null}
+
+                        {errorPan1 ? (
+                          <span style={{ color: "red" }}>{errorPan1}</span>
+                        ) : null}
+
+                        {errorPan ? (
+                          <span style={{ color: "red" }}>{errorPan}</span>
+                        ) : null}
+                      </div>
+                      <label className="form-label">
+                        Upload a pictue of your PAN card
+                      </label>
+                      <div className="file-uploading-block">
+                        <a
+                          className="upload-btn-text"
+                          href="javascript:document.querySelector('input#upload-pan').click()"
+                        >
+                          Upload PAN
+                        </a>
+                        <br />
+                        {panFile.name ? (
+                          <span style={{ color: "black" }} className="">
+                            {panFile.name}
+                          </span>
+                        ) : null}
+                        <input
+                          type="file"
+                          accept="image/*"
+                          class="custom-file-input"
+                          name="Upload PAN"
+                          id="upload-pan"
+                          onChange={handlePanUpload}
+                        />
+                        {errorUploadPan ? (
+                          <span style={{ color: "red" }}>{errorUploadPan}</span>
+                        ) : null}
+                      </div>
+                      <div class="form-group ms-input-group">
+                        <div className="pb-1">
+                          <label className="form-label ">Adhaar Card</label>
+                        </div>
+
+                        <label className="form-label">
+                          Upload a pictue of your Aadhar card
+                        </label>
+                        <div style={{ display: "flex" }}>
+                          <div className="twoboxdregdrop file-uploading-block  mr-2">
+                            <a
+                              className="upload-btn-text"
+                              href="javascript:document.querySelector('input#Frontofadhaar').click()"
+                            >
+                              Upload Adhaar Front
+                            </a>
+                            <br />
+                            {aadhaarFileFront.name ? (
+                              <span style={{ color: "black" }} className="">
+                                {aadhaarFileFront.name}
+                              </span>
+                            ) : null}
+                            <input
+                              type="file"
+                              accept="image/*"
+                              class="custom-file-input"
+                              id="Frontofadhaar"
+                              hidden
+                              onChange={handleAadhaarUploadFront}
+                            />
+                            {errorUploadAdhaarFront ? (
+                              <span style={{ color: "red" }}>
+                                {errorUploadAdhaarFront}
+                              </span>
+                            ) : null}
+                          </div>
+
+                          <div
+                            htmlFor="Backofadhaar"
+                            className="file-uploading-block twoboxdregdrop ml-3"
+                          >
+                            <a
+                              href="javascript:document.querySelector('input#Backofadhaar').click()"
+                              className="upload-btn-text"
+                            >
+                              Upload Adhaar Back
+                            </a>
+                            <br />
+                            {aadhaarFileBack.name ? (
+                              <span style={{ color: "black" }} className="">
+                                {aadhaarFileBack.name}
+                              </span>
+                            ) : null}
+                            <input
+                              type="file"
+                              accept="image/*"
+                              className="custom-file-input"
+                              id="Backofadhaar"
+                              hidden
+                              onChange={handleAadhaarUploadBack}
+                            />
+                            {errorUploadAdhaarBack ? (
+                              <span style={{ color: "red" }}>
+                                {errorUploadAdhaarBack}
+                              </span>
+                            ) : null}
+                          </div>
+                        </div>
+                        <label className="form-label">Upload a Profile</label>
+                        <div className="file-uploading-block">
+                          <a
+                            className="upload-btn-text"
+                            href="javascript:document.querySelector('input#upload-profile').click()"
+                          >
+                            Upload Profile
+                          </a>
+                          <br />
+                          {profile.name ? (
+                            <span style={{ color: "black" }} className="">
+                              {profile.name}
+                            </span>
+                          ) : null}
+
+                          <input
+                            type="file"
+                            accept="image/*"
+                            className="custom-file-input"
+                            name="Upload Profile"
+                            id="upload-profile"
+                            onChange={handleProfileUpload}
+                          />
+                          {errorProfile ? (
+                            <span style={{ color: "red" }}>{errorProfile}</span>
+                          ) : null}
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <ul>
+                        <li> All documents should be clear in quality</li>
+                        <li> We accept documents in pdf/jpg/png format.</li>
+                        <li>Max file size 32MB</li>
+                      </ul>
                     </div>
 
-                    <div
-                      htmlFor="Backofadhaar"
-                      className="file-uploading-block twoboxdregdrop ml-3"
-                    >
-                      <a
-                        href="javascript:document.querySelector('input#Backofadhaar').click()"
-                        className="upload-btn-text"
-                      >
-                        Upload Adhaar Back
-                      </a>
-                      <br />
-                      {aadhaarFileBack.name ? (
-                        <span style={{ color: "black" }} className="">
-                          {aadhaarFileBack.name}
-                        </span>
-                      ) : null}
-                      <input
-                        type="file"
-                        accept="image/*"
-                        className="custom-file-input"
-                        id="Backofadhaar"
-                        hidden
-                        onChange={handleAadhaarUploadBack}
-                      />
-                      {errorUploadAdhaarBack ? (
-                        <span style={{ color: "red" }}>
-                          {errorUploadAdhaarBack}
-                        </span>
-                      ) : null}
-                    </div>
-                  </div>
-                  <label className="form-label">Upload a Profile</label>
-                  <div className="file-uploading-block">
-                    <a
-                      className="upload-btn-text"
-                      href="javascript:document.querySelector('input#upload-profile').click()"
-                    >
-                      Upload Profile
-                    </a>
-                    <br />
-                    {profile.name ? (
-                      <span style={{ color: "black" }} className="">
-                        {profile.name}
-                      </span>
-                    ) : null}
-
                     <input
-                      type="file"
-                      accept="image/*"
-                      className="custom-file-input"
-                      name="Upload Profile"
-                      id="upload-profile"
-                      onChange={handleProfileUpload}
+                      type="submit"
+                      style={{ color: "white" }}
+                      className="getstartbtn "
+                      value="Save and  Continue"
+                      onChange={handleSubmit}
                     />
-                    {errorProfile ? (
-                      <span style={{ color: "red" }}>{errorProfile}</span>
-                    ) : null}
+                  </div>
+                </form>
+              </div>
+              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                <div className="height100" style={{ height: "100vh" }}>
+                  <div>
+                    <div className="circle-half">
+                      <div className="full-circle">
+                        <img src={tip} alt="Icon" />
+                      </div>
+                      <div className="full-text text-left">
+                        <h5>Tips</h5>
+                        <p>
+                          In expedita et occaecati ullam a cumque maiores
+                          perspiciatis. Non labore exercitationem rerum nulla ea
+                          veniam facilis et.{" "}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="circle-half">
+                      <p className="p-a-10">
+                        In expedita et occaecati ullam a cumque maiores
+                        perspiciatis.{" "}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div>
-                <ul>
-                  <li> All documents should be clear in quality</li>
-                  <li> We accept documents in pdf/jpg/png format.</li>
-                  <li>Max file size 32MB</li>
-                </ul>
-              </div>
-
-              <input
-                type="submit"
-                style={{ color: "white" }}
-                className="getstartbtn fontstyformQuiklone"
-                value="Save and  Continue"
-                onChange={handleSubmit}
-              />
             </div>
-          </form>
-        </div>
-      )}
+          </Container>
+        )}
       </div>
-    <Footer/>
     </>
   );
 };
@@ -521,7 +562,7 @@ const mapStateToProps = (state) => {
     token: state.authDetails.token,
     phoneNumber: state.authDetails.phone_number,
     user: state.user.userData,
-    userCase: state.user.useCase,
+    useCase: state.user.useCase,
   };
 };
 
@@ -530,6 +571,7 @@ const dispatchToProps = (dispatch) => {
     {
       // hitLogin,
       hitAllUserData,
+      hitAppUseCase,
       // hitForgotMpin,
     },
     dispatch

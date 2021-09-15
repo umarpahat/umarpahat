@@ -10,10 +10,15 @@ import axios from 'axios'
 import {API_ENDPOINT_STAGING} from "../../constant" ;
 import Footer from "../Footer";
 
+import Cookies from 'universal-cookie';
+import tip from "../../images/svg/tip.png";
+const cookies = new Cookies()
+
 const DetailsSummary = (props) => {
+  const token = cookies.get('token')
 
   useEffect(() => {
-    if (!props.token) {
+    if (!token) {
       props.history.push({pathname: '/'})
     }
 
@@ -28,7 +33,7 @@ const DetailsSummary = (props) => {
     let url = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`
     let config = {
       headers: {
-        Authorization: "Token " + props.token,
+        Authorization: "Token " + token,
         'Content-Type' : "application/json"
       }
     }
@@ -41,21 +46,32 @@ const DetailsSummary = (props) => {
         props.history.push({pathname:"/payrent-other-details"})
       })
       .catch((err) => {
+        if(err.response.status===401)
+        {
+          cookies.remove('token', { path: '/' })
+        }
         console.log("eeee", err)
       })
   }
 
   return (
     <>
-   
+
       <Header />
       <div className='content darkBg'>
+        <Container>
+        <div className="row">
+          <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+            <br/>
+            <a className='back-arrow' href=''>Back</a>
+          </div>
+          <div className="col-lg-5 col-md-5 col-sm-12 text-center">
       <div className="form-container">
         <div className="ms-Tabs">
           <h4 className="form-heading text-center">Summary Of All Details</h4>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="Home-contact-form p-3 px-5">
+          <div className="home-contact-form p-3 px-5">
             <div className="form-block m-0">
               <div className="details-block">
                 <h4>Rent Amount</h4>
@@ -71,7 +87,7 @@ const DetailsSummary = (props) => {
               </div>
             </div>
           </div>
-          <div className="Home-contact-form mt-4  p-3 px-5">
+          <div className="home-contact-form mt-4  p-3 px-5">
             <h4 className="form-heading">Landlord's Details</h4>
             <div className="form-block m-0">
               <div className="details-block">
@@ -88,7 +104,7 @@ const DetailsSummary = (props) => {
               </div>
             </div>
           </div>
-          <div className=" mt-4 Home-contact-form p-3 px-5">
+          <div className=" mt-4 home-contact-form p-3 px-5">
             <h4 className="form-heading">Landlord's Bank Details</h4>
             <div className="form-block">
               <div className="details-block">
@@ -103,22 +119,22 @@ const DetailsSummary = (props) => {
                 <h4>Landlord's Account Number</h4>
                 <p>{props.location.state.payee.account_number}</p>
               </div>
-              
+
             </div>
           </div>
           <div className="">
-              <input type="submit" value="Proceed To Payment" className="getstartbtn fontstyformQuiklone" />
+              <input type="submit" value="Proceed To Payment" className="getstartbtn " />
               </div>
         </form>
         <div className="pb-5">
         <div >
           <Link
             to="/payrent-other-details"
-        
+
           >
              <button
-                     
-                      className="getstartbtn fontstyformQuiklone"
+
+                      className="getstartbtn "
                     >
                     Back
                     </button>
@@ -127,9 +143,27 @@ const DetailsSummary = (props) => {
       </div>
       </div>
       </div>
-     
-      <Footer/>
-    
+      <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+        <div className='height100'>
+          <div>
+            <div className='circle-half'>
+              <div className='full-circle'>
+                <img src={tip} alt='Icon'/>
+              </div>
+              <div className='full-text text-left'>
+                <h5>Tips</h5>
+                <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
+                  rerum nulla ea veniam facilis et. </p>
+              </div>
+            </div>
+            <div className='circle-half'>
+              <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+        </Container></div>
     </>
   );
 };

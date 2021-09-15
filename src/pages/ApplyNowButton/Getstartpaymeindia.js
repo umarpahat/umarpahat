@@ -11,19 +11,24 @@ import "../ApplyNowButton/Applybtnallcomponent.css";
 import Header from "../Header";
 import Footer from "../Footer";
 import { Link } from "react-router-dom";
+import Cookies from 'universal-cookie';
+import letsStart from "../../images/animated/lets-start-animation.gif";
+
+const cookies = new Cookies()
 
 const Getstartpaymeindia = (props) => {
+  const token = cookies.get('token')
   console.log(props.history.location.state.phoneNumber);
   let [loader, setloader] = useState(false);
   const [acceptTandC, setacceptTandC] = useState(false)
   const [Error, setError] = useState(null);
 
   useEffect(() => {
-    if (props.token) {
+    if (token) {
       setloader(false)
-      props.hitAllUserData({ token: props.token })
+      props.hitAllUserData({ token: token })
         props.history.push({pathname:'/referral-code'})
-    } 
+    }
 });
 
   const acceptTermsAndCond = (props) => {
@@ -32,11 +37,15 @@ const Getstartpaymeindia = (props) => {
   }
 
   const responseGoogle = (response) => {
-  
+
     try {
       props.hitLogin({ type: 'google', access_token: response.tokenId, phone_number: Number(props.history.location.state.phoneNumber)})
       props.history.push({pathname:'/referral-code'})
     } catch (error){
+      if(error.response.status===401)
+      {
+        cookies.remove('token', { path: '/' })
+      }
       setloader(false)
 console.log(error)
     }
@@ -53,10 +62,18 @@ console.log(error)
         <div className='content darkBg'>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
       <Container>
+          <div className="row">
+            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+              <br/>
+              <a onClick={() => {
+              props.history.push('/');
+            }} className='back-arrow' >Back</a>
+            </div>
+            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
         <div className="pt-5 ">
           <div className="contenertQuicklone">
             <div className="slider-right-block">
-              <div className="Home-contact-form">
+              <div className="home-contact-form">
                 <h4 className="form-heading fornheadding pb-3">
                   Get Started With PayMe India
                 </h4>
@@ -104,7 +121,8 @@ console.log(error)
         "backgroundColor": "rgb(51, 101, 138)",
         "width": "453px",
         "height": "65px",
-        "margin": "0px 0px 0px 0px"}} disabled={renderProps.disabled}> <img src={googleimg} alt="google"/> Sign Up with Google</button>
+        "margin": "0px 0px 0px 0px",
+      cursor:"pointer"}} disabled={renderProps.disabled}> <img src={googleimg} alt="google"/> Sign Up with Google</button>
     )}
     onSuccess={responseGoogle}
     onFailure={responseGoogleFail}
@@ -117,9 +135,29 @@ console.log(error)
             </div>
           </div>
         </div>
+            </div>
+            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+              <div className='height100'>
+                <div>
+                  <div className='circle-half'>
+                    <div className='full-circle'>
+                      <img src={letsStart} alt='Icon'/>
+                    </div>
+                    <div className='full-text text-left'>
+                      <h5>Tips</h5>
+                      <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
+                        rerum nulla ea veniam facilis et. </p>
+                    </div>
+                  </div>
+                  <div className='circle-half'>
+                    <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </Container>}
       </div>
-      <Footer/>
     </>
   );
 };

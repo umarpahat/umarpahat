@@ -7,7 +7,8 @@ import Loader from '../../component/Loader'
 import { api } from '../../services/api';
 import Header from "../Header";
 import Footer from "../Footer";
-
+import { Container } from "react-bootstrap";
+import tip from "../../images/svg/tip.png";
 function Referralcode(props) {
 
   const [loader, setloader] = useState(false);
@@ -20,14 +21,14 @@ function Referralcode(props) {
   }
 
   const handleReferral = () => {
-   
+
     setloader(true)
     console.log(3333333)
     console.log(referral)
     console.log(referral.toUpperCase())
     console.log(props.token)
     console.log(44444)
-    
+
 
     api.post(`/api/referral/referral_code_apply/`, {'referral_code' : referral.toUpperCase()},  { headers: { 'Authorization': 'Token ' + props.token } })
     .then((response) => {
@@ -57,10 +58,17 @@ function Referralcode(props) {
       <Header {...props}/>
         <div className='content darkBg'>
       {loader ? <div className="loader"> <Loader color={'#33658a'} /> </div> :
+          <Container>
+              <div className="row">
+                  <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                      <br/>
+                      <a className='back-arrow' href=''>Back</a>
+                  </div>
+                  <div className="col-lg-5 col-md-5 col-sm-12 text-center">
       <div className="form-container formcontainermob  pt-4">
         <div>
           <form onSubmit={handleSubmit}>
-            <div className="Home-contact-form mt-4">
+            <div className="home-contact-form mt-4">
               <h4 className="form-heading text-center">Referral Code</h4>
               <div class="form-group ms-input-group">
                 <div className="topnoticreferral">
@@ -103,14 +111,34 @@ function Referralcode(props) {
             </div>
           </form>
         </div>
-      </div>}
+      </div> </div>
+                  <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                      <div className='height100'>
+                          <div>
+                              <div className='circle-half'>
+                                  <div className='full-circle'>
+                                      <img src={tip} alt='Icon'/>
+                                  </div>
+                                  <div className='full-text text-left'>
+                                      <h5>Tips</h5>
+                                      <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
+                                          rerum nulla ea veniam facilis et. </p>
+                                  </div>
+                              </div>
+                              <div className='circle-half'>
+                                  <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </Container>}
       <div className="py-3">
         {/* <Link to="/create-mpin"> */}
           <p className="Skipsty" onClick={()=>props.history.push({pathname:'/change-mpin', state: { forgotPassword: false}})}>Skip</p>
         {/* </Link> */}
       </div>
         </div>
-        <Footer/>
     </>
   );
 }
