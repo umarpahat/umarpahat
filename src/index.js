@@ -9,7 +9,7 @@ const title = 'React with Webpack and Babel';
 ReactDOM.render(
     <Provider store={store}>
         <React.StrictMode>
-            <BrowserRouter>
+            <BrowserRouter forceRefresh={true}>
                 <App title={title}/>
             </BrowserRouter>
         </React.StrictMode>

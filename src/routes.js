@@ -17,7 +17,7 @@ import OurNbfcPartners from "./pages/OurNbfcPartners"
 import Career from "./pages/Career"
 import NotFoundPage from "./pages/NotFoundPage"
 import Sitemap from "./pages/Sitemap"
-import MediaCoverage from "./pages/MediaCoverage"
+    import MediaCoverage from "./pages/MediaCoverage"
 import PayRent from "./pages/PayRent"
 import Offerings from "./pages/Offerings"
 import OtherDetalisForm from "./pages/Payrent/OtherDetalisForm";
