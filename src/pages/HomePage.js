@@ -38,10 +38,9 @@ const HomePage = (props) => {
     }));
     const classes = useStyles();
     let [loader, setloader] = useState(false);
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState(500);
     const [time, setTime] = useState(0);
     const [result, setResult] = useState("");
-    const [rateofinterest, setrateofinterest] = useState(0.01);
     const [posts, setPosts] = useState([]);
 
     useEffect(()=>{
@@ -159,15 +158,17 @@ const HomePage = (props) => {
         let pfee = getProcessFees(amount)
 
         console.log(roi, amount, time)
-        const result =
-            Math.round(((amount * (((0.03) * ((1.03) ** time)) / (((1.03) ** time) - 1))) * time) - amount);
-        $('#interest').text(result)
+        const result = Math.round(  amount * ((roi * (1 + roi) ** time) / ((1 + roi) ** time - 1)));
+            
+        $('#interest').text(36)
         $('#interestId').text(result)
         $('#roi').text(roi)
         $('#pfee').text(pfee)
         $('#amountInput').val(pfee)
         let repay = result + amount + pfee;
         $('#repayment').text(repay);
+
+       
         return result;
 
     }
@@ -237,7 +238,10 @@ const HomePage = (props) => {
                                             </div>
                                             <div className='relative'>
                                                 <span className='rupeesIcon'>₹</span>
-                                                <input className='down-payment' id='amountInput'/>
+                                                <input className='down-payment' type="number" value={amount} onChange={(e)=>{
+                                                    setAmount(e.target.value);
+                                                    
+                                                }}/>
                                             </div>
 
                                         </div>
