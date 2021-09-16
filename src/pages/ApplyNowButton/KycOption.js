@@ -13,7 +13,7 @@ import {API_ENDPOINT} from "../../constant";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from 'universal-cookie';
-import tip from "../../images/svg/tip.png";
+import tip from "../../images/animated/kyc-option.gif";
 
 
 const cookies = new Cookies()
@@ -168,14 +168,14 @@ const KycOption = (props) => {
                                 <div className="row">
                                     <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                                         <br/>
-                                        <a className='back-arrow' href=''>Back</a>
+                                        <a className='back-arrow' onClick={() => {props.history.goBack()}}>Back</a>
                                     </div>
                                     <div className="col-lg-5 col-md-5 col-sm-12 text-center">
 
                                         <div className="contenertQuicklone">
                                             <div className="slider-right-block">
                                                 <div className="home-contact-form">
-                                                    <h4 className="form-heading fornheadding">
+                                                    <h4 className="form-heading formheadding">
                                                         Congratulation Your Kyc is verified click below to continue.
                                                     </h4>
                                                     <a
@@ -196,7 +196,7 @@ const KycOption = (props) => {
                                             <div>
                                                 <div className='circle-half'>
                                                     <div className='full-circle'>
-                                                        <img src={tip} alt='Icon'/>
+                                                        <img src={tip} className='img-fluid' alt='Tips'/>
                                                     </div>
                                                     <div className='full-text text-left'>
                                                         <h5>Tips</h5>
@@ -219,13 +219,13 @@ const KycOption = (props) => {
                                 <div className="row">
                                     <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                                         <br/>
-                                        <a className='back-arrow' href=''>Back</a>
+                                        <a className='back-arrow' onClick={() => {props.history.goBack()}}>Back</a>
                                     </div>
                                     <div className="col-lg-5 col-md-5 col-sm-12 text-center">
                                         <div className="contenertQuicklone">
                                             <div className="slider-right-block">
                                                 <div className="home-contact-form">
-                                                    <h4 className="form-heading fornheadding">
+                                                    <h4 className="form-heading formheadding">
                                                         Your Kyc is Pending click below to complete
                                                     </h4>
                                                     <a
@@ -246,7 +246,7 @@ const KycOption = (props) => {
                                             <div>
                                                 <div className='circle-half'>
                                                     <div className='full-circle'>
-                                                        <img src={tip} alt='Icon'/>
+                                                        <img src={tip} className='img-fluid' alt='Tips'/>
                                                     </div>
                                                     <div className='full-text text-left'>
                                                         <h5>Tips</h5>
@@ -270,50 +270,49 @@ const KycOption = (props) => {
                                 <div className="row">
                                     <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                                         <br/>
-                                        <a className='back-arrow' href=''>Back</a>
+                                        <a className='back-arrow' onClick={() => {props.history.goBack()}}>Back</a>
                                     </div>
                                     <div className="col-lg-5 col-md-5 col-sm-12 text-center">
                                         <div className="contenertQuicklone">
                                             <div className="slider-right-block">
                                                 <div className="home-contact-form">
-                                                    <h4 className="form-heading fornheadding">
+                                                    <h4 className="form-heading formheadding">
                                                         Choose from the preferred option below to proceed.
                                                     </h4>
-                                                    <a
-                                                        type="button"
-                                                        className="getstartbtn "
+                                                    <p className='form-select-one'>Select one to proceed</p>
+                                                    <div className='kyc-wrapper'>
+                                                        <span><a type="button"
+                                                           href={webview}
+                                                           target="popup"
+                                                           onClick={handleWebView}
+                                                        >&nbsp;</a></span>
+                                                        <h5>E-KYC</h5>
+                                                        <p>It will be done on UADAAI Website.</p>
 
-                                                        href={webview}
-                                                        target="popup"
-                                                        onClick={handleWebView}
-                                                    >
-                                                        E Kyc (Preferred)
-                                                    </a>
-                                                    <input
-                                                        type="button"
-                                                        value="Manual Kyc"
-                                                        className="getstartbtn "
-                                                        style={{height: "25px"}}
-                                                        style={{margin: "83px 0px 32px 0"}}
-                                                        onClick={() => {
-                                                            clearTimeout();
-                                                            setStatus(false)
-                                                            if (
-                                                                props.user.userdocumentsmodel.kyc_verified === "NOT_SUBMITTED" ||
-                                                                props.user.userdocumentsmodel.kyc_verified === "NOT_VALID" || props.user.userdocumentsmodel.kyc_verified === "PENDING_VERIFICATION"
-                                                            ) {
-                                                                props.history.push({pathname: "/kyc-details-form"});
-                                                            } else if (!props.user.userbankdetail) {
-                                                                props.history.push({
-                                                                    pathname: "/bank-details-payme",
-                                                                });
-                                                            } else {
-                                                                props.history.push({
-                                                                    pathname: "/pending-approval",
-                                                                });
-                                                            }
-                                                        }}
-                                                    />
+                                                    </div>
+                                                    <div className='kyc-wrapper'>
+
+                                                        <h5>Manual KYC</h5>
+                                                        <p>Upload your documents manually.</p>
+                                                      <span onClick={() => {
+                                                          clearTimeout();
+                                                          setStatus(false)
+                                                          if (
+                                                              props.user.userdocumentsmodel.kyc_verified === "NOT_SUBMITTED" ||
+                                                              props.user.userdocumentsmodel.kyc_verified === "NOT_VALID" || props.user.userdocumentsmodel.kyc_verified === "PENDING_VERIFICATION"
+                                                          ) {
+                                                              props.history.push({pathname: "/kyc-details-form"});
+                                                          } else if (!props.user.userbankdetail) {
+                                                              props.history.push({
+                                                                  pathname: "/bank-details-payme",
+                                                              });
+                                                          } else {
+                                                              props.history.push({
+                                                                  pathname: "/pending-approval",
+                                                              });
+                                                          }
+                                                      }}>&nbsp;</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -323,18 +322,18 @@ const KycOption = (props) => {
                                             <div>
                                                 <div className='circle-half'>
                                                     <div className='full-circle'>
-                                                        <img src={tip} alt='Icon'/>
+                                                        <img src={tip} className='img-fluid' alt='Tips'/>
                                                     </div>
                                                     <div className='full-text text-left'>
                                                         <h5>Tips</h5>
-                                                        <p>In expedita et occaecati ullam a cumque maiores perspiciatis.
-                                                            Non labore exercitationem
-                                                            rerum nulla ea veniam facilis et. </p>
+                                                        <p>Complete the hassle-free paperless process to fulfill the mandatory KYC requirements.</p>
                                                     </div>
                                                 </div>
                                                 <div className='circle-half'>
-                                                    <p className='p-a-10'>In expedita et occaecati ullam a cumque
-                                                        maiores perspiciatis. </p>
+                                                    <p className='p-a-10'>EKYC helps in processing the loan application instantly.</p>
+                                                </div>
+                                                <div className='circle-half'>
+                                                    <p className='p-a-10'>Make sure that the image uploaded is not blurred.</p>
                                                 </div>
                                             </div>
                                         </div>

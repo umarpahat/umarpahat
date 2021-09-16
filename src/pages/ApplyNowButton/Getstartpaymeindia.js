@@ -74,7 +74,7 @@ console.log(error)
           <div className="contenertQuicklone">
             <div className="slider-right-block">
               <div className="home-contact-form">
-                <h4 className="form-heading fornheadding pb-3">
+                <h4 className="form-heading formheadding pb-3">
                   Get Started With PayMe India
                 </h4>
                 <div className="d-flex pt-5">

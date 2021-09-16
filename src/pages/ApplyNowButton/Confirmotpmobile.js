@@ -134,7 +134,7 @@ const Confirmotpmobile = (props) => {
               <div className="col-lg-5 col-md-5 col-sm-12 text-center">
                 <form>
                   <div className="home-contact-form">
-                    <h4 className="form-heading fornheadding">
+                    <h4 className="form-heading formheadding">
                       OTP Sent On {props.phone_number}
                     </h4>
                     <p>
