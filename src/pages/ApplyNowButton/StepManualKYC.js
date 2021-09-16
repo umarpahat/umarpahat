@@ -14,12 +14,15 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from 'universal-cookie';
 import tip from "../../images/animated/kyc-option.gif";
+import kycIcon from "../../images/svg/complete-kyc.svg";
+import bankDetails from "../../images/svg/bank-details.svg";
+import professionalDetails from "../../images/svg/professional-details.svg";
 
 
 const cookies = new Cookies()
 
 
-const KycOption = (props) => {
+const StepManual = (props) => {
 
 
     const token = cookies.get('token')
@@ -33,7 +36,7 @@ const KycOption = (props) => {
 
     function refreshhi() {
         props.hitAllUserData({token: token});
-      
+
     }
 
     if (refresh) {
@@ -161,31 +164,66 @@ const KycOption = (props) => {
             <Header {...props}/>
             <div className='content darkBg'>
                 <div className="navbar navbar-default navbar-fixed-top" id="topnavbar">
-                    <div className="slider-right-block" >
+                    <div className="slider-right-block">
                         {ekyc === "VERIFIED" ? (
 
                             <Container>
                                 <div className="row">
                                     <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                                         <br/>
-                                        <a className='back-arrow' onClick={() => {props.history.goBack()}}>Back</a>
+                                        <a className='back-arrow' onClick={() => {
+                                            props.history.goBack()
+                                        }}>Back</a>
                                     </div>
                                     <div className="col-lg-5 col-md-5 col-sm-12 text-center">
 
                                         <div className="contenertQuicklone">
                                             <div className="slider-right-block">
                                                 <div className="home-contact-form">
-                                                    <h4 className="form-heading formheadding">
-                                                        Congratulation Your Kyc is verified click below to continue.
-                                                    </h4>
-                                                    <a
-                                                        type="button"
-                                                        className="getstartbtn "
-                                                        target="popup"
-                                                        onClick={handleBankDetails}
-                                                    >
-                                                        Proceed
-                                                    </a>
+                                                    <h4 className="form-heading formheadding">Complete each step one by
+                                                        one for your manual KYC</h4>
+
+                                                    <div className='step'>
+                                                        <div className='step-step'>
+                                                            <div className='img-wrapper'>
+                                                                <img className='img-fluid' src={kycIcon} alt=''/>
+                                                            </div>
+                                                            <div className='img-text'>
+                                                                <h6>Complete KYC</h6>
+                                                                <p>Provide your Aadhaar and Pan details to get them verified.</p>
+                                                            </div>
+                                                            <div className='wrapper-button'>
+                                                                <a className="green-button" href="">Continue</a>
+                                                            </div>
+
+                                                        </div>
+                                                        <div className='step-step'>
+                                                            <div className='img-wrapper'>
+                                                                <img className='img-fluid' src={bankDetails} alt=''/>
+                                                            </div>
+                                                            <div className='img-text'>
+                                                                <h6>Bank Details</h6>
+                                                                <p>Provide your bank account details.</p>
+                                                            </div>
+                                                            <div className='wrapper-button'>
+                                                                <a className="disbled-button" href="">Continue</a>
+                                                            </div>
+
+                                                        </div>
+                                                        <div className='step-step'>
+                                                            <div className='img-wrapper'>
+                                                                <img className='img-fluid' src={professionalDetails} alt=''/>
+                                                            </div>
+                                                            <div className='img-text'>
+                                                                <h6>Professional Details</h6>
+                                                                <p>Provide your Salary slip and office details.</p>
+                                                            </div>
+                                                            <div className='wrapper-button'>
+                                                                <a className="disbled-button" href="">Continue</a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -219,24 +257,58 @@ const KycOption = (props) => {
                                 <div className="row">
                                     <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                                         <br/>
-                                        <a className='back-arrow' onClick={() => {props.history.goBack()}}>Back</a>
+                                        <a className='back-arrow' onClick={() => {
+                                            props.history.goBack()
+                                        }}>Back</a>
                                     </div>
                                     <div className="col-lg-5 col-md-5 col-sm-12 text-center">
                                         <div className="contenertQuicklone">
                                             <div className="slider-right-block">
                                                 <div className="home-contact-form">
-                                                    <h4 className="form-heading formheadding">
-                                                        Your Kyc is Pending click below to complete
-                                                    </h4>
-                                                    <a
-                                                        type="button"
-                                                        className="getstartbtn "
-                                                        href={webview}
-                                                        target="popup"
-                                                        onClick={handleWebView}
-                                                    >
-                                                        Continue For Kyc
-                                                    </a>
+                                                    <h4 className="form-heading formheadding">Complete each step one by
+                                                        one for your manual KYC</h4>
+
+                                                    <div className='step'>
+                                                        <div className='step-step'>
+                                                            <div className='img-wrapper'>
+                                                                <img className='img-fluid' src={kycIcon} alt=''/>
+                                                            </div>
+                                                            <div className='img-text'>
+                                                                <h6>Complete KYC</h6>
+                                                                <p>Provide your Aadhaar and Pan details to get them verified.</p>
+                                                            </div>
+                                                            <div className='wrapper-button'>
+                                                                <a className="green-button" href="">Continue</a>
+                                                            </div>
+
+                                                        </div>
+                                                        <div className='step-step'>
+                                                            <div className='img-wrapper'>
+                                                                <img className='img-fluid' src={bankDetails} alt=''/>
+                                                            </div>
+                                                            <div className='img-text'>
+                                                                <h6>Bank Details</h6>
+                                                                <p>Provide your bank account details.</p>
+                                                            </div>
+                                                            <div className='wrapper-button'>
+                                                                <a className="disbled-button" href="">Continue</a>
+                                                            </div>
+
+                                                        </div>
+                                                        <div className='step-step'>
+                                                            <div className='img-wrapper'>
+                                                                <img className='img-fluid' src={professionalDetails} alt=''/>
+                                                            </div>
+                                                            <div className='img-text'>
+                                                                <h6>Professional Details</h6>
+                                                                <p>Provide your Salary slip and office details.</p>
+                                                            </div>
+                                                            <div className='wrapper-button'>
+                                                                <a className="disbled-button" href="">Continue</a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -270,48 +342,57 @@ const KycOption = (props) => {
                                 <div className="row">
                                     <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                                         <br/>
-                                        <a className='back-arrow' onClick={() => {props.history.goBack()}}>Back</a>
+                                        <a className='back-arrow' onClick={() => {
+                                            props.history.goBack()
+                                        }}>Back</a>
                                     </div>
                                     <div className="col-lg-5 col-md-5 col-sm-12 text-center">
                                         <div className="contenertQuicklone">
                                             <div className="slider-right-block">
                                                 <div className="home-contact-form">
-                                                    <h4 className="form-heading formheadding">
-                                                        Choose from the preferred option below to proceed.
-                                                    </h4>
-                                                    <p className='form-select-one'>Select one to proceed</p>
-                                                    <div className='kyc-wrapper'>
-                                                        <span><a type="button"
-                                                           href={webview}
-                                                           target="popup"
-                                                           onClick={handleWebView}
-                                                        >&nbsp;</a></span>
-                                                        <h5>E-KYC</h5>
-                                                        <p>It will be done on UADAAI Website.</p>
+                                                    <h4 className="form-heading formheadding">Complete each step one by
+                                                        one for your manual KYC</h4>
+
+                                                    <div className='step'>
+                                                    <div className='step-step'>
+                                                        <div className='img-wrapper'>
+                                                            <img className='img-fluid' src={kycIcon} alt=''/>
+                                                        </div>
+                                                        <div className='img-text'>
+                                                            <h6>Complete KYC</h6>
+                                                            <p>Provide your Aadhaar and Pan details to get them verified.</p>
+                                                        </div>
+                                                        <div className='wrapper-button'>
+                                                            <a className="green-button" href="">Continue</a>
+                                                        </div>
 
                                                     </div>
-                                                    <div className='kyc-wrapper'>
+                                                    <div className='step-step'>
+                                                        <div className='img-wrapper'>
+                                                            <img className='img-fluid' src={bankDetails} alt=''/>
+                                                        </div>
+                                                        <div className='img-text'>
+                                                            <h6>Bank Details</h6>
+                                                            <p>Provide your bank account details.</p>
+                                                        </div>
+                                                        <div className='wrapper-button'>
+                                                            <a className="disbled-button" href="">Continue</a>
+                                                        </div>
 
-                                                        <h5>Manual KYC</h5>
-                                                        <p>Upload your documents manually.</p>
-                                                      <span onClick={() => {
-                                                          clearTimeout();
-                                                          setStatus(false)
-                                                          if (
-                                                              props.user.userdocumentsmodel.kyc_verified === "NOT_SUBMITTED" ||
-                                                              props.user.userdocumentsmodel.kyc_verified === "NOT_VALID" || props.user.userdocumentsmodel.kyc_verified === "PENDING_VERIFICATION"
-                                                          ) {
-                                                              props.history.push({pathname: "/step-manual"});
-                                                          } else if (!props.user.userbankdetail) {
-                                                              props.history.push({
-                                                                  pathname: "/bank-details-payme",
-                                                              });
-                                                          } else {
-                                                              props.history.push({
-                                                                  pathname: "/pending-approval",
-                                                              });
-                                                          }
-                                                      }}>&nbsp;</span>
+                                                    </div>
+                                                    <div className='step-step'>
+                                                        <div className='img-wrapper'>
+                                                            <img className='img-fluid' src={professionalDetails} alt=''/>
+                                                        </div>
+                                                        <div className='img-text'>
+                                                            <h6>Professional Details</h6>
+                                                            <p>Provide your Salary slip and office details.</p>
+                                                        </div>
+                                                        <div className='wrapper-button'>
+                                                            <a className="disbled-button" href="">Continue</a>
+                                                        </div>
+
+                                                    </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -326,14 +407,18 @@ const KycOption = (props) => {
                                                     </div>
                                                     <div className='full-text text-left'>
                                                         <h5>Tips</h5>
-                                                        <p>Complete the hassle-free paperless process to fulfill the mandatory KYC requirements.</p>
+                                                        <p>In expedita et occaecati ullam a cumque maiores perspiciatis.
+                                                            Non labore exercitationem rerum nulla ea veniam facilis
+                                                            et. </p>
                                                     </div>
                                                 </div>
                                                 <div className='circle-half'>
-                                                    <p className='p-a-10'>EKYC helps in processing the loan application instantly.</p>
+                                                    <p className='p-a-10'>In expedita et occaecati ullam a cumque
+                                                        maiores perspiciatis. </p>
                                                 </div>
                                                 <div className='circle-half'>
-                                                    <p className='p-a-10'>Make sure that the image uploaded is not blurred.</p>
+                                                    <p className='p-a-10'>In expedita et occaecati ullam a cumque
+                                                        maiores perspiciatis. </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -375,4 +460,4 @@ const dispatchToProps = (dispatch) => {
     );
 };
 
-export default connect(mapStateToProps, dispatchToProps)(KycOption);
+export default connect(mapStateToProps, dispatchToProps)(StepManual);
