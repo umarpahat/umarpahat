@@ -169,7 +169,7 @@ const Confirmotpmobile = (props) => {
                       {counter === 0 ? (  <Link>
                       <div className="green-text" onClick={handleResend}>
                         Resend OTP
-                      </div></Link>):( <div className="green-text" style={{cursor:"not-allowed",color:"#6F6F6F"}} >
+                      </div></Link>):( <div className="green-text" style={{cursor:"not-allowed"}} >
                         Resend OTP
                       </div>)}
                     </div>

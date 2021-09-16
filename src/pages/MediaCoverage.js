@@ -10,7 +10,7 @@ import MetaTags from "react-meta-tags";
 import scoreAnimation from "../images/animated/cibil-animation.gif";
 import mailBox from "../images/svg/mail-box.svg";
 
-const HowWeWork = (props) => {
+const MediaCoverage = (props) => {
     let [loader, setloader] = useState(false);
 
     return (
@@ -287,4 +287,4 @@ const mapStateToProps = (state) => {
 
 const dispatchToProps = {hitAppUseCase};
 
-export default connect(mapStateToProps, dispatchToProps)(HowWeWork);
+export default connect(mapStateToProps, dispatchToProps)(MediaCoverage);
