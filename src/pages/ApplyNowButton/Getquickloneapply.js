@@ -101,7 +101,7 @@ const Getquikloneapply = (props) => {
                               <div className="slider-right-block">
                                   <form onSubmit={handleSubmit}>
                                       <div className="home-contact-form">
-                                          <h4 className="form-heading fornheadding">
+                                          <h4 className="form-heading formheadding">
                                               Let's Get Started
                                           </h4>
 
