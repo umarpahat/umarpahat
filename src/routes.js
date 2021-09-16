@@ -39,6 +39,7 @@ import Creatempn from "./pages/ApplyNowButton/Creatempn";
 import KycOption from "./pages/ApplyNowButton/KycOption";
 import Header from "./pages/Header";
 import Footer from "./pages/Footer";
+import StepManual from "./pages/ApplyNowButton/StepManualKYC";
 
 
 function Routes() {
@@ -85,6 +86,7 @@ function Routes() {
           path="/professional-details-payme"
           component={Professionaldetailspayme}
         />
+        <Route exact path="/step-manual" component={StepManual} />
         <Route exact path="/kyc-details-form" component={Kycdetailsformpayme} />
         <Route
           exact
