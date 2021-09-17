@@ -363,7 +363,10 @@ const StepManual = (props) => {
                                                             <p>Provide your Aadhaar and Pan details to get them verified.</p>
                                                         </div>
                                                         <div className='wrapper-button'>
-                                                            <a className="green-button" href="">Continue</a>
+                                                            <a className="green-button" onClick={
+                                                                props.history.push({
+                                                                pathname: "/kyc-details-form",
+                                                            })}>Continue</a>
                                                         </div>
 
                                                     </div>
