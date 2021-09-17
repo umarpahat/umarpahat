@@ -40,7 +40,6 @@ const HomePage = (props) => {
     let [loader, setloader] = useState(false);
     const [amount, setAmount] = useState(500);
     const [time, setTime] = useState(0);
-    const [result, setResult] = useState("");
     const [posts, setPosts] = useState([]);
 
     useEffect(()=>{
@@ -145,7 +144,7 @@ const HomePage = (props) => {
         setAmount(value1);
         $("#total-amount1").text(amount);
         $("#total-amount").text(amount);
-        console.log(amount)
+       
     }
 
     function valuetext2(value2) {
@@ -165,8 +164,9 @@ const HomePage = (props) => {
         $('#roi').text(roi)
         $('#pfee').text(pfee)
         $('#amountInput').val(pfee)
-        let repay = result + amount + pfee;
+        let repay = time*result;
         $('#repayment').text(repay);
+        $('#roi2').text(36);
 
        
         return result;
@@ -180,8 +180,7 @@ const HomePage = (props) => {
           );
           
           return false;
-
-    }
+         }
 
 
     return (
@@ -262,7 +261,7 @@ const HomePage = (props) => {
                                             </div>
                                         </div>
                                         <p className="text"><span id="total-amount1"></span> over a period of <span
-                                            id="duration-month"></span> months at a rate of <span id="roi"></span>%,
+                                            id="duration-month"></span> months at a rate of <span id="roi2"></span>%,
                                             Processing Fee:
                                             <span id="pfee"></span>
                                         </p>
@@ -279,7 +278,7 @@ const HomePage = (props) => {
                                             </div>
                                             <div className="form-group1">
                                                 <label htmlFor="duration"
-                                                       className="col-sm-12 control-label">Intrest ₹</label>
+                                                       className="col-sm-12 control-label">Intrest %</label>
                                                 <div className="col-sm-12">
                                                     <input type="hidden" id="duration" className="form-control"/>
                                                     <p className="price lead" id="interest"></p>

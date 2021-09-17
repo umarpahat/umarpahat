@@ -366,7 +366,7 @@ const Kycdetailsformpayme = (props) => {
                             }
 
                             seterrorPan("");
-                            setpanNumber(event.target.value);
+                            setpanNumber(event.target.value.toUpperCase());
                           }}
                         />
                         {correctPan ? (

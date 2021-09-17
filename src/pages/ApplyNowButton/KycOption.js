@@ -14,6 +14,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from 'universal-cookie';
 import tip from "../../images/animated/kyc-option.gif";
+import {Link} from "react-router-dom"
 
 
 const cookies = new Cookies()
@@ -228,10 +229,9 @@ const KycOption = (props) => {
                                                     <h4 className="form-heading formheadding">
                                                         Your Kyc is Pending click below to complete
                                                     </h4>
-                                                    <a
+                                                    <a 
                                                         type="button"
-                                                        className="getstartbtn "
-                                                        href={webview}
+                                                        className="getstartbtn " 
                                                         target="popup"
                                                         onClick={handleWebView}
                                                     >
@@ -280,21 +280,17 @@ const KycOption = (props) => {
                                                         Choose from the preferred option below to proceed.
                                                     </h4>
                                                     <p className='form-select-one'>Select one to proceed</p>
-                                                    <div className='kyc-wrapper'>
+                                                    <Link to="#" onClick={handleWebView}><div className='kyc-wrapper'>
                                                         <span><a type="button"
-                                                           href={webview}
+                                                           
                                                            target="popup"
                                                            onClick={handleWebView}
                                                         >&nbsp;</a></span>
                                                         <h5>E-KYC</h5>
                                                         <p>It will be done on UADAAI Website.</p>
 
-                                                    </div>
-                                                    <div className='kyc-wrapper'>
-
-                                                        <h5>Manual KYC</h5>
-                                                        <p>Upload your documents manually.</p>
-                                                      <span onClick={() => {
+                                                    </div></Link>
+                                               <div className='kyc-wrapper' onClick={() => {
                                                           clearTimeout();
                                                           setStatus(false)
                                                           if (
@@ -311,7 +307,11 @@ const KycOption = (props) => {
                                                                   pathname: "/pending-approval",
                                                               });
                                                           }
-                                                      }}>&nbsp;</span>
+                                                      }}>
+
+                                                        <h5>Manual KYC</h5>
+                                                        <p>Upload your documents manually.</p>
+                                                      <span >&nbsp;</span>
                                                     </div>
                                                 </div>
                                             </div>

@@ -131,6 +131,7 @@ function LoginWithMobMpin(props) {
       phone_number: Number(props.location.state.phoneNumber),
       mpin: Number(password),
     })
+    
   };
 
   return (
@@ -147,8 +148,7 @@ function LoginWithMobMpin(props) {
             {...props}
             phone_number={Number(props.location.state.phoneNumber)}
             forget_password={true}
-            resendOtp={sendOtp}
-          />
+            resendOtp={sendOtp} />
         ) : (
 
             <Container>
