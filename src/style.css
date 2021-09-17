@@ -88,6 +88,7 @@ button:focus {
   position: relative;
   text-align: left;
   margin-top: 35px;
+  cursor: pointer;
 }
 
 .kyc-wrapper:first-child {

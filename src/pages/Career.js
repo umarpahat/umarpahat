@@ -48,8 +48,8 @@ const Career = (props) => {
                                 <br/>
                                 <br/>
                                 <Link className="btnLarge" onClick={() => {
-                                    props.hitAppUseCase({useCase: 'apply-loan'})
-                                    props.history.push({pathname: '/apply-loan'})
+                                  
+                                    props.history.push({pathname: '/'})
                                 }}>
                                     Explore openings
                                 </Link>

@@ -341,6 +341,13 @@ const Kycdetailsformpayme = (props) => {
                                                                     );
                                                                 }
 
+                            seterrorPan("");
+                            setpanNumber(event.target.value.toUpperCase());
+                          }}
+                        />
+                        {correctPan ? (
+                          <span style={{ color: "green" }}>{correctPan}</span>
+                        ) : null}
                                                                 seterrorPan("");
                                                                 setpanNumber(event.target.value);
                                                             }}
