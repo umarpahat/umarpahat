@@ -213,8 +213,8 @@ console.log(errbackend)
         "IFSC should be 4 letters, followed by 7 letters or digits"
       );
     }
-    setifscdetail(e.target.value);
-    ifscDetail(e.target.value);
+    setifscdetail(e.target.value.toUpperCase());
+    ifscDetail(e.target.value.toUpperCase());
     e.preventDefault();
     $(".select_css").show();
   };

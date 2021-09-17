@@ -1,4 +1,7 @@
 import { api } from '../../../services/api'
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies();
 
 //Mock option data for option component when data is not coming from api
 export const getLoginToken = data => {return new Promise(async(resolve, reject) => {
@@ -16,6 +19,8 @@ export const getLoginToken = data => {return new Promise(async(resolve, reject) 
         } else {
             api.post(`api/authentication/authenticate_mpin/`, data, {})
             .then((response) => {
+              console.log("hit log in",response.data.data)
+              cookies.set('token', data.data?.token);
               return resolve(response);
             })
             .catch((error) => {

@@ -27,10 +27,6 @@ import {API_ENDPOINT} from "../constant";
 
 
 const PayRent = (props) => {
-
-   cookies.set('userCase', "pay-rent");
-    
-    console.log("cookies user case",cookies.get("userCase"))
     let [loader, setloader] = useState(false);
     let [number, setnumber] = useState(null);
     let [error, seterror] = useState(null);
