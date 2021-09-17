@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
-import { hitAppUseCase } from "../../store/modules/userDetails/actions";
+import { hitAppUseCase,hitAllUserData } from "../../store/modules/userDetails/actions";
 import { connect } from "react-redux";
 import { api } from "../../services/api";
 import Loader from "../../component/Loader";
@@ -14,6 +14,7 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 const Getquikloneapply = (props) => {
+  const token = cookies.get('token')
  cookies.set('userCase', "apply-loan");
  const userCase = cookies.get("userCase")
  console.log("apply loan",userCase)
@@ -23,11 +24,10 @@ const Getquikloneapply = (props) => {
   let [newUser, setnewUser] = useState(false);
 
   useEffect(() => {
-    if (window.location.pathname === "/apply-loan") {
-      props.hitAppUseCase({ useCase: "apply-loan" });
-    } else if (window.location.pathname === "/pay-rent-details") {
-      props.hitAppUseCase({ useCase: "pay-rent" });
+    if(token){
+ props.hitAllUserData({ token: token });
     }
+ 
   }, []);
 
   const handleSubmit = (event) => {
@@ -39,6 +39,47 @@ const Getquikloneapply = (props) => {
 
   const verifyPhone = () => {
     setloader(true);
+    if (token) {
+      console.log("props.user.userData",props.user)
+      if (props.user.userData) {
+        setloader(false);
+
+    
+        if (userCase === "apply-loan") {
+          if (
+            props.user.userData.userdocumentsmodel?.kyc_verified ===
+              "VERIFIED" ||
+            props.user.userData?.userdocumentsmodel?.kyc_verified ===
+              "PENDING_VERIFICATION"
+          ) {
+            props.history.push({ pathname: "/step-manual" });
+          }
+         else {
+            props.history.push({ pathname: "/kycoption" });
+          }
+        } else if (userCase === "pay-rent") {
+          console.log("payrent kyc", props.user.userData.userdocumentsmodel);
+          if (
+            props.user.userData.userdocumentsmodel.kyc_verified ===
+              "VERIFIED" ||
+            props.user.userData.userdocumentsmodel.kyc_verified ===
+              "PENDING_VERIFICATION"
+          ) {
+            props.history.push({ pathname: "/payrent-other-details" });
+          } else {
+            console.log("1414141414", props);
+            props.history.push({ pathname: "/payrent-other-details" });
+          }
+        } else {
+          props.history.push({ pathname: "/" });
+        }
+       
+      } else {
+        props.hitAllUserData({ token: token });
+      }
+    
+  }
+  else{
     api
       .post(
         `api/authentication/phone_no_verify/`,
@@ -70,7 +111,7 @@ const Getquikloneapply = (props) => {
         console.log(error);
         setloader(false);
       });
-  };
+  }};
 
   return (
     <>
@@ -170,6 +211,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-const dispatchToProps = { hitAppUseCase };
+const dispatchToProps = { hitAppUseCase,hitAllUserData };
 
 export default connect(mapStateToProps, dispatchToProps)(Getquikloneapply);

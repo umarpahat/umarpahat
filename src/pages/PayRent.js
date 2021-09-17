@@ -51,6 +51,7 @@ const PayRent = (props) => {
   
     const verifyPhone = () => {
       setloader(true);
+      
       api
         .post(
           `api/authentication/phone_no_verify/`,

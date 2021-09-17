@@ -44,14 +44,15 @@ const Kycdetailsformpayme = (props) => {
   const [correctPan, setcorrectPan] = useState("");
   const [refresh, setRefresh] = useState(true);
 
-  function refreshhi() {
-    props.hitAllUserData({ token: token });
-    props.hitAppUseCase();
-  }
-  if (refresh) {
-    refreshhi();
-    setRefresh(false);
-  }
+  var something = (function() {
+    var executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+            props.hitAllUserData({ token: token });
+        }
+    };
+})();
 
   console.log("userCase", userCase);
 
@@ -77,6 +78,7 @@ const Kycdetailsformpayme = (props) => {
   }
 
   useEffect(() => {
+    something();
     if (!token) {
       props.history.push({ pathname: "/" });
     }
@@ -212,7 +214,7 @@ const Kycdetailsformpayme = (props) => {
         if (userCase === "apply-loan") {
           if (!props.user.userbankdetail) {
             props.history.push({
-              pathname: "/bank-details-payme",
+              pathname: "/step-manual",
             });
           } else if (
             props.user.userbankdetail.verified === "VERIFIED" ||
@@ -227,10 +229,10 @@ const Kycdetailsformpayme = (props) => {
             ) {
               props.history.push({ pathname: "/pending-approval" });
             } else {
-              props.history.push({ pathname: "/professional-details-payme" });
+              props.history.push({ pathname: "/step-manual" });
             }
           } else {
-            props.history.push({ pathname: "/bank-details-payme" });
+            props.history.push({ pathname: "/step-manual" });
           }
         } else if (userCase === "pay-rent") {
           props.history.push({ pathname: "/payrent-other-details" });
@@ -353,7 +355,7 @@ const Kycdetailsformpayme = (props) => {
                             }
 
                             if (
-                              event.target.value.match(
+                              event.target.value.toUpperCase().match(
                                 /^([A-Z]){5}([0-9]){4}([A-Z]){1}$/
                               )
                             ) {
