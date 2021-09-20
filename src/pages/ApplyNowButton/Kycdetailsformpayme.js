@@ -18,6 +18,7 @@ import { Container } from "react-bootstrap";
 const cookies = new Cookies();
 
 const Kycdetailsformpayme = (props) => {
+<<<<<<< HEAD
   const userCase = cookies.get("userCase");
   console.log("kyc now ", props);
   const token = cookies.get("token");
@@ -43,6 +44,33 @@ const Kycdetailsformpayme = (props) => {
   const [errorProfile, seterrorProfile] = useState("");
   const [correctPan, setcorrectPan] = useState("");
   const [refresh, setRefresh] = useState(true);
+=======
+    const userCase = cookies.get("userCase");
+    console.log("kyc now ", props);
+    const token = cookies.get("token");
+    const [show, setShow] = useState(false);
+    const [name, setname] = useState("");
+    const [date, setdate] = useState("");
+    const [gender, setgender] = useState("");
+    const [panNumber, setpanNumber] = useState("");
+    const [panFile, setpanFile] = useState({});
+    const [aadhaarFileFront, setaadhaarFileFront] = useState({});
+    const [aadhaarFileBack, setaadhaarFileBack] = useState({});
+    const [errorName, seterrorName] = useState("");
+    const [errorDob, seterrorDob] = useState("");
+    const [errorGender, seterrorGender] = useState("");
+    const [errorPan, seterrorPan] = useState("");
+    const [errorPan1, seterrorPan1] = useState("");
+    const [errorUploadPan, seterrorUploadPan] = useState("");
+    const [errorUploadAdhaarFront, seterrorUploadAdhaarFront] = useState("");
+    const [errorUploadAdhaarBack, seterrorUploadAdhaarBack] = useState("");
+    const [signedUrl, setsignedUrl] = useState({});
+    const [loader, setloader] = useState(false);
+    const [profile, setProfile] = useState({});
+    const [errorProfile, seterrorProfile] = useState("");
+    const [correctPan, setcorrectPan] = useState("");
+    const [refresh, setRefresh] = useState(true);
+>>>>>>> 96e3fa102cf54cbfc565e3952e58db425c443438
 
   var something = (function() {
     var executed = false;
@@ -54,6 +82,7 @@ const Kycdetailsformpayme = (props) => {
     };
 })();
 
+<<<<<<< HEAD
   console.log("userCase", userCase);
 
   const handleClose = () => setShow(!show);
@@ -99,6 +128,46 @@ const Kycdetailsformpayme = (props) => {
     seterrorUploadAdhaarFront("");
     setaadhaarFileFront(event.target.files[0]);
   };
+=======
+    console.log("userCase", userCase);
+
+    const handleClose = () => setShow(!show);
+
+    // const handleOnKeyPress =(event)=> {
+    //   return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)
+    // }
+
+    async function getSignedUrl() {
+        const pathArray = [
+            `adhar_card/${props.user.id}/back.jpg`,
+            `adhar_card/${props.user.id}/front.jpg`,
+            `pan_card/${props.user.id}/front.jpg`,
+            `user_image/${props.user.id}/user_profile_photo.jpg`,
+        ];
+        const signedUrlObj = await getS3SignedUrl({
+            token: token,
+            payload: {s3_path: pathArray, bucket_name: "payme-test-documents"},
+        });
+        setsignedUrl(signedUrlObj.data.data);
+        console.log(343434, signedUrlObj.data.data);
+    }
+
+    useEffect(() => {
+        if (!token) {
+            props.history.push({pathname: "/"});
+        }
+        getSignedUrl();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [props]);
+  useEffect(() => {
+    something();
+    if (!token) {
+      props.history.push({ pathname: "/" });
+    }
+    getSignedUrl();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props]);
+>>>>>>> 96e3fa102cf54cbfc565e3952e58db425c443438
 
   const handleAadhaarUploadBack = (event) => {
     seterrorUploadAdhaarBack("");
@@ -159,6 +228,7 @@ const Kycdetailsformpayme = (props) => {
       return;
     }
 
+<<<<<<< HEAD
     setloader(true);
     const uploadAdhaarBack = postS3({
       res: aadhaarFileBack,
@@ -238,16 +308,140 @@ const Kycdetailsformpayme = (props) => {
           props.history.push({ pathname: "/payrent-other-details" });
         } else {
           props.history.push({ pathname: "/" });
+=======
+    const handleSubmit = (event) => {
+        // let panNum = event.target.value;
+        // let pattarn = /^([A-Z]){5}([0-9]){4}([A-Z]){1}$/;
+        event.preventDefault();
+        if (!name) {
+            seterrorName("Please enter name");
+            return;
+        }
+        if (!date) {
+            seterrorDob("Please enter date");
+            return;
+        }
+        if (!gender) {
+            seterrorGender("Please enter gender");
+            return;
+        }
+        if (!panNumber) {
+            seterrorPan("Please enter pan number");
+            return;
+        }
+
+        if (!panFile.name) {
+            seterrorUploadPan("Please upload pan");
+            return;
+>>>>>>> 96e3fa102cf54cbfc565e3952e58db425c443438
         }
       })
       .catch((error) => {
         if (error.response.status === 401) {
           cookies.remove("token", { path: "/" });
         }
+<<<<<<< HEAD
+=======
+        if (!aadhaarFileBack.name) {
+            seterrorUploadAdhaarBack("Please upload adhaar Back");
+            return;
+        }
+        if (!profile.name) {
+            seterrorProfile("Please Upload Profile");
+            return;
+        }
+
+        setloader(true);
+        const uploadAdhaarBack = postS3({
+            res: aadhaarFileBack,
+            presignedPostData: signedUrl[`adhar_card/${props.user.id}/back.jpg`],
+        });
+        const uploadAdhaarFront = postS3({
+            res: aadhaarFileFront,
+            presignedPostData: signedUrl[`adhar_card/${props.user.id}/front.jpg`],
+        });
+
+        const uploadPanCard = postS3({
+            res: panFile,
+            presignedPostData: signedUrl[`pan_card/${props.user.id}/front.jpg`],
+        });
+        const uploadProfile = postS3({
+            res: profile,
+            presignedPostData:
+                signedUrl[`user_image/${props.user.id}/user_profile_photo.jpg`],
+        });
+        const updateAdhaarBackStatus = updateDocStatus({
+            docType: "adhar_card",
+            path: `adhar_card/${props.user.id}/back.jpg`,
+        });
+        const updateAdhaarFrontStatus = updateDocStatus({
+            docType: "adhar_card",
+            path: `adhar_card/${props.user.id}/front.jpg`,
+        });
+
+        const updatePanStatus = updateDocStatus({
+            docType: "pan_card",
+            path: `pan_card/${props.user.id}/front.jpg`,
+        });
+        const updateProfile = updateDocStatus({
+            docType: "profile_pic_url",
+            path: `user_image/${props.user.id}/user_profile_photo.jpg`,
+        });
+        Promise.all([
+            uploadAdhaarBack,
+            uploadAdhaarFront,
+            uploadPanCard,
+            uploadProfile,
+            updateAdhaarBackStatus,
+            updateProfile,
+            updateAdhaarFrontStatus,
+            updatePanStatus,
+            updateBasicInfo(),
+        ])
+            .then((response) => {
+                setloader(false);
+
+                props.hitAllUserData({token: token});
+
+        if (userCase === "apply-loan") {
+          if (!props.user.userbankdetail) {
+            props.history.push({
+              pathname: "/step-manual",
+            });
+          } else if (
+            props.user.userbankdetail.verified === "VERIFIED" ||
+            props.user.userbankdetail.verified === "PENDING_VERIFICATION"
+          ) {
+            if (
+              props.user.userdocumentsmodel &&
+              (props.user.userdocumentsmodel.salary_slip_verified ===
+                "VERIFIED" ||
+                props.user.userdocumentsmodel.salary_slip_verified ===
+                  "PENDING_VERIFICATION")
+            ) {
+              props.history.push({ pathname: "/pending-approval" });
+            } else {
+              props.history.push({ pathname: "/step-manual" });
+            }
+          } else {
+            props.history.push({ pathname: "/step-manual" });
+          }
+        } else if (userCase === "pay-rent") {
+          props.history.push({ pathname: "/payrent-other-details" });
+        } else {
+          props.history.push({ pathname: "/" });
+        }
+      })
+      .catch((error) => {
+        if (error.response.status === 401) {
+          cookies.remove("token", { path: "/" });
+        }
+>>>>>>> 96e3fa102cf54cbfc565e3952e58db425c443438
         setloader(false);
       });
   };
 
+<<<<<<< HEAD
   return (
     <>
       <Header {...props} />
@@ -353,6 +547,91 @@ const Kycdetailsformpayme = (props) => {
                               );
                               setcorrectPan("");
                             }
+=======
+    return (
+        <>
+            <Header {...props} />
+            <div className="content darkBg">
+                {loader ? (
+                    <div className="loader">
+                        {" "}
+                        <Loader color={"#33658a"}/>{" "}
+                    </div>
+                ) : (
+                    <Container>
+                        <div className="row">
+                            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                                <br/>
+                                <a
+                                    className="back-arrow"
+                                    onClick={() => {
+                                        props.history.goBack();
+                                    }}
+                                >
+                                    Back
+                                </a>
+                            </div>
+                            <div className="col-lg-7 col-md-7 col-sm-12 text-center">
+                                <form onSubmit={handleSubmit}>
+                                    <div className="home-contact-form">
+                                        <h4 className="form-heading formheadding">Complete your KYC</h4>
+                                        <div className="form-block">
+                                            <div className="row">
+                                                <div className="col-lg-6 col-md-6 col-sm-12">
+                                                    <div className="form-group ms-input-group">
+                                                        <label className="form-label-text">Full Name</label>
+                                                        <input
+                                                            className="form-input "
+                                                            placeholder="Enter Full Name"
+                                                            value={name}
+                                                            onChange={(event) => {
+                                                                seterrorName("");
+                                                                if (event.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                                                    setname(event.target.value);
+                                                                } else if (event.target.value.length === 0) {
+                                                                    setname(event.target.value);
+                                                                }
+                                                            }}
+                                                        />
+                                                        {errorName ? (
+                                                            <span style={{color: "red"}}>{errorName}</span>
+                                                        ) : null}
+                                                    </div>
+                                                </div>
+                                                <div className="col-lg-6 col-md-6 col-sm-12">
+                                                    <div className="form-group ms-input-group">
+                                                        <label className="form-label-text">Date of Birth</label>
+                                                        <input
+                                                            type="date"
+                                                            className="form-input"
+                                                            value={date}
+                                                            onChange={(event) => {
+                                                                seterrorDob("");
+                                                                setdate(event.target.value);
+                                                            }}
+                                                        />
+                                                        {errorDob ? (
+                                                            <span style={{color: "red"}}>{errorDob}</span>
+                                                        ) : null}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="col-lg-6 col-md-6 col-sm-12">
+                                                    <div className="form-group ms-input-group">
+                                                        <label className="form-label-text">PAN Number</label>
+                                                        <input
+                                                            type="text"
+                                                            className="form-input "
+                                                            placeholder="Enter PAN number"
+                                                            maxLength="10"
+                                                            value={panNumber}
+                                                            onChange={(event) => {
+                                                                if (event.target.value != 6) {
+                                                                    seterrorPan1("Pancard Number should be  6 digit's");
+                                                                    setcorrectPan("");
+                                                                }
+>>>>>>> 96e3fa102cf54cbfc565e3952e58db425c443438
 
                             if (
                               event.target.value.toUpperCase().match(
