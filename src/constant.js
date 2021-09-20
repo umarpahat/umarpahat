@@ -5,6 +5,6 @@
 export const API_ENDPOINT = 'https://api.testing.paymeindia.in';
 
 // export const API_ENDPOINT_STAGING = "https://apiv2.paymeindia.in"; for live
-export const API_ENDPOINT_STAGING = "https://staging.paymeindia.in";
+export const API_ENDPOINT_STAGING = "https://apis.paymeindia.in";
 // export const API_ENDPOINT_STAGING = "https://apiv2.paymeindia.in";
 export const API_ENDPOINT_SAARTHI = 'https://api-csr.paymeindia.in'

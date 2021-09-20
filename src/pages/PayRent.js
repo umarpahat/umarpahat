@@ -39,10 +39,11 @@ const PayRent = (props) => {
             .then(res => res.json())
             .then(res => setFaqs([...res.data.General,...res.data.Eligibility,...res.data.Repayment] ))
         // .then(res => console.log('umar', [...res.data.General,...res.data.Eligibility,...res.data.Repayment] ))
-    })
+    },[])
  
   
     const handleSubmit = (event) => {
+        cookies.set('userCase', "pay-rent");
       event.preventDefault();
       /^[6-9]\d{9}$/.test(number)
         ? verifyPhone()

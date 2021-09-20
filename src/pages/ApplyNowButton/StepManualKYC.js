@@ -78,7 +78,7 @@ const StepManual = (props) => {
                     <br />
                     <a
                       className="back-arrow"
-                      onClick={() => {
+                      onClick={(e) => {
                         props.history.goBack();
                       }}
                     >
