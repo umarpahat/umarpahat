@@ -167,7 +167,7 @@ if(refresh){
             console.log("bnnnnnnnnnnnnnnnnnnnk");
             props.history.push({ pathname: "/pending-approval" });
           } else {
-            props.history.push({ pathname: "/professional-details-payme" });
+            props.history.push({ pathname: "/step-manual" });
           }
         }
       })
@@ -213,8 +213,8 @@ console.log(errbackend)
         "IFSC should be 4 letters, followed by 7 letters or digits"
       );
     }
-    setifscdetail(e.target.value);
-    ifscDetail(e.target.value);
+    setifscdetail(e.target.value.toUpperCase());
+    ifscDetail(e.target.value.toUpperCase());
     e.preventDefault();
     $(".select_css").show();
   };
@@ -278,9 +278,7 @@ console.log(errbackend)
           ) : (
             <div className="kycDeatailsSecondFormsty pb-5">
               <div className="pt-2">
-                <div className="pb-4 pt-4">
-                  <Progressbar />
-                </div>
+               
                 <div
                   className="d-flex"
                   onClick={() => {

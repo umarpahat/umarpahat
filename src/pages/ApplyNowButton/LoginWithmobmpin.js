@@ -20,12 +20,13 @@ const cookies = new Cookies()
 
 function LoginWithMobMpin(props) {
   const token = cookies.get('token')
+  console.log(token)
   const userCase = cookies.get("userCase");
   let [loader, setloader] = useState(false);
   let [errorPass, seterrorPass] = useState(null);
   let [password, setpassword] = useState(null);
   let [forgotPassword, setforgotPassword] = useState(false);
-  console.log(props);
+  console.log(props),userCase;
   useEffect(() => {
     if (token) {
       if (forgotPassword) {
@@ -44,24 +45,9 @@ function LoginWithMobMpin(props) {
               props.user.userData?.userdocumentsmodel?.kyc_verified ===
                 "PENDING_VERIFICATION"
             ) {
-              if (props.user.userData.userbankdetail) {
-                if (
-                  props.user.userData.userdocumentsmodel
-                    ?.salary_slip_verified === "VERIFIED" ||
-                  props.user.userData.userdocumentsmodel
-                    ?.salary_slip_verified === "PENDING_VERIFICATION" ||
-                  props.user.userData.other_documents[0]?.doc_type === "ITR"
-                ) {
-                  props.history.push({ pathname: "/pending-approval" });
-                } else {
-                  props.history.push({
-                    pathname: "/professional-details-payme",
-                  });
-                }
-              } else {
-                props.history.push({ pathname: "/bank-details-payme" });
-              }
-            } else {
+              props.history.push({ pathname: "/step-manual" });
+            }
+           else {
               props.history.push({ pathname: "/kycoption" });
             }
           } else if (userCase === "pay-rent") {
@@ -129,7 +115,8 @@ function LoginWithMobMpin(props) {
       type: "",
       phone_number: Number(props.location.state.phoneNumber),
       mpin: Number(password),
-    });
+    })
+    
   };
 
   return (
@@ -146,8 +133,7 @@ function LoginWithMobMpin(props) {
             {...props}
             phone_number={Number(props.location.state.phoneNumber)}
             forget_password={true}
-            resendOtp={sendOtp}
-          />
+            resendOtp={sendOtp} />
         ) : (
 
             <Container>
@@ -180,7 +166,12 @@ function LoginWithMobMpin(props) {
                             placeholder="Enter 6 digit MPIN"
                             value={password || ""}
                             onChange={(event) => {
+                              if(event.target.value.match(/^[0-9]+$/)){
                               setpassword(event.target.value);
+                              }
+                              else if(event.target.value.length===0){
+                                setpassword(event.target.value);
+                              }
                               seterrorPass(null);
                             }}
                         />

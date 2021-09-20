@@ -14,6 +14,8 @@ import reactOtpTimer from "react-otp-timer";
 
 
 const Confirmotpmobile = (props) => {
+
+  console.log("confirm otp",props);
   const [otp, setotp] = useState("");
   const [loader, setloader] = useState(false);
   const [otpError, setotpError] = useState(null);
@@ -50,7 +52,7 @@ const Confirmotpmobile = (props) => {
 
 
   const verifyOtpNewUser = (otp_get) => {
-   
+   console.log("newuser",otp_get)
     setloader(true);
     api
       .post(
@@ -132,7 +134,7 @@ const Confirmotpmobile = (props) => {
               <div className="col-lg-5 col-md-5 col-sm-12 text-center">
                 <form>
                   <div className="home-contact-form">
-                    <h4 className="form-heading fornheadding">
+                    <h4 className="form-heading formheadding">
                       OTP Sent On {props.phone_number}
                     </h4>
                     <p>
@@ -167,7 +169,7 @@ const Confirmotpmobile = (props) => {
                       {counter === 0 ? (  <Link>
                       <div className="green-text" onClick={handleResend}>
                         Resend OTP
-                      </div></Link>):( <div className="green-text" style={{cursor:"not-allowed",color:"#6F6F6F"}} >
+                      </div></Link>):( <div className="green-text" style={{cursor:"not-allowed"}} >
                         Resend OTP
                       </div>)}
                     </div>

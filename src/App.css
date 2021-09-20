@@ -177,6 +177,36 @@ h6 {
   box-shadow: none;
 }
 
+.form-input {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 14px;
+  width: 100%;
+  line-height: 20px;
+  color: #6F6F6F;
+  outline: 0;
+  border: 1px solid #C4C4C4;
+  border-radius: 8px;
+}
+.select-item {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 14px;
+  width: 100%;
+  line-height: 20px;
+  color: #6F6F6F;
+  outline: 0;
+  border: 1px solid #C4C4C4;
+  border-radius: 8px;
+  background: #fff;
+}
+.form-label-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
+}
+
 .form-control {
   font-weight: 500;
   font-size: 16px;
@@ -1839,10 +1869,6 @@ a:hover {
   display: flex !important;
   flex-direction: row !important;
 }
-select {
-  width:100% !important;
-  height: 60px !important;
-}
 
 select option {
   color: black;
@@ -2058,11 +2084,6 @@ select option {
   }
   .page-section-headings-main {
     font-size: 2em;
-  }
-  .fornheadding {
-    font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    font-weight: 700;
   }
 
   /* About US responsive  */

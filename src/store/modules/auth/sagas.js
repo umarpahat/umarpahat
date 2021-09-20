@@ -9,10 +9,10 @@ const cookies = new Cookies();
 function* getToken(action) {
     try {
         const data = yield call(getLoginToken, action.payload);
-        cookies.set('token', data.data.data.token);
-        console.log("hitlogin",data.data.data.token)
-        if (data.data.error) {
-            console.log(data.data.error)
+        cookies.set('token', data.data.data?.token);
+        console.log("hitlogin",data.data.data?.token);
+        if (data.data.error){
+            console.log("log in error",data.data.error)
             yield put(storeError({error: data.data.error}));
         } else {
             yield put(storeToken({token:data.data.data.token, phone_number: action.payload.phone_number}));

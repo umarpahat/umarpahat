@@ -38,15 +38,25 @@ const SelfEmployed = (props) => {
     setsignedUrl(signedUrlObj.data.data);
     console.log(343434, signedUrlObj.data.data);
   }
+  var something = (function() {
+    var executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+            props.hitAllUserData({ token: token });
+        }
+    };
+})();
 
   useEffect(() => {
-    if (!props.user) {
+   something();
+    if (!token) {
       props.history.push({ pathname: "/" });
       return;
     }
     getSignedUrl();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props]);
+  }, []);
 
   async function updateDocStatus(data) {
     console.log("rrrtttyyy", data);
@@ -70,6 +80,7 @@ const SelfEmployed = (props) => {
   }
 
   const handleSubmit = (event) => {
+    setloader(true)
     event.preventDefault();
     if (!uploadItr.name) {
       seterroruploadItr("Please upload your latest ITR");
@@ -101,7 +112,7 @@ const SelfEmployed = (props) => {
         setloader(false);
         console.log("xvxvxvxvx", response);
         props.hitAllUserData({ token: token });
-        props.history.push({ pathname: "/pending-approval" });
+        props.history.push({ pathname: "/congratulations" });
       })
       .catch((error) => {
         console.log(121212, error);
@@ -118,6 +129,12 @@ const SelfEmployed = (props) => {
   return (
     <>
       <Header {...props} />
+      {loader ?  (
+          <div className="loader">
+            {" "}
+            <Loader color={"#33658a"} />{" "}
+          </div>
+        ) : (
       <div className='content darkBg'>
       <Container>
           <div className="row">
@@ -127,9 +144,7 @@ const SelfEmployed = (props) => {
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12 text-center">
           <div className="pt-2">
-            <div className="pb-4">
-              <Progressbar />
-            </div>
+           
             <div className="d-flex"
               onClick={() => {
                 props.history.goBack();
@@ -265,7 +280,7 @@ const SelfEmployed = (props) => {
                             }
 
                           seterrorpresentPincode("");
-                          setpresentPincode(event.target.value);
+                          setpresentPincode(event.target.value.slice(0,6));
                         }}
                       />
 
@@ -313,7 +328,7 @@ const SelfEmployed = (props) => {
           </div>
       </Container>
       <Modalkyccomplete show={show} handleClose={handleClose} />
-      </div>
+      </div>)}
     </>
   );
 };

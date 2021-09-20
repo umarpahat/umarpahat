@@ -20,6 +20,7 @@ import { bindActionCreators } from 'redux';
 const cookies = new Cookies();
 
 const OtherDetalisForm = (props) => {
+  console.log(props,"hhh")
   const token = cookies.get("token");
   // const [logintoken, setlogintoken] = usest
   const [serviceCharge, setserviceCharge] = useState(0);
@@ -64,10 +65,11 @@ const OtherDetalisForm = (props) => {
   const [screen1, setScreen1] = useState(true);
   const [screen2, setScreen2] = useState(false);
   const [screen3, setScreen3] = useState(false);
+  
 
   async function getSignedUrl() {
     const pathArray = [
-      `pay_rent/${props.user.userData.id}/rent_agreement.jpeg`,
+      `pay_rent/${props.user.userData?.id}/rent_agreement.jpeg`,
     ];
     const signedUrlObj = await getS3SignedUrl({
       token: token,
@@ -77,12 +79,7 @@ const OtherDetalisForm = (props) => {
     console.log(343434, signedUrlObj.data.data);
   }
 
-  useEffect(() => {
-   
-     !token ? props.history.push({ pathname: "/" }): null;
-     props.hitAllUserData({ token: token })
-    
-  });
+
  
 
   async function updateDocStatus(data) {
@@ -94,6 +91,10 @@ const OtherDetalisForm = (props) => {
   }
 
   useEffect(() => {
+
+    if(!token || !props.user.userData)
+    {props.history.push("/")}
+    props.hitAllUserData({ token: token });
     handleName();
 
     props.user.userData
@@ -115,15 +116,17 @@ const OtherDetalisForm = (props) => {
         "Content-Type": "application/json",
       },
     };
+    console.log("tokennn",token)
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
       .get(url, config)
       .then((response) => {
+        console.log("response1",response)
         setserviceCharge(response.data.service_charge);
       })
       .catch((err) => {
         if (err.response.status === 401) {
-          cookies.remove("token", { path: "/" });
+          // cookies.remove("token", { path: "/" });
         }
         console.log(userdocumentsmodel);
         console.log("eeeeee", err);
@@ -140,6 +143,7 @@ const OtherDetalisForm = (props) => {
     axios
       .get(url2, config)
       .then((response) => {
+        console.log("response1",response)
         setjwtToken(response.data.token);
       })
       .catch((err) => {
@@ -156,6 +160,7 @@ const OtherDetalisForm = (props) => {
     axios
       .get(url3, config3)
       .then((res) => {
+        console.log("response1",response)
         console.log("history man", res.data.results);
         settransactionHistory(res.data.results);
         // setTransactionHistory(res.data)
@@ -168,8 +173,8 @@ const OtherDetalisForm = (props) => {
   }, []);
 
   const handleName = () => {
-    setName(props.user?.userData.basic_info[0]?.first_name);
-    setLastName(props.user?.userData.basic_info[0]?.last_name);
+    setName(props.user?.userData?.basic_info[0]?.first_name);
+    setLastName(props.user?.userData?.basic_info[0]?.last_name);
   };
 
   const handleScreen2 = () => {
@@ -309,13 +314,14 @@ const OtherDetalisForm = (props) => {
     "name",
     name,
     kyc_verified,
-    props.user.userData.userdocumentsmodel.kyc_verified
+    props.user.userData?.userdocumentsmodel.kyc_verified
   );
 
   return (
     <>
+      <Header {...props} />
       <div className="content darkBg">
-        <Header {...props} />
+       
         {loader ? (
           <div className="loader">
             {" "}

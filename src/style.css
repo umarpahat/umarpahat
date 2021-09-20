@@ -62,12 +62,144 @@ button:focus {
   position: relative;
 }
 .form-heading {
-  font-size: 22px;
-  line-height: 26px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
   color: #000;
-  padding-top: 20px;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
 }
+.form-select-one {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+  padding-bottom: 10px;
+}
+
+.kyc-wrapper {
+  background: #FFE9D4;
+  border: 1px solid rgba(51, 101, 138, 0.15);
+  box-sizing: border-box;
+  box-shadow: 0 4px 4px rgba(51, 101, 138, 0.16);
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  text-align: left;
+  margin-top: 35px;
+  cursor: pointer;
+}
+
+.kyc-wrapper:first-child {
+  margin-top: 0;
+}
+
+.kyc-wrapper h5 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  color: #000;
+}
+
+.kyc-wrapper span {
+  font-weight: 500;
+  font-size: 60px;
+  color: #33658A;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  top: 40px;
+  line-height: 20px;
+  height: 20px;
+  width: 35px;
+  display: block;
+  background: url("images/svg/arrow-r.svg") no-repeat 0 center;
+}
+
+.step-step {
+  position: relative;
+  display: flex;
+  text-align: left;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #898989;
+  padding-bottom: 100px;
+}
+
+.step {
+  position: relative;
+  margin-top: 60px;
+  z-index: 0;
+}
+
+.step:after {
+  content: '';
+  position: absolute;
+  border-left: 1px dashed #33658A;
+  width: 10px;
+  left: 25px;
+  z-index: -1;
+  top: 6px;
+  height: 444px;
+}
+
+.step .step-step:nth-child(3) {
+  padding-bottom: 0;
+}
+
+.step-step .img-wrapper {
+  width: 100px;
+  padding-right: 10px;
+
+}
+
+.step-step .img-text {
+  padding-right: 20px;
+}
+
+
+.step-step h6 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000;
+}
+
+.step-step .green-button {
+  padding: 7px 20px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff!important;
+  background: #1DBF73;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.border-btm{
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.14);
+  margin-bottom: 20px;
+}
+.disbaledButton{
+  opacity: 0.3;
+}
+.step-step .disbled-button {
+  padding: 7px 20px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.kyc-wrapper p {
+  font-size: 16px;
+  line-height: 28px;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.7);
+}
+
 .form-block {
   margin-top: 2em;
 }

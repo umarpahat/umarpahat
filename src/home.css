@@ -150,8 +150,7 @@ button.button-gray:hover {
 .circle-half {
     background: #FFFFFF;
     border-radius: 120px;
-    overflow: hidden;
-    display: flex;
+    display: flex;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
     vertical-align: middle;
     align-items: center;
     margin-bottom: 20px;
@@ -174,6 +173,7 @@ button.button-gray:hover {
     display: flex;
     align-items: center;
     vertical-align: middle;
+    overflow: hidden;
 }
 
 .full-circle img {
@@ -260,6 +260,10 @@ button.button-gray:hover {
 
 .p-t-80 {
     padding-top: 80px;
+}
+
+.p-t-50 {
+    padding-top: 50px;
 }
 
 .p-l-30 {
