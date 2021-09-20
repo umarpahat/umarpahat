@@ -26,7 +26,7 @@ function LoginWithMobMpin(props) {
   let [errorPass, seterrorPass] = useState(null);
   let [password, setpassword] = useState(null);
   let [forgotPassword, setforgotPassword] = useState(false);
-  console.log(props);
+  console.log(props),userCase;
   useEffect(() => {
     if (token) {
       if (forgotPassword) {
@@ -45,24 +45,9 @@ function LoginWithMobMpin(props) {
               props.user.userData?.userdocumentsmodel?.kyc_verified ===
                 "PENDING_VERIFICATION"
             ) {
-              if (props.user.userData.userbankdetail) {
-                if (
-                  props.user.userData.userdocumentsmodel
-                    ?.salary_slip_verified === "VERIFIED" ||
-                  props.user.userData.userdocumentsmodel
-                    ?.salary_slip_verified === "PENDING_VERIFICATION" ||
-                  props.user.userData.other_documents[0]?.doc_type === "ITR"
-                ) {
-                  props.history.push({ pathname: "/pending-approval" });
-                } else {
-                  props.history.push({
-                    pathname: "/professional-details-payme",
-                  });
-                }
-              } else {
-                props.history.push({ pathname: "/bank-details-payme" });
-              }
-            } else {
+              props.history.push({ pathname: "/step-manual" });
+            }
+           else {
               props.history.push({ pathname: "/kycoption" });
             }
           } else if (userCase === "pay-rent") {

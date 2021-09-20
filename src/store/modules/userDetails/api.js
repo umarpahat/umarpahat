@@ -15,8 +15,8 @@ export const getUserData = data => new Promise(async (resolve, reject) => {
       
       if(error.response.status===401)
       {
-        ;
-        props.history.push({ pathname: "/" });
+        
+        cookies.remove('token', { path: '/' })
     
       }
       return reject(error);

@@ -204,7 +204,7 @@ const Professionaldetailspayme = (props) => {
         setloader(false);
         console.log("xvxvxvxvx", response);
         props.hitAllUserData({ token: token });
-        props.history.push({pathname: "/pending-approval"});
+        props.history.push({pathname: "/congratulations"});
       })
       .catch((error) => {
         if(error.response.status===401)
@@ -238,9 +238,7 @@ const Professionaldetailspayme = (props) => {
         ) : (
           <div className="form-container formcontainermob  pt-4">
             <div className="pt-2">
-              <div className="pb-4">
-                <Progressbar />
-              </div>
+             
               <div
                 className="d-flex"
                 onClick={() => {

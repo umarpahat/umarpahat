@@ -45,15 +45,15 @@ const Kycdetailsformpayme = (props) => {
     const [correctPan, setcorrectPan] = useState("");
     const [refresh, setRefresh] = useState(true);
 
-    function refreshhi() {
-        props.hitAllUserData({token: token});
-        props.hitAppUseCase();
-    }
-
-    if (refresh) {
-        refreshhi();
-        setRefresh(false);
-    }
+  var something = (function() {
+    var executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+            props.hitAllUserData({ token: token });
+        }
+    };
+})();
 
     console.log("userCase", userCase);
 
@@ -85,6 +85,14 @@ const Kycdetailsformpayme = (props) => {
         getSignedUrl();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props]);
+  useEffect(() => {
+    something();
+    if (!token) {
+      props.history.push({ pathname: "/" });
+    }
+    getSignedUrl();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props]);
 
     const handlePanUpload = (event) => {
         seterrorUploadPan("");
@@ -211,42 +219,42 @@ const Kycdetailsformpayme = (props) => {
 
                 props.hitAllUserData({token: token});
 
-                if (userCase === "apply-loan") {
-                    if (!props.user.userbankdetail) {
-                        props.history.push({
-                            pathname: "/bank-details-payme",
-                        });
-                    } else if (
-                        props.user.userbankdetail.verified === "VERIFIED" ||
-                        props.user.userbankdetail.verified === "PENDING_VERIFICATION"
-                    ) {
-                        if (
-                            props.user.userdocumentsmodel &&
-                            (props.user.userdocumentsmodel.salary_slip_verified ===
-                                "VERIFIED" ||
-                                props.user.userdocumentsmodel.salary_slip_verified ===
-                                "PENDING_VERIFICATION")
-                        ) {
-                            props.history.push({pathname: "/pending-approval"});
-                        } else {
-                            props.history.push({pathname: "/professional-details-payme"});
-                        }
-                    } else {
-                        props.history.push({pathname: "/bank-details-payme"});
-                    }
-                } else if (userCase === "pay-rent") {
-                    props.history.push({pathname: "/payrent-other-details"});
-                } else {
-                    props.history.push({pathname: "/"});
-                }
-            })
-            .catch((error) => {
-                if (error.response.status === 401) {
-                    cookies.remove("token", {path: "/"});
-                }
-                setloader(false);
+        if (userCase === "apply-loan") {
+          if (!props.user.userbankdetail) {
+            props.history.push({
+              pathname: "/step-manual",
             });
-    };
+          } else if (
+            props.user.userbankdetail.verified === "VERIFIED" ||
+            props.user.userbankdetail.verified === "PENDING_VERIFICATION"
+          ) {
+            if (
+              props.user.userdocumentsmodel &&
+              (props.user.userdocumentsmodel.salary_slip_verified ===
+                "VERIFIED" ||
+                props.user.userdocumentsmodel.salary_slip_verified ===
+                  "PENDING_VERIFICATION")
+            ) {
+              props.history.push({ pathname: "/pending-approval" });
+            } else {
+              props.history.push({ pathname: "/step-manual" });
+            }
+          } else {
+            props.history.push({ pathname: "/step-manual" });
+          }
+        } else if (userCase === "pay-rent") {
+          props.history.push({ pathname: "/payrent-other-details" });
+        } else {
+          props.history.push({ pathname: "/" });
+        }
+      })
+      .catch((error) => {
+        if (error.response.status === 401) {
+          cookies.remove("token", { path: "/" });
+        }
+        setloader(false);
+      });
+  };
 
     return (
         <>
@@ -332,14 +340,18 @@ const Kycdetailsformpayme = (props) => {
                                                                     setcorrectPan("");
                                                                 }
 
-                                                                if (event.target.value.match(/^([A-Z]){5}([0-9]){4}([A-Z]){1}$/)) {
-                                                                    setcorrectPan("Pan Number Entered Properly");
-                                                                    seterrorPan1("");
-                                                                } else {
-                                                                    seterrorPan1(
-                                                                        "Please Enter a valid PanCard Number"
-                                                                    );
-                                                                }
+                            if (
+                              event.target.value.toUpperCase().match(
+                                /^([A-Z]){5}([0-9]){4}([A-Z]){1}$/
+                              )
+                            ) {
+                              setcorrectPan("Pan Number Entered Properly");
+                              seterrorPan1("");
+                            } else {
+                              seterrorPan1(
+                                "Please Enter a valid PanCard Number"
+                              );
+                            }
 
                             seterrorPan("");
                             setpanNumber(event.target.value.toUpperCase());

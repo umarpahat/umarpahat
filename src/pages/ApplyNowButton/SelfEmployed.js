@@ -38,15 +38,25 @@ const SelfEmployed = (props) => {
     setsignedUrl(signedUrlObj.data.data);
     console.log(343434, signedUrlObj.data.data);
   }
+  var something = (function() {
+    var executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+            props.hitAllUserData({ token: token });
+        }
+    };
+})();
 
   useEffect(() => {
-    if (!props.user) {
+   something();
+    if (!token) {
       props.history.push({ pathname: "/" });
       return;
     }
     getSignedUrl();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props]);
+  }, []);
 
   async function updateDocStatus(data) {
     console.log("rrrtttyyy", data);
@@ -102,7 +112,7 @@ const SelfEmployed = (props) => {
         setloader(false);
         console.log("xvxvxvxvx", response);
         props.hitAllUserData({ token: token });
-        props.history.push({ pathname: "/pending-approval" });
+        props.history.push({ pathname: "/congratulations" });
       })
       .catch((error) => {
         console.log(121212, error);
@@ -134,9 +144,7 @@ const SelfEmployed = (props) => {
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12 text-center">
           <div className="pt-2">
-            <div className="pb-4">
-              <Progressbar />
-            </div>
+           
             <div className="d-flex"
               onClick={() => {
                 props.history.goBack();
