@@ -15,7 +15,7 @@ import reactOtpTimer from "react-otp-timer";
 
 const Confirmotpmobile = (props) => {
 
-  console.log("confirm otp",props);
+  
   const [otp, setotp] = useState("");
   const [loader, setloader] = useState(false);
   const [otpError, setotpError] = useState(null);

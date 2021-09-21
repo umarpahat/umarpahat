@@ -233,7 +233,10 @@ const HomePage = (props) => {
                                                         step={500}
                                                         min={500}
                                                         max={200000}
+                                                        value={amount}
+                                                        onChange={(value)=>setAmount(value)}
                                                         valueLabelDisplay="on"
+
                                                     />
                                                 </div>
                                             </div>
