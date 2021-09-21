@@ -204,10 +204,7 @@ const HomePage = (props) => {
                                 <p className="no-more-text">Avail personal loan upto 2 lakhs with PayMe India. Get instant Loans anytime-anywhere</p>
                                 <br/>
                                 <br/>
-                                <Link className="btnLarge" onClick={() => {
-                                    props.hitAppUseCase({useCase: 'apply-loan'})
-                                    props.history.push({pathname: '/apply-loan'})
-                                }}>
+                                <Link className="btnLarge"  to="/apply-loan">
                                     Apply now
                                 </Link>
                             </div>
@@ -623,7 +620,7 @@ const HomePage = (props) => {
                                     <h4 className='white-color'>Get Loan instat and unlimited offers</h4>
                                 </div>
                                 <div>
-                                    <Link to='/' className='green-btn'>Apply Now</Link>
+                                    <Link  to="/apply-loan" className='green-btn'>Apply Now</Link>
                                 </div>
                             </div>
                         </div>
