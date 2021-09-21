@@ -42,7 +42,7 @@ const Getquikloneapply = (props) => {
     if (token) {
       console.log("props.user.userData",props.user)
       if (props.user.userData) {
-        setloader(false);
+       
 
     
         if (userCase === "apply-loan") {
@@ -87,7 +87,7 @@ const Getquikloneapply = (props) => {
         {}
       )
       .then((response) => {
-        setloader(false);
+       
         if (response.status === 200 && !response.data.phone_number_verified) {
           setnewUser(true);
         } else if (

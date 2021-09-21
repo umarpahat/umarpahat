@@ -12,10 +12,7 @@ import { API_ENDPOINT } from "../../constant";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from "universal-cookie";
-<<<<<<< HEAD
 import tip from "../../images/animated/kyc-option.gif";
-=======
->>>>>>> 96e3fa102cf54cbfc565e3952e58db425c443438
 import kycIcon from "../../images/svg/complete-kyc.svg";
 import bankDetails from "../../images/svg/bank-details.svg";
 import professionalDetails from "../../images/svg/professional-details.svg";
@@ -62,9 +59,9 @@ const StepManual = (props) => {
   }, []);
 
 
-    (kycstatus === "VERIFIED" || kycstatus === "PENDING_VERIFICATION") &&
-    (bankstatus === "VERIFIED" || bankstatus === "PENDING_VERIFICATION") &&
-    (professionalStatus === "VERIFIED" || professionalStatus === "PENDING_VERIFICATION")? props.history.push("/congratulations"):null;
+    // (kycstatus === "VERIFIED" || kycstatus === "PENDING_VERIFICATION") &&
+    // (bankstatus === "VERIFIED" || bankstatus === "PENDING_VERIFICATION") &&
+    // (professionalStatus === "VERIFIED" || professionalStatus === "PENDING_VERIFICATION")? props.history.push("/congratulations"):null;
 
     return (
       <>
