@@ -15,11 +15,13 @@ import Footer from "../Footer";
 import Cookies from "universal-cookie";
 import tip from "../../images/animated/kyc-option.gif";
 import { Link } from "react-router-dom";
+import successAnimation from "../../images/animated/success-animation.gif";
 
 const cookies = new Cookies();
 
 const KycOption = (props) => {
   const token = cookies.get("token");
+  const userCase = cookies.get("userCase");
   console.log("pramodsprops", props);
 
   const [webview, setWebview] = useState();
@@ -98,37 +100,10 @@ const KycOption = (props) => {
   //  setAdhaar(props.ekycData.userdocumentsmodel?.kyc_verified)
 
   const handleBankDetails = () => {
-    if (props.useCase === "apply-loan") {
+    if (userCase === "apply-loan") {
       props.history.push("/step-manual");
     }
-    //         pathname: "/step-manual",
-    //     });
-    // if (!props.user.userbankdetail) {
-    //     clearTimeout();
-    //     props.history.push({
-    //         pathname: "/step-manual",
-    //     });
-
-    // } else if (
-    //     props.user.userbankdetail.verified === "VERIFIED" ||
-    //     props.user.userbankdetail.verified === "PENDING_VERIFICATION"
-    // ) {
-    //     if (
-
-    //         (props.user.userdocumentsmodel.salary_slip_verified === "VERIFIED" ||
-    //             props.user.userdocumentsmodel.salary_slip_verified ===
-    //             "PENDING_VERIFICATION" || props.user.professionaldetails.verified === "VERIFIED" || props.user.professionaldetails.verified === "PENDING_VERIFICATION")
-    //     ) {
-    //         clearTimeout();
-    //         props.history.push({pathname: "/pending-approval"});
-
-    //     } else {
-    //         clearTimeout();
-    //         props.history.push({pathname: "/professional-details-payme"});
-
-    //     }
-    // }
-    else if (props.useCase === "pay-rent") {
+    else if (userCase === "pay-rent") {
       props.history.push({ pathname: "/payrent-other-details" });
     } else {
       props.history.push({ pathname: "/" });
@@ -153,21 +128,13 @@ const KycOption = (props) => {
             {ekyc === "VERIFIED" ? (
               <Container>
                 <div className="row">
-                  <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                  <div className="col-lg-3 col-md-3 col-sm-12 text-center">
                     <br />
-                    <a
-                      className="back-arrow"
-                      onClick={() => {
-                        props.history.goBack();
-                      }}
-                    >
-                      Back
-                    </a>
+
                   </div>
-                  <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-                    <div className="contenertQuicklone">
-                      <div className="slider-right-block">
+                  <div className="col-lg-6 col-md-6 col-sm-12 text-center">
                         <div className="home-contact-form">
+                          <img src={successAnimation} className='img-fluid max-width70'  alt='Icon'/>
                           <h4 className="form-heading formheadding">
                             Congratulation Your Kyc is verified click below to
                             continue.
@@ -181,33 +148,9 @@ const KycOption = (props) => {
                             Proceed
                           </a>
                         </div>
-                      </div>
-                    </div>
                   </div>
-                  <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-                    <div className="height100">
-                      <div>
-                        <div className="circle-half">
-                          <div className="full-circle">
-                            <img src={tip} className="img-fluid" alt="Tips" />
-                          </div>
-                          <div className="full-text text-left">
-                            <h5>Tips</h5>
-                            <p>
-                              In expedita et occaecati ullam a cumque maiores
-                              perspiciatis. Non labore exercitationem rerum
-                              nulla ea veniam facilis et.{" "}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="circle-half">
-                          <p className="p-a-10">
-                            In expedita et occaecati ullam a cumque maiores
-                            perspiciatis.{" "}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="col-lg-3 col-md-3 col-sm-12 text-center">
+                    <br />
                   </div>
                 </div>
               </Container>
@@ -390,7 +333,6 @@ const mapStateToProps = (state) => {
     token: state.authDetails.token,
     phoneNumber: state.authDetails.phone_number,
     user: state.user.userData,
-    useCase: state.user.useCase,
     ekycData: state.ekycData,
   };
 };

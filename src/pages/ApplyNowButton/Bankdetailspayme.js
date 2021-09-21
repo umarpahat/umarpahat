@@ -301,7 +301,7 @@ console.log(errbackend)
                       <label className="form-label">Account Number</label>
                       <input
                         type="number"
-                        className="form-control ms-form-input"
+                        className="form-input"
                         placeholder="Enter 16 Digit A/C Number"
                         value={actNumber}
                         onChange={(event) => {
@@ -328,7 +328,7 @@ console.log(errbackend)
                       </label>
                       <input
                         type="number"
-                        className="form-control ms-form-input"
+                        className="form-input"
                         placeholder="Enter 16 Digit A/C Number"
                         value={ConfrmActNumber}
                         onChange={(event) => {
@@ -345,7 +345,7 @@ console.log(errbackend)
 
                       <input
                         type="text"
-                        className="form-control ms-form-input"
+                        className="form-input"
                         placeholder="Enter IFSC Code Here (E.G. KKBK0000430)"
                         value={ifscdetail}
                         onChange={handleifscDetail}
@@ -373,7 +373,7 @@ console.log(errbackend)
                         <label className="form-label">Bank Branch</label>
                         <input
                           type="text"
-                          className="form-control ms-form-input"
+                          className="form-input"
                           placeholder="Delhi"
                           value={branchName}
                           // onChange={(e)=>{
@@ -386,7 +386,7 @@ console.log(errbackend)
                         <label className="form-label">Bank Name</label>
                         <input
                           type="text"
-                          className="form-control ms-form-input"
+                          className="form-input"
                           placeholder="Kotak Mahindra Bank"
                           value={bankName}
                           readOnly
@@ -431,7 +431,7 @@ console.log(errbackend)
                       </label>
                       <input
                         type="text"
-                        className="form-control ms-form-input"
+                        className="form-input"
                         placeholder="Enter Statement PDF Password"
                         value={bankStatementPassword}
                         onChange={(event) => {
