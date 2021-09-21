@@ -22,11 +22,12 @@ function LoginWithMobMpin(props) {
   const token = cookies.get('token')
   console.log(token)
   const userCase = cookies.get("userCase");
+  console.log("user case",userCase)
   let [loader, setloader] = useState(false);
   let [errorPass, seterrorPass] = useState(null);
   let [password, setpassword] = useState(null);
   let [forgotPassword, setforgotPassword] = useState(false);
-  console.log(props),userCase;
+  console.log(props,userCase);
   useEffect(() => {
     if (token) {
       if (forgotPassword) {

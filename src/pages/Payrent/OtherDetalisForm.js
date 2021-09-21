@@ -92,7 +92,7 @@ const OtherDetalisForm = (props) => {
 
   useEffect(() => {
 
-    if(!token || !props.user.userData)
+    if(!token )
     {props.history.push("/")}
     props.hitAllUserData({ token: token });
     handleName();
@@ -103,8 +103,8 @@ const OtherDetalisForm = (props) => {
     getSignedUrl();
     if (
       (props.user.userData &&
-        props.user.userData.userdocumentsmodel.kyc_verified === "VERIFIED") ||
-      userdocumentsmodel.kyc_verified === "VERIFIED"
+        props.user.userData.props.user.userData?.userdocumentsmodel.kyc_verified === "VERIFIED") ||
+      props.user.userData?.userdocumentsmodel.kyc_verified === "VERIFIED"
     ) {
       setkyc_verified(true);
     }
@@ -362,11 +362,11 @@ const OtherDetalisForm = (props) => {
                       </Link>
                     </div>
                   </div>
-                  {kyc_verified ? (
+                  {props.user.userData?.userdocumentsmodel.kyc_verified==="VERIFIED" ? (
                     <form onSubmit={handleSubmit}>
                       {screen1 ? (
                         <div>
-                          <div className="home-contact-form">
+                          <div className="home-contact-form" style={{marginBottom:"10px"}}>
                             <h4 className="form-heading text-center">
                               Fill Out The Following Details
                             </h4>
@@ -477,6 +477,7 @@ const OtherDetalisForm = (props) => {
                           <button
                             onClick={handleScreen2}
                             className="getstartbtn "
+                            style={{marginTop:"15x"}}
                           >
                             Save & Continue
                           </button>
@@ -662,6 +663,7 @@ const OtherDetalisForm = (props) => {
                             <button
                               onClick={handleScreen3}
                               className="getstartbtn "
+                              style={{ marginTop: "15px" }}
                             >
                               Save & Continue
                             </button>
@@ -772,8 +774,8 @@ const OtherDetalisForm = (props) => {
                         Your KYC is not verified
                       </h4>
                       <br></br>
-                      {userdocumentsmodel.kyc_verified === "NOT_SUBMITTED" ||
-                      userdocumentsmodel.kyc_verified === "NOT_VALID" ? (
+                      {props.user.userData?.userdocumentsmodel.kyc_verified === "NOT_SUBMITTED" ||
+                      props.user.userData?.userdocumentsmodel.kyc_verified === "NOT_VALID" ? (
                         <div>
                           <span
                             className="reloadicon"
@@ -794,12 +796,12 @@ const OtherDetalisForm = (props) => {
                               fontFamily: "Montserrat",
                             }}
                           >
-                            {userdocumentsmodel.kyc_verified}
+                            {props.user.userData?.userdocumentsmodel.kyc_verified}
                           </span>
                         </div>
                       ) : null}
 
-                      {userdocumentsmodel.kyc_verified ===
+                      {props.user.userData?.userdocumentsmodel.kyc_verified ===
                       "PENDING_VERIFICATION" ? (
                         <div>
                           <span
@@ -824,12 +826,12 @@ const OtherDetalisForm = (props) => {
                               fontFamily: "Montserrat",
                             }}
                           >
-                            {userdocumentsmodel.kyc_verified}
+                            {props.user.userData?.userdocumentsmodel.kyc_verified}
                           </span> </Link>
                         </div>
                       ) : null}
 
-                      {userdocumentsmodel.kyc_verified ===
+                      {props.user.userData?.userdocumentsmodel.kyc_verified ===
                       "PENDING_VERIFICATION" ? (
                         <div>
                           <br></br>
@@ -838,7 +840,7 @@ const OtherDetalisForm = (props) => {
                           </p>
                         </div>
                       ) : null}
-                      {userdocumentsmodel.kyc_verified !==
+                      {props.user.userData?.userdocumentsmodel.kyc_verified !==
                       "PENDING_VERIFICATION" ? (
                         <input
                           type="button"

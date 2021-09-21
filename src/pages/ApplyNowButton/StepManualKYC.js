@@ -12,10 +12,11 @@ import { API_ENDPOINT } from "../../constant";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from "universal-cookie";
+import tip from "../../images/animated/kyc-option.gif";
 import kycIcon from "../../images/svg/complete-kyc.svg";
 import bankDetails from "../../images/svg/bank-details.svg";
 import professionalDetails from "../../images/svg/professional-details.svg";
-import tip from "../../images/animated/kyc-option.gif";
+
 
 
 const cookies = new Cookies();
@@ -60,9 +61,9 @@ const StepManual = (props) => {
   }, []);
 
 
-    (kycstatus === "VERIFIED" || kycstatus === "PENDING_VERIFICATION") &&
-    (bankstatus === "VERIFIED" || bankstatus === "PENDING_VERIFICATION") &&
-    (professionalStatus === "VERIFIED" || professionalStatus === "PENDING_VERIFICATION")? props.history.push("/congratulations"):null;
+    // (kycstatus === "VERIFIED" || kycstatus === "PENDING_VERIFICATION") &&
+    // (bankstatus === "VERIFIED" || bankstatus === "PENDING_VERIFICATION") &&
+    // (professionalStatus === "VERIFIED" || professionalStatus === "PENDING_VERIFICATION")? props.history.push("/congratulations"):null;
 
     return (
       <>
@@ -74,7 +75,7 @@ const StepManual = (props) => {
                     <br />
                     <a
                       className="back-arrow"
-                      onClick={() => {
+                      onClick={(e) => {
                         props.history.goBack();
                       }}
                     >
@@ -104,6 +105,7 @@ const StepManual = (props) => {
                                   Provide your Aadhaar and Pan details to get
                                   them verified.
                                 </p>
+                                { kycstatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
                               </div>
                               <div className="wrapper-button">
                                 {kycstatus === "PENDING_VERIFICATION" ? (
@@ -128,6 +130,7 @@ const StepManual = (props) => {
                               <div className="img-text">
                                 <h6>Bank Details</h6>
                                 <p>Provide your bank account details.</p>
+                                { bankstatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
                               </div>
                               <div className="wrapper-button">
                                 {bankstatus === "VERIFIED" ? (
@@ -140,6 +143,7 @@ const StepManual = (props) => {
                                   </a>
                                 ) : kycstatus === "PENDING_VERIFICATION" ||
                                   kycstatus === "VERIFIED" ? (
+                                  
                                   <a
                                     className="green-button"
                                     href=""
@@ -147,6 +151,7 @@ const StepManual = (props) => {
                                       props.history.push("/bank-details-payme");
                                     }}
                                   >
+                                
                                     Continue
                                   </a>
                                 ) : (
@@ -169,6 +174,7 @@ const StepManual = (props) => {
                                 <p>
                                   Provide your Salary slip and office details.
                                 </p>
+                                { professionalStatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
                               </div>
                               <div className="wrapper-button">
                                 {professionalStatus === "VERIFIED" ? (

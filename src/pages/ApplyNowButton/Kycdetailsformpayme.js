@@ -472,7 +472,6 @@ const Kycdetailsformpayme = (props) => {
                                                 </div>
                                                 <div className='wrapper-button'>
                                                     <a className="green-button"  href="javascript:document.querySelector('input#upload-pan').click()" >Upload</a>
-
                                                 </div>
                                             </div>
                                             <div className='step-step p-t-30 border-btm'>
