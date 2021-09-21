@@ -19,6 +19,7 @@ import "../../home.css";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from "universal-cookie";
+import tip from "../../images/animated/kyc-option.gif";
 
 const cookies = new Cookies();
 
@@ -276,25 +277,19 @@ console.log(errbackend)
               <Loader color={"#33658a"} />{" "}
             </div>
           ) : (
-            <div className="kycDeatailsSecondFormsty pb-5">
-              <div className="pt-2">
-               
-                <div
-                  className="d-flex"
-                  onClick={() => {
-                    props.history.goBack();
-                  }}
-                  to="#"
-                  style={{ cursor: "pointer" }}
-                >
-                  <div className="m-1">
-                    <img src={backicon} className="img-fluid" />
+                <div className="row">
+                  <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                    <br />
+                    <a
+                        className="back-arrow"
+                        onClick={() => {
+                          props.history.goBack();
+                        }}
+                    >
+                      Back
+                    </a>
                   </div>
-                  <div>
-                    <h6 className="backbtnsty">Back</h6>
-                  </div>
-                </div>
-              </div>
+                  <div className="col-lg-5 col-md-5 col-sm-12 text-center">
               <form onSubmit={handleSubmit}>
                 <div className="home-contact-form mt-4">
                   <h4 className="form-heading text-center">Bank Details</h4>
@@ -453,7 +448,33 @@ console.log(errbackend)
                   />
                 </div>
               </form>
-            </div>
+                  </div>
+                  <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                    <div className="height100">
+                      <div>
+                        <div className="circle-half">
+                          <div className="full-circle">
+                            <img src={tip} className="img-fluid" alt="Tips" />
+                          </div>
+                          <div className="full-text text-left">
+                            <h5>Tips</h5>
+                            <p>
+                              In expedita et occaecati ullam a cumque maiores
+                              perspiciatis. Non labore exercitationem rerum
+                              nulla ea veniam facilis et.{" "}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="circle-half">
+                          <p className="p-a-10">
+                            In expedita et occaecati ullam a cumque maiores
+                            perspiciatis.{" "}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
           )}
         </Container>
       </div>

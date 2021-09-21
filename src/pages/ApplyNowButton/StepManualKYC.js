@@ -15,6 +15,8 @@ import Cookies from "universal-cookie";
 import kycIcon from "../../images/svg/complete-kyc.svg";
 import bankDetails from "../../images/svg/bank-details.svg";
 import professionalDetails from "../../images/svg/professional-details.svg";
+import tip from "../../images/animated/kyc-option.gif";
+
 
 const cookies = new Cookies();
 
@@ -66,11 +68,6 @@ const StepManual = (props) => {
       <>
         <Header {...props} />
         <div className="content darkBg">
-          <div
-            className="navbar navbar-default navbar-fixed-top"
-            id="topnavbar"
-          >
-            <div className="slider-right-block">
               <Container>
                 <div className="row">
                   <div className="col-lg-2 col-md-2 col-sm-12 text-center">
@@ -110,7 +107,7 @@ const StepManual = (props) => {
                               </div>
                               <div className="wrapper-button">
                                 {kycstatus === "PENDING_VERIFICATION" ? (
-                                  <a className="pending-button" href="">
+                                  <a className="pending-button" style={{color:'#ffb84d'}}>
                                     Pending
                                   </a>
                                 ) : kycstatus === "VERIFIED" ? (
@@ -233,9 +230,6 @@ const StepManual = (props) => {
                   </div>
                 </div>
               </Container>
-            </div>
-          </div>
-          <div></div>
         </div>
       </>
     );
