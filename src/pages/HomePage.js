@@ -22,7 +22,7 @@ import register from "../images/svg/signup-icon.svg";
 import uploadImg from "../images/svg/kyc-icon.svg";
 import promptImg from "../images/svg/bank-doc.svg";
 import easyRepay from "../images/svg/boost-icon.svg";
-import scoreAnimation from "../images/animated/cibil-animation.gif";
+import scoreAnimation from "../images/animated/credit.gif";
 import InstantCash from "../images/svg/instant-icon.svg"
 import {Link} from "react-router-dom"
 import {makeStyles} from "@material-ui/core/styles";
@@ -310,7 +310,7 @@ const HomePage = (props) => {
                             </div>
                         </div>
                         <div className="row align-items-center pb-3">
-                            <div className="col-sm-12 col-md-6 p-t-40"><img className="img-fluid scoreAnimate"
+                            <div className="col-sm-12 col-md-6 p-t-40"><img className="img-fluid"
                                                                             alt="CIBIL"
                                                                             src={scoreAnimation}/></div>
                             <div className="col-sm-12 col-md-1 ">
