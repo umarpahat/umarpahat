@@ -30,18 +30,20 @@ const KycOption = (props) => {
   const [refresh, setRefresh] = useState(true);
   const [status, setStatus] = useState(true);
 
-  function refreshhi() {
-    props.hitAllUserData({ token: token });
-  }
 
-  if (refresh) {
-    refreshhi();
-    setRefresh(false);
-  }
-
+  var something = (function() {
+    var executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+            props.hitAllUserData({ token: token });
+        }
+    };
+})();
   console.log("after ekyc", ekyc);
 
   useEffect(() => {
+    something();
     let url = `${API_ENDPOINT}/api/webview_url/payme_ekyc/`;
     let config = {
       headers: {
@@ -81,6 +83,7 @@ const KycOption = (props) => {
       .then((response) => {
         setAdhaar(response.data.data[0].adhar_card_verified);
         setEkyc(response.data.data[0].kyc_verified);
+        console.log("set kyc",response.data)
       })
       .catch((err) => {
         console.log(err);

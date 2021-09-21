@@ -28,7 +28,8 @@ import {Link} from "react-router-dom"
 import {makeStyles} from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
 import MetaTags from 'react-meta-tags';
-
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 const HomePage = (props) => {
     const useStyles = makeStyles((theme) => ({
         root: {},
@@ -43,6 +44,7 @@ const HomePage = (props) => {
     const [posts, setPosts] = useState([]);
 
     useEffect(()=>{
+        cookies.remove('token', { path: '/' })
         const url= "https://blog.paymeindia.in/?json=get_recent_posts&count=3"
         fetch(url)
             .then(res => res.json())

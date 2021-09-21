@@ -45,18 +45,18 @@ const Bankdetailspayme = (props) => {
   const [ifscdetail, setifscdetail] = useState("");
   const [ifscData, setIfscData] = useState([]);
   const [errbackend, seterrBackend] = useState("");
-  const [refresh,setRefresh]=useState(true);
 
 
-function refreshhi(){
-  props.hitAllUserData({ token: token });
-  props.hitAppUseCase()
-  }
-if(refresh){
-  refreshhi();
-  setRefresh(false)
-  
-}
+  var something = (function() {
+    var executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+            props.hitAllUserData({ token: token });
+        }
+    };
+})();
+
   async function getSignedUrl() {
     const pathArray = [
       `bank_statement/${props.user.id}/0.pdf`,
@@ -102,7 +102,7 @@ if(refresh){
       props.history.push({ pathname: "/" });
       return;
     }
-
+    something();
     getSignedUrl();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props]);
