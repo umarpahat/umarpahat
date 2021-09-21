@@ -7,7 +7,6 @@ import Header from "./Header";
 import "../../src/home.css";
 import mediaCover from "../images/svg/media-cover.svg";
 import MetaTags from "react-meta-tags";
-import scoreAnimation from "../images/animated/cibil-animation.gif";
 import mailBox from "../images/svg/mail-box.svg";
 
 const MediaCoverage = (props) => {

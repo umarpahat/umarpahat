@@ -8,7 +8,7 @@ import Loader from "../../component/Loader";
 import { api } from "../../services/api";
 import Header from "../Header";
 import Footer from "../Footer";
-import phone from "../../images/svg/phone.svg";
+import phone from "../../images/animated/otp.gif";
 import { Container } from "react-bootstrap";
 import reactOtpTimer from "react-otp-timer";
 
@@ -181,7 +181,7 @@ const Confirmotpmobile = (props) => {
                   <div>
                     <div className='circle-half'>
                       <div className='full-circle'>
-                        <img src={phone} alt='Icon'/>
+                        <img src={phone} className='img-fluid' alt='Icon' style={{maxWidth:100}}/>
                       </div>
                       <div className='full-text text-left'>
                         <h5>Tips</h5>

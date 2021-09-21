@@ -70,9 +70,7 @@ console.log(error)
             }} className='back-arrow' >Back</a>
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-        <div className="pt-5 ">
-          <div className="contenertQuicklone">
-            <div className="slider-right-block">
+
               <div className="home-contact-form">
                 <h4 className="form-heading formheadding pb-3">
                   Get Started With PayMe India
@@ -132,16 +130,14 @@ console.log(error)
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12 text-center">
               <div className='height100'>
                 <div>
                   <div className='circle-half'>
                     <div className='full-circle'>
-                      <img src={letsStart} alt='Icon'/>
+                      <img src={letsStart} alt='Icon' className='img-fluid' style={{maxWidth:100}} />
                     </div>
                     <div className='full-text text-left'>
                       <h5>Tips</h5>

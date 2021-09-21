@@ -13,7 +13,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import "../../home.css";
 import Cookies from 'universal-cookie';
-import tip from "../../images/svg/tip.png";
+import tip from "../../images/animated/lets-start-animation.gif";
 import { Container } from "react-bootstrap";
 
 const cookies = new Cookies()
@@ -202,7 +202,7 @@ function LoginWithMobMpin(props) {
                   <div>
                     <div className='circle-half'>
                       <div className='full-circle'>
-                        <img src={tip} alt='Icon'/>
+                        <img src={tip} className='img-fluid' style={{maxWidth:100}} alt='Icon'/>
                       </div>
                       <div className='full-text text-left'>
                         <h5>Tips</h5>

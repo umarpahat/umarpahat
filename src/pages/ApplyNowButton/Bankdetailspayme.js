@@ -454,7 +454,7 @@ console.log(errbackend)
                       <div>
                         <div className="circle-half">
                           <div className="full-circle">
-                            <img src={tip} className="img-fluid" alt="Tips" />
+                            <img src={tip} className="img-fluid" style={{maxWidth:100}} alt="Tips" />
                           </div>
                           <div className="full-text text-left">
                             <h5>Tips</h5>
