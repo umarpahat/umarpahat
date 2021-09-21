@@ -17,6 +17,8 @@ import kycIcon from "../../images/svg/complete-kyc.svg";
 import bankDetails from "../../images/svg/bank-details.svg";
 import professionalDetails from "../../images/svg/professional-details.svg";
 
+
+
 const cookies = new Cookies();
 
 const StepManual = (props) => {
@@ -67,11 +69,6 @@ const StepManual = (props) => {
       <>
         <Header {...props} />
         <div className="content darkBg">
-          <div
-            className="navbar navbar-default navbar-fixed-top"
-            id="topnavbar"
-          >
-            <div className="slider-right-block">
               <Container>
                 <div className="row">
                   <div className="col-lg-2 col-md-2 col-sm-12 text-center">
@@ -108,10 +105,11 @@ const StepManual = (props) => {
                                   Provide your Aadhaar and Pan details to get
                                   them verified.
                                 </p>
+                                { kycstatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
                               </div>
                               <div className="wrapper-button">
                                 {kycstatus === "PENDING_VERIFICATION" ? (
-                                  <a className="pending-button" href="">
+                                  <a className="pending-button" style={{color:'#ffb84d'}}>
                                     Pending
                                   </a>
                                 ) : kycstatus === "VERIFIED" ? (
@@ -132,6 +130,7 @@ const StepManual = (props) => {
                               <div className="img-text">
                                 <h6>Bank Details</h6>
                                 <p>Provide your bank account details.</p>
+                                { bankstatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
                               </div>
                               <div className="wrapper-button">
                                 {bankstatus === "VERIFIED" ? (
@@ -144,6 +143,7 @@ const StepManual = (props) => {
                                   </a>
                                 ) : kycstatus === "PENDING_VERIFICATION" ||
                                   kycstatus === "VERIFIED" ? (
+                                  
                                   <a
                                     className="green-button"
                                     href=""
@@ -151,6 +151,7 @@ const StepManual = (props) => {
                                       props.history.push("/bank-details-payme");
                                     }}
                                   >
+                                
                                     Continue
                                   </a>
                                 ) : (
@@ -173,6 +174,7 @@ const StepManual = (props) => {
                                 <p>
                                   Provide your Salary slip and office details.
                                 </p>
+                                { professionalStatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
                               </div>
                               <div className="wrapper-button">
                                 {professionalStatus === "VERIFIED" ? (
@@ -234,9 +236,6 @@ const StepManual = (props) => {
                   </div>
                 </div>
               </Container>
-            </div>
-          </div>
-          <div></div>
         </div>
       </>
     );

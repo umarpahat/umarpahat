@@ -214,7 +214,7 @@ const Kycdetailsformpayme = (props) => {
                 if (userCase === "apply-loan") {
                     if (!props.user.userbankdetail) {
                         props.history.push({
-                            pathname: "/bank-details-payme",
+                            pathname: "/step-manual",
                         });
                     } else if (
                         props.user.userbankdetail.verified === "VERIFIED" ||
@@ -395,61 +395,108 @@ const Kycdetailsformpayme = (props) => {
                                                 <div className='img-text'>
                                                     <h6>Upload Adhar card</h6>
                                                     <p>Aperiam cumque in eos quibusdam. 500KB limit, jpg, png, pdf</p>
+                                                    {aadhaarFileFront.name ? (
+                                                        <span style={{color: "black"}} className="">
+                                {aadhaarFileFront.name}
+                              </span>
+                                                    ) : null}
+                                                    {aadhaarFileBack.name ? (
+                                                        <span style={{color: "black"}} className="">
+                                {aadhaarFileBack.name}
+                              </span>
+                                                    ) : null}
                                                 </div>
-                                                <div className='wrapper-button'>
+                                               {/* <div className='wrapper-button'>
                                                     <a className="green-button" >Upload</a>
+                                                </div>*/}
+
+                                            <div style={{display: "flex"}}>
+                                                <div style={{marginRight:20}}>
+                                                    <a
+                                                        className="green-button"
+                                                        href="javascript:document.querySelector('input#Frontofadhaar').click()"
+                                                    >
+                                                       Front
+                                                    </a>
+
+                                                    <input
+                                                        type="file"
+                                                        accept="image/*"
+                                                        className="custom-file-input"
+                                                        id="Frontofadhaar"
+                                                        hidden
+                                                        onChange={handleAadhaarUploadFront}
+                                                    />
+                                                    {errorUploadAdhaarFront ? (
+                                                        <span style={{color: "red"}}>
+                                {errorUploadAdhaarFront}
+                              </span>
+                                                    ) : null}
                                                 </div>
+<div>
+
+                                                    <a
+                                                        href="javascript:document.querySelector('input#Backofadhaar').click()"
+                                                        className="green-button"
+                                                    >
+                                                      Back
+                                                    </a>
+                                                    <input
+                                                        type="file"
+                                                        accept="image/*"
+                                                        className="custom-file-input"
+                                                        id="Backofadhaar"
+                                                        hidden
+                                                        onChange={handleAadhaarUploadBack}
+                                                    />
+                                                    {errorUploadAdhaarBack ? (
+                                                        <span style={{color: "red"}}>
+                                {errorUploadAdhaarBack}
+                              </span>
+                                                    ) : null}
+                                            </div>
+                                            </div>
                                             </div>
                                             <div className='step-step p-t-30 border-btm'>
                                                 <div className='img-wrapper'>
-                                                    <img className='img-fluid' src={panCard} alt='Upload Adhar card'/>
+                                                    <img className='img-fluid' src={panCard} alt='Upload Pan Card'/>
                                                 </div>
                                                 <div className='img-text'>
                                                     <h6>Upload Pan card</h6>
                                                     <p>Aperiam cumque in eos quibusdam.  500KB limit, jpg, png, pdf</p>
+                                                    {panFile.name ? (
+                                                        <span style={{color: "black"}} className="">
+                            {panFile.name}
+                          </span>
+                                                    ) : null}
                                                 </div>
                                                 <div className='wrapper-button'>
                                                     <a className="green-button"  href="javascript:document.querySelector('input#upload-pan').click()" >Upload</a>
-                                                    {panFile.name ? (
-                                                    <span style={{color: "black"}} className="">
-                            {panFile.name}
-                          </span>
-                                                ) : null}
                                                 </div>
                                             </div>
                                             <div className='step-step p-t-30 border-btm'>
                                                 <div className='img-wrapper'>
-                                                    <img className='img-fluid' src={selfie} alt='Upload Adhar card'/>
+                                                    <img className='img-fluid' src={selfie} alt='Upload Selfie'/>
                                                 </div>
                                                 <div className='img-text'>
                                                     <h6>Upload Photo</h6>
                                                     <p>Aperiam cumque in eos quibusdam ipsum est veritatis. </p>
-                                            
-                                                </div>
-                                                <div className='wrapper-button'>
-                                                
-                                                    <a className="green-button"
-                                                            href="javascript:document.querySelector('input#upload-profile').click()"
-                                                    >Upload</a>
-                                                            {profile.name ? (
+                                                    {profile.name ? (
                                                         <span style={{color: "black"}} className="">
                               {profile.name}
                             </span>
                                                     ) : null}
                                                 </div>
+                                                <div className='wrapper-button'>
+
+                                                    <a className="green-button"
+                                                            href="javascript:document.querySelector('input#upload-profile').click()"
+                                                    >Upload</a>
+
+                                                </div>
                                             </div>
-                                            <label className="form-label-text">
-                                                Upload a pictue of your PAN card
-                                            </label>
-                                            <div className="file-uploading-block">
-                                                <a
-                                                    className="upload-btn-text"
-                                                   
-                                                >
-                                                    Upload PAN
-                                                </a>
-                                                <br/>
-                                               
+
+
                                                 <input
                                                     type="file"
                                                     accept="image/*"
@@ -461,80 +508,6 @@ const Kycdetailsformpayme = (props) => {
                                                 {errorUploadPan ? (
                                                     <span style={{color: "red"}}>{errorUploadPan}</span>
                                                 ) : null}
-                                            </div>
-                                            <div className="form-group ms-input-group">
-                                                <div className="pb-1">
-                                                    <label className="form-label-text ">Adhaar Card</label>
-                                                </div>
-
-                                                <label className="form-label-text">
-                                                    Upload a pictue of your Aadhar card
-                                                </label>
-                                                <div style={{display: "flex"}}>
-                                                    <div className="twoboxdregdrop file-uploading-block  mr-2">
-                                                        <a
-                                                            className="upload-btn-text"
-                                                            href="javascript:document.querySelector('input#Frontofadhaar').click()"
-                                                        >
-                                                            Upload Adhaar Front
-                                                        </a>
-                                                        <br/>
-                                                        {aadhaarFileFront.name ? (
-                                                            <span style={{color: "black"}} className="">
-                                {aadhaarFileFront.name}
-                              </span>
-                                                        ) : null}
-                                                        <input
-                                                            type="file"
-                                                            accept="image/*"
-                                                            className="custom-file-input"
-                                                            id="Frontofadhaar"
-                                                            hidden
-                                                            onChange={handleAadhaarUploadFront}
-                                                        />
-                                                        {errorUploadAdhaarFront ? (
-                                                            <span style={{color: "red"}}>
-                                {errorUploadAdhaarFront}
-                              </span>
-                                                        ) : null}
-                                                    </div>
-
-                                                    <div
-                                                        htmlFor="Backofadhaar"
-                                                        className="file-uploading-block twoboxdregdrop ml-3"
-                                                    >
-                                                        <a
-                                                            href="javascript:document.querySelector('input#Backofadhaar').click()"
-                                                            className="upload-btn-text"
-                                                        >
-                                                            Upload Adhaar Back
-                                                        </a>
-                                                        <br/>
-                                                        {aadhaarFileBack.name ? (
-                                                            <span style={{color: "black"}} className="">
-                                {aadhaarFileBack.name}
-                              </span>
-                                                        ) : null}
-                                                        <input
-                                                            type="file"
-                                                            accept="image/*"
-                                                            className="custom-file-input"
-                                                            id="Backofadhaar"
-                                                            hidden
-                                                            onChange={handleAadhaarUploadBack}
-                                                        />
-                                                        {errorUploadAdhaarBack ? (
-                                                            <span style={{color: "red"}}>
-                                {errorUploadAdhaarBack}
-                              </span>
-                                                        ) : null}
-                                                    </div>
-                                                </div>
-                                                <label className="form-label-text">Upload a Profile</label>
-                                                <div className="file-uploading-block">
-
-                                                    <br/>
-                                                 
 
                                                     <input
                                                         type="file"
@@ -547,16 +520,8 @@ const Kycdetailsformpayme = (props) => {
                                                     {errorProfile ? (
                                                         <span style={{color: "red"}}>{errorProfile}</span>
                                                     ) : null}
-                                                </div>
-                                            </div>
                                         </div>
-                                        <div>
-                                            <ul>
-                                                <li> All documents should be clear in quality</li>
-                                                <li> We accept documents in pdf/jpg/png format.</li>
-                                                <li>Max file size 32MB</li>
-                                            </ul>
-                                        </div>
+
 
                                         <input
                                             type="submit"

@@ -366,7 +366,7 @@ const OtherDetalisForm = (props) => {
                     <form onSubmit={handleSubmit}>
                       {screen1 ? (
                         <div>
-                          <div className="home-contact-form">
+                          <div className="home-contact-form" style={{marginBottom:"10px"}}>
                             <h4 className="form-heading text-center">
                               Fill Out The Following Details
                             </h4>
@@ -663,7 +663,7 @@ const OtherDetalisForm = (props) => {
                             <button
                               onClick={handleScreen3}
                               className="getstartbtn "
-                              style={{ marginTop: "10px" }}
+                              style={{ marginTop: "15px" }}
                             >
                               Save & Continue
                             </button>
