@@ -61,9 +61,9 @@ const StepManual = (props) => {
   }, []);
 
 
-    // (kycstatus === "VERIFIED" || kycstatus === "PENDING_VERIFICATION") &&
-    // (bankstatus === "VERIFIED" || bankstatus === "PENDING_VERIFICATION") &&
-    // (professionalStatus === "VERIFIED" || professionalStatus === "PENDING_VERIFICATION")? props.history.push("/congratulations"):null;
+    (kycstatus === "VERIFIED" || kycstatus === "PENDING_VERIFICATION") &&
+    (bankstatus === "VERIFIED" || bankstatus === "PENDING_VERIFICATION") &&
+    (professionalStatus === "VERIFIED" || professionalStatus === "PENDING_VERIFICATION")? props.history.push("/congratulations"):null;
 
     return (
       <>

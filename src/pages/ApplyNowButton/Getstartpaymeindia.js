@@ -21,7 +21,7 @@ const Getstartpaymeindia = (props) => {
   console.log(props.history.location.state.phoneNumber);
   let [loader, setloader] = useState(false);
   const [acceptTandC, setacceptTandC] = useState(false)
-  const [Error, setError] = useState(null);
+  const [Error, setError] = useState("");
 
   useEffect(() => {
     if (token) {
@@ -32,11 +32,13 @@ const Getstartpaymeindia = (props) => {
 });
 
   const acceptTermsAndCond = (props) => {
-    setError(null)
+    console.log(props)
+    setError("")
     setacceptTandC(!acceptTandC)
   }
-
+  console.log("toke id",props.history.location.state.phoneNumber)
   const responseGoogle = (response) => {
+    console.log("toke id",response.tokenId)
 
     try {
       props.hitLogin({ type: 'google', access_token: response.tokenId, phone_number: Number(props.history.location.state.phoneNumber)})
@@ -52,6 +54,7 @@ console.log(error)
   }
 
   const responseGoogleFail = () => {
+   
     setloader(false)
     setError("Unable to Sign up, please try again")
   }

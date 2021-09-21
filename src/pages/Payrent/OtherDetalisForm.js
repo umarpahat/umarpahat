@@ -121,7 +121,7 @@ const OtherDetalisForm = (props) => {
     axios
       .get(url, config)
       .then((response) => {
-        console.log("response1",response)
+        console.log("response1 hi hi hi",response)
         setserviceCharge(response.data.service_charge);
       })
       .catch((err) => {
@@ -160,9 +160,9 @@ const OtherDetalisForm = (props) => {
     axios
       .get(url3, config3)
       .then((res) => {
-        console.log("response1",response)
+        console.log("response hisotry",res)
         console.log("history man", res.data.results);
-        settransactionHistory(res.data.results);
+        settransactionHistory(res.data);
         // setTransactionHistory(res.data)
         // return resolve(res.data)
       })
@@ -316,7 +316,7 @@ const OtherDetalisForm = (props) => {
     kyc_verified,
     props.user.userData?.userdocumentsmodel.kyc_verified
   );
-
+console.log("transactionHistory",transactionHistory)
   return (
     <>
       <Header {...props} />
