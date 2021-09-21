@@ -45,15 +45,15 @@ const Kycdetailsformpayme = (props) => {
     const [correctPan, setcorrectPan] = useState("");
     const [refresh, setRefresh] = useState(true);
 
-  var something = (function() {
-    var executed = false;
-    return function() {
-        if (!executed) {
-            executed = true;
-            props.hitAllUserData({ token: token });
-        }
-    };
-})();
+    function refreshhi() {
+        props.hitAllUserData({token: token});
+        props.hitAppUseCase();
+    }
+
+    if (refresh) {
+        refreshhi();
+        setRefresh(false);
+    }
 
     console.log("userCase", userCase);
 
@@ -85,14 +85,6 @@ const Kycdetailsformpayme = (props) => {
         getSignedUrl();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props]);
-  useEffect(() => {
-    something();
-    if (!token) {
-      props.history.push({ pathname: "/" });
-    }
-    getSignedUrl();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props]);
 
     const handlePanUpload = (event) => {
         seterrorUploadPan("");
@@ -219,42 +211,42 @@ const Kycdetailsformpayme = (props) => {
 
                 props.hitAllUserData({token: token});
 
-        if (userCase === "apply-loan") {
-          if (!props.user.userbankdetail) {
-            props.history.push({
-              pathname: "/step-manual",
+                if (userCase === "apply-loan") {
+                    if (!props.user.userbankdetail) {
+                        props.history.push({
+                            pathname: "/step-manual",
+                        });
+                    } else if (
+                        props.user.userbankdetail.verified === "VERIFIED" ||
+                        props.user.userbankdetail.verified === "PENDING_VERIFICATION"
+                    ) {
+                        if (
+                            props.user.userdocumentsmodel &&
+                            (props.user.userdocumentsmodel.salary_slip_verified ===
+                                "VERIFIED" ||
+                                props.user.userdocumentsmodel.salary_slip_verified ===
+                                "PENDING_VERIFICATION")
+                        ) {
+                            props.history.push({pathname: "/pending-approval"});
+                        } else {
+                            props.history.push({pathname: "/professional-details-payme"});
+                        }
+                    } else {
+                        props.history.push({pathname: "/bank-details-payme"});
+                    }
+                } else if (userCase === "pay-rent") {
+                    props.history.push({pathname: "/payrent-other-details"});
+                } else {
+                    props.history.push({pathname: "/"});
+                }
+            })
+            .catch((error) => {
+                if (error.response.status === 401) {
+                    cookies.remove("token", {path: "/"});
+                }
+                setloader(false);
             });
-          } else if (
-            props.user.userbankdetail.verified === "VERIFIED" ||
-            props.user.userbankdetail.verified === "PENDING_VERIFICATION"
-          ) {
-            if (
-              props.user.userdocumentsmodel &&
-              (props.user.userdocumentsmodel.salary_slip_verified ===
-                "VERIFIED" ||
-                props.user.userdocumentsmodel.salary_slip_verified ===
-                  "PENDING_VERIFICATION")
-            ) {
-              props.history.push({ pathname: "/pending-approval" });
-            } else {
-              props.history.push({ pathname: "/step-manual" });
-            }
-          } else {
-            props.history.push({ pathname: "/step-manual" });
-          }
-        } else if (userCase === "pay-rent") {
-          props.history.push({ pathname: "/payrent-other-details" });
-        } else {
-          props.history.push({ pathname: "/" });
-        }
-      })
-      .catch((error) => {
-        if (error.response.status === 401) {
-          cookies.remove("token", { path: "/" });
-        }
-        setloader(false);
-      });
-  };
+    };
 
     return (
         <>
@@ -340,18 +332,14 @@ const Kycdetailsformpayme = (props) => {
                                                                     setcorrectPan("");
                                                                 }
 
-                            if (
-                              event.target.value.toUpperCase().match(
-                                /^([A-Z]){5}([0-9]){4}([A-Z]){1}$/
-                              )
-                            ) {
-                              setcorrectPan("Pan Number Entered Properly");
-                              seterrorPan1("");
-                            } else {
-                              seterrorPan1(
-                                "Please Enter a valid PanCard Number"
-                              );
-                            }
+                                                                if (event.target.value.match(/^([A-Z]){5}([0-9]){4}([A-Z]){1}$/)) {
+                                                                    setcorrectPan("Pan Number Entered Properly");
+                                                                    seterrorPan1("");
+                                                                } else {
+                                                                    seterrorPan1(
+                                                                        "Please Enter a valid PanCard Number"
+                                                                    );
+                                                                }
 
                             seterrorPan("");
                             setpanNumber(event.target.value.toUpperCase());
@@ -360,10 +348,7 @@ const Kycdetailsformpayme = (props) => {
                         {correctPan ? (
                           <span style={{ color: "green" }}>{correctPan}</span>
                         ) : null}
-                                                                seterrorPan("");
-                                                                setpanNumber(event.target.value);
-                                                            }}
-                                                        />
+                                                       
                                                         {correctPan ? (
                                                             <span style={{color: "green"}}>{correctPan}</span>
                                                         ) : null}
@@ -410,60 +395,109 @@ const Kycdetailsformpayme = (props) => {
                                                 <div className='img-text'>
                                                     <h6>Upload Adhar card</h6>
                                                     <p>Aperiam cumque in eos quibusdam. 500KB limit, jpg, png, pdf</p>
+                                                    {aadhaarFileFront.name ? (
+                                                        <span style={{color: "black"}} className="">
+                                {aadhaarFileFront.name}
+                              </span>
+                                                    ) : null}
+                                                    {aadhaarFileBack.name ? (
+                                                        <span style={{color: "black"}} className="">
+                                {aadhaarFileBack.name}
+                              </span>
+                                                    ) : null}
                                                 </div>
-                                                <div className='wrapper-button'>
-                                                    <a className="green-button" onClick={
-                                                        props.history.push({
-                                                            pathname: "/kyc-details-form",
-                                                        })}>Upload</a>
+                                               {/* <div className='wrapper-button'>
+                                                    <a className="green-button" >Upload</a>
+                                                </div>*/}
+
+                                            <div style={{display: "flex"}}>
+                                                <div style={{marginRight:20}}>
+                                                    <a
+                                                        className="green-button"
+                                                        href="javascript:document.querySelector('input#Frontofadhaar').click()"
+                                                    >
+                                                       Front
+                                                    </a>
+
+                                                    <input
+                                                        type="file"
+                                                        accept="image/*"
+                                                        className="custom-file-input"
+                                                        id="Frontofadhaar"
+                                                        hidden
+                                                        onChange={handleAadhaarUploadFront}
+                                                    />
+                                                    {errorUploadAdhaarFront ? (
+                                                        <span style={{color: "red"}}>
+                                {errorUploadAdhaarFront}
+                              </span>
+                                                    ) : null}
                                                 </div>
+<div>
+
+                                                    <a
+                                                        href="javascript:document.querySelector('input#Backofadhaar').click()"
+                                                        className="green-button"
+                                                    >
+                                                      Back
+                                                    </a>
+                                                    <input
+                                                        type="file"
+                                                        accept="image/*"
+                                                        className="custom-file-input"
+                                                        id="Backofadhaar"
+                                                        hidden
+                                                        onChange={handleAadhaarUploadBack}
+                                                    />
+                                                    {errorUploadAdhaarBack ? (
+                                                        <span style={{color: "red"}}>
+                                {errorUploadAdhaarBack}
+                              </span>
+                                                    ) : null}
+                                            </div>
+                                            </div>
                                             </div>
                                             <div className='step-step p-t-30 border-btm'>
                                                 <div className='img-wrapper'>
-                                                    <img className='img-fluid' src={panCard} alt='Upload Adhar card'/>
+                                                    <img className='img-fluid' src={panCard} alt='Upload Pan Card'/>
                                                 </div>
                                                 <div className='img-text'>
                                                     <h6>Upload Pan card</h6>
                                                     <p>Aperiam cumque in eos quibusdam.  500KB limit, jpg, png, pdf</p>
+                                                    {panFile.name ? (
+                                                        <span style={{color: "black"}} className="">
+                            {panFile.name}
+                          </span>
+                                                    ) : null}
                                                 </div>
                                                 <div className='wrapper-button'>
-                                                    <a className="green-button disbaledButton" onClick={
-                                                        props.history.push({
-                                                            pathname: "/kyc-details-form",
-                                                        })}>Upload</a>
+                                                    <a className="green-button"  href="javascript:document.querySelector('input#upload-pan').click()" >Upload</a>
+
                                                 </div>
                                             </div>
                                             <div className='step-step p-t-30 border-btm'>
                                                 <div className='img-wrapper'>
-                                                    <img className='img-fluid' src={selfie} alt='Upload Adhar card'/>
+                                                    <img className='img-fluid' src={selfie} alt='Upload Selfie'/>
                                                 </div>
                                                 <div className='img-text'>
                                                     <h6>Upload Photo</h6>
                                                     <p>Aperiam cumque in eos quibusdam ipsum est veritatis. </p>
+                                                    {profile.name ? (
+                                                        <span style={{color: "black"}} className="">
+                              {profile.name}
+                            </span>
+                                                    ) : null}
                                                 </div>
                                                 <div className='wrapper-button'>
-                                                    <a className="green-button disbaledButton" onClick={
-                                                        props.history.push({
-                                                            pathname: "/kyc-details-form",
-                                                        })}>Upload</a>
+
+                                                    <a className="green-button"
+                                                            href="javascript:document.querySelector('input#upload-profile').click()"
+                                                    >Upload</a>
+
                                                 </div>
                                             </div>
-                                            <label className="form-label-text">
-                                                Upload a pictue of your PAN card
-                                            </label>
-                                            <div className="file-uploading-block">
-                                                <a
-                                                    className="upload-btn-text"
-                                                    href="javascript:document.querySelector('input#upload-pan').click()"
-                                                >
-                                                    Upload PAN
-                                                </a>
-                                                <br/>
-                                                {panFile.name ? (
-                                                    <span style={{color: "black"}} className="">
-                            {panFile.name}
-                          </span>
-                                                ) : null}
+
+
                                                 <input
                                                     type="file"
                                                     accept="image/*"
@@ -475,89 +509,6 @@ const Kycdetailsformpayme = (props) => {
                                                 {errorUploadPan ? (
                                                     <span style={{color: "red"}}>{errorUploadPan}</span>
                                                 ) : null}
-                                            </div>
-                                            <div className="form-group ms-input-group">
-                                                <div className="pb-1">
-                                                    <label className="form-label-text ">Adhaar Card</label>
-                                                </div>
-
-                                                <label className="form-label-text">
-                                                    Upload a pictue of your Aadhar card
-                                                </label>
-                                                <div style={{display: "flex"}}>
-                                                    <div className="twoboxdregdrop file-uploading-block  mr-2">
-                                                        <a
-                                                            className="upload-btn-text"
-                                                            href="javascript:document.querySelector('input#Frontofadhaar').click()"
-                                                        >
-                                                            Upload Adhaar Front
-                                                        </a>
-                                                        <br/>
-                                                        {aadhaarFileFront.name ? (
-                                                            <span style={{color: "black"}} className="">
-                                {aadhaarFileFront.name}
-                              </span>
-                                                        ) : null}
-                                                        <input
-                                                            type="file"
-                                                            accept="image/*"
-                                                            className="custom-file-input"
-                                                            id="Frontofadhaar"
-                                                            hidden
-                                                            onChange={handleAadhaarUploadFront}
-                                                        />
-                                                        {errorUploadAdhaarFront ? (
-                                                            <span style={{color: "red"}}>
-                                {errorUploadAdhaarFront}
-                              </span>
-                                                        ) : null}
-                                                    </div>
-
-                                                    <div
-                                                        htmlFor="Backofadhaar"
-                                                        className="file-uploading-block twoboxdregdrop ml-3"
-                                                    >
-                                                        <a
-                                                            href="javascript:document.querySelector('input#Backofadhaar').click()"
-                                                            className="upload-btn-text"
-                                                        >
-                                                            Upload Adhaar Back
-                                                        </a>
-                                                        <br/>
-                                                        {aadhaarFileBack.name ? (
-                                                            <span style={{color: "black"}} className="">
-                                {aadhaarFileBack.name}
-                              </span>
-                                                        ) : null}
-                                                        <input
-                                                            type="file"
-                                                            accept="image/*"
-                                                            className="custom-file-input"
-                                                            id="Backofadhaar"
-                                                            hidden
-                                                            onChange={handleAadhaarUploadBack}
-                                                        />
-                                                        {errorUploadAdhaarBack ? (
-                                                            <span style={{color: "red"}}>
-                                {errorUploadAdhaarBack}
-                              </span>
-                                                        ) : null}
-                                                    </div>
-                                                </div>
-                                                <label className="form-label-text">Upload a Profile</label>
-                                                <div className="file-uploading-block">
-                                                    <a
-                                                        className="upload-btn-text"
-                                                        href="javascript:document.querySelector('input#upload-profile').click()"
-                                                    >
-                                                        Upload Profile
-                                                    </a>
-                                                    <br/>
-                                                    {profile.name ? (
-                                                        <span style={{color: "black"}} className="">
-                              {profile.name}
-                            </span>
-                                                    ) : null}
 
                                                     <input
                                                         type="file"
@@ -570,16 +521,8 @@ const Kycdetailsformpayme = (props) => {
                                                     {errorProfile ? (
                                                         <span style={{color: "red"}}>{errorProfile}</span>
                                                     ) : null}
-                                                </div>
-                                            </div>
                                         </div>
-                                        <div>
-                                            <ul>
-                                                <li> All documents should be clear in quality</li>
-                                                <li> We accept documents in pdf/jpg/png format.</li>
-                                                <li>Max file size 32MB</li>
-                                            </ul>
-                                        </div>
+
 
                                         <input
                                             type="submit"
