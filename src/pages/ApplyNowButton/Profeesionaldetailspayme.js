@@ -624,12 +624,14 @@ const Professionaldetailspayme = (props) => {
                       </div>
                       <div className="full-text text-left" style={{width:'100%'}}>
                         <h5>Tips</h5>
-                        <p>
-                          In expedita et occaecati ullam a cumque maiores
-                          perspiciatis. Non labore exercitationem rerum nulla ea
-                          veniam facilis et.
-                        </p>
+                        <p>Provide your professional details to help us in assigning a higher credit limit</p>
                       </div>
+                    </div>
+                    <div className="circle-half">
+                      <p className="p-a-10">Kindly share the latest information.</p>
+                    </div>
+                    <div className="circle-half">
+                      <p className="p-a-10">The latest ITR will increase your chance of getting the limit approved.</p>
                     </div>
                   </div>
                 </div>

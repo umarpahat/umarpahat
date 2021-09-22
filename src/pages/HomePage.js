@@ -164,7 +164,7 @@ const HomePage = (props) => {
                                                     />
                                                 </div>
                                             </div>
-                                            <div className='relative' >
+                                            <div className='relative'>
                                                 <span className='rupeesIcon'>₹</span>
                                                 <input className='down-payment' type="number" value={amount} onChange={handleInputChange} />
                                             </div>

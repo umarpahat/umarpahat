@@ -8,6 +8,7 @@ import '../../src/home.css';
 import {Link} from "react-router-dom";
 import $ from "jquery";
 import MetaTags from "react-meta-tags";
+import mailBox from "../images/svg/mail-box.svg";
 
 
 const Sitemap = (props) => {
@@ -30,21 +31,14 @@ const Sitemap = (props) => {
                             <h1 className='heading1 blue-color'>Sitemap - PayMeIndia</h1>
                         </div>
                         <ul className='p-t-30'>
-                            <li>
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/about">About Us</Link>
-                            </li>
-                            <li>
-                                <Link to="/contact">Contact Us</Link>
-                            </li>
-                            <li>
-                                <Link to="/faq">FAQs</Link>
-                            </li>
-                            <li>
-                                <Link to="/ourNbfcPartners">Our NBFC Partners</Link>
-                            </li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/apply-loan">Apply Loan</Link></li>
+                            <li><Link to="/pay-rent-details">Pay Rent</Link></li>
+                            <li><Link to="/offerings">Offerings</Link></li>
+                            <li><Link to="/about">About Us</Link></li>
+                            <li><Link to="/contact">Contact Us</Link></li>
+                            <li><Link to="/faq">FAQs</Link></li>
+                            <li><Link to="/ourNbfcPartners">Our NBFC Partners</Link></li>
                             <li>
                                 <Link to="/career">Career</Link>
                             </li>
@@ -58,22 +52,25 @@ const Sitemap = (props) => {
                             <li><Link to="/policy">Privacy Policy</Link></li>
                             <li><Link to="/refund">Refund Policy</Link></li>
                             <li><Link to="/disclaimer">Disclaimer</Link></li>
-                            <li><a href="https://creditscore.paymeindia.in"  target="_blank">Get CIBIL Score </a></li>
                         </ul>
 
                     </div>
                 </div>
-                <div className="services">
+                <div className="contactBox p-t-80">
                     <div className="container">
                         <div className="row justify-content-md-center">
-                            <div className="col col-md-8 text-center p-t-30 p-b-30">
-                                <h4 className="heading4">Contact Us</h4>
-                                <p>Please contact us at <a href="mailto: admin@paymeindia.in"
-                                                           target='_blank'>admin@paymeindia.in</a></p>
-
+                            <div className="col-md-9 text-center p-t-30 p-b-30 d-flex contactLine">
+                                <div className='mailPic'>
+                                    <img className="img-fluid" src={mailBox} alt="Mail"/>
+                                </div>
+                                <div className='contact'>
+                                    <h4 className="heading4">Contact Us</h4>
+                                    <p>Please contact us at<br/>
+                                        <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

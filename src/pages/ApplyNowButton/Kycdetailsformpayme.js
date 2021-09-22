@@ -597,7 +597,10 @@ const Kycdetailsformpayme = (props) => {
                         <h5>Tips</h5>
                         <p>
                           EKYC helps in processing the loan application
-                          instantly. Further suggestion: Share the video link of
+                          instantly.
+                        </p>
+                        <p>
+                          Further suggestion: Share the video link of
                           both EKYC and Manual KYC.
                         </p>
                       </div>

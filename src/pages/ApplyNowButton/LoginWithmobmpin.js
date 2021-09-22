@@ -206,13 +206,10 @@ function LoginWithMobMpin(props) {
                       </div>
                       <div className='full-text text-left'>
                         <h5>Tips</h5>
-                        <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
-                          rerum nulla ea veniam facilis et. </p>
+                        <p>6-digit passcode which will help you to log in faster into the PayMe India app.</p>
                       </div>
                     </div>
-                    <div className='circle-half'>
-                      <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
-                    </div>
+
                   </div>
                 </div>
               </div>
