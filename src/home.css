@@ -1339,7 +1339,7 @@ a.button-small:hover {
 }
 
 .black-bg {
-    background: #040d1b url("images/black-bg.png") repeat 0 0;
+    background: #040d1b;
 }
 
 .white-color {
