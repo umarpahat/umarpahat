@@ -112,7 +112,7 @@ const StepManual = (props) => {
                                     Pending
                                   </a>
                                 ) : kycstatus === "VERIFIED" ? (
-                                  <a className="green-button" href="">
+                                  <a className="green-button" >
                                     Verified
                                   </a>
                                 ) : null}
@@ -133,13 +133,13 @@ const StepManual = (props) => {
                               </div>
                               <div className="wrapper-button">
                                 {bankstatus === "VERIFIED" ? (
-                                  <a className="green-button" href="">
+                                  <a className="green-button" >
                                     Verified
                                   </a>
                                 ) : bankstatus === "PENDING_VERIFICATION" ? (
-                                  <a className="pending-button" href="">
-                                    Pending
-                                  </a>
+                                  <a className="pending-button" style={{color:'#ffb84d'}}>
+                                  Pending
+                                </a>
                                 ) : kycstatus === "PENDING_VERIFICATION" ||
                                   kycstatus === "VERIFIED" ? (
                                   
@@ -177,12 +177,12 @@ const StepManual = (props) => {
                               </div>
                               <div className="wrapper-button">
                                 {professionalStatus === "VERIFIED" ? (
-                                  <a className="green-button" href="">
+                                  <a className="green-button" >
                                     Verified
                                   </a>
                                 ) : professionalStatus ===
                                   "PENDING_VERIFICATION" ? (
-                                  <a className="pending-button" href="">
+                                    <a className="pending-button" style={{color:'#ffb84d'}}>
                                     Pending
                                   </a>
                                 ) : bankstatus === "PENDING_VERIFICATION" ||
