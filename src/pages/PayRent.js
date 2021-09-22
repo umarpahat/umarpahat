@@ -142,12 +142,15 @@ const PayRent = (props) => {
                                         <Link to='#' className='small-green-link'>Know More</Link>
                                     </div> */}
                                 </div>
+
                                 <div className="advertisePay">
                                     <div>
                                         <img src={starIconLight} alt='Magnam numquam'
                                              className="img-fluid"/></div>
                                     <div>
                                         <h4>Magnam numquam dolor pariatur quia.</h4>
+
+                                        
                                     </div>
                                     {/* <div>
                                         <Link to='/' className='small-green-link'>Know More</Link>
