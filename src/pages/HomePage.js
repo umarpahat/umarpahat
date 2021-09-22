@@ -29,7 +29,6 @@ import {makeStyles} from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
 import MetaTags from 'react-meta-tags';
 import Cookies from 'universal-cookie';
-import { getCookieConsentValue } from "react-cookie-consent";
 const cookies = new Cookies();
 const HomePage = (props) => {
     const useStyles = makeStyles((theme) => ({
@@ -51,96 +50,9 @@ const HomePage = (props) => {
             .then(res => res.json())
             .then(res => setPosts(res.posts))
             // .then(res => console.log('umar',res.posts))
-    })
-    function getProcessFees(amount) {
-        if (amount < 500) {
-            return 100
-        } else if (amount >= 500 && amount < 1000) {
-            return 100
-        } else if (amount >= 1000 && amount < 3000) {
-            return 150
-        } else if (amount >= 3000 && amount < 10000) {
-            return 300
-        } else if (amount >= 10000 && amount < 15000) {
-            return 400
-        } else if (amount >= 15000 && amount < 20000) {
-            return 500
-        } else if (amount >= 20000 && amount < 25000) {
-            return 600
-        } else if (amount >= 25000 && amount < 30000) {
-            return 750
-        } else if (amount >= 30000 && amount < 35000) {
-            return 900
-        } else if (amount >= 35000 && amount < 40000) {
-            return 1050
-        } else if (amount >= 40000 && amount < 45000) {
-            return 1200
-        } else if (amount >= 45000 && amount < 50000) {
-            return 1350
-        } else if (amount >= 50000 && amount < 55000) {
-            return 1500
-        } else if (amount >= 55000 && amount < 60000) {
-            return 1650
-        } else if (amount >= 60000 && amount < 65000) {
-            return 1800
-        } else if (amount >= 65000 && amount < 70000) {
-            return 1950
-        } else if (amount >= 70000 && amount < 75000) {
-            return 2100
-        } else if (amount >= 75000 && amount < 80000) {
-            return 2250
-        } else if (amount >= 80000 && amount < 85000) {
-            return 2400
-        } else if (amount >= 85000 && amount < 90000) {
-            return 2550
-        } else if (amount >= 90000 && amount < 95000) {
-            return 2700
-        } else if (amount >= 95000 && amount < 100000) {
-            return 2850
-        } else if (amount >= 100000 && amount < 105000) {
-            return 3000
-        } else if (amount >= 105000 && amount < 110000) {
-            return 3150
-        } else if (amount >= 110000 && amount < 115000) {
-            return 3300
-        } else if (amount >= 115000 && amount < 120000) {
-            return 3450
-        } else if (amount >= 120000 && amount < 125000) {
-            return 3600
-        } else if (amount >= 125000 && amount < 130000) {
-            return 3750
-        } else if (amount >= 130000 && amount < 135000) {
-            return 3900
-        } else if (amount >= 135000 && amount < 140000) {
-            return 4050
-        } else if (amount >= 140000 && amount < 145000) {
-            return 4200
-        } else if (amount >= 145000 && amount < 150000) {
-            return 4350
-        } else if (amount >= 150000 && amount < 155000) {
-            return 4500
-        } else if (amount >= 155000 && amount < 160000) {
-            return 4650
-        } else if (amount >= 160000 && amount < 165000) {
-            return 4800
-        } else if (amount >= 165000 && amount < 170000) {
-            return 4950
-        } else if (amount >= 170000 && amount < 175000) {
-            return 5100
-        } else if (amount >= 175000 && amount < 180000) {
-            return 5250
-        } else if (amount >= 180000 && amount < 185000) {
-            return 5400
-        } else if (amount >= 185000 && amount < 190000) {
-            return 5550
-        } else if (amount >= 190000 && amount < 195000) {
-            return 5700
-        } else if (amount >= 195000 && amount < 200000) {
-            return 5850
-        } else if (amount >= 200000 && amount < 205000) {
-            return 6000
-        }
-    }
+    },[])
+
+  
 
     const handleSliderChange = (event, newValue) => {
        setAmount(newValue);
@@ -172,7 +84,7 @@ const HomePage = (props) => {
 
     function handleResult() {
         let roi = Number(0.03);
-        let pfee = getProcessFees(amount)
+        let pfee = Math.round(amount/20);
 
         console.log(roi, amount, time)
         const result = Math.round(  amount * ((roi * (1 + roi) ** time) / ((1 + roi) ** time - 1)));
