@@ -138,9 +138,9 @@ const PayRent = (props) => {
                                     <div>
                                         <h4>Pay your home rent and get benifits each month</h4>
                                     </div>
-                                    <div>
+                                    {/* <div>
                                         <Link to='#' className='small-green-link'>Know More</Link>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="advertisePay">
                                     <div>
@@ -149,9 +149,9 @@ const PayRent = (props) => {
                                     <div>
                                         <h4>Magnam numquam dolor pariatur quia.</h4>
                                     </div>
-                                    <div>
+                                    {/* <div>
                                         <Link to='/' className='small-green-link'>Know More</Link>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="advertisePay">
                                     <div>
@@ -160,12 +160,12 @@ const PayRent = (props) => {
                                     <div>
                                         <h4>Totam corrupti eum vel consectetur nobis.</h4>
                                     </div>
-                                    <div>
+                                    {/* <div>
                                         <Link to='#' className='small-green-link'>Know More</Link>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <br/>
-                                <Link to='#' className='small-green-link'>View All Offers</Link>
+                                {/* <Link to='#' className='small-green-link'>View All Offers</Link> */}
 
                             </div>
                             <div className="col-sm-12 col-md-1 ">
@@ -178,8 +178,7 @@ const PayRent = (props) => {
                                             <img src={starIconGreen} alt='Totam corrupti'
                                                  className="img-fluid"/></div>
                                         <div>
-                                            <strong>Pay rent of this month with Payrent app and get 20% Cashback <Link
-                                                to='/' className='small-green-link'>View all</Link></strong>
+                                            <strong>Pay rent of this month with Payrent app and get 20% Cashback</strong>
                                         </div>
                                     </div>
                                     <form id='form' name='form'>

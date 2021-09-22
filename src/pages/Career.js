@@ -47,9 +47,9 @@ const Career = (props) => {
                                 <p className="no-more-text p-t-15">At PayMe India, we visualize bringing financial freedom and independence to our valuable customers and liberating them from financial limitations. We allow them to manage credit with ease, whenever they need it. Every single member of our team of PayMe India aims to positively impact the lives of our consumers. If you are enthusiastic and passionate to make a difference in the lives of customers and look forward to working with the best in the company, Join us in our journey.</p>
                                 <br/>
                                 <br/>
-                                <a to='#'  className='green-btn' style={{color:"#fff"}}>
+                                {/* <a to='#'  className='green-btn' style={{color:"#fff"}}>
                                     Explore openings
-                                </a>
+                                </a> */}
                             </div>
                             <div className="col-sm-12 col-md-2 ">
                                 &nbsp;
@@ -88,7 +88,7 @@ const Career = (props) => {
                                             </div>
                                             <h3>Business Developer</h3>
                                             <p className='p-b-30'>Interested in working as a Business Developer. Our business development team is hiring. Do share your resume with us.</p>
-                                            <a to='#'  className='green-btn' style={{color:"#fff"}}>Apply Now</a>
+                                            {/* <a to='#'  className='green-btn' style={{color:"#fff"}}>Apply Now</a> */}
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-4 col-sm-12">
@@ -100,7 +100,7 @@ const Career = (props) => {
 
                                             <h3>Lead Visual Designer</h3>
                                             <p className='p-b-30'>Have a zeal in designing that inspires, engages, and excites users? Do share your resume with us.</p>
-                                            <a to='#'  className='green-btn' style={{color:"#fff"}}>Apply Now</a>
+                                            {/* <a to='#'  className='green-btn' style={{color:"#fff"}}>Apply Now</a> */}
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-4 col-sm-12">
@@ -110,7 +110,7 @@ const Career = (props) => {
                                             </div>
                                             <h3>Backend Developer</h3>
                                             <p className='p-b-30'>Passionate to work in backend development? We might be a match! Do share your resume with us.</p>
-                                            <a to='#'  className='green-btn' style={{color:"#fff"}}>Apply Now</a>
+                                            {/* <a to='#'  className='green-btn' style={{color:"#fff"}}>Apply Now</a> */}
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@ const Career = (props) => {
                                             <h3>Front-End designer</h3>
                                             <p className='p-b-30'>Enthusiastic to Contribute in Front end development?
                                                 Do share your resume with us.</p>
-                                            <a to='#'  className='green-btn' style={{color:"#fff"}}>Apply Now</a>
+                                            {/* <a to='#'  className='green-btn' style={{color:"#fff"}}>Apply Now</a> */}
                                         </div>
                                     </div>
                                 </div>
@@ -277,12 +277,12 @@ const Career = (props) => {
                             <div className="col-sm-12 col-md-6">
                                 <h2 className="heading2">Keep the awesomness in your work</h2>
                                 <br/>
-                                <Link className="btnLarge" onClick={() => {
+                                {/* <Link className="btnLarge" onClick={() => {
                                    
                                     props.history.push({pathname: '/contact'})
                                 }}>
                                     Apply Now
-                                </Link>
+                                </Link> */}
                             </div>
                         </div>
                     </div>
