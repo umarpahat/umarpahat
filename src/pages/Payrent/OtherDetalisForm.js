@@ -127,7 +127,7 @@ const OtherDetalisForm = (props) => {
     console.log("tokennn",token)
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get(url, config)
+      .get("https://staging.paymeindia.in/api/pay-rent/get-jwt-initiate-payment/", config)
       .then((response) => {
         console.log("response1 hi hi hi",response)
         setserviceCharge(response.data.service_charge);
@@ -141,7 +141,7 @@ const OtherDetalisForm = (props) => {
       });
       console.log("cosole1",`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`,`${API_ENDPOINT_STAGING}`)
 
-    let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`;
+    let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token/`;
     // let config = {
     //   headers: {
     //     Authorization: "Token " + token,
@@ -150,7 +150,7 @@ const OtherDetalisForm = (props) => {
     // }
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get(url2, config)
+      .get("https://staging.paymeindia.in/api/pay-rent/get-jwt-initiate-payment/?request_type=token/", config)
       .then((response) => {
         console.log("response1",response)
         setjwtToken(response.data.token);
@@ -167,7 +167,7 @@ const OtherDetalisForm = (props) => {
     };
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get(url3, config3)
+      .get("https://staging.paymeindia.in/api/pay-rent/list-payment-history/", config3)
       .then((res) => {
         console.log("response hisotry",res)
         console.log("history man", res.data.results);
