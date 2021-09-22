@@ -333,7 +333,7 @@ const Kycdetailsformpayme = (props) => {
                                                                 }
 
                                                                 if (event.target.value.match(/^([A-Z]){5}([0-9]){4}([A-Z]){1}$/)) {
-                                                                    setcorrectPan("Pan Number Entered Properly");
+                                                                    setcorrectPan("Correct");
                                                                     seterrorPan1("");
                                                                 } else {
                                                                     seterrorPan1(
@@ -394,7 +394,7 @@ const Kycdetailsformpayme = (props) => {
                                                 </div>
                                                 <div className='img-text'>
                                                     <h6>Upload Adhar card</h6>
-                                                    <p>Aperiam cumque in eos quibusdam. 500KB limit, jpg, png, pdf</p>
+                                                    <p>Upload in pdf/jpg/png format</p>
                                                     {aadhaarFileFront.name ? (
                                                         <span style={{color: "black"}} className="">
                                 {aadhaarFileFront.name}
@@ -463,7 +463,7 @@ const Kycdetailsformpayme = (props) => {
                                                 </div>
                                                 <div className='img-text'>
                                                     <h6>Upload Pan card</h6>
-                                                    <p>Aperiam cumque in eos quibusdam.  500KB limit, jpg, png, pdf</p>
+                                                    <p>Upload in pdf/jpg/png format</p>
                                                     {panFile.name ? (
                                                         <span style={{color: "black"}} className="">
                             {panFile.name}
@@ -480,7 +480,7 @@ const Kycdetailsformpayme = (props) => {
                                                 </div>
                                                 <div className='img-text'>
                                                     <h6>Upload Photo</h6>
-                                                    <p>Aperiam cumque in eos quibusdam ipsum est veritatis. </p>
+                                                    <p>Photo should be in clear quality. </p>
                                                     {profile.name ? (
                                                         <span style={{color: "black"}} className="">
                               {profile.name}

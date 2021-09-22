@@ -102,8 +102,7 @@ const StepManual = (props) => {
                               <div className="img-text">
                                 <h6>Complete KYC</h6>
                                 <p>
-                                  Provide your Aadhaar and Pan details to get
-                                  them verified.
+                                Provide your Aadhaar and Pan details.
                                 </p>
                                 { kycstatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
                               </div>
@@ -129,7 +128,7 @@ const StepManual = (props) => {
                               </div>
                               <div className="img-text">
                                 <h6>Bank Details</h6>
-                                <p>Provide your bank account details.</p>
+                                <p>Upload your latest bank statement and bank details.</p>
                                 { bankstatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
                               </div>
                               <div className="wrapper-button">

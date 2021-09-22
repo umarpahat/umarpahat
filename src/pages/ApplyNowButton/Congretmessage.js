@@ -96,10 +96,10 @@ const Congretmessage = (props) => {
             <div className="home-contact-form mt-4">
               <img src={successAnimation} className='img-fluid max-width70'  alt='Icon'/>
               <h4 className="form-heading text-center pb-3">
-                Your Documents has been Verified sucessfully.
+              Your Profile has been verified successfully.
               </h4>
               <p className="preApprovePara text-capitalize">
-                You can  track your loan progress onour payme app, we keep sending minute updates on our mobile app
+              You are now one step closer to get a loan, track your loan status on PayMe India App
               </p>
               <div className="pt-3">
                 <a

@@ -21,10 +21,10 @@ const cookies = new Cookies()
 
 const Getstartpaymeindia = (props) => {
   const token = cookies.get('token')
-  // console.log(props.history.location.state.phoneNumber);
+  console.log(props.history.location.state.phoneNumber);
   let [loader, setloader] = useState(false);
   const [acceptTandC, setacceptTandC] = useState(false)
-  const [Error, setError] = useState("");
+  const [Error, setError] = useState(null);
 
   useEffect(() => {
     if (token) {
@@ -35,15 +35,13 @@ const Getstartpaymeindia = (props) => {
 });
 
   const acceptTermsAndCond = (props) => {
-    console.log(props)
-    setError("")
+    setError(null)
     setacceptTandC(!acceptTandC)
   }
-  // console.log("toke id",props.history.location.state.phoneNumber)
-  const responseGoogle = (response) => {
-    console.log("toke id",response.tokenId)
 
- /*   try {
+  const responseGoogle = (response) => {
+
+    try {
       props.hitLogin({ type: 'google', access_token: response.tokenId, phone_number: Number(props.history.location.state.phoneNumber)})
       props.history.push({pathname:'/referral-code'})
     } catch (error){
@@ -53,11 +51,10 @@ const Getstartpaymeindia = (props) => {
       }
       setloader(false)
 console.log(error)
-    }*/
+    }
   }
 
   const responseGoogleFail = () => {
-   
     setloader(false)
     setError("Unable to Sign up, please try again")
   }
@@ -173,7 +170,7 @@ console.log(error)
 const mapStateToProps = state => {
   return {
       token: state.authDetails.token,
-      // phoneNumber: state.authDetails.phone_number,
+      phoneNumber: state.authDetails.phone_number,
   }
 }
 

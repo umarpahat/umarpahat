@@ -61,7 +61,7 @@ const Confirmotpmobile = (props) => {
         {}
       )
       .then((response) => {
-        setloader(false);
+       
         if (response.status === 200) {
           props.history.push({
             pathname: "/get-start-paymeindia",

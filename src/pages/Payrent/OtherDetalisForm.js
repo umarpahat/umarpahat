@@ -65,6 +65,7 @@ const OtherDetalisForm = (props) => {
   const [screen1, setScreen1] = useState(true);
   const [screen2, setScreen2] = useState(false);
   const [screen3, setScreen3] = useState(false);
+  const[correctPan,setcorrectPan]=useState("")
   
 
   async function getSignedUrl() {
@@ -238,7 +239,7 @@ const OtherDetalisForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!landlordActNumber) {
+    if (!landlordActNumber ) {
       seterrorlandlordActNumber("Please enter landlord account number");
       return;
     }
@@ -252,7 +253,7 @@ const OtherDetalisForm = (props) => {
       );
       return;
     }
-    if (!ifscCode) {
+    if (!ifscCode ) {
       seterrorifscCode("Please enter ifsc code");
       return;
     }
@@ -316,7 +317,7 @@ const OtherDetalisForm = (props) => {
     kyc_verified,
     props.user.userData?.userdocumentsmodel.kyc_verified
   );
-console.log("transactionHistory",transactionHistory)
+
   return (
     <>
       <Header {...props} />
@@ -424,8 +425,14 @@ console.log("transactionHistory",transactionHistory)
                                       placeholder="Enter 10 Digit PAN Number Here"
                                       value={panNumber}
                                       onChange={(e) => {
+
+                                        if (e.target.value.match(/^([A-Z]){5}([0-9]){4}([A-Z]){1}$/)) {
+                                          setcorrectPan("Correct");
+                                         
+                                      }
+                                   
                                         seterrorpanNumber("");
-                                        setpanNumber(e.target.value);
+                                        setpanNumber(e.target.value.toUpperCase());
                                       }}
                                     />
                                     {errorpanNumber ? (
@@ -501,7 +508,12 @@ console.log("transactionHistory",transactionHistory)
                                     value={landLordName}
                                     onChange={(e) => {
                                       seterrorlandLordName("");
-                                      setlandLordName(e.target.value);
+                                      if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                        setlandLordName(e.target.value);
+                                    } else if (e.target.value.length === 0) {
+                                        setlandLordName(e.target.value);
+                                    }
+                                     
                                     }}
                                   />
                                   {errorlandLordName ? (
@@ -521,7 +533,12 @@ console.log("transactionHistory",transactionHistory)
                                     value={yourName}
                                     onChange={(e) => {
                                       seterroryourName("");
-                                      setyourName(e.target.value);
+                                      if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                        setyourName(e.target.value);
+                                    } else if (e.target.value.length === 0) {
+                                        setyourName(e.target.value);
+                                    }
+                                    
                                     }}
                                   />
                                   {erroryourName ? (
@@ -560,7 +577,7 @@ console.log("transactionHistory",transactionHistory)
                                       value={mobileNumber}
                                       onChange={(e) => {
                                         seterrormobileNumber("");
-                                        setmobileNumber(e.target.value);
+                                        setmobileNumber(e.target.value.slice(0,10));
                                       }}
                                     />
                                     {errormobileNumber ? (
@@ -604,13 +621,13 @@ console.log("transactionHistory",transactionHistory)
                                 <div class="form-group ms-input-group">
                                   <label className="form-label">Pin Code</label>
                                   <input
-                                    type="text"
+                                    type="number"
                                     class="form-control ms-form-input"
                                     placeholder="Enter Pincode Of Your Property"
                                     value={pinCode}
                                     onChange={(e) => {
                                       seterrorPincode("");
-                                      setpinCode(e.target.value);
+                                      setpinCode(e.target.value.slice(0,6));
                                     }}
                                   />
                                   {errorPincode ? (
@@ -630,7 +647,12 @@ console.log("transactionHistory",transactionHistory)
                                       value={state}
                                       onChange={(e) => {
                                         seterrorstate("");
-                                        setstate(e.target.value);
+                                        if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                          setstate(e.target.value);
+                                     } else if (e.target.value.length === 0) {
+                                          setstate(e.target.value);
+                                     }
+                                      
                                       }}
                                     />
                                     {errorstate ? (
@@ -648,7 +670,12 @@ console.log("transactionHistory",transactionHistory)
                                       value={city}
                                       onChange={(e) => {
                                         seterrorcity("");
-                                        setcity(e.target.value);
+                                        if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                           setcity(e.target.value);
+                                      } else if (e.target.value.length === 0) {
+                                           setcity(e.target.value);
+                                      }
+                                      
                                       }}
                                     />
                                     {errorcity ? (
@@ -688,7 +715,8 @@ console.log("transactionHistory",transactionHistory)
                                     value={landlordActNumber}
                                     onChange={(e) => {
                                       seterrorlandlordActNumber("");
-                                      setlandlordActNumber(e.target.value);
+                                    
+                                      setlandlordActNumber(e.target.value.slice(0,22));
                                     }}
                                   />
                                   {errorlandlordActNumber ? (
@@ -708,7 +736,7 @@ console.log("transactionHistory",transactionHistory)
                                     value={conflandlordActNumber}
                                     onChange={(e) => {
                                       seterrorconflandlordActNumber("");
-                                      setconflandlordActNumber(e.target.value);
+                                      setconflandlordActNumber(e.target.value.slice(0,22));
                                     }}
                                   />
                                   {errorconflandlordActNumber ? (
@@ -728,7 +756,7 @@ console.log("transactionHistory",transactionHistory)
                                     value={ifscCode}
                                     onChange={(e) => {
                                       seterrorifscCode("");
-                                      setifscCode(e.target.value);
+                                      setifscCode(e.target.value.toUpperCase());
                                     }}
                                   />
                                   {errorifscCode ? (
