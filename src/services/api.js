@@ -75,8 +75,8 @@ export const postS3 = (data) => {
     console.log("eeeeeeeeeeeeeee")
     console.log(data)
     const formData = new FormData();
-    Object.keys(data.presignedPostData.fields).forEach(key => {
-      formData.append(key, data.presignedPostData.fields[key]);
+    Object.keys(data.presignedPostData?.fields).forEach(key => {
+      formData.append(key, data.presignedPostData?.fields[key]);
     });
     formData.append("file", data.res);
     api.post(data.presignedPostData.url, formData, {}).then((response) => {
