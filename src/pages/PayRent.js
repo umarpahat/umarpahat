@@ -128,7 +128,7 @@ const PayRent = (props) => {
                                         <h4>Get instant Off of 20% on the loand above 2L</h4>
                                     </div>
                                     <div>
-                                        <Link to='/' className='small-green-btn'>Apply Now</Link>
+                                        <Link to='/apply-loan' className='small-green-btn'>Apply Now</Link>
                                     </div>
                                 </div>
                                 <div className="advertisePay">
@@ -139,7 +139,7 @@ const PayRent = (props) => {
                                         <h4>Pay your home rent and get benifits each month</h4>
                                     </div>
                                     <div>
-                                        <Link to='/' className='small-green-link'>Know More</Link>
+                                        <Link to='#' className='small-green-link'>Know More</Link>
                                     </div>
                                 </div>
                                 <div className="advertisePay">
@@ -161,11 +161,11 @@ const PayRent = (props) => {
                                         <h4>Totam corrupti eum vel consectetur nobis.</h4>
                                     </div>
                                     <div>
-                                        <Link to='/' className='small-green-link'>Know More</Link>
+                                        <Link to='#' className='small-green-link'>Know More</Link>
                                     </div>
                                 </div>
                                 <br/>
-                                <Link to='/' className='small-green-link'>View All Offers</Link>
+                                <Link to='#' className='small-green-link'>View All Offers</Link>
 
                             </div>
                             <div className="col-sm-12 col-md-1 ">

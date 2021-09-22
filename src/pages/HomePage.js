@@ -29,6 +29,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
 import MetaTags from 'react-meta-tags';
 import Cookies from 'universal-cookie';
+import { getCookieConsentValue } from "react-cookie-consent";
 const cookies = new Cookies();
 const HomePage = (props) => {
     const useStyles = makeStyles((theme) => ({
@@ -146,6 +147,8 @@ const HomePage = (props) => {
         setAmount(value1);
         $("#total-amount1").text(amount);
         $("#total-amount").text(amount);
+        
+
        
     }
 
@@ -232,9 +235,8 @@ const HomePage = (props) => {
                                                         aria-labelledby="discrete-slider-always"
                                                         step={500}
                                                         min={500}
-                                                        max={200000}
-                                                        value={amount}
-                                                        onChange={(value)=>setAmount(value)}
+                                                        max={200000} 
+                                                        // onChange={(value)=>setAmount(value)}
                                                         valueLabelDisplay="on"
 
                                                     />
@@ -245,7 +247,7 @@ const HomePage = (props) => {
                                                 <input className='down-payment' type="number" value={amount} onChange={(e)=>{
                                                     setAmount(e.target.value);
                                                     
-                                                }}/>
+                                                }} disabled/>
                                             </div>
 
                                         </div>
@@ -327,7 +329,7 @@ const HomePage = (props) => {
                                     className="blue-color">Absolutely Free! </span>
                                 </h3> <p className="heading6">A credit score is more than just a number. Know your Cibil score completely free with PayMe India.</p>
                                 <a onClick={handleCibilWeb} target='_blank'
-                                   className="btnLarge m-t-40" style={{color:"#fff", cursor:"pointer"}}>Get App Now</a>
+                                   className="btnLarge m-t-40" style={{color:"#fff", cursor:"pointer"}}>Get CIBIL Report</a>
                             </div>
                         </div>
                     </div>
@@ -626,7 +628,7 @@ const HomePage = (props) => {
                                     <h4 className='white-color'>Get Loan instat and unlimited offers</h4>
                                 </div>
                                 <div>
-                                    <Link to='/' className='green-btn'>Apply Now</Link>
+                                    <Link to='/apply-loan' className='green-btn'>Apply Now</Link>
                                 </div>
                             </div>
                         </div>

@@ -37,7 +37,7 @@ function LoginWithMobMpin(props) {
         });
       } else {
         if (props.user.userData) {
-          setloader(false);
+          
 
           if (userCase === "apply-loan") {
             if (
