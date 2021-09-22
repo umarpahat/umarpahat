@@ -20,7 +20,7 @@ import { bindActionCreators } from 'redux';
 const cookies = new Cookies();
 
 const OtherDetalisForm = (props) => {
-  console.log(props,"hhh")
+  
   const token = cookies.get("token");
   // const [logintoken, setlogintoken] = usest
   const [serviceCharge, setserviceCharge] = useState(0);
@@ -28,7 +28,7 @@ const OtherDetalisForm = (props) => {
   const [landLordName, setlandLordName] = useState("");
   const [errorlandLordName, seterrorlandLordName] = useState("");
   const [yourName, setyourName] = useState("");
-  const [name, setName] = useState("");
+  const [name, setName] = useState(props.user.userData?.customusermodel.first_name);
   const [erroryourName, seterroryourName] = useState("");
   const [mobileNumber, setmobileNumber] = useState("");
   const [errormobileNumber, seterrormobileNumber] = useState("");
@@ -74,14 +74,17 @@ const OtherDetalisForm = (props) => {
     ];
     const signedUrlObj = await getS3SignedUrl({
       token: token,
-      payload: { s3_path: pathArray, bucket_name: "payme-test-documents" },
+      payload: { s3_path: pathArray },
     });
     setsignedUrl(signedUrlObj.data.data);
     console.log(343434, signedUrlObj.data.data);
   }
 
 
- 
+  const handleAggrementUpload = (event) => {
+    seterroruploadRentAgreement("");
+    setuploadRentAgreement(event.target.files[0]);
+  };
 
   async function updateDocStatus(data) {
     return await api.post(
@@ -92,11 +95,13 @@ const OtherDetalisForm = (props) => {
   }
 
   useEffect(() => {
-
+   
     if(!token )
     {props.history.push("/")}
-    props.hitAllUserData({ token: token });
     handleName();
+    props.hitAllUserData({ token: token });
+   
+   
 
     props.user.userData
       ? setuserdocumentsmodel(props.user.userData.userdocumentsmodel)
@@ -172,10 +177,17 @@ const OtherDetalisForm = (props) => {
       });
     // })
   }, []);
+  
+  useEffect(() => {
 
-  const handleName = () => {
-    setName(props.user?.userData?.basic_info[0]?.first_name);
-    setLastName(props.user?.userData?.basic_info[0]?.last_name);
+    handleName();
+   
+  }, [props]);
+console.log("namenmane",props.user.userData?.customusermodel.first_name,props.user.userData?.customusermodel.last_name)
+  function handleName  ()  {
+    console.log("setName")
+    setName(props.user.userData?.customusermodel.first_name);
+    setLastName(props.user.userData?.customusermodel.last_name);
   };
 
   const handleScreen2 = () => {
@@ -468,8 +480,15 @@ const OtherDetalisForm = (props) => {
                                       type="file"
                                       class="custom-file-input"
                                       id="PAN"
+                                      onChange={handleAggrementUpload}
                                       hidden
                                     />
+                                    <br/>
+
+                                    {uploadRentAgreement.name? (<span>
+                                        {uploadRentAgreement.name}
+                                      </span>)
+                                     : null}
                                     {erroruploadRentAgreement ? (
                                       <span style={{ color: "red" }}>
                                         {erroruploadRentAgreement}
@@ -549,7 +568,7 @@ const OtherDetalisForm = (props) => {
                                 </div>
                                 <div class="form-group ms-input-group">
                                   <label className="form-label">
-                                    Your Mobile Number
+                                    Landlord's Mobile Number
                                   </label>
 
                                   <div

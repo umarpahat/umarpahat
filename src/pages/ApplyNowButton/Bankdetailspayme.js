@@ -52,13 +52,12 @@ const Bankdetailspayme = (props) => {
     var executed = false;
     return function () {
       if (!executed) {
-        executed = true;
+        executed = true; 
         props.hitAllUserData({ token: token });
       }
     };
   })();
-  
-  
+  console.log("props user if", props);
 
   async function getSignedUrl() {
     const pathArray = [
@@ -68,10 +67,11 @@ const Bankdetailspayme = (props) => {
     ];
     const signedUrlObj = await getS3SignedUrl({
       token: token,
-      payload: { s3_path: pathArray, bucket_name: "payme-test-documents" },
+      payload: { s3_path: pathArray },
     });
+    console.log("haaaaaaaaaaaa", signedUrlObj);
     setsignedUrl(signedUrlObj.data.data);
-    // console.log(343434, signedUrlObj.data.data);
+    console.log("343434", signedUrlObj.data.data);
   }
 
   async function updateDocStatus(data) {
@@ -100,13 +100,18 @@ const Bankdetailspayme = (props) => {
   };
 
   useEffect(() => {
+    getSignedUrl();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props]);
+
+  useEffect(() => {
+    getSignedUrl();
     if (!token) {
       props.history.push({ pathname: "/" });
       return;
     }
     something();
-   
-    getSignedUrl();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -159,13 +164,9 @@ const Bankdetailspayme = (props) => {
     updateBankDetails();
     Promise.all([...promiseTest, ...updatedocStatus])
       .then((response) => {
-      
-       
-        console.log("bank response",response)
-          
-            props.history.push({ pathname: "/step-manual" });
-        
-      
+        console.log("bank response", response);
+
+        props.history.push({ pathname: "/step-manual" });
       })
       .catch((error) => {
         setloader(false);

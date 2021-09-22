@@ -48,6 +48,12 @@ const SelfEmployed = (props) => {
     };
 })();
 
+useEffect(() => {
+
+   getSignedUrl();
+  
+ }, [props]);
+
   useEffect(() => {
    something();
     if (!token) {
