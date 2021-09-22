@@ -187,7 +187,7 @@ const Getquikloneapply = (props) => {
                     <div>
                       <div className='circle-half'>
                         <div className='full-circle'>
-                          <img src={letsStart} className='img-fluid max-width70' alt='Icon'/>
+                          <img src={letsStart} className='img-fluid' style={{maxWidth:150}}  alt='Icon'/>
                         </div>
                         <div className='full-text text-left'>
                           <h5>Tips</h5>

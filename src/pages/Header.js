@@ -91,6 +91,13 @@ const Header = (props) => {
                       <li>
                         <Link to="/about">About Us</Link>
                       </li>
+                      <li><Link to="/pay-rent-details">
+                        Pay Rent
+                      </Link>
+                      </li>
+                      <li><Link to="/apply-loan">
+                        Apply Loan
+                      </Link></li>
                       <li>
                         <Link to="/contact">Contact Us</Link>
                       </li>
