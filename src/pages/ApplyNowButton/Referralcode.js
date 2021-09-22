@@ -121,8 +121,7 @@ function Referralcode(props) {
                                   </div>
                                   <div className='full-text text-left'>
                                       <h5>Tips</h5>
-                                      <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
-                                          rerum nulla ea veniam facilis et. </p>
+                                      <p>Refer the PayMe India app with your friends & get cash rewards of INR 200 directly in your account </p>
                                   </div>
                               </div>
                               <div className='circle-half'>

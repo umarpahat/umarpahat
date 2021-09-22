@@ -66,7 +66,7 @@ const OtherDetalisForm = (props) => {
   const [screen2, setScreen2] = useState(false);
   const [screen3, setScreen3] = useState(false);
   const[correctPan,setcorrectPan]=useState("")
-  
+  console.log("endpoint",API_ENDPOINT_STAGING)
 
   async function getSignedUrl() {
     const pathArray = [
@@ -114,6 +114,8 @@ const OtherDetalisForm = (props) => {
     ) {
       setkyc_verified(true);
     }
+
+    console.log(`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`)
     let url = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`;
     console.log("eerererer", url);
     let config = {
@@ -137,6 +139,7 @@ const OtherDetalisForm = (props) => {
         console.log(userdocumentsmodel);
         console.log("eeeeee", err);
       });
+      console.log("cosole1",`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`,`${API_ENDPOINT_STAGING}`)
 
     let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`;
     // let config = {
@@ -499,6 +502,31 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                               )}
                             </div>
                           </div>
+                          <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                <div className="height100">
+                  <div>
+                    <div className="circle-half">
+                      <div className="full-circle">
+                        <img src={tip} alt="Icon" />
+                      </div>
+                      <div className="full-text text-left">
+                        <h5>Tips</h5>
+                        <p>
+                          In expedita et occaecati ullam a cumque maiores
+                          perspiciatis. Non labore exercitationem rerum nulla ea
+                          veniam facilis et.{" "}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="circle-half">
+                      <p className="p-a-10">
+                        In expedita et occaecati ullam a cumque maiores
+                        perspiciatis.{" "}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
                           <button
                             onClick={handleScreen2}
@@ -706,6 +734,32 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                 </div>
                               </div>
                             </div>
+                            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                <div className="height100">
+                  <div>
+                    <div className="circle-half">
+                      <div className="full-circle">
+                        <img src={tip} alt="Icon" />
+                      </div>
+                      <div className="full-text text-left">
+                        <h5>Tips</h5>
+                        <p>
+                          In expedita et occaecati ullam a cumque maiores
+                          perspiciatis. Non labore exercitationem rerum nulla ea
+                          veniam facilis et.{" "}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="circle-half">
+                      <p className="p-a-10">
+                        In expedita et occaecati ullam a cumque maiores
+                        perspiciatis.{" "}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
                             <button
                               onClick={handleScreen3}
                               className="getstartbtn "
