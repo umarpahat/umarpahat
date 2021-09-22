@@ -162,18 +162,15 @@ const HomePage = (props) => {
         let pfee = getProcessFees(amount)
 
         console.log(roi, amount, time)
-        const result = Math.round(  amount * ((roi * (1 + roi) ** time) / ((1 + roi) ** time - 1)));
-            
-        $('#interest').text(36)
+        const result =
+            Math.round(((amount * (((0.03) * ((1.03) ** time)) / (((1.03) ** time) - 1))) * time) - amount);
+        $('#interest').text(result)
         $('#interestId').text(result)
         $('#roi').text(roi)
         $('#pfee').text(pfee)
         $('#amountInput').val(pfee)
-        let repay = time*result;
+        let repay = result + amount + pfee;
         $('#repayment').text(repay);
-        $('#roi2').text(36);
-
-       
         return result;
 
     }
@@ -239,7 +236,7 @@ const HomePage = (props) => {
                                                     />
                                                 </div>
                                             </div>
-                                            <div className='relative'>
+                                            <div className='relative' style={{display:'none'}}>
                                                 <span className='rupeesIcon'>₹</span>
                                                 <input className='down-payment' type="number" value={amount} onChange={(e)=>{
                                                     setAmount(e.target.value);
