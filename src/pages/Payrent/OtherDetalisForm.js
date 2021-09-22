@@ -109,7 +109,7 @@ const OtherDetalisForm = (props) => {
     ) {
       setkyc_verified(true);
     }
-    let url = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`;
+   
     console.log("eerererer", url);
     let config = {
       headers: {
@@ -120,7 +120,7 @@ const OtherDetalisForm = (props) => {
     console.log("tokennn",token)
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get(url, config)
+      .get(`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`, config)
       .then((response) => {
         console.log("response1 hi hi hi",response)
         setserviceCharge(response.data.service_charge);
@@ -133,7 +133,7 @@ const OtherDetalisForm = (props) => {
         console.log("eeeeee", err);
       });
 
-    let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`;
+    // let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`;
     // let config = {
     //   headers: {
     //     Authorization: "Token " + token,
@@ -142,7 +142,7 @@ const OtherDetalisForm = (props) => {
     // }
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get(url2, config)
+      .get(`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`, config)
       .then((response) => {
         console.log("response1",response)
         setjwtToken(response.data.token);
@@ -151,7 +151,7 @@ const OtherDetalisForm = (props) => {
         console.log(34343434, err);
       });
 
-    let url3 = `${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`;
+    // let url3 = `${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`;
     let config3 = {
       headers: {
         Authorization: "Token " + token,
@@ -159,7 +159,7 @@ const OtherDetalisForm = (props) => {
     };
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get(url3, config3)
+      .get(`${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`, config3)
       .then((res) => {
         console.log("response hisotry",res)
         console.log("history man", res.data.results);
