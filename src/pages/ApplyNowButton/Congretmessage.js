@@ -55,12 +55,17 @@ const Congretmessage = (props) => {
     (kycstatus === "VERIFIED") &&
     (bankstatus === "VERIFIED") &&
     (professionalStatus === "VERIFIED" )? setGreet(true) :null;
+
+    (kycstatus === "NOT_VALID" || kycstatus === "NOT_SUBMITTED") &&
+    (bankstatus === "NOT_VALID" || bankstatus === "NOT_SUBMITTED") &&
+    (professionalStatus === "NOT_VALID" || professionalStatus === "NOT_SUBMITTED")? props.history.push("/step-manual"):null;
+    
     
   return (
     <>
       <Header {...props} />
       <div className='content darkBg'>
-        {greet ? (
+        {!greet ? (
       <Container >
           <div className="row">
             <div className="col-lg-2 col-md-2 col-sm-12 text-center">

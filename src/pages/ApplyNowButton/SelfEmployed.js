@@ -111,7 +111,7 @@ const SelfEmployed = (props) => {
       .then((response) => {
         setloader(false);
         console.log("xvxvxvxvx", response);
-        props.hitAllUserData({ token: token });
+      
         props.history.push({ pathname: "/congratulations" });
       })
       .catch((error) => {

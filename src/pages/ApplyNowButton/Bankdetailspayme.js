@@ -4,7 +4,10 @@ import { Container } from "react-bootstrap";
 import backicon from "../../component/img/backicon.png";
 
 import Pdficon from "../../component/img/Pdficon.png";
-import { hitAllUserData,hitAppUseCase } from "../../store/modules/userDetails/actions";
+import {
+  hitAllUserData,
+  hitAppUseCase,
+} from "../../store/modules/userDetails/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Cancelicon from "../../component/img/Cancelicon.png";
@@ -24,10 +27,9 @@ import tip from "../../images/animated/kyc-option.gif";
 const cookies = new Cookies();
 
 const Bankdetailspayme = (props) => {
-
   const token = cookies.get("token");
   const userCase = cookies.get("userCase");
- 
+
   const [actNumber, setactNumber] = useState("");
   const [ConfrmActNumber, setConfrmActNumber] = useState("");
   const [bankName, setbankName] = useState("");
@@ -46,16 +48,17 @@ const Bankdetailspayme = (props) => {
   const [ifscData, setIfscData] = useState([]);
   const [errbackend, seterrBackend] = useState("");
 
-
-  var something = (function() {
+  var something = (function () {
     var executed = false;
-    return function() {
-        if (!executed) {
-            executed = true;
-            props.hitAllUserData({ token: token });
-        }
+    return function () {
+      if (!executed) {
+        executed = true;
+        props.hitAllUserData({ token: token });
+      }
     };
-})();
+  })();
+  
+  
 
   async function getSignedUrl() {
     const pathArray = [
@@ -97,15 +100,15 @@ const Bankdetailspayme = (props) => {
   };
 
   useEffect(() => {
-    
     if (!token) {
       props.history.push({ pathname: "/" });
       return;
     }
     something();
+   
     getSignedUrl();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props]);
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -156,21 +159,13 @@ const Bankdetailspayme = (props) => {
     updateBankDetails();
     Promise.all([...promiseTest, ...updatedocStatus])
       .then((response) => {
-        setloader(false);
-        //console.log("pramodsjkslks",response)
-        if (response.status === 200) {
-          if (
-            props.user.professionaldetails?.verified ===
-              "PENDING_VERIFICATION" ||
-            props.user?.other_documents[0]?.doc_type === "ITR" ||
-            props.user.professionaldetails?.verified === "VERIFIED"
-          ) {
-            console.log("bnnnnnnnnnnnnnnnnnnnk");
-            props.history.push({ pathname: "/pending-approval" });
-          } else {
+      
+       
+        console.log("bank response",response)
+          
             props.history.push({ pathname: "/step-manual" });
-          }
-        }
+        
+      
       })
       .catch((error) => {
         setloader(false);
@@ -180,7 +175,7 @@ const Bankdetailspayme = (props) => {
         console.log(err, "hhhhhhhhhherror");
       });
   };
-console.log(errbackend)
+  console.log(errbackend);
   function handleRemoveBankObj(id) {
     const newList = bankStatementObj.filter((item, index) => index !== id);
     setbankStatementObj(newList);
@@ -189,7 +184,7 @@ console.log(errbackend)
   const content = bankStatementObj.map((value, index) => (
     <div className="d-flex pt-4" key={index.toString()}>
       <div>
-        <img src={Pdficon} alt="pdf-icon"  />
+        <img src={Pdficon} alt="pdf-icon" />
       </div>
       <div className="ml-3 w-100">
         <div className="d-flex justify-content-between">
@@ -277,204 +272,214 @@ console.log(errbackend)
               <Loader color={"#33658a"} />{" "}
             </div>
           ) : (
-                <div className="row">
-                  <div className="col-lg-2 col-md-2 col-sm-12 text-center">
-                    <br />
-                    <a
-                        className="back-arrow"
-                        onClick={() => {
-                          props.history.goBack();
-                        }}
-                    >
-                      Back
-                    </a>
-                  </div>
-                  <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-              <form onSubmit={handleSubmit}>
-                <div className="home-contact-form mt-4">
-                  <h4 className="form-heading text-center">Bank Details</h4>
-                  {errbackend ? (
-                    <span style={{ color: "red" }}>{errbackend}</span>
-                  ) : null}
-                  <div className="form-block">
-                    <div className="form-group ms-input-group">
-                      <label className="form-label">Account Number</label>
-                      <input
-                        type="number"
-                        className="form-input"
-                        placeholder="Enter 16 Digit A/C Number"
-                        value={actNumber}
-                        onChange={(event) => {
-                          if (event.target.value.match(/^\d{9,18}$/)) {
-                            setValidAccount("");
-                          } else {
-                            setValidAccount("Enter a valid Account Number");
-                          }
-
-                          seterrorAct("");
-                          setactNumber(event.target.value.slice(0, 22));
-                        }}
-                      />
-                      {validAccount ? (
-                        <span style={{ color: "red" }}>{validAccount}</span>
-                      ) : null}
-                      {errorAct ? (
-                        <span style={{ color: "red" }}>{errorAct}</span>
-                      ) : null}
-                    </div>
-                    <div className="form-group ms-input-group">
-                      <label className="form-label">
-                        Confirm Account Number
-                      </label>
-                      <input
-                        type="number"
-                        className="form-input"
-                        placeholder="Enter 16 Digit A/C Number"
-                        value={ConfrmActNumber}
-                        onChange={(event) => {
-                          seterrorConfAct("");
-                          setConfrmActNumber(event.target.value.slice(0, 22));
-                        }}
-                      />
-                      {errorConfAct ? (
-                        <span style={{ color: "red" }}>{errorConfAct}</span>
-                      ) : null}
-                    </div>
-                    <div className="form-group ms-input-group">
-                      <label className="form-label">Bank IFSC Code </label>
-
-                      <input
-                        type="text"
-                        className="form-input"
-                        placeholder="Enter IFSC Code Here (E.G. KKBK0000430)"
-                        value={ifscdetail}
-                        onChange={handleifscDetail}
-                        maxLength={11}
-                      />
-                      {validIfscCode ? (
-                        <span style={{ color: "red" }}>{validIfscCode}</span>
-                      ) : null}
-                      <div className="select_css" style={{ display: "none" }}>
-                        <select onChange={handleSelect} multiple>
-                          {ifscData
-                            ? ifscData.map((ifsc) => (
-                                <option>{ifsc.ifsc}</option>
-                              ))
-                            : null}
-                        </select>
-                      </div>
-
-                      {ifscError ? (
-                        <span style={{ color: "red" }}>{ifscError}</span>
-                      ) : null}
-                    </div>
-                    <div className="row">
-                      <div className="form-group ms-input-group col-6">
-                        <label className="form-label">Bank Branch</label>
-                        <input
-                          type="text"
-                          className="form-input"
-                          placeholder="Delhi"
-                          value={branchName}
-                          // onChange={(e)=>{
-                          //   setbranchName(e.target.value)
-                          // }}
-                          readOnly
-                        />
-                      </div>
-                      <div className="form-group ms-input-group col-6">
-                        <label className="form-label">Bank Name</label>
-                        <input
-                          type="text"
-                          className="form-input"
-                          placeholder="Kotak Mahindra Bank"
-                          value={bankName}
-                          readOnly
-
-                          //  onChange={(e)=>{
-                          //   setbankName(e.target.value)
-                          // }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <label className="form-label">
-                      Bank Statement (Last 3 Months)
-                    </label>
-                    <div className="file-uploading-block">
-                      <DragbleImg />
-                      <span className="">or </span>
-
-                      <a
-                        className="upload-btn-text"
-                        href="javascript:document.querySelector('input#bankupload').click()"
-                      >
-                        Upload
-                      </a>
-                      <input
-                        type="file"
-                        accept="application/pdf"
-                        className="custom-file-input"
-                        id="bankupload"
-                        hidden
-                        onChange={handleBankUpload}
-                      />
-                    </div>
-                    {errorBnakStatement ? (
-                      <span style={{ color: "red" }}>{errorBnakStatement}</span>
+            <div className="row">
+              <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                <br />
+                <a
+                  className="back-arrow"
+                  onClick={() => {
+                    props.history.goBack();
+                  }}
+                >
+                  Back
+                </a>
+              </div>
+              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                <form onSubmit={handleSubmit}>
+                  <div className="home-contact-form mt-4">
+                    <h4 className="form-heading text-center">Bank Details</h4>
+                    {errbackend ? (
+                      <span style={{ color: "red" }}>{errbackend}</span>
                     ) : null}
-                    {content}
-                    <div className="form-group ms-input-group">
-                      <label className="form-label pb-2">
-                        Bank Statement Password (If Any)
-                      </label>
-                      <input
-                        type="text"
-                        className="form-input"
-                        placeholder="Enter Statement PDF Password"
-                        value={bankStatementPassword}
-                        onChange={(event) => {
-                          setbankStatementPassword(event.target.value);
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <input
-                    type="submit"
-                    style={{ color: "white" }}
-                    className="getstartbtn "
-                    value="Save and  Continue"
-                  />
-                </div>
-              </form>
-                  </div>
-                  <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-                    <div className="height100">
-                      <div>
-                        <div className="circle-half">
-                          <div className="full-circle">
-                            <img src={tip} className="img-fluid" style={{maxWidth:100}} alt="Tips" />
-                          </div>
-                          <div className="full-text text-left">
-                            <h5>Tips</h5>
-                            <p>
-                              In expedita et occaecati ullam a cumque maiores
-                              perspiciatis. Non labore exercitationem rerum
-                              nulla ea veniam facilis et.{" "}
-                            </p>
-                          </div>
+                    <div className="form-block">
+                      <div className="form-group ms-input-group">
+                        <label className="form-label">Account Number</label>
+                        <input
+                          type="number"
+                          className="form-input"
+                          placeholder="Enter 16 Digit A/C Number"
+                          value={actNumber}
+                          onChange={(event) => {
+                            if (event.target.value.match(/^\d{9,18}$/)) {
+                              setValidAccount("");
+                            } else {
+                              setValidAccount("Enter a valid Account Number");
+                            }
+
+                            seterrorAct("");
+                            setactNumber(event.target.value.slice(0, 22));
+                          }}
+                        />
+                        {validAccount ? (
+                          <span style={{ color: "red" }}>{validAccount}</span>
+                        ) : null}
+                        {errorAct ? (
+                          <span style={{ color: "red" }}>{errorAct}</span>
+                        ) : null}
+                      </div>
+                      <div className="form-group ms-input-group">
+                        <label className="form-label">
+                          Confirm Account Number
+                        </label>
+                        <input
+                          type="number"
+                          className="form-input"
+                          placeholder="Enter 16 Digit A/C Number"
+                          value={ConfrmActNumber}
+                          onChange={(event) => {
+                            seterrorConfAct("");
+                            setConfrmActNumber(event.target.value.slice(0, 22));
+                          }}
+                        />
+                        {errorConfAct ? (
+                          <span style={{ color: "red" }}>{errorConfAct}</span>
+                        ) : null}
+                      </div>
+                      <div className="form-group ms-input-group">
+                        <label className="form-label">Bank IFSC Code </label>
+
+                        <input
+                          type="text"
+                          className="form-input"
+                          placeholder="Enter IFSC Code Here (E.G. KKBK0000430)"
+                          value={ifscdetail}
+                          onChange={handleifscDetail}
+                          maxLength={11}
+                        />
+                        {validIfscCode ? (
+                          <span style={{ color: "red" }}>{validIfscCode}</span>
+                        ) : null}
+                        <div className="select_css" style={{ display: "none" }}>
+                          <select onChange={handleSelect} multiple>
+                            {ifscData
+                              ? ifscData.map((ifsc) => (
+                                  <option>{ifsc.ifsc}</option>
+                                ))
+                              : null}
+                          </select>
                         </div>
-                        <div className="circle-half">
-                          <p className="p-a-10">
-                            In expedita et occaecati ullam a cumque maiores
-                            perspiciatis.{" "}
-                          </p>
+
+                        {ifscError ? (
+                          <span style={{ color: "red" }}>{ifscError}</span>
+                        ) : null}
+                      </div>
+                      <div className="row">
+                        <div className="form-group ms-input-group col-6">
+                          <label className="form-label">Bank Branch</label>
+                          <input
+                            type="text"
+                            className="form-input"
+                            placeholder="Delhi"
+                            value={branchName}
+                            // onChange={(e)=>{
+                            //   setbranchName(e.target.value)
+                            // }}
+                            readOnly
+                          />
+                        </div>
+                        <div className="form-group ms-input-group col-6">
+                          <label className="form-label">Bank Name</label>
+                          <input
+                            type="text"
+                            className="form-input"
+                            placeholder="Kotak Mahindra Bank"
+                            value={bankName}
+                            readOnly
+
+                            //  onChange={(e)=>{
+                            //   setbankName(e.target.value)
+                            // }}
+                          />
                         </div>
                       </div>
                     </div>
+                    <div>
+                      <label className="form-label">
+                        Bank Statement (Last 3 Months)
+                      </label>
+                      <div className="file-uploading-block">
+                        <DragbleImg />
+                        <span className="">or </span>
+
+                        <a
+                          className="upload-btn-text"
+                          href="javascript:document.querySelector('input#bankupload').click()"
+                        >
+                          Upload
+                        </a>
+                        <input
+                          type="file"
+                          accept="application/pdf"
+                          className="custom-file-input"
+                          id="bankupload"
+                          hidden
+                          onChange={handleBankUpload}
+                        />
+                      </div>
+                      {errorBnakStatement ? (
+                        <span style={{ color: "red" }}>
+                          {errorBnakStatement}
+                        </span>
+                      ) : null}
+                      {content}
+                      <div className="form-group ms-input-group">
+                        <label className="form-label pb-2">
+                          Bank Statement Password (If Any)
+                        </label>
+                        <input
+                          type="text"
+                          className="form-input"
+                          placeholder="Enter Statement PDF Password"
+                          value={bankStatementPassword}
+                          onChange={(event) => {
+                            setbankStatementPassword(event.target.value);
+                          }}
+                        />
+                      </div>
+                    </div>
+                    <input
+                      type="submit"
+                      style={{ color: "white" }}
+                      className="getstartbtn "
+                      value="Save and  Continue"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                <div className="height100">
+                  <div>
+                    <div className="circle-half">
+                      <div className="full-circle">
+                        <img
+                          src={tip}
+                          className="img-fluid"
+                          style={{ maxWidth: 100 }}
+                          alt="Tips"
+                        />
+                      </div>
+                      <div className="full-text text-left">
+                        <h5>Tips</h5>
+                        <p>
+                          Kindly provide us with your primary bank account
+                          details to facilitate the disbursement.{" "}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="circle-half">
+                      <p className="p-a-10">
+                        Kindly share your latest 3 months bank statement .{" "}
+                      </p>
+                    </div>
+                    <div className="circle-half">
+                      <p className="p-a-10">
+                        Upload your bank statement in PDF form. .{" "}
+                      </p>
+                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
           )}
         </Container>
       </div>
@@ -496,7 +501,7 @@ const dispatchToProps = (dispatch) => {
     {
       // hitLogin,
       hitAllUserData,
-      hitAppUseCase
+      hitAppUseCase,
       // hitForgotMpin,
     },
     dispatch
