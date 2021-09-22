@@ -142,9 +142,22 @@ const HomePage = (props) => {
         }
     }
 
+    const handleSliderChange = (event, newValue) => {
+       setAmount(newValue);
+      };
+    
+      const handleInputChange = (event) => {
+          if(event.target.value>200000){
+              setAmount(200000)
+          }
+          else{
+       setAmount(event.target.value === '' ? '' : Number(event.target.value));
+          }
+      };
+
 
     function valuetext(value1) {
-        setAmount(value1);
+        
         $("#total-amount1").text(amount);
         $("#total-amount").text(amount);
         
@@ -162,15 +175,18 @@ const HomePage = (props) => {
         let pfee = getProcessFees(amount)
 
         console.log(roi, amount, time)
-        const result =
-            Math.round(((amount * (((0.03) * ((1.03) ** time)) / (((1.03) ** time) - 1))) * time) - amount);
-        $('#interest').text(result)
+        const result = Math.round(  amount * ((roi * (1 + roi) ** time) / ((1 + roi) ** time - 1)));
+            
+        $('#interest').text(36)
         $('#interestId').text(result)
         $('#roi').text(roi)
         $('#pfee').text(pfee)
         $('#amountInput').val(pfee)
-        let repay = result + amount + pfee;
+        let repay = time*result;
         $('#repayment').text(repay);
+        $('#roi2').text(36);
+
+       
         return result;
 
     }
@@ -224,24 +240,21 @@ const HomePage = (props) => {
                                             <div className="relative">
                                                 <div className={classes.root}>
                                                     <Slider
-                                                        defaultValue={0}
+                                                      
                                                         getAriaValueText={valuetext}
                                                         aria-labelledby="discrete-slider-always"
                                                         step={500}
-                                                        min={500}
                                                         max={200000} 
-                                                        // onChange={(value)=>setAmount(value)}
+                                                        value={amount}
+                                                        onChange={handleSliderChange}
                                                         valueLabelDisplay="on"
 
                                                     />
                                                 </div>
                                             </div>
-                                            <div className='relative' style={{display:'none'}}>
+                                            <div className='relative' >
                                                 <span className='rupeesIcon'>₹</span>
-                                                <input className='down-payment' type="number" value={amount} onChange={(e)=>{
-                                                    setAmount(e.target.value);
-                                                    
-                                                }} disabled/>
+                                                <input className='down-payment' type="number" value={amount} onChange={handleInputChange} />
                                             </div>
 
                                         </div>
