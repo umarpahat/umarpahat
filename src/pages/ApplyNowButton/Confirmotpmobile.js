@@ -185,7 +185,7 @@ const Confirmotpmobile = (props) => {
                       </div>
                       <div className='full-text text-left'>
                         <h5>Tips</h5>
-                        <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem rerum nulla ea veniam facilis et. </p>
+                        <p>Make sure the mobile number entered is reachable and in the network area to receive the OTP code.</p>
                       </div>
                     </div>
                   </div>
