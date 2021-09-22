@@ -643,7 +643,6 @@ button:focus {
 }
 .page-header-section {
   background-color: #e9f3fe;
-  background-image: url("./image/Aboutusimg.png");
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;

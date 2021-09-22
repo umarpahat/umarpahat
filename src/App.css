@@ -2969,7 +2969,6 @@ a.button-small:hover {
 
 .banner {
   padding: 20px 0 30px;
-  background: #829aae url('../images/banner-img.png') no-repeat center 0;
   box-shadow: rgba(0, 0, 0, .1) 0 8px 5px -5px
 }
 
@@ -3211,10 +3210,6 @@ a.button-small:hover {
   box-shadow: rgba(17, 17, 26, .1) 0 1px 0;
   color: #f8bb32;
   text-decoration: none
-}
-
-.black-bg {
-  background: #040d1b url('../images/black-bg.png') repeat 0 0;
 }
 
 .white-color {
