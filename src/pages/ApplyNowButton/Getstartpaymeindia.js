@@ -149,12 +149,14 @@ console.log(error)
                     </div>
                     <div className='full-text text-left'>
                       <h5>Tips</h5>
-                      <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
-                        rerum nulla ea veniam facilis et. </p>
+                      <p>Get regular updates regarding your loan application and new offers on your G-mail ID.</p>
                     </div>
                   </div>
                   <div className='circle-half'>
-                    <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
+                    <p className='p-a-10'>Share your primary G-mail ID to get regular updates.</p>
+                  </div>
+                  <div className='circle-half'>
+                    <p className='p-a-10'>Get updated regarding the new offers and services being provided by PayMe.</p>
                   </div>
                 </div>
               </div>

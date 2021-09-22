@@ -217,18 +217,14 @@ const StepManual = (props) => {
                           </div>
                           <div className="full-text text-left">
                             <h5>Tips</h5>
-                            <p>
-                              In expedita et occaecati ullam a cumque maiores
-                              perspiciatis. Non labore exercitationem rerum
-                              nulla ea veniam facilis et.{" "}
-                            </p>
+                            <p>Complete the hassle-free paperless process to fulfill the mandatory KYC requirements.</p>
                           </div>
                         </div>
                         <div className="circle-half">
-                          <p className="p-a-10">
-                            In expedita et occaecati ullam a cumque maiores
-                            perspiciatis.{" "}
-                          </p>
+                          <p className="p-a-10">EKYC helps in processing the loan application instantly.</p>
+                        </div>
+                        <div className="circle-half">
+                          <p className="p-a-10">Make sure that the image uploaded is not blurred. </p>
                         </div>
                       </div>
                     </div>

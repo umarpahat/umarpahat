@@ -191,8 +191,7 @@ const Getquikloneapply = (props) => {
                         </div>
                         <div className='full-text text-left'>
                           <h5>Tips</h5>
-                          <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
-                            rerum nulla ea veniam facilis et. </p>
+                          <p>With the help of the registered mobile number provided, we will reach out to you in a quicker manner.</p>
                         </div>
                       </div>
                     </div>

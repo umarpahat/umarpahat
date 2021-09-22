@@ -460,21 +460,14 @@ const Bankdetailspayme = (props) => {
                       </div>
                       <div className="full-text text-left">
                         <h5>Tips</h5>
-                        <p>
-                          Kindly provide us with your primary bank account
-                          details to facilitate the disbursement.{" "}
-                        </p>
+                        <p>Kindly provide us with your primary bank account details to facilitate the disbursement.</p>
                       </div>
                     </div>
                     <div className="circle-half">
-                      <p className="p-a-10">
-                        Kindly share your latest 3 months bank statement .{" "}
-                      </p>
+                      <p className="p-a-10">Kindly share your latest 3 months bank statement.</p>
                     </div>
                     <div className="circle-half">
-                      <p className="p-a-10">
-                        Upload your bank statement in PDF form. .{" "}
-                      </p>
+                      <p className="p-a-10">Upload your bank statement in PDF form.</p>
                     </div>
                   </div>
                 </div>
