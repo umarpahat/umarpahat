@@ -85,59 +85,55 @@ const TransactionHistory = (props) => {
                 Back
               </a>
             </div>
-            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-              <div className="form-container">
+            <div className="col-lg-5 col-md-5 col-sm-12">
+              <div className="home-contact-form">
                 <div className="ms-Tabs">
                   <div
-                    class="btn-group"
+                    className="btn-group"
                     role="group"
                     aria-label="Basic example"
                   >
                     <Link
                       to="/payrent-other-details"
-                      class="btn  ms-group-btn "
+                      className="btn  ms-group-btn "
                     >
                       New Transaction
                     </Link>
                     <Link
                       to="/payrent-transaction-history"
-                      class="btn  ms-group-btn active-btn "
+                      className="btn  ms-group-btn active-btn "
                     >
                       Transaction History
                     </Link>
                   </div>
                 </div>
                 <form>
-                  <div className="home-contact-form">
-                    <h4 className="form-heading ">Pending Transaction</h4>
+
                     <div className="form-block">
+                      <h4 className="h4 ">Pending Transaction</h4>
                       {PensindTransTrack.length === 0 ? (
                         <span>No Pending Transaction</span>
                       ) : null}
                       {PensindTransTrack}
                     </div>
-                  </div>
-                  <div className="home-contact-form mt-4">
-                    <h4 className="form-heading ">Completed Transaction</h4>
+
                     <div className="form-block">
+                      <h4 className="h4 ">Completed Transaction</h4>
                       {SuccessTransTrack.length === 0 ? (
                         <span>No Success Transaction</span>
                       ) : null}
                       {SuccessTransTrack}
                     </div>
-                  </div>
-                  <div className="home-contact-form mt-4">
-                    <h4 className="form-heading ">Cancelled Transaction</h4>
                     <div className="form-block">
+                      <h4 className="h4 ">Cancelled Transaction</h4>
                       {failedTRanstrack.length === 0 ? (
                         <span>No Failed Transaction</span>
                       ) : null}
                       {failedTRanstrack}
                     </div>
-                  </div>
                 </form>
               </div>
-            </div>
+              </div>
             <div className="col-lg-5 col-md-5 col-sm-12 text-center">
               <div className="height100">
                 <div>
@@ -147,19 +143,10 @@ const TransactionHistory = (props) => {
                     </div>
                     <div className="full-text text-left">
                       <h5>Tips</h5>
-                      <p>
-                        In expedita et occaecati ullam a cumque maiores
-                        perspiciatis. Non labore exercitationem rerum nulla ea
-                        veniam facilis et.{" "}
-                      </p>
+                      <p>Kindly review the details precisely. Once the payment is done, you won't be able to make changes to the rent receipt.</p>
                     </div>
                   </div>
-                  <div className="circle-half">
-                    <p className="p-a-10">
-                      In expedita et occaecati ullam a cumque maiores
-                      perspiciatis.{" "}
-                    </p>
-                  </div>
+
                 </div>
               </div>
             </div>
