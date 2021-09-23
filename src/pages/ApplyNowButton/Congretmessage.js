@@ -68,11 +68,11 @@ const Congretmessage = (props) => {
         {!greet ? (
       <Container >
           <div className="row">
-            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+            <div className="col-lg-3 col-md-3 col-sm-12 text-center">
               <br/>
               <a className='back-arrow' href=''>Back</a>
             </div>
-            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+            <div className="col-lg-6 col-md-6 col-sm-12 text-center">
           <form>
             <div className="home-contact-form mt-4">
               <img src={successAnimation} className='img-fluid max-width70'  alt='Icon'/><br/><br/>
@@ -93,11 +93,11 @@ const Congretmessage = (props) => {
           </div>
       </Container>):(<Container >
           <div className="row">
-            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+            <div className="col-lg-3 col-md-3 col-sm-12 text-center">
               <br/>
               <a className='back-arrow' href=''>Back</a>
             </div>
-            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+            <div className="col-lg-6 col-md-6 col-sm-12 text-center">
           <form>
             <div className="home-contact-form mt-4">
               <img src={successAnimation} className='img-fluid max-width70'  alt='Icon'/>
