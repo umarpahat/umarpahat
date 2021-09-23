@@ -59,10 +59,10 @@ function LoginWithMobMpin(props) {
               props.user.userData.userdocumentsmodel.kyc_verified ===
                 "PENDING_VERIFICATION"
             ) {
-              props.history.push({ pathname: "/payrent-other-details" });
+              props.history.push({ pathname:"/payrent-other-details" });
             } else {
               console.log("1414141414", props);
-              props.history.push({ pathname: "/payrent-other-details" });
+              props.history.push({ pathname:"/payrent-other-details" });
             }
           } else {
             props.history.push({ pathname: "/" });

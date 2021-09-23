@@ -475,7 +475,7 @@ const Professionaldetailspayme = (props) => {
                     </div>
                     <div className='img-text'>
                       <h6>Upload Recent salary slip</h6>
-                      <p>Aperiam cumque in eos quibusdam.  500KB limit, jpg, png, pdf</p>
+                      <p>Kindly share your latest 3 months salary slip</p>
 
                       {uploadSalarySlip.name ? (
                           <span style={{ color: "black" }} className="">
@@ -484,7 +484,7 @@ const Professionaldetailspayme = (props) => {
                       ) : null}
                       <input
                           type="file"
-                          accept=".pdf"
+                          accept="*/"
                           className="custom-file-input"
                           id="uploadsalary"
                           onChange={handlesalaryUpload}
@@ -511,7 +511,7 @@ const Professionaldetailspayme = (props) => {
                     </div>
                     <div className='img-text'>
                       <h6>Upload Office ID card</h6>
-                      <p>Aperiam cumque in eos quibusdam.  500KB limit, jpg, png, pdf</p>
+                      <p>Kindly share your Office id or Visiting Card</p>
                       {uploadOfficeId.name ? (
                           <span style={{ color: "black" }} className="">
                           {uploadOfficeId.name}
@@ -624,14 +624,14 @@ const Professionaldetailspayme = (props) => {
                       </div>
                       <div className="full-text text-left" style={{width:'100%'}}>
                         <h5>Tips</h5>
-                        <p>Provide your professional details to help us in assigning a higher credit limit</p>
+                        <p style={{fontSize:"15px"}}>Provide your professional details to help us in assigning a higher credit limit</p>
                       </div>
                     </div>
                     <div className="circle-half">
-                      <p className="p-a-10">Kindly share the latest information.</p>
+                      <p className="p-a-10" style={{fontSize:"15px"}}>Kindly share the latest information.</p>
                     </div>
                     <div className="circle-half">
-                      <p className="p-a-10">The latest ITR will increase your chance of getting the limit approved.</p>
+                      <p className="p-a-10" style={{fontSize:"15px"}}>The latest ITR will increase your chance of getting the limit approved.</p>
                     </div>
                   </div>
                 </div>

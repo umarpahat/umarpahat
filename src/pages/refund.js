@@ -69,7 +69,7 @@ const Refund = (props) => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            
         </>
     )
 };

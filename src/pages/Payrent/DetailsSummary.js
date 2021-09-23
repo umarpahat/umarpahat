@@ -78,58 +78,41 @@ const DetailsSummary = (props) => {
                 Back
               </a>
             </div>
-            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-              <div className="form-container">
-                <div className="ms-Tabs">
-                  <h4 className="form-heading text-center">
-                    Summary Of All Details
-                  </h4>
-                </div>
+            <div className="col-lg-5 col-md-5 col-sm-12F">
                 <form onSubmit={handleSubmit}>
-                  <div className="home-contact-form p-3 px-5">
-                    <div className="form-block m-0">
-                      <div className="details-block">
-                        <h4>Rent Amount</h4>
-                        <p>₹{props.location.state.payer.amount}</p>
-                      </div>
-                      <div className="details-block">
-                        <h4>Service Charge (Inc. GST)</h4>
-                        <p>
-                          ₹
-                          {(props.location.state.payer.amount *
-                            props.location.state.serviceCharge) /
-                            100}
-                        </p>
-                      </div>
-                      <div className="details-block">
-                        <h4>Landlord's PAN Number</h4>
-                        <p>{props.location.state.payee.pan_number}</p>
-                      </div>
+                  <div className="home-contact-form">
+                    <div className="ms-Tabs">
+                      <h4 className="form-heading text-center">Pay rent</h4>
                     </div>
-                  </div>
-                  <div className="home-contact-form mt-4  p-3 px-5">
-                    <h4 className="form-heading">Landlord's Details</h4>
-                    <div className="form-block m-0">
-                      <div className="details-block">
-                        <h4>Landlord's Name (As Per Bank Account)</h4>
+                    <div className="details-block">
+                        <h4>Paying to</h4>
                         <p>{props.location.state.payee.bene_name}</p>
                       </div>
                       <div className="details-block">
                         <h4>Mobile Number</h4>
                         <p>{props.location.state.payer.phone_number}</p>
                       </div>
-                      <div className="details-block">
-                        <h4>
-                          Property Address (for which you are paying Rent)
-                        </h4>
-                        <p>{props.location.state.payer.address}</p>
-                      </div>
+                    <div className="details-block">
+                      <h4>Landlord's PAN Number</h4>
+                      <p>{props.location.state.payee.pan_number}</p>
                     </div>
-                  </div>
-                  <div className=" mt-4 home-contact-form p-3 px-5">
-                    <h4 className="form-heading">Landlord's Bank Details</h4>
-                    <div className="form-block">
-                      <div className="details-block">
+                    <hr/>
+                      <div className="details-block-tabualar">
+                        <h4>Rent Amount</h4>
+                        <h4>₹{props.location.state.payer.amount}</h4>
+                      </div>
+                      <div className="details-block-tabualar">
+                        <h4>Service Charge (Inc. GST)</h4>
+                        <h4>
+                          ₹
+                          {(props.location.state.payer.amount *
+                              props.location.state.serviceCharge) /
+                          100}
+                        </h4>
+                      </div>
+
+                    <hr/>
+                    <div className="details-block">
                         <h4>Bank IFSC Code</h4>
                         <p>{props.location.state.payee.ifsc_code}</p>
                       </div>
@@ -141,33 +124,25 @@ const DetailsSummary = (props) => {
                         <h4>Landlord's Account Number</h4>
                         <p>{props.location.state.payee.account_number}</p>
                       </div>
-                    </div>
+                      <hr/>
+                      <div className="details-block p-b-30">
+                        <h4>
+                          Paying For
+                        </h4>
+                        <p>{props.location.state.payer.address}</p>
+                      </div>
+                      <div className="">
+                        <input
+                            type="submit"
+                            value="Proceed To Payment"
+                            className="getstartbtn "
+                            style={{ marginTop: "15px" }}
+                        />
+                      </div>
+
                   </div>
-                  <div className="">
-                    <input
-                      type="submit"
-                      value="Proceed To Payment"
-                      className="getstartbtn "
-                      style={{ marginTop: "15px" }}
-                    />
-                  </div>
+
                 </form>
-                <div className="pb-5">
-                  {/* <div >
-          <Link
-            to="/payrent-other-details"
-
-          >
-             <button
-
-                      className="getstartbtn "
-                    >
-                    Back
-                    </button>
-          </Link>
-        </div> */}
-                </div>
-              </div>
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12 text-center">
               <div className="height100">
@@ -178,19 +153,10 @@ const DetailsSummary = (props) => {
                     </div>
                     <div className="full-text text-left">
                       <h5>Tips</h5>
-                      <p>
-                        In expedita et occaecati ullam a cumque maiores
-                        perspiciatis. Non labore exercitationem rerum nulla ea
-                        veniam facilis et.{" "}
-                      </p>
+                      <p>Kindly review the details precisely. Once the payment is done, you won't be able to make changes to the rent receipt.</p>
                     </div>
                   </div>
-                  <div className="circle-half">
-                    <p className="p-a-10">
-                      In expedita et occaecati ullam a cumque maiores
-                      perspiciatis.{" "}
-                    </p>
-                  </div>
+
                 </div>
               </div>
             </div>

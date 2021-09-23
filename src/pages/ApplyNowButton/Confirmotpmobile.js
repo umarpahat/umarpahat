@@ -117,7 +117,7 @@ const Confirmotpmobile = (props) => {
 
   return (
     <>
-      <div className='content darkBg'>
+      <div className='content darkBg' >
       {loader ? (
         <div className="loader">
           {" "}
