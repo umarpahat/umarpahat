@@ -10,6 +10,7 @@ import {
 import Loader from "../../component/Loader";
 import axios from "axios";
 import { API_ENDPOINT_STAGING,API_ENDPOINT } from "../../constant";
+import successAnimation from "../../images/animated/success-animation.gif";
 //import Header from "../../component/Header";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -861,15 +862,18 @@ const OtherDetalisForm = (props) => {
                       </div>
                     </form>
                   ) : (
+                    
                       <div className="row" style={{marginBottom:"10%"}} >
-                        <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                        <div className="col-lg-3 col-md-3 col-sm-12 text-center">
                           <br/>
                           <a className="back-arrow" href="">
                             Back
                           </a>
                         </div>
-                        <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                        <div className="col-lg-6 col-md-6 col-sm-12 text-center">
+             
                           <div className="home-contact-form">
+                          <img src={successAnimation} className='img-fluid max-width70'  alt='Icon'/><br/><br/>
                           <h4 className="form-heading text-center" style={{fontSize:"25px"}}>
                           Hi {name + " " + lastName} ,
                             </h4>
@@ -885,7 +889,7 @@ const OtherDetalisForm = (props) => {
                               style={{
                                 opacity: "0.59",
                                 right: "200px",
-                                fontFamily: "Montserrat",
+                               
                               }}
                           >
                             Kyc status:{" "}
@@ -896,7 +900,7 @@ const OtherDetalisForm = (props) => {
                                         color: "red",
                                         opacity: "0.59",
                                         right: "200px",
-                                        fontFamily: "Montserrat",
+                                       
                                       }}
                                   >
                             {kycStatus}
@@ -958,31 +962,7 @@ const OtherDetalisForm = (props) => {
                             ) : null}
                           </div>
                         </div>
-                        {/* <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-                          <div className="height100">
-                            <div>
-                              <div className="circle-half">
-                                <div className="full-circle">
-                                  <img src={tip} alt="Icon"/>
-                                </div>
-                                <div className="full-text text-left">
-                                  <h5>Tips</h5>
-                                  <p>
-                                    In expedita et occaecati ullam a cumque maiores
-                                    perspiciatis. Non labore exercitationem rerum nulla ea
-                                    veniam facilis et.{" "}
-                                  </p>
-                                </div>
-                              </div>
-                              <div className="circle-half">
-                                <p className="p-a-10">
-                                  In expedita et occaecati ullam a cumque maiores
-                                  perspiciatis.{" "}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div> */}
+                   
                       </div>
                   )}
           </Container>
