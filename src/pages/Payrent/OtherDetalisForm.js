@@ -9,7 +9,7 @@ import {
 } from "../../store/modules/userDetails/actions";
 import Loader from "../../component/Loader";
 import axios from "axios";
-import { API_ENDPOINT_STAGING } from "../../constant";
+import { API_ENDPOINT_STAGING,API_ENDPOINT } from "../../constant";
 //import Header from "../../component/Header";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -68,6 +68,32 @@ const OtherDetalisForm = (props) => {
   const [screen3, setScreen3] = useState(false);
   const[correctPan,setcorrectPan]=useState("")
   
+  const [kycStatus,setKycStatus]=useState("")
+  useEffect(() => {
+
+    if (token) {
+      let url = `${API_ENDPOINT}/api/get_document_status/`;
+      let config = {
+        headers: {
+          Authorization: "Token " + token,
+        },
+      };
+      axios
+        .get(url, config)
+        .then((response) => {
+        
+          setKycStatus(response.data.data[0].kyc_verified);
+          console.log("stepmanual", response.data.data[0]);
+        })
+        .catch((err) => {
+          if (err?.response?.status === 401) {
+            cookies.remove("token", { path: "/" });
+            props.history.push("/");
+          }
+          console.log(err);
+        });
+    }
+  }, []);
 
   async function getSignedUrl() {
     const pathArray = [
@@ -101,20 +127,14 @@ const OtherDetalisForm = (props) => {
     {props.history.push("/")}
     handleName();
     props.hitAllUserData({ token: token });
-   
+    getSignedUrl();
    
 
     props.user.userData
       ? setuserdocumentsmodel(props.user.userData.userdocumentsmodel)
       : null;
-    getSignedUrl();
-    if (
-      (props.user.userData &&
-        props.user.userData.props.user.userData?.userdocumentsmodel.kyc_verified === "VERIFIED") ||
-      props.user.userData?.userdocumentsmodel.kyc_verified === "VERIFIED"
-    ) {
-      setkyc_verified(true);
-    }
+   
+   
     let url = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`;
     console.log("eerererer", url);
     let config = {
@@ -123,8 +143,8 @@ const OtherDetalisForm = (props) => {
         "Content-Type": "application/json",
       },
     };
-    console.log("tokennn",token)
-    // return (dispatch) => new Promise(async (resolve, reject) => {
+   
+   
     axios
       .get(url, config)
       .then((response) => {
@@ -133,24 +153,17 @@ const OtherDetalisForm = (props) => {
       })
       .catch((err) => {
         if (err.response.status === 401) {
-          // cookies.remove("token", { path: "/" });
+           cookies.remove("token", { path: "/" });
         }
-        console.log(userdocumentsmodel);
+       
         console.log("eeeeee", err);
       });
 
     let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`;
-    // let config = {
-    //   headers: {
-    //     Authorization: "Token " + token,
-    //     'Content-Type': "application/json"
-    //   }
-    // }
-    // return (dispatch) => new Promise(async (resolve, reject) => {
+   
     axios
       .get(url2, config)
       .then((response) => {
-        console.log("response1",response)
         setjwtToken(response.data.token);
       })
       .catch((err) => {
@@ -163,20 +176,18 @@ const OtherDetalisForm = (props) => {
         Authorization: "Token " + token,
       },
     };
-    // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
       .get(url3, config3)
       .then((res) => {
         console.log("response hisotry",res)
         console.log("history man", res.data.results);
         settransactionHistory(res.data);
-        // setTransactionHistory(res.data)
-        // return resolve(res.data)
+        
       })
       .catch((err) => {
         console.log("history", err);
       });
-    // })
+    
   }, []);
   
   useEffect(() => {
@@ -184,7 +195,7 @@ const OtherDetalisForm = (props) => {
     handleName();
    
   }, [props]);
-console.log("namenmane",props.user.userData?.customusermodel.first_name,props.user.userData?.customusermodel.last_name)
+
   function handleName  ()  {
     console.log("setName")
     setName(props.user.userData?.customusermodel.first_name);
@@ -328,7 +339,7 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
     "name",
     name,
     kyc_verified,
-    props.user.userData?.userdocumentsmodel.kyc_verified
+    kycStatus
   );
 
   return (
@@ -344,32 +355,8 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
         ) : (
           // kyc_verified ?
           <Container>
-                <div className="form-container">
-                  <div className="ms-Tabs">
-                    <div
-                      className="btn-group"
-                      role="group"
-                      aria-label="Basic example"
-                    >
-                      <Link
-                        to="/payrent-other-details"
-                        className="btn  ms-group-btn active-btn"
-                      >
-                        New Transaction
-                      </Link>
-                      <Link
-                        to={{
-                          pathname: "/payrent-transaction-history",
-                          state: { transactionHistory: transactionHistory },
-                        }}
-                        className="btn  ms-group-btn "
-                      >
-                        Transaction History
-                      </Link>
-                    </div>
-                  </div>
-                  </div>
-                  {props.user.userData?.userdocumentsmodel.kyc_verified==="VERIFIED" ? (
+              
+                  {kycStatus==="VERIFIED" ? (
                     <form onSubmit={handleSubmit}>
                       {screen1 ? (
                           <div className="row">
@@ -377,7 +364,16 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                               <br/>
                               <a className="back-arrow" href="">
                                 Back
-                              </a>
+                              </a><br/>
+                              <Link
+                        to={{
+                          pathname: "/payrent-transaction-history",
+                          state: { transactionHistory: transactionHistory },
+                        }}
+                        className="small-green-btn"
+                      >
+                        Transaction History
+                      </Link><br/><br/>
                             </div>
                             <div className="col-lg-5 col-md-5 col-sm-12 text-center">
                               <div className="home-contact-form" style={{marginBottom: "10px"}}>
@@ -854,7 +850,7 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                       </div>
                                       <div className="full-text text-left">
                                         <h5>Tips</h5>
-                                        <p>Kindly review the details precisely. Once the payment is done, you won't be able to make changes to the rent receipt.</p>
+                                        <p>It is suggested to cross-check your landlord's account details before submitting and proceeding with payment.</p>
                                       </div>
                                     </div>
                                   </div>
@@ -865,7 +861,7 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                       </div>
                     </form>
                   ) : (
-                      <div className="row">
+                      <div className="row" style={{marginBottom:"10%"}} >
                         <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                           <br/>
                           <a className="back-arrow" href="">
@@ -874,12 +870,15 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                         </div>
                         <div className="col-lg-5 col-md-5 col-sm-12 text-center">
                           <div className="home-contact-form">
-                            <h4 className="form-heading text-center">
-                              Your KYC is not verified
+                          <h4 className="form-heading text-center" style={{fontSize:"25px"}}>
+                          Hi {name + " " + lastName} ,
                             </h4>
-                            <br></br>
-                            {props.user.userData?.userdocumentsmodel.kyc_verified === "NOT_SUBMITTED" ||
-                            props.user.userData?.userdocumentsmodel.kyc_verified === "NOT_VALID" ? (
+                            <h4 className="form-heading text-center" style={{fontSize:"25px"}}>
+                            Your KYC is not verified
+                            </h4>
+                           
+                            {kycStatus === "NOT_SUBMITTED" ||
+                            kycStatus === "NOT_VALID" ? (
                                 <div>
                           <span
                               className="reloadicon"
@@ -900,12 +899,12 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                         fontFamily: "Montserrat",
                                       }}
                                   >
-                            {props.user.userData?.userdocumentsmodel.kyc_verified}
+                            {kycStatus}
                           </span>
                                 </div>
                             ) : null}
 
-                            {props.user.userData?.userdocumentsmodel.kyc_verified ===
+                            {kycStatus ===
                             "PENDING_VERIFICATION" ? (
                                 <div>
                           <span
@@ -930,21 +929,21 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                         fontFamily: "Montserrat",
                                       }}
                                   >
-                            {props.user.userData?.userdocumentsmodel.kyc_verified}
+                            {kycStatus}
                           </span> </Link>
                                 </div>
                             ) : null}
 
-                            {props.user.userData?.userdocumentsmodel.kyc_verified ===
+                            {kycStatus ===
                             "PENDING_VERIFICATION" ? (
                                 <div>
                                   <br></br>
-                                  <p style={{fontFamily: "Montserrat"}}>
-                                    We are verifying your details.
-                                  </p>
+                                  <b style={{fontFamily: "Montserrat", fontSize:"18px" ,fontStyle:"bold"}}>
+                                    Congratulations for successfully submitting your documents . Kindly wait untill your documents are verified
+                                  </b>
                                 </div>
                             ) : null}
-                            {props.user.userData?.userdocumentsmodel.kyc_verified !==
+                            {kycStatus !==
                             "PENDING_VERIFICATION" ? (
                                 <input
                                     type="button"
@@ -959,7 +958,7 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                             ) : null}
                           </div>
                         </div>
-                        <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                        {/* <div className="col-lg-5 col-md-5 col-sm-12 text-center">
                           <div className="height100">
                             <div>
                               <div className="circle-half">
@@ -983,7 +982,7 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                   )}
           </Container>

@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import {hitAppUseCase} from "../store/modules/userDetails/actions";
 import {connect} from "react-redux";
 import "./ApplyNowButton/Applybtnallcomponent.css";
-import Footer from "./Footer";
 import Header from "./Header";
 import "../../src/home.css";
 import mediaCover from "../images/svg/media-cover.svg";
@@ -275,7 +274,7 @@ const MediaCoverage = (props) => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+          
         </>
     )
         ;

@@ -3,7 +3,6 @@ import { hitAppUseCase } from "../store/modules/userDetails/actions";
 import { connect } from "react-redux";
 import { Accordion, Card, Container } from "react-bootstrap";
 import "./ApplyNowButton/Applybtnallcomponent.css";
-import Footer from "./Footer";
 import Header from "./Header";
 import "../../src/home.css";
 
@@ -236,7 +235,7 @@ const Faq = (props) => {
           </div>
         </div>
       </div>
-      <Footer />
+   
     </>
   );
 };

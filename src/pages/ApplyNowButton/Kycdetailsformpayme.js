@@ -594,15 +594,12 @@ const Kycdetailsformpayme = (props) => {
                         className="full-text text-left"
                         style={{ width: "100%" }}
                       >
-                        <h5>Tips</h5>
-                        <p>
+                        <h4>Tips</h4>
+                        <p style={{fontSize:"15px"}}>
                           EKYC helps in processing the loan application
                           instantly.
                         </p>
-                        <p>
-                          Further suggestion: Share the video link of
-                          both EKYC and Manual KYC.
-                        </p>
+                       
                       </div>
                     </div>
                   </div>

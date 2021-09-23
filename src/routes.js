@@ -102,6 +102,7 @@ function Routes() {
        
         <Route component={Error} />
           </Switch>
+          <Footer/>
           </>
     )
 }

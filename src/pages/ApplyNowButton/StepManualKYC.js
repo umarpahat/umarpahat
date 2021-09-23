@@ -42,6 +42,7 @@ const StepManual = (props) => {
       axios
         .get(url, config)
         .then((response) => {
+          console.log("step",response.data.data[0])
           setDocumentstatus(response.data.data[0]);
           setProfessionalStatus(
             response.data.data[0].professional_details_verified
