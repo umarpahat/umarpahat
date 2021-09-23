@@ -20,7 +20,6 @@ import axios from "axios";
 import { API_ENDPOINT } from "../../constant";
 import "../../home.css";
 import Header from "../Header";
-import Footer from "../Footer";
 import Cookies from "universal-cookie";
 import tip from "../../images/animated/kyc-option.gif";
 
@@ -52,13 +51,12 @@ const Bankdetailspayme = (props) => {
     var executed = false;
     return function () {
       if (!executed) {
-        executed = true;
+        executed = true; 
         props.hitAllUserData({ token: token });
       }
     };
   })();
-  
-  
+  console.log("props user if", props);
 
   async function getSignedUrl() {
     const pathArray = [
@@ -68,10 +66,11 @@ const Bankdetailspayme = (props) => {
     ];
     const signedUrlObj = await getS3SignedUrl({
       token: token,
-      payload: { s3_path: pathArray, bucket_name: "payme-test-documents" },
+      payload: { s3_path: pathArray },
     });
+    console.log("haaaaaaaaaaaa", signedUrlObj);
     setsignedUrl(signedUrlObj.data.data);
-    // console.log(343434, signedUrlObj.data.data);
+    console.log("343434", signedUrlObj.data.data);
   }
 
   async function updateDocStatus(data) {
@@ -100,13 +99,18 @@ const Bankdetailspayme = (props) => {
   };
 
   useEffect(() => {
+    getSignedUrl();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props]);
+
+  useEffect(() => {
+    getSignedUrl();
     if (!token) {
       props.history.push({ pathname: "/" });
       return;
     }
     something();
-   
-    getSignedUrl();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -159,13 +163,9 @@ const Bankdetailspayme = (props) => {
     updateBankDetails();
     Promise.all([...promiseTest, ...updatedocStatus])
       .then((response) => {
-      
-       
-        console.log("bank response",response)
-          
-            props.history.push({ pathname: "/step-manual" });
-        
-      
+        console.log("bank response", response);
+
+        props.history.push({ pathname: "/step-manual" });
       })
       .catch((error) => {
         setloader(false);
@@ -460,14 +460,14 @@ const Bankdetailspayme = (props) => {
                       </div>
                       <div className="full-text text-left">
                         <h5>Tips</h5>
-                        <p>Kindly provide us with your primary bank account details to facilitate the disbursement.</p>
+                        <p style={{fontSize:"17px"}}>Kindly provide us with your primary bank account details to facilitate the disbursement.</p>
                       </div>
                     </div>
                     <div className="circle-half">
-                      <p className="p-a-10">Kindly share your latest 3 months bank statement.</p>
+                      <p className="p-a-10" style={{fontSize:"15px"}}>Kindly share your latest 3 months bank statement.</p>
                     </div>
                     <div className="circle-half">
-                      <p className="p-a-10">Upload your bank statement in PDF form.</p>
+                      <p className="p-a-10" style={{fontSize:"15px"}}>Upload your bank statement in PDF form.</p>
                     </div>
                   </div>
                 </div>
@@ -476,7 +476,7 @@ const Bankdetailspayme = (props) => {
           )}
         </Container>
       </div>
-      <Footer />
+   
     </>
   );
 };

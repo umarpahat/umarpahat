@@ -2,7 +2,6 @@ import React, {useState, } from "react";
 import {hitAppUseCase} from '../store/modules/userDetails/actions';
 import {connect} from 'react-redux'
 import "./ApplyNowButton/Applybtnallcomponent.css";
-import Footer from "./Footer";
 import Header from "./Header";
 import '../../src/home.css';
 import {Link} from "react-router-dom";
@@ -52,6 +51,7 @@ const Sitemap = (props) => {
                             <li><Link to="/policy">Privacy Policy</Link></li>
                             <li><Link to="/refund">Refund Policy</Link></li>
                             <li><Link to="/disclaimer">Disclaimer</Link></li>
+                            <li><a target='_blank' href="https://openscecurityurl.s3.ap-south-1.amazonaws.com/NewAppAgreeDocs/grievance_redressal_mechanism.pdf">Grievance Redressal Mechanism</a></li>
                         </ul>
 
                     </div>
@@ -74,7 +74,7 @@ const Sitemap = (props) => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            
         </>
     )
 };

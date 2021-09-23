@@ -327,6 +327,7 @@ const KycOption = (props) => {
         </div>
         <div></div>
       </div>
+     
     </>
   );
 };

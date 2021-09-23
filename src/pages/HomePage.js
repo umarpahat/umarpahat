@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import {Container} from "react-bootstrap";
 import Loader from '../component/Loader'
 import "./ApplyNowButton/Applybtnallcomponent.css";
-import Footer from "./Footer";
 import Header from "./Header";
 import '../../src/home.css';
 import benefit from "../images/svg/benefit.svg";
@@ -554,7 +553,7 @@ const HomePage = (props) => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+          
         </>
     );
 };

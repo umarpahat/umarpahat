@@ -14,7 +14,7 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 const Getquikloneapply = (props) => {
-  const token = cookies.get('token')
+ 
  cookies.set('userCase', "apply-loan");
  const userCase = cookies.get("userCase")
  console.log("apply loan",userCase)
@@ -24,9 +24,7 @@ const Getquikloneapply = (props) => {
   let [newUser, setnewUser] = useState(false);
 
   useEffect(() => {
-    if(token){
- props.hitAllUserData({ token: token });
-    }
+    cookies.remove('token', { path: '/' })
  
   }, []);
 
@@ -39,47 +37,8 @@ const Getquikloneapply = (props) => {
 
   const verifyPhone = () => {
     setloader(true);
-    if (token) {
-      console.log("props.user.userData",props.user)
-      if (props.user.userData) {
-       
-
-    
-        if (userCase === "apply-loan") {
-          if (
-            props.user.userData.userdocumentsmodel?.kyc_verified ===
-              "VERIFIED" ||
-            props.user.userData?.userdocumentsmodel?.kyc_verified ===
-              "PENDING_VERIFICATION"
-          ) {
-            props.history.push({ pathname: "/step-manual" });
-          }
-         else {
-            props.history.push({ pathname: "/kycoption" });
-          }
-        } else if (userCase === "pay-rent") {
-          console.log("payrent kyc", props.user.userData.userdocumentsmodel);
-          if (
-            props.user.userData.userdocumentsmodel.kyc_verified ===
-              "VERIFIED" ||
-            props.user.userData.userdocumentsmodel.kyc_verified ===
-              "PENDING_VERIFICATION"
-          ) {
-            props.history.push({ pathname: "/payrent-other-details" });
-          } else {
-            console.log("1414141414", props);
-            props.history.push({ pathname: "/payrent-other-details" });
-          }
-        } else {
-          props.history.push({ pathname: "/" });
-        }
-       
-      } else {
-        props.hitAllUserData({ token: token });
-      }
-    
-  }
-  else{
+  
+  
     api
       .post(
         `api/authentication/phone_no_verify/`,
@@ -112,7 +71,7 @@ const Getquikloneapply = (props) => {
         console.log(error);
         setloader(false);
       });
-  }};
+  };
 
   return (
     <>

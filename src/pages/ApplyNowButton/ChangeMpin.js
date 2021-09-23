@@ -122,7 +122,7 @@ function ChangeMpin(props) {
                                                        style={{
                                                            'color': '#fff',
                                                            'border': 'none',
-                                                           'width': '503px'
+                                                           'width': '100%'
                                                        }}
                                                 />
                                             </div>
