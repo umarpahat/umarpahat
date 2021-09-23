@@ -34,6 +34,10 @@ const PayRent = (props) => {
     const [faqs, setFaqs] = useState([]);
 
     useEffect(()=>{
+
+      
+            cookies.remove('token', { path: '/' })
+       
         const url= `${API_ENDPOINT}/api/faq_list/`
         fetch(url)
             .then(res => res.json())
@@ -60,8 +64,9 @@ const PayRent = (props) => {
           {}
         )
         .then((response) => {
-          setloader(false);
+          
           if (response.status === 200 && !response.data.phone_number_verified) {
+            setloader(false);
             setnewUser(true);
           } else if (
             response.status === 200 &&

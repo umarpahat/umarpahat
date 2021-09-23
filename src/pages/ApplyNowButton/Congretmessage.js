@@ -33,7 +33,7 @@ const Congretmessage = (props) => {
         .get(url, config)
         .then((response) => {
           console.log("congrats",response)
-          setDocumentstatus(response.data.data[0]);
+          
           setProfessionalStatus(
             response.data.data[0].professional_details_verified
           );
@@ -64,7 +64,7 @@ const Congretmessage = (props) => {
   return (
     <>
       <Header {...props} />
-      <div className='content darkBg'>
+      <div className='content darkBg' style={{height:"139.5%"}}>
         {!greet ? (
       <Container >
           <div className="row">

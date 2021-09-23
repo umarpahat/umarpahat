@@ -9,26 +9,26 @@ import {
 } from "../../store/modules/userDetails/actions";
 import Loader from "../../component/Loader";
 import axios from "axios";
-import { API_ENDPOINT_STAGING } from "../../constant";
+import { API_ENDPOINT_STAGING ,API_ENDPOINT} from "../../constant";
 //import Header from "../../component/Header";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from "universal-cookie";
 import { Container } from "react-bootstrap";
 import tip from "../../images/svg/tip.png";
-import { bindActionCreators } from 'redux';
+import { bindActionCreators } from "redux";
 const cookies = new Cookies();
 
 const OtherDetalisForm = (props) => {
-  
   const token = cookies.get("token");
-  // const [logintoken, setlogintoken] = usest
+  
   const [serviceCharge, setserviceCharge] = useState(0);
-  const [kyc_verified, setkyc_verified] = useState(false);
   const [landLordName, setlandLordName] = useState("");
   const [errorlandLordName, seterrorlandLordName] = useState("");
   const [yourName, setyourName] = useState("");
-  const [name, setName] = useState(props.user.userData?.customusermodel.first_name);
+  const [name, setName] = useState(
+    props.user.userData?.customusermodel.first_name
+  );
   const [erroryourName, seterroryourName] = useState("");
   const [mobileNumber, setmobileNumber] = useState("");
   const [errormobileNumber, seterrormobileNumber] = useState("");
@@ -65,8 +65,36 @@ const OtherDetalisForm = (props) => {
   const [screen1, setScreen1] = useState(true);
   const [screen2, setScreen2] = useState(false);
   const [screen3, setScreen3] = useState(false);
-  const[correctPan,setcorrectPan]=useState("")
-  console.log("endpoint",API_ENDPOINT_STAGING)
+  const [correctPan, setcorrectPan] = useState("");
+  const [kycStatus,setKycStatus]=useState("")
+  useEffect(() => {
+
+    if (token) {
+      let url = `${API_ENDPOINT}/api/get_document_status/`;
+      let config = {
+        headers: {
+          Authorization: "Token " + token,
+        },
+      };
+      axios
+        .get(url, config)
+        .then((response) => {
+        
+          setKycStatus(response.data.data[0].kyc_verified);
+          console.log("stepmanual", response.data.data[0]);
+        })
+        .catch((err) => {
+          if (err?.response?.status === 401) {
+            cookies.remove("token", { path: "/" });
+            props.history.push("/");
+          }
+          console.log(err);
+        });
+    }
+  }, []);
+
+
+
 
   async function getSignedUrl() {
     const pathArray = [
@@ -79,7 +107,6 @@ const OtherDetalisForm = (props) => {
     setsignedUrl(signedUrlObj.data.data);
     console.log(343434, signedUrlObj.data.data);
   }
-
 
   const handleAggrementUpload = (event) => {
     seterroruploadRentAgreement("");
@@ -95,27 +122,18 @@ const OtherDetalisForm = (props) => {
   }
 
   useEffect(() => {
-   
-    if(!token )
-    {props.history.push("/")}
+    if (!token) {
+      props.history.push("/");
+    }
     handleName();
     props.hitAllUserData({ token: token });
-   
-   
 
     props.user.userData
       ? setuserdocumentsmodel(props.user.userData.userdocumentsmodel)
       : null;
     getSignedUrl();
-    if (
-      (props.user.userData &&
-        props.user.userData.props.user.userData?.userdocumentsmodel.kyc_verified === "VERIFIED") ||
-      props.user.userData?.userdocumentsmodel.kyc_verified === "VERIFIED"
-    ) {
-      setkyc_verified(true);
-    }
 
-    console.log(`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`)
+ 
     let url = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`;
     console.log("eerererer", url);
     let config = {
@@ -124,12 +142,15 @@ const OtherDetalisForm = (props) => {
         "Content-Type": "application/json",
       },
     };
-    console.log("tokennn",token)
+    console.log("tokennn", token);
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get("https://staging.paymeindia.in/api/pay-rent/get-jwt-initiate-payment/", config)
+      .get(
+        "https://staging.paymeindia.in/api/pay-rent/get-jwt-initiate-payment/",
+        config
+      )
       .then((response) => {
-        console.log("response1 hi hi hi",response)
+       
         setserviceCharge(response.data.service_charge);
       })
       .catch((err) => {
@@ -139,7 +160,7 @@ const OtherDetalisForm = (props) => {
         console.log(userdocumentsmodel);
         console.log("eeeeee", err);
       });
-      console.log("cosole1",`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`,`${API_ENDPOINT_STAGING}`)
+ 
 
     let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token/`;
     // let config = {
@@ -150,9 +171,12 @@ const OtherDetalisForm = (props) => {
     // }
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get("https://staging.paymeindia.in/api/pay-rent/get-jwt-initiate-payment/?request_type=token/", config)
+      .get(
+        "https://staging.paymeindia.in/api/pay-rent/get-jwt-initiate-payment/?request_type=token/",
+        config
+      )
       .then((response) => {
-        console.log("response1",response)
+        console.log("response1", response);
         setjwtToken(response.data.token);
       })
       .catch((err) => {
@@ -167,9 +191,12 @@ const OtherDetalisForm = (props) => {
     };
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get("https://staging.paymeindia.in/api/pay-rent/list-payment-history/", config3)
+      .get(
+        "https://staging.paymeindia.in/api/pay-rent/list-payment-history/",
+        config3
+      )
       .then((res) => {
-        console.log("response hisotry",res)
+        console.log("response hisotry", res);
         console.log("history man", res.data.results);
         settransactionHistory(res.data);
         // setTransactionHistory(res.data)
@@ -180,18 +207,20 @@ const OtherDetalisForm = (props) => {
       });
     // })
   }, []);
-  
-  useEffect(() => {
 
+  useEffect(() => {
     handleName();
-   
   }, [props]);
-console.log("namenmane",props.user.userData?.customusermodel.first_name,props.user.userData?.customusermodel.last_name)
-  function handleName  ()  {
-    console.log("setName")
+  console.log(
+    "namenmane",
+    props.user.userData?.customusermodel.first_name,
+    props.user.userData?.customusermodel.last_name
+  );
+  function handleName() {
+    console.log("setName");
     setName(props.user.userData?.customusermodel.first_name);
     setLastName(props.user.userData?.customusermodel.last_name);
-  };
+  }
 
   const handleScreen2 = () => {
     if (!RentAmount || !/^\d+$/.test(RentAmount) || Number(RentAmount) <= 0) {
@@ -254,7 +283,7 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!landlordActNumber ) {
+    if (!landlordActNumber) {
       seterrorlandlordActNumber("Please enter landlord account number");
       return;
     }
@@ -268,7 +297,7 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
       );
       return;
     }
-    if (!ifscCode ) {
+    if (!ifscCode) {
       seterrorifscCode("Please enter ifsc code");
       return;
     }
@@ -326,25 +355,19 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
       });
     }
   };
-  console.log(
-    "name",
-    name,
-    kyc_verified,
-    props.user.userData?.userdocumentsmodel.kyc_verified
-  );
+
 
   return (
     <>
       <Header {...props} />
       <div className="content darkBg">
-       
         {loader ? (
           <div className="loader">
             {" "}
             <Loader color={"#33658a"} />{" "}
           </div>
         ) : (
-          // kyc_verified ?
+         
           <Container>
             <div className="row">
               <div className="col-lg-2 col-md-2 col-sm-12 text-center">
@@ -378,11 +401,15 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                       </Link>
                     </div>
                   </div>
-                  {props.user.userData?.userdocumentsmodel.kyc_verified==="VERIFIED" ? (
+                  {kycStatus ===
+                  "VERIFIED" ? (
                     <form onSubmit={handleSubmit}>
                       {screen1 ? (
                         <div>
-                          <div className="home-contact-form" style={{marginBottom:"10px"}}>
+                          <div
+                            className="home-contact-form"
+                            style={{ marginBottom: "10px" }}
+                          >
                             <h4 className="form-heading text-center">
                               Fill Out The Following Details
                             </h4>
@@ -440,14 +467,18 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                       placeholder="Enter 10 Digit PAN Number Here"
                                       value={panNumber}
                                       onChange={(e) => {
-
-                                        if (e.target.value.match(/^([A-Z]){5}([0-9]){4}([A-Z]){1}$/)) {
+                                        if (
+                                          e.target.value.match(
+                                            /^([A-Z]){5}([0-9]){4}([A-Z]){1}$/
+                                          )
+                                        ) {
                                           setcorrectPan("Correct");
-                                         
-                                      }
-                                   
+                                        }
+
                                         seterrorpanNumber("");
-                                        setpanNumber(e.target.value.toUpperCase());
+                                        setpanNumber(
+                                          e.target.value.toUpperCase()
+                                        );
                                       }}
                                     />
                                     {errorpanNumber ? (
@@ -486,12 +517,11 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                       onChange={handleAggrementUpload}
                                       hidden
                                     />
-                                    <br/>
+                                    <br />
 
-                                    {uploadRentAgreement.name? (<span>
-                                        {uploadRentAgreement.name}
-                                      </span>)
-                                     : null}
+                                    {uploadRentAgreement.name ? (
+                                      <span>{uploadRentAgreement.name}</span>
+                                    ) : null}
                                     {erroruploadRentAgreement ? (
                                       <span style={{ color: "red" }}>
                                         {erroruploadRentAgreement}
@@ -502,36 +532,11 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                               )}
                             </div>
                           </div>
-                          <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-                <div className="height100">
-                  <div>
-                    <div className="circle-half">
-                      <div className="full-circle">
-                        <img src={tip} alt="Icon" />
-                      </div>
-                      <div className="full-text text-left">
-                        <h5>Tips</h5>
-                        <p>
-                          In expedita et occaecati ullam a cumque maiores
-                          perspiciatis. Non labore exercitationem rerum nulla ea
-                          veniam facilis et.{" "}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="circle-half">
-                      <p className="p-a-10">
-                        In expedita et occaecati ullam a cumque maiores
-                        perspiciatis.{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
                           <button
                             onClick={handleScreen2}
                             className="getstartbtn "
-                            style={{marginTop:"15x"}}
+                            style={{ marginTop: "15x" }}
                           >
                             Save & Continue
                           </button>
@@ -555,12 +560,13 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                     value={landLordName}
                                     onChange={(e) => {
                                       seterrorlandLordName("");
-                                      if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                      if (
+                                        e.target.value.match(/^[A-Za-z{" "}]+$/)
+                                      ) {
                                         setlandLordName(e.target.value);
-                                    } else if (e.target.value.length === 0) {
+                                      } else if (e.target.value.length === 0) {
                                         setlandLordName(e.target.value);
-                                    }
-                                     
+                                      }
                                     }}
                                   />
                                   {errorlandLordName ? (
@@ -580,12 +586,13 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                     value={yourName}
                                     onChange={(e) => {
                                       seterroryourName("");
-                                      if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                      if (
+                                        e.target.value.match(/^[A-Za-z{" "}]+$/)
+                                      ) {
                                         setyourName(e.target.value);
-                                    } else if (e.target.value.length === 0) {
+                                      } else if (e.target.value.length === 0) {
                                         setyourName(e.target.value);
-                                    }
-                                    
+                                      }
                                     }}
                                   />
                                   {erroryourName ? (
@@ -624,7 +631,9 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                       value={mobileNumber}
                                       onChange={(e) => {
                                         seterrormobileNumber("");
-                                        setmobileNumber(e.target.value.slice(0,10));
+                                        setmobileNumber(
+                                          e.target.value.slice(0, 10)
+                                        );
                                       }}
                                     />
                                     {errormobileNumber ? (
@@ -674,7 +683,7 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                     value={pinCode}
                                     onChange={(e) => {
                                       seterrorPincode("");
-                                      setpinCode(e.target.value.slice(0,6));
+                                      setpinCode(e.target.value.slice(0, 6));
                                     }}
                                   />
                                   {errorPincode ? (
@@ -694,12 +703,17 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                       value={state}
                                       onChange={(e) => {
                                         seterrorstate("");
-                                        if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                        if (
+                                          e.target.value.match(
+                                            /^[A-Za-z{" "}]+$/
+                                          )
+                                        ) {
                                           setstate(e.target.value);
-                                     } else if (e.target.value.length === 0) {
+                                        } else if (
+                                          e.target.value.length === 0
+                                        ) {
                                           setstate(e.target.value);
-                                     }
-                                      
+                                        }
                                       }}
                                     />
                                     {errorstate ? (
@@ -717,12 +731,17 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                       value={city}
                                       onChange={(e) => {
                                         seterrorcity("");
-                                        if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
-                                           setcity(e.target.value);
-                                      } else if (e.target.value.length === 0) {
-                                           setcity(e.target.value);
-                                      }
-                                      
+                                        if (
+                                          e.target.value.match(
+                                            /^[A-Za-z{" "}]+$/
+                                          )
+                                        ) {
+                                          setcity(e.target.value);
+                                        } else if (
+                                          e.target.value.length === 0
+                                        ) {
+                                          setcity(e.target.value);
+                                        }
                                       }}
                                     />
                                     {errorcity ? (
@@ -735,30 +754,32 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                               </div>
                             </div>
                             <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-                <div className="height100">
-                  <div>
-                    <div className="circle-half">
-                      <div className="full-circle">
-                        <img src={tip} alt="Icon" />
-                      </div>
-                      <div className="full-text text-left">
-                        <h5>Tips</h5>
-                        <p>
-                          In expedita et occaecati ullam a cumque maiores
-                          perspiciatis. Non labore exercitationem rerum nulla ea
-                          veniam facilis et.{" "}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="circle-half">
-                      <p className="p-a-10">
-                        In expedita et occaecati ullam a cumque maiores
-                        perspiciatis.{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                              <div className="height100">
+                                <div>
+                                  <div className="circle-half">
+                                    <div className="full-circle">
+                                      <img src={tip} alt="Icon" />
+                                    </div>
+                                    <div className="full-text text-left">
+                                      <h5>Tips</h5>
+                                      <p>
+                                        Rent Agreement is required if your rent
+                                        amount is more than or equal to Rs.
+                                        15,000. For rent more than Rs. 50,000
+                                        the landlord's PAN details would be
+                                        required.{" "}
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="circle-half">
+                                    <p className="p-a-10">
+                                      In expedita et occaecati ullam a cumque
+                                      maiores perspiciatis.{" "}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
 
                             <button
                               onClick={handleScreen3}
@@ -788,8 +809,10 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                     value={landlordActNumber}
                                     onChange={(e) => {
                                       seterrorlandlordActNumber("");
-                                    
-                                      setlandlordActNumber(e.target.value.slice(0,22));
+
+                                      setlandlordActNumber(
+                                        e.target.value.slice(0, 22)
+                                      );
                                     }}
                                   />
                                   {errorlandlordActNumber ? (
@@ -809,7 +832,9 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                                     value={conflandlordActNumber}
                                     onChange={(e) => {
                                       seterrorconflandlordActNumber("");
-                                      setconflandlordActNumber(e.target.value.slice(0,22));
+                                      setconflandlordActNumber(
+                                        e.target.value.slice(0, 22)
+                                      );
                                     }}
                                   />
                                   {errorconflandlordActNumber ? (
@@ -875,8 +900,10 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                         Your KYC is not verified
                       </h4>
                       <br></br>
-                      {props.user.userData?.userdocumentsmodel.kyc_verified === "NOT_SUBMITTED" ||
-                      props.user.userData?.userdocumentsmodel.kyc_verified === "NOT_VALID" ? (
+                      {kycStatus ===
+                        "NOT_SUBMITTED" ||
+                      kycStatus ===
+                        "NOT_VALID" ? (
                         <div>
                           <span
                             className="reloadicon"
@@ -897,12 +924,14 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                               fontFamily: "Montserrat",
                             }}
                           >
-                            {props.user.userData?.userdocumentsmodel.kyc_verified}
+                            {
+                              kycStatus
+                            }
                           </span>
                         </div>
                       ) : null}
 
-                      {props.user.userData?.userdocumentsmodel.kyc_verified ===
+                      {kycStatus ===
                       "PENDING_VERIFICATION" ? (
                         <div>
                           <span
@@ -915,24 +944,32 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                           >
                             Kyc status:{" "}
                           </span>
-                         <Link to="#"  onClick={() => {
-                            props.hitAppUseCase({ useCase: "pay-rent" });
-                            props.history.push({ pathname: "/kycoption" });
-                          }}> <span
-                            className="reloadicon"
-                            style={{
-                              color: "#ff8000",
-                              opacity: "0.59",
-                              right: "200px",
-                              fontFamily: "Montserrat",
+                          <Link
+                            to="#"
+                            onClick={() => {
+                              props.hitAppUseCase({ useCase: "pay-rent" });
+                              props.history.push({ pathname: "/kycoption" });
                             }}
                           >
-                            {props.user.userData?.userdocumentsmodel.kyc_verified}
-                          </span> </Link>
+                            {" "}
+                            <span
+                              className="reloadicon"
+                              style={{
+                                color: "#ff8000",
+                                opacity: "0.59",
+                                right: "200px",
+                                fontFamily: "Montserrat",
+                              }}
+                            >
+                              {
+                                kycStatus
+                              }
+                            </span>{" "}
+                          </Link>
                         </div>
                       ) : null}
 
-                      {props.user.userData?.userdocumentsmodel.kyc_verified ===
+                      {kycStatus ===
                       "PENDING_VERIFICATION" ? (
                         <div>
                           <br></br>
@@ -941,7 +978,7 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                           </p>
                         </div>
                       ) : null}
-                      {props.user.userData?.userdocumentsmodel.kyc_verified !==
+                      {kycStatus !==
                       "PENDING_VERIFICATION" ? (
                         <input
                           type="button"
@@ -951,38 +988,19 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                             props.hitAppUseCase({ useCase: "pay-rent" });
                             props.history.push({ pathname: "/kycoption" });
                           }}
-                          style={{ margin: "83px 0px 72px 0" ,cursor:"pointer"}}
+                          style={{
+                            margin: "83px 0px 72px 0",
+                            cursor: "pointer",
+                          }}
                         />
                       ) : null}
+
+
                     </div>
                   )}
                 </div>
               </div>
-              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-                <div className="height100">
-                  <div>
-                    <div className="circle-half">
-                      <div className="full-circle">
-                        <img src={tip} alt="Icon" />
-                      </div>
-                      <div className="full-text text-left">
-                        <h5>Tips</h5>
-                        <p>
-                          In expedita et occaecati ullam a cumque maiores
-                          perspiciatis. Non labore exercitationem rerum nulla ea
-                          veniam facilis et.{" "}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="circle-half">
-                      <p className="p-a-10">
-                        In expedita et occaecati ullam a cumque maiores
-                        perspiciatis.{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          
             </div>
           </Container>
         )}
@@ -1001,11 +1019,14 @@ const mapStateToProps = (state) => {
   };
 };
 
-const dispatchToProps = (dispatch)=>{
-  return bindActionCreators({
-    hitAppUseCase,
-    hitAllUserData
-  }, dispatch)
-}
+const dispatchToProps = (dispatch) => {
+  return bindActionCreators(
+    {
+      hitAppUseCase,
+      hitAllUserData,
+    },
+    dispatch
+  );
+};
 
 export default connect(mapStateToProps, dispatchToProps)(OtherDetalisForm);
