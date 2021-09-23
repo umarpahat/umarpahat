@@ -51,6 +51,7 @@ const Sitemap = (props) => {
                             <li><Link to="/policy">Privacy Policy</Link></li>
                             <li><Link to="/refund">Refund Policy</Link></li>
                             <li><Link to="/disclaimer">Disclaimer</Link></li>
+                            <li><a target='_blank' href="https://openscecurityurl.s3.ap-south-1.amazonaws.com/NewAppAgreeDocs/grievance_redressal_mechanism.pdf">Grievance Redressal Mechanism</a></li>
                         </ul>
 
                     </div>
