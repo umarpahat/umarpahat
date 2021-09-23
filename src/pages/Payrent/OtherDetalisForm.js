@@ -155,7 +155,7 @@ const OtherDetalisForm = (props) => {
         if (err.response.status === 401) {
            cookies.remove("token", { path: "/" });
         }
-        console.log(userdocumentsmodel);
+       
         console.log("eeeeee", err);
       });
 
@@ -195,7 +195,7 @@ const OtherDetalisForm = (props) => {
     handleName();
    
   }, [props]);
-console.log("namenmane",props.user.userData?.customusermodel.first_name,props.user.userData?.customusermodel.last_name)
+
   function handleName  ()  {
     console.log("setName")
     setName(props.user.userData?.customusermodel.first_name);
