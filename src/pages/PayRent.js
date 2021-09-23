@@ -27,10 +27,6 @@ import {API_ENDPOINT} from "../constant";
 
 
 const PayRent = (props) => {
-
-   cookies.set('userCase', "pay-rent");
-    
-    console.log("cookies user case",cookies.get("userCase"))
     let [loader, setloader] = useState(false);
     let [number, setnumber] = useState(null);
     let [error, seterror] = useState(null);
@@ -43,10 +39,11 @@ const PayRent = (props) => {
             .then(res => res.json())
             .then(res => setFaqs([...res.data.General,...res.data.Eligibility,...res.data.Repayment] ))
         // .then(res => console.log('umar', [...res.data.General,...res.data.Eligibility,...res.data.Repayment] ))
-    })
+    },[])
  
   
     const handleSubmit = (event) => {
+        cookies.set('userCase', "pay-rent");
       event.preventDefault();
       /^[6-9]\d{9}$/.test(number)
         ? verifyPhone()
@@ -55,6 +52,7 @@ const PayRent = (props) => {
   
     const verifyPhone = () => {
       setloader(true);
+      
       api
         .post(
           `api/authentication/phone_no_verify/`,
@@ -130,7 +128,7 @@ const PayRent = (props) => {
                                         <h4>Get instant Off of 20% on the loand above 2L</h4>
                                     </div>
                                     <div>
-                                        <Link to='/' className='small-green-btn'>Apply Now</Link>
+                                        <Link to='/apply-loan' className='small-green-btn'>Apply Now</Link>
                                     </div>
                                 </div>
                                 <div className="advertisePay">
@@ -140,20 +138,23 @@ const PayRent = (props) => {
                                     <div>
                                         <h4>Pay your home rent and get benifits each month</h4>
                                     </div>
-                                    <div>
-                                        <Link to='/' className='small-green-link'>Know More</Link>
-                                    </div>
+                                    {/* <div>
+                                        <Link to='#' className='small-green-link'>Know More</Link>
+                                    </div> */}
                                 </div>
+
                                 <div className="advertisePay">
                                     <div>
                                         <img src={starIconLight} alt='Magnam numquam'
                                              className="img-fluid"/></div>
                                     <div>
                                         <h4>Magnam numquam dolor pariatur quia.</h4>
+
+                                        
                                     </div>
-                                    <div>
+                                    {/* <div>
                                         <Link to='/' className='small-green-link'>Know More</Link>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="advertisePay">
                                     <div>
@@ -162,12 +163,12 @@ const PayRent = (props) => {
                                     <div>
                                         <h4>Totam corrupti eum vel consectetur nobis.</h4>
                                     </div>
-                                    <div>
-                                        <Link to='/' className='small-green-link'>Know More</Link>
-                                    </div>
+                                    {/* <div>
+                                        <Link to='#' className='small-green-link'>Know More</Link>
+                                    </div> */}
                                 </div>
                                 <br/>
-                                <Link to='/' className='small-green-link'>View All Offers</Link>
+                                {/* <Link to='#' className='small-green-link'>View All Offers</Link> */}
 
                             </div>
                             <div className="col-sm-12 col-md-1 ">
@@ -180,8 +181,7 @@ const PayRent = (props) => {
                                             <img src={starIconGreen} alt='Totam corrupti'
                                                  className="img-fluid"/></div>
                                         <div>
-                                            <strong>Pay rent of this month with Payrent app and get 20% Cashback <Link
-                                                to='/' className='small-green-link'>View all</Link></strong>
+                                            <strong>Pay rent of this month with Payrent app and get 20% Cashback</strong>
                                         </div>
                                     </div>
                                     <form id='form' name='form'>

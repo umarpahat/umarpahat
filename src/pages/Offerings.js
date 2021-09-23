@@ -68,7 +68,7 @@ const Offerings = (props) => {
                             <div className="col-sm-12 col-md-5">
                                 <h3 className="heading3 relative"><span className='circle-small'></span> Pay rent using the PayMe app and avail exciting rewards</h3>
                                 <p className="heading6">Paying rent online is easier than ever! Just make your rental payment with credit cards in a couple of quick steps with no struggle at all.</p>
-                                <a href='https://creditscore.paymeindia.in' target='_blank'
+                                <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia' target='_blank'
                                    className="btnLarge m-t-40">Get App Now</a>
                             </div>
                         </div>

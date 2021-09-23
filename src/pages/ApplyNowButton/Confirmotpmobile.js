@@ -8,14 +8,14 @@ import Loader from "../../component/Loader";
 import { api } from "../../services/api";
 import Header from "../Header";
 import Footer from "../Footer";
-import phone from "../../images/svg/phone.svg";
+import phone from "../../images/animated/otp.gif";
 import { Container } from "react-bootstrap";
 import reactOtpTimer from "react-otp-timer";
 
 
 const Confirmotpmobile = (props) => {
 
-  console.log("confirm otp",props);
+  
   const [otp, setotp] = useState("");
   const [loader, setloader] = useState(false);
   const [otpError, setotpError] = useState(null);
@@ -61,7 +61,7 @@ const Confirmotpmobile = (props) => {
         {}
       )
       .then((response) => {
-        setloader(false);
+       
         if (response.status === 200) {
           props.history.push({
             pathname: "/get-start-paymeindia",
@@ -134,7 +134,7 @@ const Confirmotpmobile = (props) => {
               <div className="col-lg-5 col-md-5 col-sm-12 text-center">
                 <form>
                   <div className="home-contact-form">
-                    <h4 className="form-heading fornheadding">
+                    <h4 className="form-heading formheadding">
                       OTP Sent On {props.phone_number}
                     </h4>
                     <p>
@@ -169,7 +169,7 @@ const Confirmotpmobile = (props) => {
                       {counter === 0 ? (  <Link>
                       <div className="green-text" onClick={handleResend}>
                         Resend OTP
-                      </div></Link>):( <div className="green-text" style={{cursor:"not-allowed",color:"#6F6F6F"}} >
+                      </div></Link>):( <div className="green-text" style={{cursor:"not-allowed"}} >
                         Resend OTP
                       </div>)}
                     </div>
@@ -181,11 +181,11 @@ const Confirmotpmobile = (props) => {
                   <div>
                     <div className='circle-half'>
                       <div className='full-circle'>
-                        <img src={phone} alt='Icon'/>
+                        <img src={phone} className='img-fluid' alt='Icon' style={{maxWidth:100}}/>
                       </div>
                       <div className='full-text text-left'>
                         <h5>Tips</h5>
-                        <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem rerum nulla ea veniam facilis et. </p>
+                        <p>Make sure the mobile number entered is reachable and in the network area to receive the OTP code.</p>
                       </div>
                     </div>
                   </div>

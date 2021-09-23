@@ -36,7 +36,6 @@ function* getTokenForgotMpin(action) {
 
 function* expireToken(action) {
     try {
-        
         // do api call
         // const data = yield call(getLoginToken);
         yield put(appLogout());

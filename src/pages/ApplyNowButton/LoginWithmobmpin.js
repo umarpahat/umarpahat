@@ -13,7 +13,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import "../../home.css";
 import Cookies from 'universal-cookie';
-import tip from "../../images/svg/tip.png";
+import tip from "../../images/animated/lets-start-animation.gif";
 import { Container } from "react-bootstrap";
 
 const cookies = new Cookies()
@@ -22,11 +22,12 @@ function LoginWithMobMpin(props) {
   const token = cookies.get('token')
   console.log(token)
   const userCase = cookies.get("userCase");
+  console.log("user case",userCase)
   let [loader, setloader] = useState(false);
   let [errorPass, seterrorPass] = useState(null);
   let [password, setpassword] = useState(null);
   let [forgotPassword, setforgotPassword] = useState(false);
-  console.log(props);
+  console.log(props,userCase);
   useEffect(() => {
     if (token) {
       if (forgotPassword) {
@@ -36,7 +37,7 @@ function LoginWithMobMpin(props) {
         });
       } else {
         if (props.user.userData) {
-          setloader(false);
+          
 
           if (userCase === "apply-loan") {
             if (
@@ -45,24 +46,9 @@ function LoginWithMobMpin(props) {
               props.user.userData?.userdocumentsmodel?.kyc_verified ===
                 "PENDING_VERIFICATION"
             ) {
-              if (props.user.userData.userbankdetail) {
-                if (
-                  props.user.userData.userdocumentsmodel
-                    ?.salary_slip_verified === "VERIFIED" ||
-                  props.user.userData.userdocumentsmodel
-                    ?.salary_slip_verified === "PENDING_VERIFICATION" ||
-                  props.user.userData.other_documents[0]?.doc_type === "ITR"
-                ) {
-                  props.history.push({ pathname: "/pending-approval" });
-                } else {
-                  props.history.push({
-                    pathname: "/professional-details-payme",
-                  });
-                }
-              } else {
-                props.history.push({ pathname: "/bank-details-payme" });
-              }
-            } else {
+              props.history.push({ pathname: "/step-manual" });
+            }
+           else {
               props.history.push({ pathname: "/kycoption" });
             }
           } else if (userCase === "pay-rent") {
@@ -131,6 +117,7 @@ function LoginWithMobMpin(props) {
       phone_number: Number(props.location.state.phoneNumber),
       mpin: Number(password),
     })
+    
   };
 
   return (
@@ -147,8 +134,7 @@ function LoginWithMobMpin(props) {
             {...props}
             phone_number={Number(props.location.state.phoneNumber)}
             forget_password={true}
-            resendOtp={sendOtp}
-          />
+            resendOtp={sendOtp} />
         ) : (
 
             <Container>
@@ -216,17 +202,14 @@ function LoginWithMobMpin(props) {
                   <div>
                     <div className='circle-half'>
                       <div className='full-circle'>
-                        <img src={tip} alt='Icon'/>
+                        <img src={tip} className='img-fluid' style={{maxWidth:100}} alt='Icon'/>
                       </div>
                       <div className='full-text text-left'>
                         <h5>Tips</h5>
-                        <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
-                          rerum nulla ea veniam facilis et. </p>
+                        <p>6-digit passcode which will help you to log in faster into the PayMe India app.</p>
                       </div>
                     </div>
-                    <div className='circle-half'>
-                      <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
-                    </div>
+
                   </div>
                 </div>
               </div>

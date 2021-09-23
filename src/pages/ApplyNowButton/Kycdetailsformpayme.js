@@ -5,15 +5,16 @@ import {
 } from "../../store/modules/userDetails/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import backicon from "../../component/img/backicon.png";
-import Progressbar from "../../component/ProgressBar";
 import { getS3SignedUrl, postS3, api } from "../../services/api";
 import Loader from "../../component/Loader";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from "universal-cookie";
-import tip from "../../images/svg/tip.png";
 import { Container } from "react-bootstrap";
+import aadhaarCard from "../../images/svg/aadhaar-card.svg";
+import panCard from "../../images/svg/pan-card.svg";
+import selfie from "../../images/svg/selfie.svg";
+import tip from "../../images/animated/kyc-option.gif";
 
 const cookies = new Cookies();
 
@@ -48,6 +49,7 @@ const Kycdetailsformpayme = (props) => {
     props.hitAllUserData({ token: token });
     props.hitAppUseCase();
   }
+
   if (refresh) {
     refreshhi();
     setRefresh(false);
@@ -212,7 +214,7 @@ const Kycdetailsformpayme = (props) => {
         if (userCase === "apply-loan") {
           if (!props.user.userbankdetail) {
             props.history.push({
-              pathname: "/bank-details-payme",
+              pathname: "/step-manual",
             });
           } else if (
             props.user.userbankdetail.verified === "VERIFIED" ||
@@ -269,172 +271,179 @@ const Kycdetailsformpayme = (props) => {
                   Back
                 </a>
               </div>
-              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-                <div className="pb-4">
-                  <Progressbar />
-                </div>
-
+              <div className="col-lg-7 col-md-7 col-sm-12 text-center">
                 <form onSubmit={handleSubmit}>
                   <div className="home-contact-form">
+                    <h4 className="form-heading formheadding">
+                      Complete your KYC
+                    </h4>
                     <div className="form-block">
-                      <div class="form-group ms-input-group">
-                        <label className="form-label">Your Name</label>
-                        <input
-                          class="form-control ms-form-input"
-                          placeholder="Enter  Your Name"
-                          value={name}
-                          onChange={(event) => {
-                            seterrorName("");
-                            if(event.target.value.match(/^[A-Za-z{" "}]+$/)){
-                            setname(event.target.value);
-                          }
-                        else if(event.target.value.length===0){
-                          setname(event.target.value);
-                        }}}
-                        />
-                        {errorName ? (
-                          <span style={{ color: "red" }}>{errorName}</span>
-                        ) : null}
-                      </div>
-                      <div>
-                        <div class="form-group ms-input-group">
-                          <label className="form-label">DOB(DD/MM/YYYY)</label>
-                          <input
-                            type="date"
-                            class="form-control ms-form-input"
-                            value={date}
-                            onChange={(event) => {
-                              seterrorDob("");
-                              setdate(event.target.value);
-                            }}
-                          />
-                          {errorDob ? (
-                            <span style={{ color: "red" }}>{errorDob}</span>
-                          ) : null}
+                      <div className="row">
+                        <div className="col-lg-6 col-md-6 col-sm-12">
+                          <div className="form-group ms-input-group">
+                            <label className="form-label-text">Full Name</label>
+                            <input
+                              className="form-input "
+                              placeholder="Enter Full Name"
+                              value={name}
+                              onChange={(event) => {
+                                seterrorName("");
+                                if (
+                                  event.target.value.match(/^[A-Za-z{" "}]+$/)
+                                ) {
+                                  setname(event.target.value);
+                                } else if (event.target.value.length === 0) {
+                                  setname(event.target.value);
+                                }
+                              }}
+                            />
+                            {errorName ? (
+                              <span style={{ color: "red" }}>{errorName}</span>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="col-lg-6 col-md-6 col-sm-12">
+                          <div className="form-group ms-input-group">
+                            <label className="form-label-text">
+                              Date of Birth
+                            </label>
+                            <input
+                              type="date"
+                              className="form-input"
+                              value={date}
+                              onChange={(event) => {
+                                seterrorDob("");
+                                setdate(event.target.value);
+                              }}
+                            />
+                            {errorDob ? (
+                              <span style={{ color: "red" }}>{errorDob}</span>
+                            ) : null}
+                          </div>
                         </div>
                       </div>
-                      <div class="form-group ms-input-group">
-                        <label className="form-label">Gender</label>
-                        <div class="form-group ms-input-group">
-                          <select
-                            value={gender}
-                            onChange={(e) => {
-                              console.log(e.target.value);
-                              seterrorGender("");
-                              setgender(e.target.value);
-                            }}
-                            className="form-label"
-                          >
-                            <option value="">Select Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                          </select>
-                        </div>
-                        {errorGender ? (
-                          <span style={{ color: "red" }}>{errorGender}</span>
-                        ) : null}
-                      </div>
+                      <div className="row">
+                        <div className="col-lg-6 col-md-6 col-sm-12">
+                          <div className="form-group ms-input-group">
+                            <label className="form-label-text">
+                              PAN Number
+                            </label>
+                            <input
+                              type="text"
+                              className="form-input "
+                              placeholder="Enter PAN number"
+                              maxLength="10"
+                              value={panNumber}
+                              onChange={(event) => {
+                                if (event.target.value != 6) {
+                                  seterrorPan1(
+                                    "Pancard Number should be  6 digit's"
+                                  );
+                                  setcorrectPan("");
+                                }
 
-                      <div class="form-group ms-input-group">
-                        <label className="form-label">Pan Number</label>
-                        <input
-                          type="text"
-                          class="form-control ms-form-input"
-                          placeholder="AJTPN9876M"
-                          maxLength="10"
-                          value={panNumber}
-                          onChange={(event) => {
-                            if (event.target.value != 6) {
-                              seterrorPan1(
-                                "Pancard Number should be  6 digit's"
-                              );
-                              setcorrectPan("");
-                            }
+                                if (
+                                  event.target.value.toUpperCase().match(
+                                    /^([A-Z]){5}([0-9]){4}([A-Z]){1}$/
+                                  )
+                                ) {
+                                  setcorrectPan("Correct");
+                                  seterrorPan1("");
+                                } else {
+                                  seterrorPan1(
+                                    "Please Enter a valid PanCard Number"
+                                  );
+                                }
 
-                            if (
-                              event.target.value.match(
-                                /^([A-Z]){5}([0-9]){4}([A-Z]){1}$/
-                              )
-                            ) {
-                              setcorrectPan("Pan Number Entered Properly");
-                              seterrorPan1("");
-                            } else {
-                              seterrorPan1(
-                                "Please Enter a valid PanCard Number"
-                              );
-                            }
+                                seterrorPan("");
+                                setpanNumber(event.target.value.toUpperCase());
+                              }}
+                            />
+                       
 
-                            seterrorPan("");
-                            setpanNumber(event.target.value);
-                          }}
-                        />
-                        {correctPan ? (
-                          <span style={{ color: "green" }}>{correctPan}</span>
-                        ) : null}
-
-                        {errorPan1 ? (
-                          <span style={{ color: "red" }}>{errorPan1}</span>
-                        ) : null}
-
-                        {errorPan ? (
-                          <span style={{ color: "red" }}>{errorPan}</span>
-                        ) : null}
-                      </div>
-                      <label className="form-label">
-                        Upload a pictue of your PAN card
-                      </label>
-                      <div className="file-uploading-block">
-                        <a
-                          className="upload-btn-text"
-                          href="javascript:document.querySelector('input#upload-pan').click()"
-                        >
-                          Upload PAN
-                        </a>
-                        <br />
-                        {panFile.name ? (
-                          <span style={{ color: "black" }} className="">
-                            {panFile.name}
-                          </span>
-                        ) : null}
-                        <input
-                          type="file"
-                          accept="image/*"
-                          class="custom-file-input"
-                          name="Upload PAN"
-                          id="upload-pan"
-                          onChange={handlePanUpload}
-                        />
-                        {errorUploadPan ? (
-                          <span style={{ color: "red" }}>{errorUploadPan}</span>
-                        ) : null}
-                      </div>
-                      <div class="form-group ms-input-group">
-                        <div className="pb-1">
-                          <label className="form-label ">Adhaar Card</label>
-                        </div>
-
-                        <label className="form-label">
-                          Upload a pictue of your Aadhar card
-                        </label>
-                        <div style={{ display: "flex" }}>
-                          <div className="twoboxdregdrop file-uploading-block  mr-2">
-                            <a
-                              className="upload-btn-text"
-                              href="javascript:document.querySelector('input#Frontofadhaar').click()"
-                            >
-                              Upload Adhaar Front
-                            </a>
-                            <br />
-                            {aadhaarFileFront.name ? (
-                              <span style={{ color: "black" }} className="">
-                                {aadhaarFileFront.name}
+                            {correctPan ? (
+                              <span style={{ color: "green" ,fontSize:"small"}}>
+                                {correctPan}
                               </span>
                             ) : null}
+
+                            {errorPan1 ? (
+                              <span style={{ color: "red" }}>{errorPan1}</span>
+                            ) : null}
+
+                            {errorPan ? (
+                              <span style={{ color: "red" }}>{errorPan}</span>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="col-lg-6 col-md-6 col-sm-12">
+                          <div className="form-group ms-input-group">
+                            <label className="form-label-text">Gender</label>
+                            <div>
+                              <select
+                                value={gender}
+                                placeholder="Select your gender"
+                                onChange={(e) => {
+                                  console.log(e.target.value);
+                                  seterrorGender("");
+                                  setgender(e.target.value);
+                                }}
+                                className="select-item"
+                              >
+                                <option value="">Select your gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                              </select>
+                            </div>
+                            {errorGender ? (
+                              <span style={{ color: "red" }}>
+                                {errorGender}
+                              </span>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="step-step p-t-50 border-btm">
+                        <div className="img-wrapper">
+                          <img
+                            className="img-fluid"
+                            src={aadhaarCard}
+                            alt="Upload Adhar card"
+                          />
+                        </div>
+                        <div className="img-text">
+                          <h6>Upload Adhar card</h6>
+                          <p>Upload in pdf/jpg/png format</p>
+                          {aadhaarFileFront.name ? (
+                            <span style={{ color: "black" }} className="">
+                              {aadhaarFileFront.name}
+                            </span>
+                          ) : null}
+                          <br/>
+                          {aadhaarFileBack.name ? (
+                            <span style={{ color: "black" }} className="">
+                              {aadhaarFileBack.name}
+                            </span>
+                          ) : null}
+                        </div>
+                        {/* <div className='wrapper-button'>
+                                                    <a className="green-button" >Upload</a>
+                                                </div>*/}
+
+                        <div style={{ display: "flex" }}>
+                          <div style={{ marginRight: 20 }}>
+                            <a
+                              className="green-button"
+                              href="javascript:document.querySelector('input#Frontofadhaar').click()"
+                            >
+                              Front
+                            </a>
+
                             <input
                               type="file"
                               accept="image/*"
-                              class="custom-file-input"
+                              className="custom-file-input"
                               id="Frontofadhaar"
                               hidden
                               onChange={handleAadhaarUploadFront}
@@ -445,23 +454,13 @@ const Kycdetailsformpayme = (props) => {
                               </span>
                             ) : null}
                           </div>
-
-                          <div
-                            htmlFor="Backofadhaar"
-                            className="file-uploading-block twoboxdregdrop ml-3"
-                          >
+                          <div>
                             <a
                               href="javascript:document.querySelector('input#Backofadhaar').click()"
-                              className="upload-btn-text"
+                              className="green-button"
                             >
-                              Upload Adhaar Back
+                              Back
                             </a>
-                            <br />
-                            {aadhaarFileBack.name ? (
-                              <span style={{ color: "black" }} className="">
-                                {aadhaarFileBack.name}
-                              </span>
-                            ) : null}
                             <input
                               type="file"
                               accept="image/*"
@@ -477,41 +476,83 @@ const Kycdetailsformpayme = (props) => {
                             ) : null}
                           </div>
                         </div>
-                        <label className="form-label">Upload a Profile</label>
-                        <div className="file-uploading-block">
+                      </div>
+                      <div className="step-step p-t-30 border-btm">
+                        <div className="img-wrapper">
+                          <img
+                            className="img-fluid"
+                            src={panCard}
+                            alt="Upload Pan Card"
+                          />
+                        </div>
+                        <div className="img-text">
+                          <h6>Upload Pan card</h6>
+                          <p>Upload in pdf/jpg/png format</p>
+                          {panFile.name ? (
+                            <span style={{ color: "black" }} className="">
+                              {panFile.name}
+                            </span>
+                          ) : null}
+                        </div>
+                        <div className="wrapper-button">
                           <a
-                            className="upload-btn-text"
-                            href="javascript:document.querySelector('input#upload-profile').click()"
+                            className="green-button"
+                            href="javascript:document.querySelector('input#upload-pan').click()"
                           >
-                            Upload Profile
+                            Upload
                           </a>
-                          <br />
+                        </div>
+                      </div>
+                      <div className="step-step p-t-30 border-btm">
+                        <div className="img-wrapper">
+                          <img
+                            className="img-fluid"
+                            src={selfie}
+                            alt="Upload Selfie"
+                          />
+                        </div>
+                        <div className="img-text">
+                          <h6>Upload Photo</h6>
+                          <p>Photo should be in clear quality. </p>
                           {profile.name ? (
                             <span style={{ color: "black" }} className="">
                               {profile.name}
                             </span>
                           ) : null}
-
-                          <input
-                            type="file"
-                            accept="image/*"
-                            className="custom-file-input"
-                            name="Upload Profile"
-                            id="upload-profile"
-                            onChange={handleProfileUpload}
-                          />
-                          {errorProfile ? (
-                            <span style={{ color: "red" }}>{errorProfile}</span>
-                          ) : null}
+                        </div>
+                        <div className="wrapper-button">
+                          <a
+                            className="green-button"
+                            href="javascript:document.querySelector('input#upload-profile').click()"
+                          >
+                            Upload
+                          </a>
                         </div>
                       </div>
-                    </div>
-                    <div>
-                      <ul>
-                        <li> All documents should be clear in quality</li>
-                        <li> We accept documents in pdf/jpg/png format.</li>
-                        <li>Max file size 32MB</li>
-                      </ul>
+
+                      <input
+                        type="file"
+                        accept="image/*"
+                        className="custom-file-input"
+                        name="Upload PAN"
+                        id="upload-pan"
+                        onChange={handlePanUpload}
+                      />
+                      {errorUploadPan ? (
+                        <span style={{ color: "red" }}>{errorUploadPan}</span>
+                      ) : null}
+
+                      <input
+                        type="file"
+                        accept="image/*"
+                        className="custom-file-input"
+                        name="Upload Profile"
+                        id="upload-profile"
+                        onChange={handleProfileUpload}
+                      />
+                      {errorProfile ? (
+                        <span style={{ color: "red" }}>{errorProfile}</span>
+                      ) : null}
                     </div>
 
                     <input
@@ -524,27 +565,45 @@ const Kycdetailsformpayme = (props) => {
                   </div>
                 </form>
               </div>
-              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+              <div className="col-lg-3 col-md-3 col-sm-12 text-center">
                 <div className="height100" style={{ height: "100vh" }}>
                   <div>
-                    <div className="circle-half">
-                      <div className="full-circle">
-                        <img src={tip} alt="Icon" />
+                    <div
+                      className="circle-half"
+                      style={{
+                        borderRadius: 20,
+                        padding: 20,
+                        position: "relative",
+                      }}
+                    >
+                      <div
+                        className="full-circle"
+                        style={{
+                          margin: "auto",
+                          position: "absolute",
+                          top: -76,
+                          left: 0,
+                          right: 0,
+                          height: 110,
+                          width: 110,
+                        }}
+                      >
+                        <img src={tip} className="img-fluid" alt="Icon" />
                       </div>
-                      <div className="full-text text-left">
+                      <div
+                        className="full-text text-left"
+                        style={{ width: "100%" }}
+                      >
                         <h5>Tips</h5>
                         <p>
-                          In expedita et occaecati ullam a cumque maiores
-                          perspiciatis. Non labore exercitationem rerum nulla ea
-                          veniam facilis et.{" "}
+                          EKYC helps in processing the loan application
+                          instantly.
+                        </p>
+                        <p>
+                          Further suggestion: Share the video link of
+                          both EKYC and Manual KYC.
                         </p>
                       </div>
-                    </div>
-                    <div className="circle-half">
-                      <p className="p-a-10">
-                        In expedita et occaecati ullam a cumque maiores
-                        perspiciatis.{" "}
-                      </p>
                     </div>
                   </div>
                 </div>

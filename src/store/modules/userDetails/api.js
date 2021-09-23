@@ -12,9 +12,12 @@ export const getUserData = data => new Promise(async (resolve, reject) => {
       return resolve(response);
     })
     .catch((error) => {
+      
       if(error.response.status===401)
       {
+        
         cookies.remove('token', { path: '/' })
+    
       }
       return reject(error);
     });

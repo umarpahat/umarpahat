@@ -20,6 +20,7 @@ import { bindActionCreators } from 'redux';
 const cookies = new Cookies();
 
 const OtherDetalisForm = (props) => {
+  console.log(props,"hhh")
   const token = cookies.get("token");
   // const [logintoken, setlogintoken] = usest
   const [serviceCharge, setserviceCharge] = useState(0);
@@ -64,18 +65,12 @@ const OtherDetalisForm = (props) => {
   const [screen1, setScreen1] = useState(true);
   const [screen2, setScreen2] = useState(false);
   const [screen3, setScreen3] = useState(false);
-
-
-  useEffect(() => {
-   
-    !token ? props.history.push({ pathname: "/" }): null;
-    props.hitAllUserData({ token: token })
-   
- },[]);
+  const[correctPan,setcorrectPan]=useState("")
+  
 
   async function getSignedUrl() {
     const pathArray = [
-      `pay_rent/${props.user.userData.id}/rent_agreement.jpeg`,
+      `pay_rent/${props.user.userData?.id}/rent_agreement.jpeg`,
     ];
     const signedUrlObj = await getS3SignedUrl({
       token: token,
@@ -97,6 +92,10 @@ const OtherDetalisForm = (props) => {
   }
 
   useEffect(() => {
+
+    if(!token )
+    {props.history.push("/")}
+    props.hitAllUserData({ token: token });
     handleName();
 
     props.user.userData
@@ -105,12 +104,12 @@ const OtherDetalisForm = (props) => {
     getSignedUrl();
     if (
       (props.user.userData &&
-        props.user?.userData?.userdocumentsmodel.kyc_verified === "VERIFIED") ||
-      userdocumentsmodel.kyc_verified === "VERIFIED"
+        props.user.userData.props.user.userData?.userdocumentsmodel.kyc_verified === "VERIFIED") ||
+      props.user.userData?.userdocumentsmodel.kyc_verified === "VERIFIED"
     ) {
       setkyc_verified(true);
     }
-    let url = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`;
+   
     console.log("eerererer", url);
     let config = {
       headers: {
@@ -118,21 +117,23 @@ const OtherDetalisForm = (props) => {
         "Content-Type": "application/json",
       },
     };
+    console.log("tokennn",token)
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get(url, config)
+      .get(`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`, config)
       .then((response) => {
+        console.log("response1 hi hi hi",response)
         setserviceCharge(response.data.service_charge);
       })
       .catch((err) => {
         if (err.response.status === 401) {
-          cookies.remove("token", { path: "/" });
+          // cookies.remove("token", { path: "/" });
         }
         console.log(userdocumentsmodel);
         console.log("eeeeee", err);
       });
 
-    let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`;
+    // let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`;
     // let config = {
     //   headers: {
     //     Authorization: "Token " + token,
@@ -141,15 +142,16 @@ const OtherDetalisForm = (props) => {
     // }
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get(url2, config)
+      .get(`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`, config)
       .then((response) => {
+        console.log("response1",response)
         setjwtToken(response.data.token);
       })
       .catch((err) => {
         console.log(34343434, err);
       });
 
-    let url3 = `${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`;
+    // let url3 = `${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`;
     let config3 = {
       headers: {
         Authorization: "Token " + token,
@@ -157,10 +159,11 @@ const OtherDetalisForm = (props) => {
     };
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get(url3, config3)
+      .get(`${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`, config3)
       .then((res) => {
+        console.log("response hisotry",res)
         console.log("history man", res.data.results);
-        settransactionHistory(res.data.results);
+        settransactionHistory(res.data);
         // setTransactionHistory(res.data)
         // return resolve(res.data)
       })
@@ -236,7 +239,7 @@ const OtherDetalisForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!landlordActNumber) {
+    if (!landlordActNumber ) {
       seterrorlandlordActNumber("Please enter landlord account number");
       return;
     }
@@ -250,7 +253,7 @@ const OtherDetalisForm = (props) => {
       );
       return;
     }
-    if (!ifscCode) {
+    if (!ifscCode ) {
       seterrorifscCode("Please enter ifsc code");
       return;
     }
@@ -312,12 +315,12 @@ const OtherDetalisForm = (props) => {
     "name",
     name,
     kyc_verified,
-    props?.user?.userData?.userdocumentsmodel.kyc_verified
+    props.user.userData?.userdocumentsmodel.kyc_verified
   );
 
   return (
     <>
-     <Header {...props} />
+      <Header {...props} />
       <div className="content darkBg">
        
         {loader ? (
@@ -360,11 +363,11 @@ const OtherDetalisForm = (props) => {
                       </Link>
                     </div>
                   </div>
-                  {kyc_verified ? (
+                  {props.user.userData?.userdocumentsmodel.kyc_verified==="VERIFIED" ? (
                     <form onSubmit={handleSubmit}>
                       {screen1 ? (
                         <div>
-                          <div className="home-contact-form">
+                          <div className="home-contact-form" style={{marginBottom:"10px"}}>
                             <h4 className="form-heading text-center">
                               Fill Out The Following Details
                             </h4>
@@ -422,8 +425,14 @@ const OtherDetalisForm = (props) => {
                                       placeholder="Enter 10 Digit PAN Number Here"
                                       value={panNumber}
                                       onChange={(e) => {
+
+                                        if (e.target.value.match(/^([A-Z]){5}([0-9]){4}([A-Z]){1}$/)) {
+                                          setcorrectPan("Correct");
+                                         
+                                      }
+                                   
                                         seterrorpanNumber("");
-                                        setpanNumber(e.target.value);
+                                        setpanNumber(e.target.value.toUpperCase());
                                       }}
                                     />
                                     {errorpanNumber ? (
@@ -475,6 +484,7 @@ const OtherDetalisForm = (props) => {
                           <button
                             onClick={handleScreen2}
                             className="getstartbtn "
+                            style={{marginTop:"15x"}}
                           >
                             Save & Continue
                           </button>
@@ -498,7 +508,12 @@ const OtherDetalisForm = (props) => {
                                     value={landLordName}
                                     onChange={(e) => {
                                       seterrorlandLordName("");
-                                      setlandLordName(e.target.value);
+                                      if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                        setlandLordName(e.target.value);
+                                    } else if (e.target.value.length === 0) {
+                                        setlandLordName(e.target.value);
+                                    }
+                                     
                                     }}
                                   />
                                   {errorlandLordName ? (
@@ -518,7 +533,12 @@ const OtherDetalisForm = (props) => {
                                     value={yourName}
                                     onChange={(e) => {
                                       seterroryourName("");
-                                      setyourName(e.target.value);
+                                      if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                        setyourName(e.target.value);
+                                    } else if (e.target.value.length === 0) {
+                                        setyourName(e.target.value);
+                                    }
+                                    
                                     }}
                                   />
                                   {erroryourName ? (
@@ -557,7 +577,7 @@ const OtherDetalisForm = (props) => {
                                       value={mobileNumber}
                                       onChange={(e) => {
                                         seterrormobileNumber("");
-                                        setmobileNumber(e.target.value);
+                                        setmobileNumber(e.target.value.slice(0,10));
                                       }}
                                     />
                                     {errormobileNumber ? (
@@ -601,13 +621,13 @@ const OtherDetalisForm = (props) => {
                                 <div class="form-group ms-input-group">
                                   <label className="form-label">Pin Code</label>
                                   <input
-                                    type="text"
+                                    type="number"
                                     class="form-control ms-form-input"
                                     placeholder="Enter Pincode Of Your Property"
                                     value={pinCode}
                                     onChange={(e) => {
                                       seterrorPincode("");
-                                      setpinCode(e.target.value);
+                                      setpinCode(e.target.value.slice(0,6));
                                     }}
                                   />
                                   {errorPincode ? (
@@ -627,7 +647,12 @@ const OtherDetalisForm = (props) => {
                                       value={state}
                                       onChange={(e) => {
                                         seterrorstate("");
-                                        setstate(e.target.value);
+                                        if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                          setstate(e.target.value);
+                                     } else if (e.target.value.length === 0) {
+                                          setstate(e.target.value);
+                                     }
+                                      
                                       }}
                                     />
                                     {errorstate ? (
@@ -645,7 +670,12 @@ const OtherDetalisForm = (props) => {
                                       value={city}
                                       onChange={(e) => {
                                         seterrorcity("");
-                                        setcity(e.target.value);
+                                        if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                           setcity(e.target.value);
+                                      } else if (e.target.value.length === 0) {
+                                           setcity(e.target.value);
+                                      }
+                                      
                                       }}
                                     />
                                     {errorcity ? (
@@ -660,6 +690,7 @@ const OtherDetalisForm = (props) => {
                             <button
                               onClick={handleScreen3}
                               className="getstartbtn "
+                              style={{ marginTop: "15px" }}
                             >
                               Save & Continue
                             </button>
@@ -684,7 +715,8 @@ const OtherDetalisForm = (props) => {
                                     value={landlordActNumber}
                                     onChange={(e) => {
                                       seterrorlandlordActNumber("");
-                                      setlandlordActNumber(e.target.value);
+                                    
+                                      setlandlordActNumber(e.target.value.slice(0,22));
                                     }}
                                   />
                                   {errorlandlordActNumber ? (
@@ -704,7 +736,7 @@ const OtherDetalisForm = (props) => {
                                     value={conflandlordActNumber}
                                     onChange={(e) => {
                                       seterrorconflandlordActNumber("");
-                                      setconflandlordActNumber(e.target.value);
+                                      setconflandlordActNumber(e.target.value.slice(0,22));
                                     }}
                                   />
                                   {errorconflandlordActNumber ? (
@@ -724,7 +756,7 @@ const OtherDetalisForm = (props) => {
                                     value={ifscCode}
                                     onChange={(e) => {
                                       seterrorifscCode("");
-                                      setifscCode(e.target.value);
+                                      setifscCode(e.target.value.toUpperCase());
                                     }}
                                   />
                                   {errorifscCode ? (
@@ -770,8 +802,8 @@ const OtherDetalisForm = (props) => {
                         Your KYC is not verified
                       </h4>
                       <br></br>
-                      {userdocumentsmodel.kyc_verified === "NOT_SUBMITTED" ||
-                      userdocumentsmodel.kyc_verified === "NOT_VALID" ? (
+                      {props.user.userData?.userdocumentsmodel.kyc_verified === "NOT_SUBMITTED" ||
+                      props.user.userData?.userdocumentsmodel.kyc_verified === "NOT_VALID" ? (
                         <div>
                           <span
                             className="reloadicon"
@@ -792,12 +824,12 @@ const OtherDetalisForm = (props) => {
                               fontFamily: "Montserrat",
                             }}
                           >
-                            {userdocumentsmodel.kyc_verified}
+                            {props.user.userData?.userdocumentsmodel.kyc_verified}
                           </span>
                         </div>
                       ) : null}
 
-                      {userdocumentsmodel.kyc_verified ===
+                      {props.user.userData?.userdocumentsmodel.kyc_verified ===
                       "PENDING_VERIFICATION" ? (
                         <div>
                           <span
@@ -822,12 +854,12 @@ const OtherDetalisForm = (props) => {
                               fontFamily: "Montserrat",
                             }}
                           >
-                            {userdocumentsmodel.kyc_verified}
+                            {props.user.userData?.userdocumentsmodel.kyc_verified}
                           </span> </Link>
                         </div>
                       ) : null}
 
-                      {userdocumentsmodel.kyc_verified ===
+                      {props.user.userData?.userdocumentsmodel.kyc_verified ===
                       "PENDING_VERIFICATION" ? (
                         <div>
                           <br></br>
@@ -836,7 +868,7 @@ const OtherDetalisForm = (props) => {
                           </p>
                         </div>
                       ) : null}
-                      {userdocumentsmodel.kyc_verified !==
+                      {props.user.userData?.userdocumentsmodel.kyc_verified !==
                       "PENDING_VERIFICATION" ? (
                         <input
                           type="button"

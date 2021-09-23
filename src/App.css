@@ -177,7 +177,38 @@ h6 {
   box-shadow: none;
 }
 
+.form-input {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 14px;
+  width: 100%;
+  line-height: 20px;
+  color: #6F6F6F;
+  outline: 0;
+  border: 1px solid #C4C4C4;
+  border-radius: 8px;
+}
+.select-item {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 14px;
+  width: 100%;
+  line-height: 20px;
+  color: #6F6F6F;
+  outline: 0;
+  border: 1px solid #C4C4C4;
+  border-radius: 8px;
+  background: #fff;
+}
+.form-label-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
+}
+
 .form-control {
+  background: #fff;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
@@ -1839,10 +1870,6 @@ a:hover {
   display: flex !important;
   flex-direction: row !important;
 }
-select {
-  width:100% !important;
-  height: 60px !important;
-}
 
 select option {
   color: black;
@@ -2058,11 +2085,6 @@ select option {
   }
   .page-section-headings-main {
     font-size: 2em;
-  }
-  .fornheadding {
-    font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    font-weight: 700;
   }
 
   /* About US responsive  */
@@ -2947,7 +2969,6 @@ a.button-small:hover {
 
 .banner {
   padding: 20px 0 30px;
-  background: #829aae url('../images/banner-img.png') no-repeat center 0;
   box-shadow: rgba(0, 0, 0, .1) 0 8px 5px -5px
 }
 
@@ -3189,10 +3210,6 @@ a.button-small:hover {
   box-shadow: rgba(17, 17, 26, .1) 0 1px 0;
   color: #f8bb32;
   text-decoration: none
-}
-
-.black-bg {
-  background: #040d1b url('../images/black-bg.png') repeat 0 0;
 }
 
 .white-color {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
-import { hitAppUseCase } from "../../store/modules/userDetails/actions";
+import { hitAppUseCase,hitAllUserData } from "../../store/modules/userDetails/actions";
 import { connect } from "react-redux";
 import { api } from "../../services/api";
 import Loader from "../../component/Loader";
@@ -14,6 +14,7 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 const Getquikloneapply = (props) => {
+  const token = cookies.get('token')
  cookies.set('userCase', "apply-loan");
  const userCase = cookies.get("userCase")
  console.log("apply loan",userCase)
@@ -23,11 +24,10 @@ const Getquikloneapply = (props) => {
   let [newUser, setnewUser] = useState(false);
 
   useEffect(() => {
-    if (window.location.pathname === "/apply-loan") {
-      props.hitAppUseCase({ useCase: "apply-loan" });
-    } else if (window.location.pathname === "/pay-rent-details") {
-      props.hitAppUseCase({ useCase: "pay-rent" });
+    if(token){
+ props.hitAllUserData({ token: token });
     }
+ 
   }, []);
 
   const handleSubmit = (event) => {
@@ -39,6 +39,47 @@ const Getquikloneapply = (props) => {
 
   const verifyPhone = () => {
     setloader(true);
+    if (token) {
+      console.log("props.user.userData",props.user)
+      if (props.user.userData) {
+       
+
+    
+        if (userCase === "apply-loan") {
+          if (
+            props.user.userData.userdocumentsmodel?.kyc_verified ===
+              "VERIFIED" ||
+            props.user.userData?.userdocumentsmodel?.kyc_verified ===
+              "PENDING_VERIFICATION"
+          ) {
+            props.history.push({ pathname: "/step-manual" });
+          }
+         else {
+            props.history.push({ pathname: "/kycoption" });
+          }
+        } else if (userCase === "pay-rent") {
+          console.log("payrent kyc", props.user.userData.userdocumentsmodel);
+          if (
+            props.user.userData.userdocumentsmodel.kyc_verified ===
+              "VERIFIED" ||
+            props.user.userData.userdocumentsmodel.kyc_verified ===
+              "PENDING_VERIFICATION"
+          ) {
+            props.history.push({ pathname: "/payrent-other-details" });
+          } else {
+            console.log("1414141414", props);
+            props.history.push({ pathname: "/payrent-other-details" });
+          }
+        } else {
+          props.history.push({ pathname: "/" });
+        }
+       
+      } else {
+        props.hitAllUserData({ token: token });
+      }
+    
+  }
+  else{
     api
       .post(
         `api/authentication/phone_no_verify/`,
@@ -46,8 +87,9 @@ const Getquikloneapply = (props) => {
         {}
       )
       .then((response) => {
-        setloader(false);
+       
         if (response.status === 200 && !response.data.phone_number_verified) {
+          setloader(false)
           setnewUser(true);
         } else if (
           response.status === 200 &&
@@ -70,7 +112,7 @@ const Getquikloneapply = (props) => {
         console.log(error);
         setloader(false);
       });
-  };
+  }};
 
   return (
     <>
@@ -101,7 +143,7 @@ const Getquikloneapply = (props) => {
                               <div className="slider-right-block">
                                   <form onSubmit={handleSubmit}>
                                       <div className="home-contact-form">
-                                          <h4 className="form-heading fornheadding">
+                                          <h4 className="form-heading formheadding">
                                               Let's Get Started
                                           </h4>
 
@@ -145,12 +187,11 @@ const Getquikloneapply = (props) => {
                     <div>
                       <div className='circle-half'>
                         <div className='full-circle'>
-                          <img src={letsStart} className='img-fluid max-width70' alt='Icon'/>
+                          <img src={letsStart} className='img-fluid' style={{maxWidth:150}}  alt='Icon'/>
                         </div>
                         <div className='full-text text-left'>
                           <h5>Tips</h5>
-                          <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
-                            rerum nulla ea veniam facilis et. </p>
+                          <p>With the help of the registered mobile number provided, we will reach out to you in a quicker manner.</p>
                         </div>
                       </div>
                     </div>
@@ -170,6 +211,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-const dispatchToProps = { hitAppUseCase };
+const dispatchToProps = { hitAppUseCase,hitAllUserData };
 
 export default connect(mapStateToProps, dispatchToProps)(Getquikloneapply);
