@@ -20,7 +20,7 @@ import { bindActionCreators } from 'redux';
 const cookies = new Cookies();
 
 const OtherDetalisForm = (props) => {
-  console.log(props,"hhh")
+
   const token = cookies.get("token");
   // const [logintoken, setlogintoken] = usest
   const [serviceCharge, setserviceCharge] = useState(0);
@@ -110,26 +110,26 @@ const OtherDetalisForm = (props) => {
       setkyc_verified(true);
     }
    
-    console.log("eerererer", url);
+   
     let config = {
       headers: {
         Authorization: "Token " + token,
         "Content-Type": "application/json",
       },
     };
-    console.log("tokennn",token)
+  
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
       .get(`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`, config)
       .then((response) => {
-        console.log("response1 hi hi hi",response)
+     
         setserviceCharge(response.data.service_charge);
       })
       .catch((err) => {
         if (err.response.status === 401) {
           // cookies.remove("token", { path: "/" });
         }
-        console.log(userdocumentsmodel);
+        ;
         console.log("eeeeee", err);
       });
 
@@ -144,7 +144,7 @@ const OtherDetalisForm = (props) => {
     axios
       .get(`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`, config)
       .then((response) => {
-        console.log("response1",response)
+       
         setjwtToken(response.data.token);
       })
       .catch((err) => {
@@ -161,11 +161,7 @@ const OtherDetalisForm = (props) => {
     axios
       .get(`${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`, config3)
       .then((res) => {
-        console.log("response hisotry",res)
-        console.log("history man", res.data.results);
-        settransactionHistory(res.data);
-        // setTransactionHistory(res.data)
-        // return resolve(res.data)
+     
       })
       .catch((err) => {
         console.log("history", err);
@@ -311,12 +307,7 @@ const OtherDetalisForm = (props) => {
       });
     }
   };
-  console.log(
-    "name",
-    name,
-    kyc_verified,
-    props.user.userData?.userdocumentsmodel.kyc_verified
-  );
+
 
   return (
     <>
