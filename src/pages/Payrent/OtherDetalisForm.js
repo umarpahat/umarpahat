@@ -17,6 +17,7 @@ import Cookies from "universal-cookie";
 import { Container } from "react-bootstrap";
 import tip from "../../images/svg/tip.png";
 import { bindActionCreators } from 'redux';
+import kycIcon from "../../images/svg/professional-details.svg";
 const cookies = new Cookies();
 
 const OtherDetalisForm = (props) => {
@@ -66,7 +67,7 @@ const OtherDetalisForm = (props) => {
   const [screen2, setScreen2] = useState(false);
   const [screen3, setScreen3] = useState(false);
   const[correctPan,setcorrectPan]=useState("")
-  console.log("endpoint",API_ENDPOINT_STAGING)
+  
 
   async function getSignedUrl() {
     const pathArray = [
@@ -114,8 +115,6 @@ const OtherDetalisForm = (props) => {
     ) {
       setkyc_verified(true);
     }
-
-    console.log(`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`)
     let url = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`;
     console.log("eerererer", url);
     let config = {
@@ -127,7 +126,7 @@ const OtherDetalisForm = (props) => {
     console.log("tokennn",token)
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get("https://staging.paymeindia.in/api/pay-rent/get-jwt-initiate-payment/", config)
+      .get(url, config)
       .then((response) => {
         console.log("response1 hi hi hi",response)
         setserviceCharge(response.data.service_charge);
@@ -139,9 +138,8 @@ const OtherDetalisForm = (props) => {
         console.log(userdocumentsmodel);
         console.log("eeeeee", err);
       });
-      console.log("cosole1",`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`,`${API_ENDPOINT_STAGING}`)
 
-    let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token/`;
+    let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`;
     // let config = {
     //   headers: {
     //     Authorization: "Token " + token,
@@ -150,7 +148,7 @@ const OtherDetalisForm = (props) => {
     // }
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get("https://staging.paymeindia.in/api/pay-rent/get-jwt-initiate-payment/?request_type=token/", config)
+      .get(url2, config)
       .then((response) => {
         console.log("response1",response)
         setjwtToken(response.data.token);
@@ -167,7 +165,7 @@ const OtherDetalisForm = (props) => {
     };
     // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get("https://staging.paymeindia.in/api/pay-rent/list-payment-history/", config3)
+      .get(url3, config3)
       .then((res) => {
         console.log("response hisotry",res)
         console.log("history man", res.data.results);
@@ -346,24 +344,16 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
         ) : (
           // kyc_verified ?
           <Container>
-            <div className="row">
-              <div className="col-lg-2 col-md-2 col-sm-12 text-center">
-                <br />
-                <a className="back-arrow" href="">
-                  Back
-                </a>
-              </div>
-              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
                 <div className="form-container">
                   <div className="ms-Tabs">
                     <div
-                      class="btn-group"
+                      className="btn-group"
                       role="group"
                       aria-label="Basic example"
                     >
                       <Link
                         to="/payrent-other-details"
-                        class="btn  ms-group-btn active-btn"
+                        className="btn  ms-group-btn active-btn"
                       >
                         New Transaction
                       </Link>
@@ -372,618 +362,630 @@ console.log("namenmane",props.user.userData?.customusermodel.first_name,props.us
                           pathname: "/payrent-transaction-history",
                           state: { transactionHistory: transactionHistory },
                         }}
-                        class="btn  ms-group-btn "
+                        className="btn  ms-group-btn "
                       >
                         Transaction History
                       </Link>
                     </div>
                   </div>
+                  </div>
                   {props.user.userData?.userdocumentsmodel.kyc_verified==="VERIFIED" ? (
                     <form onSubmit={handleSubmit}>
                       {screen1 ? (
-                        <div>
-                          <div className="home-contact-form" style={{marginBottom:"10px"}}>
-                            <h4 className="form-heading text-center">
-                              Fill Out The Following Details
-                            </h4>
-                            <div className="form-block">
-                              <div class="form-group ms-input-group">
-                                <label className="form-label">
+                          <div className="row">
+                            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                              <br/>
+                              <a className="back-arrow" href="">
+                                Back
+                              </a>
+                            </div>
+                            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                              <div className="home-contact-form" style={{marginBottom: "10px"}}>
+                                <h4 className="h4 text-center">
                                   Hi {name + " " + lastName}, How Much Rent
                                   Would You Like To Pay?
-                                </label>
-                              </div>
-                              <input
-                                name="RentAmount"
-                                type="text"
-                                class="form-control ms-form-input"
-                                value={RentAmount}
-                                onChange={(e) => {
-                                  seterrorRentAmount("");
-                                  setRentAmount(e.target.value);
-                                }}
-                              />
-                              {errorRentAmount ? (
-                                <span style={{ color: "red" }}>
+                                </h4>
+                                <div className="form-block p-b-30">
+                                  <input
+                                      name="RentAmount"
+                                      type="text"
+                                      className="form-control ms-form-input"
+                                      value={RentAmount}
+                                      onChange={(e) => {
+                                        seterrorRentAmount("");
+                                        setRentAmount(e.target.value);
+                                      }}
+                                  />
+                                  {errorRentAmount ? (
+                                      <span style={{color: "red"}}>
                                   {errorRentAmount}
                                 </span>
-                              ) : null}
-                              <br></br>
-                              <div className="ms-range-slider">
-                                <div className="py-3">
-                                  <InputRange
-                                    maxValue={50000}
-                                    minValue={100}
-                                    formatLabel={(maxvalue) => `₹${maxvalue}`}
-                                    value={RentAmount}
-                                    onChange={(value) => setRentAmount(value)}
-                                  />
-                                </div>
-                                <br></br>
+                                  ) : null}
+                                  <br></br>
+                                  <div className="ms-range-slider">
+                                    <div className="py-3">
+                                      <InputRange
+                                          maxValue={50000}
+                                          minValue={100}
+                                          formatLabel={(maxvalue) => `₹${maxvalue}`}
+                                          value={RentAmount}
+                                          onChange={(value) => setRentAmount(value)}
+                                      />
+                                    </div>
+                                    <br></br>
 
-                                <div
-                                  style={{
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                  }}
-                                ></div>
-                              </div>
-                              {RentAmount > 15000 && (
-                                <div>
-                                  <div class="form-group ms-input-group">
-                                    <label className="form-label">
-                                      Landlord's PAN Number
-                                    </label>
-                                    <input
-                                      type="text"
-                                      class="form-control ms-form-input"
-                                      placeholder="Enter 10 Digit PAN Number Here"
-                                      value={panNumber}
-                                      onChange={(e) => {
+                                    <div
+                                        style={{
+                                          display: "flex",
+                                          justifyContent: "space-between",
+                                        }}
+                                    ></div>
+                                  </div>
+                                  {RentAmount > 15000 && (
+                                      <div>
+                                        <div className="form-group ms-input-group">
+                                          <label className="form-label">
+                                            Landlord's PAN Number
+                                          </label>
+                                          <input
+                                              type="text"
+                                              className="form-control ms-form-input"
+                                              placeholder="Enter 10 Digit PAN Number Here"
+                                              value={panNumber}
+                                              onChange={(e) => {
 
-                                        if (e.target.value.match(/^([A-Z]){5}([0-9]){4}([A-Z]){1}$/)) {
-                                          setcorrectPan("Correct");
-                                         
-                                      }
-                                   
-                                        seterrorpanNumber("");
-                                        setpanNumber(e.target.value.toUpperCase());
-                                      }}
-                                    />
-                                    {errorpanNumber ? (
-                                      <span style={{ color: "red" }}>
+                                                if (e.target.value.match(/^([A-Z]){5}([0-9]){4}([A-Z]){1}$/)) {
+                                                  setcorrectPan("Correct");
+
+                                                }
+
+                                                seterrorpanNumber("");
+                                                setpanNumber(e.target.value.toUpperCase());
+                                              }}
+                                          />
+                                          {errorpanNumber ? (
+                                              <span style={{color: "red"}}>
                                         {errorpanNumber}
                                       </span>
-                                    ) : null}
-                                  </div>
-                                  <br></br>
-                                  <label className="form-label">
-                                    <h4 className="form-heading">
-                                      Your Rent Agreement
-                                    </h4>
-                                  </label>
-                                  <br></br>
-                                  <label className="form-label ">
-                                    Kindly Upload Your Rent Agreement Here
-                                  </label>
-                                  <br></br>
-                                  <div className="file-uploading-block">
-                                    <p className="small-text-ms">
-                                      Upload Rent Agreement (.jpg, .pdf upto
-                                      20MB)
-                                    </p>
-                                    <br></br>
-                                    <a
-                                      className="upload-btn-text"
-                                      href="javascript:document.querySelector('input#PAN').click()"
-                                    >
-                                      Browse File
-                                    </a>
-                                    <input
-                                      type="file"
-                                      class="custom-file-input"
-                                      id="PAN"
-                                      onChange={handleAggrementUpload}
-                                      hidden
-                                    />
-                                    <br/>
-
-                                    {uploadRentAgreement.name? (<span>
+                                          ) : null}
+                                        </div>
+                                        <div className='step-step p-t-30 border-btm'>
+                                          <div className='img-wrapper'>
+                                            <img className='img-fluid' src={kycIcon} alt='Upload'/>
+                                          </div>
+                                          <div className='img-text'>
+                                            <h6>Your Rent Agreement</h6>
+                                            <p>Kindly Upload Your Rent Agreement Here
+                                              <br/> Upload Rent Agreement (.jpg, .pdf upto
+                                              20MB)</p>
+                                            {uploadRentAgreement.name ? (<span>
                                         {uploadRentAgreement.name}
                                       </span>)
-                                     : null}
-                                    {erroruploadRentAgreement ? (
-                                      <span style={{ color: "red" }}>
+                                                : null}
+                                            {erroruploadRentAgreement ? (
+                                                <span style={{color: "red"}}>
                                         {erroruploadRentAgreement}
                                       </span>
-                                    ) : null}
+                                            ) : null}
+                                            <input
+                                                type="file"
+                                                className="custom-file-input"
+                                                id="PAN"
+                                                onChange={handleAggrementUpload}
+                                                hidden
+                                            />
+                                          </div>
+                                          <div className='wrapper-button'>
+                                            <a className="green-button"  href="javascript:document.querySelector('input#PAN').click()" >
+                                              Upload</a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                  )}
+                                </div>
+                                <button
+                                    onClick={handleScreen2}
+                                    className="getstartbtn "
+                                    style={{marginTop: "15x"}}
+                                >
+                                  Save & Continue
+                                </button>
+                              </div>
+                              </div>
+                              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                                <div className="height100">
+                                  <div>
+                                    <div className="circle-half">
+                                      <div className="full-circle">
+                                        <img src={tip} alt="Icon"/>
+                                      </div>
+                                      <div className="full-text text-left">
+                                        <h5>Tips</h5>
+                                        <p>Rent Agreement is required if your rent amount is more than or equal to Rs. 15,000. For rent more than Rs. 50,000 the landlord's PAN details would be required.</p>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
-                              )}
+                              </div>
                             </div>
-                          </div>
-                          <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-                <div className="height100">
-                  <div>
-                    <div className="circle-half">
-                      <div className="full-circle">
-                        <img src={tip} alt="Icon" />
-                      </div>
-                      <div className="full-text text-left">
-                        <h5>Tips</h5>
-                        <p>
-                          In expedita et occaecati ullam a cumque maiores
-                          perspiciatis. Non labore exercitationem rerum nulla ea
-                          veniam facilis et.{" "}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="circle-half">
-                      <p className="p-a-10">
-                        In expedita et occaecati ullam a cumque maiores
-                        perspiciatis.{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-                          <button
-                            onClick={handleScreen2}
-                            className="getstartbtn "
-                            style={{marginTop:"15x"}}
-                          >
-                            Save & Continue
-                          </button>
-                        </div>
                       ) : null}
 
                       <div>
                         {screen2 ? (
-                          <div>
-                            <div className="home-contact-form mt-4">
-                              <h4 className="form-heading">Details</h4>
-                              <div className="form-block">
-                                <div class="form-group ms-input-group">
-                                  <label className="form-label">
-                                    Landlord's Name (As Per Bank Account)
-                                  </label>
-                                  <input
-                                    type="text"
-                                    class="form-control ms-form-input"
-                                    placeholder="e.g Salman Khan"
-                                    value={landLordName}
-                                    onChange={(e) => {
-                                      seterrorlandLordName("");
-                                      if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
-                                        setlandLordName(e.target.value);
-                                    } else if (e.target.value.length === 0) {
-                                        setlandLordName(e.target.value);
-                                    }
-                                     
-                                    }}
-                                  />
-                                  {errorlandLordName ? (
-                                    <span style={{ color: "red" }}>
+                            <div className="row">
+                              <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                                <br/>
+                                <a className="back-arrow" href="">
+                                  Back
+                                </a>
+                              </div>
+                              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                                <div className="home-contact-form mt-4">
+                                  <h4 className="form-heading">What is your address?</h4>
+                                  <div className="form-block">
+                                    <div className="form-group ms-input-group">
+                                      <label className="form-label">
+                                        Landlord Name
+                                      </label>
+                                      <input
+                                          type="text"
+                                          className="form-input"
+                                          placeholder="e.g Salman Khan"
+                                          value={landLordName}
+                                          onChange={(e) => {
+                                            seterrorlandLordName("");
+                                            if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                              setlandLordName(e.target.value);
+                                            } else if (e.target.value.length === 0) {
+                                              setlandLordName(e.target.value);
+                                            }
+
+                                          }}
+                                      />
+                                      {errorlandLordName ? (
+                                          <span style={{color: "red"}}>
                                       {errorlandLordName}
                                     </span>
-                                  ) : null}
-                                </div>
-                                <div class="form-group ms-input-group">
-                                  <label className="form-label">
-                                    Your Name
-                                  </label>
-                                  <input
-                                    type="text"
-                                    class="form-control ms-form-input"
-                                    placeholder="e.g Salman Khan"
-                                    value={yourName}
-                                    onChange={(e) => {
-                                      seterroryourName("");
-                                      if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
-                                        setyourName(e.target.value);
-                                    } else if (e.target.value.length === 0) {
-                                        setyourName(e.target.value);
-                                    }
-                                    
-                                    }}
-                                  />
-                                  {erroryourName ? (
-                                    <span style={{ color: "red" }}>
+                                      ) : null}
+                                    </div>
+                                    <div className="form-group ms-input-group">
+                                      <label className="form-label">
+                                        Your Name
+                                      </label>
+                                      <input
+                                          type="text"
+                                          className="form-input"
+                                          placeholder="e.g Salman Khan"
+                                          value={yourName}
+                                          onChange={(e) => {
+                                            seterroryourName("");
+                                            if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                              setyourName(e.target.value);
+                                            } else if (e.target.value.length === 0) {
+                                              setyourName(e.target.value);
+                                            }
+
+                                          }}
+                                      />
+                                      {erroryourName ? (
+                                          <span style={{color: "red"}}>
                                       {erroryourName}
                                     </span>
-                                  ) : null}
-                                </div>
-                                <div class="form-group ms-input-group">
-                                  <label className="form-label">
-                                    Landlord's Mobile Number
-                                  </label>
+                                      ) : null}
+                                    </div>
+                                    <div className="form-group ms-input-group">
+                                      <label className="form-label">
+                                        Landlord's Mobile Number
+                                      </label>
 
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      alignItems: "center",
-                                      background: "#fff",
-                                    }}
-                                  >
+                                      <div
+                                          style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            background: "#fff",
+                                          }}
+                                      >
                                     <span
-                                      style={{
-                                        fontSize: 17,
-                                        fontWeight: "700",
-                                        marginLeft: 15,
-                                        marginRight: 15,
-                                        color: "#040b4d",
-                                      }}
+                                        style={{
+                                          fontSize: 17,
+                                          fontWeight: "700",
+                                          marginLeft: 15,
+                                          marginRight: 15,
+                                          color: "#040b4d",
+                                        }}
                                     >
                                       +91
                                     </span>
-                                    <input
-                                      type="number"
-                                      class="form-control ms-form-input"
-                                      placeholder="9999999999"
-                                      value={mobileNumber}
-                                      onChange={(e) => {
-                                        seterrormobileNumber("");
-                                        setmobileNumber(e.target.value.slice(0,10));
-                                      }}
-                                    />
-                                    {errormobileNumber ? (
-                                      <span style={{ color: "red" }}>
+                                        <input
+                                            type="number"
+                                            className="form-input"
+                                            placeholder="9999999999"
+                                            value={mobileNumber}
+                                            onChange={(e) => {
+                                              seterrormobileNumber("");
+                                              setmobileNumber(e.target.value.slice(0, 10));
+                                            }}
+                                        />
+                                        {errormobileNumber ? (
+                                            <span style={{color: "red"}}>
                                         {errormobileNumber}
                                       </span>
-                                    ) : null}
-                                  </div>
-                                </div>
+                                        ) : null}
+                                      </div>
+                                    </div>
 
-                                <div class="form-group ms-input-group">
-                                  <label className="form-label">
-                                    Property Address (for which you are paying
-                                    Rent)
-                                  </label>
-                                  <input
-                                    type="text"
-                                    class="form-control ms-form-input"
-                                    placeholder="Address Line 1"
-                                    value={AddressLine1}
-                                    onChange={(e) => {
-                                      seterrorAddressLine1("");
-                                      setAddressLine1(e.target.value);
-                                    }}
-                                  />
-                                  {errorAddressLine1 ? (
-                                    <span style={{ color: "red" }}>
+                                    <div className="form-group ms-input-group">
+                                      <label className="form-label">
+                                        Property Address (for which you are paying
+                                        Rent)
+                                      </label>
+                                      <input
+                                          type="text"
+                                          className="form-input"
+                                          placeholder="Address Line 1"
+                                          value={AddressLine1}
+                                          onChange={(e) => {
+                                            seterrorAddressLine1("");
+                                            setAddressLine1(e.target.value);
+                                          }}
+                                      />
+                                      {errorAddressLine1 ? (
+                                          <span style={{color: "red"}}>
                                       {errorAddressLine1}
                                     </span>
-                                  ) : null}
-                                  <input
-                                    type="text"
-                                    class="form-control ms-form-input mt-2"
-                                    placeholder="Address Line 2"
-                                    value={AddressLine2}
-                                    onChange={(e) => {
-                                      setAddressLine2(e.target.value);
-                                    }}
-                                  />
-                                </div>
-                                <div class="form-group ms-input-group">
-                                  <label className="form-label">Pin Code</label>
-                                  <input
-                                    type="number"
-                                    class="form-control ms-form-input"
-                                    placeholder="Enter Pincode Of Your Property"
-                                    value={pinCode}
-                                    onChange={(e) => {
-                                      seterrorPincode("");
-                                      setpinCode(e.target.value.slice(0,6));
-                                    }}
-                                  />
-                                  {errorPincode ? (
-                                    <span style={{ color: "red" }}>
+                                      ) : null}
+                                      <input
+                                          type="text"
+                                          className="form-input mt-2"
+                                          placeholder="Address Line 2"
+                                          value={AddressLine2}
+                                          onChange={(e) => {
+                                            setAddressLine2(e.target.value);
+                                          }}
+                                      />
+                                    </div>
+                                    <div className="form-group ms-input-group">
+                                      <label className="form-label">Pin Code</label>
+                                      <input
+                                          type="number"
+                                          className="form-input"
+                                          placeholder="Enter Pincode Of Your Property"
+                                          value={pinCode}
+                                          onChange={(e) => {
+                                            seterrorPincode("");
+                                            setpinCode(e.target.value.slice(0, 6));
+                                          }}
+                                      />
+                                      {errorPincode ? (
+                                          <span style={{color: "red"}}>
                                       {errorPincode}
                                     </span>
-                                  ) : null}
-                                </div>
+                                      ) : null}
+                                    </div>
 
-                                <div className="row">
-                                  <div class="form-group ms-input-group col-6">
-                                    <label className="form-label">State</label>
-                                    <input
-                                      type="text"
-                                      class="form-control ms-form-input"
-                                      placeholder="Delhi"
-                                      value={state}
-                                      onChange={(e) => {
-                                        seterrorstate("");
-                                        if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
-                                          setstate(e.target.value);
-                                     } else if (e.target.value.length === 0) {
-                                          setstate(e.target.value);
-                                     }
-                                      
-                                      }}
-                                    />
-                                    {errorstate ? (
-                                      <span style={{ color: "red" }}>
+                                    <div className="row">
+                                      <div className="form-group ms-input-group col-6">
+                                        <label className="form-label">State</label>
+                                        <input
+                                            type="text"
+                                            className="form-input"
+                                            placeholder="Delhi"
+                                            value={state}
+                                            onChange={(e) => {
+                                              seterrorstate("");
+                                              if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                                setstate(e.target.value);
+                                              } else if (e.target.value.length === 0) {
+                                                setstate(e.target.value);
+                                              }
+
+                                            }}
+                                        />
+                                        {errorstate ? (
+                                            <span style={{color: "red"}}>
                                         {errorstate}
                                       </span>
-                                    ) : null}
-                                  </div>
-                                  <div class="form-group ms-input-group col-6">
-                                    <label className="form-label">City</label>
-                                    <input
-                                      type="text"
-                                      class="form-control ms-form-input"
-                                      placeholder="Delhi"
-                                      value={city}
-                                      onChange={(e) => {
-                                        seterrorcity("");
-                                        if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
-                                           setcity(e.target.value);
-                                      } else if (e.target.value.length === 0) {
-                                           setcity(e.target.value);
-                                      }
-                                      
-                                      }}
-                                    />
-                                    {errorcity ? (
-                                      <span style={{ color: "red" }}>
+                                        ) : null}
+                                      </div>
+                                      <div className="form-group ms-input-group col-6">
+                                        <label className="form-label">City</label>
+                                        <input
+                                            type="text"
+                                            className="form-input"
+                                            placeholder="Delhi"
+                                            value={city}
+                                            onChange={(e) => {
+                                              seterrorcity("");
+                                              if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                                                setcity(e.target.value);
+                                              } else if (e.target.value.length === 0) {
+                                                setcity(e.target.value);
+                                              }
+
+                                            }}
+                                        />
+                                        {errorcity ? (
+                                            <span style={{color: "red"}}>
                                         {errorcity}
                                       </span>
-                                    ) : null}
+                                        ) : null}
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <button
+                                      onClick={handleScreen3}
+                                      className="getstartbtn "
+                                      style={{marginTop: "15px"}}
+                                  >
+                                    Save & Continue
+                                  </button>
+                                </div>
+                              </div>
+                              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                                <div className="height100">
+                                  <div>
+                                    <div className="circle-half">
+                                      <div className="full-circle">
+                                        <img src={tip} alt="Icon"/>
+                                      </div>
+                                      <div className="full-text text-left">
+                                        <h5>Tips</h5>
+                                        <p>
+                                          It is suggested to fill the address correctly in order to avail of HRA benefits.
+                                        </p>
+                                      </div>
+                                    </div>
+
                                   </div>
                                 </div>
                               </div>
                             </div>
-                            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-                <div className="height100">
-                  <div>
-                    <div className="circle-half">
-                      <div className="full-circle">
-                        <img src={tip} alt="Icon" />
-                      </div>
-                      <div className="full-text text-left">
-                        <h5>Tips</h5>
-                        <p>
-                          In expedita et occaecati ullam a cumque maiores
-                          perspiciatis. Non labore exercitationem rerum nulla ea
-                          veniam facilis et.{" "}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="circle-half">
-                      <p className="p-a-10">
-                        In expedita et occaecati ullam a cumque maiores
-                        perspiciatis.{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-                            <button
-                              onClick={handleScreen3}
-                              className="getstartbtn "
-                              style={{ marginTop: "15px" }}
-                            >
-                              Save & Continue
-                            </button>
-                          </div>
                         ) : null}
 
                         {screen3 ? (
-                          <div>
-                            <div className="home-contact-form mt-4">
-                              <h4 className="form-heading">
-                                Landlord's Bank Details
-                              </h4>
-                              <div className="form-block">
-                                <div class="form-group ms-input-group">
-                                  <label className="form-label">
-                                    Landlord's Account Number
-                                  </label>
-                                  <input
-                                    type="text"
-                                    class="form-control ms-form-input"
-                                    placeholder="Enter 16 digits A/c Number"
-                                    value={landlordActNumber}
-                                    onChange={(e) => {
-                                      seterrorlandlordActNumber("");
-                                    
-                                      setlandlordActNumber(e.target.value.slice(0,22));
-                                    }}
-                                  />
-                                  {errorlandlordActNumber ? (
-                                    <span style={{ color: "red" }}>
+                            <div className="row">
+                              <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                                <br/>
+                                <a className="back-arrow" href="">
+                                  Back
+                                </a>
+                              </div>
+                              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                                <div className="home-contact-form mt-4">
+                                  <h4 className="form-heading">
+                                    Landlord's Bank Details
+                                  </h4>
+                                  <div className="form-block">
+                                    <div className="form-group ms-input-group">
+                                      <label className="form-label">
+                                        Landlord's Account Number
+                                      </label>
+                                      <input
+                                          type="text"
+                                          className="form-input"
+                                          placeholder="Enter 16 digits A/c Number"
+                                          value={landlordActNumber}
+                                          onChange={(e) => {
+                                            seterrorlandlordActNumber("");
+
+                                            setlandlordActNumber(e.target.value.slice(0, 22));
+                                          }}
+                                      />
+                                      {errorlandlordActNumber ? (
+                                          <span style={{color: "red"}}>
                                       {errorlandlordActNumber}
                                     </span>
-                                  ) : null}
-                                </div>
-                                <div class="form-group ms-input-group">
-                                  <label className="form-label">
-                                    Confirm Account Number
-                                  </label>
-                                  <input
-                                    type="number"
-                                    class="form-control ms-form-input"
-                                    placeholder="Enter 16 digits A/c Number"
-                                    value={conflandlordActNumber}
-                                    onChange={(e) => {
-                                      seterrorconflandlordActNumber("");
-                                      setconflandlordActNumber(e.target.value.slice(0,22));
-                                    }}
-                                  />
-                                  {errorconflandlordActNumber ? (
-                                    <span style={{ color: "red" }}>
+                                      ) : null}
+                                    </div>
+                                    <div className="form-group ms-input-group">
+                                      <label className="form-label">
+                                        Confirm Account Number
+                                      </label>
+                                      <input
+                                          type="number"
+                                          className="form-input"
+                                          placeholder="Enter 16 digits A/c Number"
+                                          value={conflandlordActNumber}
+                                          onChange={(e) => {
+                                            seterrorconflandlordActNumber("");
+                                            setconflandlordActNumber(e.target.value.slice(0, 22));
+                                          }}
+                                      />
+                                      {errorconflandlordActNumber ? (
+                                          <span style={{color: "red"}}>
                                       {errorconflandlordActNumber}
                                     </span>
-                                  ) : null}
-                                </div>
-                                <div class="form-group ms-input-group">
-                                  <label className="form-label">
-                                    Bank IFSC Code
-                                  </label>
-                                  <input
-                                    type="text"
-                                    class="form-control ms-form-input"
-                                    placeholder="Enter IFSC Code Here"
-                                    value={ifscCode}
-                                    onChange={(e) => {
-                                      seterrorifscCode("");
-                                      setifscCode(e.target.value.toUpperCase());
-                                    }}
-                                  />
-                                  {errorifscCode ? (
-                                    <span style={{ color: "red" }}>
+                                      ) : null}
+                                    </div>
+                                    <div className="form-group ms-input-group">
+                                      <label className="form-label">
+                                        Bank IFSC Code
+                                      </label>
+                                      <input
+                                          type="text"
+                                          className="form-input"
+                                          placeholder="Enter IFSC Code Here"
+                                          value={ifscCode}
+                                          onChange={(e) => {
+                                            seterrorifscCode("");
+                                            setifscCode(e.target.value.toUpperCase());
+                                          }}
+                                      />
+                                      {errorifscCode ? (
+                                          <span style={{color: "red"}}>
                                       {errorifscCode}
                                     </span>
-                                  ) : null}
-                                </div>
-                                <div class="form-group ms-input-group">
-                                  <label className="form-label">
-                                    Bank Name
-                                  </label>
-                                  <input
-                                    type="text"
-                                    class="form-control ms-form-input"
-                                    placeholder="Enter 16 digits A/c Number"
-                                    value={bankName}
-                                    onChange={(e) => {
-                                      seterrorbankName("");
-                                      setbankName(e.target.value);
-                                    }}
-                                  />
-                                  {errorbankName ? (
-                                    <span style={{ color: "red" }}>
+                                      ) : null}
+                                    </div>
+                                    <div className="form-group ms-input-group">
+                                      <label className="form-label">
+                                        Bank Name
+                                      </label>
+                                      <input
+                                          type="text"
+                                          className="form-input"
+                                          placeholder="Enter 16 digits A/c Number"
+                                          value={bankName}
+                                          onChange={(e) => {
+                                            seterrorbankName("");
+                                            setbankName(e.target.value);
+                                          }}
+                                      />
+                                      {errorbankName ? (
+                                          <span style={{color: "red"}}>
                                       {errorbankName}
                                     </span>
-                                  ) : null}
+                                      ) : null}
+                                    </div>
+                                  </div>
+                                  <input
+                                      type="submit"
+                                      value="Submit"
+                                      className="getstartbtn "
+                                  />
                                 </div>
                               </div>
-                              <input
-                                type="submit"
-                                value="Submit"
-                                className="getstartbtn "
-                              />
+                              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                                <div className="height100">
+                                  <div>
+                                    <div className="circle-half">
+                                      <div className="full-circle">
+                                        <img src={tip} alt="Icon"/>
+                                      </div>
+                                      <div className="full-text text-left">
+                                        <h5>Tips</h5>
+                                        <p>Kindly review the details precisely. Once the payment is done, you won't be able to make changes to the rent receipt.</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                          </div>
                         ) : null}
                       </div>
                     </form>
                   ) : (
-                    <div className="home-contact-form">
-                      <h4 className="form-heading text-center">
-                        Your KYC is not verified
-                      </h4>
-                      <br></br>
-                      {props.user.userData?.userdocumentsmodel.kyc_verified === "NOT_SUBMITTED" ||
-                      props.user.userData?.userdocumentsmodel.kyc_verified === "NOT_VALID" ? (
-                        <div>
+                      <div className="row">
+                        <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                          <br/>
+                          <a className="back-arrow" href="">
+                            Back
+                          </a>
+                        </div>
+                        <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                          <div className="home-contact-form">
+                            <h4 className="form-heading text-center">
+                              Your KYC is not verified
+                            </h4>
+                            <br></br>
+                            {props.user.userData?.userdocumentsmodel.kyc_verified === "NOT_SUBMITTED" ||
+                            props.user.userData?.userdocumentsmodel.kyc_verified === "NOT_VALID" ? (
+                                <div>
                           <span
-                            className="reloadicon"
-                            style={{
-                              opacity: "0.59",
-                              right: "200px",
-                              fontFamily: "Montserrat",
-                            }}
+                              className="reloadicon"
+                              style={{
+                                opacity: "0.59",
+                                right: "200px",
+                                fontFamily: "Montserrat",
+                              }}
                           >
                             Kyc status:{" "}
                           </span>
-                          <span
-                            className="reloadicon"
-                            style={{
-                              color: "red",
-                              opacity: "0.59",
-                              right: "200px",
-                              fontFamily: "Montserrat",
-                            }}
-                          >
+                                  <span
+                                      className="reloadicon"
+                                      style={{
+                                        color: "red",
+                                        opacity: "0.59",
+                                        right: "200px",
+                                        fontFamily: "Montserrat",
+                                      }}
+                                  >
                             {props.user.userData?.userdocumentsmodel.kyc_verified}
                           </span>
-                        </div>
-                      ) : null}
+                                </div>
+                            ) : null}
 
-                      {props.user.userData?.userdocumentsmodel.kyc_verified ===
-                      "PENDING_VERIFICATION" ? (
-                        <div>
+                            {props.user.userData?.userdocumentsmodel.kyc_verified ===
+                            "PENDING_VERIFICATION" ? (
+                                <div>
                           <span
-                            className="reloadicon"
-                            style={{
-                              opacity: "0.59",
-                              right: "200px",
-                              fontFamily: "Montserrat",
-                            }}
+                              className="reloadicon"
+                              style={{
+                                opacity: "0.59",
+                                right: "200px",
+                                fontFamily: "Montserrat",
+                              }}
                           >
                             Kyc status:{" "}
                           </span>
-                         <Link to="#"  onClick={() => {
-                            props.hitAppUseCase({ useCase: "pay-rent" });
-                            props.history.push({ pathname: "/kycoption" });
-                          }}> <span
-                            className="reloadicon"
-                            style={{
-                              color: "#ff8000",
-                              opacity: "0.59",
-                              right: "200px",
-                              fontFamily: "Montserrat",
-                            }}
-                          >
+                                  <Link to="#" onClick={() => {
+                                    props.hitAppUseCase({useCase: "pay-rent"});
+                                    props.history.push({pathname: "/kycoption"});
+                                  }}> <span
+                                      className="reloadicon"
+                                      style={{
+                                        color: "#ff8000",
+                                        opacity: "0.59",
+                                        right: "200px",
+                                        fontFamily: "Montserrat",
+                                      }}
+                                  >
                             {props.user.userData?.userdocumentsmodel.kyc_verified}
                           </span> </Link>
-                        </div>
-                      ) : null}
+                                </div>
+                            ) : null}
 
-                      {props.user.userData?.userdocumentsmodel.kyc_verified ===
-                      "PENDING_VERIFICATION" ? (
-                        <div>
-                          <br></br>
-                          <p style={{ fontFamily: "Montserrat" }}>
-                            We are verifying your details.
-                          </p>
+                            {props.user.userData?.userdocumentsmodel.kyc_verified ===
+                            "PENDING_VERIFICATION" ? (
+                                <div>
+                                  <br></br>
+                                  <p style={{fontFamily: "Montserrat"}}>
+                                    We are verifying your details.
+                                  </p>
+                                </div>
+                            ) : null}
+                            {props.user.userData?.userdocumentsmodel.kyc_verified !==
+                            "PENDING_VERIFICATION" ? (
+                                <input
+                                    type="button"
+                                    value="CLICK HERE TO DO KYC AGAIN"
+                                    className="getstartbtn "
+                                    onClick={() => {
+                                      props.hitAppUseCase({useCase: "pay-rent"});
+                                      props.history.push({pathname: "/kycoption"});
+                                    }}
+                                    style={{margin: "83px 0px 72px 0", cursor: "pointer"}}
+                                />
+                            ) : null}
+                          </div>
                         </div>
-                      ) : null}
-                      {props.user.userData?.userdocumentsmodel.kyc_verified !==
-                      "PENDING_VERIFICATION" ? (
-                        <input
-                          type="button"
-                          value="CLICK HERE TO DO KYC AGAIN"
-                          className="getstartbtn "
-                          onClick={() => {
-                            props.hitAppUseCase({ useCase: "pay-rent" });
-                            props.history.push({ pathname: "/kycoption" });
-                          }}
-                          style={{ margin: "83px 0px 72px 0" ,cursor:"pointer"}}
-                        />
-                      ) : null}
-                    </div>
+                        <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                          <div className="height100">
+                            <div>
+                              <div className="circle-half">
+                                <div className="full-circle">
+                                  <img src={tip} alt="Icon"/>
+                                </div>
+                                <div className="full-text text-left">
+                                  <h5>Tips</h5>
+                                  <p>
+                                    In expedita et occaecati ullam a cumque maiores
+                                    perspiciatis. Non labore exercitationem rerum nulla ea
+                                    veniam facilis et.{" "}
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="circle-half">
+                                <p className="p-a-10">
+                                  In expedita et occaecati ullam a cumque maiores
+                                  perspiciatis.{" "}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                   )}
-                </div>
-              </div>
-              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-                <div className="height100">
-                  <div>
-                    <div className="circle-half">
-                      <div className="full-circle">
-                        <img src={tip} alt="Icon" />
-                      </div>
-                      <div className="full-text text-left">
-                        <h5>Tips</h5>
-                        <p>
-                          In expedita et occaecati ullam a cumque maiores
-                          perspiciatis. Non labore exercitationem rerum nulla ea
-                          veniam facilis et.{" "}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="circle-half">
-                      <p className="p-a-10">
-                        In expedita et occaecati ullam a cumque maiores
-                        perspiciatis.{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </Container>
         )}
       </div>
