@@ -321,14 +321,14 @@ useEffect(() => {
                     </div>
                     <div className="full-text text-left" style={{width:'100%'}}>
                       <h5>Tips</h5>
-                      <p>Provide your professional details to help us in assigning a higher credit limit </p>
+                      <p style={{fontSize:"15px"}}>Provide your professional details to help us in assigning a higher credit limit </p>
                     </div>
                   </div>
                   <div className="circle-half">
-                    <p className="p-a-10">Kindly share the latest information.</p>
+                    <p className="p-a-10" style={{fontSize:"15px"}}>Kindly share the latest information.</p>
                   </div>
                   <div className="circle-half">
-                    <p className="p-a-10">The latest ITR will increase your chance of getting the limit approved.</p>
+                    <p className="p-a-10" style={{fontSize:"15px"}}>The latest ITR will increase your chance of getting the limit approved.</p>
                   </div>
                 </div>
               </div>

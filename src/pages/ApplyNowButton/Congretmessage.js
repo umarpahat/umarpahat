@@ -64,7 +64,7 @@ const Congretmessage = (props) => {
   return (
     <>
       <Header {...props} />
-      <div className='content darkBg' style={{height:"139.5%"}}>
+      <div className='content darkBg' style={{height:"71%"}}>
         {!greet ? (
       <Container >
           <div className="row">
@@ -75,13 +75,14 @@ const Congretmessage = (props) => {
             <div className="col-lg-5 col-md-5 col-sm-12 text-center">
           <form>
             <div className="home-contact-form mt-4">
-              <img src={successAnimation} className='img-fluid max-width70'  alt='Icon'/>
-              <h4 className="form-heading text-center pb-3">
+              <img src={successAnimation} className='img-fluid max-width70'  alt='Icon'/><br/><br/>
+              <h4 className="form-heading text-center pb-3" style={{fontSize:"25px"}}>
                 Your Documents has been sumitted sucessfully.
               </h4>
-              <p className="preApprovePara text-capitalize">
+           
+              <b   className="preApprovePara text-capitalize" style={{fontFamily: "Montserrat", fontSize:"18px" ,fontStyle:"bold"}}>
                 You can  track your loan progress onour payme app, we keep sending minute updates on our mobile app
-              </p>
+              </b>
           
             </div>
           </form>
@@ -124,6 +125,7 @@ const Congretmessage = (props) => {
           </div>
       </Container>)}
       </div>
+      
     </>
   );
 };
