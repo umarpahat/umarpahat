@@ -543,7 +543,7 @@ const HomePage = (props) => {
                                     <img src={getLoan} alt='blog'
                                          className="img-fluid"/></div>
                                 <div>
-                                    <h4 className='white-color'>Get Loan instat and unlimited offers</h4>
+                                    <h4 className='white-color'>Get Instant Loan and Unlimited Offers</h4>
                                 </div>
                                 <div>
                                     <Link to='/apply-loan' className='green-btn'>Apply Now</Link>
