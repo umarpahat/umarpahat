@@ -7,7 +7,6 @@ import Loader from "../../component/Loader";
 import Confirmotpmobile from "./Confirmotpmobile";
 import "../ApplyNowButton/Applybtnallcomponent.css";
 import Header from "../Header";
-import Footer from "../Footer";
 import "../../home.css";
 import letsStart from "../../images/animated/lets-start-animation.gif";
 import Cookies from 'universal-cookie';
