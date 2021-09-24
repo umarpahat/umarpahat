@@ -56,7 +56,6 @@ const Footer = () => {
                             <li><Link to="/policy">Privacy Policy</Link></li>
                             <li><Link to="/refund">Refund Policy</Link></li>
                             <li><Link to="/disclaimer">Disclaimer</Link></li>
-                            <li><a target='_blank' href="https://openscecurityurl.s3.ap-south-1.amazonaws.com/NewAppAgreeDocs/grievance_redressal_mechanism.pdf">G.R Mechanism</a></li>
 
                         </ul>
                     </div>
@@ -66,6 +65,7 @@ const Footer = () => {
                             <li>Rohit Rai</li>
                             <li className=""><strong>Contact</strong>: 7669929906</li>
                             <li className=""><strong>Email</strong>: <a href='mailto:rohit.rai@paymeindia.in'>rohit.rai@paymeindia.in</a></li>
+                            <li><a target='_blank' href="https://openscecurityurl.s3.ap-south-1.amazonaws.com/NewAppAgreeDocs/grievance_redressal_mechanism.pdf">Grievance Redressal Mechanism</a></li>
                         </ul>
                     </div>
                     <div className="ol col-md-1">
