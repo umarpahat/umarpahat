@@ -54,8 +54,9 @@ const Getquikloneapply = (props) => {
           response.data.phone_number_verified
         ) {
           props.history.push({
-            pathname: "/login-with-mob-mpin",
             state: { phoneNumber: number },
+            pathname: "/login-with-mob-mpin",
+            
           });
         } else {
           console.log(response.status);

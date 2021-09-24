@@ -27,7 +27,7 @@ function LoginWithMobMpin(props) {
   let [errorPass, seterrorPass] = useState(null);
   let [password, setpassword] = useState(null);
   let [forgotPassword, setforgotPassword] = useState(false);
-  console.log(props,userCase);
+  console.log("lllllllll",props,userCase);
   useEffect(() => {
     if (token) {
       if (forgotPassword) {
@@ -83,7 +83,7 @@ function LoginWithMobMpin(props) {
     api
       .post(
         `api/send_otp_phone/`,
-        { phone_number: Number(props.location.state.phoneNumber) },
+        { phone_number: props.location.state?.phoneNumber },
         {}
       )
       .then((response) => {
@@ -114,8 +114,8 @@ function LoginWithMobMpin(props) {
     setloader(true);
     props.hitLogin({
       type: "",
-      phone_number: Number(props.location.state.phoneNumber),
-      mpin: Number(password),
+      phone_number: props.location.state.phoneNumber,
+      mpin: password,
     })
     
   };
@@ -132,7 +132,7 @@ function LoginWithMobMpin(props) {
         ) : forgotPassword ? (
           <Confirmotpmobile
             {...props}
-            phone_number={Number(props.location.state.phoneNumber)}
+            phone_number={props.location.state.phoneNumber}
             forget_password={true}
             resendOtp={sendOtp} />
         ) : (

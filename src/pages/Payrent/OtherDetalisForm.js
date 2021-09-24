@@ -134,13 +134,7 @@ const OtherDetalisForm = (props) => {
       ? setuserdocumentsmodel(props.user.userData.userdocumentsmodel)
       : null;
     getSignedUrl();
-    if (
-      (props.user.userData &&
-        props.user.userData.props.user.userData?.userdocumentsmodel.kyc_verified === "VERIFIED") ||
-      props.user.userData?.userdocumentsmodel.kyc_verified === "VERIFIED"
-    ) {
-      setkyc_verified(true);
-    }
+  
    
    
     let config = {
