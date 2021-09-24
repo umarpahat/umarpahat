@@ -7,15 +7,7 @@ import "./ApplyNowButton/Applybtnallcomponent.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import '../../src/home.css';
-import {Link} from "react-router-dom";
-import $ from "jquery";
-import logo from "../images/logo.png";
-import vision from "../images/vision.png";
-import team from "../images/team.png";
-import thumbnail from "../images/thumbup.png";
-import heart from "../images/heart.png";
-import people from "../images/people.png";
-import about from "../images/about-us.png";
+
 import MetaTags from "react-meta-tags";
 import mailBox from "../images/svg/mail-box.svg";
 import  termsCondition from "../images/svg/terms-and-condition.svg";
@@ -77,7 +69,7 @@ const Refund = (props) => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            
         </>
     )
 };

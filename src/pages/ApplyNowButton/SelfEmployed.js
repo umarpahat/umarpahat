@@ -13,6 +13,7 @@ import Footer from "../Footer";
 import Header from "../Header";
 import Cookies from 'universal-cookie';
 import tip from "../../images/svg/tip.png";
+import kycIcon from "../../images/svg/professional-details.svg";
 
 const cookies = new Cookies()
 const SelfEmployed = (props) => {
@@ -47,6 +48,12 @@ const SelfEmployed = (props) => {
         }
     };
 })();
+
+useEffect(() => {
+
+   getSignedUrl();
+  
+ }, [props]);
 
   useEffect(() => {
    something();
@@ -111,7 +118,7 @@ const SelfEmployed = (props) => {
       .then((response) => {
         setloader(false);
         console.log("xvxvxvxvx", response);
-        props.hitAllUserData({ token: token });
+      
         props.history.push({ pathname: "/congratulations" });
       })
       .catch((error) => {
@@ -142,33 +149,16 @@ const SelfEmployed = (props) => {
               <br/>
               <a className='back-arrow' href=''>Back</a>
             </div>
-            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-          <div className="pt-2">
-           
-            <div className="d-flex"
-              onClick={() => {
-                props.history.goBack();
-              }}
-              to="#"
-              style={{ cursor: "pointer" }}>
-              <div className="m-1">
-                <img src={backicon} alt='back Icon' className="img-fluid" />
-              </div>
-              <div>
-                <h6 className="backbtnsty">Back</h6>
-              </div>
-            </div>
-          </div>
+            <div className="col-lg-7 col-md-7 col-sm-12 text-center">
           <form onSubmit={handleSubmit}>
-            <div classNaEmploymentme="home-contact-form mt-4">
-              <div class="form-group ms-input-group">
-                <label className="form-label"> Status </label>
-              </div>
+
+            <div className="home-contact-form">
+              <h4 className="form-heading formheadding">Status</h4>
               <div className="py-4">
                 <Link to="/professional-details-payme">
-                  <div class="form-check form-check-inline">
+                  <div className="form-check form-check-inline">
                     <input
-                      class="form-check-input"
+                      className="form-check-input"
                       checked={false}
                       type="radio"
                       name="inlineRadioOptions"
@@ -176,7 +166,7 @@ const SelfEmployed = (props) => {
                       value="option1"
                     />
                     <label
-                      class="form-check-label form-label pr-5"
+                      className="form-check-label form-label pr-5"
                       for="inlineRadio1"
                     >
                       Salaried
@@ -184,9 +174,9 @@ const SelfEmployed = (props) => {
                   </div>
                 </Link>
                 <Link to="/selfEmployed">
-                  <div class="form-check form-check-inline">
+                  <div className="form-check form-check-inline">
                     <input
-                      class="form-check-input"
+                      className="form-check-input"
                       type="radio"
                       checked={true}
                       name="inlineRadioOptions"
@@ -194,7 +184,7 @@ const SelfEmployed = (props) => {
                       value="option2"
                     />
                     <label
-                      class="form-check-label form-label"
+                      className="form-check-label form-label"
                       for="inlineRadio2"
                     >
                       Self-Employed
@@ -203,40 +193,46 @@ const SelfEmployed = (props) => {
                 </Link>
               </div>
               <h4 className="form-heading text-center">Business Details</h4>
-              <div className="form-block">
-                <div>
-                  <label className="form-label ">Upload Recent ITR </label>
-                  <div className="file-uploading-block">
-                    <a
-                      className="upload-btn-text"
-                      href="javascript:document.querySelector('input#PAN').click()"
-                    >
-                      Upload
-                    </a>
-                    <br />
-                    {erroruploadItr ? (
+              <div className='step-step p-t-30 border-btm'>
+                <div className='img-wrapper'>
+                  <img className='img-fluid' src={kycIcon} alt='Upload'/>
+                </div>
+                <div className='img-text'>
+                  <h6>Upload Recent ITR </h6>
+                  <p>Aperiam cumque in eos quibusdam.  500KB limit, jpg, png, pdf</p>
+                  {erroruploadItr ? (
                       <span style={{ color: "red" }}>{erroruploadItr}</span>
-                    ) : null}
-                    {uploadItr.name ? (
+                  ) : null}
+                  {uploadItr.name ? (
                       <span style={{ color: "black" }} className="">
                         {uploadItr.name}
                       </span>
-                    ) : null}
-                    <input
+                  ) : null}
+                  <input
                       type="file"
                       accept=".pdf"
-                      class="custom-file-input"
+                      className="custom-file-input"
                       id="PAN"
                       onChange={handleItrUpload}
                       hidden
-                    />
-                  </div>
-                  <div class="form-group ms-input-group">
-                    <div class="form-group ms-input-group">
+                  />
+                </div>
+                <div className='wrapper-button'>
+                  <a className="green-button"  href="javascript:document.querySelector('input#PAN').click()" >
+                    Upload</a>
+
+                </div>
+
+              </div>
+              <div className="form-block">
+                <div>
+
+                  <div className="form-group ms-input-group">
+                    <div className="form-group ms-input-group">
                       <label className="form-label">Present Address</label>
                       <input
                         type="text"
-                        class="form-control ms-form-input mt-2"
+                        className="form-input"
                         placeholder="Address Line 1"
                         value={presentAddLine1}
                         onChange={(event) => {
@@ -244,9 +240,11 @@ const SelfEmployed = (props) => {
                           setpresentAddLine1(event.target.value);
                         }}
                       />
+                      <br/>
+                      <br/>
                       <input
                         type="text"
-                        class="form-control ms-form-input mt-2"
+                        className="form-input"
                         placeholder="Address Line 2"
                         value={presentAddLine2}
                         onChange={(event) => {
@@ -259,11 +257,11 @@ const SelfEmployed = (props) => {
                         </span>
                       ) : null}
                     </div>
-                    <div class="form-group ms-input-group">
+                    <div className="form-group ms-input-group">
                       <label className="form-label">Present Pin Code</label>
                       <input
                         type="number"
-                        class="form-control ms-form-input"
+                        className="form-input"
                         placeholder="110025"
                         maxLength={6}
                         value={presentPincode}
@@ -306,21 +304,31 @@ const SelfEmployed = (props) => {
             </div>
           </form>
             </div>
-            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-              <div className='height100'>
+            <div className="col-lg-3 col-md-3 col-sm-12 text-center">
+              <div className="height100" style={{height: "100vh"}}>
                 <div>
-                  <div className='circle-half'>
-                    <div className='full-circle'>
-                      <img src={tip} alt='Icon'/>
+                  <div className="circle-half" style={{borderRadius: 20, padding: 20, position:'relative'}}>
+                    <div className="full-circle" style={{
+                      margin: 'auto',
+                      position: 'absolute',
+                      top: -76,
+                      left: 0,
+                      right: 0,
+                      height:110,
+                      width:110
+                    }}>
+                      <img src={tip} className='img-fluid' alt="Icon"/>
                     </div>
-                    <div className='full-text text-left'>
+                    <div className="full-text text-left" style={{width:'100%'}}>
                       <h5>Tips</h5>
-                      <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
-                        rerum nulla ea veniam facilis et. </p>
+                      <p style={{fontSize:"15px"}}>Provide your professional details to help us in assigning a higher credit limit </p>
                     </div>
                   </div>
-                  <div className='circle-half'>
-                    <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
+                  <div className="circle-half">
+                    <p className="p-a-10" style={{fontSize:"15px"}}>Kindly share the latest information.</p>
+                  </div>
+                  <div className="circle-half">
+                    <p className="p-a-10" style={{fontSize:"15px"}}>The latest ITR will increase your chance of getting the limit approved.</p>
                   </div>
                 </div>
               </div>

@@ -3,13 +3,9 @@ import { hitAppUseCase } from "../store/modules/userDetails/actions";
 import { connect } from "react-redux";
 import { Accordion, Card, Container } from "react-bootstrap";
 import "./ApplyNowButton/Applybtnallcomponent.css";
-import Footer from "./Footer";
 import Header from "./Header";
 import "../../src/home.css";
 
-import { Link } from "react-router-dom";
-import $ from "jquery";
-import logo from "../images/logo.png";
 import faqImg from "../images/svg/faqs.svg";
 import MetaTags from "react-meta-tags";
 import mailBox from "../images/svg/mail-box.svg";
@@ -239,7 +235,7 @@ const Faq = (props) => {
           </div>
         </div>
       </div>
-      <Footer />
+   
     </>
   );
 };

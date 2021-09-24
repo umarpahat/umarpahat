@@ -88,6 +88,18 @@ const Header = (props) => {
                       <li>
                         <Link to="/">Home</Link>
                       </li>
+                      <li><Link to="/apply-loan">
+                        Apply Loan
+                      </Link></li>
+                      <li><Link to="/pay-rent-details">
+                        Pay Rent
+                      </Link>
+                      </li>
+                      <li>
+                        <Link to="/offerings">
+                          Offerings
+                        </Link>
+                      </li>
                       <li>
                         <Link to="/about">About Us</Link>
                       </li>
@@ -114,21 +126,21 @@ const Header = (props) => {
                         <div className="tabularLess">
                           <div>
                             <a
-                              href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
-                              target="_blank"
+                                href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
+                                target="_blank"
                             >
                               <img
-                                className="img_google"
-                                src={googlePay}
-                                alt="Pay Me India"
+                                  className="img_google"
+                                  src={googlePay}
+                                  alt="Pay Me India"
                               />
                             </a>
                           </div>
                           <div>
                             <img
-                              className="img_google"
-                              src={appStore}
-                              alt="Pay Me India"
+                                className="img_google"
+                                src={appStore}
+                                alt="Pay Me India"
                             />
                           </div>
                         </div>

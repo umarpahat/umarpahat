@@ -7,14 +7,13 @@ import Loader from "../../component/Loader";
 import Confirmotpmobile from "./Confirmotpmobile";
 import "../ApplyNowButton/Applybtnallcomponent.css";
 import Header from "../Header";
-import Footer from "../Footer";
 import "../../home.css";
 import letsStart from "../../images/animated/lets-start-animation.gif";
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 const Getquikloneapply = (props) => {
-  const token = cookies.get('token')
+ 
  cookies.set('userCase', "apply-loan");
  const userCase = cookies.get("userCase")
  console.log("apply loan",userCase)
@@ -24,9 +23,7 @@ const Getquikloneapply = (props) => {
   let [newUser, setnewUser] = useState(false);
 
   useEffect(() => {
-    if(token){
- props.hitAllUserData({ token: token });
-    }
+    cookies.remove('token', { path: '/' })
  
   }, []);
 
@@ -39,47 +36,8 @@ const Getquikloneapply = (props) => {
 
   const verifyPhone = () => {
     setloader(true);
-    if (token) {
-      console.log("props.user.userData",props.user)
-      if (props.user.userData) {
-        setloader(false);
-
-    
-        if (userCase === "apply-loan") {
-          if (
-            props.user.userData.userdocumentsmodel?.kyc_verified ===
-              "VERIFIED" ||
-            props.user.userData?.userdocumentsmodel?.kyc_verified ===
-              "PENDING_VERIFICATION"
-          ) {
-            props.history.push({ pathname: "/step-manual" });
-          }
-         else {
-            props.history.push({ pathname: "/kycoption" });
-          }
-        } else if (userCase === "pay-rent") {
-          console.log("payrent kyc", props.user.userData.userdocumentsmodel);
-          if (
-            props.user.userData.userdocumentsmodel.kyc_verified ===
-              "VERIFIED" ||
-            props.user.userData.userdocumentsmodel.kyc_verified ===
-              "PENDING_VERIFICATION"
-          ) {
-            props.history.push({ pathname: "/payrent-other-details" });
-          } else {
-            console.log("1414141414", props);
-            props.history.push({ pathname: "/payrent-other-details" });
-          }
-        } else {
-          props.history.push({ pathname: "/" });
-        }
-       
-      } else {
-        props.hitAllUserData({ token: token });
-      }
-    
-  }
-  else{
+  
+  
     api
       .post(
         `api/authentication/phone_no_verify/`,
@@ -87,8 +45,9 @@ const Getquikloneapply = (props) => {
         {}
       )
       .then((response) => {
-        setloader(false);
+       
         if (response.status === 200 && !response.data.phone_number_verified) {
+          setloader(false)
           setnewUser(true);
         } else if (
           response.status === 200 &&
@@ -111,7 +70,7 @@ const Getquikloneapply = (props) => {
         console.log(error);
         setloader(false);
       });
-  }};
+  };
 
   return (
     <>
@@ -186,12 +145,11 @@ const Getquikloneapply = (props) => {
                     <div>
                       <div className='circle-half'>
                         <div className='full-circle'>
-                          <img src={letsStart} className='img-fluid max-width70' alt='Icon'/>
+                          <img src={letsStart} className='img-fluid' style={{maxWidth:150}}  alt='Icon'/>
                         </div>
                         <div className='full-text text-left'>
                           <h5>Tips</h5>
-                          <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
-                            rerum nulla ea veniam facilis et. </p>
+                          <p>With the help of the registered mobile number provided, we will reach out to you in a quicker manner.</p>
                         </div>
                       </div>
                     </div>

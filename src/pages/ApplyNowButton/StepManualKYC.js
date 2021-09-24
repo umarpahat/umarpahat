@@ -12,9 +12,12 @@ import { API_ENDPOINT } from "../../constant";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from "universal-cookie";
+import tip from "../../images/animated/kyc-option.gif";
 import kycIcon from "../../images/svg/complete-kyc.svg";
 import bankDetails from "../../images/svg/bank-details.svg";
 import professionalDetails from "../../images/svg/professional-details.svg";
+
+
 
 const cookies = new Cookies();
 
@@ -39,6 +42,7 @@ const StepManual = (props) => {
       axios
         .get(url, config)
         .then((response) => {
+          console.log("step",response.data.data[0])
           setDocumentstatus(response.data.data[0]);
           setProfessionalStatus(
             response.data.data[0].professional_details_verified
@@ -66,18 +70,13 @@ const StepManual = (props) => {
       <>
         <Header {...props} />
         <div className="content darkBg">
-          <div
-            className="navbar navbar-default navbar-fixed-top"
-            id="topnavbar"
-          >
-            <div className="slider-right-block">
               <Container>
                 <div className="row">
                   <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                     <br />
                     <a
                       className="back-arrow"
-                      onClick={() => {
+                      onClick={(e) => {
                         props.history.goBack();
                       }}
                     >
@@ -104,17 +103,17 @@ const StepManual = (props) => {
                               <div className="img-text">
                                 <h6>Complete KYC</h6>
                                 <p>
-                                  Provide your Aadhaar and Pan details to get
-                                  them verified.
+                                Provide your Aadhaar and Pan details.
                                 </p>
+                                { kycstatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
                               </div>
                               <div className="wrapper-button">
                                 {kycstatus === "PENDING_VERIFICATION" ? (
-                                  <a className="pending-button" href="">
+                                  <a className="pending-button" style={{color:'#ffb84d'}}>
                                     Pending
                                   </a>
                                 ) : kycstatus === "VERIFIED" ? (
-                                  <a className="green-button" href="">
+                                  <a className="green-button" >
                                     Verified
                                   </a>
                                 ) : null}
@@ -130,19 +129,21 @@ const StepManual = (props) => {
                               </div>
                               <div className="img-text">
                                 <h6>Bank Details</h6>
-                                <p>Provide your bank account details.</p>
+                                <p>Upload your latest bank statement and bank details.</p>
+                                { bankstatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
                               </div>
                               <div className="wrapper-button">
                                 {bankstatus === "VERIFIED" ? (
-                                  <a className="green-button" href="">
+                                  <a className="green-button" >
                                     Verified
                                   </a>
                                 ) : bankstatus === "PENDING_VERIFICATION" ? (
-                                  <a className="pending-button" href="">
-                                    Pending
-                                  </a>
+                                  <a className="pending-button" style={{color:'#ffb84d'}}>
+                                  Pending
+                                </a>
                                 ) : kycstatus === "PENDING_VERIFICATION" ||
                                   kycstatus === "VERIFIED" ? (
+                                  
                                   <a
                                     className="green-button"
                                     href=""
@@ -150,6 +151,7 @@ const StepManual = (props) => {
                                       props.history.push("/bank-details-payme");
                                     }}
                                   >
+                                
                                     Continue
                                   </a>
                                 ) : (
@@ -172,15 +174,16 @@ const StepManual = (props) => {
                                 <p>
                                   Provide your Salary slip and office details.
                                 </p>
+                                { professionalStatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
                               </div>
                               <div className="wrapper-button">
                                 {professionalStatus === "VERIFIED" ? (
-                                  <a className="green-button" href="">
+                                  <a className="green-button" >
                                     Verified
                                   </a>
                                 ) : professionalStatus ===
                                   "PENDING_VERIFICATION" ? (
-                                  <a className="pending-button" href="">
+                                    <a className="pending-button" style={{color:'#ffb84d'}}>
                                     Pending
                                   </a>
                                 ) : bankstatus === "PENDING_VERIFICATION" ||
@@ -211,31 +214,24 @@ const StepManual = (props) => {
                       <div>
                         <div className="circle-half">
                           <div className="full-circle">
-                            <img src={tip} className="img-fluid" alt="Tips" />
+                            <img src={tip} className="img-fluid"  style={{maxWidth:100}}  alt="Tips" />
                           </div>
                           <div className="full-text text-left">
                             <h5>Tips</h5>
-                            <p>
-                              In expedita et occaecati ullam a cumque maiores
-                              perspiciatis. Non labore exercitationem rerum
-                              nulla ea veniam facilis et.{" "}
-                            </p>
+                            <p>Complete the hassle-free paperless process to fulfill the mandatory KYC requirements.</p>
                           </div>
                         </div>
                         <div className="circle-half">
-                          <p className="p-a-10">
-                            In expedita et occaecati ullam a cumque maiores
-                            perspiciatis.{" "}
-                          </p>
+                          <p className="p-a-10">EKYC helps in processing the loan application instantly.</p>
+                        </div>
+                        <div className="circle-half">
+                          <p className="p-a-10">Make sure that the image uploaded is not blurred. </p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </Container>
-            </div>
-          </div>
-          <div></div>
         </div>
       </>
     );

@@ -156,6 +156,7 @@ button:focus {
 }
 
 .step-step .img-text {
+  width: calc(100% - 140px);
   padding-right: 20px;
 }
 
@@ -583,19 +584,36 @@ button:focus {
 
 /* Details Summary */
 
+.details-block-tabualar {
+  margin: 20px 0;
+  display: table;
+}
+
+.details-block-tabualar h4 {
+  font-size: 15px;
+  color: #000;
+  font-weight: 600;
+}
+
+.details-block-tabualar > h4 {
+  width: 100%;
+  display: table-cell;
+}
+
 .details-block {
   margin: 20px 0;
 }
 .details-block h4 {
-  font-size: 14px;
-  color: #040b4b;
-  font-weight: 500;
+  font-size: 15px;
+  color: #000;
+  font-weight: 600;
 }
 .details-block p {
-  font-weight: 600;
   margin: 0;
-  font-size: 16px;
-  color: #969bba;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.6);
 }
 .border-btn {
   padding: 12px;
@@ -642,7 +660,6 @@ button:focus {
 }
 .page-header-section {
   background-color: #e9f3fe;
-  background-image: url("./image/Aboutusimg.png");
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;

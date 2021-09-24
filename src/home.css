@@ -1339,11 +1339,17 @@ a.button-small:hover {
 }
 
 .black-bg {
-    background: #040d1b url("images/black-bg.png") repeat 0 0;
+    background: #040d1b;
 }
 
 .white-color {
     color: #fff;
+}
+.blogPic{
+    background: #33658a;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
 .blue-color {

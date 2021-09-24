@@ -7,6 +7,7 @@
     "start": "webpack serve --config build-utils/webpack.config.js --env env=dev",
     "build": "webpack --config build-utils/webpack.config.js --env env=prod",
     "test": "echo \"Error: no test specified\" && exit 1"
+   
   },
   "author": "prateekeshwar <doneybanaguna@gmail.com>",
   "license": "MIT",

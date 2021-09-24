@@ -2,11 +2,11 @@ import React, {useState} from "react";
 import {hitAppUseCase} from "../store/modules/userDetails/actions";
 import {connect} from "react-redux";
 import "./ApplyNowButton/Applybtnallcomponent.css";
-import Footer from "./Footer";
 import Header from "./Header";
 import "../../src/home.css";
 import vision from "../images/svg/rocket-up.svg";
 import team from "../images/svg/photo.svg";
+import teamAll from "../images/team.jpg";
 import mailBox from "../images/svg/mail-box.svg";
 import thumbnail from "../images/svg/thumb.svg";
 import people from "../images/svg/will-stand.svg";
@@ -143,7 +143,12 @@ const About = (props) => {
                                 <p className='p-t-10'>Team PayMe India is a set of customer-oriented personalities, who find their passion in helping out users to get over their financial crunches. Our team of hard-working people strives to provide the best experience to our customers with their loan disbursal process.</p>
                             </div>
                         </div>
-                        <div className="row justify-content-md-center p-t-40 text-center p-b-30">
+                        <div className="row justify-content-md-center">
+                            <div className="col col-md-12 text-center p-t-40">
+                                <img className="img-fluid" src={teamAll} alt="Team"/>
+                            </div>
+                        </div>
+                 {/*       <div className="row justify-content-md-center p-t-40 text-center p-b-30">
                             <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                                 <div className='team-pic'>
                                     <img className="img-fluid" src={team} alt="Team"/>
@@ -186,7 +191,7 @@ const About = (props) => {
                                     <img className="img-fluid" src={team} alt="Team"/>
                                 </div>
                             </div>
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
                 <div className="contactBox">
@@ -207,7 +212,7 @@ const About = (props) => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            
         </>
     );
 };

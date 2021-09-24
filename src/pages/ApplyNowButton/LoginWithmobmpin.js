@@ -13,7 +13,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import "../../home.css";
 import Cookies from 'universal-cookie';
-import tip from "../../images/svg/tip.png";
+import tip from "../../images/animated/lets-start-animation.gif";
 import { Container } from "react-bootstrap";
 
 const cookies = new Cookies()
@@ -22,11 +22,12 @@ function LoginWithMobMpin(props) {
   const token = cookies.get('token')
   console.log(token)
   const userCase = cookies.get("userCase");
+  console.log("user case",userCase)
   let [loader, setloader] = useState(false);
   let [errorPass, seterrorPass] = useState(null);
   let [password, setpassword] = useState(null);
   let [forgotPassword, setforgotPassword] = useState(false);
-  console.log(props),userCase;
+  console.log(props,userCase);
   useEffect(() => {
     if (token) {
       if (forgotPassword) {
@@ -36,7 +37,7 @@ function LoginWithMobMpin(props) {
         });
       } else {
         if (props.user.userData) {
-          setloader(false);
+          
 
           if (userCase === "apply-loan") {
             if (
@@ -58,10 +59,10 @@ function LoginWithMobMpin(props) {
               props.user.userData.userdocumentsmodel.kyc_verified ===
                 "PENDING_VERIFICATION"
             ) {
-              props.history.push({ pathname: "/payrent-other-details" });
+              props.history.push({ pathname:"/payrent-other-details" });
             } else {
               console.log("1414141414", props);
-              props.history.push({ pathname: "/payrent-other-details" });
+              props.history.push({ pathname:"/payrent-other-details" });
             }
           } else {
             props.history.push({ pathname: "/" });
@@ -201,17 +202,14 @@ function LoginWithMobMpin(props) {
                   <div>
                     <div className='circle-half'>
                       <div className='full-circle'>
-                        <img src={tip} alt='Icon'/>
+                        <img src={tip} className='img-fluid' style={{maxWidth:100}} alt='Icon'/>
                       </div>
                       <div className='full-text text-left'>
                         <h5>Tips</h5>
-                        <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non labore exercitationem
-                          rerum nulla ea veniam facilis et. </p>
+                        <p>6-digit passcode which will help you to log in faster into the PayMe India app.</p>
                       </div>
                     </div>
-                    <div className='circle-half'>
-                      <p className='p-a-10'>In expedita et occaecati ullam a cumque maiores perspiciatis. </p>
-                    </div>
+
                   </div>
                 </div>
               </div>

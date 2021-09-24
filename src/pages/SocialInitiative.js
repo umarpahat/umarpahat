@@ -3,7 +3,6 @@ import {hitAppUseCase} from "../store/modules/userDetails/actions";
 import {connect} from "react-redux";
 import Loader from "../component/Loader";
 import "./ApplyNowButton/Applybtnallcomponent.css";
-import Footer from "./Footer";
 import Header from "./Header";
 import "../../src/home.css";
 import saarthi from "../images/sarthi-logo.png";
@@ -305,7 +304,7 @@ const SocialInitiative = (props) => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+           
         </>
     );
 };

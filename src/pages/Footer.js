@@ -16,7 +16,7 @@ const Footer = () => {
         <footer className='footer'>
             <div className="container">
                 <div className="row">
-                    <div className="ol col-md-4">
+                    <div className="ol col-md-2">
                         <div className='clearfix'><img className="img-fluid"
                                                        src={whiteLogo} alt="PayMe India"/></div>
                         <div className='clearfix p-t-80'>
@@ -56,17 +56,30 @@ const Footer = () => {
                             <li><Link to="/policy">Privacy Policy</Link></li>
                             <li><Link to="/refund">Refund Policy</Link></li>
                             <li><Link to="/disclaimer">Disclaimer</Link></li>
+
                         </ul>
                     </div>
-                    <div className="ol col-md-2">
+                    <div className="ol col-md-3">
+                        <h6 className='head6 green-link'>Grievance Redressal Officer</h6>
+                        <ul>
+                            <li>Rohit Rai</li>
+                            <li className=""><strong>Contact</strong>: 7669929906</li>
+                            <li className=""><strong>Email</strong>: <a href='mailto:rohit.rai@paymeindia.in'>rohit.rai@paymeindia.in</a></li>
+                            <li><a target='_blank' href="https://openscecurityurl.s3.ap-south-1.amazonaws.com/NewAppAgreeDocs/grievance_redressal_mechanism.pdf">Grievance Redressal Mechanism</a></li>
+                        </ul>
+                    </div>
+                    <div className="ol col-md-1">
                         <img className="middle_ssl_image" width="100"
                              src={sslLogo} alt="PayMe India"/>
                     </div>
+
                 </div>
+
                 <div className="row p-t-20">
-                    <div className="ol col-md-12 text-center"><p className="p-t-20">Copyright@2021 Huey Tech Pvt.
+                    <div className="col col-md-12 text-center"><p className="p-t-20">Copyright@2021 Huey Tech Pvt.
                         Ltd.</p>
                     </div>
+
                 </div>
             </div>
         </footer>

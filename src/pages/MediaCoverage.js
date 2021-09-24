@@ -2,12 +2,10 @@ import React, {useState} from "react";
 import {hitAppUseCase} from "../store/modules/userDetails/actions";
 import {connect} from "react-redux";
 import "./ApplyNowButton/Applybtnallcomponent.css";
-import Footer from "./Footer";
 import Header from "./Header";
 import "../../src/home.css";
 import mediaCover from "../images/svg/media-cover.svg";
 import MetaTags from "react-meta-tags";
-import scoreAnimation from "../images/animated/cibil-animation.gif";
 import mailBox from "../images/svg/mail-box.svg";
 
 const MediaCoverage = (props) => {
@@ -276,7 +274,7 @@ const MediaCoverage = (props) => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+          
         </>
     )
         ;

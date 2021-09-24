@@ -14,6 +14,10 @@ import { API_ENDPOINT } from "../../constant";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from 'universal-cookie';
+import tip from "../../images/animated/kyc-option.gif";
+import panCard from "../../images/svg/pan-card.svg";
+import kycIcon from "../../images/svg/professional-details.svg";
+
  
 const cookies = new Cookies()
 
@@ -229,41 +233,33 @@ const Professionaldetailspayme = (props) => {
     <>
       <Header {...props}/>
       <div className='content darkBg'>
-      <Container className="pb-5">
+      <Container>
         {loader ? (
           <div className="loader">
             {" "}
             <Loader color={"#33658a"} />{" "}
           </div>
         ) : (
-          <div className="form-container formcontainermob  pt-4">
-            <div className="pt-2">
-             
-              <div
-                className="d-flex"
-                onClick={() => {
-                  props.history.goBack();
-                }}
-                to="#"
-                style={{ cursor: "pointer" }}
-              >
-                <div className="m-1">
-                  <img src={backicon} alt='back Icon' className="img-fluid" />
-                </div>
-                <div>
-                  <h6 className="backbtnsty">Back</h6>
-                </div>
+            <div className="row">
+              <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                <br/>
+                <a
+                    className="back-arrow"
+                    onClick={() => {
+                      props.history.goBack();
+                    }}
+                >
+                  Back
+                </a>
               </div>
-            </div>
+              <div className="col-lg-7 col-md-7 col-sm-12 text-center">
             <form onSubmit={handleSubmit}>
               <div className="home-contact-form ">
-                <div class="form-group ms-input-group">
-                  <label className="form-label">Employment Status</label>
-                </div>
+                <h4 className="form-heading formheadding">Provide your Bank Information</h4>
                 <div className="py-4">
-                  <div class="form-check form-check-inline">
+                  <div className="form-check form-check-inline">
                     <input
-                      class="form-check-input"
+                      className="form-check-input"
                       type="radio"
                       checked={true}
                       name="inlineRadioOptions"
@@ -271,16 +267,16 @@ const Professionaldetailspayme = (props) => {
                       value="option1"
                     />
                     <label
-                      class="form-check-label form-label pr-5"
+                      className="form-check-label form-label pr-5"
                       htmlFor="inlineRadio1"
                     >
                       Salaried
                     </label>
                   </div>
                   <Link to="/self-employed">
-                    <div class="form-check form-check-inline">
+                    <div className="form-check form-check-inline">
                       <input
-                        class="form-check-input"
+                        className="form-check-input"
                         type="radio"
                         name="inlineRadioOptions"
                         id="inlineRadio2"
@@ -288,7 +284,7 @@ const Professionaldetailspayme = (props) => {
                       />
 
                       <label
-                        class="form-check-label form-label"
+                        className="form-check-label form-label"
                         htmlFor="inlineRadio2"
                       >
                         Self-Employed
@@ -299,10 +295,10 @@ const Professionaldetailspayme = (props) => {
                 <h4 className="form-heading text-center">Job Details</h4>
 
                 <div className="form-block">
-                  <div class="form-group ms-input-group">
+                  <div className="form-group ms-input-group">
                     <label>What do you do ?</label>
                     <select
-                      class="form-control ms-form-input"
+                      className="select-item"
                       onChange={(event) => {
                         setErrorindustry("");
                         setIndustry(event.target.value);
@@ -325,13 +321,13 @@ const Professionaldetailspayme = (props) => {
                   </div>
                 </div>
                 <div className="form-block">
-                  <div class="form-group ms-input-group">
+                  <div className="form-group ms-input-group">
                     <label className="form-label">
                       Current Organization Name
                     </label>
                     <input
                       type="text"
-                      class="form-control ms-form-input"
+                      className="form-input"
                       placeholder="Enter Organization Name"
                       value={organizationName}
                       onChange={(event) => {
@@ -350,11 +346,11 @@ const Professionaldetailspayme = (props) => {
                       </span>
                     ) : null}
                   </div>
-                  <div class="form-group ms-input-group">
+                  <div className="form-group ms-input-group">
                     <label className="form-label">Work Experience(years)</label>
                     <input
                       type="number"
-                      class="form-control ms-form-input"
+                      className="form-input"
                       placeholder="Enter Work Experience"
                       value={workExp}
                       onChange={(event) => {
@@ -366,11 +362,11 @@ const Professionaldetailspayme = (props) => {
                       <span style={{ color: "red" }}>{errorworkExp}</span>
                     ) : null}
                   </div>
-                  <div class="form-group ms-input-group">
+                  <div className="form-group ms-input-group">
                     <label className="form-label">Salary</label>
                     <input
                       type="number"
-                      class="form-control ms-form-input"
+                      className="form-input"
                       placeholder="Enter Salary"
                       value={inhandsalary}
                       onChange={(event) => {
@@ -382,11 +378,11 @@ const Professionaldetailspayme = (props) => {
                       <span style={{ color: "red" }}>{errorSalary}</span>
                     ) : null}
                   </div>
-                  <div class="form-group ms-input-group">
+                  <div className="form-group ms-input-group">
                     <label className="form-label">Office Address</label>
                     <input
                       type="text"
-                      class="form-control ms-form-input"
+                      className="form-input"
                       placeholder="Address Line 1"
                       value={officeAddressLine1}
                       onChange={(event) => {
@@ -395,7 +391,7 @@ const Professionaldetailspayme = (props) => {
                     />
                     <input
                       type="text"
-                      class="form-control ms-form-input mt-2"
+                      className="form-input mt-2"
                       placeholder="Address Line 2"
                       value={officeAddressLine2}
                       onChange={(event) => {
@@ -404,11 +400,11 @@ const Professionaldetailspayme = (props) => {
                     />
                   </div>
 
-                  <div class="form-group ms-input-group">
+                  <div className="form-group ms-input-group">
                     <label className="form-label">Office PinCode</label>
                     <input
                       type="number"
-                      class="form-control ms-form-input"
+                      className="form-input"
                       placeholder="Enter Office PinCode"
                       pattern="^[0-9]{6}"
                       maxLength={6}
@@ -435,13 +431,13 @@ const Professionaldetailspayme = (props) => {
                     ) : null}
                   </div>
 
-                  <div class="form-group ms-input-group">
+                  <div className="form-group ms-input-group">
                     <label className="form-label">
                       Next Salary Date(DD/MM/YYYY)
                     </label>
                     <input
                       type="date"
-                      class="form-control ms-form-input"
+                      className="form-input"
                       value={salaryDate}
                       onChange={(event) => {
                         seterrorsalaryDate("");
@@ -453,11 +449,11 @@ const Professionaldetailspayme = (props) => {
                     ) : null}
                   </div>
 
-                  <div class="form-group ms-input-group">
+                  <div className="form-group ms-input-group">
                     <label className="form-label">Official Email ID</label>
                     <input
                       type="email"
-                      class="form-control ms-form-input"
+                      className="form-input"
                       placeholder="Enter Email ID"
                       value={officeEmail}
                       onChange={(event) => {
@@ -465,69 +461,85 @@ const Professionaldetailspayme = (props) => {
                       }}/>
                   </div>
                   <div>
-                    <label className="form-label">
-                      Upload Recent salary slip
-                    </label>
 
-                    <div className="file-uploading-block">
-                      <a
-                        className="upload-btn-text"
-                        href="javascript:document.querySelector('input#uploadsalary').click()"
-                      >
-                        Upload
-                      </a>
-                      <br />
-                      {uploadSalarySlip.name ? (
-                        <span style={{ color: "black" }} className="">
-                          {uploadSalarySlip.name}
-                        </span>
-                      ) : null}
-                      <input
-                        type="file"
-                        accept=".pdf"
-                        class="custom-file-input"
-                        id="uploadsalary"
-                        onChange={handlesalaryUpload}
-                        hidden
-                      />
-                    </div>
                     {erroruploadSalarySlip ? (
                       <span style={{ color: "red" }}>
                         {erroruploadSalarySlip}
                       </span>
                     ) : null}
                   </div>
-                  <div>
-                    <label className="form-label">Upload Office ID card</label>
 
-                    <div className="file-uploading-block">
-                      <a
-                        className="upload-btn-text"
-                        href="javascript:document.querySelector('input#uploadoffice').click()"
-                      >
-                        Upload
-                      </a>
-                      <br />
-                      {uploadOfficeId.name ? (
-                        <span style={{ color: "black" }} className="">
-                          {uploadOfficeId.name}
+                  <div className='step-step p-t-30 border-btm'>
+                    <div className='img-wrapper'>
+                      <img className='img-fluid' src={kycIcon} alt='Upload'/>
+                    </div>
+                    <div className='img-text'>
+                      <h6>Upload Recent salary slip</h6>
+                      <p>Kindly share your latest 3 months salary slip</p>
+
+                      {uploadSalarySlip.name ? (
+                          <span style={{ color: "black" }} className="">
+                          {uploadSalarySlip.name}
                         </span>
                       ) : null}
                       <input
+                          type="file"
+                          accept="*/"
+                          className="custom-file-input"
+                          id="uploadsalary"
+                          onChange={handlesalaryUpload}
+                          hidden
+                      />
+                    </div>
+                    <div className='wrapper-button'>
+                      <a className="green-button"  href="javascript:document.querySelector('input#uploadsalary').click()" >
+                        Upload</a>
+
+                    </div>
+                    <input
                         type="file"
-                        class="custom-file-input"
+                        className="custom-file-input"
                         id="uploadoffice"
                         onChange={handleofficeUpload}
                         hidden
-                      />
+                    />
+                  </div>
+
+                  <div className='step-step p-t-30 border-btm'>
+                    <div className='img-wrapper'>
+                      <img className='img-fluid' src={kycIcon} alt='Upload'/>
                     </div>
+                    <div className='img-text'>
+                      <h6>Upload Office ID card</h6>
+                      <p>Kindly share your Office id or Visiting Card</p>
+                      {uploadOfficeId.name ? (
+                          <span style={{ color: "black" }} className="">
+                          {uploadOfficeId.name}
+                        </span>
+                      ) : null}
+                    </div>
+                    <div className='wrapper-button'>
+                      <a className="green-button"  href="javascript:document.querySelector('input#uploadoffice').click()" >
+                        Upload</a>
+
+                    </div>
+                    <input
+                        type="file"
+                        className="custom-file-input"
+                        id="uploadoffice"
+                        onChange={handleofficeUpload}
+                        hidden
+                    />
+                  </div>
+                  <div>
+
 
                     <div className="form-block">
-                      <div class="form-group ms-input-group">
+                      <div className="form-group ms-input-group">
                         <label className="form-label">Present Address</label>
                         <input
                           type="text"
-                          class="form-control ms-form-input mt-2"
+                          className="form-input mt-2"
                           placeholder="Address Line 1"
                           value={presentAddLine1}
                           onChange={(event) => {
@@ -537,7 +549,7 @@ const Professionaldetailspayme = (props) => {
                         />
                         <input
                           type="text"
-                          class="form-control ms-form-input mt-2"
+                          className="form-input mt-2"
                           placeholder="Address Line 2"
                           value={presentAddLine2}
                           onChange={(event) => {
@@ -550,12 +562,12 @@ const Professionaldetailspayme = (props) => {
                           </span>
                         ) : null}
                       </div>
-                      <div class="form-group ms-input-group">
+                      <div className="form-group ms-input-group">
                         <label className="form-label">Present Pin Code</label>
                         <input
                           maxLength={6}
                           type="number"
-                          class="form-control ms-form-input"
+                          className="form-input"
                           placeholder="110025"
                           pattern={/^[0-9]{6}$/}
                           value={presentPincode}
@@ -594,7 +606,37 @@ const Professionaldetailspayme = (props) => {
                 />
               </div>
             </form>
-          </div>
+              </div>
+              <div className="col-lg-3 col-md-3 col-sm-12 text-center">
+                <div className="height100" style={{height: "100vh"}}>
+                  <div>
+                    <div className="circle-half" style={{borderRadius: 20, padding: 20, position:'relative'}}>
+                      <div className="full-circle" style={{
+                        margin: 'auto',
+                        position: 'absolute',
+                        top: -76,
+                        left: 0,
+                        right: 0,
+                        height:110,
+                        width:110
+                      }}>
+                        <img src={tip} className='img-fluid' alt="Icon"/>
+                      </div>
+                      <div className="full-text text-left" style={{width:'100%'}}>
+                        <h5>Tips</h5>
+                        <p style={{fontSize:"15px"}}>Provide your professional details to help us in assigning a higher credit limit</p>
+                      </div>
+                    </div>
+                    <div className="circle-half">
+                      <p className="p-a-10" style={{fontSize:"15px"}}>Kindly share the latest information.</p>
+                    </div>
+                    <div className="circle-half">
+                      <p className="p-a-10" style={{fontSize:"15px"}}>The latest ITR will increase your chance of getting the limit approved.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         )}
       </Container>
       </div>

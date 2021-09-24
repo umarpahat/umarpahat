@@ -24,6 +24,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+body, html {
+  height: 100%;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -208,6 +211,7 @@ h6 {
 }
 
 .form-control {
+  background: #fff;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
@@ -1828,9 +1832,9 @@ a:hover {
   justify-content: space-between;
 }
 .reloadicon {
-  color: #33658a;
-  font-size: 14px;
-  font-weight: 900;
+  color: #333;
+  font-size: 16px;
+  font-weight: 800;
 }
 .imgsizereloadicon {
   width: 15px;
@@ -2968,7 +2972,6 @@ a.button-small:hover {
 
 .banner {
   padding: 20px 0 30px;
-  background: #829aae url('../images/banner-img.png') no-repeat center 0;
   box-shadow: rgba(0, 0, 0, .1) 0 8px 5px -5px
 }
 
@@ -3210,10 +3213,6 @@ a.button-small:hover {
   box-shadow: rgba(17, 17, 26, .1) 0 1px 0;
   color: #f8bb32;
   text-decoration: none
-}
-
-.black-bg {
-  background: #040d1b url('../images/black-bg.png') repeat 0 0;
 }
 
 .white-color {

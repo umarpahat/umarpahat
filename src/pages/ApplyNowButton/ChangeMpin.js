@@ -122,7 +122,7 @@ function ChangeMpin(props) {
                                                        style={{
                                                            'color': '#fff',
                                                            'border': 'none',
-                                                           'width': '503px'
+                                                           'width': '100%'
                                                        }}
                                                 />
                                             </div>
@@ -139,9 +139,7 @@ function ChangeMpin(props) {
                                             </div>
                                             <div className='full-text text-left'>
                                                 <h5>Tips</h5>
-                                                <p>In expedita et occaecati ullam a cumque maiores perspiciatis. Non
-                                                    labore exercitationem
-                                                    rerum nulla ea veniam facilis et. </p>
+                                                <p> 6-digit passcode which will help you to log in faster into the PayMe India app.</p>
                                             </div>
                                         </div>
                                     </div>
