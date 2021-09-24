@@ -280,7 +280,7 @@ const PayRent = (props) => {
                     {/* <Link to='#' className='small-green-link'>View All Offers</Link> */}
                   </div>
                   <div className="col-sm-12 col-md-1 ">&nbsp;</div>
-                  <div className="col-sm-12 col-md-5 m-t-40  d-sm-none d-md-block">
+                  <div className="col-sm-12 col-md-5 m-t-40 d-none d-md-block d-lg-block">
                     <div className="fromFrame">
                       <div className="advertisePay" style={{ marginTop: 0 }}>
                         <div>
