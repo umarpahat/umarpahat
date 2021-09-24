@@ -21,7 +21,7 @@ const cookies = new Cookies()
 
 const Getstartpaymeindia = (props) => {
   const token = cookies.get('token')
-  console.log(props.history.location.state.phoneNumber);
+  //console.log(props.history.location.state.phoneNumber);
   let [loader, setloader] = useState(false);
   const [acceptTandC, setacceptTandC] = useState(false)
   const [Error, setError] = useState(null);
@@ -50,7 +50,7 @@ const Getstartpaymeindia = (props) => {
         cookies.remove('token', { path: '/' })
       }
       setloader(false)
-console.log(error)
+//console.log(error)
     }
   }
 

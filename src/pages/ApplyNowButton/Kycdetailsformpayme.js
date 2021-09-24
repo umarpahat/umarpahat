@@ -20,7 +20,7 @@ const cookies = new Cookies();
 
 const Kycdetailsformpayme = (props) => {
   const userCase = cookies.get("userCase");
-  console.log("kyc now ", props);
+  //console.log("kyc now ", props);
   const token = cookies.get("token");
   const [show, setShow] = useState(false);
   const [name, setname] = useState("");
@@ -55,7 +55,7 @@ const Kycdetailsformpayme = (props) => {
     setRefresh(false);
   }
 
-  console.log("userCase", userCase);
+  //console.log("userCase", userCase);
 
   const handleClose = () => setShow(!show);
 
@@ -75,7 +75,7 @@ const Kycdetailsformpayme = (props) => {
       payload: { s3_path: pathArray, bucket_name: "payme-test-documents" },
     });
     setsignedUrl(signedUrlObj.data.data);
-    console.log(343434, signedUrlObj.data.data);
+    //console.log(343434, signedUrlObj.data.data);
   }
 
   useEffect(() => {
@@ -384,7 +384,7 @@ const Kycdetailsformpayme = (props) => {
                                 value={gender}
                                 placeholder="Select your gender"
                                 onChange={(e) => {
-                                  console.log(e.target.value);
+                                  //console.log(e.target.value);
                                   seterrorGender("");
                                   setgender(e.target.value);
                                 }}

@@ -30,7 +30,7 @@ const Congretmessage = (props) => {
       axios
         .get(url, config)
         .then((response) => {
-          console.log("congrats", response);
+          //console.log("congrats", response);
 
           setProfessionalStatus(
             response.data.data[0].professional_details_verified
@@ -44,7 +44,7 @@ const Congretmessage = (props) => {
             cookies.remove("token", { path: "/" });
             props.history.push("/");
           }
-          console.log(err);
+          //console.log(err);
         });
     }
   }, []);
@@ -110,6 +110,7 @@ const Congretmessage = (props) => {
           </Container>
         ) :  null}
         {greet ? (
+          <>
           <Container>
             <div className="row">
               <div className="col-lg-3 col-md-3 col-sm-12 text-center">
@@ -147,7 +148,7 @@ const Congretmessage = (props) => {
               </div>
               <div className="col-lg-5 col-md-5 col-sm-12 text-center"></div>
             </div>
-          </Container>
+          </Container></>
         ):null}
       </div>
     </>

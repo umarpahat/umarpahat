@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
-import { hitAppUseCase,hitAllUserData } from "../../store/modules/userDetails/actions";
+import {
+  hitAppUseCase,
+  hitAllUserData,
+} from "../../store/modules/userDetails/actions";
 import { connect } from "react-redux";
 import { api } from "../../services/api";
 import Loader from "../../component/Loader";
@@ -9,22 +12,20 @@ import "../ApplyNowButton/Applybtnallcomponent.css";
 import Header from "../Header";
 import "../../home.css";
 import letsStart from "../../images/animated/lets-start-animation.gif";
-import Cookies from 'universal-cookie';
+import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 const Getquikloneapply = (props) => {
- 
- cookies.set('userCase', "apply-loan");
- const userCase = cookies.get("userCase")
- console.log("apply loan",userCase)
+  cookies.set("userCase", "apply-loan");
+  const userCase = cookies.get("userCase");
+  //console.log("apply loan",userCase)
   let [loader, setloader] = useState(false);
   let [number, setnumber] = useState(null);
   let [error, seterror] = useState(null);
   let [newUser, setnewUser] = useState(false);
 
   useEffect(() => {
-    cookies.remove('token', { path: '/' })
- 
+    cookies.remove("token", { path: "/" });
   }, []);
 
   const handleSubmit = (event) => {
@@ -36,8 +37,7 @@ const Getquikloneapply = (props) => {
 
   const verifyPhone = () => {
     setloader(true);
-  
-  
+
     api
       .post(
         `api/authentication/phone_no_verify/`,
@@ -45,30 +45,27 @@ const Getquikloneapply = (props) => {
         {}
       )
       .then((response) => {
-       
         if (response.status === 200 && !response.data.phone_number_verified) {
-          setloader(false)
+          setloader(false);
           setnewUser(true);
         } else if (
           response.status === 200 &&
           response.data.phone_number_verified
         ) {
-          props.history.push({
-            state: { phoneNumber: number },
-            pathname: "/login-with-mob-mpin",
-            
-          });
+          cookies.set("phoneNumber", number)
+            props.history.push({
+              pathname: "/login-with-mob-mpin",
+            });
         } else {
-          console.log(response.status);
+          //console.log(response.status);
         }
         return response;
       })
       .catch((error) => {
-        if(error.response.status===401)
-        {
-          cookies.remove('token', { path: '/' })
+        if (error.response.status === 401) {
+          cookies.remove("token", { path: "/" });
         }
-        console.log(error);
+        //console.log(error);
         setloader(false);
       });
   };
@@ -78,7 +75,10 @@ const Getquikloneapply = (props) => {
       {/* {!newUser ? <Header /> : null } */}
       <Header {...props} />
       <div className="content darkBg">
-        <div className='info'>Make sure the mobile number is associated in this  specific device, we will send and verify the new number with reverse OTP.</div>
+        <div className="info">
+          Make sure the mobile number is associated in this specific device, we
+          will send and verify the new number with reverse OTP.
+        </div>
         <Container>
           {loader ? (
             <div className="loader">
@@ -92,71 +92,90 @@ const Getquikloneapply = (props) => {
               resendOtp={verifyPhone}
             />
           ) : (
-              <div className="row">
-                  <div className="col-lg-2 col-md-2 col-sm-12 text-center">
-                    <br/>
-                    <a className='back-arrow' onClick={() => {props.history.push({ pathname: "/" });}}>Back</a>
-                  </div>
-                  <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-                          <div className="contenertQuicklone">
-                              <div className="slider-right-block">
-                                  <form onSubmit={handleSubmit}>
-                                      <div className="home-contact-form">
-                                          <h4 className="form-heading formheadding">
-                                              Let's Get Started
-                                          </h4>
+            <div className="row">
+              <div className="col-lg-2 col-md-2 col-sm-12 text-center">
+                <br />
+                <a
+                  className="back-arrow"
+                  onClick={() => {
+                    props.history.push({ pathname: "/" });
+                  }}
+                >
+                  Back
+                </a>
+              </div>
+              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                <div className="contenertQuicklone">
+                  <div className="slider-right-block">
+                    <form onSubmit={handleSubmit}>
+                      <div className="home-contact-form">
+                        <h4 className="form-heading formheadding">
+                          Let's Get Started
+                        </h4>
 
-                                          <div className="form-block">
-                                              <div className="form-group ms-input-group">
-                                                  <label className="form-label">Mobile Number</label>
+                        <div className="form-block">
+                          <div className="form-group ms-input-group">
+                            <label className="form-label">Mobile Number</label>
 
-                                                  <input
-
-                                                      type="number"
-                                                      minLength={10}
-                                                      className="form-control ms-form-input"
-                                                      placeholder="Enter new mobile number"
-                                                      value={number || ""}
-                                                      onChange={(event) => {setnumber(event.target.value.slice(0,10))
-                                                          if(event.target.value.length===0 || event.target.value.length===10)
-                                                          {
-                                                              seterror("");
-                                                          }}}
-                                                  />
-                                                  {error ? (
-                                                      <span style={{ color: "red" }}>{error}</span>
-                                                  ) : null}
-                                              </div>
-                                          </div>
-                                          <div className="pt-3">
-                                              <label></label>
-                                              <input
-                                                  type="submit"
-                                                  value="Continue"
-                                                  className="getstartbtn "
-                                              />
-                                          </div>
-                                      </div>
-                                  </form>
-                              </div>
+                            <input
+                              type="number"
+                              minLength={10}
+                              className="form-control ms-form-input"
+                              placeholder="Enter new mobile number"
+                              value={number || ""}
+                              onChange={(event) => {
+                                setnumber(event.target.value.slice(0, 10));
+                                if (
+                                  event.target.value.length === 0 ||
+                                  event.target.value.length === 10
+                                ) {
+                                  seterror("");
+                                }
+                              }}
+                            />
+                            {error ? (
+                              <span style={{ color: "red" }}>{error}</span>
+                            ) : null}
                           </div>
+                        </div>
+                        <div className="pt-3">
+                          <label></label>
+                          <input
+                            type="submit"
+                            value="Continue"
+                            className="getstartbtn "
+                          />
+                        </div>
+                      </div>
+                    </form>
                   </div>
-                <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-                  <div className='height100'>
-                    <div>
-                      <div className='circle-half'>
-                        <div className='full-circle'>
-                          <img src={letsStart} className='img-fluid' style={{maxWidth:150}}  alt='Icon'/>
-                        </div>
-                        <div className='full-text text-left'>
-                          <h5>Tips</h5>
-                          <p>With the help of the registered mobile number provided, we will reach out to you in a quicker manner.</p>
-                        </div>
+                </div>
+              </div>
+              <div className="col-lg-5 col-md-5 col-sm-12 text-center">
+                <div className="height100">
+                  <div>
+                    <div className="circle-half">
+                      <div className="full-circle">
+                        <img
+                          src={letsStart}
+                          className="img-fluid"
+                          style={{ maxWidth: 150 }}
+                          alt="Icon"
+                        />
+                      </div>
+                      <div className="full-text text-left">
+                        <h5>Tips</h5>
+                        <p>
+                          With the help of the registered mobile number
+                          provided, we will reach out to you in a quicker
+                          manner.
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
           )}
         </Container>
       </div>
@@ -170,6 +189,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-const dispatchToProps = { hitAppUseCase,hitAllUserData };
+const dispatchToProps = { hitAppUseCase, hitAllUserData };
 
 export default connect(mapStateToProps, dispatchToProps)(Getquikloneapply);

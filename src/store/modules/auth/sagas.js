@@ -10,27 +10,27 @@ function* getToken(action) {
     try {
         const data = yield call(getLoginToken, action.payload);
         cookies.set('token', data.data.data?.token);
-        console.log("hitlogin",data.data.data?.token);
+        //console.log("hitlogin",data.data.data?.token);
         if (data.data.error){
-            console.log("log in error",data.data.error)
+            //console.log("log in error",data.data.error)
             yield put(storeError({error: data.data.error}));
         } else {
             yield put(storeToken({token:data.data.data.token, phone_number: action.payload.phone_number}));
         }
     } catch (e) {
-        console.log(e);
+        //console.log(e);
     }
 }
 
 function* getTokenForgotMpin(action) {
     try {
         cookies.set('token', action.payload.token);
-        console.log("check my action man baby",action.payload.token)
-        console.log(action)
-        console.log("teret teret teret")
+        //console.log("check my action man baby",action.payload.token)
+        //console.log(action)
+        //console.log("teret teret teret")
         yield put(storeToken({token:action.payload.token, phone_number: action.payload.phone_number}))
     } catch (e) {
-        console.log(e);
+        //console.log(e);
     }
 }
 
@@ -40,7 +40,7 @@ function* expireToken(action) {
         // const data = yield call(getLoginToken);
         yield put(appLogout());
     } catch (e) {
-        console.log(e);
+        //console.log(e);
     }
 }
 

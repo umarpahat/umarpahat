@@ -35,7 +35,7 @@ function ChangeMpin(props) {
             setmpinNotMatch("New Mpin and Confirm Mpin does not matched!!! ")
             setloader(false)
         } else {
-            console.log("every thing woirked")
+            //console.log("every thing woirked")
             api.post(`api/authentication/create_or_update_mpin/`, {'mpin': mpin}, {headers: {'Authorization': 'Token ' + token}})
                 .then((response) => {
                     if (response.status === 200) {
@@ -57,7 +57,7 @@ function ChangeMpin(props) {
                 })
                 .catch((error) => {
                     setloader(false)
-                    console.log(error)
+                    //console.log(error)
                 });
         }
     }
