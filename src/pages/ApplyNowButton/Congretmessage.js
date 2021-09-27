@@ -15,6 +15,8 @@ const Congretmessage = (props) => {
   const [kycstatus, setKycStatus] = useState("");
   const [greet, setGreet] = useState(false);
 
+  
+
   useEffect(() => {
    
     if(!token){
@@ -30,13 +32,8 @@ const Congretmessage = (props) => {
       axios
         .get(url, config)
         .then((response) => {
-          //console.log("congrats", response);
-
-          setProfessionalStatus(
-            response.data.data[0].professional_details_verified
-          );
-          setBankstatus(response.data.data[0].bank_details_verified);
-          setKycStatus(response.data.data[0].kyc_verified);
+          (response.data.data[0].professional_details_verified==="VERIFIED") && (response.data.data[0].bank_details_verified==="VERIFIED")
+          &&(response.data.data[0].kyc_verified==="VERIFIED") ? setGreet(true) : null ;
          
         })
         .catch((err) => {
@@ -47,13 +44,11 @@ const Congretmessage = (props) => {
           //console.log(err);
         });
     }
+
+  
   }, []);
 
-  kycstatus === "VERIFIED" &&
-  bankstatus === "VERIFIED" &&
-  professionalStatus === "VERIFIED"
-    ? setGreet(true)
-    : null;
+ 
 
   (kycstatus === "NOT_VALID" || kycstatus === "NOT_SUBMITTED") &&
   (bankstatus === "NOT_VALID" || bankstatus === "NOT_SUBMITTED") &&
@@ -109,7 +104,7 @@ const Congretmessage = (props) => {
             </div>
           </Container>
         ) :  null}
-        {greet ? (
+        {greet===true ? (
           <>
           <Container>
             <div className="row">
