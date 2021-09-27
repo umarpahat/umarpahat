@@ -11,15 +11,15 @@ export const getLoginToken = data => {return new Promise(async(resolve, reject) 
               return resolve(response);
             })
             .catch((error) => {
-              console.log(33333)
-              console.log(error.message)
-              console.log(error)
+              //console.log(33333)
+              //console.log(error.message)
+              //console.log(error)
               return reject(error);
             });
         } else {
             api.post(`api/authentication/authenticate_mpin/`, data, {})
             .then((response) => {
-              console.log("hit log in",response.data.data)
+              //console.log("hit log in",response.data.data)
               cookies.set('token', data.data?.token);
               return resolve(response);
             })

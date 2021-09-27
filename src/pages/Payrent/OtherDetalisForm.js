@@ -83,14 +83,14 @@ const OtherDetalisForm = (props) => {
         .then((response) => {
         
           setKycStatus(response.data.data[0].kyc_verified);
-          console.log("stepmanual", response.data.data[0]);
+          //console.log("stepmanual", response.data.data[0]);
         })
         .catch((err) => {
           if (err?.response?.status === 401) {
             cookies.remove("token", { path: "/" });
             props.history.push("/");
           }
-          console.log(err);
+          //console.log(err);
         });
     }
   }, []);
@@ -104,7 +104,7 @@ const OtherDetalisForm = (props) => {
       payload: { s3_path: pathArray },
     });
     setsignedUrl(signedUrlObj.data.data);
-    console.log(343434, signedUrlObj.data.data);
+    //console.log(343434, signedUrlObj.data.data);
   }
 
 
@@ -134,13 +134,7 @@ const OtherDetalisForm = (props) => {
       ? setuserdocumentsmodel(props.user.userData.userdocumentsmodel)
       : null;
     getSignedUrl();
-    if (
-      (props.user.userData &&
-        props.user.userData.props.user.userData?.userdocumentsmodel.kyc_verified === "VERIFIED") ||
-      props.user.userData?.userdocumentsmodel.kyc_verified === "VERIFIED"
-    ) {
-      setkyc_verified(true);
-    }
+  
    
    
     let config = {
@@ -162,7 +156,7 @@ const OtherDetalisForm = (props) => {
            cookies.remove("token", { path: "/" });
         }
         ;
-        console.log("eeeeee", err);
+        //console.log("eeeeee", err);
       });
 
     // let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`;
@@ -180,7 +174,7 @@ const OtherDetalisForm = (props) => {
         setjwtToken(response.data.token);
       })
       .catch((err) => {
-        console.log(34343434, err);
+        //console.log(34343434, err);
       });
 
     // let url3 = `${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`;
@@ -195,7 +189,7 @@ const OtherDetalisForm = (props) => {
      
       })
       .catch((err) => {
-        console.log("history", err);
+        //console.log("history", err);
       });
     
   }, []);
@@ -207,7 +201,7 @@ const OtherDetalisForm = (props) => {
   }, [props]);
 
   function handleName  ()  {
-    console.log("setName")
+    //console.log("setName")
     setName(props.user.userData?.customusermodel.first_name);
     setLastName(props.user.userData?.customusermodel.last_name);
   };

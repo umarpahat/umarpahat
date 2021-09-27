@@ -22,7 +22,7 @@ const cookies = new Cookies();
 const KycOption = (props) => {
   const token = cookies.get("token");
   const userCase = cookies.get("userCase");
-  console.log("pramodsprops", props);
+  //console.log("pramodsprops", props);
 
   const [webview, setWebview] = useState();
   const [ekyc, setEkyc] = useState();
@@ -40,7 +40,7 @@ const KycOption = (props) => {
         }
     };
 })();
-  console.log("after ekyc", ekyc);
+  //console.log("after ekyc", ekyc);
 
   useEffect(() => {
     something();
@@ -54,11 +54,11 @@ const KycOption = (props) => {
       .get(url, config)
       .then((res) => {
         setWebview(res.data.url);
-        console.log("kykc url", res.data);
+        //console.log("kykc url", res.data);
       })
 
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
         if (err.response.status === 401) {
           cookies.remove("token", { path: "/" });
         }
@@ -83,10 +83,10 @@ const KycOption = (props) => {
       .then((response) => {
         setAdhaar(response.data.data[0].adhar_card_verified);
         setEkyc(response.data.data[0].kyc_verified);
-        console.log("set kyc",response.data)
+        //console.log("set kyc",response.data)
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
       });
   };
   var time = setInterval(function () {

@@ -48,7 +48,7 @@ const HomePage = (props) => {
         fetch(url)
             .then(res => res.json())
             .then(res => setPosts(res.posts))
-            // .then(res => console.log('umar',res.posts))
+            // .then(res => //console.log('umar',res.posts))
     },[])
 
   
@@ -85,7 +85,7 @@ const HomePage = (props) => {
         let roi = Number(0.03);
         let pfee = Math.round(amount/20);
 
-        console.log(roi, amount, time)
+       
         const result = Math.round(  amount * ((roi * (1 + roi) ** time) / ((1 + roi) ** time - 1)));
             
         $('#interest').text(36)
@@ -147,7 +147,7 @@ const HomePage = (props) => {
                                         </div>
 
                                         <div className="price-slider">
-                                            <h4>Down Payment</h4>
+                                            <h4>Loan Amount</h4>
                                             <div className="relative">
                                                 <div className={classes.root}>
                                                     <Slider

@@ -43,7 +43,7 @@ const PayRent = (props) => {
           ...res.data.Repayment,
         ])
       );
-    // .then(res => console.log('umar', [...res.data.General,...res.data.Eligibility,...res.data.Repayment] ))
+    // .then(res => //console.log('umar', [...res.data.General,...res.data.Eligibility,...res.data.Repayment] ))
   }, []);
 
   const handleSubmit = (event) => {
@@ -71,12 +71,13 @@ const PayRent = (props) => {
           response.status === 200 &&
           response.data.phone_number_verified
         ) {
+          cookies.set("phoneNumber", number),
           props.history.push({
             pathname: "/login-with-mob-mpin",
-            state: { phoneNumber: number },
+           
           });
         } else {
-          console.log(response.status);
+          //console.log(response.status);
         }
         return response;
       })
@@ -84,7 +85,7 @@ const PayRent = (props) => {
         if (error.response.status === 401) {
           cookies.remove("token", { path: "/" });
         }
-        console.log(error);
+        //console.log(error);
         setloader(false);
       });
   };
