@@ -18,10 +18,10 @@ const TransactionHistory = (props) => {
     if (!token) {
       props.history.push({ pathname: "/" });
     }
-    console.log("opopopopo", props);
+    //console.log("opopopopo", props);
   
     props.location.state.transactionHistory.results.forEach((element) => {
-      console.log(">>>>>", element);
+      //console.log(">>>>>", element);
       if (element.payee.txn_status_code === "Failed") {
         setfailedTrans((failedTrans) => [...failedTrans, element]);
       } else if (element.payee.txn_status_code === "Success") {

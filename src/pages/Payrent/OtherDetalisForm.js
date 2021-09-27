@@ -22,9 +22,8 @@ import kycIcon from "../../images/svg/professional-details.svg";
 const cookies = new Cookies();
 
 const OtherDetalisForm = (props) => {
-  
   const token = cookies.get("token");
-  // const [logintoken, setlogintoken] = usest
+
   const [serviceCharge, setserviceCharge] = useState(0);
   const [kyc_verified, setkyc_verified] = useState(false);
   const [landLordName, setlandLordName] = useState("");
@@ -84,14 +83,14 @@ const OtherDetalisForm = (props) => {
         .then((response) => {
         
           setKycStatus(response.data.data[0].kyc_verified);
-          console.log("stepmanual", response.data.data[0]);
+          //console.log("stepmanual", response.data.data[0]);
         })
         .catch((err) => {
           if (err?.response?.status === 401) {
             cookies.remove("token", { path: "/" });
             props.history.push("/");
           }
-          console.log(err);
+          //console.log(err);
         });
     }
   }, []);
@@ -105,7 +104,7 @@ const OtherDetalisForm = (props) => {
       payload: { s3_path: pathArray },
     });
     setsignedUrl(signedUrlObj.data.data);
-    console.log(343434, signedUrlObj.data.data);
+    //console.log(343434, signedUrlObj.data.data);
   }
 
 
@@ -134,59 +133,63 @@ const OtherDetalisForm = (props) => {
     props.user.userData
       ? setuserdocumentsmodel(props.user.userData.userdocumentsmodel)
       : null;
+    getSignedUrl();
+  
    
    
-    let url = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`;
-    console.log("eerererer", url);
     let config = {
       headers: {
         Authorization: "Token " + token,
         "Content-Type": "application/json",
       },
     };
-   
-   
+  
+    // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get(url, config)
+      .get(`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`, config)
       .then((response) => {
-        console.log("response1 hi hi hi",response)
+     
         setserviceCharge(response.data.service_charge);
       })
       .catch((err) => {
         if (err.response.status === 401) {
            cookies.remove("token", { path: "/" });
         }
-       
-        console.log("eeeeee", err);
+        ;
+        //console.log("eeeeee", err);
       });
 
-    let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`;
-   
+    // let url2 = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`;
+    // let config = {
+    //   headers: {
+    //     Authorization: "Token " + token,
+    //     'Content-Type': "application/json"
+    //   }
+    // }
+    // return (dispatch) => new Promise(async (resolve, reject) => {
     axios
-      .get(url2, config)
+      .get(`${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/?request_type=token`, config)
       .then((response) => {
+       
         setjwtToken(response.data.token);
       })
       .catch((err) => {
-        console.log(34343434, err);
+        //console.log(34343434, err);
       });
 
-    let url3 = `${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`;
+    // let url3 = `${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`;
     let config3 = {
       headers: {
         Authorization: "Token " + token,
       },
     };
     axios
-      .get(url3, config3)
+      .get(`${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`, config3)
       .then((res) => {
-        console.log("response hisotry",res)
-        console.log("history man", res.data.results);
-        settransactionHistory(res.data);
-        
+     
       })
       .catch((err) => {
-        console.log("history", err);
+        //console.log("history", err);
       });
     
   }, []);
@@ -198,7 +201,7 @@ const OtherDetalisForm = (props) => {
   }, [props]);
 
   function handleName  ()  {
-    console.log("setName")
+    //console.log("setName")
     setName(props.user.userData?.customusermodel.first_name);
     setLastName(props.user.userData?.customusermodel.last_name);
   };
@@ -336,12 +339,6 @@ const OtherDetalisForm = (props) => {
       });
     }
   };
-  console.log(
-    "name",
-    name,
-    kyc_verified,
-    kycStatus
-  );
 
   return (
     <>

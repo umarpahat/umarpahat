@@ -23,7 +23,7 @@ import tip from "../../images/svg/tip.png";
 
 const Pandingapprovalform = (props) => {
     const token = cookies.get('token')
-    console.log("latest", token)
+    //console.log("latest", token)
     const [documentstatus, setDocumentstatus] = useState({});
     const [userdocumentsmodel, setuserdocumentsmodel] = useState({});
     const [userbankdetail, setuserbankdetail] = useState({});
@@ -67,7 +67,7 @@ const Pandingapprovalform = (props) => {
                         cookies.remove('token', {path: '/'})
                         props.history.push("/");
                     }
-                    console.log(err);
+                    //console.log(err);
                 });
 
         }

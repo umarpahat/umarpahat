@@ -27,7 +27,7 @@ const DetailsSummary = (props) => {
   });
 
   useEffect(() => {
-    console.log(23232323, props.location.state);
+    //console.log(23232323, props.location.state);
   }, []);
 
   const handleSubmit = (event) => {
@@ -57,7 +57,7 @@ const DetailsSummary = (props) => {
         if (err.response.status === 401) {
           cookies.remove("token", { path: "/" });
         }
-        console.log("eeee", err);
+        //console.log("eeee", err);
       });
   };
 

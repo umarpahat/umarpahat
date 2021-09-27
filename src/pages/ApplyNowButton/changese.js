@@ -5,7 +5,6 @@ import backicon from "../../component/img/backicon.png";
 import Select from "react-select";
 import Progressbar from "../../component/ProgressBar";
 import Header from "../Header";
-import Footer from "../Footer";
 import tip from "../../images/svg/tip.png";
 import {Container} from "react-bootstrap";
 

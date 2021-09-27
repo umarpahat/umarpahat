@@ -23,11 +23,11 @@ function Referralcode(props) {
 
   const handleReferral = () => {
     setloader(true);
-    console.log(3333333);
-    console.log(referral);
-    console.log(referral.toUpperCase());
-    console.log(props.token);
-    console.log(44444);
+    //console.log(3333333);
+    //console.log(referral);
+    //console.log(referral.toUpperCase());
+    //console.log(props.token);
+    //console.log(44444);
 
     api
       .post(
@@ -37,26 +37,26 @@ function Referralcode(props) {
       )
       .then((response) => {
         setloader(false);
-        console.log("3333333");
-        console.log(response);
-        console.log("2323232");
+        //console.log("3333333");
+        //console.log(response);
+        //console.log("2323232");
         if (response.status === 200) {
           props.history.push({
             pathname: "/change-mpin",
             state: { forgotPassword: false },
           });
           // setforgotPassword(true)
-          console.log(response.status);
+          //console.log(response.status);
         } else {
-          console.log(response.status);
+          //console.log(response.status);
           seterror("Enter a valid Referal Code");
         }
         return response;
       })
       .catch((error) => {
-        console.log(88888);
+        //console.log(88888);
         setloader(false);
-        console.log(error);
+        //console.log(error);
       });
   };
 

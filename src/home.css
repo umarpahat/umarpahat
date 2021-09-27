@@ -1345,6 +1345,12 @@ a.button-small:hover {
 .white-color {
     color: #fff;
 }
+.blogPic{
+    background: #33658a;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+}
 
 .blue-color {
     color: #33658a;

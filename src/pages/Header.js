@@ -11,8 +11,6 @@ import { Link } from "react-router-dom";
 
 
 const Header = (props) => {
-  console.log("props", props);
-  console.log("active", props.active);
 
   return (
     <>

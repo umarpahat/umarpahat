@@ -10,7 +10,7 @@ import benefit from "../images/svg/benefit.svg";
 import loginImg from "../images/svg/login-icon.svg";
 import getLoan from "../images/svg/get-loan-pic.svg";
 import assementImg from "../images/svg/accurate-icon.svg";
-import blogPic from "../images/svg/blog-pic.svg";
+import blogPic from "../images/logo.png";
 import aprovedImg from "../images/svg/swift-transfer.svg";
 import advisoryImg from "../images/svg/advisory-loan.svg";
 import shortImg from "../images/svg/short-loan.svg";
@@ -48,7 +48,7 @@ const HomePage = (props) => {
         fetch(url)
             .then(res => res.json())
             .then(res => setPosts(res.posts))
-            // .then(res => console.log('umar',res.posts))
+            // .then(res => //console.log('umar',res.posts))
     },[])
 
   
@@ -85,7 +85,7 @@ const HomePage = (props) => {
         let roi = Number(0.03);
         let pfee = Math.round(amount/20);
 
-        console.log(roi, amount, time)
+       
         const result = Math.round(  amount * ((roi * (1 + roi) ** time) / ((1 + roi) ** time - 1)));
             
         $('#interest').text(36)
@@ -147,7 +147,7 @@ const HomePage = (props) => {
                                         </div>
 
                                         <div className="price-slider">
-                                            <h4>Down Payment</h4>
+                                            <h4>Loan Amount</h4>
                                             <div className="relative">
                                                 <div className={classes.root}>
                                                     <Slider
@@ -529,7 +529,7 @@ const HomePage = (props) => {
 
 
                             {
-                                posts.map(post => <div className="col-sm-12 col-md-4"><div className="blogPic"><img src={post.attachments[0]?.url} alt='blog' className="img-fluid"/></div><h5>{post.title} </h5><div className='line-clamp' dangerouslySetInnerHTML={ {__html: post.content} } /><a href={post.url} target='_blank' className='green-link'>Read More</a></div>)
+                                posts.map(post => <div className="col-sm-12 col-md-4"><div className="blogPic"><img src={blogPic} alt='blog' className="img-fluid"/></div><h5>{post.title} </h5><div className='line-clamp' dangerouslySetInnerHTML={ {__html: post.content} } /><a href={post.url} target='_blank' className='green-link'>Read More</a></div>)
                             }
 
                         </div>
@@ -543,7 +543,7 @@ const HomePage = (props) => {
                                     <img src={getLoan} alt='blog'
                                          className="img-fluid"/></div>
                                 <div>
-                                    <h4 className='white-color'>Get Loan instat and unlimited offers</h4>
+                                    <h4 className='white-color'>Get Instant Loan and Unlimited Offers</h4>
                                 </div>
                                 <div>
                                     <Link to='/apply-loan' className='green-btn'>Apply Now</Link>
