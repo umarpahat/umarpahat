@@ -49,9 +49,9 @@ const Congretmessage = (props) => {
     }
   }, []);
 
-  kycstatus === "VERIFIED" &&
-  bankstatus === "VERIFIED" &&
-  professionalStatus === "VERIFIED"
+  (kycstatus === "VERIFIED") &&
+  (bankstatus === "VERIFIED") &&
+  (professionalStatus === "VERIFIED")
     ? setGreet(true)
     : null;
 
