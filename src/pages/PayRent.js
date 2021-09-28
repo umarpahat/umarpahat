@@ -32,12 +32,7 @@ const PayRent = (props) => {
 
   useEffect(() => {
     cookies.remove("token", { path: "/" });
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "AW-875618776");
+   
 
     const url = `${API_ENDPOINT}/api/faq_list/`;
     fetch(url)
