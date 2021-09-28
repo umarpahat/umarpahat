@@ -28,51 +28,55 @@ const SocialInitiative = (props) => {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [topic, setTopic] = useState("");
+    const [nameerr,setNameerr]=useState("");
+    const [emailerr,setEmailerr]=useState("");
+    const [phoneerr,setPhoneerr]=useState("");
+    const[topicerr,setTopicErr]=useState("")
+    const [toastToggle,setToastToggle]=useState("");
+    
     let url = '';
     let reg = /^[0-9]{1,10}$/;
     let emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     const postVolunteer = () => {
+       
         if (name.length === 0) {
-            toast.error("Name can't be empty");
+            setNameerr("Name can't be empty");
             return false
         }
         if (email.length < 5) {
-             toast.error("Email should be at least 5 charcters long");
+            setEmailerr("Email should be at least 5 charcters long");
             return false
         }
         if (email.split("").filter(x => x === "@").length !== 1) {
-             toast.error("Email should contain a @");
+            setEmailerr("Email should contain a @");
             return false
         }
         if (email.indexOf(".") === -1) {
-             toast.error("Email should contain at least one dot");
+            setEmailerr("Email should contain at least one dot");
             return false
         }
         if (!emailReg.test(email)) {
-            toast.error("Email id is Invalid");
+            setEmailerr("Email id is Invalid");
             return false
         }
 
         if (phone.length === 0) {
-             toast.error("Phone can't be empty");
+            setPhoneerr("Phone can't be empty");
             return false
         }
         if (phone.length < 10) {
-             toast.error("Phone should be 10 digit");
+             setPhoneerr("Phone should be 10 digit");
             return false
         }
-        if (phone.length > 10) {
-             toast.error("Phone should be 10 digit");
-            return false
-        }
+    
 
         if (!reg.test(phone)) {
-             toast.error("Phone number is Invalid");
+            setPhoneerr("Phone number is Invalid");
             return false
         }
 
         if (topic.length === 0) {
-             toast.error("Topic can't be empty");
+             setTopicErr("Topic can't be empty");
             return false
         }
 
@@ -98,11 +102,18 @@ const SocialInitiative = (props) => {
         axios
             .post(url, data, config)
             .then(function (response) {
+                if(toastToggle===""){
                 toast.success('Thank you for registering');
+                setToastToggle("2")
+                }
                 document.getElementById("form").reset();
             })
             .catch(function (error) {
+                if(toastToggle===""){
+                   
                 toast.error(error.response.data.message);
+                setToastToggle("2")
+                }
             });
     };
 
@@ -225,8 +236,10 @@ const SocialInitiative = (props) => {
                                                     placeholder="Enter Full Name"
                                                     onChange={(e) => {
                                                         setName(e.target.value);
+                                                        setNameerr("")
                                                     }}
                                                     required=""/>
+                                                    {nameerr?<span style={{color:"red"}}>{nameerr}</span>:null}
 
                                             </div>
                                             <div className="form-group ms-input-group">
@@ -239,24 +252,29 @@ const SocialInitiative = (props) => {
                                                     placeholder="Enter Email"
                                                     onChange={(e) => {
                                                         setEmail(e.target.value);
+                                                        setEmailerr("")
                                                     }}
                                                 />
+                                                 {emailerr?<span style={{color:"red"}}>{emailerr}</span>:null}
                                             </div>
                                             <div className="form-group ms-input-group">
                                                 <label className="form-label pb-2">Phone</label>
                                                 <input
                                                     name='phone'
-                                                    type="tel"
+                                                    type="number"
                                                     maxLength='10'
                                                     pattern="[0-9]+"
+                                                    value={phone}
                                                     onChange={(e) => {
                                                         e.target.value =
                                                             e.target.value.replace(/[^0-9.]{10}/g, '').replace(/(\..*)\./g, '$1')
-                                                        setPhone(e.target.value)
+                                                        setPhone(e.target.value.slice(0,10))
+                                                        setPhoneerr("")
                                                     }}
                                                     className="form-control ms-form-input"
                                                     placeholder="Enter Phone"
                                                 />
+                                                 {phoneerr?<span style={{color:"red"}}>{phoneerr}</span>:null}
                                             </div>
                                             <div className="form-group ms-input-group">
                                                 <label className="form-label pb-2">Topic</label>
@@ -267,8 +285,10 @@ const SocialInitiative = (props) => {
                                                     placeholder="Enter Topic"
                                                     onChange={(e) => {
                                                         setTopic(e.target.value);
+                                                        setTopicErr("")
                                                     }}
                                                     required=""/>
+                                                     {topicerr?<span style={{color:"red"}}>{topicerr}</span>:null}
                                             </div>
                                         </div>
                                         <input

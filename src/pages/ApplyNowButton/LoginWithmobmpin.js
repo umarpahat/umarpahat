@@ -158,18 +158,18 @@ function LoginWithMobMpin(props) {
                             maxLength={6}
                             type="number"
                             className="form-control ms-form-input"
-                            placeholder="9999999999"
+                            placeholder="Phone Number"
                             value={phoneNumber || ""}
                             disabled={true}
                         />
                       </div>
                       <div className="form-group ms-input-group">
-                        <label className="form-label pb-2">Enter MPIN</label>
+                        <label className="form-label pb-2">Enter Password</label>
                         <input
                             maxLength={6}
                             type="password"
                             className="form-control ms-form-input"
-                            placeholder="Enter 6 digit MPIN"
+                            placeholder="Enter  Password"
                             value={password || ""}
                             onChange={(event) => {
                               if(event.target.value.match(/^[0-9]+$/)){
@@ -187,7 +187,7 @@ function LoginWithMobMpin(props) {
                       </div>
                       <div className="forgetmpin form-label pb-4">
                         <p onClick={sendOtp} style={{ cursor: "pointer" }}>
-                          Forgot MPIN?
+                          Forgot Password?
                         </p>
                       </div>
                     </div>
@@ -211,7 +211,7 @@ function LoginWithMobMpin(props) {
                       </div>
                       <div className='full-text text-left'>
                         <h5>Tips</h5>
-                        <p>6-digit passcode which will help you to log in faster into the PayMe India app.</p>
+                        <p>Password which will help you to log in faster into the PayMe India app.</p>
                       </div>
                     </div>
 
