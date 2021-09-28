@@ -32,7 +32,10 @@ const PayRent = (props) => {
 
   useEffect(() => {
     cookies.remove("token", { path: "/" });
-   
+
+    
+    gtag_report_conversion();
+
 
     const url = `${API_ENDPOINT}/api/faq_list/`;
     fetch(url)
@@ -46,6 +49,19 @@ const PayRent = (props) => {
       );
     // .then(res => //console.log('umar', [...res.data.General,...res.data.Eligibility,...res.data.Repayment] ))
   }, []);
+
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof url != "undefined") {
+        window.location = url;
+      }
+    };
+    gtag("event", "conversion", {
+      send_to: "AW-875618776/zLCQCPKg1PYCENjDw6ED",
+      event_callback: callback,
+    });
+    return false;
+  }
 
   const handleSubmit = (event) => {
     cookies.set("userCase", "pay-rent");
