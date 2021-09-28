@@ -529,7 +529,7 @@ const HomePage = (props) => {
 
 
                             {
-                                posts.map(post => <div className="col-sm-12 col-md-4"><div className="blogPic"><img src={blogPic} alt='blog' className="img-fluid"/></div><h5>{post.title} </h5><div className='line-clamp' dangerouslySetInnerHTML={ {__html: post.content} } /><a href={post.url} target='_blank' className='green-link'>Read More</a></div>)
+                                posts.map(post => <div className="col-sm-12 col-md-4" key={post.title}><div className="blogPic"><img src={blogPic} alt='blog' className="img-fluid"/></div><h5>{post.title} </h5><div className='line-clamp' dangerouslySetInnerHTML={ {__html: post.content} } /><a href={post.url} target='_blank' className='green-link'>Read More</a></div>)
                             }
 
                         </div>
