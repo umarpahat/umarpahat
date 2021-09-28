@@ -32,6 +32,12 @@ const PayRent = (props) => {
 
   useEffect(() => {
     cookies.remove("token", { path: "/" });
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "AW-875618776");
 
     const url = `${API_ENDPOINT}/api/faq_list/`;
     fetch(url)
@@ -72,10 +78,9 @@ const PayRent = (props) => {
           response.data.phone_number_verified
         ) {
           cookies.set("phoneNumber", number),
-          props.history.push({
-            pathname: "/login-with-mob-mpin",
-           
-          });
+            props.history.push({
+              pathname: "/login-with-mob-mpin",
+            });
         } else {
           //console.log(response.status);
         }
@@ -137,9 +142,9 @@ const PayRent = (props) => {
                       <div className="advertisePay" style={{ marginTop: 0 }}>
                         <div>
                           <img
-                              src={starIconGreen}
-                              alt="Totam corrupti"
-                              className="img-fluid"
+                            src={starIconGreen}
+                            alt="Totam corrupti"
+                            className="img-fluid"
                           />
                         </div>
                         <div>
@@ -155,36 +160,36 @@ const PayRent = (props) => {
                             Phone Number
                           </label>
                           <input
-                              name="phone"
-                              type="number"
-                              maxLength="10"
-                              pattern="[0-9]+"
-                              className="form-control input-field"
-                              placeholder="Enter Phone"
-                              value={number || ""}
-                              onChange={(event) => {
-                                setnumber(event.target.value.slice(0, 10));
-                                if (
-                                    event.target.value.length === 0 ||
-                                    event.target.value.length === 10
-                                ) {
-                                  seterror("");
-                                }
-                              }}
+                            name="phone"
+                            type="number"
+                            maxLength="10"
+                            pattern="[0-9]+"
+                            className="form-control input-field"
+                            placeholder="Enter Phone"
+                            value={number || ""}
+                            onChange={(event) => {
+                              setnumber(event.target.value.slice(0, 10));
+                              if (
+                                event.target.value.length === 0 ||
+                                event.target.value.length === 10
+                              ) {
+                                seterror("");
+                              }
+                            }}
                           />
                           {error ? (
-                              <span style={{ color: "red" }}>{error}</span>
+                            <span style={{ color: "red" }}>{error}</span>
                           ) : null}
                         </div>
 
                         <a
-                            className="btnLarge m-t-40"
-                            onClick={handleSubmit}
-                            style={{
-                              display: "block",
-                              cursor: "pointer",
-                              color: "#fff",
-                            }}
+                          className="btnLarge m-t-40"
+                          onClick={handleSubmit}
+                          style={{
+                            display: "block",
+                            cursor: "pointer",
+                            color: "#fff",
+                          }}
                         >
                           Get Started
                         </a>
@@ -270,7 +275,8 @@ const PayRent = (props) => {
                           100% Secure Payments
                         </h4>
                         <span style={{ fontWeight: 450 }}>
-                          All your information is secured. We never store your credit card details
+                          All your information is secured. We never store your
+                          credit card details
                         </span>
                       </div>
                       {/* <div>
@@ -372,7 +378,6 @@ const PayRent = (props) => {
               </div>
             </div>
           </div>
-        
         </div>
       )}
     </>
