@@ -52,6 +52,9 @@ const SocialInitiative = (props) => {
   let emailReg =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const postVolunteer = () => {
+
+    gtag_report_conversion();
+    
     if (name.length === 0) {
       setNameerr("Name can't be empty");
       return false;
@@ -91,7 +94,7 @@ const SocialInitiative = (props) => {
       setTopicErr("Topic can't be empty");
       return false;
     }
-    gtag_report_conversion();
+  
 
     if (toggle === "true") {
       url = `${API_ENDPOINT_SAARTHI}/api/register-volunteer`;
