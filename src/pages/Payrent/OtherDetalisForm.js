@@ -825,7 +825,7 @@ const OtherDetalisForm = (props) => {
                               <input
                                 type="text"
                                 className="form-input"
-                                placeholder="Enter 16 digits A/c Number"
+                                placeholder="Enter Bank Name"
                                 value={bankName}
                                 onChange={(e) => {
                                   seterrorbankName("");
