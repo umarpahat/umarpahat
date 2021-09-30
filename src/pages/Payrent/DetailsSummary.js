@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -15,10 +15,22 @@ import Footer from "../Footer";
 
 import Cookies from "universal-cookie";
 import tip from "../../images/svg/tip.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const cookies = new Cookies();
+
+toast.configure();
+const options = {
+  position: toast.POSITION.TOP_CENTER,
+  autoClose: 6000,
+  limit: 1,
+  closeButton: false,
+};
 
 const DetailsSummary = (props) => {
   const token = cookies.get("token");
+
+  const [toast,setToast]=useState(true);
 
 
   useEffect(() => {
@@ -55,8 +67,14 @@ const DetailsSummary = (props) => {
         props.history.push({ pathname: "/payrent-other-details" });
       })
       .catch((err) => {
+        
         if (err.response.status === 401) {
           cookies.remove("token", { path: "/" });
+        }
+        let err = error.response.data.error;
+        if(toast){
+        toast.error(err);
+        setToast(false)
         }
         //console.log("eeee", err);
       });
