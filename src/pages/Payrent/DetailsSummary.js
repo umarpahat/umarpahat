@@ -20,6 +20,7 @@ const cookies = new Cookies();
 const DetailsSummary = (props) => {
   const token = cookies.get("token");
 
+
   useEffect(() => {
     if (!token) {
       props.history.push({ pathname: "/" });

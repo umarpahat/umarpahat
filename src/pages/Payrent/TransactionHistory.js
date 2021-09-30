@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from "universal-cookie";
 import { Container } from "react-bootstrap";
 import tip from "../../images/svg/tip.png";
+import { API_ENDPOINT_STAGING, API_ENDPOINT } from "../../constant";
 const cookies = new Cookies();
 const TransactionHistory = (props) => {
   const token = cookies.get("token");
@@ -19,18 +20,37 @@ const TransactionHistory = (props) => {
       props.history.push({ pathname: "/" });
     }
     //console.log("opopopopo", props);
-  
-    props.location.state.transactionHistory.results.forEach((element) => {
-      //console.log(">>>>>", element);
-      if (element.payee.txn_status_code === "Failed") {
-        setfailedTrans((failedTrans) => [...failedTrans, element]);
-      } else if (element.payee.txn_status_code === "Success") {
-        setsuccessTrans((successTrans) => [...successTrans, element]);
-      }
-      if (element.payee.txn_status_code === "In Process") {
-        setpendingTrans((pendingTrans) => [...pendingTrans, element]);
-      }
-    });
+
+    let config3 = {
+      headers: {
+        Authorization: "Token " + token,
+      },
+    };
+    axios
+      .get(
+        `${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`,
+        config3
+      )
+      .then((res) => {
+        res.data.results.forEach((element) => {
+          //console.log(">>>>>", element);
+          if (element.payee.txn_status_code === "Failed") {
+            setfailedTrans((failedTrans) => [...failedTrans, element]);
+          } else if (element.payee.txn_status_code === "Success") {
+            setsuccessTrans((successTrans) => [...successTrans, element]);
+          }
+          if (element.payee.txn_status_code === "In Process") {
+            setpendingTrans((pendingTrans) => [...pendingTrans, element]);
+          }
+        });
+      })
+
+      .catch((err) => {
+        if (err.response.status === 401) {
+          cookies.remove("token", { path: "/" });
+        }
+        //console.log("eeeeee", err);
+      });
   }, []);
 
   const PensindTransTrack = pendingTrans.map((value, index) => (
@@ -87,7 +107,7 @@ const TransactionHistory = (props) => {
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12">
               <div className="home-contact-form">
-                <div className="ms-Tabs">
+                {/* <div className="ms-Tabs">
                   <div
                     className="btn-group"
                     role="group"
@@ -106,34 +126,34 @@ const TransactionHistory = (props) => {
                       Transaction History
                     </Link>
                   </div>
-                </div>
+                </div> */}
+                <h2 className="text-center">Transaction History </h2>
                 <form>
+                  <div className="form-block">
+                    <h4 className="h4 ">Pending Transaction</h4>
+                    {PensindTransTrack.length === 0 ? (
+                      <span>No Pending Transaction</span>
+                    ) : null}
+                    {PensindTransTrack}
+                  </div>
 
-                    <div className="form-block">
-                      <h4 className="h4 ">Pending Transaction</h4>
-                      {PensindTransTrack.length === 0 ? (
-                        <span>No Pending Transaction</span>
-                      ) : null}
-                      {PensindTransTrack}
-                    </div>
-
-                    <div className="form-block">
-                      <h4 className="h4 ">Completed Transaction</h4>
-                      {SuccessTransTrack.length === 0 ? (
-                        <span>No Success Transaction</span>
-                      ) : null}
-                      {SuccessTransTrack}
-                    </div>
-                    <div className="form-block">
-                      <h4 className="h4 ">Cancelled Transaction</h4>
-                      {failedTRanstrack.length === 0 ? (
-                        <span>No Failed Transaction</span>
-                      ) : null}
-                      {failedTRanstrack}
-                    </div>
+                  <div className="form-block">
+                    <h4 className="h4 ">Completed Transaction</h4>
+                    {SuccessTransTrack.length === 0 ? (
+                      <span>No Success Transaction</span>
+                    ) : null}
+                    {SuccessTransTrack}
+                  </div>
+                  <div className="form-block">
+                    <h4 className="h4 ">Cancelled Transaction</h4>
+                    {failedTRanstrack.length === 0 ? (
+                      <span>No Failed Transaction</span>
+                    ) : null}
+                    {failedTRanstrack}
+                  </div>
                 </form>
               </div>
-              </div>
+            </div>
             <div className="col-lg-5 col-md-5 col-sm-12 text-center">
               <div className="height100">
                 <div>
@@ -143,10 +163,13 @@ const TransactionHistory = (props) => {
                     </div>
                     <div className="full-text text-left">
                       <h5>Tips</h5>
-                      <p>Kindly review the details precisely. Once the payment is done, you won't be able to make changes to the rent receipt.</p>
+                      <p>
+                        Kindly review the details precisely. Once the payment is
+                        done, you won't be able to make changes to the rent
+                        receipt.
+                      </p>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
