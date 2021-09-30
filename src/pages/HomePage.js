@@ -101,16 +101,7 @@ const HomePage = (props) => {
         return result;
 
     }
-    const handleCibilWeb =()=>{
-        window.open(
-            "https://creditscore.paymeindia.in/",
-            "popup",
-            "width=600,height=650,left=600,top=150,scrollbars=no,resizable=no"
-          );
-          
-          return false;
-         }
-
+ 
 
     return (
         <> <Header {...props} active="home"/>
@@ -246,7 +237,7 @@ const HomePage = (props) => {
                                 <h3 className="heading3"><span
                                     className="blue-color">Absolutely Free! </span>
                                 </h3> <p className="heading6">A credit score is more than just a number. Know your Cibil score completely free with PayMe India.</p>
-                                <a onClick={handleCibilWeb} target='_blank'
+                                <a href="https://creditscore.paymeindia.in/" target='_blank'
                                    className="btnLarge m-t-40" style={{color:"#fff", cursor:"pointer"}}>Get CIBIL Report</a>
                             </div>
                         </div>
