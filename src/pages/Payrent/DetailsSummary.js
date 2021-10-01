@@ -71,9 +71,10 @@ const DetailsSummary = (props) => {
         if (err.response.status === 401) {
           cookies.remove("token", { path: "/" });
         }
-        let errors = err.response.data.error;
+        console.log("error",err.response.data.error,err.response)
+        let error = err.response.data.error;
         if(toast){
-        toast.error(errors);
+        toast.error(error);
         setToast(false)
         }
         //console.log("eeee", err);
