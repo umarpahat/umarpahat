@@ -302,7 +302,7 @@ const OtherDetalisForm = (props) => {
       });
       Promise.all([uploadREntAgreement, updateREntAgreementstatus])
         .then((response) => {
-          setloader(false);
+          
           props.history.push({
             pathname: "/detail-summary",
             state: { payer, payee, serviceCharge, jwt_token: jwtToken },
