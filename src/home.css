@@ -324,6 +324,10 @@ button.button-gray:hover {
 .heading4 {
     font-size: 32px;
 }
+.heading6{
+    font-size: 18px;
+    font-weight: 200;
+}
 
 .scoreAnimate {
     width: 531px;

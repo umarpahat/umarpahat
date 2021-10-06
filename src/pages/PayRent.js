@@ -33,10 +33,6 @@ const PayRent = (props) => {
   useEffect(() => {
     cookies.remove("token", { path: "/" });
 
-    
-   
-
-
     const url = `${API_ENDPOINT}/api/faq_list/`;
     fetch(url)
       .then((res) => res.json())
@@ -49,8 +45,6 @@ const PayRent = (props) => {
       );
     // .then(res => //console.log('umar', [...res.data.General,...res.data.Eligibility,...res.data.Repayment] ))
   }, []);
-
-
 
   const handleSubmit = (event) => {
     cookies.set("userCase", "pay-rent");
@@ -137,65 +131,7 @@ const PayRent = (props) => {
             <div className="banner">
               <div className="container">
                 <div className="row align-items-center">
-                  <div className="col-sm-12 col-md-5 m-t-40 d-md-none">
-                    <div className="fromFrame">
-                      <div className="advertisePay" style={{ marginTop: 0 }}>
-                        <div>
-                          <img
-                            src={starIconGreen}
-                            alt="Totam corrupti"
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div>
-                          <strong>
-                            Pay rent of this month with Payrent app and get 20%
-                            Cashback
-                          </strong>
-                        </div>
-                      </div>
-                      <form id="form" name="form">
-                        <div className="form-group ms-input-group">
-                          <label className="form-label pb-2">
-                            Phone Number
-                          </label>
-                          <input
-                            name="phone"
-                            type="number"
-                            maxLength="10"
-                            pattern="[0-9]+"
-                            className="form-control input-field"
-                            placeholder="Enter Phone"
-                            value={number || ""}
-                            onChange={(event) => {
-                              setnumber(event.target.value.slice(0, 10));
-                              if (
-                                event.target.value.length === 0 ||
-                                event.target.value.length === 10
-                              ) {
-                                seterror("");
-                              }
-                            }}
-                          />
-                          {error ? (
-                            <span style={{ color: "red" }}>{error}</span>
-                          ) : null}
-                        </div>
-
-                        <a
-                          className="btnLarge m-t-40"
-                          onClick={handleSubmit}
-                          style={{
-                            display: "block",
-                            cursor: "pointer",
-                            color: "#fff",
-                          }}
-                        >
-                          Get Started
-                        </a>
-                      </form>
-                    </div>
-                  </div>
+                  
                   <div className="col-sm-12 col-md-6">
                     <h1 className="heading1 p-b-30 p-t-80">
                       Pay rent with your credit card and get amazing Offers
@@ -214,8 +150,8 @@ const PayRent = (props) => {
                           Pay Rent with Credit Card
                         </h4>
                         <span style={{ fontWeight: 450 }}>
-                          Make your rent payments with major parts like VISA and
-                          Master Cards for a hassle-free Transaction
+                          Earn miles and reward points on your Visa and
+                          Mastercard cards
                         </span>
                       </div>
                     </div>
@@ -299,8 +235,7 @@ const PayRent = (props) => {
                         </div>
                         <div>
                           <strong>
-                            Pay rent of this month with Payrent app and get 20%
-                            Cashback
+                          Pay rent with your credit card and get amazing Offers
                           </strong>
                         </div>
                       </div>
