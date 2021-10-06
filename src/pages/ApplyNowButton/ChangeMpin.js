@@ -13,7 +13,9 @@ import tip from "../../images/svg/tip.png";
 const cookies = new Cookies()
 
 function ChangeMpin(props) {
+    const token = cookies.get('token');
     const userCase = cookies.get("userCase");
+    const phoneNumber = cookies.get('phoneNumber')
     const [mpin, setmpin] = useState("")
     const [confirmMpin, setconfirmMpin] = useState("")
     const [errorMpin, seterrorMpin] = useState(null)
@@ -21,8 +23,15 @@ function ChangeMpin(props) {
     const [mpinNotMatch, setmpinNotMatch] = useState(null)
     let [loader, setloader] = useState(false);
 
+    function gtag_report_conversion(url) { 
+        var callback = function () { 
+            if (typeof(url) != 'undefined')
+             { window.location = url; } }; 
+             gtag('event', 'conversion', { 'send_to': 'AW-875618776/zLCQCPKg1PYCENjDw6ED', 'event_callback': callback });
+              return false; }
+
     const createNewMpin = (event) => {
-        const token = cookies.get('token');
+        
         setloader(true)
         event.preventDefault();
         if (!/^\d{6}$/.test(mpin)) {
@@ -40,7 +49,7 @@ function ChangeMpin(props) {
                 .then((response) => {
                     if (response.status === 200) {
                         setloader(false)
-                        const phoneNumber = props.phoneNumber
+                        const phoneNumber = phoneNumber;
                         if (props.location.state.forgotPassword) {
                             props.hitLogout()
                             props.history.push({pathname: '/login-with-mob-mpin', state: {phoneNumber: phoneNumber}})
@@ -48,6 +57,7 @@ function ChangeMpin(props) {
                             props.history.push({pathname: "/kyc-details-form"})
                         }
                         else if(userCase==="pay-rent"){
+                            gtag_report_conversion();
                             props.history.push({pathname:"/payrent-other-details"})
                         }
                     } else {
@@ -118,12 +128,14 @@ function ChangeMpin(props) {
                                                 </div>
                                                 {mpinNotMatch ?
                                                     <span style={{color: "red"}}>{mpinNotMatch}</span> : null}
+
                                                 <input type="submit" className="submit-btn text-center" value="Continue"
                                                        style={{
                                                            'color': '#fff',
                                                            'border': 'none',
                                                            'width': '100%'
                                                        }}
+
                                                 />
                                             </div>
                                         </form>
@@ -139,7 +151,7 @@ function ChangeMpin(props) {
                                             </div>
                                             <div className='full-text text-left'>
                                                 <h5>Tips</h5>
-                                                <p> 6-digit passcode which will help you to log in faster into the PayMe India app.</p>
+                                                <p>  Password which will help you to log in faster into the PayMe India app.</p>
                                             </div>
                                         </div>
                                     </div>

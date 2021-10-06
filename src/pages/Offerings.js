@@ -82,8 +82,9 @@ const Offerings = (props) => {
                             </div>
                             <div className="col-sm-12 col-md-6 bg-in-mobile-black">
                                 <h6 className="heading6 relative white-color">SALT- Buy Now Pay Later</h6>
-                                <h3 className="heading3 relative white-color">Buy Products of your choice now and pay them later</h3>
-                                <p className="white-color">Shopping online is easy but checkout options aren’t. The Salt app brings you the advantages of buying now and paying later, Increasing the affordability of the purchase.</p>
+                                <h3 className="heading3 relative white-color">Buy anything with one Tap and Pay later</h3>
+                                <p className="white-color">Shopping online is easy checkout options aren’t. Salt brings you the advantage of 
+buying now and paying later, Increasing the affordability of the purchase</p>
                                 {/*<a href='https://creditscore.paymeindia.in' target='_blank'
                                    className="btnLarge m-t-40">Get App Now</a>*/}
                             </div>
@@ -94,8 +95,9 @@ const Offerings = (props) => {
                     <div className="container p-b-30">
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-5">
-                                <h1 className="heading1 relative"><span className='circle-small'></span> Start investing in Mutual Funds using our App</h1>
-                                <p className="no-more-text">Stop Thinking, Start Investing Today in mutual funds with PayMe India. Build your wealth by investing in mutual funds, select funds that fit your financial goals</p>
+                                <h1 className="heading1 relative"><span className='circle-small'></span> Stop Thinking, Start Investing today in mutual funds</h1>
+                                <p className="no-more-text">Build your wealth by investing in the right mutual funds by selecting funds that suit your 
+financial goals with PayMe India</p>
                                 <br/>
                                 <br/>
                                {/* <Link className="btnLarge" onClick={() => {

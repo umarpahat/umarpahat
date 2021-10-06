@@ -58,8 +58,13 @@ const About = (props) => {
                                 </h3>
                             </div>
                             <div className="col-lg-8 col-md-8 col-sm-8 textAlign">
-                                <p className='p-t-10'>PayMe India is an innovative fin-tech company, founded in 2016, with an aim to eliminate the barrier of getting financial help by enabling frictionless transactions & revolutionizing the way people take loans. We are striving to provide advanced salary loans to bourgeois or any salaried employee who faces financial constraints.</p>
-                                <p className='p-t-30'>PayMe India is an RBI registered NBFC company striving to simplify financial services by providing online instant loans to corporate employees at the lowest interest rate. Our lending model empowers customers to borrow easy, fast, safe & affordable personal loans. With a commitment to drive credit penetration & financial inclusion. We are collaborating technology, money, design & data in the form of App, to lend money online in a time of need, by being your financial backup. PayMe India works towards creating a company culture that encourages a healthy work-life. We have a team of 150 passionate members who strive to enrich you with a platform where you can get easy & hassle-free instant personal loans.</p>
+                                <p className='p-t-10'>PayMe India is an RBI registered NBFC, founded in 2016, to eliminate the 
+difficulty of getting financial help by enabling frictionless transactions & 
+transforming the way people take loans. We are striving to provide advanced salary</p>
+                                <p className='p-t-30'>loans to bourgeois or any salaried employee who faces financial constraints. Our 
+lending model empowers customers to borrow easy, fast, safe & affordable 
+personal loans. Our passionate team of 150 members aims to enrich you with a 
+platform where getting personal loans are instant and hassle-free.</p>
                             </div>
                         </div>
                     </div>
