@@ -94,9 +94,9 @@ const SocialInitiative = (props) => {
     }
 
     if (toggle === "true") {
-      url = `${API_ENDPOINT_SAARTHI}/api/register-volunteer`;
+      url = `${API_ENDPOINT_SAARTHI}/register-volunteer`;
     } else {
-      url = `${API_ENDPOINT_SAARTHI}/api/register-trainee`;
+      url = `${API_ENDPOINT_SAARTHI}/register-trainee`;
     }
     let data = {
       name: name,
