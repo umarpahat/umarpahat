@@ -58,10 +58,10 @@ const About = (props) => {
                                 </h3>
                             </div>
                             <div className="col-lg-8 col-md-8 col-sm-8 textAlign">
-                                <p className='p-t-10'>PayMe India is an RBI registered NBFC, founded in 2016, to eliminate the 
+                                <p className='heading6'>PayMe India is an RBI registered NBFC, founded in 2016, to eliminate the 
 difficulty of getting financial help by enabling frictionless transactions & 
 transforming the way people take loans. We are striving to provide advanced salary</p>
-                                <p className='p-t-30'>loans to bourgeois or any salaried employee who faces financial constraints. Our 
+                                <p className='heading6'>loans to bourgeois or any salaried employee who faces financial constraints. Our 
 lending model empowers customers to borrow easy, fast, safe & affordable 
 personal loans. Our passionate team of 150 members aims to enrich you with a 
 platform where getting personal loans are instant and hassle-free.</p>
@@ -74,8 +74,12 @@ platform where getting personal loans are instant and hassle-free.</p>
                         <div className="row align-items-center pb-3">
                             <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 textAlign">
                                 <h4 className="heading4 blue-color">Our Mission and Vision</h4>
-                                <p className='p-t-10'>PayMe India wants to accelerate the digital transformation of the financial industry by providing loans from Rs500 to Rs 2,00,000. Our vision is to be the leader of a fintech hub by utilizing the latest financial technologies to build future-proof PayMe India pillars, carving a vibrant platform to facilitate acceleration in lending instant loans.</p>
+                                {/* <p className='p-t-10'>PayMe India wants to accelerate the digital transformation of the financial industry by providing loans from Rs500 to Rs 2,00,000. Our vision is to be the leader of a fintech hub by utilizing the latest financial technologies to build future-proof PayMe India pillars, carving a vibrant platform to facilitate acceleration in lending instant loans.</p>
                                 <p className='p-t-30'>Our Mission is to bring effectiveness, efficiency, & excellence to our lending process by outperforming ourselves every day by leveraging our customers with a unique platform where they can get quick loans. And our unique platform helps our users in their financial journey by being present in every aspect of their life with our best-in-class service. We promise to ensure you complete privacy & customer safety through our modern infrastructure & secure online system.</p>
+                                 */}
+
+<p className='heading6'>PayMe India wants to accelerate the digital transformation of the financial industry by providing loans from Rs500 to Rs 2,00,000. Our vision is to be the leader of a fintech hub by utilizing the latest financial technologies to build future-proof PayMe India pillars, carving a vibrant platform to facilitate acceleration in lending instant loans.</p>
+                                <p className='heading6'>Our Mission is to bring effectiveness, efficiency, & excellence to our lending process by outperforming ourselves every day by leveraging our customers with a unique platform where they can get quick loans. And our unique platform helps our users in their financial journey by being present in every aspect of their life with our best-in-class service. We promise to ensure you complete privacy & customer safety through our modern infrastructure & secure online system.</p>
                             </div>
                             <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 imgLarge textAlign">
                                 <img className="img-fluid" alt="CIBIL" src={vision}/>

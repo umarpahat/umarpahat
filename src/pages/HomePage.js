@@ -183,12 +183,12 @@ const HomePage = (props) => {
                         </div>
                       </div>
                     </div>
-                    <p className="text">
+                    <span className="text" style={{fontSize:"16px",fontWeight:400}}>
                       <span id="total-amount1"></span> over a period of{" "}
                       <span id="duration-month"></span> months at a rate of{" "}
                       <span id="roi2"></span>%, Processing Fee:
                       <span id="pfee"></span>
-                    </p>
+                    </span>
                     <div className="price-form">
                       <div className="form-group1">
                         <label
@@ -688,6 +688,7 @@ journey with PayMe India.<span className="font110 transform">“</span>
                   <h5>{post.title} </h5>
                   <div
                     className="line-clamp"
+                    style={{fontWeight:330,fontSize:"18px"}}
                     dangerouslySetInnerHTML={{ __html: post.content }}
                   />
                   <a href={post.url} target="_blank" className="green-link">
