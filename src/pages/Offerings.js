@@ -34,7 +34,7 @@ const Offerings = (props) => {
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-5">
                                 <h1 className="heading1">Get Instant Loan Approval</h1>
-                                <p className="no-more-text">Avail personal loan upto 2 lakhs with PayMe India. Get instant Loans anytime-anywhere.</p>
+                                <p className="heading6">Avail personal loan upto 2 lakhs with PayMe India. Get instant Loans anytime-anywhere.</p>
                                 <br/>
                                 <br/>
                                 <Link className="btnLarge" onClick={() => {
@@ -96,7 +96,7 @@ buying now and paying later, Increasing the affordability of the purchase</p>
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-5">
                                 <h1 className="heading1 relative"><span className='circle-small'></span> Stop Thinking, Start Investing today in mutual funds</h1>
-                                <p className="no-more-text">Build your wealth by investing in the right mutual funds by selecting funds that suit your 
+                                <p className="heading6">Build your wealth by investing in the right mutual funds by selecting funds that suit your 
 financial goals with PayMe India</p>
                                 <br/>
                                 <br/>

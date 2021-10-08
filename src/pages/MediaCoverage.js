@@ -28,7 +28,7 @@ const MediaCoverage = (props) => {
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-6">
                                 <h1 className="heading1 blue-color">MEDIA COVERAGE</h1>
-                                <p className="no-more-text">Know what the world is buzzing about PayMe India. Our new and exciting innovation always keeps us in media coverage.</p>
+                                <p className="heading6">Know what the world is buzzing about PayMe India. Our new and exciting innovation always keeps us in media coverage.</p>
                             </div>
                             <div className="col-sm-12 col-md-1 ">
                                 &nbsp;
@@ -56,7 +56,7 @@ const MediaCoverage = (props) => {
                                         Launched by bankers, how PayMe India has transformed into...
                                     </h5>
                                     <p>
-                                        <a target='_blank'
+                                        <a target='_blank' style={{fontWeight:400}}
                                            href='https://yourstory.com/2021/06/payme-india-transformed-full-stack-personal-loan-startup/amp'>When
                                             Mahesh Shukla moved to Delhi from a small town in UP, he was disappointed to
                                             see
@@ -78,7 +78,7 @@ const MediaCoverage = (props) => {
                                         Citi Bank India Shuts Down Entire Banking Operations...
                                     </h5>
                                     <p>
-                                        <a target='_blank'
+                                        <a target='_blank' style={{fontWeight:400}}
                                            href='https://trak.in/tags/business/2021/04/16/citi-bank-india-shuts-down-entire-banking-operations-this-is-how-indian-startups-reacted/'>Citibank
                                             has announced that they will shut down entire retail banking operations
                                             across
@@ -97,7 +97,7 @@ const MediaCoverage = (props) => {
                                         PayMe India Secures Pre-Series A Angel Funding
                                     </h5>
                                     <p>
-                                        <a target='_blank'
+                                        <a target='_blank' style={{fontWeight:400}}
                                            href='https://www.entrepreneur.com/article/365585'>Noida-based fintech
                                             startup PayMe India is a stemming cash partner assiduously offering loans to
                                             employees has been said to have successfully raised an undisclosed.</a></p>
@@ -118,7 +118,7 @@ const MediaCoverage = (props) => {
                                         HYPD Store, PayMe India raise funding
                                     </h5>
                                     <p>
-                                        <a target='_blank'
+                                        <a target='_blank' style={{fontWeight:400}}
                                            href='https://www.vccircle.com/hypd-store-payme-india-raise-funding/'>HYPD
                                             Stores, a
                                             content-first ecommerce discovery platform, has raised an undisclosed sum in
@@ -139,7 +139,7 @@ const MediaCoverage = (props) => {
                                         Interest on Rs 2.5 lakh plus EPF contribution becomes taxable
                                     </h5>
                                     <p>
-                                        <a target='_blank'
+                                        <a target='_blank' style={{fontWeight:400}}
                                            href='https://www.cnbctv18.com/personal-finance/as-interest-on-epf-over-rs-25-lakh-is-taxable-now-find-out-if-you-should-voluntarily-contribute-8210951.htm'>Budget
                                             2021 has proposed to restrict tax exemption for interest income earned on
                                             employees</a></p>
@@ -156,7 +156,7 @@ const MediaCoverage = (props) => {
                                     <h5>PayMe India seeks to extend credit to the under-served
                                     </h5>
                                     <p>
-                                        <a target='_blank'
+                                        <a target='_blank' style={{fontWeight:400}}
                                            href='https://www.newindianexpress.com/business/2019/oct/05/payme-india-seeks-to-extend-credit-to-the-under-served-2043438.html'>While
                                             still in college in 2004, Mahesh Shukla, co-founder of PayMe India aspired
                                             to make an impact by offering financial services even in India’s remote
@@ -180,7 +180,7 @@ const MediaCoverage = (props) => {
                                         PayMe India receives NBFC certificate from RBI
                                     </h5>
                                     <p>
-                                        <a target='_blank'
+                                        <a target='_blank' style={{fontWeight:400}}
                                            href='https://www.thenewsminute.com/article/payme-india-receives-nbfc-certificate-rbi-106687'>After
                                             obtaining NBFC status, PayMe India is eligible to offer secured and
                                             unsecured financial
@@ -201,7 +201,7 @@ const MediaCoverage = (props) => {
                                         AI is Accelerating the Growth of FinTech Companies
                                     </h5>
                                     <p>
-                                        <a target='_blank'
+                                        <a target='_blank' style={{fontWeight:400}}
                                            href='https://www.entrepreneur.com/article/333278'>A customer-centric
                                             approach, real-time
                                             data integration, cost optimization, and advanced security are those topmost
@@ -221,7 +221,7 @@ const MediaCoverage = (props) => {
                                         Online lending startup PayMe India raises $2 M from Singapore-based
                                     </h5>
                                     <p>
-                                        <a target='_blank'
+                                        <a target='_blank' style={{fontWeight:400}}
                                            href='https://yourstory.com/2018/04/payme-india-raises-2-m-from-singapore-based-angel-investors/amp'>Noida-based
                                             fintech startup PayMe India announced on Thursday that it has raised $2
                                             million from
@@ -242,7 +242,7 @@ const MediaCoverage = (props) => {
                                         PayMe India gets funds from Singapore investors
                                     </h5>
                                     <p>
-                                        <a target='_blank'
+                                        <a target='_blank' style={{fontWeight:400}}
                                            href='https://timesofindia.indiatimes.com/business/india-business/payme-india-gets-funds-from-singapore-investors/articleshow/63918432.cms'>
                                             PayMe India, a Noida-based online lending platform, has raised $2 million
                                             from Singapore-based angel investors. Founded in 2016 by Mahesh Shukla.

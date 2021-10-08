@@ -47,7 +47,7 @@ const Career = (props) => {
             <div className="row align-items-center">
               <div className="col-sm-12 col-md-5 p-t-30">
                 <h1 className="heading1">Explore Career Opportunity</h1>
-                <p className="no-more-text p-t-15">
+                <p className="heading6">
                   At PayMe India, we constantly endeavor to bring financial
                   freedom and independence to our valuable customers and
                   liberating them from financial limitations. The kind of
@@ -117,7 +117,7 @@ const Career = (props) => {
                         />
                       </div>
                       <h3>Business Developer</h3>
-                      <p className="p-b-30">
+                      <p className="heading6" style={{fontWeight:400,fontSize:"17.6px"}}>
                         Interested in working as a Business Developer. Our
                         business development team is hiring. Do share your
                         resume with us.
@@ -136,7 +136,7 @@ const Career = (props) => {
                       </div>
 
                       <h3>Lead Visual Designer</h3>
-                      <p className="p-b-30">
+                      <p className="p-b-30" style={{fontWeight:400,fontSize:"17.6px"}}>
                         Have a zeal in designing that inspires, engages, and
                         excites users? Do share your resume with us.
                       </p>
@@ -153,7 +153,7 @@ const Career = (props) => {
                         />
                       </div>
                       <h3>Backend Developer</h3>
-                      <p className="p-b-30">
+                      <p className="p-b-30" style={{fontWeight:400,fontSize:"17.6px"}}>
                         Passionate to work in backend development? We might be a
                         match! Do share your resume with us.
                       </p>
@@ -175,7 +175,7 @@ const Career = (props) => {
                         />
                       </div>
                       <h3>Front-End designer</h3>
-                      <p className="p-b-30">
+                      <p className="p-b-30" style={{fontWeight:400,fontSize:"17.6px"}}>
                         Enthusiastic to Contribute in Front end development? Do
                         share your resume with us.
                       </p>
@@ -221,7 +221,7 @@ free-flowing ideas and unity
             <div className="row align-items-center">
               <div className="col-sm-12 col-md-5">
                 <h1 className="heading4 relative">Happy “Work” Environment</h1>
-                <p className="no-more-text">
+                <p className="heading6">
                 Our employees explore various possibilities and opportunities, where they upgrade 
 their innovative skills. PayMe India believes in creating a cheerful and respectful 
 environment for our hard-working employees. The positive corporate culture 
@@ -285,7 +285,7 @@ integrity
                         />
                       </div>
                       <h3>Coffee and Snacks</h3>
-                      <p>Keeping our employees Refreshed while they work.</p>
+                      <p className="heading6" style={{fontWeight:400,fontSize:"17.6px"}}>Keeping our employees Refreshed while they work.</p>
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-sm-12">
@@ -299,7 +299,7 @@ integrity
                       </div>
 
                       <h3>Remote works</h3>
-                      <p>
+                      <p className="heading6" style={{fontWeight:400,fontSize:"17.6px"}}>
                         PayMe India allows employees to work from anywhere other
                         than the office home.
                       </p>
@@ -315,7 +315,7 @@ integrity
                         />
                       </div>
                       <h3>Flexible Timeline</h3>
-                      <p>
+                      <p className="heading6" style={{fontWeight:400,fontSize:"17.6px"}}>
                         The working pattern at PayMe India allows employees to
                         fall outside traditional office hours job
                         responsibilities.
@@ -337,7 +337,7 @@ integrity
                         />
                       </div>
                       <h3>Travel allowance</h3>
-                      <p>
+                      <p className="heading6" style={{fontWeight:400,fontSize:"17.6px"}}>
                         We pay our employees in respect of traveling expenses
                         for business purposes.
                       </p>
@@ -353,7 +353,7 @@ integrity
                         />
                       </div>
                       <h3>Medical Insurance </h3>
-                      <p>
+                      <p className="heading6" style={{fontWeight:400,fontSize:"17.6px"}}>
                       Whether it’s a cut, bruise, or an accident, we’ve got you covered
                       </p>
                     </div>
@@ -368,7 +368,7 @@ integrity
                         />
                       </div>
                       <h3>Cool Environment</h3>
-                      <p>
+                      <p className="heading6" style={{fontWeight:400,fontSize:"17.6px"}}>
                         Our employees explore various chances with a friendly
                         environment.
                       </p>
