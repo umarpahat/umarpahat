@@ -284,8 +284,8 @@ integrity
                           alt="PayMe India"
                         />
                       </div>
-                      <h3>Coffee and Snacks</h3>
-                      <p className="heading6" style={{fontWeight:400,fontSize:"17.6px"}}>Keeping our employees Refreshed while they work.</p>
+                      <h3>Sharp Growth </h3>
+                      <p className="heading6" style={{fontWeight:400,fontSize:"17.6px"}}>Stimulating learning opportunities at every corner</p>
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-sm-12">
@@ -294,14 +294,13 @@ integrity
                         <img
                           className="img-fluid"
                           src={remote}
-                          alt="Remote works"
+                          alt="Productive Challenges"
                         />
                       </div>
 
-                      <h3>Remote works</h3>
+                      <h3>Productive Challenges</h3>
                       <p className="heading6" style={{fontWeight:400,fontSize:"17.6px"}}>
-                        PayMe India allows employees to work from anywhere other
-                        than the office home.
+                      The right kind of challenges that help you grow
                       </p>
                     </div>
                   </div>
@@ -311,14 +310,12 @@ integrity
                         <img
                           className="img-fluid"
                           src={timeline}
-                          alt="Flexible Timeline"
+                          alt="Organization Events "
                         />
                       </div>
-                      <h3>Flexible Timeline</h3>
+                      <h3>Organization Events </h3>
                       <p className="heading6" style={{fontWeight:400,fontSize:"17.6px"}}>
-                        The working pattern at PayMe India allows employees to
-                        fall outside traditional office hours job
-                        responsibilities.
+                      Because it’s essential to have fun at work 
                       </p>
                     </div>
                   </div>
@@ -336,11 +333,9 @@ integrity
                           alt="PayMe India"
                         />
                       </div>
-                      <h3>Travel allowance</h3>
+                      <h3>Central Location </h3>
                       <p className="heading6" style={{fontWeight:400,fontSize:"17.6px"}}>
-                        We pay our employees in respect of traveling expenses
-                        for business purposes.
-                      </p>
+                      So that your daily commute to work isn’t a nightmare</p>
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-sm-12">
