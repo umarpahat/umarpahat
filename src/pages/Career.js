@@ -381,7 +381,8 @@ integrity
                 <img className="img-fluid " alt="Career " src={awesomness} />
               </div>
               <div className="col-sm-12 col-md-6">
-                <h2 className="heading2">Keep the awesomness in your work</h2>
+                <h2 className="heading2"> 
+Join our team- Work hard, have fun & make history! </h2>
                 <br />
                 {/* <Link className="btnLarge" onClick={() => {
                                    

@@ -59,7 +59,7 @@ const About = (props) => {
                             </div>
                             <div className="col-lg-8 col-md-8 col-sm-8 textAlign">
                                 <p className='heading6'>PayMe India is an innovative new-age Fintech company, transforming the lending landscape. 
-The company was founded in 2018, to eliminate the difficulty of getting financial assistance by 
+The company was founded in 2016, to eliminate the difficulty of getting financial assistance by 
 leveraging modern technologies. The company works with RBI registered NBFCs to facilitate 
 advance salary loans to bourgeois or any salaried employee who faces financial constraints. Our 
 lending model empowers loan seekers to borrow easy, fast, safe & affordable personal loans. Our 
