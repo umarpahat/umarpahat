@@ -122,8 +122,8 @@ const HomePage = (props) => {
               <div className="col-sm-12 col-md-6">
                 <h1 className="heading1">Get Instant Loan Approval</h1>
                 <p className="heading6">
-                  Now no more financial crunches with PayMe India. Avail instant
-                  loan anytime-anywhere with no hassle.{" "}
+                No more financial crunches with PayMe India. Avail instant loans upto Rs. 2 lakhs 
+anytime-anywhere with no hassle{" "}
                 </p>
                 <br />
                 <br />

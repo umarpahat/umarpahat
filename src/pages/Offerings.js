@@ -34,7 +34,8 @@ const Offerings = (props) => {
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-5">
                                 <h1 className="heading1">Get Instant Loan Approval</h1>
-                                <p className="heading6">Avail personal loan upto 2 lakhs with PayMe India. Get instant Loans anytime-anywhere.</p>
+                                <p className="heading6">No more financial crunches with PayMe India. Avail instant loans upto Rs. 2 lakhs 
+anytime-anywhere with no hassle.</p>
                                 <br/>
                                 <br/>
                                 <Link className="btnLarge" onClick={() => {
@@ -66,7 +67,8 @@ const Offerings = (props) => {
                             </div>
                             <div className="col-sm-12 col-md-5">
                                 <h3 className="heading3 relative"><span className='circle-small'></span> Pay rent using the PayMe app and avail exciting rewards</h3>
-                                <p className="heading6">Paying rent online is easier than ever! Just make your rental payment with credit cards in a couple of quick steps with no struggle at all.</p>
+                                <p className="heading6">Paying rent online is easier than ever! Make rent payment using your credit card with PayMe 
+India in few simple steps.</p>
                                 <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia' target='_blank'
                                    className="btnLarge m-t-40">Get App Now</a>
                             </div>
@@ -81,8 +83,9 @@ const Offerings = (props) => {
                                                                          alt="App Icon"/></div>
                             </div>
                             <div className="col-sm-12 col-md-6 bg-in-mobile-black">
-                                <h6 className="heading6 relative white-color">SALT- Buy Now Pay Later</h6>
-                                <h3 className="heading3 relative white-color">Buy anything with one Tap and Pay later</h3>
+                                <h6 className="heading3 relative white-color">SALT- Buy Now Pay Later</h6>
+                                <h3 className="heading3 relative white-color">Buy anything with one Tap and Pay later
+</h3>
                                 <p className="white-color">Shopping online is easy checkout options aren’t. Salt brings you the advantage of 
 buying now and paying later, Increasing the affordability of the purchase</p>
                                 {/*<a href='https://creditscore.paymeindia.in' target='_blank'
@@ -97,7 +100,7 @@ buying now and paying later, Increasing the affordability of the purchase</p>
                             <div className="col-sm-12 col-md-5">
                                 <h1 className="heading1 relative"><span className='circle-small'></span> Stop Thinking, Start Investing today in mutual funds</h1>
                                 <p className="heading6">Build your wealth by investing in the right mutual funds by selecting funds that suit your 
-financial goals with PayMe India</p>
+financial goals</p>
                                 <br/>
                                 <br/>
                                {/* <Link className="btnLarge" onClick={() => {
