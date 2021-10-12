@@ -5,7 +5,15 @@ import "./ApplyNowButton/Applybtnallcomponent.css";
 import Header from "./Header";
 import "../../src/home.css";
 import vision from "../images/svg/rocket-up.svg";
-import team from "../images/svg/photo.svg";
+import team from "../images/logo-fav.png";
+import team1 from "../images/Image-1.png";
+import team2 from "../images/Image-2.png";
+import team3 from "../images/Image-3.png";
+import team4 from "../images/Image-4.png";
+import team5 from "../images/Image-5.png";
+import team6 from "../images/Image-6.png";
+import team7 from "../images/Image-7.png";
+import team8 from "../images/Image-8.png";
 import teamAll from "../images/team.jpg";
 import mailBox from "../images/svg/mail-box.svg";
 import thumbnail from "../images/svg/thumb.svg";
@@ -64,7 +72,7 @@ leveraging modern technologies. The company works with RBI registered NBFCs to f
 advance salary loans to bourgeois or any salaried employee who faces financial constraints. Our 
 lending model empowers loan seekers to borrow easy, fast, safe & affordable personal loans. Our 
 passionate team of 150+ members aims to enrich you with a platform where getting personal 
-loans are instant and hassle-free.</p>
+loans are instant and hassle-free</p>
                                
                             </div>
                         </div>
@@ -75,16 +83,11 @@ loans are instant and hassle-free.</p>
                         <div className="row align-items-center pb-3">
                             <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 textAlign">
                                 <h4 className="heading4 blue-color">Our Mission and Vision</h4>
-                                {/* <p className='p-t-10'>PayMe India wants to accelerate the digital transformation of the financial industry by providing loans from Rs500 to Rs 2,00,000. Our vision is to be the leader of a fintech hub by utilizing the latest financial technologies to build future-proof PayMe India pillars, carving a vibrant platform to facilitate acceleration in lending instant loans.</p>
-                                <p className='p-t-30'>Our Mission is to bring effectiveness, efficiency, & excellence to our lending process by outperforming ourselves every day by leveraging our customers with a unique platform where they can get quick loans. And our unique platform helps our users in their financial journey by being present in every aspect of their life with our best-in-class service. We promise to ensure you complete privacy & customer safety through our modern infrastructure & secure online system.</p>
-                                 */}
-
-<p className='heading6'>PayMe India is dedicated to the mission of becoming the preferred choice of financial services, 
+                                <p className='p-t-10'>PayMe India is dedicated to the mission of becoming the preferred choice of financial services, 
 by providing high-quality, moderate-priced, and transparent financial products approachable to 
 everyone in society. Our vision is to become a globally acknowledged FinTech brand by 
-spreading “Financial Happiness” by utilizing the latest financial technologies. 
-</p>
-                                {/* <p className='heading6'>Our Mission is to bring effectiveness, efficiency, & excellence to our lending process by outperforming ourselves every day by leveraging our customers with a unique platform where they can get quick loans. And our unique platform helps our users in their financial journey by being present in every aspect of their life with our best-in-class service. We promise to ensure you complete privacy & customer safety through our modern infrastructure & secure online system.</p> */}
+spreading “Financial Happiness” by utilizing the latest financial technologies</p>
+                                
                             </div>
                             <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 imgLarge textAlign">
                                 <img className="img-fluid" alt="CIBIL" src={vision}/>
@@ -97,7 +100,15 @@ spreading “Financial Happiness” by utilizing the latest financial technologi
                         <div className="row justify-content-md-center">
                             <div className="col-sm-12 col-md-9 white-color text-center p-t-40 p-b-30">
                                 <h4 className='heading4'>Our Promise</h4>
-                                <p className='p-b-30  p-t-30 white-color relative'>PayMe India promises to stay with you in every step by offering you a truly modern solution for an instant personal loan. With the paperless fully digitalized process, with instant processing time, attractive interest rate, and without repayment charges. The only thing we ask in return is your trust, & believe us your trust in our service is our biggest asset. Don't believe in words 1st try & then trust. So next time when you are facing a financial crunch either in rent payment, utility bills, or looking for an impromptu vacation or season sale, PayMe India is there for you in every step as your financial backup.</p>
+                                <p className='p-b-30  p-t-30 white-color relative'>PayMe India promises to stay with you
+                                    in every step by offering you a truly modern solution for an instant personal loan.
+                                    With the paperless fully digitalized process, with instant processing time,
+                                    attractive interest rate, and without repayment charges. The only thing we ask in
+                                    return is your trust, & believe us your trust in our service is our biggest asset.
+                                    Don't believe in words 1st try & then trust. So next time when you are facing a
+                                    financial crunch either in rent payment, utility bills, or looking for an impromptu
+                                    vacation or season sale, PayMe India is there for you in every step as your
+                                    financial backup.</p>
                                 <br/>
                                 <br/>
                                 <br/>
@@ -154,58 +165,65 @@ spreading “Financial Happiness” by utilizing the latest financial technologi
                         <div className="row justify-content-md-center">
                             <div className="col col-md-8 text-center p-t-40">
                                 <h4 className="heading4 blue-color">Our Team</h4>
-                                <p className='p-t-10'>Team PayMe India is a set of customer-oriented personalities, who find their passion in helping out users to get over their financial crunches. Our team of hard-working people strives to provide the best experience to our customers with their loan disbursal process.</p>
+                                <p className='p-t-10'>Team PayMe India is a set of customer-oriented personalities, who
+                                    find their passion in helping out users to get over their financial crunches. Our
+                                    team of hard-working people strives to provide the best experience to our customers
+                                    with their loan disbursal process.</p>
                             </div>
                         </div>
                         <div className="row justify-content-md-center">
-                            <div className="col col-md-12 text-center p-t-40">
-                                <img className="img-fluid" src={teamAll} alt="Team"/>
+                            <div className="col col-md-12 text-center" style={{paddingBottom:80}}> &nbsp;
                             </div>
                         </div>
-                 {/*       <div className="row justify-content-md-center p-t-40 text-center p-b-30">
-                            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
-                                <div className='team-pic'>
-                                    <img className="img-fluid" src={team} alt="Team"/>
+                        <div className="row justify-content-md-center">
+                            <div className="col col-md-8 text-center" >
+                                <div className='clearfix topFav' >
+                                    <div className='team-pic'>
+                                        <img className="img-fluid circleImg" src={team} alt="Team"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
-                                <div className='team-pic'>
-                                    <img className="img-fluid" src={team} alt="Team"/>
+                                <div className='clearfix clearboth right'>
+                                    <div className='team-pic f-right'>
+                                        <img className="img-fluid" src={team1} alt="Team"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
-                                <div className='team-pic'>
-                                    <img className="img-fluid" src={team} alt="Team"/>
+                                <div className='clearboth clearfix'>
+                                    <div className='team-pic l-right'>
+                                        <img className="img-fluid" src={team5} alt="Team"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
-                                <div className='team-pic'>
-                                    <img className="img-fluid" src={team} alt="Team"/>
+                                <div className='clearfix clearboth right'>
+                                    <div className='team-pic f-right'>
+                                        <img className="img-fluid" src={team3} alt="Team"/>
+                                    </div>
+                                </div>
+                                <div className='clearboth clearfix'>
+                                    <div className='team-pic l-right'>
+                                        <img className="img-fluid" src={team2} alt="Team"/>
+                                    </div>
+                                </div>
+                                <div className='clearfix clearboth right'>
+                                    <div className='team-pic f-right'>
+                                        <img className="img-fluid" src={team4} alt="Team"/>
+                                    </div>
+                                </div>
+                                <div className='clearboth clearfix'>
+                                    <div className='team-pic l-right'>
+                                        <img className="img-fluid" src={team6} alt="Team"/>
+                                    </div>
+                                </div>
+                                <div className='clearfix clearboth right'>
+                                    <div className='team-pic f-right'>
+                                        <img className="img-fluid" src={team7} alt="Team"/>
+                                    </div>
+                                </div>
+                                <div className='clearboth clearfix'>
+                                    <div className='team-pic l-right'>
+                                        <img className="img-fluid" src={team8} alt="Team"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="row justify-content-md-center text-center p-b-30">
-                            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
-                                <div className='team-pic'>
-                                    <img className="img-fluid" src={team} alt="Team"/>
-                                </div>
-                            </div>
-                            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
-                                <div className='team-pic'>
-                                    <img className="img-fluid" src={team} alt="Team"/>
-                                </div>
-                            </div>
-                            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
-                                <div className='team-pic'>
-                                    <img className="img-fluid" src={team} alt="Team"/>
-                                </div>
-                            </div>
-                            <div className="col-lg-2 col-md-2 col-sm-12 text-center">
-                                <div className='team-pic'>
-                                    <img className="img-fluid" src={team} alt="Team"/>
-                                </div>
-                            </div>
-                        </div>*/}
                     </div>
                 </div>
                 <div className="contactBox">
@@ -226,7 +244,7 @@ spreading “Financial Happiness” by utilizing the latest financial technologi
                     </div>
                 </div>
             </div>
-            
+
         </>
     );
 };
