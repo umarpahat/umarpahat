@@ -24,6 +24,7 @@ import { Link } from "react-router-dom";
 import { API_ENDPOINT } from "../constant";
 
 const PayRent = (props) => {
+  const token = cookies.get('token')
   let [loader, setloader] = useState(false);
   let [number, setnumber] = useState(null);
   let [error, seterror] = useState(null);
@@ -31,7 +32,12 @@ const PayRent = (props) => {
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
-    cookies.remove("token", { path: "/" });
+    if(token){
+      props.history.push({
+        pathname: "/payrent-other-details",
+      });
+    }
+    
 
     const url = `${API_ENDPOINT}/api/faq_list/`;
     fetch(url)
@@ -239,7 +245,7 @@ const PayRent = (props) => {
                       <div>
                         <img
                           src={starIconLight}
-                          alt="Magnam numquam"
+                          alt="Milestone icon"
                           className="img-fluid"
                         />
                       </div>
@@ -260,7 +266,7 @@ const PayRent = (props) => {
                       <div>
                         <img
                           src={starIconAqua}
-                          alt="Totam corrupti"
+                          alt="secure"
                           className="img-fluid"
                         />
                       </div>
@@ -287,7 +293,7 @@ const PayRent = (props) => {
                         <div>
                           <img
                             src={starIconGreen}
-                            alt="Totam corrupti"
+                            alt="card"
                             className="img-fluid"
                           />
                         </div>

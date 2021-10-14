@@ -43,7 +43,7 @@ const HomePage = (props) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    cookies.remove("token", { path: "/" });
+   
     const url = "https://blog.paymeindia.in/?json=get_recent_posts&count=3";
     fetch(url)
       .then((res) => res.json())

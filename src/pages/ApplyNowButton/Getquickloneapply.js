@@ -16,6 +16,7 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 const Getquikloneapply = (props) => {
+  const token = cookies.get('token')
   cookies.set("userCase", "apply-loan");
   const userCase = cookies.get("userCase");
   //console.log("apply loan",userCase)
@@ -25,7 +26,11 @@ const Getquikloneapply = (props) => {
   let [newUser, setnewUser] = useState(false);
 
   useEffect(() => {
-    cookies.remove("token", { path: "/" });
+   if(token){
+    props.history.push({
+      pathname: "/step-manual",
+    });
+   }
   }, []);
 
   const handleSubmit = (event) => {
