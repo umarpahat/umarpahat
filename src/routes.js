@@ -33,7 +33,6 @@ import SelfEmployed from "./pages/ApplyNowButton/SelfEmployed";
 import Congretmessage from "./pages/ApplyNowButton/Congretmessage";
 import LoginWithMobMpin from "./pages/ApplyNowButton/LoginWithmobmpin";
 import ChangeMpin from "./pages/ApplyNowButton/ChangeMpin";
-import Pandingapprovalform from "./pages/ApplyNowButton/Pandigapprovealform";
 import SocialInitiative from "./pages/SocialInitiative";
 import Creatempn from "./pages/ApplyNowButton/Creatempn";
 import KycOption from "./pages/ApplyNowButton/KycOption";
@@ -51,7 +50,6 @@ function Routes() {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/apply-loan" component={Getquikloneapply} />
           <Route exact path="/pay-rent" component={Getquikloneapply} />
-        <Route exact path="/pending-approval" component={Pandingapprovalform} />
              <Route
           exact
           path="/get-start-paymeindia"
