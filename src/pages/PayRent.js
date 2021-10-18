@@ -32,11 +32,7 @@ const PayRent = (props) => {
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
-    if(token){
-      props.history.push({
-        pathname: "/payrent-other-details",
-      });
-    }
+ 
     
 
     const url = `${API_ENDPOINT}/api/faq_list/`;
