@@ -13,13 +13,31 @@ const cookies = new Cookies();
 
 
 const Header = (props) => {
-  const token = cookies.get('token')
-  const handlePayrent =() =>{
+  const token = cookies.get('token');
+  const handlePayrent = () =>{
     if(token){
     props.history.push({
       pathname: "/payrent-other-details",
     });
-  }}
+  }
+else
+{
+  props.history.push({
+    pathname: "/pay-rent-details",
+  });
+}}
+
+const handleApplyLoan =()=>{
+  if(token){
+    props.history.push({
+      pathname: "/step-manual",
+    });
+  }
+  else{
+  props.history.push({
+    pathname: "/apply-loan",
+  });
+}}
 
   return (
     <>
@@ -35,7 +53,7 @@ const Header = (props) => {
               <div className="col-md-10 p-t-13 p-r-80">
                 <ul className="navigationLink">
                   <li>
-                    <Link className="button active" to="/apply-loan">
+                    <Link className="button active" onClick={handleApplyLoan}  >
                       Apply Loan
                     </Link>
                   </li>
