@@ -9,35 +9,31 @@ import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
-
-
-
 const Header = (props) => {
-  const token = cookies.get('token');
-  const handlePayrent = () =>{
-    if(token){
-    props.history.push({
-      pathname: "/payrent-other-details",
-    });
-  }
-else
-{
-  props.history.push({
-    pathname: "/pay-rent-details",
-  });
-}}
+  const token = cookies.get("token");
+  const handlePayrent = () => {
+    if (token) {
+      props.history.push({
+        pathname: "/payrent-other-details",
+      });
+    } else {
+      props.history.push({
+        pathname: "/pay-rent-details",
+      });
+    }
+  };
 
-const handleApplyLoan =()=>{
-  if(token){
-    props.history.push({
-      pathname: "/step-manual",
-    });
-  }
-  else{
-  props.history.push({
-    pathname: "/apply-loan",
-  });
-}}
+  const handleApplyLoan = () => {
+    if (token) {
+      props.history.push({
+        pathname: "/step-manual",
+      });
+    } else {
+      props.history.push({
+        pathname: "/apply-loan",
+      });
+    }
+  };
 
   return (
     <>
@@ -53,7 +49,7 @@ const handleApplyLoan =()=>{
               <div className="col-md-10 p-t-13 p-r-80">
                 <ul className="navigationLink">
                   <li>
-                    <Link className="button active" onClick={handleApplyLoan}  >
+                    <Link className="button active" onClick={handleApplyLoan}>
                       Apply Loan
                     </Link>
                   </li>
@@ -68,12 +64,12 @@ const handleApplyLoan =()=>{
                       <Link
                         className="button"
                         style={{ color: "#02C650" }}
-                       onClick={handlePayrent}
+                        onClick={handlePayrent}
                       >
                         Pay Rent
                       </Link>
                     ) : (
-                      <Link className="button"  onClick={handlePayrent}>
+                      <Link className="button" onClick={handlePayrent}>
                         Pay Rent
                       </Link>
                     )}
@@ -95,7 +91,11 @@ const handleApplyLoan =()=>{
                   </li>
                   <li>
                     {props.active === "home" ? (
-                      <Link className="button" style={{ color: "#02C650" }} to="/">
+                      <Link
+                        className="button"
+                        style={{ color: "#02C650" }}
+                        to="/"
+                      >
                         Home
                       </Link>
                     ) : (
@@ -113,17 +113,14 @@ const handleApplyLoan =()=>{
                       <li>
                         <Link to="/">Home</Link>
                       </li>
-                      <li><Link to="/apply-loan">
-                        Apply Loan
-                      </Link></li>
-                      <li><Link to="/pay-rent-details">
-                        Pay Rent
-                      </Link>
+                      <li>
+                        <Link to="/apply-loan">Apply Loan</Link>
                       </li>
                       <li>
-                        <Link to="/offerings">
-                          Offerings
-                        </Link>
+                        <Link to="/pay-rent-details">Pay Rent</Link>
+                      </li>
+                      <li>
+                        <Link to="/offerings">Offerings</Link>
                       </li>
                       <li>
                         <Link to="/about">About Us</Link>
@@ -151,21 +148,21 @@ const handleApplyLoan =()=>{
                         <div className="tabularLess">
                           <div>
                             <a
-                                href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
-                                target="_blank"
+                              href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
+                              target="_blank"
                             >
                               <img
-                                  className="img_google"
-                                  src={googlePay}
-                                  alt="Pay Me India"
+                                className="img_google"
+                                src={googlePay}
+                                alt="Pay Me India"
                               />
                             </a>
                           </div>
                           <div>
                             <img
-                                className="img_google"
-                                src={appStore}
-                                alt="Pay Me India"
+                              className="img_google"
+                              src={appStore}
+                              alt="Pay Me India"
                             />
                           </div>
                         </div>
