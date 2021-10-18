@@ -41,17 +41,17 @@ const SocialInitiative = (props) => {
       }
     };
     gtag("event", "conversion", {
-      send_to: "AW-875618776/NqooCK7A1fYCENjDw6ED",
+      send_to: "AW-10789488789/9sIvCMnf5vsCEJWR6pgo",
       event_callback: callback,
     });
     return false;
   }
-
   let url = "";
   let reg = /^[0-9]{1,10}$/;
-  let emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  let emailReg =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const postVolunteer = () => {
-    gtag_report_conversion();
+    gtag_report_conversion("https://www.paymeindia.in/social-initiative");
 
     if (name.length === 0) {
       setNameerr("Name can't be empty");

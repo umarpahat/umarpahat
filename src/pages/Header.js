@@ -6,11 +6,20 @@ import logo from "../images/svg/payme-logo.svg";
 import appStore from "../images/svg/app-store.svg";
 import googlePay from "../images/svg/google-play.svg";
 import { Link } from "react-router-dom";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 
 
 
 const Header = (props) => {
+  const token = cookies.get('token')
+  const handlePayrent =() =>{
+    if(token){
+    props.history.push({
+      pathname: "/payrent-other-details",
+    });
+  }}
 
   return (
     <>
@@ -41,12 +50,12 @@ const Header = (props) => {
                       <Link
                         className="button"
                         style={{ color: "#02C650" }}
-                        to="/pay-rent-details"
+                       onClick={handlePayrent}
                       >
                         Pay Rent
                       </Link>
                     ) : (
-                      <Link className="button" to="/pay-rent-details">
+                      <Link className="button"  onClick={handlePayrent}>
                         Pay Rent
                       </Link>
                     )}
