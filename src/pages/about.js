@@ -7,6 +7,7 @@ import "../../src/home.css";
 import vision from "../images/svg/rocket-up.svg";
 import team from "../images/logo-fav.png";
 import coreValue from "../images/Core-Values.png";
+import PhonecoreValue from "../images/phone-Core-Values.png";
 import team1 from "../images/Image-1.png";
 import team2 from "../images/Image-2.png";
 import team3 from "../images/Image-3.png";
@@ -108,9 +109,12 @@ const About = (props) => {
             </div>
           </div>
         </div>
-        {/* <div>
-                <img src={coreValue} alt="core value" className="img-fluid" style={{width:"100%",height:"800px"}} />
-              </div> */}
+        <div className="col-sm-12 col-md-6 m-t-40 d-md-none">
+                <img src={PhonecoreValue} alt="core value" className="img-fluid"  />
+              </div>
+              <div className="col-sm-12 col-md-14  d-none d-md-block d-lg-block">
+                <img src={coreValue} alt="core value" className="img-fluid" style={{width:"100%",height:"900px"}} />
+              </div>
         <div className="promise">
           <div className="container">
             <div className="row justify-content-md-center">

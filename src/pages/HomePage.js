@@ -43,7 +43,7 @@ const HomePage = (props) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-   
+
     const url = "https://blog.paymeindia.in/?json=get_recent_posts&count=3";
     fetch(url)
       .then((res) => res.json())
@@ -122,7 +122,7 @@ const HomePage = (props) => {
               <div className="col-sm-12 col-md-6">
                 <h1 className="heading1">Get Instant Loan Approval</h1>
                 <p className="heading6">
-                No more financial crunches with PayMe India. Avail instant loans upto Rs. 2 lakhs 
+                No more financial crunches with PayMe India. Avail instant loans upto Rs. 2 lakhs
 anytime-anywhere with no hassle{" "}
                 </p>
                 <br />
@@ -193,7 +193,7 @@ anytime-anywhere with no hassle{" "}
                       <div className="form-group1">
                         <label
                           htmlFor="total"
-                          className="col-sm-12 control-label" 
+                          className="col-sm-12 control-label"
                         >
                           Amount ₹
                         </label>
@@ -306,10 +306,10 @@ anytime-anywhere with no hassle{" "}
                     target="_blank"
                   >
                     {" "}
-                    <span className="font110">“</span>PayMe India is a one-stop answer for your financial crunches, endowing you with 
-an in-depth range of benefits. Whether it’s last-minute rent payment, planning a 
-vacation, or even a flash sale online, PayMe India features a loan for all processes. 
-Let’s get a quick sneak peek of the benefits you’ll experience on your financial 
+                    <span className="font110">“</span>PayMe India is a one-stop answer for your financial crunches, endowing you with
+an in-depth range of benefits. Whether it’s last-minute rent payment, planning a
+vacation, or even a flash sale online, PayMe India features a loan for all processes.
+Let’s get a quick sneak peek of the benefits you’ll experience on your financial
 journey with PayMe India.<span className="font110 transform">“</span>
                   </a>
                 </p>

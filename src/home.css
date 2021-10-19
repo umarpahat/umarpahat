@@ -66,6 +66,9 @@ body {
 min-height: 80px;
 }
 
+.bg-in-mobile{
+    padding-bottom: 80px;
+}
 .line-clamp img, .line-clamp h1,.line-clamp figure, .line-clamp ul, .line-clamp ol {
     display: none;
 }
@@ -615,10 +618,10 @@ button.button-gray:hover {
 }
 
 .contact {
-    margin-top: 65px;
+    margin-top: 45px;
     width: 50%;
     margin-right: 20px;
-    padding: 70px 50px 0;
+    padding: 70px 50px 20px;
     background: rgba(2, 198, 80, 0.3);
     box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.09);
     border-radius: 10px 10px 0 0;
@@ -2461,7 +2464,16 @@ a {
 
     .heading1 {
         font-size: 24px;
-        line-height: 28px;
+    }
+
+    .btnLarge{
+        display: block;
+        height: 40px;
+        font-size: 18px;
+        line-height: 40px;
+    }
+    .MuiSlider-thumb {
+        top: 21px;
     }
 
     .heading2 {
@@ -2470,13 +2482,13 @@ a {
     }
 
     .heading3 {
-        font-size: 18px;
-        line-height: 20px;
+        font-size: 27px;
+        line-height: 32px;
     }
 
     .reg-second-heading h4 {
-        font-size: 21px;
-        line-height: 24px;
+        font-size: 26px;
+        line-height: 32px;
     }
 
     .box h3 {
@@ -2524,10 +2536,6 @@ a {
 
     .form-pricing {
         padding: 0;
-    }
-
-    .form-group1 {
-        width: auto;
     }
 
     .banner .p-t-40 {
@@ -2606,6 +2614,7 @@ a {
 
     .bg-in-mobile {
         background: #33658A;
+        padding: 0 50px;
     }
 
     .bg-in-mobile-black {
@@ -2653,6 +2662,12 @@ a {
     .home-steps div:last-child {
         width: calc(100% - 100px);
     }
+    .home-steps{
+     padding: 0 20px 20px 0;
+    }
+    .steps{
+        padding: 0;
+    }
 
     .topFav:before {
         display: none;
@@ -2682,6 +2697,9 @@ a {
     }
     .topFav .team-pic{
         padding-bottom: 40px;
+    }
+    .hideMobile{
+        display: none!important;
     }
 
 }

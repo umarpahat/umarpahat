@@ -360,13 +360,22 @@ nav a:hover {
     opacity: 1;
     transform: rotate(-45deg) translate(1px, 0);
 }
-
+.input-range__label--value, .input-range__label--min{
+    display: none;
+}
+.input-range__track--background,.input-range__track--background{
+    background-color:#eee !important;
+}
+.input-range__label{
+    margin-right: 20px;
+    display: none;
+}
 #menu {
     position: fixed;
     width: 500px;
     margin: -46px -20px 0 0;
     padding: 0 30px;
-    padding-top: 125px;
+    padding-top: 45px;
     right: 0;
     height: 100vh;
     max-height: 100vh;
@@ -530,6 +539,7 @@ a {
     #menu {
         width: 100%;
         margin: -20px 0 0 0;
+        padding-top: 20px;
     }
 
     .form-pricing {
