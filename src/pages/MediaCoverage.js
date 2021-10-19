@@ -88,7 +88,7 @@ const MediaCoverage = (props) => {
                             </div>
                             <div className="col-sm-4 col-md-4">
                                 <div className="card">
-                                    <div className="headStripe"><img
+                                    <div className="headStripe" style={{background:'#000000'}}><img
                                         src="https://assets.entrepreneur.com/static/20190308060624-ENT-India-Logo-White.svg"
                                         alt='ENT india logo'
                                         className="img-fluid imgCenter"/>
@@ -171,7 +171,7 @@ const MediaCoverage = (props) => {
                         <div className="row p-t-15">
                             <div className="col-sm-4 col-md-4">
                                 <div className="card">
-                                    <div className="headStripe"><img
+                                    <div className="headStripe" style={{background:'#8A3333'}}><img
                                         alt='the news minute'
                                         src="https://www.thenewsminute.com/sites/all/themes/tnm/The-News-Minute-Logo_mob.png"
                                         className="img-fluid imgCenter"/>
@@ -192,7 +192,7 @@ const MediaCoverage = (props) => {
                             </div>
                             <div className="col-sm-4 col-md-4">
                                 <div className="card">
-                                    <div className="headStripe"><img
+                                    <div className="headStripe" style={{background:'#000000'}}><img
                                         alt='entrepreneur logo'
                                         src="https://assets.entrepreneur.com/static/20190308060624-ENT-India-Logo-White.svg"
                                         className="img-fluid imgCenter"/>

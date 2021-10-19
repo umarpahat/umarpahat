@@ -20,6 +20,7 @@ import backend from "../images/svg/backend.svg";
 import business from "../images/svg/business.svg";
 import remote from "../images/svg/remote.svg";
 import allowance from "../images/svg/health.svg";
+import centralLocation from "../images/svg/travel-allowance.svg";
 import health from "../images/svg/health.svg";
 import environment from "../images/svg/environment.svg";
 import MetaTags from "react-meta-tags";
@@ -329,7 +330,7 @@ integrity
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={allowance}
+                          src={centralLocation}
                           alt="PayMe India"
                         />
                       </div>

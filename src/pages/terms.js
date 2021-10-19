@@ -37,7 +37,7 @@ const Terms = (props) => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col col-md-5 reg-second-heading">
+                        <div className="col col-md-5 reg-second-heading hideMobile">
                             <img className="img-fluid" src={termsCondition} alt="Icons"/>
                         </div>
                         <div className="col col-md-7">
@@ -78,7 +78,7 @@ const Terms = (props) => {
                             href="https://www.paymeindia.in/privacy-policy">paymeindia.in/privacy-policy</a>
                     </p>
                     <div className="row">
-                        <div className="col col-md-5 reg-second-heading">
+                        <div className="col col-md-5 reg-second-heading hideMobile">
                             <img className="img-fluid" src={termsCondition} alt="Icons"/>
                         </div>
                         <div className="col col-md-7">

@@ -2698,5 +2698,8 @@ a {
     .topFav .team-pic{
         padding-bottom: 40px;
     }
+    .hideMobile{
+        display: none!important;
+    }
 
 }
