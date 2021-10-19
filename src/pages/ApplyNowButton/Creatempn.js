@@ -19,7 +19,7 @@ function Creatempn() {
           <div className="col-lg-5 col-md-5 col-sm-12 text-center">
             <form>
               <div className="home-contact-form mt-4">
-                <h4 className="form-heading text-center">Create MPIN</h4>
+                <h4 className="form-heading text-center">Create Password</h4>
                 <div className="form-group ms-input-group">
                   <div className="topnoticreferral">
                     <p className="p-4 mx-4">
@@ -31,19 +31,19 @@ function Creatempn() {
                 </div>
                 <div className="form-block">
                   <div className="form-group ms-input-group">
-                    <label className="form-label pb-2">New MPIN</label>
+                    <label className="form-label pb-2">New Password</label>
                     <input
                         type="text"
                         className="form-control ms-form-input"
-                        placeholder="Enter New MPIN"
+                        placeholder="Enter New Password"
                     />
                   </div>
                   <div className="form-group ms-input-group">
-                    <label className="form-label pb-2">Confirm MPIN</label>
+                    <label className="form-label pb-2">Confirm Password</label>
                     <input
                         type="text"
                         className="form-control ms-form-input"
-                        placeholder="Enter Confirm MPIN"
+                        placeholder="Confirm Password"
                     />
                   </div>
                 </div>

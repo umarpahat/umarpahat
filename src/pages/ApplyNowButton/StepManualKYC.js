@@ -23,7 +23,7 @@ const cookies = new Cookies();
 
 const StepManual = (props) => {
   const token = cookies.get("token");
-  console.log("pramodsprops", props);
+  //console.log("pramodsprops", props);
 
   const [documentstatus, setDocumentstatus] = useState();
   const [professionalStatus, setProfessionalStatus] = useState();
@@ -42,20 +42,21 @@ const StepManual = (props) => {
       axios
         .get(url, config)
         .then((response) => {
+          //console.log("step",response.data.data[0])
           setDocumentstatus(response.data.data[0]);
           setProfessionalStatus(
             response.data.data[0].professional_details_verified
           );
           setBankstatus(response.data.data[0].bank_details_verified);
           setKycStatus(response.data.data[0].kyc_verified);
-          console.log("stepmanual", response.data.data[0]);
+          //console.log("stepmanual", response.data.data[0]);
         })
         .catch((err) => {
           if (err?.response?.status === 401) {
             cookies.remove("token", { path: "/" });
             props.history.push("/");
           }
-          console.log(err);
+          //console.log(err);
         });
     }
   }, []);
@@ -96,7 +97,7 @@ const StepManual = (props) => {
                                 <img
                                   className="img-fluid"
                                   src={kycIcon}
-                                  alt=""
+                                  alt="Icon"
                                 />
                               </div>
                               <div className="img-text">
@@ -123,7 +124,7 @@ const StepManual = (props) => {
                                 <img
                                   className="img-fluid"
                                   src={bankDetails}
-                                  alt=""
+                                  alt="Icon"
                                 />
                               </div>
                               <div className="img-text">
@@ -165,7 +166,7 @@ const StepManual = (props) => {
                                 <img
                                   className="img-fluid"
                                   src={professionalDetails}
-                                  alt=""
+                                  alt="Icon"
                                 />
                               </div>
                               <div className="img-text">

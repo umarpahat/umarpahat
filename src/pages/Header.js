@@ -5,21 +5,25 @@ import "../header.css";
 import logo from "../images/svg/payme-logo.svg";
 import appStore from "../images/svg/app-store.svg";
 import googlePay from "../images/svg/google-play.svg";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import Cookies from "universal-cookie";
+
 const cookies = new Cookies();
 
 const Header = (props) => {
   const token = cookies.get("token");
   const handlePayrent = () => {
+   
     if (token) {
-      props.history.push({
-        pathname: "/payrent-other-details",
-      });
+     
+      props.history.push(
+        "/payrent-other-details"
+      );
     } else {
-      props.history.push({
-        pathname: "/pay-rent-details",
-      });
+     
+      props.history.push(
+        "/pay-rent-details"
+      );
     }
   };
 
@@ -49,9 +53,10 @@ const Header = (props) => {
               <div className="col-md-10 p-t-13 p-r-80">
                 <ul className="navigationLink">
                   <li>
-                    <Link className="button active" onClick={handleApplyLoan}>
+                    <div onClick={handleApplyLoan}>
+                    <Link className="button active" >
                       Apply Loan
-                    </Link>
+                    </Link></div>
                   </li>
                   {/* <li>
 
@@ -61,17 +66,20 @@ const Header = (props) => {
                                     </li>*/}
                   <li>
                     {props.active === "payrent" ? (
+                      <div onClick={handlePayrent}>
                       <Link
+                       
                         className="button"
                         style={{ color: "#02C650" }}
-                        onClick={handlePayrent}
+                        
                       >
                         Pay Rent
-                      </Link>
+                      </Link></div>
                     ) : (
-                      <Link className="button" onClick={handlePayrent}>
+                      <div onClick={handlePayrent}>
+                      <Link className="button" >
                         Pay Rent
-                      </Link>
+                      </Link></div>
                     )}
                   </li>
                   <li>

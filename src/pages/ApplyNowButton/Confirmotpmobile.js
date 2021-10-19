@@ -52,7 +52,7 @@ const Confirmotpmobile = (props) => {
 
 
   const verifyOtpNewUser = (otp_get) => {
-   console.log("newuser",otp_get)
+   //console.log("newuser",otp_get)
     setloader(true);
     api
       .post(
@@ -74,7 +74,7 @@ const Confirmotpmobile = (props) => {
         }
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
         setotpError(
           `Otp not verified, please enter correct otp sent to ${props.phone_number}`
         );
@@ -117,7 +117,7 @@ const Confirmotpmobile = (props) => {
 
   return (
     <>
-      <div className='content darkBg'>
+      <div className='content darkBg' >
       {loader ? (
         <div className="loader">
           {" "}

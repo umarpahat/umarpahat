@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 import Header from "../Header";
 import Footer from "../Footer";
 import Cookies from "universal-cookie";
 import { Container } from "react-bootstrap";
 import tip from "../../images/svg/tip.png";
+import { API_ENDPOINT_STAGING, API_ENDPOINT } from "../../constant";
 const cookies = new Cookies();
 const TransactionHistory = (props) => {
   const token = cookies.get("token");
@@ -18,19 +19,38 @@ const TransactionHistory = (props) => {
     if (!token) {
       props.history.push({ pathname: "/" });
     }
-    console.log("opopopopo", props);
-  
-    props.location.state.transactionHistory.results.forEach((element) => {
-      console.log(">>>>>", element);
-      if (element.payee.txn_status_code === "Failed") {
-        setfailedTrans((failedTrans) => [...failedTrans, element]);
-      } else if (element.payee.txn_status_code === "Success") {
-        setsuccessTrans((successTrans) => [...successTrans, element]);
-      }
-      if (element.payee.txn_status_code === "In Process") {
-        setpendingTrans((pendingTrans) => [...pendingTrans, element]);
-      }
-    });
+    //console.log("opopopopo", props);
+
+    let config3 = {
+      headers: {
+        Authorization: "Token " + token,
+      },
+    };
+    axios
+      .get(
+        `${API_ENDPOINT_STAGING}/api/pay-rent/list-payment-history/`,
+        config3
+      )
+      .then((res) => {
+        res.data.results.forEach((element) => {
+          //console.log(">>>>>", element);
+          if (element.payee.txn_status_code === "Failed") {
+            setfailedTrans((failedTrans) => [...failedTrans, element]);
+          } else if (element.payee.txn_status_code === "Success") {
+            setsuccessTrans((successTrans) => [...successTrans, element]);
+          }
+          if (element.payee.txn_status_code === "In Process") {
+            setpendingTrans((pendingTrans) => [...pendingTrans, element]);
+          }
+        });
+      })
+
+      .catch((err) => {
+        if (err.response.status === 401) {
+          cookies.remove("token", { path: "/" });
+        }
+        //console.log("eeeeee", err);
+      });
   }, []);
 
   const PensindTransTrack = pendingTrans.map((value, index) => (
@@ -75,7 +95,7 @@ const TransactionHistory = (props) => {
   return (
     <>
       {" "}
-      <Header {...props} />
+      <Header {...props}  active="payrent"/>
       <div className="content darkBg">
         <Container>
           <div className="row">
@@ -85,55 +105,51 @@ const TransactionHistory = (props) => {
                 Back
               </a>
             </div>
-            <div className="col-lg-5 col-md-5 col-sm-12 text-center">
-              <div className="form-container">
-                <div className="ms-Tabs">
+            <div className="col-lg-5 col-md-5 col-sm-12">
+              <div className="home-contact-form">
+                {/* <div className="ms-Tabs">
                   <div
-                    class="btn-group"
+                    className="btn-group"
                     role="group"
                     aria-label="Basic example"
                   >
                     <Link
                       to="/payrent-other-details"
-                      class="btn  ms-group-btn "
+                      className="btn  ms-group-btn "
                     >
                       New Transaction
                     </Link>
                     <Link
                       to="/payrent-transaction-history"
-                      class="btn  ms-group-btn active-btn "
+                      className="btn  ms-group-btn active-btn "
                     >
                       Transaction History
                     </Link>
                   </div>
-                </div>
+                </div> */}
+                <h2 className="text-center">Transaction History </h2>
                 <form>
-                  <div className="home-contact-form">
-                    <h4 className="form-heading ">Pending Transaction</h4>
-                    <div className="form-block">
-                      {PensindTransTrack.length === 0 ? (
-                        <span>No Pending Transaction</span>
-                      ) : null}
-                      {PensindTransTrack}
-                    </div>
+                  <div className="form-block">
+                    <h4 className="h4 ">Pending Transaction</h4>
+                    {PensindTransTrack.length === 0 ? (
+                      <span>No Pending Transaction</span>
+                    ) : null}
+                    {PensindTransTrack}
                   </div>
-                  <div className="home-contact-form mt-4">
-                    <h4 className="form-heading ">Completed Transaction</h4>
-                    <div className="form-block">
-                      {SuccessTransTrack.length === 0 ? (
-                        <span>No Success Transaction</span>
-                      ) : null}
-                      {SuccessTransTrack}
-                    </div>
+
+                  <div className="form-block">
+                    <h4 className="h4 ">Completed Transaction</h4>
+                    {SuccessTransTrack.length === 0 ? (
+                      <span>No Success Transaction</span>
+                    ) : null}
+                    {SuccessTransTrack}
                   </div>
-                  <div className="home-contact-form mt-4">
-                    <h4 className="form-heading ">Cancelled Transaction</h4>
-                    <div className="form-block">
-                      {failedTRanstrack.length === 0 ? (
-                        <span>No Failed Transaction</span>
-                      ) : null}
-                      {failedTRanstrack}
-                    </div>
+                  <div className="form-block">
+                    <h4 className="h4 ">Cancelled Transaction</h4>
+                    {failedTRanstrack.length === 0 ? (
+                      <span>No Failed Transaction</span>
+                    ) : null}
+                    {failedTRanstrack}
                   </div>
                 </form>
               </div>
@@ -148,17 +164,11 @@ const TransactionHistory = (props) => {
                     <div className="full-text text-left">
                       <h5>Tips</h5>
                       <p>
-                        In expedita et occaecati ullam a cumque maiores
-                        perspiciatis. Non labore exercitationem rerum nulla ea
-                        veniam facilis et.{" "}
+                        Kindly review the details precisely. Once the payment is
+                        done, you won't be able to make changes to the rent
+                        receipt.
                       </p>
                     </div>
-                  </div>
-                  <div className="circle-half">
-                    <p className="p-a-10">
-                      In expedita et occaecati ullam a cumque maiores
-                      perspiciatis.{" "}
-                    </p>
                   </div>
                 </div>
               </div>

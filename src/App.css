@@ -24,6 +24,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+body, html {
+  height: 100%;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -1829,9 +1832,9 @@ a:hover {
   justify-content: space-between;
 }
 .reloadicon {
-  color: #33658a;
-  font-size: 14px;
-  font-weight: 900;
+  color: #333;
+  font-size: 16px;
+  font-weight: 800;
 }
 .imgsizereloadicon {
   width: 15px;
@@ -2168,6 +2171,7 @@ select option {
     padding-bottom: 5px;
   }
   .img-fluid {
+    
     padding-bottom: 5px;
     padding-top: 5px;
   }

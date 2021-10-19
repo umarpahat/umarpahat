@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import {Container} from "react-bootstrap";
 import Loader from '../component/Loader'
 import "./ApplyNowButton/Applybtnallcomponent.css";
-import Footer from "./Footer";
 import Header from "./Header";
 import '../../src/home.css';
 import {Link} from "react-router-dom";
@@ -38,7 +37,7 @@ const Terms = (props) => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col col-md-5 reg-second-heading">
+                        <div className="col col-md-5 reg-second-heading hideMobile">
                             <img className="img-fluid" src={termsCondition} alt="Icons"/>
                         </div>
                         <div className="col col-md-7">
@@ -79,7 +78,7 @@ const Terms = (props) => {
                             href="https://www.paymeindia.in/privacy-policy">paymeindia.in/privacy-policy</a>
                     </p>
                     <div className="row">
-                        <div className="col col-md-5 reg-second-heading">
+                        <div className="col col-md-5 reg-second-heading hideMobile">
                             <img className="img-fluid" src={termsCondition} alt="Icons"/>
                         </div>
                         <div className="col col-md-7">
@@ -1250,7 +1249,7 @@ const Terms = (props) => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+          
         </>
     )
 };
