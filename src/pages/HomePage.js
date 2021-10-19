@@ -229,7 +229,7 @@ const HomePage = (props) => {
                 </div>
                 <div className="carousel">
                     <div className="container">
-                        <div className="row align-items-center pb-3">
+                        <div className="row align-items-center">
                             <div className="col col-md-12 reg-second-heading">
                                 <h4>Check Your Cibil Score Online </h4>
                             </div>
@@ -266,10 +266,6 @@ const HomePage = (props) => {
                             <div className="col-sm-12 col-md-6 bg-in-mobile">
                                 <p className='p-b-30  relative'>
                                     <a className='white-color' href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia' target='_blank'> <span className='font110'>“</span>PayMe India is a one-stop answer for your financial crunches, Benefit yourself with an in-depth range of benefits. Whether it’s shopping, planning a vacation, paying rents, or any other money requirement to satisfy your needs. PayMe India features a loan for all processes. Experience a smooth financial journey with PayMe India.<span className='font110 transform'>“</span></a></p>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
                             </div>
                         </div>
                     </div>
