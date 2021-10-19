@@ -45,6 +45,6 @@ footer ul li {
 }
 
 @media (max-width: 600px) {
-
+.CookieConsent{flex-direction: revert!important;}
 
 }

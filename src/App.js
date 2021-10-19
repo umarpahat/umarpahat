@@ -11,8 +11,8 @@ function App() {
                 location="bottom"
                 buttonText="Accept"
                 cookieName="myAwesomeCookieName2"
-                style={{ background: "#2B373B",fontSize: "13px" }}
-                buttonStyle={{ color: "#fff", fontSize: "13px",background:'#33658a' }}
+                style={{ background: "#2B373B",fontSize: "13px", flexDirection: 'row-reverse' }}
+                buttonStyle={{ color: "#fff", fontSize: "13px",background:'#33658a', float:'left' }}
                 enableDeclineButton >This site uses cookies. By continuing to use this website, you agree to their use.</CookieConsent>
         </>
     )
