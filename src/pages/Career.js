@@ -13,16 +13,15 @@ import craftsmanship from "../images/svg/craftman.svg";
 import workspace from "../images/svg/workspace.svg";
 import awesomness from "../images/svg/awsomework.svg";
 import happyWork from "../images/svg/happy-work.svg";
-import tea from "../images/svg/tea.svg";
-import timeline from "../images/svg/timeline.svg";
+import tea from "../images/Sharp-Growth.png";
+import timeline from "../images/Organization-Events.png";
 import lead from "../images/svg/lead.svg";
 import backend from "../images/svg/backend.svg";
 import business from "../images/svg/business.svg";
-import remote from "../images/svg/remote.svg";
-import allowance from "../images/svg/health.svg";
-import centralLocation from "../images/svg/travel-allowance.svg";
-import health from "../images/svg/health.svg";
-import environment from "../images/svg/environment.svg";
+import remote from "../images/Productive-Challenges.png";
+import centralLocation from "../images/Central-Location.png";
+import health from "../images/Medical-Insurance.png";
+import environment from "../images/Cool-Environment.png";
 import MetaTags from "react-meta-tags";
 
 const Career = (props) => {
@@ -283,6 +282,7 @@ integrity
                           className="img-fluid"
                           src={tea}
                           alt="PayMe India"
+                          style={{width:"170px",height:"170px"}}
                         />
                       </div>
                       <h3>Sharp Growth </h3>
@@ -296,6 +296,7 @@ integrity
                           className="img-fluid"
                           src={remote}
                           alt="Productive Challenges"
+                          style={{width:"170px",height:"170px"}}
                         />
                       </div>
 
@@ -312,6 +313,7 @@ integrity
                           className="img-fluid"
                           src={timeline}
                           alt="Organization Events "
+                          style={{width:"170px",height:"170px"}}
                         />
                       </div>
                       <h3>Organization Events </h3>
@@ -332,6 +334,7 @@ integrity
                           className="img-fluid"
                           src={centralLocation}
                           alt="PayMe India"
+                          style={{width:"170px",height:"170px"}}
                         />
                       </div>
                       <h3>Central Location </h3>
@@ -346,6 +349,7 @@ integrity
                           className="img-fluid"
                           src={health}
                           alt="Health allowance"
+                          style={{width:"170px",height:"170px"}}
                         />
                       </div>
                       <h3>Medical Insurance </h3>
@@ -361,6 +365,7 @@ integrity
                           className="img-fluid"
                           src={environment}
                           alt="Cool Environment"
+                          style={{width:"170px",height:"170px"}}
                         />
                       </div>
                       <h3>Cool Environment</h3>
