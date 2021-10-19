@@ -1,5 +1,5 @@
 {
-  "name": "prateekeshwar-boilerplate",
+  "name": "paymeindia-website",
   "version": "1.0.0",
   "description": "react boiler plate",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
    
   },
-  "author": "prateekeshwar <doneybanaguna@gmail.com>",
+  "author": "paymeindia",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.13.14",
