@@ -322,7 +322,7 @@ const OtherDetalisForm = (props) => {
 
   return (
     <>
-      <Header {...props} />
+      <Header {...props} active="payrent" />
       <div className="content darkBg">
         {loader ? (
           <div className="loader">
