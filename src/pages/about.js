@@ -109,10 +109,10 @@ const About = (props) => {
             </div>
           </div>
         </div>
-        <div className="col-sm-12 col-md-6 m-t-40 d-md-none">
+        <div className="col-sm-12 col-md-6 m-t-80 d-md-none">
                 <img src={PhonecoreValue} alt="core value" className="img-fluid"  />
               </div>
-              <div className="col-sm-12 col-md-14 m-t-40 d-none d-md-block d-lg-block">
+              <div className="col-sm-12 col-md-14 m-t-80 d-none d-md-block d-lg-block">
                 <img src={coreValue} alt="core value" className="img-fluid" style={{width:"100%",height:"900px"}} />
               </div>
         <div className="promise">
