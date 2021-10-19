@@ -11,7 +11,7 @@ import mailBox from "../images/svg/mail-box.svg";
 import starIcon from "../images/svg/creditcard.png";
 import homeIcon from "../images/svg/homeIcon.png";
 import starIconLight from "../images/svg/reward.png";
-import starIconAqua from "../images/svg/secure.png";
+import starIconAqua from "../images/Lock-Varified-symbol.png";
 import starIconGreen from "../images/svg/green-star.svg";
 import { api } from "../services/api";
 import Loader from "../component/Loader";
@@ -33,7 +33,11 @@ const PayRent = (props) => {
 
   useEffect(() => {
  
-    
+    if (token) {
+      props.history.push({
+        pathname: "/payrent-other-details",
+      });
+    }
 
     const url = `${API_ENDPOINT}/api/faq_list/`;
     fetch(url)
@@ -151,7 +155,7 @@ const PayRent = (props) => {
                         </div>
                         <div>
                           <strong>
-                          Pay rent with your credit card and get amazing Offers
+                          Get exiting rewards by paying your rent online
                           </strong>
                         </div>
                       </div>
@@ -295,7 +299,7 @@ const PayRent = (props) => {
                         </div>
                         <div>
                           <strong>
-                          Pay rent with your credit card and get amazing Offers
+                          Get exiting rewards by paying your rent online
                           </strong>
                         </div>
                       </div>
