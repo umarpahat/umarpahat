@@ -78,7 +78,7 @@ const DetailsSummary = (props) => {
 
   return (
     <>
-      <Header />
+      <Header active="payrent" />
       <div className="content darkBg">
         <Container>
           <div className="row">
