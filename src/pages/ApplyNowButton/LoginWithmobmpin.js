@@ -15,19 +15,24 @@ import "../../home.css";
 import Cookies from 'universal-cookie';
 import tip from "../../images/animated/lets-start-animation.gif";
 import { Container } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+
 
 const cookies = new Cookies()
 
+
 function LoginWithMobMpin(props) {
+  const history = useHistory()
   const token = cookies.get('token')
-  console.log(token)
+  const phoneNumber = cookies.get('phoneNumber')
+  //console.log(token)
   const userCase = cookies.get("userCase");
-  console.log("user case",userCase)
+  //console.log("user case",userCase)
   let [loader, setloader] = useState(false);
   let [errorPass, seterrorPass] = useState(null);
   let [password, setpassword] = useState(null);
   let [forgotPassword, setforgotPassword] = useState(false);
-  console.log(props,userCase);
+  //console.log("lllllllll",props,userCase);
   useEffect(() => {
     if (token) {
       if (forgotPassword) {
@@ -52,7 +57,7 @@ function LoginWithMobMpin(props) {
               props.history.push({ pathname: "/kycoption" });
             }
           } else if (userCase === "pay-rent") {
-            console.log("payrent kyc", props.user.userData.userdocumentsmodel);
+            //console.log("payrent kyc", props.user.userData.userdocumentsmodel);
             if (
               props.user.userData.userdocumentsmodel.kyc_verified ===
                 "VERIFIED" ||
@@ -61,7 +66,7 @@ function LoginWithMobMpin(props) {
             ) {
               props.history.push({ pathname:"/payrent-other-details" });
             } else {
-              console.log("1414141414", props);
+              //console.log("1414141414", props);
               props.history.push({ pathname:"/payrent-other-details" });
             }
           } else {
@@ -83,7 +88,7 @@ function LoginWithMobMpin(props) {
     api
       .post(
         `api/send_otp_phone/`,
-        { phone_number: Number(props.location.state.phoneNumber) },
+        { phone_number: phoneNumber},
         {}
       )
       .then((response) => {
@@ -92,14 +97,14 @@ function LoginWithMobMpin(props) {
           setforgotPassword(true);
         } else {
           setforgotPassword(false);
-          console.log(response.status);
+          //console.log(response.status);
         }
         return response;
       })
       .catch((error) => {
         setloader(false);
         setforgotPassword(false);
-        console.log(error);
+        //console.log(error);
       });
   };
 
@@ -114,8 +119,8 @@ function LoginWithMobMpin(props) {
     setloader(true);
     props.hitLogin({
       type: "",
-      phone_number: Number(props.location.state.phoneNumber),
-      mpin: Number(password),
+      phone_number: phoneNumber,
+      mpin: password,
     })
     
   };
@@ -132,7 +137,7 @@ function LoginWithMobMpin(props) {
         ) : forgotPassword ? (
           <Confirmotpmobile
             {...props}
-            phone_number={Number(props.location.state.phoneNumber)}
+            phone_number={phoneNumber}
             forget_password={true}
             resendOtp={sendOtp} />
         ) : (
@@ -153,18 +158,18 @@ function LoginWithMobMpin(props) {
                             maxLength={6}
                             type="number"
                             className="form-control ms-form-input"
-                            placeholder="9999999999"
-                            value={props.location.state.phoneNumber || ""}
+                            placeholder="Phone Number"
+                            value={phoneNumber || ""}
                             disabled={true}
                         />
                       </div>
                       <div className="form-group ms-input-group">
-                        <label className="form-label pb-2">Enter MPIN</label>
+                        <label className="form-label pb-2">Enter Password</label>
                         <input
                             maxLength={6}
                             type="password"
                             className="form-control ms-form-input"
-                            placeholder="Enter 6 digit MPIN"
+                            placeholder="Enter  Password"
                             value={password || ""}
                             onChange={(event) => {
                               if(event.target.value.match(/^[0-9]+$/)){
@@ -182,7 +187,7 @@ function LoginWithMobMpin(props) {
                       </div>
                       <div className="forgetmpin form-label pb-4">
                         <p onClick={sendOtp} style={{ cursor: "pointer" }}>
-                          Forgot MPIN?
+                          Forgot Password?
                         </p>
                       </div>
                     </div>
@@ -206,7 +211,7 @@ function LoginWithMobMpin(props) {
                       </div>
                       <div className='full-text text-left'>
                         <h5>Tips</h5>
-                        <p>6-digit passcode which will help you to log in faster into the PayMe India app.</p>
+                        <p>Password which will help you to log in faster into the PayMe India app.</p>
                       </div>
                     </div>
 
