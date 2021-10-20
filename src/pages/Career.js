@@ -163,7 +163,7 @@ const Career = (props) => {
                 </div>
                 <div
                   className="row justify-content-md-center boxes"
-                  style={{ marginTop: 30 }}
+                  style={{ marginTop: 0 }}
                 >
                   <div className="col-lg-4 col-md-4 col-sm-12">
                     <div className="box-offer justify-content-md-center text-center">
@@ -273,7 +273,7 @@ integrity
               <div className="col-lg-12 col-md-12 col-sm-12">
                 <div
                   className="row justify-content-md-center boxes"
-                  style={{ marginTop: 30 }}
+                  style={{ marginTop: 0 }}
                 >
                   <div className="col-lg-4 col-md-4 col-sm-12">
                     <div className="box-offer justify-content-md-center text-center">
@@ -325,7 +325,7 @@ integrity
                 </div>
                 <div
                   className="row justify-content-md-center boxes"
-                  style={{ marginTop: 30 }}
+                  style={{ marginTop: 0 }}
                 >
                   <div className="col-lg-4 col-md-4 col-sm-12">
                     <div className="box-offer justify-content-md-center text-center">
