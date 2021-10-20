@@ -299,19 +299,20 @@ anytime-anywhere with no hassle{" "}
                 </div>
               </div>
               <div className="col-sm-12 col-md-6 bg-in-mobile">
-                <p className="p-b-30  relative">
-                  <a
+                <p className="p-b-30  relative" style={{color:"#fff"}}>
+                  
+                    {" "}
+                    <span className="font110">“</span>
+                    <a
                     className="white-color"
                     href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
                     target="_blank"
-                  >
-                    {" "}
-                    <span className="font110">“</span>PayMe India is a one-stop answer for your financial crunches, endowing you with
+                  >PayMe India</a> is a one-stop answer for your financial crunches, endowing you with
 an in-depth range of benefits. Whether it’s last-minute rent payment, planning a
 vacation, or even a flash sale online, PayMe India features a loan for all processes.
 Let’s get a quick sneak peek of the benefits you’ll experience on your financial
 journey with PayMe India.<span className="font110 transform">“</span>
-                  </a>
+                  
                 </p>
                 <br />
                 <br />
