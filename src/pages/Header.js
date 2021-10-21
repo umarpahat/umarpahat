@@ -89,11 +89,11 @@ const Header = (props) => {
                         style={{ color: "#02C650" }}
                         to="/offerings"
                       >
-                        Offerings
+                        Our products
                       </Link>
                     ) : (
                       <Link className="button" to="/offerings">
-                        Offerings
+                        Our products
                       </Link>
                     )}
                   </li>
@@ -128,29 +128,37 @@ const Header = (props) => {
                         <Link to="/pay-rent-details">Pay Rent</Link>
                       </li>
                       <li>
-                        <Link to="/offerings">Offerings</Link>
-                      </li>
-                      <li>
                         <Link to="/about">About Us</Link>
                       </li>
                       <li>
-                        <Link to="/contact">Contact Us</Link>
+                        <Link to="/offerings">Our products</Link>
+
                       </li>
-                      <li>
-                        <Link to="/faq">FAQs</Link>
-                      </li>
+                     
                       <li>
                         <Link to="/ourNbfcPartners">Our NBFC Partners</Link>
                       </li>
                       <li>
-                        <Link to="/career">Career</Link>
+                        <Link to="/social-initiative">Social Initiative</Link>
                       </li>
                       <li>
                         <Link to="/media-coverage">Media Coverage</Link>
                       </li>
                       <li>
-                        <Link to="/social-initiative">Social Initiative</Link>
+                        <Link to="/career">Career</Link>
                       </li>
+                     
+                    
+                      <li>
+                        <Link to="/faq">FAQs</Link>
+                      </li>
+                      <li>
+                        <Link to="/contact">Contact Us</Link>
+                      </li>
+                     
+                      
+                    
+                     
                       <li className="border-top">
                         <h3>Get Our App on</h3>
                         <div className="tabularLess">
