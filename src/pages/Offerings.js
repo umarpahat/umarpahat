@@ -69,8 +69,8 @@ anytime-anywhere with no hassle.</p>
                                 <h3 className="heading3 relative"><span className='circle-small'></span> Pay rent using the PayMe app and avail exciting rewards</h3>
                                 <p className="heading6">Paying rent online is easier than ever! Make rent payment using your credit card with PayMe 
 India in few simple steps.</p>
-                                <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia' target='_blank'
-                                   className="btnLarge m-t-40">Get App Now</a>
+                                <Link to={{pathname:'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}} target={"_blank"}>
+                                   className="btnLarge m-t-40">Get App Now</Link>
                             </div>
                         </div>
                     </div>

@@ -20,15 +20,18 @@ const Footer = () => {
                         <div className='clearfix'><img className="img-fluid"
                                                        src={whiteLogo} alt="PayMe India"/></div>
                         <div className='clearfix p-t-80'>
-                            <a href="https://www.facebook.com/PaymeIndiaofficial/" target="_blank">
+                            <Link to={{pathname:'https://www.facebook.com/PaymeIndiaofficial/'}} target={"_blank"}>
                                 <img className="social-img" src={Facebook} alt="PayMe india Facebook"/>
-                            </a>
-                            <a href="https://twitter.com/PayMeIndia?s=08" target="_blank">
-                                <img className="social-img" src={Twitter} alt="PayMe india Twitter"/></a>
-                            <a href="https://www.linkedin.com/company/payme-india" target="_blank">
-                                <img className="social-img" src={Linkedin} alt="PayMe india Linkedin"/> </a>
-                            <a href="https://www.instagram.com/paymeindia/" target="_blank">
-                                <img className="social-img" src={instagram} alt="PayMe india Instagram"/></a>
+                            </Link>
+                            <Link to={{pathname:'https://twitter.com/PayMeIndia?s=08'}} target={"_blank"}>
+                                <img className="social-img" src={Twitter} alt="PayMe india Twitter"/>
+                            </Link>
+                            <Link to={{pathname:'https://www.linkedin.com/company/payme-india'}} target={"_blank"}>
+                                <img className="social-img" src={Linkedin} alt="PayMe india Linkedin"/>
+                            </Link>
+                            <Link to={{pathname:'https://www.instagram.com/paymeindia/'}} target={"_blank"}>
+                                <img className="social-img" src={instagram} alt="PayMe india Instagram"/>
+                            </Link>
                         </div>
                     </div>
                     <div className="ol col-md-2">
@@ -63,9 +66,9 @@ const Footer = () => {
                         <h6 className='head6 green-link'>Grievance Redressal Officer</h6>
                         <ul>
                             <li>Rohit Rai</li>
-                            <li className=""><strong>Contact</strong>: 7669929906</li>
-                            <li className=""><strong>Email</strong>: <a href='mailto:rohit.rai@paymeindia.in'>rohit.rai@paymeindia.in</a></li>
-                            <li><a target='_blank' href="https://openscecurityurl.s3.ap-south-1.amazonaws.com/NewAppAgreeDocs/grievance_redressal_mechanism.pdf">Grievance Redressal Mechanism</a></li>
+                            <li className=""><strong>Contact:</strong> 7669929906</li>
+                            <li className=""><strong>Email:</strong> <Link to={{pathname:'mailto:rohit.rai@paymeindia.in'}} target={"_blank"}>rohit.rai@paymeindia.in</Link></li>
+                            <li><Link to={{pathname:'https://openscecurityurl.s3.ap-south-1.amazonaws.com/NewAppAgreeDocs/grievance_redressal_mechanism.pdf'}} target={"_blank"}>Grievance Redressal Mechanism</Link></li>
                         </ul>
                     </div>
                     <div className="ol col-md-1">
