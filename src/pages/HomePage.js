@@ -280,7 +280,7 @@ anytime-anywhere with no hassle{" "}
         <div className="loan-blue-benefit">
           <div className="container">
             <div className="col col-md-12 reg-second-heading white-color">
-              <h4><Link to={{pathname:'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}} target={"_blank"} className="white-color">Benefits of PayMe India</Link></h4>
+              <h4>Benefits of PayMe India</h4>
             </div>
             <div className="row align-items-center p-t-80">
               <div className="col-sm-12 col-md-6">
@@ -293,12 +293,18 @@ anytime-anywhere with no hassle{" "}
                 </div>
               </div>
               <div className="col-sm-12 col-md-6 bg-in-mobile">
-                <p className="p-b-30  relative white-color">
-                    <span className="font110">“</span>PayMe India is a one-stop answer for your financial crunches, endowing you with
+                <p className="p-b-30  relative" style={{color:"#fff"}}>
+                    <span className="font110">“</span>
+                    <Link
+                    className="white-color"
+                   to={{pathname:'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
+                    target="_blank"
+                  >PayMe India</Link> is a one-stop answer for your financial crunches, endowing you with
 an in-depth range of benefits. Whether it’s last-minute rent payment, planning a
 vacation, or even a flash sale online, PayMe India features a loan for all processes.
 Let’s get a quick sneak peek of the benefits you’ll experience on your financial
 journey with PayMe India.<span className="font110 transform">“</span>
+
                 </p>
                 <br />
                 <br />

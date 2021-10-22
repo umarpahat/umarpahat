@@ -57,7 +57,7 @@ const About = (props) => {
             </div>
             <div className="row">
               <div className="col-lg-12 col-md-12 col-sm-12 text-center">
-                <img className="img-fluid" alt="About us" src={about} />
+                <img className="img-fluid" alt="About us" src={about} style={{width:"700px",height:"400px",color:"#fff"}} />
               </div>
             </div>
           </div>
@@ -110,11 +110,11 @@ const About = (props) => {
             </div>
           </div>
         </div>
-        <div className="col-sm-12 col-md-6 m-t-80 d-md-none">
+        <div className="col-sm-12 col-md-6 m-t-40 d-md-none">
                 <img src={PhonecoreValue} alt="core value" className="img-fluid"  />
               </div>
-              <div className="col-sm-12 col-md-14 m-t-80 d-none d-md-block d-lg-block">
-                <img src={coreValue} alt="core value" className="img-fluid" style={{width:"100%",height:"900px"}} />
+              <div className="col-sm-12 col-md-14 m-t-40 d-none d-md-block d-lg-block text-center">
+                <img src={coreValue} alt="core value" className="img-fluid" style={{width:"70%",height:"600px",marginTop:"-13%",marginBottom:"5%"}} />
               </div>
         <div className="promise">
           <div className="container">
