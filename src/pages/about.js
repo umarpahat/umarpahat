@@ -102,7 +102,7 @@ const About = (props) => {
             <div className="row align-items-center pb-3">
               <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 textAlign">
                 <h4 className="heading4 blue-color">Our Mission and Vision</h4>
-                <p className="p-t-10">
+                <p className="heading6">
                   PayMe India is dedicated to the mission of becoming the
                   preferred choice of financial services, by providing
                   high-quality, moderate-priced, and transparent financial
@@ -130,7 +130,7 @@ const About = (props) => {
             <div className="row justify-content-md-center">
               <div className="col-sm-12 col-md-9 white-color text-center p-t-40 p-b-30">
                 <h4 className="heading4">Our Promise</h4>
-                <p className="p-b-30  p-t-30 white-color relative">
+                <p className="heading6 p-b-30  p-t-30 white-color relative">
                   PayMe India promises to stay with you in every step by
                   offering you a truly modern solution for an instant personal
                   loan. With the paperless fully digitalized process, with
