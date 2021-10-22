@@ -186,18 +186,13 @@ const PayRent = (props) => {
                             <span style={{ color: "red" }}>{error}</span>
                           ) : null}
                         </div>
-
-                        <a
-                          className="btnLarge m-t-40"
-                          onClick={handleSubmit}
-                          style={{
-                            display: "block",
-                            cursor: "pointer",
-                            color: "#fff",
-                          }}
-                        >
+                        <Link to={{pathname:''}}  onClick={handleSubmit} className="btnLarge m-t-40"  style={{
+                          display: "block",
+                          cursor: "pointer",
+                          color: "#fff",
+                        }}>
                           Get Started
-                        </a>
+                        </Link>
                       </form>
                     </div>
                   </div>
@@ -330,18 +325,14 @@ const PayRent = (props) => {
                             <span style={{ color: "red" }}>{error}</span>
                           ) : null}
                         </div>
+                        <Link to={{pathname:''}} onClick={handleSubmit}  className="btnLarge m-t-40" style={{
+                          display: "block",
+                          cursor: "pointer",
+                          color: "#fff",
+                        }}>
 
-                        <a
-                          className="btnLarge m-t-40"
-                          onClick={handleSubmit}
-                          style={{
-                            display: "block",
-                            cursor: "pointer",
-                            color: "#fff",
-                          }}
-                        >
                           Get Started
-                        </a>
+                        </Link>
                       </form>
                     </div>
                   </div>

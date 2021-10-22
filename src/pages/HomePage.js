@@ -48,7 +48,6 @@ const HomePage = (props) => {
     fetch(url)
       .then((res) => res.json())
       .then((res) => setPosts(res.posts));
-    // .then(res => //console.log('umar',res.posts))
   }, []);
 
   const handleSliderChange = (event, newValue) => {
@@ -270,14 +269,9 @@ anytime-anywhere with no hassle{" "}
                   A credit score is more than just a number. Know your Cibil
                   score completely free with PayMe India.
                 </p>
-                <a
-                  href="https://creditscore.paymeindia.in/"
-                  target="_blank"
-                  className="btnLarge m-t-40"
-                  style={{ color: "#fff", cursor: "pointer" }}
-                >
+                <Link style={{ color: "#fff", cursor: "pointer" }} to={{pathname:'https://creditscore.paymeindia.in/'}} target={"_blank"} className="btnLarge m-t-40">
                   Get CIBIL Report
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -300,19 +294,17 @@ anytime-anywhere with no hassle{" "}
               </div>
               <div className="col-sm-12 col-md-6 bg-in-mobile">
                 <p className="p-b-30  relative" style={{color:"#fff"}}>
-                  
-                    {" "}
                     <span className="font110">“</span>
-                    <a
+                    <Link
                     className="white-color"
-                    href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
+                   to={{pathname:'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
                     target="_blank"
-                  >PayMe India</a> is a one-stop answer for your financial crunches, endowing you with
+                  >PayMe India</Link> is a one-stop answer for your financial crunches, endowing you with
 an in-depth range of benefits. Whether it’s last-minute rent payment, planning a
 vacation, or even a flash sale online, PayMe India features a loan for all processes.
 Let’s get a quick sneak peek of the benefits you’ll experience on your financial
 journey with PayMe India.<span className="font110 transform">“</span>
-                  
+
                 </p>
                 <br />
                 <br />
@@ -692,9 +684,9 @@ journey with PayMe India.<span className="font110 transform">“</span>
                     style={{fontWeight:330,fontSize:"18px"}}
                     dangerouslySetInnerHTML={{ __html: post.content }}
                   />
-                  <a href={post.url} target="_blank" className="green-link">
+                  <Link to={{pathname:post.url}} target={"_blank"} className="green-link">
                     Read More
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>

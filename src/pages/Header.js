@@ -53,46 +53,39 @@ const Header = (props) => {
               <div className="col-md-10 p-t-13 p-r-80">
                 <ul className="navigationLink">
                   <li>
-                    <div onClick={handleApplyLoan}>
-                    <Link className="button active" >
+                    <div onClick={handleApplyLoan} className="headerLink active" >
                       Apply Loan
-                    </Link></div>
+                    </div>
                   </li>
                   {/* <li>
 
-                                        <Link className="button" to="/login">
+                                        <Link className="headerLink" to="/login">
                                             Login
                                         </Link>
                                     </li>*/}
                   <li>
                     {props.active === "payrent" ? (
-                      <div onClick={handlePayrent}>
-                      <Link
-                       
-                        className="button"
-                        style={{ color: "#02C650" }}
-                        
-                      >
+                      <div onClick={handlePayrent}  style={{ color: "#02C650" }}  className="headerLink">
+
                         Pay Rent
-                      </Link></div>
+                      </div>
                     ) : (
-                      <div onClick={handlePayrent}>
-                      <Link className="button" >
+                      <div onClick={handlePayrent} className="headerLink" >
                         Pay Rent
-                      </Link></div>
+                     </div>
                     )}
                   </li>
                   <li>
                     {props.active === "offer" ? (
                       <Link
-                        className="button"
+                        className="headerLink"
                         style={{ color: "#02C650" }}
                         to="/offerings"
                       >
                         Our products
                       </Link>
                     ) : (
-                      <Link className="button" to="/offerings">
+                      <Link className="headerLink" to="/offerings">
                         Our products
                       </Link>
                     )}
@@ -100,14 +93,14 @@ const Header = (props) => {
                   <li>
                     {props.active === "home" ? (
                       <Link
-                        className="button"
+                        className="headerLink"
                         style={{ color: "#02C650" }}
                         to="/"
                       >
                         Home
                       </Link>
                     ) : (
-                      <Link className="button" to="/">
+                      <Link className="headerLink" to="/">
                         Home
                       </Link>
                     )}
@@ -134,7 +127,7 @@ const Header = (props) => {
                         <Link to="/offerings">Our products</Link>
 
                       </li>
-                     
+
                       <li>
                         <Link to="/ourNbfcPartners">Our NBFC Partners</Link>
                       </li>
@@ -147,32 +140,29 @@ const Header = (props) => {
                       <li>
                         <Link to="/career">Career</Link>
                       </li>
-                     
-                    
+
+
                       <li>
                         <Link to="/faq">FAQs</Link>
                       </li>
                       <li>
                         <Link to="/contact">Contact Us</Link>
                       </li>
-                     
-                      
-                    
-                     
+
+
+
+
                       <li className="border-top">
                         <h3>Get Our App on</h3>
                         <div className="tabularLess">
                           <div>
-                            <a
-                              href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
-                              target="_blank"
-                            >
+                            <Link to={{pathname:'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}} target={"_blank"}>
                               <img
                                 className="img_google"
                                 src={googlePay}
                                 alt="Pay Me India"
                               />
-                            </a>
+                            </Link>
                           </div>
                           <div>
                             <img

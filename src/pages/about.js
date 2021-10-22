@@ -23,6 +23,7 @@ import people from "../images/svg/will-stand.svg";
 import about from "../images/svg/about-us.gif";
 import MetaTags from "react-meta-tags";
 import goldStarIcon from "../images/svg/star.svg";
+import * as url from "url";
 
 const About = (props) => {
   let [loader, setloader] = useState(false);

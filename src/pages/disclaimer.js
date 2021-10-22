@@ -138,9 +138,9 @@ const Disclaimer = (props) => {
                                             you acknowledge PayMe India web pages as the source of the
                                             material. You must include such acknowledgement and Batchelors
                                             Solicitors web address ({" "}
-                                            <a href="https://www.paymeindia.in/">
-                                                http://www.PayMeindia.in
-                                            </a>
+                                            <Link style={{fontWeight:400}} to={{pathname:'https://www.paymeindia.in'}}>
+                                                www.PayMeindia.in
+                                            </Link>
                                             ) in the copy of the material; and
                                         </li>
                                         <li>
