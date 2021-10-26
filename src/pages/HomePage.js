@@ -38,7 +38,7 @@ const HomePage = (props) => {
   }));
   const classes = useStyles();
   let [loader, setloader] = useState(false);
-  const [amount, setAmount] = useState(500);
+  const [amount, setAmount] = useState(0);
   const [time, setTime] = useState(0);
   const [posts, setPosts] = useState([]);
 
