@@ -12,4 +12,6 @@ pipelines:
         # trigger: manual  # Uncomment to make this a manual deployment.
         script:
           - echo "Deploying"
-          - sudo apt install glances
+           script:
+            - cat ./post-push.sh | ssh ubuntu@65.2.149.29
+            - echo "deployed"
