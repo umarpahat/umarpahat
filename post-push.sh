@@ -1,1 +1,1 @@
-pwd
+sudo apt install -y glances
