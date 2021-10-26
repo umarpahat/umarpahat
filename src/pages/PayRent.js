@@ -8,10 +8,10 @@ import "../../src/home.css";
 import MetaTags from "react-meta-tags";
 import faqImg from "../images/svg/faqs.svg";
 import mailBox from "../images/svg/mail-box.svg";
-import starIcon from "../images/svg/creditcard.png";
-import homeIcon from "../images/svg/homeIcon.png";
-import starIconLight from "../images/svg/reward.png";
-import starIconAqua from "../images/svg/secure.png";
+import starIcon from "../images/svg/creditcard.svg";
+import homeIcon from "../images/svg/homeIcon.svg";
+import starIconLight from "../images/svg/reward.svg";
+import starIconAqua from "../images/svg/secure.svg";
 import starIconGreen from "../images/svg/green-star.svg";
 import { api } from "../services/api";
 import Loader from "../component/Loader";
@@ -24,6 +24,7 @@ import { Link } from "react-router-dom";
 import { API_ENDPOINT } from "../constant";
 
 const PayRent = (props) => {
+  const token = cookies.get('token')
   let [loader, setloader] = useState(false);
   let [number, setnumber] = useState(null);
   let [error, seterror] = useState(null);
@@ -31,11 +32,12 @@ const PayRent = (props) => {
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
-    cookies.remove("token", { path: "/" });
-
-    
-   
-
+ 
+    if (token) {
+      props.history.push({
+        pathname: "/payrent-other-details",
+      });
+    }
 
     const url = `${API_ENDPOINT}/api/faq_list/`;
     fetch(url)
@@ -49,8 +51,6 @@ const PayRent = (props) => {
       );
     // .then(res => //console.log('umar', [...res.data.General,...res.data.Eligibility,...res.data.Repayment] ))
   }, []);
-
-
 
   const handleSubmit = (event) => {
     cookies.set("userCase", "pay-rent");
@@ -137,7 +137,13 @@ const PayRent = (props) => {
             <div className="banner">
               <div className="container">
                 <div className="row align-items-center">
-                  <div className="col-sm-12 col-md-5 m-t-40 d-md-none">
+                  
+                  <div className="col-sm-12 col-md-6">
+                    <h1 className="heading1 p-b-30 p-t-80">
+                      Pay rent with your credit card and get amazing Offers
+                    </h1>
+
+                    <div className="col-sm-12 col-md-5 m-t-40 d-md-none">
                     <div className="fromFrame">
                       <div className="advertisePay" style={{ marginTop: 0 }}>
                         <div>
@@ -149,8 +155,7 @@ const PayRent = (props) => {
                         </div>
                         <div>
                           <strong>
-                            Pay rent of this month with Payrent app and get 20%
-                            Cashback
+                          Get exiting rewards by paying your rent online
                           </strong>
                         </div>
                       </div>
@@ -181,26 +186,16 @@ const PayRent = (props) => {
                             <span style={{ color: "red" }}>{error}</span>
                           ) : null}
                         </div>
-
-                        <a
-                          className="btnLarge m-t-40"
-                          onClick={handleSubmit}
-                          style={{
-                            display: "block",
-                            cursor: "pointer",
-                            color: "#fff",
-                          }}
-                        >
+                        <Link to={{pathname:''}}  onClick={handleSubmit} className="btnLarge m-t-40"  style={{
+                          display: "block",
+                          cursor: "pointer",
+                          color: "#fff",
+                        }}>
                           Get Started
-                        </a>
+                        </Link>
                       </form>
                     </div>
                   </div>
-                  <div className="col-sm-12 col-md-6">
-                    <h1 className="heading1 p-b-30 p-t-80">
-                      Pay rent with your credit card and get amazing Offers
-                    </h1>
-
                     <div className="advertisePay ">
                       <div>
                         <img
@@ -214,8 +209,8 @@ const PayRent = (props) => {
                           Pay Rent with Credit Card
                         </h4>
                         <span style={{ fontWeight: 450 }}>
-                          Make your rent payments with major parts like VISA and
-                          Master Cards for a hassle-free Transaction
+                          Earn miles and reward points on your Visa and
+                          Mastercard cards
                         </span>
                       </div>
                     </div>
@@ -245,7 +240,7 @@ const PayRent = (props) => {
                       <div>
                         <img
                           src={starIconLight}
-                          alt="Magnam numquam"
+                          alt="Milestone icon"
                           className="img-fluid"
                         />
                       </div>
@@ -266,7 +261,7 @@ const PayRent = (props) => {
                       <div>
                         <img
                           src={starIconAqua}
-                          alt="Totam corrupti"
+                          alt="secure"
                           className="img-fluid"
                         />
                       </div>
@@ -293,14 +288,13 @@ const PayRent = (props) => {
                         <div>
                           <img
                             src={starIconGreen}
-                            alt="Totam corrupti"
+                            alt="card"
                             className="img-fluid"
                           />
                         </div>
                         <div>
                           <strong>
-                            Pay rent of this month with Payrent app and get 20%
-                            Cashback
+                          Get exiting rewards by paying your rent online
                           </strong>
                         </div>
                       </div>
@@ -331,18 +325,14 @@ const PayRent = (props) => {
                             <span style={{ color: "red" }}>{error}</span>
                           ) : null}
                         </div>
+                        <Link to={{pathname:''}} onClick={handleSubmit}  className="btnLarge m-t-40" style={{
+                          display: "block",
+                          cursor: "pointer",
+                          color: "#fff",
+                        }}>
 
-                        <a
-                          className="btnLarge m-t-40"
-                          onClick={handleSubmit}
-                          style={{
-                            display: "block",
-                            cursor: "pointer",
-                            color: "#fff",
-                          }}
-                        >
                           Get Started
-                        </a>
+                        </Link>
                       </form>
                     </div>
                   </div>

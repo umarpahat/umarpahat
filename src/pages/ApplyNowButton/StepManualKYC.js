@@ -97,7 +97,7 @@ const StepManual = (props) => {
                                 <img
                                   className="img-fluid"
                                   src={kycIcon}
-                                  alt=""
+                                  alt="Icon"
                                 />
                               </div>
                               <div className="img-text">
@@ -124,7 +124,7 @@ const StepManual = (props) => {
                                 <img
                                   className="img-fluid"
                                   src={bankDetails}
-                                  alt=""
+                                  alt="Icon"
                                 />
                               </div>
                               <div className="img-text">
@@ -166,7 +166,7 @@ const StepManual = (props) => {
                                 <img
                                   className="img-fluid"
                                   src={professionalDetails}
-                                  alt=""
+                                  alt="Icon"
                                 />
                               </div>
                               <div className="img-text">

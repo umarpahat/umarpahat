@@ -41,17 +41,17 @@ const SocialInitiative = (props) => {
       }
     };
     gtag("event", "conversion", {
-      send_to: "AW-875618776/NqooCK7A1fYCENjDw6ED",
+      send_to: "AW-10789488789/9sIvCMnf5vsCEJWR6pgo",
       event_callback: callback,
     });
     return false;
   }
-
   let url = "";
   let reg = /^[0-9]{1,10}$/;
-  let emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  let emailReg =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const postVolunteer = () => {
-    gtag_report_conversion();
+    gtag_report_conversion("https://www.paymeindia.in/social-initiative");
 
     if (name.length === 0) {
       setNameerr("Name can't be empty");
@@ -146,8 +146,10 @@ const SocialInitiative = (props) => {
       <div className="content">
         <div className="banner">
           <div className="container">
+            <div className="row">
             <div className="col col-md-12 reg-second-heading">
               <h1 className="heading1 blue-color">Social Initiative</h1>
+            </div>
             </div>
             <div className="row align-items-center p-b-30">
               <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
@@ -157,9 +159,10 @@ const SocialInitiative = (props) => {
                   src={saarthi}
                 />
               </div>
+              </div>
 
               <div className="row">
-                <div className="col col-md-5 reg-second-heading">
+                <div className="col col-md-5 reg-second-heading hideMobile">
                   <img className="img-fluid" src={termsCondition} alt="Icons" />
                 </div>
                 <div className="col col-md-7">
@@ -224,7 +227,7 @@ const SocialInitiative = (props) => {
                     families!
                   </p>
                 </div>
-                <div className="col col-md-5 reg-second-heading">
+                <div className="col col-md-5 reg-second-heading hideMobile">
                   <img className="img-fluid" src={termsCondition} alt="Icons" />
                 </div>
               </div>
@@ -352,8 +355,6 @@ const SocialInitiative = (props) => {
               </div>
             </div>
           </div>
-        </div>
-
         <div className="contactBox p-t-80">
           <div className="container">
             <div className="row justify-content-md-center">

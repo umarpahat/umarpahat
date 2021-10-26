@@ -322,7 +322,7 @@ const OtherDetalisForm = (props) => {
 
   return (
     <>
-      <Header {...props} />
+      <Header {...props} active="payrent" />
       <div className="content darkBg">
         {loader ? (
           <div className="loader">
@@ -869,7 +869,8 @@ const OtherDetalisForm = (props) => {
                   ) : null}
                 </div>
               </form>
-            ) : (
+            ) : (kycStatus === "NOT_SUBMITTED") ||
+            (kycStatus === "NOT_VALID") ? (
               <div className="row" style={{ marginBottom: "10%" }}>
                 <div className="col-lg-3 col-md-3 col-sm-12 text-center">
                   <br />
@@ -990,7 +991,7 @@ const OtherDetalisForm = (props) => {
                   </div>
                 </div>
               </div>
-            )}
+            ):null}
           </Container>
         )}
       </div>

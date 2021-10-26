@@ -28,7 +28,7 @@ const cookies = new Cookies();
 const DetailsSummary = (props) => {
   const token = cookies.get("token");
 
-  
+  const [toasterr,settoasterr]=useState(true);
 
   useEffect(() => {
     if (!token) {
@@ -64,7 +64,10 @@ const DetailsSummary = (props) => {
         props.history.push({ pathname: "/payrent-other-details" });
       })
       .catch((err) => {
+        if(toasterr){
         toast.error(err.response.data, { ...options });
+        settoasterr(false)
+        }
         if (err.response.status === 401) {
           cookies.remove("token", { path: "/" });
         }
@@ -75,7 +78,7 @@ const DetailsSummary = (props) => {
 
   return (
     <>
-      <Header />
+      <Header active="payrent" />
       <div className="content darkBg">
         <Container>
           <div className="row">

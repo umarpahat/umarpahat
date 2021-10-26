@@ -51,7 +51,7 @@ const OurNbfcPartners = (props) => {
 
                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                                <h4 className='heading4'>About our partners</h4>
+                                <h4 className="heading4" style={{fontSize:"34px"}}>About our partners</h4>
                                 <p>We work with an objective to provide best in class service to our customers with help
                                     of our NBFCs Partners Arvog (Finkurve Financial Services Limited), Money2money
                                     Finance Private Limited, and PayMe India financial services private limited.</p>
@@ -75,13 +75,13 @@ const OurNbfcPartners = (props) => {
 
                                 <h5 className='heading5  p-t-30'>PayMe India Financial Services Private Limited </h5>
                                 <p className='p-t-20'>PayMe India Financial Services Private Limited is an RBI
-                                    registered NBFC (Non-Banking Financial Company), founded in 2016. Striving to
+                                    registered NBFC (Non-Banking Financial Company), founded in 2018. Striving to
                                     simplify financial services by providing online loans to corporate employees at the
                                     lowest interest rate. Their lending model empowers customers to borrow easy, fast,
                                     safe & affordable personal loans.</p>
 
 
-                                                 <h5 className='heading5  p-t-30'>Ours align partners</h5>
+                                                 <h5 className='heading4  p-t-30' style={{fontSize:"34px"}}>Our align partners</h5>
                                 <p className='p-t-20'>Organizational alignment is the key to any successful organization. We have developed partnerships with a diverse range of companies to share the ultimate vision of success. Our aligned partners Myntra, Acru.in, Medibuddy.in, Hicredit, CashTap, Afinos.com, Trufedu have played a major role in accomplishing our goal to become the fastest-growing company in India.</p>
 
 

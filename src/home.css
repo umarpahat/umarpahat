@@ -66,6 +66,9 @@ body {
 min-height: 80px;
 }
 
+.bg-in-mobile{
+    padding-bottom: 80px;
+}
 .line-clamp img, .line-clamp h1,.line-clamp figure, .line-clamp ul, .line-clamp ol {
     display: none;
 }
@@ -324,6 +327,10 @@ button.button-gray:hover {
 .heading4 {
     font-size: 32px;
 }
+.heading6{
+    font-size: 17.6px;
+    font-weight: 330;
+}
 
 .scoreAnimate {
     width: 531px;
@@ -425,6 +432,7 @@ button.button-gray:hover {
     line-height: 24px;
     letter-spacing: 0.01em;
     color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 30px;
 }
 
 .box-offer h3 {
@@ -504,9 +512,79 @@ button.button-gray:hover {
     background: url('images/svg/right-half.svg') no-repeat 0 0;
 }
 
+.clearboth {
+    clear: both;
+    position: relative;
+}
+
+.topFav:before {
+    position: absolute;
+    top:-30px;
+    left: 0;
+    right: 0;
+    content: '';
+    margin: auto;
+    width: 3px;
+    border-left: 4px solid #33658a;
+    height: 1200px;
+}
+
+
+.clearboth:after {
+    position: absolute;
+    top:-40px;
+    left: 0;
+    right: 0;
+    content: '';
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    background: url("images/dot.png") no-repeat 0 0;
+    z-index: 2;
+    background-size: 100% 100%;
+
+}
+.clearboth:before {
+    position: absolute;
+    top: -12px;
+    left: 200px;
+    content: '';
+    width: 270px;
+    border-top: 4px solid #33658a;
+    z-index: 1;
+}
+
+.right.clearboth:before {
+    right: 200px;
+    left: auto;
+}
+
+.f-right {
+    float: right;
+    position: relative;
+}
+
+.l-right {
+    float: left;
+    position: relative;
+}
+
 .team-pic {
     border-radius: 20px;
     box-sizing: border-box;
+    margin-top: -100px;
+}
+.circleImg{
+    width: 70px!important;
+    height: 70px!important;
+    border-radius: 50%;
+    border: 1px solid #33658a;
+}
+.topFav .team-pic{
+    padding-bottom: 80px;
+}
+.team-pic img {
+    max-width: 250px
 }
 
 .contactBox {
@@ -541,10 +619,10 @@ button.button-gray:hover {
 }
 
 .contact {
-    margin-top: 65px;
+    margin-top: 45px;
     width: 50%;
     margin-right: 20px;
-    padding: 70px 50px 0;
+    padding: 70px 50px 20px;
     background: rgba(2, 198, 80, 0.3);
     box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.09);
     border-radius: 10px 10px 0 0;
@@ -641,10 +719,11 @@ button.button-gray:hover {
 }
 
 .search_icon {
-    width: 90%;
+    width: 100%;
     border: 1px solid #E6E6E6;
     box-sizing: border-box;
     border-radius: 6px;
+    margin-bottom: 10px;
     height: 55px;
     font-weight: normal;
     font-size: 16px;
@@ -1023,6 +1102,7 @@ a.button-small:hover {
     margin-bottom: 10px;
     position: relative;
     font-size: 16px;
+    
 }
 
 .main-img img {
@@ -2387,7 +2467,16 @@ a {
 
     .heading1 {
         font-size: 24px;
-        line-height: 28px;
+    }
+
+    .btnLarge{
+        display: block;
+        height: 40px;
+        font-size: 18px;
+        line-height: 40px;
+    }
+    .MuiSlider-thumb {
+        top: 21px;
     }
 
     .heading2 {
@@ -2396,13 +2485,13 @@ a {
     }
 
     .heading3 {
-        font-size: 18px;
-        line-height: 20px;
+        font-size: 27px;
+        line-height: 32px;
     }
 
     .reg-second-heading h4 {
-        font-size: 21px;
-        line-height: 24px;
+        font-size: 26px;
+        line-height: 32px;
     }
 
     .box h3 {
@@ -2450,10 +2539,6 @@ a {
 
     .form-pricing {
         padding: 0;
-    }
-
-    .form-group1 {
-        width: auto;
     }
 
     .banner .p-t-40 {
@@ -2532,6 +2617,7 @@ a {
 
     .bg-in-mobile {
         background: #33658A;
+        padding: 0 50px;
     }
 
     .bg-in-mobile-black {
@@ -2579,6 +2665,44 @@ a {
     .home-steps div:last-child {
         width: calc(100% - 100px);
     }
+    .home-steps{
+     padding: 0 20px 20px 0;
+    }
+    .steps{
+        padding: 0;
+    }
 
+    .topFav:before {
+        display: none;
+    }
+
+    .team-pic{
+        margin: 0;
+    }
+    .clearboth:after {
+        display: none;
+
+    }
+    .clearboth:before {
+        display: none;
+    }
+
+    .right.clearboth:before {
+        display: none;
+    }
+
+    .f-right {
+        float:none;
+    }
+
+    .l-right {
+        float:none;
+    }
+    .topFav .team-pic{
+        padding-bottom: 40px;
+    }
+    .hideMobile{
+        display: none!important;
+    }
 
 }
