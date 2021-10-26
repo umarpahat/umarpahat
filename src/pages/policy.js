@@ -35,8 +35,9 @@ const Policy = (props) => {
                             <div className="col col-md-12 reg-second-heading">
                                 <h1 className='heading1 blue-color'>Privacy Policy</h1>
                             </div>
+                            </div>
                             <div className="row">
-                                <div className="col col-md-5 reg-second-heading">
+                                <div className="col col-md-5 reg-second-heading hideMobile">
                                     <img className="img-fluid" src={termsCondition} alt="Icons"/>
                                 </div>
                                 <div className="col col-md-7">
@@ -86,7 +87,7 @@ const Policy = (props) => {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col col-md-5 reg-second-heading">
+                                <div className="col col-md-5 reg-second-heading hideMobile">
                                     <img className="img-fluid" src={termsCondition} alt="Icons"/>
                                 </div>
                                 <div className="col col-md-7">
@@ -124,7 +125,6 @@ const Policy = (props) => {
                             </div>
                         </div>
                     </div>
-                </div>
                 <div className="contactBox p-t-80">
                     <div className="container">
                         <div className="row justify-content-md-center">

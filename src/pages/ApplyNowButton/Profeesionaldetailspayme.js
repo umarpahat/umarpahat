@@ -24,7 +24,7 @@ const cookies = new Cookies()
 
 
 const Professionaldetailspayme = (props) => {
-  console.log("professional details",props)
+  //console.log("professional details",props)
   const [inhandsalary, setInhandsalary] = useState("");
   const [industry, setIndustry] = useState("");
   const [workExp, setWorkExp] = useState("");
@@ -71,18 +71,18 @@ const Professionaldetailspayme = (props) => {
       .get(url, config)
       .then((res) => {
         setData(res.data.data);
-        console.log("history man", res);
+        //console.log("history man", res);
 
         // setTransactionHistory(res.data)
         // return resolve(res.data)
       })
       .catch((err) => {
-        console.log("history", err);
+        //console.log("history", err);
       });
     // })
   }, []);
 
-  // console.log(data)
+  // //console.log(data)
 
   async function getSignedUrl() {
     const pathArray = [
@@ -94,11 +94,11 @@ const Professionaldetailspayme = (props) => {
       payload: { s3_path: pathArray, bucket_name: "payme-test-documents" },
     });
     setsignedUrl(signedUrlObj.data.data);
-    console.log(343434, signedUrlObj.data.data);
+    //console.log(343434, signedUrlObj.data.data);
   }
 
   async function updateDocStatus(data) {
-    console.log("rrrtttyyy", data);
+    //console.log("rrrtttyyy", data);
     return await api.post(
       "/api/update_document_status/",
       { doc_type: data.docType, path: data.path },
@@ -206,7 +206,7 @@ const Professionaldetailspayme = (props) => {
     ])
       .then((response) => {
         setloader(false);
-        console.log("xvxvxvxvx", response);
+        //console.log("xvxvxvxvx", response);
         props.hitAllUserData({ token: token });
         props.history.push({pathname: "/congratulations"});
       })
@@ -215,7 +215,7 @@ const Professionaldetailspayme = (props) => {
         {
           cookies.remove('token', { path: '/' })
         }
-        console.log(121212, error);
+        //console.log(121212, error);
         setloader(false);
       });
   };
@@ -228,7 +228,7 @@ const Professionaldetailspayme = (props) => {
   const handleofficeUpload = (event) => {
     setuploadOfficeId(event.target.files[0]);
   };
-  console.log("pramod", data.data);
+  //console.log("pramod", data.data);
   return (
     <>
       <Header {...props}/>

@@ -56,7 +56,7 @@ const Bankdetailspayme = (props) => {
       }
     };
   })();
-  console.log("props user if", props);
+  //console.log("props user if", props);
 
   async function getSignedUrl() {
     const pathArray = [
@@ -68,9 +68,9 @@ const Bankdetailspayme = (props) => {
       token: token,
       payload: { s3_path: pathArray },
     });
-    console.log("haaaaaaaaaaaa", signedUrlObj);
+    //console.log("haaaaaaaaaaaa", signedUrlObj);
     setsignedUrl(signedUrlObj.data.data);
-    console.log("343434", signedUrlObj.data.data);
+    //console.log("343434", signedUrlObj.data.data);
   }
 
   async function updateDocStatus(data) {
@@ -92,7 +92,7 @@ const Bankdetailspayme = (props) => {
       bank_name: bankName,
       ifsc_code: ifscdetail,
     };
-    console.log("updatedocument", payload);
+    //console.log("updatedocument", payload);
     return await api.post("/api/user_details/bank_details/", payload, {
       headers: { Authorization: "Token " + token },
     });
@@ -117,7 +117,7 @@ const Bankdetailspayme = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log("bank details props", props);
+    //console.log("bank details props", props);
     if (!actNumber) {
       seterrorAct("Please enter account number");
       return;
@@ -163,19 +163,19 @@ const Bankdetailspayme = (props) => {
     updateBankDetails();
     Promise.all([...promiseTest, ...updatedocStatus])
       .then((response) => {
-        console.log("bank response", response);
+        //console.log("bank response", response);
 
         props.history.push({ pathname: "/step-manual" });
       })
       .catch((error) => {
         setloader(false);
-        console.log(error.response, "shhajahak");
+        //console.log(error.response, "shhajahak");
         let err = error?.response?.status;
         seterrBackend(err);
-        console.log(err, "hhhhhhhhhherror");
+        //console.log(err, "hhhhhhhhhherror");
       });
   };
-  console.log(errbackend);
+  //console.log(errbackend);
   function handleRemoveBankObj(id) {
     const newList = bankStatementObj.filter((item, index) => index !== id);
     setbankStatementObj(newList);
@@ -229,7 +229,7 @@ const Bankdetailspayme = (props) => {
   };
 
   const ifscDetail = (ifscd) => {
-    // console.log("ifscdetail",ifscd)
+    // //console.log("ifscdetail",ifscd)
     let url = `${API_ENDPOINT}/api/bankdetails_list/`;
     let data = {
       ifsc: ifscd,
@@ -257,7 +257,7 @@ const Bankdetailspayme = (props) => {
       })
 
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
       });
   };
 

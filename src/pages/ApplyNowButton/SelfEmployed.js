@@ -37,7 +37,7 @@ const SelfEmployed = (props) => {
       payload: { s3_path: pathArray, bucket_name: "payme-test-documents" },
     });
     setsignedUrl(signedUrlObj.data.data);
-    console.log(343434, signedUrlObj.data.data);
+    //console.log(343434, signedUrlObj.data.data);
   }
   var something = (function() {
     var executed = false;
@@ -66,7 +66,7 @@ useEffect(() => {
   }, []);
 
   async function updateDocStatus(data) {
-    console.log("rrrtttyyy", data);
+    //console.log("rrrtttyyy", data);
     return await api.post(
       "/api/update_document_status/",
       { doc_type: data.docType, path: data.path },
@@ -75,7 +75,7 @@ useEffect(() => {
   }
 
   async function updateProfessionalDetails() {
-    console.log("bhbhbhbhbhbhb");
+    //console.log("bhbhbhbhbhbhb");
     const payload = {
       self_employed: true,
       present_address: `${presentAddLine1} ${presentAddLine2}`,
@@ -117,12 +117,12 @@ useEffect(() => {
     ])
       .then((response) => {
         setloader(false);
-        console.log("xvxvxvxvx", response);
+        //console.log("xvxvxvxvx", response);
       
         props.history.push({ pathname: "/congratulations" });
       })
       .catch((error) => {
-        console.log(121212, error);
+        //console.log(121212, error);
         setloader(false);
       });
   };

@@ -35,8 +35,9 @@ const Disclaimer = (props) => {
                             <div className="col col-md-12 reg-second-heading">
                                 <h1 className='heading1 blue-color'>Disclaimer</h1>
                             </div>
+                            </div>
                             <div className="row">
-                                <div className="col col-md-5 reg-second-heading">
+                                <div className="col col-md-5 reg-second-heading hideMobile">
                                     <img className="img-fluid" src={termsCondition} alt="Icons"/>
                                 </div>
                                 <div className="col col-md-7">
@@ -116,7 +117,7 @@ const Disclaimer = (props) => {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col col-md-5 reg-second-heading">
+                                <div className="col col-md-5 reg-second-heading hideMobile">
                                     <img className="img-fluid" src={termsCondition} alt="Icons"/>
                                 </div>
                                 <div className="col col-md-7">
@@ -137,9 +138,9 @@ const Disclaimer = (props) => {
                                             you acknowledge PayMe India web pages as the source of the
                                             material. You must include such acknowledgement and Batchelors
                                             Solicitors web address ({" "}
-                                            <a href="https://www.paymeindia.in/">
-                                                http://www.PayMeindia.in
-                                            </a>
+                                            <Link style={{fontWeight:400}} to={{pathname:'https://www.paymeindia.in'}}>
+                                                www.PayMeindia.in
+                                            </Link>
                                             ) in the copy of the material; and
                                         </li>
                                         <li>
@@ -176,7 +177,6 @@ const Disclaimer = (props) => {
                             </div>
                         </div>
                     </div>
-                </div>
                 <div className="contactBox p-t-80">
                     <div className="container">
                         <div className="row justify-content-md-center">

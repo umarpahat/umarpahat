@@ -8,10 +8,10 @@ import "../../src/home.css";
 import MetaTags from "react-meta-tags";
 import faqImg from "../images/svg/faqs.svg";
 import mailBox from "../images/svg/mail-box.svg";
-import starIcon from "../images/svg/creditcard.png";
-import homeIcon from "../images/svg/homeIcon.png";
-import starIconLight from "../images/svg/reward.png";
-import starIconAqua from "../images/svg/secure.png";
+import starIcon from "../images/svg/creditcard.svg";
+import homeIcon from "../images/svg/homeIcon.svg";
+import starIconLight from "../images/svg/reward.svg";
+import starIconAqua from "../images/svg/secure.svg";
 import starIconGreen from "../images/svg/green-star.svg";
 import { api } from "../services/api";
 import Loader from "../component/Loader";
@@ -24,6 +24,7 @@ import { Link } from "react-router-dom";
 import { API_ENDPOINT } from "../constant";
 
 const PayRent = (props) => {
+  const token = cookies.get('token')
   let [loader, setloader] = useState(false);
   let [number, setnumber] = useState(null);
   let [error, seterror] = useState(null);
@@ -31,7 +32,12 @@ const PayRent = (props) => {
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
-    cookies.remove("token", { path: "/" });
+ 
+    if (token) {
+      props.history.push({
+        pathname: "/payrent-other-details",
+      });
+    }
 
     const url = `${API_ENDPOINT}/api/faq_list/`;
     fetch(url)
@@ -43,7 +49,7 @@ const PayRent = (props) => {
           ...res.data.Repayment,
         ])
       );
-    // .then(res => console.log('umar', [...res.data.General,...res.data.Eligibility,...res.data.Repayment] ))
+    // .then(res => //console.log('umar', [...res.data.General,...res.data.Eligibility,...res.data.Repayment] ))
   }, []);
 
   const handleSubmit = (event) => {
@@ -71,12 +77,12 @@ const PayRent = (props) => {
           response.status === 200 &&
           response.data.phone_number_verified
         ) {
-          props.history.push({
-            pathname: "/login-with-mob-mpin",
-            state: { phoneNumber: number },
-          });
+          cookies.set("phoneNumber", number),
+            props.history.push({
+              pathname: "/login-with-mob-mpin",
+            });
         } else {
-          console.log(response.status);
+          //console.log(response.status);
         }
         return response;
       })
@@ -84,7 +90,7 @@ const PayRent = (props) => {
         if (error.response.status === 401) {
           cookies.remove("token", { path: "/" });
         }
-        console.log(error);
+        //console.log(error);
         setloader(false);
       });
   };
@@ -131,156 +137,13 @@ const PayRent = (props) => {
             <div className="banner">
               <div className="container">
                 <div className="row align-items-center">
-                  <div className="col-sm-12 col-md-5 m-t-40 d-md-none">
-                    <div className="fromFrame">
-                      <div className="advertisePay" style={{ marginTop: 0 }}>
-                        <div>
-                          <img
-                              src={starIconGreen}
-                              alt="Totam corrupti"
-                              className="img-fluid"
-                          />
-                        </div>
-                        <div>
-                          <strong>
-                            Pay rent of this month with Payrent app and get 20%
-                            Cashback
-                          </strong>
-                        </div>
-                      </div>
-                      <form id="form" name="form">
-                        <div className="form-group ms-input-group">
-                          <label className="form-label pb-2">
-                            Phone Number
-                          </label>
-                          <input
-                              name="phone"
-                              type="number"
-                              maxLength="10"
-                              pattern="[0-9]+"
-                              className="form-control input-field"
-                              placeholder="Enter Phone"
-                              value={number || ""}
-                              onChange={(event) => {
-                                setnumber(event.target.value.slice(0, 10));
-                                if (
-                                    event.target.value.length === 0 ||
-                                    event.target.value.length === 10
-                                ) {
-                                  seterror("");
-                                }
-                              }}
-                          />
-                          {error ? (
-                              <span style={{ color: "red" }}>{error}</span>
-                          ) : null}
-                        </div>
-
-                        <a
-                            className="btnLarge m-t-40"
-                            onClick={handleSubmit}
-                            style={{
-                              display: "block",
-                              cursor: "pointer",
-                              color: "#fff",
-                            }}
-                        >
-                          Get Started
-                        </a>
-                      </form>
-                    </div>
-                  </div>
+                  
                   <div className="col-sm-12 col-md-6">
                     <h1 className="heading1 p-b-30 p-t-80">
                       Pay rent with your credit card and get amazing Offers
                     </h1>
 
-                    <div className="advertisePay ">
-                      <div>
-                        <img
-                          src={starIcon}
-                          alt="Get instant"
-                          className="img-fluid"
-                        />
-                      </div>
-                      <div>
-                        <h4 style={{ fontSize: "20px" }}>
-                          Pay Rent with Credit Card
-                        </h4>
-                        <span style={{ fontWeight: 450 }}>
-                          Make your rent payments with major parts like VISA and
-                          Master Cards for a hassle-free Transaction
-                        </span>
-                      </div>
-                    </div>
-                    <div className="advertisePay">
-                      <div>
-                        <img
-                          src={homeIcon}
-                          alt="Home icon"
-                          className="img-fluid"
-                        />
-                      </div>
-                      <div>
-                        <h4 style={{ fontSize: "20px" }}>
-                          Stress-free Timely Payement
-                        </h4>
-                        <span style={{ fontWeight: 450 }}>
-                          Enjoy 45 days Interest-free credit period depending on
-                          your card statement
-                        </span>
-                      </div>
-                      {/* <div>
-                                        <Link to='#' className='small-green-link'>Know More</Link>
-                                    </div> */}
-                    </div>
-
-                    <div className="advertisePay">
-                      <div>
-                        <img
-                          src={starIconLight}
-                          alt="Magnam numquam"
-                          className="img-fluid"
-                        />
-                      </div>
-                      <div>
-                        <h4 style={{ fontSize: "20px" }}>
-                          Meet Spends Milestones Easily
-                        </h4>
-                        <span style={{ fontWeight: 450 }}>
-                          Earn Reward with your credit card by reaching spending
-                          milestones
-                        </span>
-                      </div>
-                      {/* <div>
-                                        <Link to='/' className='small-green-link'>Know More</Link>
-                                    </div> */}
-                    </div>
-                    <div className="advertisePay">
-                      <div>
-                        <img
-                          src={starIconAqua}
-                          alt="Totam corrupti"
-                          className="img-fluid"
-                        />
-                      </div>
-                      <div>
-                        <h4 style={{ fontSize: "20px" }}>
-                          100% Secure Payments
-                        </h4>
-                        <span style={{ fontWeight: 450 }}>
-                          All your information is secured. We never store your credit card details
-                        </span>
-                      </div>
-                      {/* <div>
-                                        <Link to='#' className='small-green-link'>Know More</Link>
-                                    </div> */}
-                    </div>
-                    <br />
-                    {/* <Link to='#' className='small-green-link'>View All Offers</Link> */}
-                  </div>
-                  <div className="col-sm-12 col-md-1 ">&nbsp;</div>
-                  <div className="col-sm-12 col-md-5 m-t-40 d-none d-md-block d-lg-block">
+                    <div className="col-sm-12 col-md-5 m-t-40 d-md-none">
                     <div className="fromFrame">
                       <div className="advertisePay" style={{ marginTop: 0 }}>
                         <div>
@@ -292,8 +155,7 @@ const PayRent = (props) => {
                         </div>
                         <div>
                           <strong>
-                            Pay rent of this month with Payrent app and get 20%
-                            Cashback
+                          Get exiting rewards by paying your rent online
                           </strong>
                         </div>
                       </div>
@@ -324,18 +186,153 @@ const PayRent = (props) => {
                             <span style={{ color: "red" }}>{error}</span>
                           ) : null}
                         </div>
-
-                        <a
-                          className="btnLarge m-t-40"
-                          onClick={handleSubmit}
-                          style={{
-                            display: "block",
-                            cursor: "pointer",
-                            color: "#fff",
-                          }}
-                        >
+                        <Link to={{pathname:''}}  onClick={handleSubmit} className="btnLarge m-t-40"  style={{
+                          display: "block",
+                          cursor: "pointer",
+                          color: "#fff",
+                        }}>
                           Get Started
-                        </a>
+                        </Link>
+                      </form>
+                    </div>
+                  </div>
+                    <div className="advertisePay ">
+                      <div>
+                        <img
+                          src={starIcon}
+                          alt="Get instant"
+                          className="img-fluid"
+                        />
+                      </div>
+                      <div>
+                        <h4 style={{ fontSize: "20px" }}>
+                          Pay Rent with Credit Card
+                        </h4>
+                        <span style={{ fontWeight: 450 }}>
+                          Earn miles and reward points on your Visa and
+                          Mastercard cards
+                        </span>
+                      </div>
+                    </div>
+                    <div className="advertisePay">
+                      <div>
+                        <img
+                          src={homeIcon}
+                          alt="Home icon"
+                          className="img-fluid"
+                        />
+                      </div>
+                      <div>
+                        <h4 style={{ fontSize: "20px" }}>
+                          Stress-free Timely Payement
+                        </h4>
+                        <span style={{ fontWeight: 450 }}>
+                          Enjoy 45 days Interest-free credit period depending on
+                          your card statement
+                        </span>
+                      </div>
+                      {/* <div>
+                                        <Link to='#' className='small-green-link'>Know More</Link>
+                                    </div> */}
+                    </div>
+
+                    <div className="advertisePay">
+                      <div>
+                        <img
+                          src={starIconLight}
+                          alt="Milestone icon"
+                          className="img-fluid"
+                        />
+                      </div>
+                      <div>
+                        <h4 style={{ fontSize: "20px" }}>
+                          Meet Spends Milestones Easily
+                        </h4>
+                        <span style={{ fontWeight: 450 }}>
+                          Earn Reward with your credit card by reaching spending
+                          milestones
+                        </span>
+                      </div>
+                      {/* <div>
+                                        <Link to='/' className='small-green-link'>Know More</Link>
+                                    </div> */}
+                    </div>
+                    <div className="advertisePay">
+                      <div>
+                        <img
+                          src={starIconAqua}
+                          alt="secure"
+                          className="img-fluid"
+                        />
+                      </div>
+                      <div>
+                        <h4 style={{ fontSize: "20px" }}>
+                          100% Secure Payments
+                        </h4>
+                        <span style={{ fontWeight: 450 }}>
+                          All your information is secured. We never store your
+                          credit card details
+                        </span>
+                      </div>
+                      {/* <div>
+                                        <Link to='#' className='small-green-link'>Know More</Link>
+                                    </div> */}
+                    </div>
+                    <br />
+                    {/* <Link to='#' className='small-green-link'>View All Offers</Link> */}
+                  </div>
+                  <div className="col-sm-12 col-md-1 ">&nbsp;</div>
+                  <div className="col-sm-12 col-md-5 m-t-40 d-none d-md-block d-lg-block">
+                    <div className="fromFrame">
+                      <div className="advertisePay" style={{ marginTop: 0 }}>
+                        <div>
+                          <img
+                            src={starIconGreen}
+                            alt="card"
+                            className="img-fluid"
+                          />
+                        </div>
+                        <div>
+                          <strong>
+                          Get exiting rewards by paying your rent online
+                          </strong>
+                        </div>
+                      </div>
+                      <form id="form" name="form">
+                        <div className="form-group ms-input-group">
+                          <label className="form-label pb-2">
+                            Phone Number
+                          </label>
+                          <input
+                            name="phone"
+                            type="number"
+                            maxLength="10"
+                            pattern="[0-9]+"
+                            className="form-control input-field"
+                            placeholder="Enter Phone"
+                            value={number || ""}
+                            onChange={(event) => {
+                              setnumber(event.target.value.slice(0, 10));
+                              if (
+                                event.target.value.length === 0 ||
+                                event.target.value.length === 10
+                              ) {
+                                seterror("");
+                              }
+                            }}
+                          />
+                          {error ? (
+                            <span style={{ color: "red" }}>{error}</span>
+                          ) : null}
+                        </div>
+                        <Link to={{pathname:''}} onClick={handleSubmit}  className="btnLarge m-t-40" style={{
+                          display: "block",
+                          cursor: "pointer",
+                          color: "#fff",
+                        }}>
+
+                          Get Started
+                        </Link>
                       </form>
                     </div>
                   </div>
@@ -371,7 +368,6 @@ const PayRent = (props) => {
               </div>
             </div>
           </div>
-        
         </div>
       )}
     </>

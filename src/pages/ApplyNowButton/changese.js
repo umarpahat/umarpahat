@@ -5,7 +5,6 @@ import backicon from "../../component/img/backicon.png";
 import Select from "react-select";
 import Progressbar from "../../component/ProgressBar";
 import Header from "../Header";
-import Footer from "../Footer";
 import tip from "../../images/svg/tip.png";
 import {Container} from "react-bootstrap";
 
@@ -35,7 +34,7 @@ const Kycdetailsformpayme = (props) => {
                         style={{cursor: "pointer"}}
                     >
                         <div className="m-1">
-                            <img src={backicon} alt='back Icon' className="img-fluid"/>
+                            <img src={backicon} alt="back Icon" className="img-fluid"/>
                         </div>
                         <div>
                             <h6 className="backbtnsty">Back</h6>
