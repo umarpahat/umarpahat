@@ -1,1 +1,3 @@
-sudo apt install -y glances
+cd payme-web-loan
+npm install
+npm run build
