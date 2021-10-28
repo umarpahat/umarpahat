@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import { hitAllUserData } from "../../store/modules/userDetails/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import backicon from "../../component/img/backicon.png";
-import Modalkyccomplete from "../../component/modalkyccomplete";
-import Progressbar from "../../component/ProgressBar";
 import { getS3SignedUrl, postS3, api } from "../../services/api";
 import Loader from "../../component/Loader";
 import Footer from "../Footer";
@@ -199,7 +196,7 @@ useEffect(() => {
                 </div>
                 <div className='img-text'>
                   <h6>Upload Recent ITR </h6>
-                  <p>Aperiam cumque in eos quibusdam.  500KB limit, jpg, png, pdf</p>
+                  <p>ony pdf file</p>
                   {erroruploadItr ? (
                       <span style={{ color: "red" }}>{erroruploadItr}</span>
                   ) : null}
@@ -335,7 +332,6 @@ useEffect(() => {
             </div>
           </div>
       </Container>
-      <Modalkyccomplete show={show} handleClose={handleClose} />
       </div>)}
     </>
   );
