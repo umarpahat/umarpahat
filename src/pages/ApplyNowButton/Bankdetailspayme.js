@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
-
-import backicon from "../../component/img/backicon.png";
-
 import Pdficon from "../../component/img/Pdficon.png";
 import {
   hitAllUserData,
@@ -14,7 +11,6 @@ import Cancelicon from "../../component/img/Cancelicon.png";
 
 import DragbleImg from "../../component/DragbleImg";
 import { getS3SignedUrl, postS3, api } from "../../services/api";
-import Progressbar from "../../component/ProgressBar";
 import Loader from "../../component/Loader";
 import axios from "axios";
 import { API_ENDPOINT } from "../../constant";
