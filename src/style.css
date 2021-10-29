@@ -203,6 +203,13 @@ button:focus {
 
 .form-block {
   margin-top: 2em;
+}.form-block-form {
+   background: #FFFFFF;
+   border: 1px solid rgba(51, 101, 138, 0.16);
+   box-sizing: border-box;
+   box-shadow: 0 1px 11px rgba(215, 220, 224, 0.6);
+   border-radius: 12px;
+  padding:30px;
 }
 .ms-form-input {
   height: 60px !important;
@@ -690,7 +697,7 @@ input:invalid {
   color: #fff!important;
 }
 
-#register,#volunteer{
+#register,#volunteer, #others{
   margin: 0 5px 0 15px;
 }
 /* Extra small devices (phones, 600px and down) */
