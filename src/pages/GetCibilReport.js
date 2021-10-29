@@ -23,14 +23,50 @@ const GetCibilReport = (props) => {
     const[phone,setPhone]=useState("");
     const[email,setEmail]=useState("");
     const[name,setName]=useState("");
+    const [fname, setFname] = useState("");
+    const [date, setDate] = useState("");
+    const [street, setStreet] = useState("");
+    const [pincode, setPin] = useState("");
+    const [addresstype, setAddresstype] = useState("01");
+    const [prefix, setPrefix] = useState("");
+    const [gender, setGender] = useState("Male");
+    const [error, setError] = useState("");
+    const [region, setRegion] = useState("");
+    const [otp, setOtp] = useState("");
+    const [questionKey, setQuestionKey] = useState("");
+    const [answerKey, setAnswerKey] = useState("");
+    const [answer, setAnswer] = useState(8959747704);
+    const [question, setQuestion] = useState("");
+    const [ConfigGUID, setConfigGUID] = useState("");
     
-
+    const handlePinCode = (value) => {
+        if (value.length === 6) {
+          setError("");
+          axios
+            .get(`https://api.postalpincode.in/pincode/${value}`)
+            .then((res) => {
+              setRegion(res.data[0].PostOffice[0].Region);
+              console.log(res);
+            })
+            .then(() => {
+              document.getElementById("pincode").classList.remove("error");
+            })
+            .catch((err) => {
+              document.getElementById("pincode").className = "error";
+              setError("Invalid PIN Code");
+            });
+        }
+        if (value.length !== 6) {
+          setError("ZIP code must be of 6 digits");
+        }
+      };
+    
     let url = "";
     let reg = /^[0-9]{1,10}$/;
     let emailReg =
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const postVolunteer = () => {
-        gtag_report_conversion("https://www.paymeindia.in/social-initiative");
+    const handleCibilReport = () => {
+       
 
         if (name.length === 0) {
             setNameerr("Name can't be empty");
@@ -71,41 +107,101 @@ const GetCibilReport = (props) => {
             setTopicErr("Topic can't be empty");
             return false;
         }
+        let url = "https://cibil.paymeindia.in/v1/fullfilloffer";
+    let data = {
+      ClientKey: "CGPPR0137N",
+  Name: {
+    Title:"SHRI",
+    Forename: [{name:"UDAYBHANSING"}],
+    Surname: [{name:"RAJPUT"}]
+  },
+  IdentificationNumber: [
+    {
+        IdentifierName:"TaxId",
+        Id:"CGPPR0137N"
+    }],
+  Address: {
+    StreetAddress: [{
+        address:"GALAXY FLAT;LUNASAN ROAD"
+    },{
+        address:"HIGH WAY ROAD"
+    }],
+    City: "Surat",
+    PostalCode: "382729",
+    Region: "24",
+    AddressType: "01"
+  },
+  DateOfBirth: "1986-11-04",
+  PhoneNumber: {
+    
+    Number: 9268703339
 
-        if (toggle === "true") {
-            url = `${API_ENDPOINT_SAARTHI}/api/register-volunteer`;
-        } else {
-            url = `${API_ENDPOINT_SAARTHI}/api/register-trainee`;
-        }
-        let data = {
-            name: name,
-            email: email,
-            phone: phone,
-            topic: topic,
-        };
-
-        let config = {
-            headers: {
-                Authorization: "Token " + props.token,
-            },
-        };
-
-        axios
-            .post(url, data, config)
-            .then(function (response) {
-                if (toastToggle === "") {
-                    toast.success("Thank you for registering");
-                    setToastToggle("2");
-                }
-                document.getElementById("form").reset();
-            })
-            .catch(function (error) {
-                if (toastToggle === "") {
-                    toast.error(error.response.data.message);
-                    setToastToggle("2");
-                }
-            });
+  },
+  Email:"pankaj.savaliya1111@gmail.com",
+  Gender: "Male",
+  LegalCopyStatus: "Accept",
+  UserConsentForDataSharing: true
     };
+    console.log("data", data);
+    axios
+      .post(url, data)
+      .then((response) => {
+        handleQuestions();
+        console.log("cibil", response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+        
+    };
+    console.log(answer, answerKey, questionKey, ConfigGUID);
+
+  const handleVerificationAnswer = () => {
+    let url = "https://cibil.paymeindia.in/v1/verify_answers";
+    let data = {
+      ClientKey: pan,
+      IVAnswer: [
+        {
+          questionKey: questionKey,
+          answerKey: [
+            {
+              key: answerKey,
+            },
+          ],
+          UserInputAnswer: answer,
+          resendOTP: true,
+          skipQuestion: true,
+        },
+      ],
+      ChallengeConfigGUID: ConfigGUID,
+    };
+    console.log("verify",data)
+    axios
+      .post(url, data)
+      .then((response) => {
+        console.log("cibil verification", response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const handleCunsumerAsset = () => {
+    let url = "https://cibil.paymeindia.in/v1/customer_assets";
+    let data = {
+      ClientKey: "FVNPS9940R",
+    };
+    console.log("data", data);
+    axios
+      .post(url, data)
+      .then((response) => {
+        console.log("cibil", response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
     return (
         <>
