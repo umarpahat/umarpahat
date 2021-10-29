@@ -20,6 +20,10 @@ import {toast} from "react-toastify";
 const GetCibilReport = (props) => {
     const [nameerr, setNameerr] = useState("");
     const [toastToggle, setToastToggle] = useState("");
+    const[phone,setPhone]=useState("");
+    const[email,setEmail]=useState("");
+    const[name,setName]=useState("");
+    
 
     let url = "";
     let reg = /^[0-9]{1,10}$/;
