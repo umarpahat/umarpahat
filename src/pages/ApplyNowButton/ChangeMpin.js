@@ -22,7 +22,6 @@ function ChangeMpin(props) {
   const [errorMpinConfirm, seterrorMpinConfirm] = useState(null);
   const [mpinNotMatch, setmpinNotMatch] = useState(null);
   let [loader, setloader] = useState(false);
-
   function gtag_report_conversion(url) {
     var callback = function () {
       if (typeof url != "undefined") {
@@ -35,7 +34,7 @@ function ChangeMpin(props) {
     });
     return false;
   }
-
+  
   const createNewMpin = (event) => {
     setloader(true);
     event.preventDefault();
