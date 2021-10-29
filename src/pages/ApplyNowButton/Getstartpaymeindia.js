@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { hitAllUserData } from '../../store/modules/userDetails/actions';
-import { hitLogin } from '../../store/modules/auth/actions'
+import {hitLogin, storeToken} from '../../store/modules/auth/actions'
 import googleimg from "../../component/img/googleimg.png";
 import { GoogleLogin } from 'react-google-login';
 import Loader from '../../component/Loader'
@@ -42,7 +42,7 @@ const Getstartpaymeindia = (props) => {
         .post(
             `/api/referral/referral_code_apply/`,
             { referral_code: referral_code.toUpperCase() },
-            { headers: { Authorization: "Token " + props.token } }
+            { headers: { Authorization: "Token " + token } }
         )
         .then((response) => {
           setloader(false);
