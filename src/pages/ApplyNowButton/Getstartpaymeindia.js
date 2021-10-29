@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { hitAllUserData } from '../../store/modules/userDetails/actions';
-import { hitLogin } from '../../store/modules/auth/actions'
+import {hitLogin, storeToken} from '../../store/modules/auth/actions'
 import googleimg from "../../component/img/googleimg.png";
 import { GoogleLogin } from 'react-google-login';
 import Loader from '../../component/Loader'
@@ -15,13 +15,16 @@ import Cookies from 'universal-cookie';
 import letsStart from "../../images/animated/lets-start-animation.gif";
 import getStarted from "../../images/animated/user-hexagon.gif";
 import logoIcon from "../../images/svg/img.png";
+import {api} from "../../services/api";
 
 
 const cookies = new Cookies()
 
 const Getstartpaymeindia = (props) => {
+  let [error, seterror] = useState(null);
   const token = cookies.get('token')
-  //console.log(props.history.location.state.phoneNumber);
+  const referral_code = cookies.get("referral_code")
+  console.log(referral_code);
   let [loader, setloader] = useState(false);
   const [acceptTandC, setacceptTandC] = useState(false)
   const [Error, setError] = useState(null);
@@ -33,7 +36,34 @@ const Getstartpaymeindia = (props) => {
         props.history.push({pathname:'/referral-code'})
     }
 });
+  const handleReferral = () => {
+    setloader(true);
+    api
+        .post(
+            `/api/referral/referral_code_apply/`,
+            { referral_code: referral_code.toUpperCase() },
+            { headers: { Authorization: "Token " + token } }
+        )
+        .then((response) => {
+          setloader(false);
+          if (response.status === 200) {
+            props.history.push({
+              pathname: "/change-mpin",
+              state: { forgotPassword: false },
+            });
 
+          } else {
+            setloader(false);
+            seterror("Your Referral link is invalid");
+          }
+          return response;
+        })
+        .catch((error) => {
+          //console.log(88888);
+          setloader(false);
+          //console.log(error);
+        });
+  };
   const acceptTermsAndCond = (props) => {
     setError(null)
     setacceptTandC(!acceptTandC)
@@ -43,7 +73,11 @@ const Getstartpaymeindia = (props) => {
 
     try {
       props.hitLogin({ type: 'google', access_token: response.tokenId, phone_number: Number(props.history.location.state.phoneNumber)})
-      props.history.push({pathname:'/referral-code'})
+      if(referral_code){
+        handleReferral()
+      } else {
+        props.history.push({pathname:'/referral-code'})
+      }
     } catch (error){
       if(error.response.status===401)
       {
@@ -104,6 +138,7 @@ const Getstartpaymeindia = (props) => {
                   </div>
                 </div>
                 {Error ? <span style={{color:"red"}}>{Error}</span> : null}
+                {error ? <span style={{color:'red'}}>{error}</span> : null}
                 <div className=" d-flex  pt-5">
                   <div className="input-group input-group-lg w-100">
                     <div

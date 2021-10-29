@@ -23,12 +23,6 @@ function Referralcode(props) {
 
   const handleReferral = () => {
     setloader(true);
-    //console.log(3333333);
-    //console.log(referral);
-    //console.log(referral.toUpperCase());
-    //console.log(props.token);
-    //console.log(44444);
-
     api
       .post(
         `/api/referral/referral_code_apply/`,
@@ -86,7 +80,7 @@ function Referralcode(props) {
                         <h4 className="form-heading text-center">
                           Referral Code
                         </h4>
-                        <div class="form-group ms-input-group">
+                        <div className="form-group ms-input-group">
                           <div className="topnoticreferral">
                             <p className="p-4 mx-4">
                               we're so delighted you are here! Collect gift on
@@ -105,13 +99,13 @@ function Referralcode(props) {
                           </div>
                         </div>
                         <div className="form-block">
-                          <div class="form-group ms-input-group">
+                          <div className="form-group ms-input-group">
                             <label className="form-label pb-3">
                               Do you have a referral code
                             </label>
                             <input
                               type="text"
-                              class="form-control ms-form-input"
+                              className="form-control ms-form-input"
                               placeholder="Enter your code"
                               value={referral}
                               onChange={(event) =>
