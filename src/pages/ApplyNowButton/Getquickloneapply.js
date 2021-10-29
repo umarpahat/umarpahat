@@ -26,6 +26,10 @@ const Getquikloneapply = (props) => {
   let [newUser, setnewUser] = useState(false);
 
   useEffect(() => {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    cookies.set("referral_code", params.referral_code)
+
    if(token){
     props.history.push({
       pathname: "/step-manual",
