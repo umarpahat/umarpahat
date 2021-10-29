@@ -7,7 +7,6 @@
     "start": "webpack serve --config build-utils/webpack.config.js --env env=dev",
     "build": "webpack --config build-utils/webpack.config.js --env env=prod",
     "test": "echo \"Error: no test specified\" && exit 1"
-   
   },
   "author": "paymeindia",
   "license": "MIT",
@@ -47,6 +46,7 @@
     "react-meta-tags": "^1.0.1",
     "react-otp-input": "^2.3.0",
     "react-otp-timer": "^0.1.0",
+    "react-pincode": "^1.1.1",
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
     "react-spinners": "^0.10.6",
