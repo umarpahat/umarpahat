@@ -40,6 +40,7 @@ import Header from "./pages/Header";
 import Footer from "./pages/Footer";
 import StepManual from "./pages/ApplyNowButton/StepManualKYC";
 import Cibilreport from "./pages/Cibilreport";
+import GetCibilReport from "./pages/GetCibilReport";
 
 
 function Routes() {
@@ -75,6 +76,7 @@ function Routes() {
         <Route exact path="/congratulations" component={Congretmessage} />
         <Route exact path="/login-with-mob-mpin" component={LoginWithMobMpin} />
         <Route exact path="/kycoption" component={KycOption} />
+        <Route exact path="/get-cibil-report" component={GetCibilReport} />
         <Route exact path="/bank-details-payme" component={Bankdetailspayme} />
         <Route exact path="/change-mpin" component={ChangeMpin} />
             <Route exact path="/404" component={NotFoundPage} />

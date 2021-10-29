@@ -22,7 +22,6 @@ function ChangeMpin(props) {
   const [errorMpinConfirm, seterrorMpinConfirm] = useState(null);
   const [mpinNotMatch, setmpinNotMatch] = useState(null);
   let [loader, setloader] = useState(false);
-
   function gtag_report_conversion(url) {
     var callback = function () {
       if (typeof url != "undefined") {
@@ -30,12 +29,12 @@ function ChangeMpin(props) {
       }
     };
     gtag("event", "conversion", {
-      send_to: "AW-10789488789/y-dlCMjS5vsCEJWR6pgo",
+      send_to: "AW-875618776/zLCQCPKg1PYCENjDw6ED",
       event_callback: callback,
     });
     return false;
   }
-
+  
   const createNewMpin = (event) => {
     setloader(true);
     event.preventDefault();
