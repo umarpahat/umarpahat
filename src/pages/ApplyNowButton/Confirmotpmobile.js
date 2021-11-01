@@ -61,7 +61,8 @@ const Confirmotpmobile = (props) => {
         {}
       )
       .then((response) => {
-       
+        console.log("asjshajkhjkahkdj")
+       console.log("token check",response)
         if (response.status === 200) {
           props.history.push({
             pathname: "/get-start-paymeindia",
@@ -95,6 +96,7 @@ const Confirmotpmobile = (props) => {
         {}
       )
       .then((response) => {
+        console.log("respoinse very otp exsting",response)
         setloader(false);
         if (response.status === 200) {
           props.hitForgotMpin({

@@ -54,6 +54,7 @@ const Getquikloneapply = (props) => {
         {}
       )
       .then((response) => {
+        
         if (response.status === 200 && !response.data.phone_number_verified) {
           setloader(false);
           setnewUser(true);
