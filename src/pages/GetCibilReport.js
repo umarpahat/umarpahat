@@ -16,6 +16,11 @@ import cibiLogo from "../images/svg/cibiLogo.svg";
 import instantLoan from "../images/svg/instant-loan.svg";
 import axios from "axios";
 import {toast} from "react-toastify";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import Button from "@material-ui/core/Button";
 
 const GetCibilReport = (props) => {
     const [nameerr, setNameerr] = useState("");
@@ -23,7 +28,15 @@ const GetCibilReport = (props) => {
     const[phone,setPhone]=useState("");
     const[email,setEmail]=useState("");
     const[name,setName]=useState("");
-    
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickToOpen = () => {
+        setOpen(true);
+    };
+
+    const handleToClose = () => {
+        setOpen(false);
+    };
 
     let url = "";
     let reg = /^[0-9]{1,10}$/;
@@ -106,6 +119,7 @@ const GetCibilReport = (props) => {
                 }
             });
     };
+
 
     return (
         <>
@@ -456,6 +470,39 @@ const GetCibilReport = (props) => {
                                         </div>
 
                                     </div>
+                                    <Button variant="outlined" color="primary"
+                                            onClick={handleClickToOpen}>
+                                        Open Demo Dialog
+                                    </Button>
+
+                                    <Dialog open={open} onClose={handleToClose}>
+                                        <DialogContent>
+                                            <DialogContentText>
+                                                Are you sure, Change the Savings objective to Akshaya Tritiya(2022) ?
+                                            </DialogContentText>
+                                            <input
+                                                name="name"
+                                                type="text"
+                                                className="form-input"
+                                                placeholder="enter otp"
+                                                required=""
+                                            />
+                                        </DialogContent>
+                                        <DialogActions>
+                                            <Button onClick={handleToClose}
+                                                  className='black'>
+                                                Reset
+                                            </Button>
+                                            <Button onClick={handleToClose}
+                                               className='green' autoFocus>
+                                                Submit
+                                            </Button>
+                                            <Button onClick={handleToClose}
+                                               className='green' autoFocus>
+                                                Skip
+                                            </Button>
+                                        </DialogActions>
+                                    </Dialog>
                                     <div className="row align-items-center">
                                         <div className="col-sm-12 col-md-12 text-center p-t-20">
                                             <input
