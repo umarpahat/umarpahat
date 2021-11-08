@@ -47,6 +47,11 @@ const GetCibilReport = (props) => {
   const[emailerr,setEmailerr]=useState("");
   const [lnameerr,setLnameerr]=useState("");
   const [phoneerr,setPhoneerr]=useState("");
+  const[title,setTitle]=useState("");
+  const[resendEligible,setResendEligible]=useState(false);
+  const[skipable,setSkipable]=useState(false);
+  const[lastQuestion,setLastQuestion]=useState(false)
+
 
   console.log("agree",agree);
   const handlePinCode = (value) => {
@@ -57,6 +62,7 @@ const GetCibilReport = (props) => {
         .then((res) => {
           console.log(res)
           setRegion(res.data[0].PostOffice[0].Region);
+          
           console.log(res);
         })
         .then(() => {
@@ -77,6 +83,12 @@ const GetCibilReport = (props) => {
   // let emailReg =
   //   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const handleCibilReport = () => {
+    if(gender==="Male"){
+    setTitle("Mr");
+    }
+    else{
+      setTitle("Ms")
+    }
   //   if (fname.length === 0) {
   //     setNameerr("Name can't be empty");
   //     return false;
@@ -122,104 +134,104 @@ const GetCibilReport = (props) => {
   //   }
     let url = "https://cibil.paymeindia.in/v1/fullfilloffer";
     let data = {
-    //     ClientKey: pan,
-    //     Name: {
-    //       Title: "SHRI",
-    //       Forename: [{ name: fname }],
-    //       Surname: [{ name: lname }],
-    //     },
-    //     IdentificationNumber: [
-    //       {
-    //         IdentifierName: "TaxId",
-    //         Id: pan,
-    //       },
-    //     ],
-    //     Address: {
-    //       StreetAddress: [
-    //         {
-    //           address: street ,
-    //         },
-    //         {
-    //           address: streetSecond,
-    //         },
-    //       ],
-    //       City: "Surat",
-    //       PostalCode: pan,
-    //       Region: "24",
-    //       AddressType: addresstype,
-    //     },
-    //     DateOfBirth: date,
-    //     PhoneNumber: {
-    //       Number: phone,
-    //     },
-    //     Email: email,
-    //     Gender: gender,
-    //     LegalCopyStatus: "Accept",
-    //     UserConsentForDataSharing: agree,
-      // ClientKey: "CQNPK2612K",
-      // Name: {
-      //   Title: "Mr",
-      //   Forename: [{ name: "BRAJESH" }],
-      //   Surname: [{ name: "KUSHWAH" }],
-      // },
-      // IdentificationNumber: [
-      //   {
-      //     IdentifierName: "TaxId",
-      //     Id: "CQNPK2612K",
-      //   },
-      // ],
-      // Address: {
-      //   StreetAddress: [
-      //     {
-      //       address: "Shankar ka puara gaipara joura morena",
-      //     },
-   
-      //   ],
-      //   City: "gwalior",
-      //   PostalCode: "476221",
-      //   Region: "23",
-      //   AddressType: "01",
-      // },
-      // DateOfBirth: "1992-10-11",
-      // PhoneNumber: {
-      //   Number: 8889610615,
-      // },
-      // Email: "pramodsinghiit2016@gmail.com",
-      // Gender: "Male",
-      // LegalCopyStatus: "Accept",
-      // UserConsentForDataSharing: true,
-      ClientKey: 9873182834,
+        // ClientKey: pan,
+        // Name: {
+        //   Title: title,
+        //   Forename: [{ name: fname }],
+        //   Surname: [{ name: lname }],
+        // },
+        // IdentificationNumber: [
+        //   {
+        //     IdentifierName: "TaxId",
+        //     Id: pan,
+        //   },
+        // ],
+        // Address: {
+        //   StreetAddress: [
+        //     {
+        //       address: street ,
+        //     },
+        //     {
+        //       address: streetSecond,
+        //     },
+        //   ],
+        //   City: "Surat",
+        //   PostalCode: pan,
+        //   Region: "24",
+        //   AddressType: addresstype,
+        // },
+        // DateOfBirth: date,
+        // PhoneNumber: {
+        //   Number: phone,
+        // },
+        // Email: email,
+        // Gender: gender,
+        // LegalCopyStatus: "Accept",
+        // UserConsentForDataSharing: agree,
+      ClientKey: "TK7XPGKS9Z",
       Name: {
         Title: "Mr",
-        Forename: [{ name: "Umar" }],
-        Surname: [{ name: "deen" }],
+        Forename: [{ name: "BRAJESH" }],
+        Surname: [{ name: "KUSHWAH" }],
       },
       IdentificationNumber: [
         {
           IdentifierName: "TaxId",
-          Id: "APMPD6568D",
+          Id: "CQNPK2612K",
         },
       ],
       Address: {
         StreetAddress: [
           {
-            address: "G-595,street 13, jaitpur extenstion part 2 new delhi",
+            address: "Shankar ka puara gaipara joura morena",
           },
    
         ],
-        City: "delhi",
-        PostalCode: "110044",
-        Region: "07",
+        City: "gwalior",
+        PostalCode: "476221",
+        Region: "23",
         AddressType: "01",
       },
-      DateOfBirth: "1984-06-05",
+      DateOfBirth: "1992-10-11",
       PhoneNumber: {
-        Number: 9873182834,
+        Number: 8889610615,
       },
-      Email: "umar.pahat@gmail.com",
+      Email: "pramodsinghiit2016@gmail.com",
       Gender: "Male",
       LegalCopyStatus: "Accept",
-      UserConsentForDataSharing: "True",
+      UserConsentForDataSharing: true,
+      // ClientKey: "EKR5YCVGOJ",
+      // Name: {
+      //   Title: "Mr",
+      //   Forename: [{ name: "Umar" }],
+      //   Surname: [{ name: "deen" }],
+      // },
+      // IdentificationNumber: [
+      //   {
+      //     IdentifierName: "TaxId",
+      //     Id: "APMPD6568D",
+      //   },
+      // ],
+      // Address: {
+      //   StreetAddress: [
+      //     {
+      //       address: "G-595,street 13, jaitpur extenstion part 2 new delhi",
+      //     },
+   
+      //   ],
+      //   City: "delhi",
+      //   PostalCode: "110044",
+      //   Region: "07",
+      //   AddressType: "01",
+      // },
+      // DateOfBirth: "1984-06-05",
+      // PhoneNumber: {
+      //   Number: 9873182834,
+      // },
+      // Email: "umar.pahat@gmail.com",
+      // Gender: "Male",
+      // LegalCopyStatus: "Accept",
+      // UserConsentForDataSharing: true,
     };
     console.log("data", data);
     axios
@@ -233,11 +245,40 @@ const GetCibilReport = (props) => {
       });
   };
   console.log(answer, answerKey, questionKey, ConfigGUID);
+  const handleQuestions = () => {
+    let url = "https://cibil.paymeindia.in/v1/questions";
+    let data = {
+      ClientKey: "TK7XPGKS9Z"
+     
+    };
+    console.log("verify", data);
+    axios
+      .post(url, data)
+      .then((response) => {
+        // if(response.data.GetAuthenticationQuestionsSuccess.IVStatus==="Success")
+        // {
+        //   handleCunsumerAsset();
+        // }
+        console.log("cibil verification", response.data.GetAuthenticationQuestionsSuccess.question[0].Key);
+
+        setQuestionKey(response.data.GetAuthenticationQuestionsSuccess.question[0].Key)
+        setAnswerKey(response.data.GetAuthenticationQuestionsSuccess.question[0].AnswerChoice[0].AnswerChoiceId)
+        setQuestion(response.data.GetAuthenticationQuestionsSuccess.question[0].FullQuestionText)
+        setConfigGUID(response.data.GetAuthenticationQuestionsSuccess.ChallengeConfigGUID)
+        setResendEligible(response.data.GetAuthenticationQuestionsSuccess.question[0].resendEligible)
+        setSkipable(response.data.GetAuthenticationQuestionsSuccess.question[0].skipEligible)
+        setLastQuestion(response.data.GetAuthenticationQuestionsSuccess.question[0].LastChanceQuestion)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   const handleVerificationAnswer = () => {
+    console.log(questionKey,answerKey,question,ConfigGUID,resendEligible,skipable,lastQuestion)
     let url = "https://cibil.paymeindia.in/v1/verify_answers";
     let data = {
-      ClientKey: pan,
+      ClientKey: "TK7XPGKS9Z",
       IVAnswer: [
         {
           questionKey: questionKey,
@@ -246,12 +287,27 @@ const GetCibilReport = (props) => {
               key: answerKey,
             },
           ],
-          UserInputAnswer: answer,
-          resendOTP: true,
-          skipQuestion: true,
+           UserInputAnswer: "671975",
+          //resendOTP: true,
+          // skipQuestion: true,
         },
       ],
-      ChallengeConfigGUID: ConfigGUID,
+      ChallengeConfigGUID: ChallengeConfigGUID,
+      // ClientKey: "TK7XPGKS9Z",
+      // IVAnswer: [
+      //   {
+      //     questionKey: "421577742",
+      //     answerKey: [
+      //       {
+      //         key: "1262038244",
+      //       },
+      //     ],
+      //      UserInputAnswer: "671975",
+      //     //resendOTP: true,
+      //     // skipQuestion: true,
+      //   },
+      // ],
+      // ChallengeConfigGUID: "237895352",
     };
     console.log("verify", data);
     axios
@@ -267,7 +323,7 @@ const GetCibilReport = (props) => {
   const handleCunsumerAsset = () => {
     let url = "https://cibil.paymeindia.in/v1/customer_assets";
     let data = {
-      ClientKey: "FVNPS9940R",
+      ClientKey: "TK7XPGKS9Z",
     };
     console.log("data", data);
     axios
@@ -317,8 +373,9 @@ const GetCibilReport = (props) => {
                   <Link
                     className="btnLarge"
                     onClick={() => {
-                      props.hitAppUseCase({ useCase: "apply-loan" });
-                      props.history.push({ pathname: "/apply-loan" });
+                      handleVerificationAnswer();
+                      // props.hitAppUseCase({ useCase: "apply-loan" });
+                      // props.history.push({ pathname: "/apply-loan" });
                     }}
                   >
                     Apply now
@@ -641,6 +698,7 @@ const GetCibilReport = (props) => {
                             id="checkbox"
                             name="checkbox"
                             onClick={(e)=>{
+                              handleCunsumerAsset()
                                 setAgree(!agree)
                             }}
                           />
