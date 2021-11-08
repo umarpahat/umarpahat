@@ -277,6 +277,26 @@ const GetCibilReport = (props) => {
   const handleVerificationAnswer = () => {
     console.log(questionKey,answerKey,question,ConfigGUID,resendEligible,skipable,lastQuestion)
     let url = "https://cibil.paymeindia.in/v1/verify_answers";
+    if(resent){
+      let data = {
+        ClientKey: "TK7XPGKS9Z",
+        IVAnswer: [
+          {
+            questionKey: questionKey,
+            answerKey: [
+              {
+                key: answerKey,
+              },
+            ],
+             UserInputAnswer: "671975",
+             resendOTP: true,
+           
+          },
+        ],
+        ChallengeConfigGUID: ChallengeConfigGUID,
+        
+      };
+    }
     let data = {
       ClientKey: "TK7XPGKS9Z",
       IVAnswer: [
