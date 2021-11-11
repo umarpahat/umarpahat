@@ -72,6 +72,7 @@ const GetCibilReport = (props) => {
   const [gendererr, setGendererr] = useState("");
   const[questiontype,setQuestionType]=useState("")
   const[counter,setCounter]=useState(59);
+  const[secondaddresserr,setSecondaddresserr]=useState("");
   useEffect(() => {
 
     const timer =
@@ -187,6 +188,12 @@ const GetCibilReport = (props) => {
     }
     if (street.length === 0) {
       setAddresserr("Address Cant be empty");
+      return;
+    }
+    if(streetSecond.length===0)
+    {
+      setSecondaddresserr("Address can't be empty");
+      return;
     }
 
     let url = "https://cibil.paymeindia.in/v1/fullfilloffer";
@@ -810,9 +817,13 @@ const GetCibilReport = (props) => {
                             placeholder="Enter Address Line 2"
                             onChange={(e) => {
                               setStreetSecond(e.target.value);
+                              setSecondaddresserr("")
                             }}
                             required=""
                           />
+                           {secondaddresserr ? (
+                            <span style={{ color: "red" }}>{secondaddresserr}</span>
+                          ) : null}
                         </div>
                       </div>
                     </div>
