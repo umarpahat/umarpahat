@@ -215,70 +215,7 @@ const GetCibilReport = (props) => {
       Gender: gender,
       LegalCopyStatus: "Accept",
       UserConsentForDataSharing: agree,
-      // ClientKey: "TK7XPGKS9Z",
-      // Name: {
-      //   Title: "Mr",
-      //   Forename: [{ name: "BRAJESH" }],
-      //   Surname: [{ name: "KUSHWAH" }],
-      // },
-      // IdentificationNumber: [
-      //   {
-      //     IdentifierName: "TaxId",
-      //     Id: "CQNPK2612K",
-      //   },
-      // ],
-      // Address: {
-      //   StreetAddress: [
-      //     {
-      //       address: "Shankar ka puara gaipara joura morena",
-      //     },
-
-      //   ],
-      //   City: "gwalior",
-      //   PostalCode: "476221",
-      //   Region: "23",
-      //   AddressType: "01",
-      // },
-      // DateOfBirth: "1992-10-11",
-      // PhoneNumber: {
-      //   Number: 8889610615,
-      // },
-      // Email: "pramodsinghiit2016@gmail.com",
-      // Gender: "Male",
-      // LegalCopyStatus: "Accept",
-      // UserConsentForDataSharing: true,
-      // ClientKey: "EKR5YCVGOJ",
-      // Name: {
-      //   Title: "Mr",
-      //   Forename: [{ name: "Umar" }],
-      //   Surname: [{ name: "deen" }],
-      // },
-      // IdentificationNumber: [
-      //   {
-      //     IdentifierName: "TaxId",
-      //     Id: "APMPD6568D",
-      //   },
-      // ],
-      // Address: {
-      //   StreetAddress: [
-      //     {
-      //       address: "G-595,street 13, jaitpur extenstion part 2 new delhi",
-      //     },
-
-      //   ],
-      //   City: "delhi",
-      //   PostalCode: "110044",
-      //   Region: "07",
-      //   AddressType: "01",
-      // },
-      // DateOfBirth: "1984-06-05",
-      // PhoneNumber: {
-      //   Number: 9873182834,
-      // },
-      // Email: "umar.pahat@gmail.com",
-      // Gender: "Male",
-      // LegalCopyStatus: "Accept",
-      // UserConsentForDataSharing: true,
+     
     };
     console.log("data", data);
     axios
@@ -298,6 +235,8 @@ const GetCibilReport = (props) => {
       })
       .catch(function (error) {
         console.log(error);
+        let error = error;
+        console.log(error)
         toast.error(error, ...{ options });
       });
   };
@@ -670,7 +609,7 @@ const GetCibilReport = (props) => {
                             placeholder="Enter Phone Number"
                             onChange={(e) => {
                               setPhoneerr("");
-                              setPhone(e.target.value);
+                              setPhone(e.target.value.slice(0,10));
                             }}
                             required=""
                           />
@@ -805,7 +744,6 @@ const GetCibilReport = (props) => {
                           <input
                             name="name"
                             type="number"
-                            maxLength={6}
                             className="form-input"
                             placeholder="Enter Pin Code"
                             onChange={(e) => {
