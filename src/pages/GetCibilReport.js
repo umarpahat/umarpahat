@@ -235,8 +235,7 @@ const GetCibilReport = (props) => {
       })
       .catch(function (error) {
         console.log(error);
-        let error = error;
-        console.log(error)
+     
         toast.error(error, ...{ options });
       });
   };
