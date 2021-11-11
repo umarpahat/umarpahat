@@ -235,7 +235,7 @@ const GetCibilReport = (props) => {
       })
       .catch(function (error) {
         console.log(error);
-     
+       
         toast.error(error, ...{ options });
       });
   };
@@ -327,8 +327,8 @@ const GetCibilReport = (props) => {
     axios
       .post(url, data)
       .then((response) => {
-        toast.success(response.IVStatus, ...{ options });
-        if (response.IVStatus === "Success") {
+        toast.success(response.data.IVStatus, ...{ options });
+        if (response.data.IVStatus === "Success") {
           handleCunsumerAsset();
         }
 
@@ -405,8 +405,10 @@ const GetCibilReport = (props) => {
     let url = "https://cibil.paymeindia.in/v1/customer_assets";
     let data = {
       ClientKey: clientKey,
+      LegalCopyStatus: "Accept"
     };
-    console.log("data", data);
+  
+    
     axios
       .post(url, data)
       .then((response) => {

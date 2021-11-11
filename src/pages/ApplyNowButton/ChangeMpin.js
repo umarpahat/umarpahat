@@ -34,7 +34,7 @@ function ChangeMpin(props) {
     });
     return false;
   }
-  
+
   const createNewMpin = (event) => {
     setloader(true);
     event.preventDefault();
@@ -70,6 +70,7 @@ function ChangeMpin(props) {
               props.history.push({ pathname: "/kyc-details-form" });
             } else if (userCase === "pay-rent") {
               gtag_report_conversion("https://www.paymeindia.in/change-mpin");
+              fbq('track', 'Lead');
               props.history.push({ pathname: "/payrent-other-details" });
             }
           } else {
