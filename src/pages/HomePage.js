@@ -269,7 +269,7 @@ anytime-anywhere with no hassle{" "}
                   A credit score is more than just a number. Know your Cibil
                   score completely free with PayMe India.
                 </p>
-                <Link style={{ color: "#fff", cursor: "pointer" }} to={{pathname:'/get-cibil-report'}} target={"_blank"} className="btnLarge m-t-40">
+                <Link style={{ color: "#fff", cursor: "pointer" }} to='/get-cibil-report' className="btnLarge m-t-40">
                   Get CIBIL Report
                 </Link>
               </div>

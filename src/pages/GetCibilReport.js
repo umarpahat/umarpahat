@@ -22,9 +22,10 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
 
+
 toast.configure();
 const options = {
-  position: "top-right",
+  position: "top-center",
   autoClose: 6000,
   limit: 1,
   closeButton: false,
@@ -69,6 +70,14 @@ const GetCibilReport = (props) => {
   const [cibilFetchFail, setCibilFetchFail] = useState("");
   const [correctpan, setcorrectPan] = useState("");
   const [gendererr, setGendererr] = useState("");
+  const[questiontype,setQuestionType]=useState("")
+  const[counter,setCounter]=useState(59);
+  useEffect(() => {
+
+    const timer =
+      counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+    return () => clearInterval(timer);
+  }, [counter]);
 
   const handleClientKey = (value) => {
     if (value.length === 10) {
@@ -119,7 +128,7 @@ const GetCibilReport = (props) => {
     }
   };
 
-  // let url = "";
+  let url = "";
   let reg = /^[0-9]{1,10}$/;
   let emailReg =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -179,6 +188,7 @@ const GetCibilReport = (props) => {
     if (street.length === 0) {
       setAddresserr("Address Cant be empty");
     }
+
     let url = "https://cibil.paymeindia.in/v1/fullfilloffer";
     let data = {
       ClientKey: clientKey,
@@ -215,14 +225,13 @@ const GetCibilReport = (props) => {
       Gender: gender,
       LegalCopyStatus: "Accept",
       UserConsentForDataSharing: agree,
-     
     };
     console.log("data", data);
     axios
       .post(url, data)
       .then((response) => {
         if (response.data.Status === "Failure") {
-          toast.error("something went wrong", ...{ options });
+          toast.error("something went wrong", { ...options });
         }
         if (response.data.Status === "Success") {
           handleCunsumerAsset();
@@ -233,10 +242,11 @@ const GetCibilReport = (props) => {
 
         console.log("cibil", response);
       })
-      .catch(function (error) {
-        console.log(error);
-       
-        toast.error(error, ...{ options });
+      .catch((error) => {
+
+        let err = error.response.data.Message;
+   
+        toast.error(err, { ...options });
       });
   };
   console.log(answer, answerKey, questionKey, ConfigGUID);
@@ -258,7 +268,7 @@ const GetCibilReport = (props) => {
         } else {
           handleClickToOpen();
         }
-
+        setQuestionType(response.data.GetAuthenticationQuestionsSuccess.QueueName)
         setQuestionKey(
           response.data.GetAuthenticationQuestionsSuccess.question[0].Key
         );
@@ -286,8 +296,10 @@ const GetCibilReport = (props) => {
             .LastChanceQuestion
         );
       })
-      .catch(function (error) {
-        console.log(error);
+      .catch((error) => {
+        let err = error.response.data.Message;
+
+        toast.error(err, { ...options });
       });
   };
   const [otperr, setOtperr] = useState("");
@@ -327,7 +339,7 @@ const GetCibilReport = (props) => {
     axios
       .post(url, data)
       .then((response) => {
-        toast.success(response.data.IVStatus, ...{ options });
+        
         if (response.data.IVStatus === "Success") {
           handleCunsumerAsset();
         }
@@ -340,6 +352,8 @@ const GetCibilReport = (props) => {
       });
   };
   const handleResend = () => {
+    setCounter(59)
+    setOtp("");
     let url = "https://cibil.paymeindia.in/v1/verify_answers";
 
     let data = {
@@ -359,12 +373,12 @@ const GetCibilReport = (props) => {
       ChallengeConfigGUID: ConfigGUID,
     };
 
-    console.log("resend", data);
+    
     axios
       .post(url, data)
       .then((response) => {
         handleQuestions();
-        console.log("handleresend", response);
+       
       })
       .catch(function (error) {
         console.log(error);
@@ -389,7 +403,7 @@ const GetCibilReport = (props) => {
       ChallengeConfigGUID: ConfigGUID,
     };
 
-    console.log("resend", data);
+   
     axios
       .post(url, data)
       .then((response) => {
@@ -405,14 +419,15 @@ const GetCibilReport = (props) => {
     let url = "https://cibil.paymeindia.in/v1/customer_assets";
     let data = {
       ClientKey: clientKey,
-      LegalCopyStatus: "Accept"
+      LegalCopyStatus: "Accept",
     };
-  
-    
+
     axios
       .post(url, data)
       .then((response) => {
-        toast.success("Your cibil cibil report has been send to your Email");
+        toast.success("Your cibil cibil report has been send to your Email", {
+          ...options,
+        });
         console.log("cibil", response);
       })
       .catch(function (error) {
@@ -610,7 +625,7 @@ const GetCibilReport = (props) => {
                             placeholder="Enter Phone Number"
                             onChange={(e) => {
                               setPhoneerr("");
-                              setPhone(e.target.value.slice(0,10));
+                              setPhone(e.target.value.slice(0, 10));
                             }}
                             required=""
                           />
@@ -831,11 +846,26 @@ const GetCibilReport = (props) => {
                   </div>
 
                   <Dialog open={open} onClose={handleToClose}>
-                    <DialogContent>
+                    <DialogContent >
+                    <p style={{textAlign:"center"}}>
+                    00: {counter>9 ? <span>{counter}</span> : <span>0{counter}</span>}
+                    </p><br/>
                       {question ? (
                         <DialogContentText>{question}</DialogContentText>
                       ) : null}
-                      <input
+                      { questiontype === "OTP_AlternateEmail_Entry_Queue"
+                      ? (<input
+                        name="name"
+                        type="text"
+                        style={{width:"25%"}}
+                        className="form-input"
+                        placeholder="Enter Alternate Mobile Number"
+                        onChange={(e) => {
+                          setOtp(e.target.value);
+                        }}
+                        required=""
+                      />):
+                      (<input
                         name="name"
                         type="text"
                         className="form-input"
@@ -844,18 +874,18 @@ const GetCibilReport = (props) => {
                           setOtp(e.target.value);
                         }}
                         required=""
-                      />
+                      />)}
                       {otperr ? (
                         <span style={{ color: "red" }}>{otperr}</span>
                       ) : null}
                     </DialogContent>
                     <DialogActions>
-                      {resendEligible ? (
+                      {resendEligible && counter==="00" ? (
                         <Button onClick={handleResend} className="green">
                           Resend
                         </Button>
                       ) : (
-                        <Button className="black" style={{ cursor: "text" }}>
+                        <Button className="black" style={{ cursor: "not-allowed" }}>
                           Resend
                         </Button>
                       )}
@@ -877,7 +907,7 @@ const GetCibilReport = (props) => {
                       ) : (
                         <Button
                           className="black"
-                          style={{ cursor: "text" }}
+                          style={{ cursor: "not-allowed" }}
                           autoFocus
                         >
                           Skip
