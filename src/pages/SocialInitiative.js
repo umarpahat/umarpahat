@@ -41,7 +41,7 @@ const SocialInitiative = (props) => {
       }
     };
     gtag("event", "conversion", {
-      send_to: "AW-10789488789/9sIvCMnf5vsCEJWR6pgo",
+      send_to: "AW-875618776/NqooCK7A1fYCENjDw6ED",
       event_callback: callback,
     });
     return false;
@@ -147,9 +147,9 @@ const SocialInitiative = (props) => {
         <div className="banner">
           <div className="container">
             <div className="row">
-            <div className="col col-md-12 reg-second-heading">
-              <h1 className="heading1 blue-color">Social Initiative</h1>
-            </div>
+              <div className="col col-md-12 reg-second-heading">
+                <h1 className="heading1 blue-color">Social Initiative</h1>
+              </div>
             </div>
             <div className="row align-items-center p-b-30">
               <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
@@ -159,202 +159,201 @@ const SocialInitiative = (props) => {
                   src={saarthi}
                 />
               </div>
-              </div>
+            </div>
 
-              <div className="row">
-                <div className="col col-md-5 reg-second-heading hideMobile">
-                  <img className="img-fluid" src={termsCondition} alt="Icons" />
-                </div>
-                <div className="col col-md-7">
-                  <h5 className="blue-color h3 p-t-20">
-                    PayMe India launches project ‘Saarthi’ to support families
-                    impacted by Coivd-19, through skill building and creation of
-                    employment opportunities.
-                  </h5>
-                  <p className="p-t-15">
-                    We are facing a global health crisis unlike any we have seen
-                    in the last many decades. One that is killing people,
-                    spreading human suffering, and upending people’s lives. But
-                    much more than a health crisis, it is a human, economic and
-                    social crisis which is attacking societies at their core.
-                  </p>
-                  <p className="p-t-15">
-                    With casualties in India touching as high as 4000 per day,
-                    numerous families have been impacted severely and more so
-                    from the loss of their breadwinners. While children have
-                    been orphaned, education has been impacted, families are
-                    struggling to meet their basic needs.
-                  </p>
-                </div>
+            <div className="row">
+              <div className="col col-md-5 reg-second-heading hideMobile">
+                <img className="img-fluid" src={termsCondition} alt="Icons" />
               </div>
-              <div className="row">
-                <div className="col col-md-12">
-                  <p className="p-t-15">
-                    As part of its ongoing social initiatives, PayMe India, a
-                    Noida-based fintech company, is launching project ‘Saarthi’
-                    to support such families, who have lost their earning
-                    members due to the ongoing pandemic. Shri. Mahesh Shukla,
-                    founder of PayMe India, strongly believes that project
-                    ‘Saarthi’ will have a significant impact in helping families
-                    in distress.
-                  </p>
-                  <p className="p-t-15">
-                    While PayMe India appreciates the relief measures extended
-                    by state and central governments, which has indeed provided
-                    immediate support to the families, however a long term
-                    support infrastructure has to be built through creation of
-                    new employment. This is where project ‘Saarthi’ will play a
-                    critical role, by empowering people with necessary skill set
-                    to increase their employability and then assisting them in
-                    securing an employment.
-                  </p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col col-md-7">
-                  <p className="p-t-15">
-                    Through project ‘Saarthi’, PayMe India will provide free of
-                    cost skill development training to one member from each
-                    beleaguered family and further assist them in securing work
-                    opportunities. PayMe India have themselves pledged to
-                    directly employ people from this program.
-                  </p>
-                  <p className="p-t-15 p-b-30">
-                    Driven by strong social values and a pledge to give back to
-                    the society, PayMe India is determined be a forerunner in
-                    supporting the nation through these testing times. Project
-                    ‘Saarthi’ will surely bring hope and relief to numerous
-                    families!
-                  </p>
-                </div>
-                <div className="col col-md-5 reg-second-heading hideMobile">
-                  <img className="img-fluid" src={termsCondition} alt="Icons" />
-                </div>
-              </div>
-              <div
-                className="col-lg-12 col-md-12 col-sm-12 col-xs-12  initiative"
-                style={{ textAlign: "justify" }}
-              >
-                <form id="form" name="form">
-                  <div
-                    className="home-contact-form mt-4"
-                    style={{ maxWidth: 600, margin: "auto" }}
-                  >
-                    <h4 className="form-heading text-center">
-                      Volunteer and Trainee Registration
-                    </h4>
-
-                    <div className="form-block">
-                      <div className="form-group ms-input-group">
-                        <input
-                          type="radio"
-                          id="volunteer"
-                          name="registration"
-                          onChange={(e) => {
-                            setToggle("true");
-                          }}
-                          value="Volunteer"
-                        />
-                        <label htmlFor="volunteer">Volunteer</label>
-                        <input
-                          type="radio"
-                          id="register"
-                          name="registration"
-                          defaultChecked="true"
-                          onChange={(e) => {
-                            setToggle("false");
-                          }}
-                          value="Trainee Registration"
-                        />
-                        <label htmlFor="register">Trainee Registration</label>
-                      </div>
-                      <div className="form-group ms-input-group">
-                        <label className="form-label pb-2">Name</label>
-                        <input
-                          name="name"
-                          type="text"
-                          className="form-control ms-form-input"
-                          placeholder="Enter Full Name"
-                          onChange={(e) => {
-                            setName(e.target.value);
-                            setNameerr("");
-                          }}
-                          required=""
-                        />
-                        {nameerr ? (
-                          <span style={{ color: "red" }}>{nameerr}</span>
-                        ) : null}
-                      </div>
-                      <div className="form-group ms-input-group">
-                        <label className="form-label pb-2">Email</label>
-                        <input
-                          name="email"
-                          type="email"
-                          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                          className="form-control ms-form-input"
-                          placeholder="Enter Email"
-                          onChange={(e) => {
-                            setEmail(e.target.value);
-                            setEmailerr("");
-                          }}
-                        />
-                        {emailerr ? (
-                          <span style={{ color: "red" }}>{emailerr}</span>
-                        ) : null}
-                      </div>
-                      <div className="form-group ms-input-group">
-                        <label className="form-label pb-2">Phone</label>
-                        <input
-                          name="phone"
-                          type="number"
-                          maxLength="10"
-                          pattern="[0-9]+"
-                          value={phone}
-                          onChange={(e) => {
-                            e.target.value = e.target.value
-                              .replace(/[^0-9.]{10}/g, "")
-                              .replace(/(\..*)\./g, "$1");
-                            setPhone(e.target.value.slice(0, 10));
-                            setPhoneerr("");
-                          }}
-                          className="form-control ms-form-input"
-                          placeholder="Enter Phone"
-                        />
-                        {phoneerr ? (
-                          <span style={{ color: "red" }}>{phoneerr}</span>
-                        ) : null}
-                      </div>
-                      <div className="form-group ms-input-group">
-                        <label className="form-label pb-2">Topic</label>
-                        <input
-                          name="topic"
-                          type="text"
-                          className="form-control ms-form-input"
-                          placeholder="Enter Topic"
-                          onChange={(e) => {
-                            setTopic(e.target.value);
-                            setTopicErr("");
-                          }}
-                          required=""
-                        />
-                        {topicerr ? (
-                          <span style={{ color: "red" }}>{topicerr}</span>
-                        ) : null}
-                      </div>
-                    </div>
-                    <input
-                      name="topic"
-                      type="button"
-                      className="btnLarge text-center"
-                      placeholder="Enter Email"
-                      value="Submit"
-                      onClick={postVolunteer}
-                    />
-                  </div>
-                </form>
+              <div className="col col-md-7">
+                <h5 className="blue-color h3 p-t-20">
+                  PayMe India launches project ‘Saarthi’ to support families
+                  impacted by Coivd-19, through skill building and creation of
+                  employment opportunities.
+                </h5>
+                <p className="p-t-15">
+                  We are facing a global health crisis unlike any we have seen
+                  in the last many decades. One that is killing people,
+                  spreading human suffering, and upending people’s lives. But
+                  much more than a health crisis, it is a human, economic and
+                  social crisis which is attacking societies at their core.
+                </p>
+                <p className="p-t-15">
+                  With casualties in India touching as high as 4000 per day,
+                  numerous families have been impacted severely and more so from
+                  the loss of their breadwinners. While children have been
+                  orphaned, education has been impacted, families are struggling
+                  to meet their basic needs.
+                </p>
               </div>
             </div>
+            <div className="row">
+              <div className="col col-md-12">
+                <p className="p-t-15">
+                  As part of its ongoing social initiatives, PayMe India, a
+                  Noida-based fintech company, is launching project ‘Saarthi’ to
+                  support such families, who have lost their earning members due
+                  to the ongoing pandemic. Shri. Mahesh Shukla, founder of PayMe
+                  India, strongly believes that project ‘Saarthi’ will have a
+                  significant impact in helping families in distress.
+                </p>
+                <p className="p-t-15">
+                  While PayMe India appreciates the relief measures extended by
+                  state and central governments, which has indeed provided
+                  immediate support to the families, however a long term support
+                  infrastructure has to be built through creation of new
+                  employment. This is where project ‘Saarthi’ will play a
+                  critical role, by empowering people with necessary skill set
+                  to increase their employability and then assisting them in
+                  securing an employment.
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col col-md-7">
+                <p className="p-t-15">
+                  Through project ‘Saarthi’, PayMe India will provide free of
+                  cost skill development training to one member from each
+                  beleaguered family and further assist them in securing work
+                  opportunities. PayMe India have themselves pledged to directly
+                  employ people from this program.
+                </p>
+                <p className="p-t-15 p-b-30">
+                  Driven by strong social values and a pledge to give back to
+                  the society, PayMe India is determined be a forerunner in
+                  supporting the nation through these testing times. Project
+                  ‘Saarthi’ will surely bring hope and relief to numerous
+                  families!
+                </p>
+              </div>
+              <div className="col col-md-5 reg-second-heading hideMobile">
+                <img className="img-fluid" src={termsCondition} alt="Icons" />
+              </div>
+            </div>
+            <div
+              className="col-lg-12 col-md-12 col-sm-12 col-xs-12  initiative"
+              style={{ textAlign: "justify" }}
+            >
+              <form id="form" name="form">
+                <div
+                  className="home-contact-form mt-4"
+                  style={{ maxWidth: 600, margin: "auto" }}
+                >
+                  <h4 className="form-heading text-center">
+                    Volunteer and Trainee Registration
+                  </h4>
+
+                  <div className="form-block">
+                    <div className="form-group ms-input-group">
+                      <input
+                        type="radio"
+                        id="volunteer"
+                        name="registration"
+                        onChange={(e) => {
+                          setToggle("true");
+                        }}
+                        value="Volunteer"
+                      />
+                      <label htmlFor="volunteer">Volunteer</label>
+                      <input
+                        type="radio"
+                        id="register"
+                        name="registration"
+                        defaultChecked="true"
+                        onChange={(e) => {
+                          setToggle("false");
+                        }}
+                        value="Trainee Registration"
+                      />
+                      <label htmlFor="register">Trainee Registration</label>
+                    </div>
+                    <div className="form-group ms-input-group">
+                      <label className="form-label pb-2">Name</label>
+                      <input
+                        name="name"
+                        type="text"
+                        className="form-control ms-form-input"
+                        placeholder="Enter Full Name"
+                        onChange={(e) => {
+                          setName(e.target.value);
+                          setNameerr("");
+                        }}
+                        required=""
+                      />
+                      {nameerr ? (
+                        <span style={{ color: "red" }}>{nameerr}</span>
+                      ) : null}
+                    </div>
+                    <div className="form-group ms-input-group">
+                      <label className="form-label pb-2">Email</label>
+                      <input
+                        name="email"
+                        type="email"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        className="form-control ms-form-input"
+                        placeholder="Enter Email"
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                          setEmailerr("");
+                        }}
+                      />
+                      {emailerr ? (
+                        <span style={{ color: "red" }}>{emailerr}</span>
+                      ) : null}
+                    </div>
+                    <div className="form-group ms-input-group">
+                      <label className="form-label pb-2">Phone</label>
+                      <input
+                        name="phone"
+                        type="number"
+                        maxLength="10"
+                        pattern="[0-9]+"
+                        value={phone}
+                        onChange={(e) => {
+                          e.target.value = e.target.value
+                            .replace(/[^0-9.]{10}/g, "")
+                            .replace(/(\..*)\./g, "$1");
+                          setPhone(e.target.value.slice(0, 10));
+                          setPhoneerr("");
+                        }}
+                        className="form-control ms-form-input"
+                        placeholder="Enter Phone"
+                      />
+                      {phoneerr ? (
+                        <span style={{ color: "red" }}>{phoneerr}</span>
+                      ) : null}
+                    </div>
+                    <div className="form-group ms-input-group">
+                      <label className="form-label pb-2">Topic</label>
+                      <input
+                        name="topic"
+                        type="text"
+                        className="form-control ms-form-input"
+                        placeholder="Enter Topic"
+                        onChange={(e) => {
+                          setTopic(e.target.value);
+                          setTopicErr("");
+                        }}
+                        required=""
+                      />
+                      {topicerr ? (
+                        <span style={{ color: "red" }}>{topicerr}</span>
+                      ) : null}
+                    </div>
+                  </div>
+                  <input
+                    name="topic"
+                    type="button"
+                    className="btnLarge text-center"
+                    placeholder="Enter Email"
+                    value="Submit"
+                    onClick={postVolunteer}
+                  />
+                </div>
+              </form>
+            </div>
           </div>
+        </div>
         <div className="contactBox p-t-80">
           <div className="container">
             <div className="row justify-content-md-center">

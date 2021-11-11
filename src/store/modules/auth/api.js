@@ -8,6 +8,7 @@ export const getLoginToken = data => {return new Promise(async(resolve, reject) 
         if (data.type === 'google') {
             api.post(`api/authentication/register_user/`, data, {})
             .then((response) => {
+              
               return resolve(response);
             })
             .catch((error) => {

@@ -16,6 +16,7 @@ import Cookies from 'universal-cookie';
 import tip from "../../images/animated/lets-start-animation.gif";
 import { Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import {Link} from "@material-ui/core";
 
 
 const cookies = new Cookies()
@@ -146,7 +147,10 @@ function LoginWithMobMpin(props) {
               <div className="row">
               <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                 <br/>
-                <a className='back-arrow' href=''>Back</a>
+                <a className='back-arrow' onClick={() => {
+                  props.history.goBack();
+                }}
+                >Back</a>
               </div>
               <div className="col-lg-5 col-md-5 col-sm-12 text-center">
                 <form onSubmit={handleSubmit}>

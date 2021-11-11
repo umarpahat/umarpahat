@@ -7,7 +7,6 @@
     "start": "webpack serve --config build-utils/webpack.config.js --env env=dev",
     "build": "webpack --config build-utils/webpack.config.js --env env=prod",
     "test": "echo \"Error: no test specified\" && exit 1"
-   
   },
   "author": "paymeindia",
   "license": "MIT",
@@ -32,7 +31,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@material-ui/core": "^4.11.4",
+    "@material-ui/core": "^4.12.3",
     "axios": "^0.21.1",
     "css-loader": "^5.2.0",
     "jquery": "^3.6.0",
@@ -47,6 +46,7 @@
     "react-meta-tags": "^1.0.1",
     "react-otp-input": "^2.3.0",
     "react-otp-timer": "^0.1.0",
+    "react-pincode": "^1.1.1",
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
     "react-spinners": "^0.10.6",
