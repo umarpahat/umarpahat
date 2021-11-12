@@ -1987,6 +1987,18 @@ select option {
   text-align-last: center;
     margin: 230px 0 0 0;
 }
+.loaderanimation {
+  display:block;
+  margin-bottom:8%;
+  margin-top:8%;
+  border-color:red ;
+  text-align:center;
+ 
+}
+.loaderImage{
+width: 300px;
+height: 300px;
+}
 
 .btnCal {
   background: transparent;

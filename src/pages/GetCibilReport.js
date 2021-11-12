@@ -7,11 +7,10 @@ import Header from "./Header";
 import "../../src/home.css";
 import MetaTags from "react-meta-tags";
 import Cookies from "universal-cookie";
-
+import Loader from "../component/Loader";
 const cookies = new Cookies();
 
 import { Link } from "react-router-dom";
-import { API_ENDPOINT, API_ENDPOINT_SAARTHI } from "../constant";
 import cibiLogo from "../images/svg/cibiLogo.svg";
 import instantLoan from "../images/svg/instant-loan.svg";
 import axios from "axios";
@@ -33,6 +32,7 @@ const options = {
 const GetCibilReport = (props) => {
   const [nameerr, setNameerr] = useState("");
   const [toastToggle, setToastToggle] = useState("");
+  const[loader,setLoader]=useState(false);
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [lname, setLName] = useState("");
@@ -73,6 +73,7 @@ const GetCibilReport = (props) => {
   const[questiontype,setQuestionType]=useState("")
   const[counter,setCounter]=useState(59);
   const[secondaddresserr,setSecondaddresserr]=useState("");
+
   useEffect(() => {
 
     const timer =
@@ -134,6 +135,7 @@ const GetCibilReport = (props) => {
   let emailReg =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const handleCibilReport = () => {
+    setLoader(true)
     if (gender.length === 0) {
       setGendererr("Please Select gender");
       return;
@@ -233,10 +235,11 @@ const GetCibilReport = (props) => {
       LegalCopyStatus: "Accept",
       UserConsentForDataSharing: agree,
     };
-    console.log("data", data);
+    setLoader(true)
     axios
       .post(url, data)
       .then((response) => {
+        setLoader(false)
         if (response.data.Status === "Failure") {
           toast.error("something went wrong", { ...options });
         }
@@ -258,6 +261,7 @@ const GetCibilReport = (props) => {
   };
   console.log(answer, answerKey, questionKey, ConfigGUID);
   const handleQuestions = () => {
+    setLoader(true)
     let url = "https://cibil.paymeindia.in/v1/questions";
     let data = {
       ClientKey: clientKey,
@@ -266,7 +270,9 @@ const GetCibilReport = (props) => {
     axios
       .post(url, data)
       .then((response) => {
+        setLoader(false)
         setDialog(true);
+        
 
         if (
           response.data.GetAuthenticationQuestionsSuccess.IVStatus === "Success"
@@ -312,6 +318,7 @@ const GetCibilReport = (props) => {
   const [otperr, setOtperr] = useState("");
 
   const handleVerificationAnswer = () => {
+    setLoader(true)
     if (otp.length !== 6) {
       setOtperr("otp must be 6 digits");
       return;
@@ -346,7 +353,7 @@ const GetCibilReport = (props) => {
     axios
       .post(url, data)
       .then((response) => {
-        
+        setLoader(false)
         if (response.data.IVStatus === "Success") {
           handleCunsumerAsset();
         }
@@ -359,6 +366,7 @@ const GetCibilReport = (props) => {
       });
   };
   const handleResend = () => {
+    setLoader(true)
     setCounter(59)
     setOtp("");
     let url = "https://cibil.paymeindia.in/v1/verify_answers";
@@ -384,6 +392,7 @@ const GetCibilReport = (props) => {
     axios
       .post(url, data)
       .then((response) => {
+        setLoader(false)
         handleQuestions();
        
       })
@@ -392,6 +401,7 @@ const GetCibilReport = (props) => {
       });
   };
   const handleSkip = () => {
+    setLoader(true)
     let url = "https://cibil.paymeindia.in/v1/verify_answers";
 
     let data = {
@@ -414,6 +424,7 @@ const GetCibilReport = (props) => {
     axios
       .post(url, data)
       .then((response) => {
+       
         handleQuestions();
         console.log("handleSkip", response);
       })
@@ -432,6 +443,7 @@ const GetCibilReport = (props) => {
     axios
       .post(url, data)
       .then((response) => {
+        setLoader(false)
         toast.success("Your cibil cibil report has been send to your Email", {
           ...options,
         });
@@ -455,7 +467,8 @@ const GetCibilReport = (props) => {
   return (
     <>
       <Header {...props} active="payrent" />
-      <>
+    
+      {!loader ? (  <>
         <MetaTags>
           <title>Frequently Asked Questions - PayMeIndia</title>
           <meta
@@ -487,11 +500,9 @@ const GetCibilReport = (props) => {
                   <br />
                   <br />
                   <Link
+                  to="/apply-loan"
                     className="btnLarge"
-                    onClick={() => {
-                      props.hitAppUseCase({ useCase: "apply-loan" });
-                      props.history.push({ pathname: "/apply-loan" });
-                    }}
+                  
                   >
                     Apply now
                   </Link>
@@ -505,6 +516,7 @@ const GetCibilReport = (props) => {
                   />
                 </div>
               </div>
+             
               <form id="form" name="form">
                 <div
                   className="form-block-form mt-4"
@@ -523,7 +535,7 @@ const GetCibilReport = (props) => {
                       <div className="col-sm-12 col-md-6">
                         <img
                           className="img-fluid"
-                          alt="Civbil"
+                          alt="Cibil"
                           src={cibiLogo}
                         />
                       </div>
@@ -938,11 +950,12 @@ const GetCibilReport = (props) => {
                     </div>
                   </div>
                 </div>
-              </form>
+              </form> 
             </div>
           </div>
         </div>
       </>
+      ): (<Loader/>)}
     </>
   );
 };
