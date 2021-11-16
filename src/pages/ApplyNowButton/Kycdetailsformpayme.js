@@ -335,9 +335,9 @@ const Kycdetailsformpayme = (props) => {
                               maxLength="10"
                               value={panNumber}
                               onChange={(event) => {
-                                if (event.target.value != 6) {
+                                if (event.target.value != 10) {
                                   seterrorPan1(
-                                    "Pancard Number should be  6 digit's"
+                                    "Pancard Number should be  10 characters"
                                   );
                                   setcorrectPan("");
                                 }

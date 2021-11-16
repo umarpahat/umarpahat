@@ -39,7 +39,6 @@ import KycOption from "./pages/ApplyNowButton/KycOption";
 import Header from "./pages/Header";
 import Footer from "./pages/Footer";
 import StepManual from "./pages/ApplyNowButton/StepManualKYC";
-import Cibilreport from "./pages/Cibilreport";
 import GetCibilReport from "./pages/GetCibilReport";
 
 
@@ -95,7 +94,7 @@ function Routes() {
           component={OtherDetalisForm}
         />
         <Route exact path="/detail-summary" component={DetailsSummary} />
-        <Route exact path="/cibilreport" component={Cibilreport}/>
+    
         <Route
           exact
           path="/payrent-transaction-history"

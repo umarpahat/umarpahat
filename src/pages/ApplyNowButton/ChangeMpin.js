@@ -57,6 +57,7 @@ function ChangeMpin(props) {
         )
         .then((response) => {
           if (response.status === 200) {
+            console.log("fordot",response)
             setloader(false);
             const phoneNumber = phoneNumber;
             if (props.location.state.forgotPassword) {
