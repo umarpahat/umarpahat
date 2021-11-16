@@ -1,10 +1,12 @@
 import React from "react";
-import HashLoader from "react-spinners/HashLoader";
+import loaderanimation from "../images/loader.gif";
+// import HashLoader from "react-spinners/HashLoader";
 
 export default (props) => 
 {
     return <> 
-    <HashLoader color={props.color} loading={true} size={150} />
+    <div className="loaderanimation"><img className="loaderImage"  src={loaderanimation} /></div>
+    {/* <HashLoader color={props.color} loading={true} size={150} /> */}
     </>
 }
 
