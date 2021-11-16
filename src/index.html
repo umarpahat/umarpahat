@@ -94,7 +94,7 @@
         let e = document.createElement("script"),
           t = document.head || document.getElementsByTagName("head")[0];
         (e.src =
-          "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
+          "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.0/lib/index.js"),
           (e.async = !0),
           (e.onload = () => {
             window.WebChat.default(
@@ -107,8 +107,8 @@
                 subtitle: "Payme India's Bot",
                 inputTextFieldHint: "Type a message...",
                 connectingText: "Waiting for server...",
-                hideWhenNotConnected: false,
-                fullScreenMode: true,
+                hideWhenNotConnected: true,
+                fullScreenMode: false,
               },
               null
             );
@@ -116,6 +116,5 @@
           t.insertBefore(e, t.firstChild);
       })();
     </script>
-    
   </body>
 </html>
