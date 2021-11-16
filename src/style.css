@@ -697,8 +697,16 @@ input:invalid {
   color: #fff!important;
 }
 
-#register,#volunteer, #others{
+#volunteer{
   margin: 0 5px 0 15px;
+}
+.others{
+  margin: 0 5px 0 0;
+
+}
+.m-r-15{
+  margin-right:15px;
+  
 }
 /* Extra small devices (phones, 600px and down) */
 @media (max-width: 767px) {

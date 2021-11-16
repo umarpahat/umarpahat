@@ -191,6 +191,17 @@ h6 {
   border: 1px solid #C4C4C4;
   border-radius: 8px;
 }
+.cibil_input {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 14px;
+  width: 100%;
+  line-height: 20px;
+  color: #6F6F6F;
+  outline: 0;
+  border: 1px solid #C4C4C4;
+  border-radius: 8px;
+}
 .select-item {
   font-weight: 500;
   font-size: 16px;
