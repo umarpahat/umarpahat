@@ -253,6 +253,7 @@ const GetCibilReport = (props) => {
         let err = error.response.data.Message;
 
         toast.error(err, { ...options });
+        setLoader(false)
       });
   };
 
@@ -312,17 +313,18 @@ const GetCibilReport = (props) => {
         let err = error.response.data.Message;
 
         toast.error(err, { ...options });
+        setLoader(false)
       });
   };
   const [otperr, setOtperr] = useState("");
 
   const handleVerificationAnswer = () => {
-    setLoader(true);
+    
     if (otp.length !== 6) {
       setOtperr("otp must be 6 digits");
       return;
     }
-
+   
     let url = "https://cibil.paymeindia.in/v1/verify_answers";
 
     let data = {
@@ -340,19 +342,29 @@ const GetCibilReport = (props) => {
       ],
       ChallengeConfigGUID: ConfigGUID,
     };
-
+    setLoader(true);
     axios
       .post(url, data)
       .then((response) => {
+        
         setLoader(false);
+        console.log("answer",response)
         if (response.data.IVStatus === "Success") {
           handleCunsumerAsset();
         }
+        if (response.data.IVStatus === "InProgress") {
+          toast.error("Something went wrong", { ...options });
+        }
+        
 
         handleToClose();
       })
-      .catch(function (error) {
+      .catch( (error) => {
         console.log(error);
+        let err = error.response.data.Message;
+
+        toast.error(err, { ...options });
+        setLoader(false)
       });
   };
   const handleResend = () => {
@@ -413,7 +425,7 @@ const GetCibilReport = (props) => {
       .post(url, data)
       .then((response) => {
         handleQuestions();
-        console.log("handleSkip", response);
+        
       })
       .catch(function (error) {
         console.log(error);
@@ -431,12 +443,18 @@ const GetCibilReport = (props) => {
       .post(url, data)
       .then((response) => {
         setLoader(false);
+       console.log("asset" ,response)
         toast.success("Your cibil cibil report has been send to your Email", {
           ...options,
         });
       })
-      .catch(function (error) {
+      .catch( (error) =>{
         console.log(error);
+        let err = error.response.data.Message;
+
+        toast.error(err, { ...options });
+        setLoader(false)
+
       });
   };
   const [name,setName]=useState()
@@ -636,6 +654,7 @@ const GetCibilReport = (props) => {
                               type="number"
                               className="cibil_input"
                               placeholder="Enter Phone Number"
+                              value={phone}
                               onChange={(event) => {
                                 setPhoneerr("");
                                 setPhone(event.target.value.slice(0, 10));
@@ -719,6 +738,7 @@ const GetCibilReport = (props) => {
                               maxLength={6}
                               className="cibil_input"
                               placeholder="Enter Pin Code"
+                              value={pincode}
                               onChange={(e) => {
                                 setPinCodeerr("");
                                 handlePinCode(e.target.value.slice(0, 6));
