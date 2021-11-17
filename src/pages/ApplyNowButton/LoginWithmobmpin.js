@@ -130,7 +130,7 @@ function LoginWithMobMpin(props) {
     <>
       <Header {...props} />
       
-        {!loader ? (
+        {loader ? (
           <div className="loader">
             {" "}
             <Loader color={"#33658a"} />{" "}
