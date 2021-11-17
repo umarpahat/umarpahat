@@ -24,7 +24,8 @@
   height: 40vmin;
   pointer-events: none;
 }
-body, html {
+body,
+html {
   height: 100%;
 }
 
@@ -107,7 +108,7 @@ body, html {
 .h6,
 h6 {
   font-size: 1rem;
-  font-weight: 400 ;
+  font-weight: 400;
   outline: none;
 }
 
@@ -130,7 +131,7 @@ h6 {
   color: #040b4d !important;
   background: none !important;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   border: none;
 }
 .Btndrop:hover > .dropdown-menu {
@@ -186,9 +187,9 @@ h6 {
   padding: 14px;
   width: 100%;
   line-height: 20px;
-  color: #6F6F6F;
+  color: #6f6f6f;
   outline: 0;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
   border-radius: 8px;
 }
 .cibil_input {
@@ -197,9 +198,9 @@ h6 {
   padding: 14px;
   width: 100%;
   line-height: 20px;
-  color: #6F6F6F;
+  color: #6f6f6f;
   outline: 0;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
   border-radius: 8px;
 }
 .select-item {
@@ -208,9 +209,9 @@ h6 {
   padding: 14px;
   width: 100%;
   line-height: 20px;
-  color: #6F6F6F;
+  color: #6f6f6f;
   outline: 0;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
   border-radius: 8px;
   background: #fff;
 }
@@ -226,7 +227,7 @@ h6 {
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  color: #6F6F6F;
+  color: #6f6f6f;
   outline: 0;
 }
 
@@ -280,7 +281,7 @@ h6 {
 .navteaxt {
   color: #040b4d !important;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 #dropdown-item-button {
   color: #040b4d !important;
@@ -317,7 +318,7 @@ h6 {
   padding-top: 20px;
 }
 .textstyparaFaqs {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: rgba(4, 11, 77, 0.6);
 
   font-size: 1em;
@@ -424,7 +425,7 @@ a:hover {
   padding-top: 10px;
   font-size: large;
   font-weight: 500;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .btnapply {
@@ -482,10 +483,10 @@ a:hover {
 .parataxtspan {
   font-weight: bold;
   color: #040b4d;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .fontallpraeligibale {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-size: 20px;
   line-height: 50px;
@@ -621,7 +622,7 @@ a:hover {
 
   padding: 10px;
   font-size: 0.8em;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 800;
   letter-spacing: 1px;
 }
@@ -661,7 +662,7 @@ a:hover {
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  padding:.5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 .hadingChooseUs {
   display: flex;
@@ -681,7 +682,7 @@ a:hover {
 .maptext {
   font-weight: 700;
   color: #536596;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .mapnumbrsty {
   color: #040b4d;
@@ -891,7 +892,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   padding: 30px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: rgba(4, 11, 77, 0.8);
   font-weight: 600;
   font-size: 20px;
@@ -974,9 +975,9 @@ a:hover {
 .getstartbtn {
   display: block;
   width: 100%;
-  padding:10px 20px;
-  color: #fff!important;
-  background: #1DBF73 !important;
+  padding: 10px 20px;
+  color: #fff !important;
+  background: #1dbf73 !important;
   border-radius: 6px;
   font-weight: 600;
   font-size: 16px;
@@ -1182,7 +1183,7 @@ a:hover {
   padding-top: 10px;
   font-size: 20px;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #040b4d;
 }
 .btnapplyPreApproved {
@@ -1224,7 +1225,7 @@ a:hover {
   font-weight: 700;
 }
 .quicklistpara {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   color: #040b4d;
   opacity: 0.6;
@@ -1236,7 +1237,7 @@ a:hover {
   flex-direction: column;
 }
 .paraBenefits {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: large;
   color: rgba(4, 11, 77, 0.6);
@@ -1310,7 +1311,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 800 !important;
   font-size: 1.2em !important;
   line-height: 30px !important;
@@ -1341,7 +1342,6 @@ a:hover {
 .ms-Tabs {
   margin-bottom: 3em;
   text-align: center;
-
 }
 .active-btn {
   background-color: #33658a;
@@ -1411,7 +1411,7 @@ a:hover {
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding-top: 20px;
   margin-left: 250px;
   margin-right: 250px;
@@ -1567,8 +1567,6 @@ a:hover {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-
 }
 .tabDots {
   width: 8px;
@@ -1658,14 +1656,14 @@ a:hover {
 
 .Emailtext {
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   color: #040b4d;
   opacity: 0.4;
   padding-top: 5px;
 }
 .fonstyAlreadyLongin {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 700;
 }
@@ -1719,24 +1717,24 @@ a:hover {
   font-size: 20px;
   font-weight: 700;
   color: #040b4d;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .preApprovePara {
   font-size: 14px;
   line-height: 26px;
   text-align: center;
-  color: #6F6F6F;
+  color: #6f6f6f;
 }
 .preApprovNo {
   font-size: 32px;
   font-weight: 700;
   color: #040b4d;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .paraPreApproed {
   font-size: 16px;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #040b4d;
   opacity: 0.8;
 }
@@ -1748,7 +1746,7 @@ a:hover {
   font-size: 20px;
   font-weight: 800;
   border-color: inherit;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 
   padding: 1em 7em;
 }
@@ -1794,7 +1792,7 @@ a:hover {
   color: #33658a;
   font-size: 20px;
   font-weight: 800 !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 5px;
 }
 .kycDeatailsSecondFormsty {
@@ -1810,7 +1808,7 @@ a:hover {
 .parastyPdfProgessbar {
   font-size: 14px;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #33658a;
 }
 .progersbarPdf {
@@ -1831,7 +1829,7 @@ a:hover {
 .Skipsty {
   font-size: 20px;
   font-weight: 800;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #33658a;
   text-align: center;
   padding-top: 10px;
@@ -1873,7 +1871,7 @@ a:hover {
   background-color: #33658a !important ;
   font-size: 1.2em;
   font-weight: 800;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .input-range__slider {
   width: 20px;
@@ -1994,23 +1992,34 @@ select option {
   margin-right: 75px;
 }
 
-.loader{
+.loader {
   text-align-last: center;
-    margin: 230px 0 0 0;
+  margin: 230px 0 0 0;
 }
 .loaderanimation {
-  display:block;
-  margin-bottom:8%;
-  margin-top:8%;
-  border-color:red ;
-  text-align:center;
- 
+  display: block;
+  margin-bottom: 8%;
+  margin-top: 8%;
+  background-color: #ffffff;
+  text-align: center;
 }
-.loaderImage{
-width: 300px;
-height: 300px;
+.loaderImage {
+  width: 300px;
+  height: 300px;
+}
+.loaderImagePhone {
+  width: 120px;
+  height: 120px;
 }
 
+.loaderanimationPhone {
+  display: block;
+
+  margin-top: 60%;
+  margin-bottom: 90%;
+  background-color: #ffffff;
+  text-align: center;
+}
 .btnCal {
   background: transparent;
   border: none;
@@ -2194,7 +2203,6 @@ height: 300px;
     padding-bottom: 5px;
   }
   .img-fluid {
-    
     padding-bottom: 5px;
     padding-top: 5px;
   }
@@ -2402,8 +2410,6 @@ height: 300px;
   .form-block {
     margin-top: 0em;
   }
-
-
 
   /*  Career Advisory */
 
@@ -2766,7 +2772,6 @@ height: 300px;
     font-size: 12px;
     padding-top: 15px;
   }
-
 }
 
 /*

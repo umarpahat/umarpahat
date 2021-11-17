@@ -129,7 +129,7 @@ function LoginWithMobMpin(props) {
   return (
     <>
       <Header {...props} />
-      <div className="content darkBg" >
+      
         {loader ? (
           <div className="loader">
             {" "}
@@ -142,7 +142,7 @@ function LoginWithMobMpin(props) {
             forget_password={true}
             resendOtp={sendOtp} />
         ) : (
-
+          <div className="content darkBg" >
             <Container>
               <div className="row">
               <div className="col-lg-2 col-md-2 col-sm-12 text-center">
@@ -224,8 +224,9 @@ function LoginWithMobMpin(props) {
               </div>
           </div>
             </Container>
+             </div>
         )}
-      </div>
+     
     </>
   );
 }

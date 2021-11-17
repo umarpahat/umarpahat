@@ -253,6 +253,7 @@ const GetCibilReport = (props) => {
         let err = error.response.data.Message;
 
         toast.error(err, { ...options });
+        setLoader(false)
       });
   };
 
@@ -312,6 +313,7 @@ const GetCibilReport = (props) => {
         let err = error.response.data.Message;
 
         toast.error(err, { ...options });
+        setLoader(false)
       });
   };
   const [otperr, setOtperr] = useState("");
@@ -351,8 +353,12 @@ const GetCibilReport = (props) => {
 
         handleToClose();
       })
-      .catch(function (error) {
+      .catch( (error) => {
         console.log(error);
+        let err = error.response.data.Message;
+
+        toast.error(err, { ...options });
+        setLoader(false)
       });
   };
   const handleResend = () => {
@@ -413,7 +419,7 @@ const GetCibilReport = (props) => {
       .post(url, data)
       .then((response) => {
         handleQuestions();
-        console.log("handleSkip", response);
+        
       })
       .catch(function (error) {
         console.log(error);
@@ -435,8 +441,13 @@ const GetCibilReport = (props) => {
           ...options,
         });
       })
-      .catch(function (error) {
+      .catch( (error) =>{
         console.log(error);
+        let err = error.response.data.Message;
+
+        toast.error(err, { ...options });
+        setLoader(false)
+
       });
   };
   const [name,setName]=useState()
@@ -636,6 +647,7 @@ const GetCibilReport = (props) => {
                               type="number"
                               className="cibil_input"
                               placeholder="Enter Phone Number"
+                              value={phone}
                               onChange={(event) => {
                                 setPhoneerr("");
                                 setPhone(event.target.value.slice(0, 10));
@@ -719,6 +731,7 @@ const GetCibilReport = (props) => {
                               maxLength={6}
                               className="cibil_input"
                               placeholder="Enter Pin Code"
+                              value={pincode}
                               onChange={(e) => {
                                 setPinCodeerr("");
                                 handlePinCode(e.target.value.slice(0, 6));

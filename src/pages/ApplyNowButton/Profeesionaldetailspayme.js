@@ -229,14 +229,15 @@ const Professionaldetailspayme = (props) => {
   return (
     <>
       <Header {...props}/>
-      <div className='content darkBg'>
-      <Container>
+     
         {loader ? (
           <div className="loader">
             {" "}
             <Loader color={"#33658a"} />{" "}
           </div>
         ) : (
+          <div className='content darkBg'>
+          <Container>
             <div className="row">
               <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                 <br/>
@@ -634,9 +635,10 @@ const Professionaldetailspayme = (props) => {
                 </div>
               </div>
             </div>
-        )}
-      </Container>
+            </Container>
       </div>
+        )}
+     
     </>
   );
 };
