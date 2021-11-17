@@ -319,12 +319,12 @@ const GetCibilReport = (props) => {
   const [otperr, setOtperr] = useState("");
 
   const handleVerificationAnswer = () => {
-    setLoader(true);
+    
     if (otp.length !== 6) {
       setOtperr("otp must be 6 digits");
       return;
     }
-
+   
     let url = "https://cibil.paymeindia.in/v1/verify_answers";
 
     let data = {
@@ -342,14 +342,20 @@ const GetCibilReport = (props) => {
       ],
       ChallengeConfigGUID: ConfigGUID,
     };
-
+    setLoader(true);
     axios
       .post(url, data)
       .then((response) => {
+        
         setLoader(false);
+        console.log("answer",response)
         if (response.data.IVStatus === "Success") {
           handleCunsumerAsset();
         }
+        if (response.data.IVStatus === "InProgress") {
+          toast.error("Something went wrong", { ...options });
+        }
+        
 
         handleToClose();
       })
@@ -437,6 +443,7 @@ const GetCibilReport = (props) => {
       .post(url, data)
       .then((response) => {
         setLoader(false);
+       console.log("asset" ,response)
         toast.success("Your cibil cibil report has been send to your Email", {
           ...options,
         });
