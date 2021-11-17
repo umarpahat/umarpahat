@@ -323,7 +323,7 @@ const OtherDetalisForm = (props) => {
   return (
     <>
       <Header {...props} active="payrent" />
-      <div className="content darkBg">
+     
         {loader ? (
           <div className="loader">
             {" "}
@@ -331,6 +331,7 @@ const OtherDetalisForm = (props) => {
           </div>
         ) : (
           // kyc_verified ?
+          <div className="content darkBg">
           <Container>
             {kycStatus === "VERIFIED" ? (
               <form onSubmit={handleSubmit}>
@@ -993,8 +994,9 @@ const OtherDetalisForm = (props) => {
               </div>
             ):null}
           </Container>
+          </div>
         )}
-      </div>
+     
     </>
   );
 };
