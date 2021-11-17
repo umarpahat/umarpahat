@@ -84,12 +84,7 @@ const Getquikloneapply = (props) => {
     <>
       {/* {!newUser ? <Header /> : null } */}
       <Header {...props} />
-      <div className="content darkBg">
-        <div className="info">
-          Make sure the mobile number is associated in this specific device, we
-          will send and verify the new number with reverse OTP.
-        </div>
-        <Container>
+     
           {loader ? (
             <div className="loader">
               {" "}
@@ -102,6 +97,12 @@ const Getquikloneapply = (props) => {
               resendOtp={verifyPhone}
             />
           ) : (
+            <div className="content darkBg">
+            <div className="info">
+              Make sure the mobile number is associated in this specific device, we
+              will send and verify the new number with reverse OTP.
+            </div>
+            <Container>
             <div className="row">
               <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                 <br />
@@ -186,9 +187,10 @@ const Getquikloneapply = (props) => {
                 </div>
               </div>
             </div>
-          )}
-        </Container>
+            </Container>
       </div>
+          )}
+     
     </>
   );
 };

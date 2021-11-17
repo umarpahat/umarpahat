@@ -57,13 +57,14 @@ function Referralcode(props) {
   return (
     <>
       <Header {...props} />
-      <div className="content darkBg">
+     
         {loader ? (
           <div className="loader">
             {" "}
             <Loader color={"#33658a"} />{" "}
           </div>
         ) : (
+          <div className="content darkBg">
           <Container>
             <div className="row">
               <div className="col-lg-2 col-md-2 col-sm-12 text-center">
@@ -161,6 +162,7 @@ function Referralcode(props) {
               </div>
             </div>
           </Container>
+          </div>
         )}
         <div className="py-3">
           {/* <Link to="/create-mpin"> */}
@@ -177,7 +179,7 @@ function Referralcode(props) {
           </p>
           {/* </Link> */}
         </div>
-      </div>
+     
     </>
   );
 }
