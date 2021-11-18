@@ -241,6 +241,7 @@ const GetCibilReport = (props) => {
         setLoader(false);
         if (response.data.Status === "Failure") {
           toast.error("something went wrong", { ...options });
+          return;
         }
         if (response.data.Status === "Success") {
           handleCunsumerAsset();
@@ -253,9 +254,12 @@ const GetCibilReport = (props) => {
         let err = error.response.data.Message;
 
         toast.error(err, { ...options });
-        setLoader(false)
+        setLoader(false);
       });
   };
+
+  const [questionlist, setQuestionlist] = useState();
+  const [answerList, setAnswerList] = useState({});
 
   const handleQuestions = () => {
     setLoader(true);
@@ -279,6 +283,11 @@ const GetCibilReport = (props) => {
         } else {
           handleClickToOpen();
         }
+
+        setAnswerList(response.data.GetAuthenticationQuestionsSuccess.question);
+        setQuestionlist(
+          response.data.GetAuthenticationQuestionsSuccess.question
+        );
         setQuestionType(
           response.data.GetAuthenticationQuestionsSuccess.QueueName
         );
@@ -313,18 +322,17 @@ const GetCibilReport = (props) => {
         let err = error.response.data.Message;
 
         toast.error(err, { ...options });
-        setLoader(false)
+        setLoader(false);
       });
   };
   const [otperr, setOtperr] = useState("");
 
   const handleVerificationAnswer = () => {
-    
     if (otp.length !== 6) {
       setOtperr("otp must be 6 digits");
       return;
     }
-   
+
     let url = "https://cibil.paymeindia.in/v1/verify_answers";
 
     let data = {
@@ -346,25 +354,23 @@ const GetCibilReport = (props) => {
     axios
       .post(url, data)
       .then((response) => {
-        
         setLoader(false);
-        console.log("answer",response)
+        console.log("answer", response);
         if (response.data.IVStatus === "Success") {
           handleCunsumerAsset();
         }
         if (response.data.IVStatus === "InProgress") {
           toast.error("Something went wrong", { ...options });
         }
-        
 
         handleToClose();
       })
-      .catch( (error) => {
+      .catch((error) => {
         console.log(error);
         let err = error.response.data.Message;
 
         toast.error(err, { ...options });
-        setLoader(false)
+        setLoader(false);
       });
   };
   const handleResend = () => {
@@ -402,7 +408,7 @@ const GetCibilReport = (props) => {
       });
   };
   const handleSkip = () => {
-    setLoader(true);
+    setOtp("");
     let url = "https://cibil.paymeindia.in/v1/verify_answers";
 
     let data = {
@@ -420,12 +426,17 @@ const GetCibilReport = (props) => {
       ],
       ChallengeConfigGUID: ConfigGUID,
     };
-
+    setLoader(true);
     axios
       .post(url, data)
       .then((response) => {
-        handleQuestions();
-        
+        if (response.data.IVStatus === "Failure") {
+          toast.error("Something went wrong", { ...options });
+          setLoader(false);
+          return;
+        } else {
+          handleQuestions();
+        }
       })
       .catch(function (error) {
         console.log(error);
@@ -443,23 +454,22 @@ const GetCibilReport = (props) => {
       .post(url, data)
       .then((response) => {
         setLoader(false);
-       console.log("asset" ,response)
+        console.log("asset", response);
         toast.success("Your cibil cibil report has been send to your Email", {
           ...options,
         });
       })
-      .catch( (error) =>{
+      .catch((error) => {
         console.log(error);
         let err = error.response.data.Message;
 
         toast.error(err, { ...options });
-        setLoader(false)
-
+        setLoader(false);
       });
   };
-  const [name,setName]=useState()
+  const [name, setName] = useState();
   const splitName = (value) => {
-    setName(value)
+    setName(value);
     let namearray = value.split(" ", 2);
     setFName(value.split(" ", 2)[0]);
     setLName(value.split(" ", 2)[1]);
@@ -476,16 +486,17 @@ const GetCibilReport = (props) => {
   };
 
   const responseGoogle = (res) => {
-     setEmail(res.profileObj.email);
+    setEmail(res.profileObj.email);
+    toast.success("Email successfully signed in", { ...options });
   };
 
   const responseGoogleFail = (res) => {
-    console.log("fail login ", res);
+    toast.error("Please login google account in your device", { ...options });
   };
 
   return (
     <>
-      <Header {...props}/>
+      <Header {...props} />
 
       {!loader ? (
         <>
@@ -510,14 +521,18 @@ const GetCibilReport = (props) => {
               <div className="container">
                 <div className="row align-items-center">
                   <div className="col-sm-12 col-md-5">
-                    <h1 className="heading1">Get your Credit Score</h1>
+                    <h1 className="heading1">
+                      Check your credit health report for free
+                    </h1>
                     <h3 className="heading5">
-                      just now, and improve your score
+                      Monitor your CIBIL Score to always be credit-ready
                     </h3>
                     <p className="heading6">
-                      Illo harum eius aut quis nobis quo autem aperiam. Nesciunt
-                      unde aut nihil sapiente aut. Voluptate ad magnam quia
-                      itaque nesciunt iusto aspernatur.as deleniti.
+                      Your credit score is an almost true image of your
+                      creditworthiness. Higher is your Credit Score, higher are
+                      chances of your loan getting approved. Get a Credit report
+                      worth Rs.1500 absolutely free with PayMe India. Get a deep
+                      analysis of your current credit profile.
                     </p>
                     <br />
                     <br />
@@ -618,7 +633,6 @@ const GetCibilReport = (props) => {
                           <div className="form-group ms-input-group">
                             <label className="form-label pb-2">Full Name</label>
                             <input
-                              
                               maxLength={60}
                               type="text"
                               className="cibil_input"
@@ -626,17 +640,12 @@ const GetCibilReport = (props) => {
                               value={name}
                               onChange={(e) => {
                                 setNameerr("");
-                                if (
-                                  e.target.value.match(/^[A-Za-z{" "}]+$/)
-                                ) {
+                                if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
                                   splitName(e.target.value);
                                 } else if (e.target.value.length === 0) {
                                   splitName(e.target.value);
                                 }
                               }}
-                               
-                                
-                              
                               required=""
                             />
                             {nameerr ? (
@@ -650,7 +659,6 @@ const GetCibilReport = (props) => {
                               Phone Number
                             </label>
                             <input
-                              
                               type="number"
                               className="cibil_input"
                               placeholder="Enter Phone Number"
@@ -755,24 +763,23 @@ const GetCibilReport = (props) => {
                           <div className="form-group ms-input-group">
                             <label className="form-label pb-2">Email</label>
                             <GoogleLogin
-                        clientId={GoogleCliendId}
-                        render={(renderProps) => (
-                          <input
-                          onClick={renderProps.onClick} 
-                            name="name"
-                            type="text"
-                            value={email}
-                           
-                            className="cibil_input"
-                            placeholder="Enter Email"
-                            required=""
-                            disabled={renderProps.disabled}
-                          />
-                        )}
-                        onSuccess={responseGoogle}
-                        onFailure={responseGoogleFail}
-                        cookiePolicy={"single_host_origin"}
-                      />
+                              clientId={GoogleCliendId}
+                              render={(renderProps) => (
+                                <input
+                                  onClick={renderProps.onClick}
+                                  name="name"
+                                  type="text"
+                                  value={email}
+                                  className="cibil_input"
+                                  placeholder="Enter Email"
+                                  required=""
+                                  disabled={renderProps.disabled}
+                                />
+                              )}
+                              onSuccess={responseGoogle}
+                              onFailure={responseGoogleFail}
+                              cookiePolicy={"single_host_origin"}
+                            />
                             {emailerr ? (
                               <span style={{ color: "red" }}>{emailerr}</span>
                             ) : null}
@@ -780,7 +787,6 @@ const GetCibilReport = (props) => {
                         </div>
                       </div>
 
-                     
                       <h4
                         className="form-heading"
                         style={{ textAlign: "left", paddingTop: 30 }}
@@ -860,7 +866,7 @@ const GetCibilReport = (props) => {
                               Street Address 2
                             </label>
                             <input
-                             maxLength={120}
+                              maxLength={120}
                               name="name"
                               type="text"
                               className="cibil_input"
@@ -908,7 +914,12 @@ const GetCibilReport = (props) => {
                       </div>
                     </div>
 
-                    <Dialog open={open} onClose={handleToClose}>
+                    <Dialog
+                      open={open}
+                      onClose={handleToClose}
+                      fullWidth={true}
+                      style={{ boxSizing: 400 }}
+                    >
                       <DialogContent>
                         <p style={{ textAlign: "center" }}>
                           00:{" "}
@@ -926,22 +937,54 @@ const GetCibilReport = (props) => {
                           <input
                             name="name"
                             type="text"
-                            style={{ width: "110%" }}
                             className="cibil_input"
-                            placeholder="Enter Alternate Mobile Number"
+                            placeholder="Enter Alternate Number"
                             onChange={(e) => {
+                              setOtperr("");
                               setOtp(e.target.value);
                             }}
                             required=""
                           />
+                        ) : questiontype === "IDM_KBA_Queue" ? (
+                          questionlist.map(function (questiondata) {
+                            <li>
+                              {" "}
+                              <DialogContentText>
+                                {" "}
+                                {questiondata.FullQuestionText}
+                              </DialogContentText>
+                            </li>;
+
+                            questiondata.AnswerChoice.map(function (
+                              answerchoice
+                            ) {
+                              <select
+                                className="select-item"
+                                onChange={(event) => {
+                                  setOtperr("");
+                                  setOtp(event.target.value);
+                                }}
+                              >
+                                {/* <option value="" hidden>
+                            Select Answer
+                          </option> */}
+
+                                <option value={answerchoice.AnswerChoiceText}>
+                                  {answerchoice.AnswerChoiceText}
+                                </option>
+                              </select>;
+                            });
+                          })
                         ) : (
                           <input
                             name="name"
-                            type="text"
+                            type="number"
+                            value={otp}
                             className="cibil_input"
                             placeholder="Enter otp"
                             onChange={(e) => {
-                              setOtp(e.target.value);
+                              setOtperr("");
+                              setOtp(e.target.value.slice(0, 6));
                             }}
                             required=""
                           />
@@ -966,23 +1009,17 @@ const GetCibilReport = (props) => {
                         <Button
                           onClick={handleVerificationAnswer}
                           className="green"
-                          autoFocus
                         >
                           Submit
                         </Button>
                         {skipable ? (
-                          <Button
-                            onClick={handleSkip}
-                            className="green"
-                            autoFocus
-                          >
+                          <Button onClick={handleSkip} className="green">
                             Skip
                           </Button>
                         ) : (
                           <Button
                             className="black"
                             style={{ cursor: "not-allowed" }}
-                            autoFocus
                           >
                             Skip
                           </Button>
