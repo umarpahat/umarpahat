@@ -251,10 +251,11 @@ const GetCibilReport = (props) => {
         }
       })
       .catch((error) => {
+        setLoader(false);
         let err = error.response.data.Message;
 
         toast.error(err, { ...options });
-        setLoader(false);
+        
       });
   };
 
@@ -659,14 +660,18 @@ const GetCibilReport = (props) => {
                               Phone Number
                             </label>
                             <input
-                              type="number"
+                              type="text"
+                             
                               className="cibil_input"
-                              placeholder="Enter Phone Number"
-                              value={phone}
+                              placeholder="Enter 10 digits Phone Number"
+                             
                               onChange={(event) => {
                                 setPhoneerr("");
-                                setPhone(event.target.value.slice(0, 10));
+                              
+                                setPhone(event.target.value.slice(0, 10).replace(/\D/g, ""));
+                                
                               }}
+                              value={phone}
                               required=""
                             />
                             {phoneerr ? (
@@ -742,7 +747,7 @@ const GetCibilReport = (props) => {
                             </label>
                             <input
                               name="name"
-                              type="number"
+                              type="text"
                               maxLength={6}
                               className="cibil_input"
                               placeholder="Enter Pin Code"
@@ -750,7 +755,7 @@ const GetCibilReport = (props) => {
                               onChange={(e) => {
                                 setPinCodeerr("");
                                 handlePinCode(e.target.value.slice(0, 6));
-                                setPin(e.target.value.slice(0, 6));
+                                setPin(e.target.value.slice(0, 6).replace(/\D/g, ""));
                               }}
                               required=""
                             />
@@ -941,16 +946,16 @@ const GetCibilReport = (props) => {
                             placeholder="Enter Alternate Number"
                             onChange={(e) => {
                               setOtperr("");
-                              setOtp(e.target.value);
+                              setOtp(e.target.value.slice(0,10).replace(/\D/g, ""));
                             }}
                             required=""
                           />
                         ) : questiontype === "IDM_KBA_Queue" ? (
                           questionlist.map(function (questiondata) {
-                            <li>
-                              {" "}
+                            <li key={ques}>
+                              
                               <DialogContentText>
-                                {" "}
+                                
                                 {questiondata.FullQuestionText}
                               </DialogContentText>
                             </li>;
@@ -978,13 +983,13 @@ const GetCibilReport = (props) => {
                         ) : (
                           <input
                             name="name"
-                            type="number"
+                            type="text"
                             value={otp}
                             className="cibil_input"
                             placeholder="Enter otp"
                             onChange={(e) => {
                               setOtperr("");
-                              setOtp(e.target.value.slice(0, 6));
+                              setOtp(e.target.value.slice(0, 6).replace(/\D/g, ""));
                             }}
                             required=""
                           />
