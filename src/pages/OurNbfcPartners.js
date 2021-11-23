@@ -11,6 +11,7 @@ import $ from "jquery";
 import arvog from "../images/arvog.jpg";
 import money2me from "../images/money2me.jpg";
 import paymeindia from "../images/paymeindia.png";
+import arthmate from "../images/Arthmatelogo.png";
 import MetaTags from "react-meta-tags";
 import mailBox from "../images/svg/mail-box.svg";
 
@@ -45,6 +46,9 @@ const OurNbfcPartners = (props) => {
                             <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
                                 <img className='img-fluid' src={arvog} alt="paymeindia"/>
                             </div>
+                            <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                <img className='img-fluid' src={arthmate} alt="Arthmate"/>
+                            </div>
 
                         </div>
                         <div className="row p-b-30 nbfc_img row justify-content-md-center p-t-80">
@@ -55,6 +59,8 @@ const OurNbfcPartners = (props) => {
                                 <p>We work with an objective to provide best in class service to our customers with help
                                     of our NBFCs Partners Arvog (Finkurve Financial Services Limited), Money2money
                                     Finance Private Limited, and PayMe India financial services private limited.</p>
+                                
+                                    
 
 
                                 <h5 className='heading5  p-t-30'>Arvog (Finkurve Financial Services Limited)</h5>
@@ -65,6 +71,11 @@ const OurNbfcPartners = (props) => {
                                     value creation, integrity, radical transparency, and innovation. Arvog’s fulcrum of
                                     growth has been its relentless focus on spotting and unlocking worth in worthy ideas
                                     and ventures, preference for smart-tech-enabled scalability.</p>
+
+                                    <h5 className='heading5  p-t-30'>Arthmate(Mamta Projects Private Limited) </h5>
+                                <p className='p-t-20'>
+                                Arthmate(Mamta Projects Private Limited) a new age NBFC founded in 1994, which provides credit solutions for Internet enabled businesses. We partner with leading fintechs, online marketplaces, aggregators and create tailor made credit solutions.</p>
+
 
                                 <h5 className='heading5  p-t-30'>Money 2 Me Finance Private Limited</h5>
                                 <p className='p-t-20'>Money2me Finance Private Limited was incorporated in 1991. It is
