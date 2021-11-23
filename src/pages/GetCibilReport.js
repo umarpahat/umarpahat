@@ -41,7 +41,8 @@ const GetCibilReport = (props) => {
   const [street, setStreet] = useState("");
   const [streetSecond, setStreetSecond] = useState("");
   const [pincode, setPin] = useState("");
-  const [addresstype, setAddresstype] = useState("01");
+  const [addresstype, setAddresstype] = useState("");
+  const[addresstypeerr,setAddresstypeerr]=useState("")
   const [prefix, setPrefix] = useState("");
   const [gender, setGender] = useState("");
   const [agree, setAgree] = useState(false);
@@ -60,7 +61,7 @@ const GetCibilReport = (props) => {
   const [phoneerr, setPhoneerr] = useState("");
   const [pincodeerr, setPinCodeerr] = useState("");
   const [city, setCity] = useState("");
-  const [title, setTitle] = useState("");
+  const [termserr, setTermserr] = useState("");
   const [resendEligible, setResendEligible] = useState(false);
   const [skipable, setSkipable] = useState(false);
   const [lastQuestion, setLastQuestion] = useState(false);
@@ -166,6 +167,10 @@ const GetCibilReport = (props) => {
       setPhoneerr("Phone number is Invalid");
       return false;
     }
+    if (correctpan.length === 0) {
+      setPanerr("Please input correct PAN Number");
+      return;
+    }
 
     if (email.length < 5) {
       setEmailerr("Email should be at least 5 charcters long");
@@ -183,7 +188,10 @@ const GetCibilReport = (props) => {
       setEmailerr("Email id is Invalid");
       return false;
     }
-
+   if(addresstype.length===0){
+    setAddresstypeerr("Please select Address type")
+    return;
+   }
     if (pincode.length === 0) {
       setPinCodeerr("Pin Code can't be empty");
       return false;
@@ -194,6 +202,11 @@ const GetCibilReport = (props) => {
     }
     if (streetSecond.length === 0) {
       setSecondaddresserr("Address can't be empty");
+      return;
+    }
+    if(agree===false)
+    {
+      toast.error("Please accept term & conditions", { ...options });
       return;
     }
 
@@ -255,7 +268,6 @@ const GetCibilReport = (props) => {
         let err = error.response.data.Message;
 
         toast.error(err, { ...options });
-        
       });
   };
 
@@ -600,7 +612,6 @@ const GetCibilReport = (props) => {
                               type="radio"
                               className="others"
                               name="gender"
-                              defaultChecked="true"
                               onChange={(e) => {
                                 setGender("Female");
                                 setGendererr("");
@@ -661,15 +672,16 @@ const GetCibilReport = (props) => {
                             </label>
                             <input
                               type="text"
-                             
                               className="cibil_input"
                               placeholder="Enter 10 digits Phone Number"
-                             
                               onChange={(event) => {
                                 setPhoneerr("");
-                              
-                                setPhone(event.target.value.slice(0, 10).replace(/\D/g, ""));
-                                
+
+                                setPhone(
+                                  event.target.value
+                                    .slice(0, 10)
+                                    .replace(/\D/g, "")
+                                );
                               }}
                               value={phone}
                               required=""
@@ -694,6 +706,7 @@ const GetCibilReport = (props) => {
                               className="cibil_input"
                               placeholder="Enter Pan Number"
                               onChange={(e) => {
+                                
                                 if (
                                   e.target.value
                                     .toUpperCase()
@@ -705,6 +718,7 @@ const GetCibilReport = (props) => {
                                   setPanerr("Please input correct PAN Number");
                                   setcorrectPan("");
                                 }
+                                
                                 setPan(e.target.value.toUpperCase());
 
                                 handleClientKey(e.target.value.toUpperCase());
@@ -731,6 +745,8 @@ const GetCibilReport = (props) => {
                               type="date"
                               className="cibil_input"
                               placeholder="DD/MM/YYYY"
+                              min="1920-01-01"
+                              max="2003-01-01"
                               onChange={(e) => {
                                 setDate(e.target.value);
                               }}
@@ -755,7 +771,9 @@ const GetCibilReport = (props) => {
                               onChange={(e) => {
                                 setPinCodeerr("");
                                 handlePinCode(e.target.value.slice(0, 6));
-                                setPin(e.target.value.slice(0, 6).replace(/\D/g, ""));
+                                setPin(
+                                  e.target.value.slice(0, 6).replace(/\D/g, "")
+                                );
                               }}
                               required=""
                             />
@@ -807,6 +825,7 @@ const GetCibilReport = (props) => {
                               name="registration"
                               onChange={(e) => {
                                 setAddresstype("01");
+                                setAddresstypeerr("")
                               }}
                               value="Home"
                             />
@@ -817,9 +836,9 @@ const GetCibilReport = (props) => {
                               type="radio"
                               className="others"
                               name="registration"
-                              defaultChecked="true"
                               onChange={(e) => {
                                 setAddresstype("02");
+                                setAddresstypeerr("")
                               }}
                               value="Office"
                             />
@@ -832,12 +851,17 @@ const GetCibilReport = (props) => {
                               name="registration"
                               onChange={(e) => {
                                 setAddresstype("03");
+                                setAddresstypeerr("")
                               }}
                               value="Other"
                             />
                             <label className="m-r-15" htmlFor="others">
                               Other
                             </label>
+                            <br/>
+                            {addresstypeerr ? (
+                              <span style={{ color: "red" }}>{addresstypeerr}</span>
+                            ) : null}
                           </div>
                         </div>
                         <div className="col-sm-12 col-md-6">
@@ -914,6 +938,11 @@ const GetCibilReport = (props) => {
                               hereby authorize Payme India to check CIBIL score
                               & report for my profile
                             </label>
+                            {termserr ? (
+                              <span style={{ color: "red" }}>
+                                {termserr}
+                              </span>
+                            ) : null}
                           </div>
                         </div>
                       </div>
@@ -946,16 +975,16 @@ const GetCibilReport = (props) => {
                             placeholder="Enter Alternate Number"
                             onChange={(e) => {
                               setOtperr("");
-                              setOtp(e.target.value.slice(0,10).replace(/\D/g, ""));
+                              setOtp(
+                                e.target.value.slice(0, 10).replace(/\D/g, "")
+                              );
                             }}
                             required=""
                           />
                         ) : questiontype === "IDM_KBA_Queue" ? (
                           questionlist.map(function (questiondata) {
                             <li key={ques}>
-                              
                               <DialogContentText>
-                                
                                 {questiondata.FullQuestionText}
                               </DialogContentText>
                             </li>;
@@ -989,7 +1018,9 @@ const GetCibilReport = (props) => {
                             placeholder="Enter otp"
                             onChange={(e) => {
                               setOtperr("");
-                              setOtp(e.target.value.slice(0, 6).replace(/\D/g, ""));
+                              setOtp(
+                                e.target.value.slice(0, 6).replace(/\D/g, "")
+                              );
                             }}
                             required=""
                           />
