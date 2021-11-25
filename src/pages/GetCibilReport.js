@@ -25,7 +25,7 @@ import { GoogleLogin } from "react-google-login";
 toast.configure();
 const options = {
   position: "top-center",
-  autoClose: 6000,
+  autoClose: 3000,
   limit: 1,
   closeButton: false,
 };
