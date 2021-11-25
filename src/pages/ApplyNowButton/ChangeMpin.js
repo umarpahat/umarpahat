@@ -70,7 +70,7 @@ function ChangeMpin(props) {
               props.history.push({ pathname: "/kyc-details-form" });
             } else if (userCase === "pay-rent") {
               gtag_report_conversion("https://www.paymeindia.in/change-mpin");
-              fbq('track', 'Lead');
+              // fbq('track', 'Lead');
               props.history.push({ pathname: "/payrent-other-details" });
             }
           } else {

@@ -161,7 +161,7 @@ const GetCibilReport = (props) => {
       return false;
     }
     if (!lname) {
-      console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+      
       setLnameerr("Last name can't empty");
       return false;
     }
@@ -179,10 +179,18 @@ const GetCibilReport = (props) => {
       return false;
     }
     if (correctpan.length === 0) {
-      setPanerr("Please input correct PAN Number");
+      setPanerr("Please Enter correct PAN Number");
       return;
     }
-
+    if(date==="")
+    {
+      setDoberr("Enter Date of Birth")
+      return;
+    }
+    if (pincode.length !== 6) {
+      setPinCodeerr("Please Enter 6 Digits PinCode ");
+      return ;
+    }
     if (email.length < 5) {
       setEmailerr("Email should be at least 5 charcters long");
       return false;
@@ -203,10 +211,7 @@ const GetCibilReport = (props) => {
     setAddresstypeerr("Please select Address type")
     return;
    }
-    if (pincode.length === 0) {
-      setPinCodeerr("Pin Code can't be empty");
-      return false;
-    }
+ 
     if (street.length === 0) {
       setAddresserr("Address Cant be empty");
       return;
@@ -263,6 +268,7 @@ const GetCibilReport = (props) => {
       .post(url, data)
       .then((response) => {
         
+       
         setLoader(false);
         if (response.data.Status === "Failure") {
           toast.error("something went wrong", { ...options });
@@ -606,8 +612,9 @@ const GetCibilReport = (props) => {
                           >
                             Gender
                           </h5>
-                          <div className="form-group">
+                          <div className="form-group" >
                             <input
+                            style={{cursor:"pointer"}}
                               type="radio"
                               className="others"
                               name="gender"
@@ -621,6 +628,7 @@ const GetCibilReport = (props) => {
                               Male
                             </label>
                             <input
+                            style={{cursor:"pointer"}}
                               type="radio"
                               className="others"
                               name="gender"
@@ -634,6 +642,7 @@ const GetCibilReport = (props) => {
                               Female
                             </label>
                             <input
+                            style={{cursor:"pointer"}}
                               type="radio"
                               className="others"
                               name="gender"
@@ -646,12 +655,14 @@ const GetCibilReport = (props) => {
                             <label className="m-r-15" htmlFor="others">
                               Others
                             </label>
+                            <br/>
+                            {gendererr ? (
+                        <span style={{ color: "red" ,fontSize:"16px" }}>{gendererr}</span>
+                      ) : null}
                           </div>
                         </div>
                       </div>
-                      {gendererr ? (
-                        <span style={{ color: "red" }}>{gendererr}</span>
-                      ) : null}
+                     
                       <div className="row align-items-center">
                         <div className="col-sm-12 col-md-6">
                           <div className="form-group ms-input-group">
@@ -675,8 +686,8 @@ const GetCibilReport = (props) => {
                             />
                             {(nameerr || lnameerr) ? (
                               <>
-                              <span style={{ color: "red" }}>{nameerr} </span>
-                              <span style={{ color: "red" }}>{lnameerr} </span></>
+                              <span style={{ color: "red" ,fontSize:"16px" }}>{nameerr} </span>
+                              <span style={{ color: "red" ,fontSize:"16px" }}>{lnameerr} </span></>
                             ) : null}
 
                           </div>
@@ -703,7 +714,7 @@ const GetCibilReport = (props) => {
                               required=""
                             />
                             {phoneerr ? (
-                              <span style={{ color: "red" }}>{phoneerr}</span>
+                              <span style={{ color: "red" ,fontSize:"16px" }}>{phoneerr}</span>
                             ) : null}
                           </div>
                         </div>
@@ -742,7 +753,7 @@ const GetCibilReport = (props) => {
                               required=""
                             />
                             {panerr ? (
-                              <span style={{ color: "red" }}>{panerr}</span>
+                              <span style={{ color: "red" ,fontSize:"16px" }}>{panerr}</span>
                             ) : null}
                             {correctpan ? (
                               <span style={{ color: "green" }}>
@@ -757,6 +768,7 @@ const GetCibilReport = (props) => {
                               Date of birth
                             </label>
                             <input
+                             style={{cursor:"pointer"}}
                               name="name"
                               type="date"
                               className="cibil_input"
@@ -768,6 +780,9 @@ const GetCibilReport = (props) => {
                               }}
                               required=""
                             />
+                            {doberr ? (
+                              <span style={{ color: "red" ,fontSize:"16px" }}>{doberr}</span>
+                            ) : null}
                           </div>
                         </div>
                       </div>
@@ -794,7 +809,7 @@ const GetCibilReport = (props) => {
                               required=""
                             />
                             {pincodeerr ? (
-                              <span style={{ color: "red" }}>{pincodeerr}</span>
+                              <span style={{ color: "red" ,fontSize:"16px" }}>{pincodeerr}</span>
                             ) : null}
                           </div>
                         </div>
@@ -820,7 +835,7 @@ const GetCibilReport = (props) => {
                               cookiePolicy={"single_host_origin"}
                             />
                             {emailerr ? (
-                              <span style={{ color: "red" }}>{emailerr}</span>
+                              <span style={{ color: "red" ,fontSize:"16px" }}>{emailerr}</span>
                             ) : null}
                           </div>
                         </div>
@@ -836,6 +851,7 @@ const GetCibilReport = (props) => {
                         <div className="col-sm-12 col-md-6">
                           <div className="form-group ms-input-group">
                             <input
+                            style={{cursor:"pointer"}}
                               type="radio"
                               className="others"
                               name="registration"
@@ -849,6 +865,7 @@ const GetCibilReport = (props) => {
                               Home
                             </label>
                             <input
+                            style={{cursor:"pointer"}}
                               type="radio"
                               className="others"
                               name="registration"
@@ -862,6 +879,7 @@ const GetCibilReport = (props) => {
                               Office
                             </label>
                             <input
+                            style={{cursor:"pointer"}}
                               type="radio"
                               className="others"
                               name="registration"
@@ -876,7 +894,7 @@ const GetCibilReport = (props) => {
                             </label>
                             <br/>
                             {addresstypeerr ? (
-                              <span style={{ color: "red" }}>{addresstypeerr}</span>
+                              <span style={{ color: "red" ,fontSize:"16px" }}>{addresstypeerr}</span>
                             ) : null}
                           </div>
                         </div>
@@ -898,7 +916,7 @@ const GetCibilReport = (props) => {
                               required=""
                             />
                             {addresserr ? (
-                              <span style={{ color: "red" }}>{addresserr}</span>
+                              <span style={{ color: "red" ,fontSize:"16px" }}>{addresserr}</span>
                             ) : null}
                           </div>
                         </div>
@@ -923,7 +941,7 @@ const GetCibilReport = (props) => {
                               required=""
                             />
                             {secondaddresserr ? (
-                              <span style={{ color: "red" }}>
+                              <span style={{ color: "red" ,fontSize:"16px" }}>
                                 {secondaddresserr}
                               </span>
                             ) : null}
@@ -935,6 +953,7 @@ const GetCibilReport = (props) => {
                         <div className="col-sm-12 col-md-12">
                           <div className="form-group">
                             <input
+                            style={{cursor:"pointer"}}
                               type="checkbox"
                               id="checkbox"
                               name="checkbox"
@@ -958,7 +977,7 @@ const GetCibilReport = (props) => {
 
                             <br/>
                             {termserr ? (
-                              <span style={{ color: "red" }}>
+                              <span style={{ color: "red" ,fontSize:"16px" }}>
                                 {termserr}
                               </span>
                             ) : null}
@@ -1045,7 +1064,7 @@ const GetCibilReport = (props) => {
                           />
                         )}
                         {otperr ? (
-                          <span style={{ color: "red" }}>{otperr}</span>
+                          <span style={{ color: "red" ,fontSize:"16px" }}>{otperr}</span>
                         ) : null}
                       </DialogContent>
                       <DialogActions>
