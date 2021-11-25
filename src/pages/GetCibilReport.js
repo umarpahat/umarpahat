@@ -74,20 +74,19 @@ const GetCibilReport = (props) => {
   const [questiontype, setQuestionType] = useState("");
   const [counter, setCounter] = useState(0);
   const [secondaddresserr, setSecondaddresserr] = useState("");
-  const[doberr,setDoberr]=useState("");
-  function gtag_report_conversion(url) {
-    var callback = function() {
-      if (typeof(url) != 'undefined') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'conversion', {
-      'send_to': 'AW-875618776/QNxsCJyg1PACENjDw6ED',
-      'event_callback': callback
-    });
-    return false;
-  }
-
+  // function gtag_report_conversion(url) {
+  //   var callback = function() {
+  //     if (typeof(url) != 'undefined') {
+  //       window.location = url;
+  //     }
+  //   };
+  //   gtag('event', 'conversion', {
+  //     'send_to': 'AW-875618776/QNxsCJyg1PACENjDw6ED',
+  //     'event_callback': callback
+  //   });
+  //   return false;
+  // }
+  // gtag_report_conversion("https://www.paymeindia.in/get-cibil-report");
   const GoogleCliendId =
     "435990090197-cjdhhppfhvq8e9n0cullbtco1u22mf1g.apps.googleusercontent.com";
   useEffect(() => {
@@ -269,7 +268,7 @@ const GetCibilReport = (props) => {
       .post(url, data)
       .then((response) => {
         
-        gtag_report_conversion("https://www.paymeindia.in/get-cibil-report");
+       
         setLoader(false);
         if (response.data.Status === "Failure") {
           toast.error("something went wrong", { ...options });
