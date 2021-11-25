@@ -133,7 +133,7 @@ const GetCibilReport = (props) => {
         })
        
         .catch((err) => {
-        
+         
           setError("Invalid PIN Code");
         });
     }
@@ -160,7 +160,8 @@ const GetCibilReport = (props) => {
       setNameerr("Name can't be empty");
       return false;
     }
-    if (lname.length === 0) {
+    if (!lname) {
+      console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
       setLnameerr("Last name can't empty");
       return false;
     }
@@ -214,9 +215,9 @@ const GetCibilReport = (props) => {
       setSecondaddresserr("Address can't be empty");
       return;
     }
-    if(agree===false)
+    if(!agree)
     {
-      toast.error("Please accept term & conditions", { ...options });
+      setTermserr("Please accept term & conditions");
       return;
     }
 
@@ -663,6 +664,7 @@ const GetCibilReport = (props) => {
                               value={name}
                               onChange={(e) => {
                                 setNameerr("");
+                                setLnameerr("")
                                 if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
                                   splitName(e.target.value);
                                 } else if (e.target.value.length === 0) {
@@ -671,9 +673,12 @@ const GetCibilReport = (props) => {
                               }}
                               required=""
                             />
-                            {nameerr ? (
-                              <span style={{ color: "red" }}>{nameerr}</span>
+                            {(nameerr || lnameerr) ? (
+                              <>
+                              <span style={{ color: "red" }}>{nameerr} </span>
+                              <span style={{ color: "red" }}>{lnameerr} </span></>
                             ) : null}
+
                           </div>
                         </div>
                         <div className="col-sm-12 col-md-6">
@@ -949,6 +954,8 @@ const GetCibilReport = (props) => {
                               hereby authorize Payme India to check CIBIL score
                               & report for my profile
                             </label>
+
+                            <br/>
                             {termserr ? (
                               <span style={{ color: "red" }}>
                                 {termserr}
