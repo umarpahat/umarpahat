@@ -939,6 +939,7 @@ const GetCibilReport = (props) => {
                               id="checkbox"
                               name="checkbox"
                               onChange={(e) => {
+                                setTermserr("")
                                 setAgree(!agree);
                               }}
                             />
