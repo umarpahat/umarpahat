@@ -262,6 +262,7 @@ const GetCibilReport = (props) => {
     axios
       .post(url, data)
       .then((response) => {
+        
         gtag_report_conversion("https://www.paymeindia.in/get-cibil-report");
         setLoader(false);
         if (response.data.Status === "Failure") {
