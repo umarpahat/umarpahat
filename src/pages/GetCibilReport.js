@@ -74,6 +74,7 @@ const GetCibilReport = (props) => {
   const [questiontype, setQuestionType] = useState("");
   const [counter, setCounter] = useState(0);
   const [secondaddresserr, setSecondaddresserr] = useState("");
+  const [doberr,setDoberr]=useState("")
   // function gtag_report_conversion(url) {
   //   var callback = function() {
   //     if (typeof(url) != 'undefined') {

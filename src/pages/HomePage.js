@@ -270,7 +270,7 @@ anytime-anywhere with no hassle{" "}
                   score completely free with PayMe India.
                 </p>
                 
-                <Link style={{ color: "#fff", cursor: "pointer" }} to="/get-cibil-report"  className="btnLarge m-t-40">
+                <Link style={{ color: "#fff", cursor: "pointer" }} to={{pathname:'https://creditscore.paymeindia.in/'}} target={"_blank"} className="btnLarge m-t-40">
                   Get CIBIL Report
                 </Link>
               </div>
