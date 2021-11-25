@@ -376,6 +376,7 @@ button.button-gray:hover {
     background: #02C650;
     border-radius: 60px;
     border: 0;
+    cursor: pointer;
 }
 
 .heading2 {
