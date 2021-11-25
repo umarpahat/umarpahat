@@ -25,7 +25,7 @@ import { GoogleLogin } from "react-google-login";
 toast.configure();
 const options = {
   position: "top-center",
-  autoClose: 6000,
+  autoClose: 3000,
   limit: 1,
   closeButton: false,
 };
@@ -131,11 +131,9 @@ const GetCibilReport = (props) => {
 
           console.log(res);
         })
-        .then(() => {
-          document.getElementById("pincode").classList.remove("error");
-        })
+       
         .catch((err) => {
-          document.getElementById("pincode").className = "error";
+        
           setError("Invalid PIN Code");
         });
     }
