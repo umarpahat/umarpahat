@@ -914,8 +914,10 @@ const GetCibilReport = (props) => {
                             ) : null}
                           </div>
                         </div>
-                        <div className="col-sm-12 col-md-6">
-                          <div className="form-group">
+                        </div>
+                        <div className="row align-items-center">
+                      <div className="col-sm-12 col-md-6">
+                        <div className="form-group ms-input-group">
                             <label className="form-label pb-2">
                               Street Address 1
                             </label>
@@ -938,9 +940,9 @@ const GetCibilReport = (props) => {
                             ) : null}
                           </div>
                         </div>
-                      </div>
+                      
 
-                      <div className="row align-items-center">
+                      
                         <div className="col-sm-12 col-md-6">
                           <div className="form-group ms-input-group">
                             <label className="form-label pb-2">
