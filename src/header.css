@@ -51,7 +51,12 @@ body {
 .tabularLess a {
     padding: 0 !important;
 }
-
+.yes-icon{
+    width: 30px;
+    position: absolute;
+    right: 10px;
+    top:48px
+}
 .img_google {
     max-width: 100%;
 }

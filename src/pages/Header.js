@@ -59,11 +59,6 @@ const Header = (props) => {
                   </div>
                 </li>
 
-                <li>
-                    <div onClick={handleApplyLoan} className="headerLink download" >
-                    Download App
-                    </div>
-                  </li>
 
                   <li>
                     {props.active === "payrent" ? (
@@ -86,26 +81,10 @@ const Header = (props) => {
                         to="/offerings"
                       >
                         Our products
-
-                        <ul class="dropdown-content">
-  <li>Loan App</li>
-  <li>Gold App</li>
-  <li>SALT App</li>
-  <li>Mutual Funds</li>
-  <li>Get CIBIL ScoreNow</li>
-  </ul>
-
                       </Link>
                     ) : (
                       <Link className="headerLink dropdown" to="/offerings">
                         Our products
-                        <ul class="dropdown-content">
-                        <li>Loan App</li>
-                        <li>Gold App</li>
-                        <li>SALT App</li>
-                        <li>Mutual Funds</li>
-                        <li>Get CIBIL ScoreNow</li>
-                        </ul>
                       </Link>
                     )}
                   </li>

@@ -91,7 +91,7 @@ const HomePage = (props) => {
 
     return result;
   }
-
+console.log('Get cibil score:', props.location.state.success)
   return (
     <>
       {" "}
