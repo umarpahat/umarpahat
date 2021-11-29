@@ -515,11 +515,33 @@ const GetCibilReport = (props) => {
   };
 
   const responseGoogle = (res) => {
-    setEmail(res.profileObj.email);
-    toast.success("Email successfully signed in", { ...options });
-    setIsButtonDisabled(true)
-    setTimeout(() => setIsButtonDisabled(false), 3000);
-    setEmailerr('')
+  console.log("cibil",res,res.accessToken)
+  let access_token = res.tokenId;
+ url = `https://oauth2.googleapis.com/tokeninfo?id_token=${access_token}`
+    axios
+    .get(url)
+    .then((response) => {
+    
+      if(res.profileObj.email===response.data.email)
+      {
+      setEmail(res.profileObj.email);
+      toast.success("Email successfully signed in", { ...options });
+      setIsButtonDisabled(true)
+      setTimeout(() => setIsButtonDisabled(false), 3000);
+      
+      setEmailerr('')
+      }
+      else
+      {
+        toast.error("Please login with different email Id", { ...options });
+      }
+    
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    
+   
   };
 
   const responseGoogleFail = (res) => {
