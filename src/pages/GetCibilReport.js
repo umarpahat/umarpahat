@@ -8,6 +8,7 @@ import "../../src/home.css";
 import MetaTags from "react-meta-tags";
 import Cookies from "universal-cookie";
 import Loader from "../component/Loader";
+import yesIcon from "../images/yes.png";
 const cookies = new Cookies();
 
 import { Link } from "react-router-dom";
@@ -25,7 +26,7 @@ import { GoogleLogin } from "react-google-login";
 toast.configure();
 const options = {
   position: "top-center",
-  autoClose: 3000,
+  autoClose: 2000,
   limit: 1,
   closeButton: false,
 };
@@ -74,6 +75,7 @@ const GetCibilReport = (props) => {
   const [questiontype, setQuestionType] = useState("");
   const [counter, setCounter] = useState(0);
   const [secondaddresserr, setSecondaddresserr] = useState("");
+  const [ isButtonDisabled, setIsButtonDisabled] = useState("");
   const [doberr, setDoberr] = useState("");
   // function gtag_report_conversion(url) {
   //   var callback = function() {
@@ -481,6 +483,7 @@ const GetCibilReport = (props) => {
       .post(url, data)
       .then((response) => {
         setLoader(false);
+        props.history.push({ pathname: "/" , state:{success:true}});
         console.log("asset", response);
         toast.success("Your cibil cibil report has been send to your Email", {
           ...options,
@@ -515,10 +518,14 @@ const GetCibilReport = (props) => {
   const responseGoogle = (res) => {
     setEmail(res.profileObj.email);
     toast.success("Email successfully signed in", { ...options });
+    setIsButtonDisabled(true)
+    setTimeout(() => setIsButtonDisabled(false), 3000);
+    setEmailerr('')
   };
 
   const responseGoogleFail = (res) => {
     toast.error("Please login google account in your device", { ...options });
+    setTimeout(() => setIsButtonDisabled(false), 3000);
   };
 
   return (
@@ -550,10 +557,10 @@ const GetCibilReport = (props) => {
                     <h1 className="heading1">
                       Check your credit health report for free
                     </h1>
-                    <h3 className="heading5">
+                    <h3 className="heading5 p-t-10">
                       Monitor your CIBIL Score to always be credit-ready
                     </h3>
-                    <p className="heading6">
+                    <p className="heading6 p-t-10" >
                       Your credit score is an almost true image of your
                       creditworthiness. Higher is your Credit Score, higher are
                       chances of your loan getting approved. Get a Credit report
@@ -728,7 +735,7 @@ const GetCibilReport = (props) => {
                       </div>
                       <div className="row align-items-center">
                         <div className="col-sm-12 col-md-6">
-                          <div className="form-group ms-input-group">
+                          <div className="form-group ms-input-group relative">
                             <label className="form-label pb-2">
                               PAN Number
                             </label>
@@ -745,7 +752,9 @@ const GetCibilReport = (props) => {
                                     .toUpperCase()
                                     .match(/^([A-Z]){5}([0-9]){4}([A-Z]){1}$/)
                                 ) {
+
                                   setcorrectPan("Correct");
+
                                   setPanerr("");
                                 } else {
                                   setPanerr("Please input correct PAN Number");
@@ -758,16 +767,16 @@ const GetCibilReport = (props) => {
                               }}
                               required=""
                             />
+
                             {panerr ? (
                               <span style={{ color: "red", fontSize: "16px" }}>
                                 {panerr}
                               </span>
                             ) : null}
                             {correctpan ? (
-                              <span style={{ color: "green" }}>
-                                {correctpan}
-                              </span>
+                                <img className='yes-icon' alt='Yes icons' src={yesIcon} />
                             ) : null}
+
                           </div>
                         </div>
                         <div className="col-sm-12 col-md-6">
@@ -785,6 +794,7 @@ const GetCibilReport = (props) => {
                               max="2003-01-01"
                               onChange={(e) => {
                                 setDate(e.target.value);
+                                setDoberr("");
                               }}
                               required=""
                             />
@@ -839,7 +849,7 @@ const GetCibilReport = (props) => {
                                   className="cibil_input"
                                   placeholder="Enter Email"
                                   required=""
-                                  disabled={renderProps.disabled}
+                                  disabled={renderProps.disabled || isButtonDisabled}
                                 />
                               )}
                               onSuccess={responseGoogle}
