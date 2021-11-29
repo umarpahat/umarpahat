@@ -568,8 +568,8 @@ const GetCibilReport = (props) => {
                     </p>
                     <br />
                     <br />
-                    <Link to="/apply-loan" className="btnLarge">
-                      Apply now
+                    <Link to="/get-cibil-report#cibilform" className="btnLarge">
+                      Check now
                     </Link>
                   </div>
                   <div className="col-sm-12 col-md-2 ">&nbsp;</div>
@@ -587,9 +587,9 @@ const GetCibilReport = (props) => {
                     className="form-block-form mt-4"
                     style={{ maxWidth: 800, margin: "auto" }}
                   >
-                    <div className="form-block">
-                      <div className="row align-items-center">
-                        <div className="col-sm-12 col-md-6">
+                    <div className="form-block" id="cibilform">
+                      <div className="row align-items-center" >
+                        <div className="col-sm-12 col-md-6" >
                           <h4
                             className="form-heading"
                             style={{ textAlign: "left" }}
