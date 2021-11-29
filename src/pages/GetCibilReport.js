@@ -111,6 +111,7 @@ const GetCibilReport = (props) => {
     }
   };
   const handlePinCode = (value) => {
+  
     if (value.length === 6) {
       setError("");
       axios
@@ -483,11 +484,9 @@ const GetCibilReport = (props) => {
       .post(url, data)
       .then((response) => {
         setLoader(false);
-        props.history.push({ pathname: "/" , state:{success:true}});
-        console.log("asset", response);
-        toast.success("Your cibil cibil report has been send to your Email", {
-          ...options,
-        });
+        props.history.push({ pathname: "/" , state:{success:"Your cibil cibil report has been send to your Email"}});
+        
+      
       })
       .catch((error) => {
         console.log(error);
@@ -788,6 +787,7 @@ const GetCibilReport = (props) => {
                               style={{ cursor: "pointer" }}
                               name="name"
                               type="date"
+                              value={date}
                               className="cibil_input"
                               placeholder="DD/MM/YYYY"
                               min="1920-01-01"
@@ -934,6 +934,7 @@ const GetCibilReport = (props) => {
                             <input
                               name="name"
                               type="text"
+                              value={street}
                               maxLength={120}
                               className="cibil_input"
                               placeholder="Enter Address Line "
@@ -962,6 +963,7 @@ const GetCibilReport = (props) => {
                               maxLength={120}
                               name="name"
                               type="text"
+                              value={streetSecond}
                               className="cibil_input"
                               placeholder="Enter Address Line 2"
                               onChange={(e) => {
