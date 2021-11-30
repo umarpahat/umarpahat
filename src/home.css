@@ -75,10 +75,24 @@ min-height: 80px;
     display: none;
     position: absolute;
     background-color: #fff;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 12px 16px 0 16px;
     border-radius: 8px;
     z-index: 1;
+    right: -20px;
+  }
+.dropdown-content:before {
+    content: '';
+    background-color: #fff;
+    top: -5px;
+    right: 13px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 10px;
+    position: absolute;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
   }
 
 .dropdown-content li{
