@@ -25,6 +25,7 @@ function ChangeMpin(props) {
 
 
   const createNewMpin = (event) => {
+    
     setloader(true);
     event.preventDefault();
     if (!/^\d{6}$/.test(mpin)) {
@@ -58,10 +59,7 @@ function ChangeMpin(props) {
             } else if (userCase === "apply-loan") {
               props.history.push({ pathname: "/kyc-details-form" });
             } else if (userCase === "pay-rent") {
-             
-             
-             
-              props.history.push({ pathname: "/payrent-other-details" , state:{parentCoversion:true}});
+             props.history.push({ pathname: "/payrent-other-details" , state:{payrentconversion:"True"}});
             }
           } else {
             setmpinNotMatch("Old and new mpin should not be same.");
