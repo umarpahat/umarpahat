@@ -70,7 +70,28 @@ const OtherDetalisForm = (props) => {
   const [correctPan, setcorrectPan] = useState("");
 
   const [kycStatus, setKycStatus] = useState("");
+  const [payrentConversion,setPayrentConversion]=useState(props.location.state?.success)
+
+
+  function gtag_report_conversion(url) {
+    console.log("payrent coversion");
+    var callback = function () {
+      if (typeof url != "undefined") {
+        window.location = url;
+      }
+    };
+    gtag("event", "conversion", {
+      send_to: "AW-875618776/zLCQCPKg1PYCENjDw6ED",
+      event_callback: callback,
+    });
+    return false;
+  }
+
   useEffect(() => {
+    if(payrentConversion){
+    gtag_report_conversion("https://www.paymeindia.in/change-mpin");
+    // window.history.replaceState(null, '')
+    }
     if (token) {
       let url = `${API_ENDPOINT}/api/get_document_status/`;
       let config = {

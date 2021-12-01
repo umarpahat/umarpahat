@@ -77,19 +77,19 @@ const GetCibilReport = (props) => {
   const [secondaddresserr, setSecondaddresserr] = useState("");
   const [ isButtonDisabled, setIsButtonDisabled] = useState("");
   const [doberr, setDoberr] = useState("");
-  // function gtag_report_conversion(url) {
-  //   var callback = function() {
-  //     if (typeof(url) != 'undefined') {
-  //       window.location = url;
-  //     }
-  //   };
-  //   gtag('event', 'conversion', {
-  //     'send_to': 'AW-875618776/QNxsCJyg1PACENjDw6ED',
-  //     'event_callback': callback
-  //   });
-  //   return false;
-  // }
-  // gtag_report_conversion("https://www.paymeindia.in/get-cibil-report");
+  function gtag_report_conversion(url) {
+    var callback = function() {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-875618776/QNxsCJyg1PACENjDw6ED',
+      'event_callback': callback
+    });
+    return false;
+  }
+  
   const GoogleCliendId =
     "435990090197-cjdhhppfhvq8e9n0cullbtco1u22mf1g.apps.googleusercontent.com";
   useEffect(() => {
@@ -263,7 +263,9 @@ const GetCibilReport = (props) => {
       LegalCopyStatus: "Accept",
       UserConsentForDataSharing: agree,
     };
+    
     setLoader(true);
+
     axios
       .post(url, data)
       .then((response) => {
@@ -279,6 +281,7 @@ const GetCibilReport = (props) => {
         } else {
           handleQuestions();
         }
+        gtag_report_conversion();
       })
       .catch((error) => {
         setLoader(false);
