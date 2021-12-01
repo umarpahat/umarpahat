@@ -263,7 +263,7 @@ const GetCibilReport = (props) => {
       LegalCopyStatus: "Accept",
       UserConsentForDataSharing: agree,
     };
-    gtag_report_conversion("https://www.paymeindia.in/get-cibil-report");
+    
     setLoader(true);
 
     axios
@@ -281,6 +281,7 @@ const GetCibilReport = (props) => {
         } else {
           handleQuestions();
         }
+        gtag_report_conversion("https://www.paymeindia.in/get-cibil-report");
       })
       .catch((error) => {
         setLoader(false);
