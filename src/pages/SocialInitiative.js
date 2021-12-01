@@ -51,7 +51,7 @@ const SocialInitiative = (props) => {
   let emailReg =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const postVolunteer = () => {
-    gtag_report_conversion("https://www.paymeindia.in/social-initiative");
+    gtag_report_conversion();
     
   
     if (name.length === 0) {
