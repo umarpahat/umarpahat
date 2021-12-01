@@ -59,6 +59,11 @@ const Header = (props) => {
                   </div>
                 </li>
 
+                <li>
+                    <div  className="headerLink download" >
+                    Download App
+                    </div>
+                  </li>
 
                   <li>
                     {props.active === "payrent" ? (
@@ -80,11 +85,26 @@ const Header = (props) => {
                         style={{ color: "#02C650" }}
                         to="/offerings"
                       >
-                        Our products
+                        Our products <i class="arrow down"></i>
+
+                        <ul className="dropdown-content">
+                          <li>Loan App</li>
+                          <li>Gold App</li>
+                          <li>SALT App</li>
+                          <li>Mutual Funds</li>
+                          <li>Get CIBIL Score Now</li>
+                        </ul>
                       </Link>
                     ) : (
                       <Link className="headerLink dropdown" to="/offerings">
-                        Our products
+                        Our products <i class="arrow down"></i>
+                        <ul className="dropdown-content">
+                        <li>Loan App</li>
+                        <li>Gold App</li>
+                        <li>SALT App</li>
+                        <li>Mutual Funds</li>
+                        <li>Get CIBIL Score Now</li>
+                        </ul>
                       </Link>
                     )}
                   </li>
@@ -119,7 +139,7 @@ const Header = (props) => {
                       </li>
 
                       <li>
-                        <Link to="/apply-loan">Download App</Link>
+                        <Link>Download App</Link>
                       </li>
 
                       <li>
@@ -152,7 +172,7 @@ const Header = (props) => {
                       </li>
 
                       <li>
-                        <Link to="/apply-loan">Download App</Link>
+                        <Link>Download App</Link>
                       </li>
                       <li>
                         <Link to="/faq">FAQs</Link>
