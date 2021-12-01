@@ -22,19 +22,7 @@ function ChangeMpin(props) {
   const [errorMpinConfirm, seterrorMpinConfirm] = useState(null);
   const [mpinNotMatch, setmpinNotMatch] = useState(null);
   let [loader, setloader] = useState(false);
-  function gtag_report_conversion(url) {
-    console.log("payrent coversion");
-    var callback = function () {
-      if (typeof url != "undefined") {
-        window.location = url;
-      }
-    };
-    gtag("event", "conversion", {
-      send_to: "AW-875618776/zLCQCPKg1PYCENjDw6ED",
-      event_callback: callback,
-    });
-    return false;
-  }
+
 
   const createNewMpin = (event) => {
     setloader(true);
@@ -70,9 +58,10 @@ function ChangeMpin(props) {
             } else if (userCase === "apply-loan") {
               props.history.push({ pathname: "/kyc-details-form" });
             } else if (userCase === "pay-rent") {
-              gtag_report_conversion("https://www.paymeindia.in/change-mpin");
              
-              props.history.push({ pathname: "/payrent-other-details" });
+             
+             
+              props.history.push({ pathname: "/payrent-other-details" , state:{parentCoversion:true}});
             }
           } else {
             setmpinNotMatch("Old and new mpin should not be same.");
