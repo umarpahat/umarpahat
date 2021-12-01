@@ -7,7 +7,7 @@ import {Carousel} from 'react-responsive-carousel';
 export const Blogs = (props) => {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-        const url = "https://blog.paymeindia.in/?json=get_recent_posts&count=3";
+        const url = "https://blog.paymeindia.in/?json=get_recent_posts&count=10";
         fetch(url)
             .then((res) => res.json())
             .then((res) => setPosts(res.posts));
@@ -20,16 +20,14 @@ export const Blogs = (props) => {
             </div>
             <div className="container p-t-40">
                 <Carousel>
-                    <div className="row">
 
                     {posts.map((post, index) => (
-
-
-                            <div className="col-sm-12 col-md-4">
+                        <div className="row">
+                            <div className="col-sm-12 col-md-4" key={index}>
                                 <div className="blogPic">
                                     <img src={blogPic} alt="blog" className="img-fluid"/>
                                 </div>
-                                <h5>{post.title} {index}</h5>
+                                <h5>{post.title}</h5>
                                 <div
                                     className="line-clamp"
                                     style={{fontWeight: 330, fontSize: "18px"}}
@@ -39,11 +37,9 @@ export const Blogs = (props) => {
                                     Read More
                                 </Link>
                             </div>
+                        </div>
+                    ))}
 
-
-
-                            ))}
-                    </div>
                 </Carousel>
             </div>
         </div>

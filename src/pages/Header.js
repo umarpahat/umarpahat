@@ -85,7 +85,7 @@ const Header = (props) => {
                         style={{ color: "#02C650" }}
                         to="/offerings"
                       >
-                        Our products <i class="arrow down"></i>
+                        Our products <i className="arrow down"></i>
 
                         <ul className="dropdown-content">
                           <li>Loan App</li>
@@ -97,7 +97,7 @@ const Header = (props) => {
                       </Link>
                     ) : (
                       <Link className="headerLink dropdown" to="/offerings">
-                        Our products <i class="arrow down"></i>
+                        Our products <i className="arrow down"></i>
                         <ul className="dropdown-content">
                         <li>Loan App</li>
                         <li>Gold App</li>
