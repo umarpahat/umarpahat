@@ -24,7 +24,7 @@ const cookies = new Cookies();
 const OtherDetalisForm = (props) => {
  
   const token = cookies.get("token");
-
+  const payrentConversion = cookies.get("payrentconversion");
   const [serviceCharge, setserviceCharge] = useState(0);
   const [kyc_verified, setkyc_verified] = useState(false);
   const [landLordName, setlandLordName] = useState("");
@@ -70,11 +70,11 @@ const OtherDetalisForm = (props) => {
   const [correctPan, setcorrectPan] = useState("");
 
   const [kycStatus, setKycStatus] = useState("");
-  const [payrentConversion,setPayrentConversion]=useState(props.location.state?.payrentconversion)
+  
 
 
   function gtag_report_conversion(url) {
-    console.log("payrent coversion");
+    
     var callback = function () {
       if (typeof url != "undefined") {
         window.location = url;
@@ -89,12 +89,13 @@ const OtherDetalisForm = (props) => {
 
 
   useEffect(() => {
-    
     if(payrentConversion){
+      console.log("if payrent ")
+     gtag_report_conversion("");
+    cookies.remove("payrentconversion")
      
-      gtag_report_conversion("");
-      window.history.replaceState(null, '')
-      }
+     }
+   
     if (token) {
       let url = `${API_ENDPOINT}/api/get_document_status/`;
       let config = {
