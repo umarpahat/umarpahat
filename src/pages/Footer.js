@@ -9,83 +9,244 @@ import Twitter from "../images/svg/twitter.svg";
 import Facebook from "../images/svg/facebook.svg";
 import sslLogo from "../images/svg/ssl.svg";
 import whiteLogo from "../images/svg/logo.svg";
+import {FooterTop} from "../component/FooterTop";
+import {PopularCity} from "../component/PopularCity";
+import {CibilScoreFooter} from "../component/CibilScoreFooter";
+import {Dialog, DialogOverlay, DialogContent} from "@reach/dialog";
+import "@reach/dialog/styles.css";
+import * as url from "url";
+import googlePay from "../images/svg/google-play.svg";
+import appStore from "../images/svg/app-store.svg";
+import cibilScoreIcon from "../images/svg/cibil-score-icon.svg";
+import starIconGreen from "../images/svg/green-star.svg";
 
 
-const Footer = () => {
+const Footer = (props) => {
+    const [showDialog, setShowDialog] = React.useState(false);
+    const open = () => setShowDialog(true);
+    const close = () => setShowDialog(false);
+
+    const [showDialogGrievance, setShowDialogGrievance] = React.useState(false);
+    const openGrievance = () => setShowDialogGrievance(true);
+    const closeGrievance = () => setShowDialogGrievance(false);
+
+
     return (
-        <footer className='footer'>
-            <div className="container">
-                <div className="row">
-                    <div className="ol col-md-2">
-                        <div className='clearfix'><img className="img-fluid"
-                                                       src={whiteLogo} alt="PayMe India"/></div>
-                        <div className='clearfix p-t-80'>
-                            <Link to={{pathname:'https://www.facebook.com/PaymeIndiaofficial/'}} target={"_blank"}>
-                                <img className="social-img" src={Facebook} alt="PayMe india Facebook"/>
-                            </Link>
-                            <Link to={{pathname:'https://twitter.com/PayMeIndia?s=08'}} target={"_blank"}>
-                                <img className="social-img" src={Twitter} alt="PayMe india Twitter"/>
-                            </Link>
-                            <Link to={{pathname:'https://www.linkedin.com/company/payme-india'}} target={"_blank"}>
-                                <img className="social-img" src={Linkedin} alt="PayMe india Linkedin"/>
-                            </Link>
-                            <Link to={{pathname:'https://www.instagram.com/paymeindia/'}} target={"_blank"}>
-                                <img className="social-img" src={instagram} alt="PayMe india Instagram"/>
-                            </Link>
+        <>
+            <footer className='footer'>
+                <FooterTop/>
+                <div className="container">
+                    <div className="row">
+                        <div className="ol col-md-2">
+                            <div className='clearfix'><img className="img-fluid"
+                                                           src={whiteLogo} alt="PayMe India"/></div>
+                            <div className='clearfix p-t-80'>
+                                <Link to={{pathname: 'https://www.facebook.com/PaymeIndiaofficial/'}} target={"_blank"}>
+                                    <img className="social-img" src={Facebook} alt="PayMe india Facebook"/>
+                                </Link>
+                                <Link to={{pathname: 'https://twitter.com/PayMeIndia?s=08'}} target={"_blank"}>
+                                    <img className="social-img" src={Twitter} alt="PayMe india Twitter"/>
+                                </Link>
+                                <Link to={{pathname: 'https://www.linkedin.com/company/payme-india'}} target={"_blank"}>
+                                    <img className="social-img" src={Linkedin} alt="PayMe india Linkedin"/>
+                                </Link>
+                                <Link to={{pathname: 'https://www.instagram.com/paymeindia/'}} target={"_blank"}>
+                                    <img className="social-img" src={instagram} alt="PayMe india Instagram"/>
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="ol col-md-2">
+                            <h6 className='head6'>About Us</h6>
+                            <ul>
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/about">About us</Link></li>
+                                <li><Link to="/contact">Contact us</Link></li>
+                                <li><Link to="/sitemap">Sitemap</Link></li>
+                            </ul>
+                        </div>
+                        <div className="ol col-md-2">
+                            <h6 className='head6'>Others</h6>
+                            <ul>
+                                <li><Link to="/faq">FAQs</Link></li>
+                                <li><Link to="/career">Career</Link></li>
+                                <li><Link to="/ourNbfcPartners">Our NBFC Partners</Link></li>
+                                <li><Link to="/media-coverage">Media Coverage</Link></li>
+                                <li><Link to={null} onClick={openGrievance}>Customer Grievance</Link></li>
+                                <li><Link to={null} onClick={open}>Leave a message</Link></li>
+                            </ul>
+                        </div>
+                        <div className="ol col-md-2">
+                            <h6 className='head6'>Policies</h6>
+                            <ul>
+                                <li><Link to="/terms">Terms &amp; Conditions</Link></li>
+                                <li><Link to="/policy">Privacy Policy</Link></li>
+                                <li><Link to="/refund">Refund Policy</Link></li>
+                                <li><Link to="/disclaimer">Disclaimer</Link></li>
+
+                            </ul>
+                        </div>
+                        <div className="ol col-md-3">
+                            <h6 className='head6 green-link'>Grievance Redressal Officer</h6>
+                            <ul>
+                                <li>Rohit Rai</li>
+                                <li className=""><strong>Contact:</strong> 7669929906</li>
+                                <li className=""><strong>Email:</strong> <Link
+                                    to={{pathname: 'mailto:rohit.rai@paymeindia.in'}}
+                                    target={"_blank"}>rohit.rai@paymeindia.in</Link></li>
+                                <li><Link
+                                    to={{pathname: 'https://openscecurityurl.s3.ap-south-1.amazonaws.com/NewAppAgreeDocs/grievance_redressal_mechanism.pdf'}}
+                                    target={"_blank"}>Grievance Redressal Mechanism</Link></li>
+                            </ul>
+                        </div>
+                        <div className="ol col-md-1">
+                            <img className="middle_ssl_image" width="100"
+                                 src={sslLogo} alt="PayMe India"/>
+                        </div>
+
+                    </div>
+
+                    <div className="row p-t-20">
+                        <div className="col col-md-12 text-center"><p className="p-t-20">Copyright@2021 Huey Tech Pvt.
+                            Ltd.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <PopularCity/>
+                <CibilScoreFooter/>
+            </footer>
+            <Dialog isOpen={showDialog} onDismiss={close}>
+                <button className="close-button" onClick={close}>
+                    {/*<VisuallyHidden>Close</VisuallyHidden>*/}
+                    <span aria-hidden>×</span>
+                </button>
+                <p>Hello there. I am a dialog</p>
+            </Dialog>
+            <Dialog isOpen={showDialogGrievance} className='dialog-box' onDismiss={closeGrievance}>
+                <button className="close-button" onClick={closeGrievance}>
+                    <span aria-hidden>×</span>
+                </button>
+
+
+                <div className="">
+                    <div className="row">
+                        <div className="col col-md-6 ">
+                            <div className="cardImg">
+                                <h4>Looking for a Personal Loan in Delhi?</h4>
+                                <p>PayMe India’s Instant Personal Loans in Delhi come with a hassle free online
+                                    process and can be availed in 24 hours</p>
+                                <strong>Get Payme App Now</strong>
+                                <div className="tabularLess p-b-30">
+                                    <div>
+                                        <Link
+                                            to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
+                                            target={"_blank"}>
+                                            <img
+                                                className="img_google"
+                                                src={googlePay}
+                                                alt="Pay Me India"
+                                            />
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        <img
+                                            className="img_google"
+                                            src={appStore}
+                                            alt="Pay Me India"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="footer-align-stripe">
+                                    <div>
+                                        <img src={cibilScoreIcon} alt="icon" className="img-fluid"/>
+                                    </div>
+                                    <div>
+                                        <h4>
+                                            Get Instant Loan and Unlimited Offers
+                                        </h4>
+                                    </div>
+                                    <div>
+                                        <Link to="/get-cibil-report" className="green-btn-stripe">
+                                            Check Now
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col col-md-6 ">
+                        <div className="rightSection ">
+                            <h4 className='text-center'>Get Loan In Delhi</h4>
+                            <p className='text-center'>Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
+                                aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
+                            <form id="form" name="form">
+                                <div className="form-group ms-input-group">
+                                    <label className="form-label pb-2">
+                                        Full Name
+                                    </label>
+                                    <input
+                                        name="fname"
+                                        type="text"
+                                        className="form-control input-field"
+                                        placeholder="Enter Full Name"/>
+                                </div>
+                                <div className="form-group ms-input-group">
+                                    <label className="form-label pb-2">
+                                        Email address
+                                    </label>
+                                    <input
+                                        name="email"
+                                        type="text"
+                                        className="form-control input-field"
+                                        placeholder="Enter Email address"/>
+                                </div>
+                                <div className="form-group ms-input-group">
+                                    <label className="form-label pb-2">
+                                        Phone Number
+                                    </label>
+                                    <input
+                                        name="phone"
+                                        type="number"
+                                        maxLength="10"
+                                        pattern="[0-9]+"
+                                        className="form-control input-field"
+                                        placeholder="Enter your Phone Number"/>
+                                </div>
+                                <div className="form-group ms-input-group">
+                                    <label className="form-label pb-2">
+                                        Enter Your reason
+                                    </label>
+                                    <textarea
+                                        name="reason"
+                                        rows='3'
+                                        className="form-control input-field"
+                                        placeholder="Type your message"/>
+                                </div>
+                                <Link to={{pathname: ''}} className="btnLarge m-t-40" style={{
+                                    display: "block",
+                                    cursor: "pointer",
+                                    color: "#fff",
+                                }}>
+
+                                    Submit
+                                </Link>
+
+                            </form>
+                            <div className='p-t-20 text-center' style={{
+                                fontWeight: "bold",
+                            }}>Any Doubt?  <Link to={{pathname: ''}} style={{
+                                cursor: "pointer",
+                                color: "#02C650",
+                            }}>
+
+                                Leave a message
+                            </Link></div>
+                        </div>
                         </div>
                     </div>
-                    <div className="ol col-md-2">
-                        <h6 className='head6'>About Us</h6>
-                        <ul>
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about">About us</Link></li>
-                            <li><Link to="/contact">Contact us</Link></li>
-                            <li><Link to="/sitemap">Sitemap</Link></li>
-                        </ul>
-                    </div>
-                    <div className="ol col-md-2">
-                        <h6 className='head6'>Others</h6>
-                        <ul>
-                            <li><Link to="/faq">FAQs</Link></li>
-                            <li><Link to="/career">Career</Link></li>
-                            <li><Link to="/ourNbfcPartners">Our NBFC Partners</Link></li>
-                            <li><Link to="/media-coverage">Media Coverage</Link></li>
-                        </ul>
-                    </div>
-                    <div className="ol col-md-2">
-                        <h6 className='head6'>Policies</h6>
-                        <ul>
-                            <li><Link to="/terms">Terms &amp; Conditions</Link></li>
-                            <li><Link to="/policy">Privacy Policy</Link></li>
-                            <li><Link to="/refund">Refund Policy</Link></li>
-                            <li><Link to="/disclaimer">Disclaimer</Link></li>
-
-                        </ul>
-                    </div>
-                    <div className="ol col-md-3">
-                        <h6 className='head6 green-link'>Grievance Redressal Officer</h6>
-                        <ul>
-                            <li>Rohit Rai</li>
-                            <li className=""><strong>Contact:</strong> 7669929906</li>
-                            <li className=""><strong>Email:</strong> <Link to={{pathname:'mailto:rohit.rai@paymeindia.in'}} target={"_blank"}>rohit.rai@paymeindia.in</Link></li>
-                            <li><Link to={{pathname:'https://openscecurityurl.s3.ap-south-1.amazonaws.com/NewAppAgreeDocs/grievance_redressal_mechanism.pdf'}} target={"_blank"}>Grievance Redressal Mechanism</Link></li>
-                        </ul>
-                    </div>
-                    <div className="ol col-md-1">
-                        <img className="middle_ssl_image" width="100"
-                             src={sslLogo} alt="PayMe India"/>
-                    </div>
-
                 </div>
+            </Dialog>
 
-                <div className="row p-t-20">
-                    <div className="col col-md-12 text-center"><p className="p-t-20">Copyright@2021 Huey Tech Pvt.
-                        Ltd.</p>
-                    </div>
-
-                </div>
-            </div>
-        </footer>
+        </>
     )
 }
 const mapStateToProps = state => {
