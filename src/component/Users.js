@@ -4,7 +4,7 @@ import userIcon from "../images/svg/user-icon.svg";
 
 export const Users = (props) => {
     return (
-        <div className="container-fluid px-3 px-sm-5 testimonial p-t-40">
+        <div className="container-fluid px-3 px-sm-5 testimonial p-t-40 p-b-30">
             <div className="col-sm-12 col-md-12 reg-second-heading text-center">
                 <h4>Listen Our Users</h4>
             </div>

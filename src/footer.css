@@ -11,7 +11,25 @@ footer {
     line-height: 30px;
     color: #fff;
     text-decoration: none;
-    padding: 20px;
+
+}
+
+.popularCity h4 {
+    color: #333;
+}
+
+.popularCity {
+    color: #33658A;
+}
+
+.popularCity a {
+    color: #33658A;
+    margin: 10px 20px;
+    display: inline-block;
+}
+
+.popularCity a:hover {
+  color: #02C650;
 }
 
 footer a {
@@ -42,6 +60,12 @@ footer ul li {
     display: inline-block;
     max-width: 40px;
     max-height: 40px;
+}
+.cibil-footer{
+    background: #D9F4E7
+}
+.cibil-footer h4{
+    color: #333333;
 }
 
 @media (max-width: 600px) {

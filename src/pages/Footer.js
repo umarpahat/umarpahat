@@ -9,11 +9,16 @@ import Twitter from "../images/svg/twitter.svg";
 import Facebook from "../images/svg/facebook.svg";
 import sslLogo from "../images/svg/ssl.svg";
 import whiteLogo from "../images/svg/logo.svg";
+import {FooterTop} from "../component/FooterTop";
+import {PopularCity} from "../component/PopularCity";
+import {CibilScoreFooter} from "../component/CibilScoreFooter";
 
 
 const Footer = () => {
     return (
+        <>
         <footer className='footer'>
+            <FooterTop/>
             <div className="container">
                 <div className="row">
                     <div className="ol col-md-2">
@@ -85,7 +90,10 @@ const Footer = () => {
 
                 </div>
             </div>
+            <PopularCity/>
+            <CibilScoreFooter/>
         </footer>
+        </>
     )
 }
 const mapStateToProps = state => {

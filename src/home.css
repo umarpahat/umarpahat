@@ -99,6 +99,26 @@ body {
     width: auto!important;
     max-width: 100%;
 }
+.white-bg{
+    background-color: #fff;
+}
+.tablar{
+    display: flex;
+}
+.tablar > div{
+    padding-right: 20px;
+}
+.footerStripe {
+    background: #EFC8FF;
+    font-size: 32px;
+    line-height: 150.5%;
+    color: #333;
+}
+
+.footerStripe p {
+    color: #333;
+    text-align: left;
+}
 .height100 {
     display: flex;
     align-items: center;
@@ -2303,6 +2323,20 @@ hr.style {
     box-sizing: border-box;
     box-shadow: 0px 1px 11px rgba(215, 220, 224, 0.6);
     border-radius: 12px;
+}
+
+.footer-align {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.carousel .slide{
+    text-align: left!important;
+}
+.footer-align > div {
+    padding: 10px 20px;
 }
 
 .advertise {
