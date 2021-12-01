@@ -22,6 +22,7 @@ import kycIcon from "../../images/svg/professional-details.svg";
 const cookies = new Cookies();
 
 const OtherDetalisForm = (props) => {
+ 
   const token = cookies.get("token");
 
   const [serviceCharge, setserviceCharge] = useState(0);
@@ -54,8 +55,7 @@ const OtherDetalisForm = (props) => {
   const [landlordActNumber, setlandlordActNumber] = useState("");
   const [errorlandlordActNumber, seterrorlandlordActNumber] = useState("");
   const [conflandlordActNumber, setconflandlordActNumber] = useState("");
-  const [errorconflandlordActNumber, seterrorconflandlordActNumber] =
-    useState("");
+  const [errorconflandlordActNumber, seterrorconflandlordActNumber] = useState("");
   const [ifscCode, setifscCode] = useState("");
   const [errorifscCode, seterrorifscCode] = useState("");
   const [bankName, setbankName] = useState("");
@@ -70,7 +70,7 @@ const OtherDetalisForm = (props) => {
   const [correctPan, setcorrectPan] = useState("");
 
   const [kycStatus, setKycStatus] = useState("");
-  const [payrentConversion,setPayrentConversion]=useState(props.location.state?.success)
+  const [payrentConversion,setPayrentConversion]=useState(props.location.state?.payrentconversion)
 
 
   function gtag_report_conversion(url) {
@@ -87,11 +87,14 @@ const OtherDetalisForm = (props) => {
     return false;
   }
 
+
   useEffect(() => {
+    
     if(payrentConversion){
-    gtag_report_conversion("https://www.paymeindia.in/change-mpin");
-    // window.history.replaceState(null, '')
-    }
+     
+      gtag_report_conversion("");
+      window.history.replaceState(null, '')
+      }
     if (token) {
       let url = `${API_ENDPOINT}/api/get_document_status/`;
       let config = {
@@ -113,7 +116,7 @@ const OtherDetalisForm = (props) => {
           //console.log(err);
         });
     }
-  }, []);
+  });
 
   async function getSignedUrl() {
     const pathArray = [
