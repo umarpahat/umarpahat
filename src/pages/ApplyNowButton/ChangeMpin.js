@@ -23,6 +23,7 @@ function ChangeMpin(props) {
   const [mpinNotMatch, setmpinNotMatch] = useState(null);
   let [loader, setloader] = useState(false);
   function gtag_report_conversion(url) {
+    console.log("payrent coversion");
     var callback = function () {
       if (typeof url != "undefined") {
         window.location = url;
