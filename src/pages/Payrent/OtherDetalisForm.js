@@ -90,7 +90,7 @@ const OtherDetalisForm = (props) => {
   useEffect(() => {
     if(payrentConversion){
     gtag_report_conversion("https://www.paymeindia.in/change-mpin");
-    window.history.replaceState(null, '')
+    // window.history.replaceState(null, '')
     }
     if (token) {
       let url = `${API_ENDPOINT}/api/get_document_status/`;

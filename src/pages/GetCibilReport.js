@@ -281,7 +281,7 @@ const GetCibilReport = (props) => {
         } else {
           handleQuestions();
         }
-        gtag_report_conversion("https://www.paymeindia.in/get-cibil-report");
+        gtag_report_conversion();
       })
       .catch((error) => {
         setLoader(false);
