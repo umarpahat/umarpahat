@@ -117,14 +117,14 @@ const SocialInitiative = (props) => {
       .post(url, data, config)
       .then(function (response) {
         if (toastToggle === "") {
-          toast.success("Thank you for registering");
+          toast.success("Thank you for registering",{...options});
           setToastToggle("2");
         }
         document.getElementById("form").reset();
       })
       .catch(function (error) {
         if (toastToggle === "") {
-          toast.error(error.response.data.message);
+          toast.error(error.response.data.message,{...options});
           setToastToggle("2");
         }
       });
