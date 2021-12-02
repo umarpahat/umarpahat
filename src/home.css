@@ -1015,10 +1015,33 @@ a.button-small:hover {
 }
 
 .aboutUs {
-    padding: 20px 0 30px;
+    padding: 100px 0 150px;
     position: relative;
+    background: url('images/svg/aboutus-bg.svg') no-repeat center 0;
+    background-size: cover;
 }
-
+.circle-blue-shape {
+    height: 100px;
+    width: 100px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 27px;
+    bottom: -30px;
+    background: url("images/svg/cicle-blue-shade.svg") no-repeat 0 0;
+    background-size: 100%;
+}
+.circle-green-shape {
+    height: 100px;
+    width: 100px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 27px;
+    bottom: -30px;
+    background: url("images/svg/cicle-green-shade.svg") no-repeat 0 0;
+    background-size: 100%;
+}
 .aboutUs:before {
     content: '';
     height: 144px;
