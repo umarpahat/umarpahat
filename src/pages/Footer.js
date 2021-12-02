@@ -111,7 +111,7 @@ const Footer = (props) => {
 
                     </div>
                 </div>
-                <PopularCity/>
+                <PopularCity {...props}/>
                 <CibilScoreFooter/>
             </footer>
             <Dialog isOpen={showDialog} onDismiss={close}>
