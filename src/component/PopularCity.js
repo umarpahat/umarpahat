@@ -26,9 +26,6 @@ export const PopularCity = (props) => {
                 <button className="close-button" onClick={closeCity}>
                     <span aria-hidden>×</span>
                 </button>
-
-
-                <div className="">
                     <div className="row">
                         <div className="col col-md-6 ">
                             <div className="cardImg">
@@ -133,17 +130,10 @@ export const PopularCity = (props) => {
                                 </form>
                                 <div className='p-t-20 text-center' style={{
                                     fontWeight: "bold",
-                                }}>Any Doubt?  <Link to={{pathname: ''}} style={{
-                                    cursor: "pointer",
-                                    color: "#02C650",
-                                }}>
-
-                                    Leave a message
-                                </Link></div>
+                                }}> <p>Any Doubt?  <Link to={{pathname: ''}} style={{cursor: "pointer", color: "#02C650",}}>Leave a message</Link></p></div>
                             </div>
                         </div>
                     </div>
-                </div>
             </Dialog>
         </div>
     );
