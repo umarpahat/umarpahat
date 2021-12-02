@@ -12,6 +12,7 @@ import mutualFund from "../images/svg/matual-fund.svg";
 import MetaTags from "react-meta-tags";
 import payRentLink from "../images/svg/pay-rent-link.svg";
 import benefit from "../images/svg/benefit.svg";
+import {Cibil} from "../component/Cibil";
 
 const Offerings = (props) => {
     let [loader, setloader] = useState(false);
@@ -59,13 +60,13 @@ anytime-anywhere with no hassle.</p>
                 <div className="carousel p-b-30">
                     <div className="container p-b-30" >
                         <div className="row align-items-center pb-3">
-                            <div className="col-sm-12 col-md-6 p-t-40"><img className="img-fluid"
+                            <div className="col-sm-12 col-md-4 p-t-40"><img className="img-fluid"
                                                                             alt="Pay Rent using Payme app"
                                                                             src={payRentLink}/></div>
-                            <div className="col-sm-12 col-md-1 ">
+                            <div className="col-sm-12 col-md-2 ">
                                 &nbsp;
                             </div>
-                            <div className="col-sm-12 col-md-5">
+                            <div className="col-sm-12 col-md-6">
                                 <h3 className="heading3 relative"><span className='circle-small'></span> Pay rent using the PayMe app and avail exciting rewards</h3>
                                 <p className="heading6">Paying rent online is easier than ever! Make rent payment using your credit card with PayMe 
 India in few simple steps.</p>
@@ -78,22 +79,23 @@ India in few simple steps.</p>
                 <div className="loan-rent-benefit m-t-40">
                     <div className="container">
                         <div className="row align-items-center p-t-80">
+
+                            <div className="col-sm-12 col-md-6 bg-in-mobile-black">
+                                <h6 className="heading5 relative white-color">Payme Gold app</h6>
+                                <h3 className="heading3 relative white-color">Buy Gold Products, Coins and jewlleries now at Payme gold app.</h3>
+                                <p className="white-color">Shopping online is easy checkout options aren’t. Salt brings you the advantage of 
+buying now and paying later, Increasing the affordability of the purchase</p>
+                               <a href='https://creditscore.paymeindia.in' target='_blank'
+                                   className="btnLarge m-t-40">Get App Now</a>
+                            </div>
                             <div className="col-sm-12 col-md-6">
                                 <div className="farmer text-center"><img src={benefit} className="farmer-img img-fluid"
                                                                          alt="App Icon"/></div>
                             </div>
-                            <div className="col-sm-12 col-md-6 bg-in-mobile-black">
-                                <h6 className="heading3 relative white-color">SALT- Buy Now Pay Later</h6>
-                                <h3 className="heading3 relative white-color">Buy anything with one Tap and Pay later
-</h3>
-                                <p className="white-color">Shopping online is easy checkout options aren’t. Salt brings you the advantage of 
-buying now and paying later, Increasing the affordability of the purchase</p>
-                                {/*<a href='https://creditscore.paymeindia.in' target='_blank'
-                                   className="btnLarge m-t-40">Get App Now</a>*/}
-                            </div>
                         </div>
                     </div>
                 </div>
+                <Cibil/>
                 <div className="banner p-b-30">
                     <div className="container p-b-30">
                         <div className="row align-items-center">
@@ -124,7 +126,25 @@ financial goals</p>
 
 
 
-
+                <div className="loan-rent-benefit m-t-40">
+                    <div className="container">
+                        <div className="row align-items-center p-t-80">
+                            <div className="col-sm-12 col-md-6">
+                                <div className="farmer text-center"><img src={benefit} className="farmer-img img-fluid"
+                                                                         alt="App Icon"/></div>
+                            </div>
+                            <div className="col-sm-12 col-md-6 bg-in-mobile-black">
+                                <h6 className="heading5 relative white-color">SALT- Buy Now Pay Later</h6>
+                                <h3 className="heading3 relative white-color">Buy anything with one Tap and Pay later
+                                </h3>
+                                <p className="white-color">Shopping online is easy checkout options aren’t. Salt brings you the advantage of
+                                    buying now and paying later, Increasing the affordability of the purchase</p>
+                                {/*<a href='https://creditscore.paymeindia.in' target='_blank'
+                                   className="btnLarge m-t-40">Get App Now</a>*/}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
          
         </>
