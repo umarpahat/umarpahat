@@ -14,11 +14,10 @@ import {PopularCity} from "../component/PopularCity";
 import {CibilScoreFooter} from "../component/CibilScoreFooter";
 import {Dialog, DialogOverlay, DialogContent} from "@reach/dialog";
 import "@reach/dialog/styles.css";
-import * as url from "url";
+import cuate from "../images/svg/cuate.svg";
 import googlePay from "../images/svg/google-play.svg";
 import appStore from "../images/svg/app-store.svg";
 import cibilScoreIcon from "../images/svg/cibil-score-icon.svg";
-import starIconGreen from "../images/svg/green-star.svg";
 
 
 const Footer = (props) => {
@@ -117,24 +116,13 @@ const Footer = (props) => {
             </footer>
             <Dialog isOpen={showDialog} onDismiss={close}>
                 <button className="close-button" onClick={close}>
-                    {/*<VisuallyHidden>Close</VisuallyHidden>*/}
                     <span aria-hidden>×</span>
                 </button>
-                <p>Hello there. I am a dialog</p>
-            </Dialog>
-            <Dialog isOpen={showDialogGrievance} className='dialog-box' onDismiss={closeGrievance}>
-                <button className="close-button" onClick={closeGrievance}>
-                    <span aria-hidden>×</span>
-                </button>
-
-
-                <div className="">
                     <div className="row">
                         <div className="col col-md-6 ">
-                            <div className="cardImg">
-                                <h4>Looking for a Personal Loan in Delhi?</h4>
-                                <p>PayMe India’s Instant Personal Loans in Delhi come with a hassle free online
-                                    process and can be availed in 24 hours</p>
+                            <div className="cardImg unsplash">
+                                <h4>Looking for a Help?</h4>
+                                <p>Please leave a message, our team will get back shortly to you and will help you with whatever possible.</p>
                                 <strong>Get Payme App Now</strong>
                                 <div className="tabularLess p-b-30">
                                     <div>
@@ -161,23 +149,94 @@ const Footer = (props) => {
                                         <img src={cibilScoreIcon} alt="icon" className="img-fluid"/>
                                     </div>
                                     <div>
-                                        <h4>
-                                            Get Instant Loan and Unlimited Offers
-                                        </h4>
+                                        <h4>Check your Loan eligibility now in free of cost</h4>
                                     </div>
                                     <div>
                                         <Link to="/get-cibil-report" className="green-btn-stripe">
-                                            Check Now
+                                            click here
                                         </Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="col col-md-6 ">
+                            <div className="rightSection ">
+                                <h4 className='text-center'>Leave a Message</h4>
+                                <p className='text-center'>Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
+                                <form id="form" name="form">
+                                    <div className="form-group ms-input-group">
+                                        <label className="form-label pb-2">
+                                            Full Name
+                                        </label>
+                                        <input
+                                            name="fname"
+                                            type="text"
+                                            className="form-control input-field"
+                                            placeholder="Enter Full Name"/>
+                                    </div>
+                                    <div className="form-group ms-input-group">
+                                        <label className="form-label pb-2">
+                                            Email address
+                                        </label>
+                                        <input
+                                            name="email"
+                                            type="text"
+                                            className="form-control input-field"
+                                            placeholder="Enter Email address"/>
+                                    </div>
+                                    <div className="form-group ms-input-group">
+                                        <label className="form-label pb-2">
+                                            Phone Number
+                                        </label>
+                                        <input
+                                            name="phone"
+                                            type="number"
+                                            maxLength="10"
+                                            pattern="[0-9]+"
+                                            className="form-control input-field"
+                                            placeholder="Enter your Phone Number"/>
+                                    </div>
+                                    <div className="form-group ms-input-group">
+                                        <label className="form-label pb-2">
+                                            Enter Your reason
+                                        </label>
+                                        <textarea
+                                            name="reason"
+                                            rows='3'
+                                            className="form-control input-field"
+                                            placeholder="Type your message"/>
+                                    </div>
+                                    <Link to={{pathname: ''}} className="btnLarge m-t-40" style={{
+                                        display: "block",
+                                        cursor: "pointer",
+                                        color: "#fff",
+                                    }}>
+
+                                        Submit
+                                    </Link>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+            </Dialog>
+            <Dialog isOpen={showDialogGrievance} className='dialog-box' onDismiss={closeGrievance}>
+                <button className="close-button" onClick={closeGrievance}>
+                    <span aria-hidden>×</span>
+                </button>
+                    <div className="row">
+                        <div className="col col-md-6 ">
+                            <div className="cuate">
+
+                                <img src={cuate} alt="icon" className="img-fluid"/>
+
+                            </div>
+                        </div>
+                        <div className="col col-md-6 ">
                         <div className="rightSection ">
-                            <h4 className='text-center'>Get Loan In Delhi</h4>
-                            <p className='text-center'>Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
-                                aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
+                            <h4 className='text-center'>Payme Grievance</h4>
+                            <p className='text-center'>Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
                             <form id="form" name="form">
                                 <div className="form-group ms-input-group">
                                     <label className="form-label pb-2">
@@ -231,19 +290,9 @@ const Footer = (props) => {
                                 </Link>
 
                             </form>
-                            <div className='p-t-20 text-center' style={{
-                                fontWeight: "bold",
-                            }}>Any Doubt?  <Link to={{pathname: ''}} style={{
-                                cursor: "pointer",
-                                color: "#02C650",
-                            }}>
-
-                                Leave a message
-                            </Link></div>
                         </div>
                         </div>
                     </div>
-                </div>
             </Dialog>
 
         </>
