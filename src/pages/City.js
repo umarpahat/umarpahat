@@ -27,7 +27,7 @@ import Kolkata from "../images/Kolkata.png";
 import Chennai from "../images/Chennai.png";
 import NearMe from "../images/Random-India-image.png";
 import "@reach/dialog/styles.css";
-import { API_ENDPOINT_STAGING } from "../constant";
+import {API_ENDPOINT_CITY} from "../constant";
 
 toast.configure();
 const options = {
@@ -133,8 +133,6 @@ export const City = (props) => {
       return;
     }
 
-   // url = `https:/staging.paymeindia.in/api/customer-lead/customer-query/`;
-
     let data = {
       name: name,
       email: email,
@@ -145,7 +143,7 @@ export const City = (props) => {
     };
 
     axios
-      .post(`https:/staging.paymeindia.in/api/customer-lead/customer-query/`, data)
+      .post(`${API_ENDPOINT_CITY}/api/customer-lead/customer-query/`, data)
       .then(function (response) {
         console.log("city", response);
         console.log(response.status);
@@ -162,8 +160,6 @@ export const City = (props) => {
       return;
     }
 
-   // url = `https:/staging.paymeindia.in/api/customer-lead/customer-query/`;
-
     let data = {
       otp: otp,
       name: name,
@@ -175,7 +171,7 @@ export const City = (props) => {
     };
 
     axios
-      .put( `https:/staging.paymeindia.in/api/customer-lead/customer-query/`, data)
+      .put( `${API_ENDPOINT_CITY}/api/customer-lead/customer-query/`, data)
       .then(function (response) {
         fbq('track', 'Lead');
         closeCity()

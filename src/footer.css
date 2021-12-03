@@ -145,10 +145,13 @@ footer ul li {
     padding: 10px 0;
     box-sizing: border-box;
     border-radius: 6px;
-    vertical-align: baseline;
+    align-items: center;
 }
 .footer-align-stripe > div{
-    padding: 0 10px;
+    padding: 0 20px;
+}
+.footer-align-stripe > div:nth-child(2){
+   width: calc(100% - 250px);
 }
 .dialog-box .cardImg .footer-align-stripe h4 {
     font-weight: 600;
