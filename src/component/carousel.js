@@ -14,7 +14,7 @@ export const CarouselPic = (props) => {
                 <div className="get-instant-loan banner">
                     <div className="container">
                         <div className="row align-items-center ">
-                            <div className="col-sm-12 col-md-3 bannerAlign">
+                            <div className="col-sm-12 col-md-5 bannerAlign">
                                 <h1 className="heading1">Get Instant Loan Approval</h1>
                                 <p className="heading6">No more financial crunches with PayMe India. Avail instant loans
                                     upto Rs. 2 lakhs
@@ -27,7 +27,7 @@ export const CarouselPic = (props) => {
                                     Apply now
                                 </Link>
                             </div>
-                            <div className="col-sm-12 col-md-4 ">
+                            <div className="col-sm-12 col-md-2 ">
                                 &nbsp;
                             </div>
                             <div className="col-sm-12 col-md-5 m-t-40">
@@ -63,7 +63,7 @@ export const CarouselPic = (props) => {
                 <div className="gold-banner banner">
                     <div className="container">
                         <div className="row align-items-center ">
-                            <div className="col-sm-12 col-md-3 bannerAlign">
+                            <div className="col-sm-12 col-md-5 bannerAlign">
                                 <h1 className="heading1">Invest in Gold as low as Rs.500</h1>
                                 <p className="heading6">Accumulate Gold digitally to build your savings over time and save for future life events</p>
                                 <br/>
@@ -74,7 +74,7 @@ export const CarouselPic = (props) => {
                                     Apply now
                                 </Link>
                             </div>
-                            <div className="col-sm-12 col-md-4 ">
+                            <div className="col-sm-12 col-md-2 ">
                                 &nbsp;
                             </div>
                             <div className="col-sm-12 col-md-5 m-t-40">
@@ -110,7 +110,7 @@ export const CarouselPic = (props) => {
                 <div className="pay-rent-banner banner">
                     <div className="container">
                         <div className="row align-items-center ">
-                            <div className="col-sm-12 col-md-3 bannerAlign">
+                            <div className="col-sm-12 col-md-5 bannerAlign">
                                 <h1 className="heading1">Pay Rent Using Credit Card</h1>
                                 <p className="heading6">Get exciting rewards and cashback by paying your rent online with your credit card</p>
                                 <br/>
@@ -121,7 +121,7 @@ export const CarouselPic = (props) => {
                                     Pay Rent
                                 </Link>
                             </div>
-                            <div className="col-sm-12 col-md-4 ">
+                            <div className="col-sm-12 col-md-2 ">
                                 &nbsp;
                             </div>
                             <div className="col-sm-12 col-md-5 m-t-40">
@@ -157,7 +157,7 @@ export const CarouselPic = (props) => {
                 <div className="cibil-banner-banner banner">
                     <div className="container">
                         <div className="row align-items-center ">
-                            <div className="col-sm-12 col-md-3 bannerAlign">
+                            <div className="col-sm-12 col-md-5 bannerAlign">
                                 <h1 className="heading1">Check your CIBIL For Free</h1>
                                 <p className="heading6">Check your personalized credit report worth Rs.1500 in simple steps here!!</p>
                                 <br/>
@@ -168,7 +168,7 @@ export const CarouselPic = (props) => {
                                     Check your CIBIL
                                 </Link>
                             </div>
-                            <div className="col-sm-12 col-md-4 ">
+                            <div className="col-sm-12 col-md-2 ">
                                 &nbsp;
                             </div>
                             <div className="col-sm-12 col-md-5 m-t-40">

@@ -17,11 +17,49 @@ body {
     font-family: 'Montserrat', sans-serif;
     padding: 0;
     margin: 0;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 1.5;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 25px;
+    color: #565656;
 }
 
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 135.19%;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 135.19%;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 135.19%;
+}
+
+h4 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 135.19%;
+}
+
+h5 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 135.19%;
+}
+
+h6 {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 135.19%;
+}
 .darkBg {
     background: #F0F2F5;
     padding-bottom: 60px;
@@ -502,7 +540,6 @@ button.button-gray:hover {
 
 .heading1 {
     font-size: 40px;
-    line-height: 40px;
     font-weight: 600;
     color: #000000;
 }
@@ -2760,7 +2797,7 @@ a {
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    box-shadow: 0px 0px 4px #97DADA;
+    box-shadow: 0 0 4px #97DADA;
     border-radius: 8px;
     height: 100%;
 }
