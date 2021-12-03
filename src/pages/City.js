@@ -27,6 +27,7 @@ import Kolkata from "../images/Kolkata.png";
 import Chennai from "../images/Chennai.png";
 import NearMe from "../images/Random-India-image.png";
 import "@reach/dialog/styles.css";
+import { API_ENDPOINT_STAGING } from "../constant";
 
 toast.configure();
 const options = {
@@ -132,7 +133,7 @@ export const City = (props) => {
       return;
     }
 
-    url = "https://staging.paymeindia.in/api/customer-lead/customer-query/";
+    url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
 
     let data = {
       name: name,
@@ -161,7 +162,7 @@ export const City = (props) => {
       return;
     }
 
-    url = "https://staging.paymeindia.in/api/customer-lead/customer-query/";
+    url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
 
     let data = {
       otp: otp,
