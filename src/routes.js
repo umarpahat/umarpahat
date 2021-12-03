@@ -59,23 +59,24 @@ function Routes() {
         <Route
           exact
           path={
-            "/personal-loan-in-delhi" |
-            "/personal-loan-in-bangalore" |
-            "/personal-loan-in-hyderabad" |
-            "/personal-loan-in-pune" |
-            "/personal-loan-in-mumbai" |
-            "/personal-loan-in-chennai" |
-            "/personal-loan-in-kolkata" |
-            "/personal-loan-in-noida" |
-            "/personal-loan-in-vadodara" |
-            "/personal-loan-in-coimbatore" |
-            "/personal-loan-in-bhopal" |
-            "/personal-loan-in-jaipur" |
-            "/personal-loan-in-navi-mumbai" |
-            "/personal-loan-in-lucknow" |
-            "/personal-loan-in-ahmedabad" |
-            "/personal-loan-in-bhubaneswar" |
-            "/personal-loan-in-nashik"
+            ["/personal-loan-in-delhi",
+            "/personal-loan-in-bangalore",
+            "/personal-loan-in-hyderabad",
+            "/personal-loan-in-pune",
+            "/personal-loan-in-mumbai",
+            "/personal-loan-in-chennai",
+            "/personal-loan-in-kolkata",
+            "/personal-loan-in-noida",
+            "/personal-loan-in-vadodara",
+            "/personal-loan-in-coimbatore",
+            "/personal-loan-in-bhopal",
+            "/personal-loan-in-jaipur",
+            "/personal-loan-in-mumbai",
+            "/personal-loan-in-navi-mumbai",
+            "/personal-loan-in-lucknow",
+            "/personal-loan-in-ahmedabad",
+            "/personal-loan-in-bhubaneswar",
+            "/personal-loan-in-nashik"]
           }
           component={City}
         />
