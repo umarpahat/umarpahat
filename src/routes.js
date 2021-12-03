@@ -77,7 +77,8 @@ function Routes() {
             "/personal-loan-in-lucknow",
             "/personal-loan-in-ahmedabad",
             "/personal-loan-in-bhubaneswar",
-            "/personal-loan-in-nashik"]
+            "/personal-loan-in-nashik",
+          "/personal-loan-near-me"]
           }
           component={City}
         />

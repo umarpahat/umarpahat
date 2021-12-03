@@ -11,7 +11,8 @@ import { Dialog } from "@reach/dialog";
 import Delhi from "../images/Delhi.png";
 import Banglore from "../images/Banglore.png";
 import Hyderabad from "../images/Hyderabad.png";
-import Mumbai from "../images/Pune.png";
+import Mumbai from "../images/Mumbai.png";
+import NaviMumbai from "../images/Mumbai.png";
 import Pune from "../images/Pune.png";
 import Noida from "../images/Noida.png";
 import Vadodara from "../images/Vadodara.png";
@@ -20,11 +21,12 @@ import Bhopal from "../images/Bhopal.png";
 import Jaipur from "../images/Jaipur.png";
 import Lucknow from "../images/Lucknow.png";
 import Ahmedabad from "../images/Ahemdabad.png";
-import Bhubaneswar from "../images/Pune.png";
+import Bhubaneswar from "../images/Bhubnashwer.png";
 import Nashik from "../images/Nashik.png";
 import Kolkata from "../images/Kolkata.png";
 import Chennai from "../images/Chennai.png";
-import RandomImage from "../images/Random-India-image.png";
+import NearMe from "../images/Random-India-image.png";
+import "@reach/dialog/styles.css";
 
 toast.configure();
 const options = {
@@ -33,7 +35,27 @@ const options = {
   limit: 1,
   closeButton: false,
 };
-
+const images = {
+  Delhi,
+  Banglore,
+  Hyderabad,
+  Chennai,
+  Kolkata,
+  Nashik,
+  Bhubaneswar,
+  Ahmedabad,
+  Lucknow,
+  Jaipur,
+  Bhopal,
+  Coimbatore,
+  Vadodara,
+  Noida,
+  Pune,
+  Mumbai,
+  NearMe,
+  NaviMumbai
+};
+console.log(images);
 export const City = (props) => {
   const [showDialogCity, setShowDialogCity] = React.useState(false);
   const openCity = () => setShowDialogCity(true);
@@ -64,7 +86,7 @@ export const City = (props) => {
   } else if (props.location.pathname === "/personal-loan-in-jaipur") {
     var cityName = "Jaipur";
   } else if (props.location.pathname === "/personal-loan-in-navi-mumbai") {
-    var cityName = "Navi Mumbai";
+    var cityName = "NaviMumbai";
   } else if (props.location.pathname === "/personal-loan-in-lucknow") {
     var cityName = "Lucknow";
   } else if (props.location.pathname === "/personal-loan-in-ahmedabad") {
@@ -73,6 +95,8 @@ export const City = (props) => {
     var cityName = "Bhubaneswar";
   } else if (props.location.pathname === "/personal-loan-in-nashik") {
     var cityName = "Nashik";
+  } else if (props.location.pathname === "/personal-loan-near-me") {
+    var cityName = "NearMe";
   }
 
   const [name, setName] = useState("");
@@ -152,7 +176,10 @@ export const City = (props) => {
     axios
       .put(url, data)
       .then(function (response) {
-        console.log("confitm otp", response);
+        closeCity()
+        window.open(
+          "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
+        );
       })
       .catch(function (error) {
         toast.error(error.response.data.message, { ...options });
@@ -196,7 +223,7 @@ export const City = (props) => {
           <div className="col col-md-6 ">
             <div
               className="cardImg"
-              style={{ backgroundImage: `url(${RandomImage})` }}
+              style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
             >
               <h4>Looking for a Personal Loan in {cityName}?</h4>
               <p>
@@ -247,8 +274,9 @@ export const City = (props) => {
             <div className="rightSection ">
               <h4 className="text-center">Get Loan In {cityName}</h4>
               <p className="text-center">
-                Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
-                aliquam. Totam quae eos et aut rerum maxime. Provident id non.
+                Avail of instant loans starting from ₹ 500 up to ₹ 2 Lakhs, with
+                the funds credited directly to your bank account. Experience
+                100% secure process, Minimal documentation, and fast disbursal.
               </p>
               <form id="form" name="form">
                 <div className="form-group ms-input-group">
@@ -354,107 +382,46 @@ export const City = (props) => {
 
       <Dialog
         isOpen={showDialogCity}
-        className="dialog-box"
         onDismiss={closeCity}
+        style={{ width: 400 }}
       >
         <button className="close-button" onClick={closeCity}>
           <span aria-hidden>×</span>
         </button>
-        <div className="container">
-          <div className="row">
-            <div className="col col-md-6 ">
-              <div className="cardImg">
-                <h4>Looking for a Personal Loan in Delhi?</h4>
-                <p>
-                  PayMe India’s Instant Personal Loans in Delhi come with a
-                  hassle free online process and can be availed in 24 hours
-                </p>
-                <strong>Get Payme App Now</strong>
-                <div className="tabularLess p-b-30">
-                  <div>
-                    <Link
-                      to={{
-                        pathname:
-                          "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia",
-                      }}
-                      target={"_blank"}
-                    >
-                      <img
-                        className="img_google"
-                        src={googlePay}
-                        alt="Pay Me India"
-                      />
-                    </Link>
-                  </div>
-                  <div>
-                    <img
-                      className="img_google"
-                      src={appStore}
-                      alt="Pay Me India"
-                    />
-                  </div>
-                </div>
-                <div className="footer-align-stripe">
-                  <div>
-                    <img
-                      src={cibilScoreIcon}
-                      alt="icon"
-                      className="img-fluid"
-                    />
-                  </div>
-                  <div>
-                    <h4>Get Instant Loan and Unlimited Offers</h4>
-                  </div>
-                  <div>
-                    <Link to="/get-cibil-report" className="green-btn-stripe">
-                      Check Now
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col col-md-6 ">
-              <div className="rightSection ">
-                <h4 className="text-center">Get Loan In Delhi</h4>
-                <p className="text-center">
-                  Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
-                  aliquam. Totam quae eos et aut rerum maxime. Provident id non.
-                </p>
-                <div className="form-group ms-input-group">
-                  <label className="form-label pb-2">Enter OTP</label>
-                  <input
-                    name="otp"
-                    type="number"
-                    className="form-control input-field"
-                    placeholder="Enter your Phone Number"
-                    value={otp}
-                    onChange={(e) => {
-                      setOtperr("");
-                      setOtp(e.target.value);
-                    }}
-                  />
-                  {otperr ? (
-                    <span style={{ color: "red", fontSize: "16px" }}>
-                      {otperr}
-                    </span>
-                  ) : null}
-                </div>
 
-                <button
-                  type="button"
-                  className="btnLarge m-t-40"
-                  style={{
-                    display: "block",
-                    cursor: "pointer",
-                    color: "#fff",
-                  }}
-                  onClick={SubmitOtp}
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
+        <div className="rightSection ">
+          <h4 className="text-center">Get Loan In Delhi</h4>
+
+          <div className="form-group ms-input-group">
+            <label className="form-label pb-2">Enter OTP</label>
+            <input
+              name="otp"
+              type="number"
+              className="form-control input-field"
+              placeholder="Enter your Phone Number"
+              value={otp}
+              onChange={(e) => {
+                setOtperr("");
+                setOtp(e.target.value);
+              }}
+            />
+            {otperr ? (
+              <span style={{ color: "red", fontSize: "16px" }}>{otperr}</span>
+            ) : null}
           </div>
+
+          <button
+            type="button"
+            className="btnLarge m-t-40"
+            style={{
+              display: "block",
+              cursor: "pointer",
+              color: "#fff",
+            }}
+            onClick={SubmitOtp}
+          >
+            Submit
+          </button>
         </div>
       </Dialog>
     </>

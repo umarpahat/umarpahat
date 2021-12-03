@@ -58,7 +58,7 @@ export const PopularCity = (props) => {
                             Personal Loan in Jaipur
                         </Link>
                         |
-                        <Link to="/personal-loan-in-mumbai" params={{city: "Navi Mumbai"}}>
+                        <Link to="/personal-loan-in-navi-mumbai" params={{city: "Navi Mumbai"}}>
                             Personal Loan in Navi Mumbai
                         </Link>
                         |
