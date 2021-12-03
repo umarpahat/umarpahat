@@ -133,7 +133,7 @@ export const City = (props) => {
       return;
     }
 
-    url = "https:/staging.paymeindia.in/api/customer-lead/customer-query/";
+    url = `https:/staging.paymeindia.in/api/customer-lead/customer-query/`;
 
     let data = {
       name: name,
@@ -162,7 +162,7 @@ export const City = (props) => {
       return;
     }
 
-    url = "https:/staging.paymeindia.in/api/customer-lead/customer-query/";
+    url = `https:/staging.paymeindia.in/api/customer-lead/customer-query/`;
 
     let data = {
       otp: otp,
