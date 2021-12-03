@@ -74,7 +74,7 @@ export const PopularCity = (props) => {
                             Personal Loan in Bhubaneswar
                         </Link>
                         |
-                        <Link to="/personal-loan-in-nashik-" params={{city: "Nashik"}}>
+                        <Link to="/personal-loan-in-nashik" params={{city: "Nashik"}}>
                             Personal Loan in Nashik
                         </Link>
                     </div>
