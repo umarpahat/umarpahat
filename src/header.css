@@ -18,14 +18,28 @@ body {
     line-height: 1.5;
 }
 
-.border-top {
-    margin-top: 20px;
-    padding: 10px !important;
-    padding-top: 30px !important;
+#menu h4 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+#menu h5 {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 21px;
+    color: #E3E7CD;
+}
+
+.borderTop {
+    margin-top: 15px;
+    padding-top: 20px !important;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.border-top h3 {
+.borderTop h3 {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -43,6 +57,7 @@ body {
     padding: 10px;
 
 }
+
 .arrow {
     position: relative;
     margin-left: 6px;
@@ -52,6 +67,7 @@ body {
     display: inline-block;
     padding: 3px;
 }
+
 .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
@@ -64,12 +80,14 @@ body {
 .tabularLess a {
     padding: 0 !important;
 }
-.yes-icon{
+
+.yes-icon {
     width: 30px;
     position: absolute;
     right: 10px;
-    top:48px
+    top: 48px
 }
+
 .img_google {
     max-width: 100%;
 }
@@ -125,6 +143,7 @@ a.button {
     font-size: 16px;
     line-height: 38px;
 }
+
 .headerLink {
     color: #fff;
     display: inline-block;
@@ -306,14 +325,19 @@ button.button-gray:hover {
 
 }
 
+.firstRow {
+    padding-top: 70px;
+}
+
 nav li a {
-    font-size: 16px;
     display: block;
     text-decoration: none !important;
     color: #fff;
-    padding: 5px 5px 5px 15px;
+    padding: 10px 0;
     transition: color 0.3s ease;
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 nav a:hover {
@@ -400,23 +424,29 @@ nav a:hover {
     opacity: 1;
     transform: rotate(-45deg) translate(1px, 0);
 }
-.input-range__label--value, .input-range__label--min{
+
+.input-range__label--value, .input-range__label--min {
     display: none;
 }
-.input-range__track--background,.input-range__track--background{
-    background-color:#eee !important;
+
+.input-range__track--background, .input-range__track--background {
+    background-color: #eee !important;
 }
-.input-range__label{
+
+.input-range__label {
     margin-right: 20px;
     display: none;
 }
+
 #menu {
     position: fixed;
     width: 500px;
     margin: -46px -20px 0 0;
-    padding: 0 30px;
+    padding-right: 30px;
+    padding-left: 30px;
     padding-top: 45px;
     right: 0;
+    top: 0;
     height: 100vh;
     max-height: 100vh;
     overflow-y: auto;
@@ -432,14 +462,16 @@ nav a:hover {
 #menu ul {
     max-height: 100vh;
     overflow-y: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #menu li {
-    padding: 10px 0;
     font-size: 22px;
 }
 
-#menuToggle input:checked ~ ul {
+#menuToggle input:checked ~ #menu {
     transform: scale(1, 1);
     opacity: 1;
 }
@@ -528,18 +560,36 @@ nav a:hover {
 a {
     color: #33658a;
 }
-.green .MuiButton-label{
+
+.green .MuiButton-label {
     color: #02C650;
     font-size: 12px;
 }
 
-.black .MuiButton-label{
+.black .MuiButton-label {
     color: #000;
     font-size: 12px;
 }
+
+.p-t-5 {
+    padding-top: 5px;
+}
+
+.m-t-m-5 {
+    margin-top: -5px;
+}
+
+.m-t-m-7 {
+    margin-top: -7px;
+}
+
 @media (max-width: 600px) {
     .navigationLink {
         display: none;
+    }
+
+    .center-mobile {
+        text-align: center;
     }
 
     .initiative p {
@@ -656,7 +706,7 @@ a {
     }
 
     #menu {
-        right: -100px;
+        right: 0;
     }
 
     #menuToggle input:checked ~ ul {

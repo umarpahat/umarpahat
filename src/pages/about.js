@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import "./ApplyNowButton/Applybtnallcomponent.css";
 import Header from "./Header";
 import "../../src/home.css";
-import vision from "../images/svg/rocket-up.svg";
+import vision from "../images/svg/vision.png";
 import team from "../images/logo-fav.png";
 import coreValue from "../images/Core-Values.png";
 import PhonecoreValue from "../images/phone-Core-Values.png";
@@ -23,7 +23,9 @@ import people from "../images/svg/will-stand.svg";
 import about from "../images/svg/about-us.png";
 import MetaTags from "react-meta-tags";
 import goldStarIcon from "../images/svg/star.svg";
+import  aboutUs from "../images/svg/about-us.svg";
 import * as url from "url";
+import Footer from "./Footer";
 
 const About = (props) => {
   let [loader, setloader] = useState(false);
@@ -50,36 +52,26 @@ const About = (props) => {
         <div className="aboutUs">
           <div className="container">
             <div className="col col-md-12 reg-second-heading">
-              <h1 className="heading1 blue-color">Who we are</h1>
-              <span className="reg-second-subheading">
+              <h1 className="heading1 white-color">Who we are</h1>
+              <span className="reg-second-subheading white-color">
                 PayMe India is an innovative FinTech organization
               </span>
             </div>
-            <div className="row">
-              <div className="col-sm-12 col-md-14 m-t-40 d-none d-md-block d-lg-block text-center">
-                <img className="img-fluid" alt="About us" src={about} style={{width:"700px",height:"400px",color:"#fff",marginBottom:"5%"}} />
-              </div>
-
-            </div>
-             <div className="col-sm-12 col-md-6 m-t-40 d-md-none">
-                <img className="img-fluid" alt="About us" src={about} style={{width:"1400px",height:"205px",color:"#fff"}} />
-              </div>
           </div>
         </div>
-        <div className="clearfix">
+        <div className="clearfix relative">
+          <span className="circle-small-shape"></span>
           <div className="container">
-            <div className="row p-t-30 p-b-30">
-              <div className="col-lg-4 col-md-4 col-sm-4">
-              <h3 className="heading3 relative blue-color d-none d-md-block">
-                  <span className="circle-small-shape"></span> About Us
+            <div className="row p-t-30 p-b-30 ">
+              <div className="col-lg-8 col-md-8 col-sm-8 textAlign">
+                <h3 className="heading3 relative blue-color d-none d-md-block">
+                 About Us
                 </h3>
 
                 <h3 className="heading3 relative blue-color text-center d-md-none">
                   {" "}
                   <span className="circle-small-shape"></span> About Us{" "}
                 </h3>
-              </div>
-              <div className="col-lg-8 col-md-8 col-sm-8 textAlign">
                 <p className="heading6">
                   PayMe India is an innovative new-age Fintech company,
                   transforming the lending landscape. The company was founded in
@@ -94,12 +86,20 @@ const About = (props) => {
                   hassle-free
                 </p>
               </div>
+              <div className="col-lg-4 col-md-4 col-sm-4 relative">
+                <img className="img-fluid" alt="About us" src={aboutUs}/>
+                <span className="circle-green-shape"></span>
+              </div>
             </div>
           </div>
         </div>
         <div className="mission">
           <div className="container p-b-30 p-t-25">
             <div className="row align-items-center pb-3">
+              <div className="col-lg-4 col-md-4 col-sm-4 relative">
+                <img className="img-fluid" alt="About us" src={vision}/>
+                <span className="circle-blue-shape"></span>
+              </div>
               <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 textAlign">
                 <h4 className="heading4 blue-color">Our Mission and Vision</h4>
                 <p className="heading6">
@@ -112,19 +112,9 @@ const About = (props) => {
                   technologies
                 </p>
               </div>
-            
-              <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 imgLarge textAlign">
-                <img className="img-fluid" alt="CIBIL" src={vision} />
-              </div>
             </div>
           </div>
         </div>
-        <div className="col-sm-12 col-md-6 m-t-40 d-md-none">
-                <img src={PhonecoreValue} alt="core value" className="img-fluid"  />
-              </div>
-              <div className="col-sm-12 col-md-14 m-t-40 d-none d-md-block d-lg-block text-center">
-                <img src={coreValue} alt="core value" className="img-fluid" style={{width:"70%",height:"600px",marginTop:"-13%",marginBottom:"5%"}} />
-              </div>
         <div className="promise">
           <div className="container">
             <div className="row justify-content-md-center">
@@ -320,6 +310,7 @@ const About = (props) => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

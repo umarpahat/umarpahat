@@ -10,6 +10,7 @@ import '../../src/home.css';
 import MetaTags from "react-meta-tags";
 import mailBox from "../images/svg/mail-box.svg";
 import termsCondition from "../images/svg/terms-and-condition.svg";
+import Footer from "./Footer";
 
 
 const Policy = (props) => {
@@ -143,7 +144,7 @@ const Policy = (props) => {
                     </div>
                 </div>
             </div>
-         
+            <Footer/>
         </>
     )
 };

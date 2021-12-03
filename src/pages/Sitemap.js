@@ -8,6 +8,7 @@ import {Link} from "react-router-dom";
 import $ from "jquery";
 import MetaTags from "react-meta-tags";
 import mailBox from "../images/svg/mail-box.svg";
+import Footer from "./Footer";
 
 
 const Sitemap = (props) => {
@@ -74,7 +75,7 @@ const Sitemap = (props) => {
                     </div>
                 </div>
             </div>
-            
+            <Footer/>
         </>
     )
 };

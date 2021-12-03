@@ -11,6 +11,7 @@ import $ from "jquery";
 import MetaTags from "react-meta-tags";
 import termsCondition from "../images/svg/terms-and-condition.svg";
 import mailBox from "../images/svg/mail-box.svg";
+import Footer from "./Footer";
 
 
 
@@ -195,7 +196,7 @@ const Disclaimer = (props) => {
                     </div>
                 </div>
             </div>
-         
+            <Footer/>
         </>
     );
 };

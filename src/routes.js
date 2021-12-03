@@ -36,18 +36,15 @@ import ChangeMpin from "./pages/ApplyNowButton/ChangeMpin";
 import SocialInitiative from "./pages/SocialInitiative";
 import Creatempn from "./pages/ApplyNowButton/Creatempn";
 import KycOption from "./pages/ApplyNowButton/KycOption";
-import Header from "./pages/Header";
-import Footer from "./pages/Footer";
 import StepManual from "./pages/ApplyNowButton/StepManualKYC";
 import GetCibilReport from "./pages/GetCibilReport";
 import { City } from "./pages/city";
+// import EligbilityCriteria from "./pages/EligbilityCriteria";
 
 function Routes() {
   return (
     <>
       <Switch>
-        <Route exact path="/header" component={Header} />
-        <Route exact path="/footer" component={Footer} />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/apply-loan" component={Getquikloneapply} />
         <Route exact path="/pay-rent" component={Getquikloneapply} />
@@ -102,8 +99,8 @@ function Routes() {
         <Route exact path="/get-cibil-report" component={GetCibilReport} />
         <Route exact path="/bank-details-payme" component={Bankdetailspayme} />
         <Route exact path="/change-mpin" component={ChangeMpin} />
-        <Route exact path="/404" component={NotFoundPage} />
         <Route exact path="/sitemap" component={Sitemap} />
+          {/*<Route exact path="/eligbility-criteria" component={EligbilityCriteria()} />*/}
 
         <Route
           exact
@@ -125,9 +122,8 @@ function Routes() {
           component={TransactionHistory}
         />
 
-        <Route component={Error} />
+        <Route component={NotFoundPage} />
       </Switch>
-      <Footer/>
     </>
   );
 }

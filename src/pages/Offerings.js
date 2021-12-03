@@ -13,6 +13,7 @@ import MetaTags from "react-meta-tags";
 import payRentLink from "../images/svg/pay-rent-link.svg";
 import benefit from "../images/svg/benefit.svg";
 import {Cibil} from "../component/Cibil";
+import Footer from "./Footer";
 
 const Offerings = (props) => {
     let [loader, setloader] = useState(false);
@@ -146,7 +147,7 @@ financial goals</p>
                     </div>
                 </div>
             </div>
-         
+            <Footer/>
         </>
     );
 };
