@@ -177,6 +177,7 @@ export const City = (props) => {
     axios
       .put(url, data)
       .then(function (response) {
+        fbq('track', 'Lead');
         closeCity()
         window.open(
           "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
