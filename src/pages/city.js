@@ -15,7 +15,11 @@ const options = {
 };
 import Header from "./Header";
 import Footer from "./Footer";
+import {Dialog} from "@reach/dialog";
 export const City = (props) => {
+  const [showDialogCity, setShowDialogCity] = React.useState(false);
+  const openCity = () => setShowDialogCity(true);
+  const closeCity = () => setShowDialogCity(false);
  
   if (props.location.pathname === "/personal-loan-in-delhi") {
     var cityName = "Delhi";
@@ -71,45 +75,43 @@ export const City = (props) => {
   const getOtp = () => {
    
 
-    // if (name.length === 0) {
-    //   setNameerr("Name can't be empty");
-    //   return ;
-    // }
-    // if (email.length < 5) {
-    //   setEmailerr("Email should be at least 5 charcters long");
-    //   return ;
-    // }
-    // if (email.split("").filter((x) => x === "@").length !== 1) {
-    //   setEmailerr("Email should contain a @");
-    //   return ;
-    // }
-    // if (email.indexOf(".") === -1) {
-    //   setEmailerr("Email should contain at least one dot");
-    //   return ;
-    // }
-    // if (!emailReg.test(email)) {
-    //   setEmailerr("Email id is Invalid");
-    //   return ;
-    // }
+    if (name.length === 0) {
+      setNameerr("Name can't be empty");
+      return ;
+    }
+    if (email.length < 5) {
+      setEmailerr("Email should be at least 5 charcters long");
+      return ;
+    }
+    if (email.split("").filter((x) => x === "@").length !== 1) {
+      setEmailerr("Email should contain a @");
+      return ;
+    }
+    if (email.indexOf(".") === -1) {
+      setEmailerr("Email should contain at least one dot");
+      return ;
+    }
+    if (!emailReg.test(email)) {
+      setEmailerr("Email id is Invalid");
+      return ;
+    }
+    if (phone.length === 0) {
+      setPhoneerr("Phone can't be empty");
+      return ;
+    }
+    if (phone.length < 10) {
+      setPhoneerr("Phone should be 10 digit");
+      return ;
+    }
+    if (!reg.test(phone)) {
+      setPhoneerr("Phone number is Invalid");
+      return ;
+    }
 
-    // if (phone.length === 0) {
-    //   setPhoneerr("Phone can't be empty");
-    //   return ;
-    // }
-    // if (phone.length < 10) {
-    //   setPhoneerr("Phone should be 10 digit");
-    //   return ;
-    // }
-
-    // if (!reg.test(phone)) {
-    //   setPhoneerr("Phone number is Invalid");
-    //   return ;
-    // }
-
-    // if (topic.length === 0) {
-    //   setTopicErr("Topic can't be empty");
-    //   return ;
-    // }
+    if (topic.length === 0) {
+      setTopicErr("Topic can't be empty");
+      return ;
+    }
 
     url = "https://staging.paymeindia.in/api/customer-lead/customer-query/";
 
@@ -160,6 +162,7 @@ export const City = (props) => {
   return (
     <>
       <Header />
+      <div className="container">
       <div className="row">
         <div className="col col-md-6 ">
           <div className="cardImg">
@@ -268,26 +271,9 @@ export const City = (props) => {
                   </span>
                 ) : null}
               </div>
-              <div className="form-group ms-input-group">
-                <label className="form-label pb-2">Enter Your reason</label>
-                <textarea
-                  name="reason"
-                  rows="3"
-                  className="form-control input-field"
-                  placeholder="Type your message"
-                  onChange={(e) => {
-                    setTopicErr("");
-                    setTopic(e.target.value);
-                  }}
-                />
-                {topicerr ? (
-                  <span style={{ color: "red", fontSize: "16px" }}>
-                    {topicerr}
-                  </span>
-                ) : null}
-              </div>
+
               <button
-               type="submit"
+               type="button"
                 className="btnLarge m-t-40"
                 style={{
                   display: "block",
@@ -295,37 +281,6 @@ export const City = (props) => {
                   color: "#fff",
                 }}
                 onClick={getOtp}
-              >
-                Submit
-              </button>
-              <div className="form-group ms-input-group">
-                <label className="form-label pb-2">Enter OTP</label>
-                <input
-                  name="otp"
-                  type="number"
-                  className="form-control input-field"
-                  placeholder="Enter your Phone Number"
-                  value={otp}
-                  onChange={(e) => {
-                    setOtperr("");
-                    setOtp(e.target.value);
-                  }}
-                />
-                {otperr ? (
-                  <span style={{ color: "red", fontSize: "16px" }}>
-                    {otperr}
-                  </span>
-                ) : null}
-              </div>
-              <button
-                type="submit"
-                className="btnLarge m-t-40"
-                style={{
-                  display: "block",
-                  cursor: "pointer",
-                  color: "#fff",
-                }}
-                onClick={SubmitOtp}
               >
                 Submit
               </button>
@@ -350,6 +305,109 @@ export const City = (props) => {
           </div>
         </div>
       </div>
+      </div>
+
+      <Dialog
+          isOpen={showDialogCity}
+          className="dialog-box"
+          onDismiss={closeCity}
+      >
+        <button className="close-button" onClick={closeCity}>
+          <span aria-hidden>×</span>
+        </button>
+        <div className='container'>
+          <div className="row">
+            <div className="col col-md-6 ">
+              <div className="cardImg">
+                <h4>Looking for a Personal Loan in Delhi?</h4>
+                <p>
+                  PayMe India’s Instant Personal Loans in Delhi come with a hassle
+                  free online process and can be availed in 24 hours
+                </p>
+                <strong>Get Payme App Now</strong>
+                <div className="tabularLess p-b-30">
+                  <div>
+                    <Link
+                        to={{
+                          pathname:
+                              "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia",
+                        }}
+                        target={"_blank"}
+                    >
+                      <img
+                          className="img_google"
+                          src={googlePay}
+                          alt="Pay Me India"
+                      />
+                    </Link>
+                  </div>
+                  <div>
+                    <img
+                        className="img_google"
+                        src={appStore}
+                        alt="Pay Me India"
+                    />
+                  </div>
+                </div>
+                <div className="footer-align-stripe">
+                  <div>
+                    <img src={cibilScoreIcon} alt="icon" className="img-fluid" />
+                  </div>
+                  <div>
+                    <h4>Get Instant Loan and Unlimited Offers</h4>
+                  </div>
+                  <div>
+                    <Link to="/get-cibil-report" className="green-btn-stripe">
+                      Check Now
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col col-md-6 ">
+              <div className="rightSection ">
+                <h4 className="text-center">Get Loan In Delhi</h4>
+                <p className="text-center">
+                  Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
+                  aliquam. Totam quae eos et aut rerum maxime. Provident id non.
+                </p>
+                <div className="form-group ms-input-group">
+                  <label className="form-label pb-2">Enter OTP</label>
+                  <input
+                      name="otp"
+                      type="number"
+                      className="form-control input-field"
+                      placeholder="Enter your Phone Number"
+                      value={otp}
+                      onChange={(e) => {
+                        setOtperr("");
+                        setOtp(e.target.value);
+                      }}
+                  />
+                  {otperr ? (
+                      <span style={{ color: "red", fontSize: "16px" }}>
+                    {otperr}
+                  </span>
+                  ) : null}
+                </div>
+                <button
+                    type="button"
+                    className="btnLarge m-t-40"
+                    style={{
+                      display: "block",
+                      cursor: "pointer",
+                      color: "#fff",
+                    }}
+                    onClick={SubmitOtp}
+                >
+                  Submit
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </Dialog>
       <Footer/>
     </>
   );
