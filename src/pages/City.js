@@ -133,7 +133,7 @@ export const City = (props) => {
       return;
     }
 
-    url = `https:/staging.paymeindia.in/api/customer-lead/customer-query/`;
+   // url = `https:/staging.paymeindia.in/api/customer-lead/customer-query/`;
 
     let data = {
       name: name,
@@ -145,7 +145,7 @@ export const City = (props) => {
     };
 
     axios
-      .post(url, data)
+      .post(`https:/staging.paymeindia.in/api/customer-lead/customer-query/`, data)
       .then(function (response) {
         console.log("city", response);
         console.log(response.status);
@@ -162,7 +162,7 @@ export const City = (props) => {
       return;
     }
 
-    url = `https:/staging.paymeindia.in/api/customer-lead/customer-query/`;
+   // url = `https:/staging.paymeindia.in/api/customer-lead/customer-query/`;
 
     let data = {
       otp: otp,
@@ -175,7 +175,7 @@ export const City = (props) => {
     };
 
     axios
-      .put(url, data)
+      .put( `https:/staging.paymeindia.in/api/customer-lead/customer-query/`, data)
       .then(function (response) {
         fbq('track', 'Lead');
         closeCity()
