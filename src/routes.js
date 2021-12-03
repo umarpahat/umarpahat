@@ -41,6 +41,7 @@ import Footer from "./pages/Footer";
 import StepManual from "./pages/ApplyNowButton/StepManualKYC";
 import GetCibilReport from "./pages/GetCibilReport";
 import { City } from "./pages/city";
+import EligbilityCriteria from "./pages/EligbilityCriteria";
 
 function Routes() {
   return (
@@ -103,6 +104,7 @@ function Routes() {
         <Route exact path="/change-mpin" component={ChangeMpin} />
         <Route exact path="/404" component={NotFoundPage} />
         <Route exact path="/sitemap" component={Sitemap} />
+          {/*<Route exact path="/eligbility-criteria" component={EligbilityCriteria()} />*/}
 
         <Route
           exact
