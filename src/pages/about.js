@@ -25,6 +25,7 @@ import MetaTags from "react-meta-tags";
 import goldStarIcon from "../images/svg/star.svg";
 import  aboutUs from "../images/svg/about-us.svg";
 import * as url from "url";
+import Footer from "./Footer";
 
 const About = (props) => {
   let [loader, setloader] = useState(false);
@@ -309,6 +310,7 @@ const About = (props) => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

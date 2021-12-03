@@ -1,8 +1,11 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import fourZeoFour from "../images/svg/404.svg";
-function NotFoundPage() {
+import Header from "./Header";
+
+function NotFoundPage(props) {
   return <>
+    <Header {...props} />
     <div className="banner">
       <div className="container">
         <div className="row align-items-center">
@@ -22,8 +25,6 @@ function NotFoundPage() {
         </div>
       </div>
     </div>
-    <h3>404 page not found</h3>
-    <p>We are sorry but the page you are looking for does not exist.</p>
   </>;
 }
 export default NotFoundPage;

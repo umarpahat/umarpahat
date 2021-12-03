@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import fourZeoFour from "../images/svg/404.svg";
 import {hitAppUseCase} from "../store/modules/userDetails/actions";
 import {connect} from "react-redux";
+import Footer from "./Footer";
 
 
 const EligbilityCriteria = (props) => {
@@ -32,6 +33,7 @@ const EligbilityCriteria = (props) => {
             </div>
             <h3>404 page not found</h3>
             <p>We are sorry but the page you are looking for does not exist.</p>
+            <Footer/>
         </>
     );
 };

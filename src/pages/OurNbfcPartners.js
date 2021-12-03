@@ -14,6 +14,7 @@ import paymeindia from "../images/paymeindia.png";
 import arthmate from "../images/Arthmatelogo.png";
 import MetaTags from "react-meta-tags";
 import mailBox from "../images/svg/mail-box.svg";
+import Footer from "./Footer";
 
 const OurNbfcPartners = (props) => {
     let [loader, setloader] = useState(false);
@@ -152,7 +153,7 @@ const OurNbfcPartners = (props) => {
                     </div>
                 </div>
             </div>
-           
+            <Footer/>
         </>
     );
 };

@@ -14,6 +14,7 @@ const options = {
   closeButton: false,
 };
 import Header from "./Header";
+import Footer from "./Footer";
 export const City = (props) => {
  
   if (props.location.pathname === "/personal-loan-in-delhi") {
@@ -157,9 +158,8 @@ export const City = (props) => {
       });
   };
   return (
-    <div>
+    <>
       <Header />
-
       <div className="row">
         <div className="col col-md-6 ">
           <div className="cardImg">
@@ -350,6 +350,7 @@ export const City = (props) => {
           </div>
         </div>
       </div>
-    </div>
+      <Footer/>
+    </>
   );
 };

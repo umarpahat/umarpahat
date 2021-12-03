@@ -22,6 +22,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
 import { GoogleLogin } from "react-google-login";
+import Footer from "./Footer";
 
 toast.configure();
 const options = {
@@ -1182,6 +1183,7 @@ const GetCibilReport = (props) => {
       ) : (
         <Loader />
       )}
+      <Footer/>
     </>
   );
 };

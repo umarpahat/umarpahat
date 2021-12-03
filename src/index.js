@@ -5,6 +5,7 @@ import {store} from './store/createStore'
 import "./index.css";
 import {BrowserRouter} from "react-router-dom";
 import App from './App';
+import Footer from "./pages/Footer";
 const title = 'React with Webpack and Babel';
 ReactDOM.render(
     <Provider store={store}>
