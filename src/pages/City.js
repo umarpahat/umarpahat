@@ -107,7 +107,6 @@ export const City = (props) => {
   const [nameerr, setNameerr] = useState("");
   const [emailerr, setEmailerr] = useState("");
   const [phoneerr, setPhoneerr] = useState("");
-  const [topicerr, setTopicErr] = useState("");
   const [otp, setOtp] = useState("");
   const [otperr, setOtperr] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
@@ -132,7 +131,7 @@ export const City = (props) => {
       setPhoneerr("Phone number is Invalid");
       return;
     }
-    // let url = `https:/staging.paymeindia.in/api/customer-lead/customer-query/`
+    let url = `${API_ENDPOINT_CITY}/api/customer-lead/customer-query/`;
     let data = {
       name: name,
       email: email,
@@ -143,10 +142,7 @@ export const City = (props) => {
     };
 
     axios
-      .post(
-        "https:staging.paymeindia.in/api/customer-lead/customer-query/",
-        data
-      )
+      .post(url, data)
       .then(function (response) {
         console.log("city", response);
         console.log(response.status);
@@ -162,22 +158,19 @@ export const City = (props) => {
       setOtperr("Name can't be empty");
       return;
     }
-    // let url = `${API_ENDPOINT_CITY}/api/customer-lead/customer-query/`
+    let url = `${API_ENDPOINT_CITY}/api/customer-lead/customer-query/`;
     let data = {
       otp: otp,
       name: name,
       email: email,
       phone_number: phone,
-      
+
       lead_from: "GETLOAN",
       residential_address: cityName,
     };
 
     axios
-      .put(
-        "https:staging.paymeindia.in/api/customer-lead/customer-query/",
-        data
-      )
+      .put(url, data)
       .then(function (response) {
         fbq("track", "Lead");
         closeCity();
