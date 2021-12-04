@@ -143,7 +143,7 @@ export const City = (props) => {
     };
 
     axios
-      .post(`https:/staging.paymeindia.in/api/customer-lead/customer-query/`, data)
+      .post(`https:staging.paymeindia.in/api/customer-lead/customer-query/`, data)
       .then(function (response) {
         console.log("city", response);
         console.log(response.status);
@@ -159,7 +159,7 @@ export const City = (props) => {
       setOtperr("Name can't be empty");
       return;
     }
-    let url = `${API_ENDPOINT_CITY}/api/customer-lead/customer-query/`
+    // let url = `${API_ENDPOINT_CITY}/api/customer-lead/customer-query/`
     let data = {
       otp: otp,
       name: name,
@@ -171,7 +171,7 @@ export const City = (props) => {
     };
 
     axios
-      .put( `https:/staging.paymeindia.in/api/customer-lead/customer-query/`, data)
+      .put( `https:staging.paymeindia.in/api/customer-lead/customer-query/`, data)
       .then(function (response) {
         fbq('track', 'Lead');
         closeCity()
