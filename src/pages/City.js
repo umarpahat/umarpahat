@@ -132,7 +132,7 @@ export const City = (props) => {
       setPhoneerr("Phone number is Invalid");
       return;
     }
-    let url = `${API_ENDPOINT_CITY}/api/customer-lead/customer-query/`
+    // let url = `https:/staging.paymeindia.in/api/customer-lead/customer-query/`
     let data = {
       name: name,
       email: email,
@@ -143,7 +143,7 @@ export const City = (props) => {
     };
 
     axios
-      .post(url, data)
+      .post(`https:/staging.paymeindia.in/api/customer-lead/customer-query/`, data)
       .then(function (response) {
         console.log("city", response);
         console.log(response.status);
@@ -171,7 +171,7 @@ export const City = (props) => {
     };
 
     axios
-      .put( url, data)
+      .put( `https:/staging.paymeindia.in/api/customer-lead/customer-query/`, data)
       .then(function (response) {
         fbq('track', 'Lead');
         closeCity()
