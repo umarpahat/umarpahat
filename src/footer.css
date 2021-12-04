@@ -146,6 +146,7 @@ footer ul li {
     box-sizing: border-box;
     border-radius: 6px;
     align-items: center;
+    width: 100%;
 }
 .footer-align-stripe > div{
     padding: 0 20px;
@@ -163,7 +164,7 @@ footer ul li {
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
-    color: #FFFFFF;
+    color: #00a2d1;
 }
 
 .footer-align-stripe .green-btn-stripe{
