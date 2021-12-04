@@ -27,7 +27,7 @@ import Kolkata from "../images/Kolkata.png";
 import Chennai from "../images/Chennai.png";
 import NearMe from "../images/Random-India-image.png";
 import "@reach/dialog/styles.css";
-import {API_ENDPOINT_CITY} from "../constant"
+import { API_ENDPOINT_CITY } from "../constant";
 
 toast.configure();
 const options = {
@@ -54,7 +54,7 @@ const images = {
   Pune,
   Mumbai,
   NearMe,
-  NaviMumbai
+  NaviMumbai,
 };
 console.log(images);
 export const City = (props) => {
@@ -137,13 +137,16 @@ export const City = (props) => {
       name: name,
       email: email,
       phone_number: phone,
-      topic: "",
+
       lead_from: "GETLOAN",
       residential_address: cityName,
     };
 
     axios
-      .post(`https:staging.paymeindia.in/api/customer-lead/customer-query/`, data)
+      .post(
+        "https:staging.paymeindia.in/api/customer-lead/customer-query/",
+        data
+      )
       .then(function (response) {
         console.log("city", response);
         console.log(response.status);
@@ -165,16 +168,19 @@ export const City = (props) => {
       name: name,
       email: email,
       phone_number: phone,
-      topic: "",
+      
       lead_from: "GETLOAN",
       residential_address: cityName,
     };
 
     axios
-      .put( `https:staging.paymeindia.in/api/customer-lead/customer-query/`, data)
+      .put(
+        "https:staging.paymeindia.in/api/customer-lead/customer-query/",
+        data
+      )
       .then(function (response) {
-        fbq('track', 'Lead');
-        closeCity()
+        fbq("track", "Lead");
+        closeCity();
         window.open(
           "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
         );
