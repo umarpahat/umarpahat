@@ -27,7 +27,7 @@ import Kolkata from "../images/Kolkata.png";
 import Chennai from "../images/Chennai.png";
 import NearMe from "../images/Random-India-image.png";
 import "@reach/dialog/styles.css";
-import { API_ENDPOINT_CITY } from "../constant";
+import { API_ENDPOINT_STAGING } from "../constant";
 
 toast.configure();
 const options = {
@@ -131,7 +131,7 @@ export const City = (props) => {
       setPhoneerr("Phone number is Invalid");
       return;
     }
-    let url = `${API_ENDPOINT_CITY}/api/customer-lead/customer-query/`;
+    let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
     let data = {
       name: name,
       email: email,
@@ -158,7 +158,7 @@ export const City = (props) => {
       setOtperr("Name can't be empty");
       return;
     }
-    let url = `${API_ENDPOINT_CITY}/api/customer-lead/customer-query/`;
+    let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
     let data = {
       otp: otp,
       name: name,
@@ -214,7 +214,7 @@ export const City = (props) => {
 
   return (
     <>
-      <Header />
+      <Header {...props} />
       <div className="container">
         <div className="row">
           <div className="col col-md-6 ">
