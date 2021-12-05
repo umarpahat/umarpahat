@@ -164,7 +164,7 @@ footer ul li {
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
-    color: #00a2d1;
+    color: #fff;
 }
 
 .footer-align-stripe .green-btn-stripe{
@@ -240,5 +240,18 @@ footer ul li {
     }
     [data-reach-dialog-content] {
         width: auto;
+    }
+    .footer-align-stripe {
+        display: block;
+        text-align: center;
+    }
+    .footer-align-stripe > div:nth-child(2){
+        width:100%;
+    }
+    .cardImg p {
+        padding-bottom: 50px;
+    }
+    .btnLarge{
+        margin: auto;
     }
 }

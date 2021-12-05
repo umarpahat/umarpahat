@@ -222,10 +222,9 @@ export const City = (props) => {
               className="cardImg"
               style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
             >
-              <h4>Looking for a Personal Loan in {cityName}?</h4>
+              <h4>Looking for a Personal Loan {cityName}?</h4>
               <p>
-                PayMe India’s Instant Personal Loans in {cityName} come with a
-                hassle free online process and can be availed in 24 hours
+                PayMe India’s Instant Personal Loan NearMe comes with a hassle-free online process and can be availed in 24 hours
               </p>
               <strong>Get Payme App Now</strong>
               <div className="tabularLess p-b-30">
@@ -235,7 +234,6 @@ export const City = (props) => {
                       pathname:
                         "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia",
                     }}
-                    target={"_blank"}
                   >
                     <img
                       className="img_google"
@@ -245,11 +243,17 @@ export const City = (props) => {
                   </Link>
                 </div>
                 <div>
-                  <img
+                  <Link
+                      to={{
+                        pathname:
+                            "https://apps.apple.com/us/app/payme-india/id1282142711",
+                      }}
+                  >  <img
                     className="img_google"
                     src={appStore}
                     alt="Pay Me India"
                   />
+                  </Link>
                 </div>
               </div>
               <div className="footer-align-stripe">
@@ -257,7 +261,7 @@ export const City = (props) => {
                   <img src={cibilScoreIcon} alt="icon" className="img-fluid" />
                 </div>
                 <div>
-                  <h4>Get Instant Loan and Unlimited Offers</h4>
+                  <h4>Get Your CIBIL Report Now</h4>
                 </div>
                 <div>
                   <Link to="/get-cibil-report" className="green-btn-stripe">
@@ -269,12 +273,8 @@ export const City = (props) => {
           </div>
           <div className="col col-md-6 ">
             <div className="rightSection ">
-              <h4 className="text-center">Get Loan In {cityName}</h4>
-              <p className="text-center">
-                Avail of instant loans starting from ₹ 500 up to ₹ 2 Lakhs, with
-                the funds credited directly to your bank account. Experience
-                100% secure process, Minimal documentation, and fast disbursal.
-              </p>
+              <h4 className="text-center">Get Instant Loan {cityName}</h4>
+              <p className="text-center">Avail of instant loans starting from ₹ 500 up to ₹ 2 Lakhs, with the funds credited directly to your bank account. Experience 100% secure process, Minimal documentation, and fast disbursal.</p>
               <form id="form" name="form">
                 <div className="form-group ms-input-group">
                   <label className="form-label pb-2">Full Name</label>
@@ -355,7 +355,7 @@ export const City = (props) => {
                   Submit
                 </button>
               </form>
-              <div
+              {/*<div
                 className="p-t-20 text-center"
                 style={{
                   fontWeight: "bold",
@@ -371,7 +371,7 @@ export const City = (props) => {
                     Leave a message
                   </Link>
                 </p>
-              </div>
+              </div>*/}
             </div>
           </div>
         </div>
