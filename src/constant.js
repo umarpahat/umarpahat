@@ -13,5 +13,5 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
     API_ENDPOINT = "https://api.paymeindia.in"
     API_ENDPOINT_SAARTHI = 'https://api-csr.paymeindia.in';
     API_ENDPOINT_STAGING = "https://apiv2.paymeindia.in";
-    API_ENDPOINT_CITY = "https:staging.paymeindia.in";
+    API_ENDPOINT_CITY = "https://apiv2.paymeindia.in";
 }
