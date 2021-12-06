@@ -9,7 +9,7 @@ import { GoogleLogin } from "react-google-login";
 import Header from "./Header";
 import { Dialog } from "@reach/dialog";
 import Delhi from "../images/Delhi.png";
-import Banglore from "../images/Banglore.png";
+import Bangalore from "../images/Bangalore.png";
 import Hyderabad from "../images/Hyderabad.png";
 import Mumbai from "../images/Mumbai.png";
 import NaviMumbai from "../images/Mumbai.png";
@@ -27,7 +27,7 @@ import Kolkata from "../images/Kolkata.png";
 import Chennai from "../images/Chennai.png";
 import NearMe from "../images/Random-India-image.png";
 import "@reach/dialog/styles.css";
-import { API_ENDPOINT_CITY } from "../constant";
+import { API_ENDPOINT_STAGING } from "../constant";
 
 toast.configure();
 const options = {
@@ -38,7 +38,7 @@ const options = {
 };
 const images = {
   Delhi,
-  Banglore,
+  Bangalore,
   Hyderabad,
   Chennai,
   Kolkata,
@@ -65,7 +65,7 @@ export const City = (props) => {
   if (props.location.pathname === "/personal-loan-in-delhi") {
     var cityName = "Delhi";
   } else if (props.location.pathname === "/personal-loan-in-bangalore") {
-    var cityName = "Banglore";
+    var cityName = "Bangalore";
   } else if (props.location.pathname === "/personal-loan-in-hyderabad") {
     var cityName = "Hyderabad";
   } else if (props.location.pathname === "/personal-loan-in-pune") {
@@ -111,9 +111,10 @@ export const City = (props) => {
   const [otperr, setOtperr] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
   let url = "";
-  let reg = /^[0-9]{1,10}$/;
+  let reg = /^[0-9]{10}$/;
 
   const getOtp = () => {
+    
     if (name.length === 0) {
       setNameerr("Name can't be empty");
       return;
@@ -131,7 +132,7 @@ export const City = (props) => {
       setPhoneerr("Phone number is Invalid");
       return;
     }
-    let url = `${API_ENDPOINT_CITY}/api/customer-lead/customer-query/`;
+    let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
     let data = {
       name: name,
       email: email,
@@ -155,10 +156,10 @@ export const City = (props) => {
   };
   const SubmitOtp = () => {
     if (otp === "") {
-      setOtperr("Name can't be empty");
+      setOtperr("Otp can't be empty");
       return;
     }
-    let url = `${API_ENDPOINT_CITY}/api/customer-lead/customer-query/`;
+    let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
     let data = {
       otp: otp,
       name: name,
@@ -173,13 +174,11 @@ export const City = (props) => {
       .put(url, data)
       .then(function (response) {
         fbq("track", "Lead");
-        closeCity();
-        window.open(
-          "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
-        );
+        window.location.href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
+       
       })
       .catch(function (error) {
-        toast.error(error.response.data.message, { ...options });
+        toast.error(error.response?.data.message, { ...options });
       });
   };
   const GoogleCliendId =
@@ -211,13 +210,18 @@ export const City = (props) => {
     toast.error("Please login google account in your device", { ...options });
     setTimeout(() => setIsButtonDisabled(false), 3000);
   };
+  useEffect(() => {
+    window.scrollTo(800, 700);
+    console.log('kkk');
+
+  }, [])
 
   return (
     <>
-      <Header />
+      <Header {...props} />
       <div className="container">
         <div className="row">
-          <div className="col col-md-6 ">
+          <div className="col col-md-6 hideMobile">
             <div
               className="cardImg"
               style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
@@ -226,34 +230,25 @@ export const City = (props) => {
               <p>
                 PayMe India’s Instant Personal Loan NearMe comes with a hassle-free online process and can be availed in 24 hours
               </p>
-              <strong>Get Payme App Now</strong>
+              <strong>Get Payme India App Now</strong>
               <div className="tabularLess p-b-30">
                 <div>
-                  <Link
-                    to={{
-                      pathname:
-                        "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia",
-                    }}
-                  >
+                  <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
                     <img
                       className="img_google"
                       src={googlePay}
                       alt="Pay Me India"
                     />
-                  </Link>
+                  </a>
                 </div>
                 <div>
-                  <Link
-                      to={{
-                        pathname:
-                            "https://apps.apple.com/us/app/payme-india/id1282142711",
-                      }}
-                  >  <img
+                  <a href="https://apps.apple.com/us/app/payme-india/id1282142711">
+                    <img
                     className="img_google"
                     src={appStore}
                     alt="Pay Me India"
                   />
-                  </Link>
+                  </a>
                 </div>
               </div>
               <div className="footer-align-stripe">
@@ -374,6 +369,51 @@ export const City = (props) => {
               </div>*/}
             </div>
           </div>
+          <div className="col col-md-6 hideDesktop">
+            <div
+                className="cardImg"
+                style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
+            >
+              <h4>Looking for a Personal Loan {cityName}?</h4>
+              <p>
+                PayMe India’s Instant Personal Loan NearMe comes with a hassle-free online process and can be availed in 24 hours
+              </p>
+              <strong>Get Payme App Now</strong>
+              <div className="tabularLess p-b-30">
+                <div>
+                  <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
+                    <img
+                        className="img_google"
+                        src={googlePay}
+                        alt="Pay Me India"
+                    />
+                  </a>
+                </div>
+                <div>
+                  <a href="https://apps.apple.com/us/app/payme-india/id1282142711">
+                    <img
+                        className="img_google"
+                        src={appStore}
+                        alt="Pay Me India"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div className="footer-align-stripe">
+                <div>
+                  <img src={cibilScoreIcon} alt="icon" className="img-fluid" />
+                </div>
+                <div>
+                  <h4>Get Your CIBIL Report Now</h4>
+                </div>
+                <div>
+                  <Link to="/get-cibil-report" className="green-btn-stripe">
+                    Check Now
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -395,7 +435,7 @@ export const City = (props) => {
               name="otp"
               type="number"
               className="form-control input-field"
-              placeholder="Enter your Phone Number"
+              placeholder="Enter 4 digits OTP"
               value={otp}
               onChange={(e) => {
                 setOtperr("");
