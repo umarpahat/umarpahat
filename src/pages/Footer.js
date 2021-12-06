@@ -22,7 +22,7 @@ const Footer = () => {
                     <div className="ol col-md-2">
                         <div className='clearfix'><img className="img-fluid"
                                                        src={whiteLogo} alt="PayMe India"/></div>
-                        <div className='clearfix p-t-80'>
+                        <div className='clearfix p-t-20'>
                             <Link to={{pathname:'https://www.facebook.com/PaymeIndiaofficial/'}} target={"_blank"}>
                                 <img className="social-img" src={Facebook} alt="PayMe india Facebook"/>
                             </Link>

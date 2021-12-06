@@ -111,7 +111,7 @@ export const City = (props) => {
   const [otperr, setOtperr] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
   let url = "";
-  let reg = /^[+0]?[0-9]{10}$/;
+  let reg = /^[0-9]{10}$/;
 
   const getOtp = () => {
     if (name.length === 0) {
@@ -123,8 +123,8 @@ export const City = (props) => {
       setPhoneerr("Phone can't be empty");
       return;
     }
-    if (phone.length < 11) {
-      setPhoneerr("Phone should be 11 digit");
+    if (phone.length < 10) {
+      setPhoneerr("Phone should be 10 digit");
       return;
     }
     if (!reg.test(phone)) {
