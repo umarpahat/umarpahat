@@ -211,7 +211,7 @@ export const City = (props) => {
     setTimeout(() => setIsButtonDisabled(false), 3000);
   };
   useEffect(() => {
-    window.scrollTo(800, 700);
+    window.scrollTo(0, 0);
     console.log('kkk');
 
   }, [])
