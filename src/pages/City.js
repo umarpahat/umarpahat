@@ -9,7 +9,7 @@ import { GoogleLogin } from "react-google-login";
 import Header from "./Header";
 import { Dialog } from "@reach/dialog";
 import Delhi from "../images/Delhi.png";
-import Banglore from "../images/Banglore.png";
+import Bangalore from "../images/Bangalore.png";
 import Hyderabad from "../images/Hyderabad.png";
 import Mumbai from "../images/Mumbai.png";
 import NaviMumbai from "../images/Mumbai.png";
@@ -38,7 +38,7 @@ const options = {
 };
 const images = {
   Delhi,
-  Banglore,
+  Bangalore,
   Hyderabad,
   Chennai,
   Kolkata,
