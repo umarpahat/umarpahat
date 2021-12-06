@@ -114,7 +114,7 @@ export const City = (props) => {
   let reg = /^[0-9]{10}$/;
 
   const getOtp = () => {
-    
+    setOtp("");
     if (name.length === 0) {
       setNameerr("Name can't be empty");
       return;
@@ -178,6 +178,7 @@ export const City = (props) => {
        
       })
       .catch(function (error) {
+        
         toast.error(error.response?.data.message, { ...options });
       });
   };
@@ -212,8 +213,6 @@ export const City = (props) => {
   };
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log('kkk');
-
   }, [])
 
   return (
@@ -427,7 +426,7 @@ export const City = (props) => {
         </button>
 
         <div className="rightSection ">
-          <h4 className="text-center">Get Loan In Delhi</h4>
+          <h4 className="text-center">Get Loan In {cityName}</h4>
 
           <div className="form-group ms-input-group">
             <label className="form-label pb-2">Enter OTP</label>
