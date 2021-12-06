@@ -65,7 +65,7 @@ export const City = (props) => {
   if (props.location.pathname === "/personal-loan-in-delhi") {
     var cityName = "Delhi";
   } else if (props.location.pathname === "/personal-loan-in-bangalore") {
-    var cityName = "Banglore";
+    var cityName = "Bangalore";
   } else if (props.location.pathname === "/personal-loan-in-hyderabad") {
     var cityName = "Hyderabad";
   } else if (props.location.pathname === "/personal-loan-in-pune") {
@@ -111,7 +111,7 @@ export const City = (props) => {
   const [otperr, setOtperr] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
   let url = "";
-  let reg = /^[0-9]{1,10}$/;
+  let reg = /^[+0]?[0-9]{10}$/;
 
   const getOtp = () => {
     if (name.length === 0) {
@@ -123,8 +123,8 @@ export const City = (props) => {
       setPhoneerr("Phone can't be empty");
       return;
     }
-    if (phone.length < 10) {
-      setPhoneerr("Phone should be 10 digit");
+    if (phone.length < 11) {
+      setPhoneerr("Phone should be 11 digit");
       return;
     }
     if (!reg.test(phone)) {
@@ -229,31 +229,22 @@ export const City = (props) => {
               <strong>Get Payme App Now</strong>
               <div className="tabularLess p-b-30">
                 <div>
-                  <Link
-                    to={{
-                      pathname:
-                        "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia",
-                    }}
-                  >
+                  <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
                     <img
                       className="img_google"
                       src={googlePay}
                       alt="Pay Me India"
                     />
-                  </Link>
+                  </a>
                 </div>
                 <div>
-                  <Link
-                      to={{
-                        pathname:
-                            "https://apps.apple.com/us/app/payme-india/id1282142711",
-                      }}
-                  >  <img
+                  <a href="https://apps.apple.com/us/app/payme-india/id1282142711">
+                    <img
                     className="img_google"
                     src={appStore}
                     alt="Pay Me India"
                   />
-                  </Link>
+                  </a>
                 </div>
               </div>
               <div className="footer-align-stripe">
