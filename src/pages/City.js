@@ -156,7 +156,7 @@ export const City = (props) => {
   };
   const SubmitOtp = () => {
     if (otp === "") {
-      setOtperr("Name can't be empty");
+      setOtperr("Otp can't be empty");
       return;
     }
     let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
@@ -230,7 +230,7 @@ export const City = (props) => {
               <p>
                 PayMe India’s Instant Personal Loan NearMe comes with a hassle-free online process and can be availed in 24 hours
               </p>
-              <strong>Get Payme App Now</strong>
+              <strong>Get Payme India App Now</strong>
               <div className="tabularLess p-b-30">
                 <div>
                   <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
@@ -435,7 +435,7 @@ export const City = (props) => {
               name="otp"
               type="number"
               className="form-control input-field"
-              placeholder="Enter your Phone Number"
+              placeholder="Enter 4 digits OTP"
               value={otp}
               onChange={(e) => {
                 setOtperr("");
