@@ -114,6 +114,7 @@ export const City = (props) => {
   let reg = /^[0-9]{10}$/;
 
   const getOtp = () => {
+    
     if (name.length === 0) {
       setNameerr("Name can't be empty");
       return;
@@ -173,13 +174,11 @@ export const City = (props) => {
       .put(url, data)
       .then(function (response) {
         fbq("track", "Lead");
-        closeCity();
-        window.open(
-          "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
-        );
+        window.location.href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
+       
       })
       .catch(function (error) {
-        toast.error(error.response.data.message, { ...options });
+        toast.error(error.response?.data.message, { ...options });
       });
   };
   const GoogleCliendId =
