@@ -211,13 +211,18 @@ export const City = (props) => {
     toast.error("Please login google account in your device", { ...options });
     setTimeout(() => setIsButtonDisabled(false), 3000);
   };
+  useEffect(() => {
+    window.scrollTo(800, 700);
+    console.log('kkk');
+
+  }, [])
 
   return (
     <>
       <Header {...props} />
       <div className="container">
         <div className="row">
-          <div className="col col-md-6 ">
+          <div className="col col-md-6 hideMobile">
             <div
               className="cardImg"
               style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
@@ -363,6 +368,51 @@ export const City = (props) => {
                   </Link>
                 </p>
               </div>*/}
+            </div>
+          </div>
+          <div className="col col-md-6 hideDesktop">
+            <div
+                className="cardImg"
+                style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
+            >
+              <h4>Looking for a Personal Loan {cityName}?</h4>
+              <p>
+                PayMe India’s Instant Personal Loan NearMe comes with a hassle-free online process and can be availed in 24 hours
+              </p>
+              <strong>Get Payme App Now</strong>
+              <div className="tabularLess p-b-30">
+                <div>
+                  <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
+                    <img
+                        className="img_google"
+                        src={googlePay}
+                        alt="Pay Me India"
+                    />
+                  </a>
+                </div>
+                <div>
+                  <a href="https://apps.apple.com/us/app/payme-india/id1282142711">
+                    <img
+                        className="img_google"
+                        src={appStore}
+                        alt="Pay Me India"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div className="footer-align-stripe">
+                <div>
+                  <img src={cibilScoreIcon} alt="icon" className="img-fluid" />
+                </div>
+                <div>
+                  <h4>Get Your CIBIL Report Now</h4>
+                </div>
+                <div>
+                  <Link to="/get-cibil-report" className="green-btn-stripe">
+                    Check Now
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
