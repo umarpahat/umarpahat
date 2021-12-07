@@ -395,7 +395,7 @@ export const City = (props) => {
                 PayMe India’s Instant Personal Loan NearMe comes with a
                 hassle-free online process and can be availed in 24 hours
               </p>
-              <strong>Get Payme App Now</strong>
+              <strong>Get PayMe India App Now</strong>
               <div className="tabularLess p-b-30">
                 <div>
                   <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
