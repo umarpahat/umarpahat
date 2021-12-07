@@ -392,8 +392,8 @@ export const City = (props) => {
                   <h4 className="text-center">Get Loan In {cityName}</h4>
               )}
               <p>
-                PayMe India’s Instant Personal Loan NearMe comes with a
-                hassle-free online process and can be availed in 24 hours
+                PayMe India’s Instant Personal Loan comes with a hassle-free
+                online process and affordable interest rates
               </p>
               <strong>Get PayMe India App Now</strong>
               <div className="tabularLess p-b-30">
