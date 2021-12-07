@@ -4,13 +4,14 @@ import {Link} from "react-router-dom";
 import {hitAppUseCase} from '../store/modules/userDetails/actions';
 import "../../src/footer.css"
 import instagram from "../images/svg/instagram.svg";
+import youtube from "../images/svg/youtube.svg";
 import Linkedin from "../images/svg/linkedin.svg";
 import Twitter from "../images/svg/twitter.svg";
 import Facebook from "../images/svg/facebook.svg";
 import sslLogo from "../images/svg/ssl.svg";
 import whiteLogo from "../images/svg/logo.svg";
-import {FooterTop} from "../component/FooterTop";
 import {PopularCity} from "../component/PopularCity";
+import {FooterTop} from "../component/FooterTop";
 import {CibilScoreFooter} from "../component/CibilScoreFooter";
 import {Dialog, DialogOverlay, DialogContent} from "@reach/dialog";
 import "@reach/dialog/styles.css";
@@ -39,7 +40,7 @@ const Footer = (props) => {
                         <div className="ol col-md-2">
                             <div className='clearfix'><img className="img-fluid"
                                                            src={whiteLogo} alt="PayMe India"/></div>
-                            <div className='clearfix p-t-80'>
+                            <div className='clearfix p-t-20'>
                                 <Link to={{pathname: 'https://www.facebook.com/PaymeIndiaofficial/'}} target={"_blank"}>
                                     <img className="social-img" src={Facebook} alt="PayMe india Facebook"/>
                                 </Link>
@@ -51,6 +52,10 @@ const Footer = (props) => {
                                 </Link>
                                 <Link to={{pathname: 'https://www.instagram.com/paymeindia/'}} target={"_blank"}>
                                     <img className="social-img" src={instagram} alt="PayMe india Instagram"/>
+                                </Link>
+                                <Link to={{pathname: 'https://www.youtube.com/channel/UCeP0MLxaKLeVz0-2uWAtcFg'}}
+                                      target={"_blank"}>
+                                    <img className="social-img" src={youtube} alt="PayMe india youtube"/>
                                 </Link>
                             </div>
                         </div>
@@ -70,8 +75,6 @@ const Footer = (props) => {
                                 <li><Link to="/career">Career</Link></li>
                                 <li><Link to="/ourNbfcPartners">Our NBFC Partners</Link></li>
                                 <li><Link to="/media-coverage">Media Coverage</Link></li>
-                                <li><Link to={null} onClick={openGrievance}>Customer Grievance</Link></li>
-                                <li><Link to={null} onClick={open}>Leave a message</Link></li>
                             </ul>
                         </div>
                         <div className="ol col-md-2">
@@ -118,125 +121,128 @@ const Footer = (props) => {
                 <button className="close-button" onClick={close}>
                     <span aria-hidden>×</span>
                 </button>
-                    <div className="row">
-                        <div className="col col-md-6 ">
-                            <div className="cardImg unsplash">
-                                <h4>Looking for a Help?</h4>
-                                <p>Please leave a message, our team will get back shortly to you and will help you with whatever possible.</p>
-                                <strong>Get Payme App Now</strong>
-                                <div className="tabularLess p-b-30">
-                                    <div>
-                                        <Link
-                                            to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
-                                            target={"_blank"}>
-                                            <img
-                                                className="img_google"
-                                                src={googlePay}
-                                                alt="Pay Me India"
-                                            />
-                                        </Link>
-                                    </div>
-                                    <div>
+                <div className="row">
+                    <div className="col col-md-6 ">
+                        <div className="cardImg unsplash">
+                            <h4>Looking for a Help?</h4>
+                            <p>Please leave a message, our team will get back shortly to you and will help you with
+                                whatever possible.</p>
+                            <strong>Get Payme App Now</strong>
+                            <div className="tabularLess p-b-30">
+                                <div>
+                                    <Link
+                                        to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
+                                        target={"_blank"}>
                                         <img
                                             className="img_google"
-                                            src={appStore}
+                                            src={googlePay}
                                             alt="Pay Me India"
                                         />
-                                    </div>
+                                    </Link>
                                 </div>
-                                <div className="footer-align-stripe">
-                                    <div>
-                                        <img src={cibilScoreIcon} alt="icon" className="img-fluid"/>
-                                    </div>
-                                    <div>
-                                        <h4>Check your Loan eligibility now in free of cost</h4>
-                                    </div>
-                                    <div>
-                                        <Link to="/get-cibil-report" className="green-btn-stripe">
-                                            click here
-                                        </Link>
-                                    </div>
+                                <div>
+                                    <img
+                                        className="img_google"
+                                        src={appStore}
+                                        alt="Pay Me India"
+                                    />
                                 </div>
                             </div>
-                        </div>
-                        <div className="col col-md-6 ">
-                            <div className="rightSection ">
-                                <h4 className='text-center'>Leave a Message</h4>
-                                <p className='text-center'>Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
-                                <form id="form" name="form">
-                                    <div className="form-group ms-input-group">
-                                        <label className="form-label pb-2">
-                                            Full Name
-                                        </label>
-                                        <input
-                                            name="fname"
-                                            type="text"
-                                            className="form-control input-field"
-                                            placeholder="Enter Full Name"/>
-                                    </div>
-                                    <div className="form-group ms-input-group">
-                                        <label className="form-label pb-2">
-                                            Email address
-                                        </label>
-                                        <input
-                                            name="email"
-                                            type="text"
-                                            className="form-control input-field"
-                                            placeholder="Enter Email address"/>
-                                    </div>
-                                    <div className="form-group ms-input-group">
-                                        <label className="form-label pb-2">
-                                            Phone Number
-                                        </label>
-                                        <input
-                                            name="phone"
-                                            type="number"
-                                            maxLength="10"
-                                            pattern="[0-9]+"
-                                            className="form-control input-field"
-                                            placeholder="Enter your Phone Number"/>
-                                    </div>
-                                    <div className="form-group ms-input-group">
-                                        <label className="form-label pb-2">
-                                            Enter Your reason
-                                        </label>
-                                        <textarea
-                                            name="reason"
-                                            rows='3'
-                                            className="form-control input-field"
-                                            placeholder="Type your message"/>
-                                    </div>
-                                    <Link to={{pathname: ''}} className="btnLarge m-t-40" style={{
-                                        display: "block",
-                                        cursor: "pointer",
-                                        color: "#fff",
-                                    }}>
-
-                                        Submit
+                            <div className="footer-align-stripe">
+                                <div>
+                                    <img src={cibilScoreIcon} alt="icon" className="img-fluid"/>
+                                </div>
+                                <div>
+                                    <h4>Check your Loan eligibility now in free of cost</h4>
+                                </div>
+                                <div>
+                                    <Link to="/get-cibil-report" className="green-btn-stripe">
+                                        click here
                                     </Link>
-
-                                </form>
-
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div className="col col-md-6 ">
+                        <div className="rightSection ">
+                            <h4 className='text-center'>Leave a Message</h4>
+                            <p className='text-center'>Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
+                                aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
+                            <form id="form" name="form">
+                                <div className="form-group ms-input-group">
+                                    <label className="form-label pb-2">
+                                        Full Name
+                                    </label>
+                                    <input
+                                        name="fname"
+                                        type="text"
+                                        className="form-control input-field"
+                                        placeholder="Enter Full Name"/>
+                                </div>
+                                <div className="form-group ms-input-group">
+                                    <label className="form-label pb-2">
+                                        Email address
+                                    </label>
+                                    <input
+                                        name="email"
+                                        type="text"
+                                        className="form-control input-field"
+                                        placeholder="Enter Email address"/>
+                                </div>
+                                <div className="form-group ms-input-group">
+                                    <label className="form-label pb-2">
+                                        Phone Number
+                                    </label>
+                                    <input
+                                        name="phone"
+                                        type="number"
+                                        maxLength="10"
+                                        pattern="[0-9]+"
+                                        className="form-control input-field"
+                                        placeholder="Enter your Phone Number"/>
+                                </div>
+                                <div className="form-group ms-input-group">
+                                    <label className="form-label pb-2">
+                                        Enter Your reason
+                                    </label>
+                                    <textarea
+                                        name="reason"
+                                        rows='3'
+                                        className="form-control input-field"
+                                        placeholder="Type your message"/>
+                                </div>
+                                <Link to={{pathname: ''}} className="btnLarge m-t-40" style={{
+                                    display: "block",
+                                    cursor: "pointer",
+                                    color: "#fff",
+                                }}>
+
+                                    Submit
+                                </Link>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
             </Dialog>
             <Dialog isOpen={showDialogGrievance} className='dialog-box' onDismiss={closeGrievance}>
                 <button className="close-button" onClick={closeGrievance}>
                     <span aria-hidden>×</span>
                 </button>
-                    <div className="row">
-                        <div className="col col-md-6 ">
-                            <div className="cuate">
+                <div className="row">
+                    <div className="col col-md-6 ">
+                        <div className="cuate">
 
-                                <img src={cuate} alt="icon" className="img-fluid"/>
+                            <img src={cuate} alt="icon" className="img-fluid"/>
 
-                            </div>
                         </div>
-                        <div className="col col-md-6 ">
+                    </div>
+                    <div className="col col-md-6 ">
                         <div className="rightSection ">
                             <h4 className='text-center'>Payme Grievance</h4>
-                            <p className='text-center'>Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
+                            <p className='text-center'>Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
+                                aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
                             <form id="form" name="form">
                                 <div className="form-group ms-input-group">
                                     <label className="form-label pb-2">
@@ -291,10 +297,9 @@ const Footer = (props) => {
 
                             </form>
                         </div>
-                        </div>
                     </div>
+                </div>
             </Dialog>
-
         </>
     )
 }

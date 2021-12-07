@@ -58,6 +58,15 @@ body {
 
 }
 
+.social_link {
+    display: flex;
+}
+
+.social_link > div {
+    padding: 10px;
+
+}
+
 .arrow {
     position: relative;
     margin-left: 6px;

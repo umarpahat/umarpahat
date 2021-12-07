@@ -23,8 +23,15 @@ function ChangeMpin(props) {
   const [mpinNotMatch, setmpinNotMatch] = useState(null);
   let [loader, setloader] = useState(false);
 
+  const handlePayrentEvent =()=>{
+    cookies.set("payrentconversion", true);
+  }
 
   const createNewMpin = (event) => {
+    
+
+
+    
     setloader(true);
     event.preventDefault();
     if (!/^\d{6}$/.test(mpin)) {
@@ -38,6 +45,9 @@ function ChangeMpin(props) {
       setloader(false);
     } else {
       //console.log("every thing woirked")
+      if(userCase === "pay-rent"){
+        handlePayrentEvent();
+      }
       api
         .post(
           `api/authentication/create_or_update_mpin/`,
@@ -59,9 +69,7 @@ function ChangeMpin(props) {
               props.history.push({ pathname: "/kyc-details-form" });
             } else if (userCase === "pay-rent") {
              
-             
-             
-              props.history.push({ pathname: "/payrent-other-details" , state:{parentCoversion:true}});
+             props.history.push({ pathname: "/payrent-other-details"});
             }
           } else {
             setmpinNotMatch("Old and new mpin should not be same.");

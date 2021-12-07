@@ -38,8 +38,10 @@ import Creatempn from "./pages/ApplyNowButton/Creatempn";
 import KycOption from "./pages/ApplyNowButton/KycOption";
 import StepManual from "./pages/ApplyNowButton/StepManualKYC";
 import GetCibilReport from "./pages/GetCibilReport";
-import { City } from "./pages/city";
+import womenLoan from "./pages/WomenLoan";
 // import EligbilityCriteria from "./pages/EligbilityCriteria";
+import City from "./pages/City"
+
 
 function Routes() {
   return (
@@ -53,7 +55,7 @@ function Routes() {
           path="/get-start-paymeindia"
           component={Getstartpaymeindia}
         />
-        <Route
+           <Route
           exact
           path={
             ["/personal-loan-in-delhi",
@@ -73,7 +75,8 @@ function Routes() {
             "/personal-loan-in-lucknow",
             "/personal-loan-in-ahmedabad",
             "/personal-loan-in-bhubaneswar",
-            "/personal-loan-in-nashik"]
+            "/personal-loan-in-nashik",
+          "/personal-loan-near-me"]
           }
           component={City}
         />
@@ -100,6 +103,7 @@ function Routes() {
         <Route exact path="/bank-details-payme" component={Bankdetailspayme} />
         <Route exact path="/change-mpin" component={ChangeMpin} />
         <Route exact path="/sitemap" component={Sitemap} />
+        <Route exact path="/women-loan" component={womenLoan} />
           {/*<Route exact path="/eligbility-criteria" component={EligbilityCriteria()} />*/}
 
         <Route

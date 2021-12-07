@@ -60,6 +60,7 @@ h6 {
     font-size: 14px;
     line-height: 135.19%;
 }
+
 .darkBg {
     background: #F0F2F5;
     padding-bottom: 60px;
@@ -650,6 +651,44 @@ button.button-gray:hover {
     min-height: 90px;
 }
 
+.document-box {
+    background: #fff;
+    padding: 30px 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(176, 176, 176, 0.25);
+    letter-spacing: 0.01em;
+    font-size: 14px;
+    line-height: 170.5%;
+    text-align: center;
+    border: 1px solid rgba(163, 163, 163, 0.34);
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #333333;
+    height: 100%;
+    margin-bottom: 30px;
+}
+.document-box p{
+    font-size: 14px;
+    line-height: 170.5%;
+    color: #333333;
+    margin: 0;
+}
+
+.document-box h3 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #000;
+    padding-bottom: 5px;
+    padding-top: 20px;
+}
+
+.document-box .img-box {
+    min-height: 90px;
+}
+
 
 .box-align {
     background: #fff;
@@ -912,6 +951,14 @@ button.button-gray:hover {
     height: 60%;
     width: 100%;
     background: #FAFAFA;
+}
+
+.document-required {
+    padding: 0 0 30px;
+    margin: auto;
+    font-size: 16px;
+    position: relative;
+    background: rgba(178, 47, 240, 0.1);
 }
 
 .perks-we-offer {
@@ -2426,12 +2473,12 @@ hr.style {
     width: 100%;
 }
 
-.carousel .slide {
-    text-align: left !important;
-}
-
 .footer-align > div {
     padding: 10px 20px;
+}
+
+.carousel .slide {
+    text-align: left !important;
 }
 
 .advertise {
@@ -2675,6 +2722,10 @@ a {
     line-height: 28px;
 }
 
+.hideDesktop {
+    display: none;
+}
+
 .bannerAlign {
     text-align: left;
 }
@@ -2835,7 +2886,86 @@ a {
     padding: 10px 20px;
 }
 
+.women-bg {
+    background: #FFF3F3;
+}
+
+.icon-feature {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: -10px;
+
+
+}
+
+.feature {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.feature li {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 30px 60px;
+}
+
+.feature li h4 {
+
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.feature li p {
+    font-size: 14px;
+    margin: 0;
+    color: #333;
+}
+
+.icon-criteria {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+
+}
+
+.criteria {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.criteria ul {
+    list-style: none;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.criteria li {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 20px 30px;
+}
+
+.criteria li p {
+    font-size: 14px;
+    margin: 0;
+    color: #333;
+}
+
 @media (max-width: 600px) {
+    .hideDesktop {
+        display: block;
+    }
+
     .mailPic, .contact {
         width: 100%;
     }
@@ -3122,6 +3252,10 @@ a {
     .right-box {
         float: none;
         width: 100%
+    }
+    .footer-align {
+        display: block;
+        text-align: center;
     }
 
 }
