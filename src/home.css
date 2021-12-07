@@ -2674,6 +2674,9 @@ a {
     font-size: 16px;
     line-height: 28px;
 }
+.hideDesktop{
+    display: none;
+}
 
 .bannerAlign {
     text-align: left;
@@ -2836,6 +2839,9 @@ a {
 }
 
 @media (max-width: 600px) {
+    .hideDesktop{
+        display: block;
+    }
     .mailPic, .contact {
         width: 100%;
     }

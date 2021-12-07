@@ -96,23 +96,24 @@ const Confirmotpmobile = (props) => {
         {}
       )
       .then((response) => {
-        console.log("respoinse very otp exsting",response)
-        setloader(false);
+        
+        
         if (response.status === 200) {
           props.hitForgotMpin({
             token: response.data.data.token,
             phone_number: props.phone_number,
           });
         } else {
+          setloader(false);
           setotpError(
-            `Otp not verified, please enter correct otp sent to ${props.phone_number}`
+            `Otp not verified, please enter correct otp `
           );
         }
       })
       .catch((error) => {
         setloader(false);
         setotpError(
-          `Otp not verified, please enter correct otp sent to ${props.phone_number}`
+          `Otp not verified, please enter correct otp `
         );
       });
   };
