@@ -651,6 +651,34 @@ button.button-gray:hover {
     min-height: 90px;
 }
 
+.document-wrapper {
+    position: relative;
+}
+
+.document-wrapper:before {
+    content: '';
+    height: 168px;
+    width: 66px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: -45px;
+    background: url('images/svg/green-slash.svg') no-repeat 0 0;
+}
+
+.document-wrapper:after {
+    content: '';
+    height: 168px;
+    width: 31px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: -125px;
+    background: url('images/svg/blue-slash.svg') no-repeat 0 0;
+}
+
 .document-box {
     background: #fff;
     padding: 30px 20px;
@@ -665,8 +693,8 @@ button.button-gray:hover {
     border-radius: 10px;
     color: #333333;
     height: 100%;
-    margin-bottom: 30px;
 }
+
 .document-box p{
     font-size: 14px;
     line-height: 170.5%;
