@@ -110,6 +110,7 @@ export const City = (props) => {
   const [otp, setOtp] = useState("");
   const [otperr, setOtperr] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
+
   let url = "";
   let reg = /^[0-9]{10}$/;
 
@@ -267,7 +268,11 @@ export const City = (props) => {
           </div>
           <div className="col col-md-6 ">
             <div className="rightSection ">
-              <h4 className="text-center">Get Instant Loan {cityName}</h4>
+              {cityName === "NearMe" ? (
+                <h4 className="text-center">Get Instant Loan Online</h4>
+              ) : (
+                <h4 className="text-center">Get Instant Loan {cityName}</h4>
+              )}
               <p className="text-center">
                 Avail instant loans starting from ₹ 500 up to ₹ 2 Lakhs, with
                 the funds credited directly to your bank account. Experience
