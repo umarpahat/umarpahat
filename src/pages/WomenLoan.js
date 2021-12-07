@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
-import criteria from "../images/svg/criteria.svg";
+import criteria from "../images/svg/eligibility-criteria.svg";
 import feature from "../images/svg/feature.svg";
 import women from "../images/svg/women-pic.svg";
 import easy from "../images/svg/easy-online.svg";
@@ -8,7 +8,7 @@ import hassle from "../images/svg/watch.svg";
 import unsecure from "../images/svg/unsecure.svg";
 import shield from "../images/svg/shield.svg";
 import dotshadow from "../images/svg/dot-shadow.svg";
-import womenFrame from "../images/svg/women-frame.svg";
+import womenFrame from "../images/svg/loans-for-women.svg";
 import idProof from "../images/svg/id_proof.svg";
 import addressProof from "../images/svg/address_proof.svg";
 import doc from "../images/svg/doc.svg";
@@ -221,7 +221,7 @@ export const WomenLoan = (props) => {
                             Submit
                         </button>
                     </form>
-                    <div
+                   {/* <div
                         className="p-t-20 text-center"
                         style={{
                             fontWeight: "bold",
@@ -235,7 +235,7 @@ export const WomenLoan = (props) => {
                             > Leave a message
                             </Link>
                         </p>
-                    </div>
+                    </div>*/}
                 </div>
             </div>
             <div className="banner">
@@ -254,11 +254,10 @@ export const WomenLoan = (props) => {
                             </Link>
                             <div className=' p-t-50'><h3 className=' p-t-30'>Get Payme App Now</h3></div>
                             <div className="social_link">
-
                                 <div>
                                     <Link
                                         to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
-                                        target={"_blank"}>
+                                        >
                                         <img
                                             className="img_google"
                                             src={googlePay}
@@ -267,11 +266,12 @@ export const WomenLoan = (props) => {
                                     </Link>
                                 </div>
                                 <div>
+                                    <Link to={{pathname: 'https://apps.apple.com/us/app/payme-india/id1282142711'}}>
                                     <img
                                         className="img_google"
                                         src={appStore}
                                         alt="Pay Me India"
-                                    />
+                                    /></Link>
                                 </div>
                             </div>
                         </div>
@@ -450,13 +450,10 @@ export const WomenLoan = (props) => {
                 </div>
                 <div className="row">
                     <div className="col-md-6 col-sm-12">
-                        <div className="women-bg">
                             <img className="img_google" src={women} alt="Pay Me India"/>
-
-                        </div>
                     </div>
-                    <div className="col-md-6 col-sm-12 hideMobile">
-                        <div className="rightSection ">
+                    <div className="col-md-6 col-sm-12 hideMobile p-t-50">
+                        <div className="rightSection">
                             <h4 className="text-center">Get Loans for womens</h4>
                             <p className="text-center">Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
                                 aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
@@ -531,7 +528,7 @@ export const WomenLoan = (props) => {
                                     Submit
                                 </button>
                             </form>
-                            <div
+                            {/*<div
                                 className="p-t-20 text-center"
                                 style={{
                                     fontWeight: "bold",
@@ -545,7 +542,7 @@ export const WomenLoan = (props) => {
                                     >  Leave a message
                                     </Link>
                                 </p>
-                            </div>
+                            </div>*/}
                         </div>
                     </div>
                 </div>
