@@ -225,10 +225,14 @@ export const City = (props) => {
               className="cardImg"
               style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
             >
-              <h4>Looking for a Personal Loan {cityName}?</h4>
+              {cityName === "NearMe" ? (
+                <h4>Looking for a Personal Loan Online</h4>
+              ) : (
+                <h4>Looking for a Personal Loan {cityName}?</h4>
+              )}
               <p>
-                PayMe India’s Instant Personal Loan NearMe comes with a
-                hassle-free online process and can be availed in 24 hours
+                PayMe India’s Instant Personal Loan comes with a hassle-free
+                online process and affordable interest rates
               </p>
               <strong>Get Payme India App Now</strong>
               <div className="tabularLess p-b-30">
@@ -436,7 +440,11 @@ export const City = (props) => {
         </button>
 
         <div className="rightSection ">
-          <h4 className="text-center">Get Loan In {cityName}</h4>
+          {cityName === "NearMe" ? (
+            <h4 className="text-center">Get Instant Loan Online</h4>
+          ) : (
+            <h4 className="text-center">Get Loan In {cityName}</h4>
+          )}
 
           <div className="form-group ms-input-group">
             <label className="form-label pb-2">Enter OTP</label>
