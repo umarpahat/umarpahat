@@ -72,7 +72,7 @@ const Footer = () => {
                         <h6 className='head6 green-link'>Grievance Redressal Officer</h6>
                         <ul>
                             <li>Rohit Rai</li>
-                            <li className=""><strong>Contact:</strong> 7669929906</li>
+                            <li className=""><strong>Contact:</strong> 7669929905</li>
                             <li className=""><strong>Email:</strong> <Link to={{pathname:'mailto:rohit.rai@paymeindia.in'}} target={"_blank"}>rohit.rai@paymeindia.in</Link></li>
                             <li><Link to={{pathname:'https://openscecurityurl.s3.ap-south-1.amazonaws.com/NewAppAgreeDocs/grievance_redressal_mechanism.pdf'}} target={"_blank"}>Grievance Redressal Mechanism</Link></li>
                         </ul>

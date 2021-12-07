@@ -330,7 +330,7 @@ export const City = (props) => {
                   ) : null}
                 </div>
                 <div className="form-group ms-input-group">
-                  <label className="form-label pb-2">Phone Number</label>
+                  <label className="form-label pb-2">Mobile Number</label>
                   <input
                     name="phone"
                     type="number"
