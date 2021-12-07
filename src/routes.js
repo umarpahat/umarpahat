@@ -39,7 +39,7 @@ import KycOption from "./pages/ApplyNowButton/KycOption";
 import StepManual from "./pages/ApplyNowButton/StepManualKYC";
 import GetCibilReport from "./pages/GetCibilReport";
 import womenLoan from "./pages/WomenLoan";
-// import EligbilityCriteria from "./pages/EligbilityCriteria";
+import EligbilityCriteria from "./pages/EligbilityCriteria";
 import City from "./pages/City"
 
 
@@ -104,7 +104,7 @@ function Routes() {
         <Route exact path="/change-mpin" component={ChangeMpin} />
         <Route exact path="/sitemap" component={Sitemap} />
         <Route exact path="/women-loan" component={womenLoan} />
-          {/*<Route exact path="/eligbility-criteria" component={EligbilityCriteria()} />*/}
+        <Route exact path="/eligbility-criteria" component={EligbilityCriteria} />
 
         <Route
           exact

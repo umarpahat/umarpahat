@@ -111,11 +111,12 @@ export const City = (props) => {
   const [otp, setOtp] = useState("");
   const [otperr, setOtperr] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
+
   let url = "";
   let reg = /^[0-9]{10}$/;
 
   const getOtp = () => {
-    
+    setOtp("");
     if (name.length === 0) {
       setNameerr("Name can't be empty");
       return;
@@ -175,8 +176,8 @@ export const City = (props) => {
       .put(url, data)
       .then(function (response) {
         fbq("track", "Lead");
-        window.location.href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
-       
+        window.location.href =
+          "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
       })
       .catch(function (error) {
         toast.error(error.response?.data.message, { ...options });
@@ -211,12 +212,6 @@ export const City = (props) => {
     toast.error("Please login google account in your device", { ...options });
     setTimeout(() => setIsButtonDisabled(false), 3000);
   };
-  useEffect(() => {
-    window.scrollTo(800, 700);
-    console.log('kkk');
-
-  }, [])
-
   return (
     <>
       <Header {...props} />
@@ -227,11 +222,16 @@ export const City = (props) => {
               className="cardImg"
               style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
             >
-              <h4>Looking for a Personal Loan {cityName}?</h4>
+              {cityName === "NearMe" ? (
+                <h4>Looking for a Personal Loan Online</h4>
+              ) : (
+                <h4>Looking for a Personal Loan {cityName}?</h4>
+              )}
               <p>
-                PayMe India’s Instant Personal Loan NearMe comes with a hassle-free online process and can be availed in 24 hours
+                PayMe India’s Instant Personal Loan comes with a hassle-free
+                online process and affordable interest rates
               </p>
-              <strong>Get Payme India App Now</strong>
+              <strong>Get PayMe India App Now</strong>
               <div className="tabularLess p-b-30">
                 <div>
                   <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
@@ -245,10 +245,10 @@ export const City = (props) => {
                 <div>
                   <a href="https://apps.apple.com/us/app/payme-india/id1282142711">
                     <img
-                    className="img_google"
-                    src={appStore}
-                    alt="Pay Me India"
-                  />
+                      className="img_google"
+                      src={appStore}
+                      alt="Pay Me India"
+                    />
                   </a>
                 </div>
               </div>
@@ -269,8 +269,16 @@ export const City = (props) => {
           </div>
           <div className="col col-md-6 ">
             <div className="rightSection ">
-              <h4 className="text-center">Get Instant Loan {cityName}</h4>
-              <p className="text-center">Avail of instant loans starting from ₹ 500 up to ₹ 2 Lakhs, with the funds credited directly to your bank account. Experience 100% secure process, Minimal documentation, and fast disbursal.</p>
+              {cityName === "NearMe" ? (
+                <h4 className="text-center">Get Instant Loan Online</h4>
+              ) : (
+                <h4 className="text-center">Get Instant Loan {cityName}</h4>
+              )}
+              <p className="text-center">
+                Avail instant loans starting from ₹ 500 up to ₹ 2 Lakhs, with
+                the funds credited directly to your bank account. Experience
+                100% secure process, minimal documentation and fast disbursal.
+              </p>
               <form id="form" name="form">
                 <div className="form-group ms-input-group">
                   <label className="form-label pb-2">Full Name</label>
@@ -324,7 +332,7 @@ export const City = (props) => {
                     name="phone"
                     type="number"
                     className="form-control input-field"
-                    placeholder="Enter your Phone Number"
+                    placeholder="Enter your phone number"
                     value={phone}
                     onChange={(e) => {
                       setPhoneerr("");
@@ -372,30 +380,35 @@ export const City = (props) => {
           </div>
           <div className="col col-md-6 hideDesktop">
             <div
-                className="cardImg"
-                style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
+              className="cardImg"
+              style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
             >
-              <h4>Looking for a Personal Loan {cityName}?</h4>
+              {cityName === "NearMe" ? (
+                  <h4 className="text-center">Get Instant Loan Online</h4>
+              ) : (
+                  <h4 className="text-center">Get Loan In {cityName}</h4>
+              )}
               <p>
-                PayMe India’s Instant Personal Loan NearMe comes with a hassle-free online process and can be availed in 24 hours
+                PayMe India’s Instant Personal Loan comes with a hassle-free
+                online process and affordable interest rates
               </p>
-              <strong>Get Payme App Now</strong>
+              <strong>Get PayMe India App Now</strong>
               <div className="tabularLess p-b-30">
                 <div>
                   <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
                     <img
-                        className="img_google"
-                        src={googlePay}
-                        alt="Pay Me India"
+                      className="img_google"
+                      src={googlePay}
+                      alt="Pay Me India"
                     />
                   </a>
                 </div>
                 <div>
                   <a href="https://apps.apple.com/us/app/payme-india/id1282142711">
                     <img
-                        className="img_google"
-                        src={appStore}
-                        alt="Pay Me India"
+                      className="img_google"
+                      src={appStore}
+                      alt="Pay Me India"
                     />
                   </a>
                 </div>
@@ -426,8 +439,14 @@ export const City = (props) => {
         <button className="close-button" onClick={closeCity}>
           <span aria-hidden>×</span>
         </button>
-        <div className="rightSection">
-          <h4 className="text-center">Get Loan In Delhi</h4>
+
+        <div className="rightSection ">
+          {cityName === "NearMe" ? (
+            <h4 className="text-center">Get Instant Loan Online</h4>
+          ) : (
+            <h4 className="text-center">Get Loan In {cityName}</h4>
+          )}
+
           <div className="form-group ms-input-group">
             <label className="form-label pb-2">Enter OTP</label>
             <input

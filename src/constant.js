@@ -6,7 +6,8 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
   API_ENDPOINT = "https://api.staging.paymeindia.in";
   API_ENDPOINT_STAGING = "https://staging.paymeindia.in";
   API_ENDPOINT_SAARTHI = "https://api-csr.paymeindia.in";
-} else {
+}
+ else {
   console.log("dev Prod");
   API_ENDPOINT = "https://api.paymeindia.in";
   API_ENDPOINT_SAARTHI = "https://api-csr.paymeindia.in";

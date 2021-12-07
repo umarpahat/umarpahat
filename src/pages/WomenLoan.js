@@ -145,6 +145,99 @@ export const WomenLoan = (props) => {
     return (
         <>
             <Header/>
+            <div className="col-md-6 col-sm-12 hideDesktop">
+                <div className="rightSection ">
+                    <h4 className="text-center">Get Loans for womens</h4>
+                    <p className="text-center">Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
+                        aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
+                    <form id="form" name="form">
+                        <div className="form-group ms-input-group">
+                            <label className="form-label pb-2">Full Name</label>
+                            <input
+                                name="fname"
+                                type="text"
+                                className="form-control input-field"
+                                placeholder="Enter Full Name"
+                                value={name}
+                                onChange={(e) => {
+                                    setNameerr("");
+                                    setName(e.target.value);
+                                }}
+                            />
+                            {nameerr ? (
+                                <span style={{color: "red", fontSize: "16px"}}>
+                    {nameerr}
+                  </span>
+                            ) : null}
+                        </div>
+                        <div className="form-group ms-input-group">
+                            <label className="form-label pb-2">Email address</label>
+                            <input
+                                name="email"
+                                type="text"
+                                className="form-control input-field"
+                                placeholder="Enter Email address"
+                                onChange={(e) => {
+                                    setEmailerr("");
+                                    setEmail(e.target.value);
+                                }}
+                            />
+                            {emailerr ? (
+                                <span style={{color: "red", fontSize: "16px"}}>
+                    {emailerr}
+                  </span>
+                            ) : null}
+                        </div>
+                        <div className="form-group ms-input-group">
+                            <label className="form-label pb-2">Phone Number</label>
+                            <input
+                                name="phone"
+                                type="number"
+                                className="form-control input-field"
+                                placeholder="Enter your Phone Number"
+                                value={phone}
+                                onChange={(e) => {
+                                    setPhoneerr("");
+                                    setPhone(e.target.value);
+                                }}
+                            />
+                            {phoneerr ? (
+                                <span style={{color: "red", fontSize: "16px"}}>
+                    {phoneerr}
+                  </span>
+                            ) : null}
+                        </div>
+
+                        <button
+                            type="button"
+                            className="btnLarge m-t-40"
+                            style={{
+                                display: "block",
+                                cursor: "pointer",
+                                color: "#fff",
+                            }}
+                            onClick={getOtp}
+                        >
+                            Submit
+                        </button>
+                    </form>
+                    <div
+                        className="p-t-20 text-center"
+                        style={{
+                            fontWeight: "bold",
+                        }}
+                    >
+                        <p>
+                            Any Doubt?
+                            <Link
+                                to={{pathname: ""}}
+                                style={{cursor: "pointer", color: "#02C650"}}
+                            > Leave a message
+                            </Link>
+                        </p>
+                    </div>
+                </div>
+            </div>
             <div className="banner">
                 <div className="container">
                     <div className="row align-items-center ">
@@ -196,73 +289,78 @@ export const WomenLoan = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="document-required">
-                <div className="container">
-                    <div className="row p-t-20 ">
-                        <div className="col-lg-12 col-md-12 col-sm-12 text-center p-t-50 p-b-30">
-                            <h3 className="text-center heading4">Document Required</h3>
-                        </div>
-                    </div>
-                    <div className="row justify-content-md-center p-t-15">
-                        <div className="col-lg-12 col-md-12 col-sm-12">
-                            <div
-                                className="row justify-content-md-center"
-                                style={{ marginTop: 0 }}
-                            >
-                                <div className="col-lg-3 col-md-3 col-sm-12">
-                                    <div className="document-box justify-content-md-center text-center">
-                                        <div className="d-flex align-items-center justify-content-center">
-                                            <img
-                                                className="img-fluid"
-                                                src={idProof}
-                                                alt="For Identity proof"
-                                            />
-                                        </div>
-                                        <h3>For Identity proof</h3>
-                                        <p>KYC documents such as Aadhar card, voter ID, PAN card, driving license, passport, or any other valid document issued by the government.</p>
-                                    </div>
-                                </div>
-                                <div className="col-lg-3 col-md-3 col-sm-12">
-                                    <div className="document-box justify-content-md-center text-center">
-                                        <div className=" d-flex align-items-center justify-content-center">
-                                            <img
-                                                className="img-fluid"
-                                                src={addressProof}
-                                                alt="Address proof"
-                                            />
-                                        </div>
-
-                                        <h3>Address proof</h3>
-                                        <p>Apart from KYC documents, you can submit utility bills, etc. as address proof.</p>
-                                    </div>
-                                </div>
-                                <div className="col-lg-3 col-md-3 col-sm-12">
-                                    <div className="document-box justify-content-md-center text-center">
-                                        <div className="d-flex align-items-center justify-content-center">
-                                            <img
-                                                className="img-fluid"
-                                                src={doc}
-                                                alt="Financial documents"
-                                            />
-                                        </div>
-                                        <h3>Financial documents</h3>
-                                        <p>Latest bank statement for the previous 3 months</p>
-                                    </div>
-                                </div><div className="col-lg-3 col-md-3 col-sm-12">
-                                    <div className="document-box justify-content-md-center text-center">
-                                        <div className="d-flex align-items-center justify-content-center">
-                                            <img
-                                                className="img-fluid"
-                                                src={employeeId}
-                                                alt="Employment proof"
-                                            />
-                                        </div>
-                                        <h3>Employment proof</h3>
-                                        <p>Two latest salary slips.</p>
-                                    </div>
-                                </div>
+            <div className="document-wrapper">
+                <div className="document-required">
+                    <div className="container">
+                        <div className="row p-t-20 ">
+                            <div className="col-lg-12 col-md-12 col-sm-12 text-center p-t-50 p-b-30">
+                                <h3 className="text-center heading4">Document Required</h3>
                             </div>
+                        </div>
+                        <div className="row justify-content-md-center p-t-15">
+                            <div className="col-lg-12 col-md-12 col-sm-12">
+                                <div
+                                    className="row justify-content-md-center"
+                                    style={{marginTop: 0}}
+                                >
+                                    <div className="col-lg-3 col-md-3 col-sm-12 p-b-30">
+                                        <div className="document-box justify-content-md-center text-center">
+                                            <div className="d-flex align-items-center justify-content-center">
+                                                <img
+                                                    className="img-fluid"
+                                                    src={idProof}
+                                                    alt="For Identity proof"
+                                                />
+                                            </div>
+                                            <h3>For Identity proof</h3>
+                                            <p>KYC documents such as Aadhar card, voter ID, PAN card, driving license,
+                                                passport, or any other valid document issued by the government.</p>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-3 col-md-3 col-sm-12 p-b-30">
+                                        <div className="document-box justify-content-md-center text-center">
+                                            <div className=" d-flex align-items-center justify-content-center">
+                                                <img
+                                                    className="img-fluid"
+                                                    src={addressProof}
+                                                    alt="Address proof"
+                                                />
+                                            </div>
 
+                                            <h3>Address proof</h3>
+                                            <p>Apart from KYC documents, you can submit utility bills, etc. as address
+                                                proof.</p>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-3 col-md-3 col-sm-12 p-b-30">
+                                        <div className="document-box justify-content-md-center text-center">
+                                            <div className="d-flex align-items-center justify-content-center">
+                                                <img
+                                                    className="img-fluid"
+                                                    src={doc}
+                                                    alt="Financial documents"
+                                                />
+                                            </div>
+                                            <h3>Financial documents</h3>
+                                            <p>Latest bank statement for the previous 3 months</p>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-3 col-md-3 col-sm-12 p-b-30">
+                                        <div className="document-box justify-content-md-center text-center">
+                                            <div className="d-flex align-items-center justify-content-center">
+                                                <img
+                                                    className="img-fluid"
+                                                    src={employeeId}
+                                                    alt="Employment proof"
+                                                />
+                                            </div>
+                                            <h3>Employment proof</h3>
+                                            <p>Two latest salary slips.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -274,8 +372,8 @@ export const WomenLoan = (props) => {
 
                     </div>
                 </div>
-                <div className="row p-t-50 p-b-30">
-                    <div className="col-md-6 col-sm-12">
+                <div className="row p-t-50 p-b-30 justify-content-md-center">
+                    <div className="col-md-5 col-sm-12">
                         <div className="criteria ">
                             <p>Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
                                 aliquam. Totam quae eos et aut rerum maxime. Provident id non.</p>
@@ -296,7 +394,7 @@ export const WomenLoan = (props) => {
 
                         </div>
                     </div>
-                    <div className="col-md-6 col-sm-12 text-center">
+                    <div className="col-md-5 col-sm-12 text-center">
                         <img className="img_google" src={criteria} alt="Pay Me India"/>
 
                     </div>
@@ -308,12 +406,12 @@ export const WomenLoan = (props) => {
 
                     </div>
                 </div>
-                <div className="row p-t-50 p-b-30">
-                    <div className="col-md-6 col-sm-12 text-center">
+                <div className="row p-t-50 p-b-30 justify-content-md-center">
+                    <div className="col-md-5 col-sm-12 text-center">
                         <img className="img_google" src={feature} alt="Pay Me India"/>
 
                     </div>
-                    <div className="col-md-6 col-sm-12 ">
+                    <div className="col-md-5 col-sm-12 ">
                         <ul className="feature ">
                             <li>
 
@@ -357,7 +455,7 @@ export const WomenLoan = (props) => {
 
                         </div>
                     </div>
-                    <div className="col-md-6 col-sm-12">
+                    <div className="col-md-6 col-sm-12 hideMobile">
                         <div className="rightSection ">
                             <h4 className="text-center">Get Loans for womens</h4>
                             <p className="text-center">Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
@@ -444,8 +542,7 @@ export const WomenLoan = (props) => {
                                     <Link
                                         to={{pathname: ""}}
                                         style={{cursor: "pointer", color: "#02C650"}}
-                                    >
-                                         Leave a message
+                                    >  Leave a message
                                     </Link>
                                 </p>
                             </div>
