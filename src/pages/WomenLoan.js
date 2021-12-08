@@ -6,6 +6,7 @@ import women from "../images/svg/women-pic.svg";
 import easy from "../images/svg/easy-online.svg";
 import hassle from "../images/svg/watch.svg";
 import unsecure from "../images/svg/unsecure.svg";
+import secureSafety from "../images/svg/secure-safety.svg";
 import shield from "../images/svg/shield.svg";
 import dotshadow from "../images/svg/dot-shadow.svg";
 import womenFrame from "../images/svg/loans-for-women.svg";
@@ -151,10 +152,9 @@ export const WomenLoan = (props) => {
           />
         ) : null}
         <div className="rightSection ">
-          <h4 className="text-center">Get Loans for womens</h4>
+          <h4 className="text-center">Get loans for women</h4>
           <p className="text-center">
-            Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt aliquam.
-            Totam quae eos et aut rerum maxime. Provident id non.
+            Personal financing for all rising women evolving needs
           </p>
           <form id="form" name="form">
             <div className="form-group ms-input-group">
@@ -244,62 +244,44 @@ export const WomenLoan = (props) => {
                     </div>*/}
         </div>
       </div>
-      <div className="banner">
+      <div className="banner" style={{paddingTop:0}}>
         <div className="container">
           <div className="row align-items-center ">
             <div className="col-sm-12 col-md-5 bannerAlign">
-              <h1 className="heading1">Loans for womens</h1>
-              <p className="heading6">
-                We are an innovative Fin-Tech organization that offers,
-                customized personal loans to the salaried women at lowest
-                interest rates. These loans are designed to meet all your
-                financial needs.
-              </p>
+              <h1 className="heading1">Personal Loan for Women</h1>
+              <p className="heading6">PayMe India provide today’s women path to financial freedom by offering collateral-free personal loan at affordable interest rate.</p>
               <br />
-              <Link
-                className="btnLarge"
-                to={{
-                  pathname: "/apply-loan",
-                }}
-              >
-                Apply now
-              </Link>
+              <a
+                className="btnLarge" style={{background:'#F60093'}}
+                href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
+                Get App Now
+              </a>
               <div className=" p-t-50">
-                <h3 className=" p-t-30">Get PayMe India App Now</h3>
+                <h3 className=" p-t-30">Get Payme India App Now</h3>
               </div>
               <div className="social_link">
                 <div>
-                  <Link
-                    to={{
-                      pathname:
-                        "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia",
-                    }}
-                  >
+                  <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
                     <img
                       className="img_google"
                       src={googlePay}
                       alt="Pay Me India"
                     />
-                  </Link>
+                  </a>
                 </div>
                 <div>
-                  <Link
-                    to={{
-                      pathname:
-                        "https://apps.apple.com/us/app/payme-india/id1282142711",
-                    }}
-                  >
+                  <a href="https://apps.apple.com/us/app/payme-india/id1282142711" >
                     <img
                       className="img_google"
                       src={appStore}
                       alt="Pay Me India"
                     />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
             <div className="col-sm-12 col-md-2 ">&nbsp;</div>
-            <div className="col-sm-12 col-md-5 m-t-40">
+            <div className="col-sm-12 col-md-5">
               <div className="p-b-30">
                 <img
                   className="img-fluid"
@@ -316,7 +298,7 @@ export const WomenLoan = (props) => {
           <div className="container">
             <div className="row p-t-20 ">
               <div className="col-lg-12 col-md-12 col-sm-12 text-center p-t-50 p-b-30">
-                <h3 className="text-center heading4">Document Required</h3>
+                <h2 className="text-center heading4">Documents required for Women's Loan</h2>
               </div>
             </div>
             <div className="row justify-content-md-center p-t-15">
@@ -394,16 +376,14 @@ export const WomenLoan = (props) => {
       <div className="container">
         <div className="row">
           <div className="col-md-12 col-sm-12 p-t-50">
-            <h3 className="text-center heading4">Eligibility criteria</h3>
+            <h2 className="text-center heading4">Eligibility criteria for Personal Loan for Women?</h2>
           </div>
         </div>
         <div className="row p-t-50 p-b-30 justify-content-md-center">
           <div className="col-md-5 col-sm-12">
             <div className="criteria ">
               <p>
-                PayMe India finances ambitious females through instant personal
-                loans on simple terms and conditions. Below is the list of
-                eligibility requirements to avail of loans for women
+                PayMe India finances ambitious females through instant personal loans on simple terms and conditions. Below is the list of eligibility requirements to avail of loans for women.
               </p>
               <ul>
                 <li>
@@ -428,7 +408,7 @@ export const WomenLoan = (props) => {
                     src={dotshadow}
                     alt="Pay Me India"
                   />
-                  <p>The minimum salary must be above Rs. 12,000.</p>
+                  <p>The minimum salary must be above Rs. 12,000</p>
                 </li>
               </ul>
             </div>
@@ -439,7 +419,7 @@ export const WomenLoan = (props) => {
         </div>
         <div className="row">
           <div className="col-md-12">
-            <h3 className="text-center heading4">Features</h3>
+            <h2 className="text-center heading4">Features of Personal Loan for Women</h2>
           </div>
         </div>
         <div className="row p-t-50 p-b-30 justify-content-md-center">
@@ -451,22 +431,12 @@ export const WomenLoan = (props) => {
               <li>
                 <img className="icon-feature" src={easy} alt="Pay Me India" />
                 <h4>Easy Online Application</h4>
-                <p>
-                  You can start your loan application process right from the
-                  comfort of home. All you need to do is go to PayMe India's
-                  official website and apply for a Personal loan for women or
-                  Download the application.
-                </p>
+                <p>You can start your loan application process right from the comfort of home. All you need to do is go to PayMe India's official website and apply for a Personal loan for women or Download the application.</p>
               </li>
               <li>
                 <img className="icon-feature" src={hassle} alt="Pay Me India" />
                 <h4>Hassle-free loan</h4>
-                <p>
-                  You can start your loan application process right from the
-                  comfort of home. All you need to do is go to PayMe India's
-                  official website and apply for a Personal loan for women or
-                  Download the application.
-                </p>
+                <p>PayMe India offers easy and quick small business loans of up to Rs.2 lakh at affordable interest rates. With approval in as little as 24 hours*. These high-value loans offer the ideal financial option to meet unexpected expenditures.</p>
               </li>
               <li>
                 <img
@@ -474,23 +444,18 @@ export const WomenLoan = (props) => {
                   src={unsecure}
                   alt="Pay Me India"
                 />
-                <h4>Easy Online Application</h4>
-                <p>
-                  You can start your loan application process right from the
-                  comfort of home. All you need to do is go to PayMe India's
-                  official website and apply for a Personal loan for women or
-                  Download the application.
-                </p>
+                <h4>Unsecured loan with minimal paperwork</h4>
+                <p>PayMe India provides unsecured loans that require no collateral, which means you need not worry about giving assets to get funds.</p>
               </li>
               <li>
                 <img className="icon-feature" src={shield} alt="Pay Me India" />
-                <h4>Easy Online Application</h4>
-                <p>
-                  You can start your loan application process right from the
-                  comfort of home. All you need to do is go to PayMe India's
-                  official website and apply for a Personal loan for women or
-                  Download the application.
-                </p>
+                <h4>No end-use restriction</h4>
+                <p>How you use the money from a personal loan for women is up to you. There is no restriction on the end-use of the loan for women.</p>
+              </li>
+              <li>
+                <img className="icon-feature" src={secureSafety} alt="Pay Me India" />
+                <h4>Safe & Secure</h4>
+                <p>From application to approval, all our processes are safe and secure. Your details are always at your fingertips.</p>
               </li>
             </ul>
           </div>
@@ -501,10 +466,9 @@ export const WomenLoan = (props) => {
           </div>
           <div className="col-md-6 col-sm-12 hideMobile p-t-50">
             <div className="rightSection">
-              <h4 className="text-center">Get Loans for womens</h4>
+              <h4 className="text-center">Get loans for women</h4>
               <p className="text-center">
-                Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
-                aliquam. Totam quae eos et aut rerum maxime. Provident id non.
+                Personal financing for all rising women evolving needs
               </p>
               <form id="form" name="form">
                 <div className="form-group ms-input-group">
