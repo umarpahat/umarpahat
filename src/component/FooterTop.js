@@ -10,7 +10,7 @@ export const FooterTop = (props) => {
     return (
         <div className="container-fluid footerStripe p-t-40 ">
             <div className="container p-t-40">
-                <Carousel>
+                <Carousel autoPlay={true}  infiniteLoop={true} stopOnHover={true} transitionTime={800} showArrows={false} showStatus={false}>
                     <div className="row align-items-center">
                         <div className="col-sm-12 col-md-2">
                             <img src={payrent} alt="pay rent" className="img-fluid"/>

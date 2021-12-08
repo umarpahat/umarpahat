@@ -29,6 +29,7 @@ export const Blogs = (props) => {
           interval={2000}
           transitionTime={1000}
           infiniteLoop={true}
+          showStatus={false}
           
         >
           {posts.map((post, index) => (
