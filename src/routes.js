@@ -40,7 +40,8 @@ import Header from "./pages/Header";
 import Footer from "./pages/Footer";
 import StepManual from "./pages/ApplyNowButton/StepManualKYC";
 import GetCibilReport from "./pages/GetCibilReport";
-
+import City from "./pages/City"
+ 
 
 function Routes() {
     return (
@@ -55,6 +56,31 @@ function Routes() {
           exact
           path="/get-start-paymeindia"
           component={Getstartpaymeindia}
+        />
+           <Route
+          exact
+          path={
+            ["/personal-loan-in-delhi",
+            "/personal-loan-in-bangalore",
+            "/personal-loan-in-hyderabad",
+            "/personal-loan-in-pune",
+            "/personal-loan-in-mumbai",
+            "/personal-loan-in-chennai",
+            "/personal-loan-in-kolkata",
+            "/personal-loan-in-noida",
+            "/personal-loan-in-vadodara",
+            "/personal-loan-in-coimbatore",
+            "/personal-loan-in-bhopal",
+            "/personal-loan-in-jaipur",
+            "/personal-loan-in-mumbai",
+            "/personal-loan-in-navi-mumbai",
+            "/personal-loan-in-lucknow",
+            "/personal-loan-in-ahmedabad",
+            "/personal-loan-in-bhubaneswar",
+            "/personal-loan-in-nashik",
+          "/personal-loan-near-me"]
+          }
+          component={City}
         />
         <Route exact path="/referral-code" component={Referralcode} />
         <Route exact path="/create-mpin" component={Creatempn} />

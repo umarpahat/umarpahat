@@ -51,8 +51,8 @@ const SocialInitiative = (props) => {
   let emailReg =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const postVolunteer = () => {
-    gtag_report_conversion("https://www.paymeindia.in/social-initiative");
     gtag_report_conversion();
+    
   
     if (name.length === 0) {
       
@@ -117,14 +117,14 @@ const SocialInitiative = (props) => {
       .post(url, data, config)
       .then(function (response) {
         if (toastToggle === "") {
-          toast.success("Thank you for registering");
+          toast.success("Thank you for registering",{...options});
           setToastToggle("2");
         }
         document.getElementById("form").reset();
       })
       .catch(function (error) {
         if (toastToggle === "") {
-          toast.error(error.response.data.message);
+          toast.error(error.response.data.message,{...options});
           setToastToggle("2");
         }
       });

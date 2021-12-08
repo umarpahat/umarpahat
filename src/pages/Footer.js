@@ -4,22 +4,25 @@ import {Link} from "react-router-dom";
 import {hitAppUseCase} from '../store/modules/userDetails/actions';
 import "../../src/footer.css"
 import instagram from "../images/svg/instagram.svg";
+import youtube from "../images/svg/youtube.svg";
 import Linkedin from "../images/svg/linkedin.svg";
 import Twitter from "../images/svg/twitter.svg";
 import Facebook from "../images/svg/facebook.svg";
 import sslLogo from "../images/svg/ssl.svg";
 import whiteLogo from "../images/svg/logo.svg";
+import {PopularCity} from "../component/PopularCity";
 
 
 const Footer = () => {
     return (
+        <>
         <footer className='footer'>
             <div className="container">
                 <div className="row">
                     <div className="ol col-md-2">
                         <div className='clearfix'><img className="img-fluid"
                                                        src={whiteLogo} alt="PayMe India"/></div>
-                        <div className='clearfix p-t-80'>
+                        <div className='clearfix p-t-20'>
                             <Link to={{pathname:'https://www.facebook.com/PaymeIndiaofficial/'}} target={"_blank"}>
                                 <img className="social-img" src={Facebook} alt="PayMe india Facebook"/>
                             </Link>
@@ -31,6 +34,9 @@ const Footer = () => {
                             </Link>
                             <Link to={{pathname:'https://www.instagram.com/paymeindia/'}} target={"_blank"}>
                                 <img className="social-img" src={instagram} alt="PayMe india Instagram"/>
+                            </Link>
+                            <Link to={{pathname:'https://www.youtube.com/channel/UCeP0MLxaKLeVz0-2uWAtcFg'}} target={"_blank"}>
+                                <img className="social-img" src={youtube} alt="PayMe india youtube"/>
                             </Link>
                         </div>
                     </div>
@@ -86,6 +92,8 @@ const Footer = () => {
                 </div>
             </div>
         </footer>
+        <PopularCity/>
+        </>
     )
 }
 const mapStateToProps = state => {

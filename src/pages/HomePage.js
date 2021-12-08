@@ -28,7 +28,16 @@ import { makeStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
 import MetaTags from "react-meta-tags";
 import Cookies from "universal-cookie";
+import { toast } from "react-toastify";
 const cookies = new Cookies();
+
+toast.configure();
+const options = {
+  position: "top-center",
+  autoClose: 2000,
+  limit: 1,
+  closeButton: false,
+};
 const HomePage = (props) => {
   const useStyles = makeStyles((theme) => ({
     root: {},
@@ -41,9 +50,21 @@ const HomePage = (props) => {
   const [amount, setAmount] = useState(0);
   const [time, setTime] = useState(0);
   const [posts, setPosts] = useState([]);
+  const [successcibilreport,setsuccesscibilreport]=useState(props.location.state?.success)
+
+
+
+  const notify = (err) => {
+   
+    toast.success(successcibilreport, { ...options });
+    window.history.replaceState(null, '') 
+   
+  };
+ 
+ 
 
   useEffect(() => {
-
+    notify();
     const url = "https://blog.paymeindia.in/?json=get_recent_posts&count=3";
     fetch(url)
       .then((res) => res.json())
@@ -91,11 +112,14 @@ const HomePage = (props) => {
 
     return result;
   }
+ 
 
   return (
     <>
+    
       {" "}
       <Header {...props} active="home" />
+     
       <MetaTags>
         <title>
           Instant Personal Loans Online | Small Personal Loans - PayMe India
@@ -269,7 +293,9 @@ anytime-anywhere with no hassle{" "}
                   A credit score is more than just a number. Know your Cibil
                   score completely free with PayMe India.
                 </p>
-                <Link style={{ color: "#fff", cursor: "pointer" }} to='/get-cibil-report' className="btnLarge m-t-40">
+               
+                
+                <Link style={{ color: "#fff", cursor: "pointer" }} to="get-cibil-report" className="btnLarge m-t-40">
                   Get CIBIL Report
                 </Link>
               </div>

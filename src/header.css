@@ -51,7 +51,12 @@ body {
 .tabularLess a {
     padding: 0 !important;
 }
-
+.yes-icon{
+    width: 30px;
+    position: absolute;
+    right: 10px;
+    top:48px
+}
 .img_google {
     max-width: 100%;
 }
@@ -111,8 +116,8 @@ a.button {
     color: #fff;
     display: inline-block;
     height: 39px;
-    min-width: 80px;
-    padding: 0 20px;
+    padding: 0;
+    margin: 0;
     text-align: center;
     text-decoration: none;
     font-style: normal;
@@ -123,7 +128,15 @@ a.button {
 }
 
 header .active {
+    padding: 0 20px;
     background: #02C650;
+    border-radius: 20px;
+}
+
+
+header .download {
+    padding: 0 20px;
+    background: #000;
     border-radius: 20px;
 }
 
@@ -302,7 +315,7 @@ nav a:hover {
 }
 
 .navigationLink li {
-    padding: 0;
+    padding: 0 10px;
     margin: 0;
     text-align: right;
     list-style: none;
