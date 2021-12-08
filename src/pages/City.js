@@ -57,7 +57,7 @@ const images = {
   NearMe,
   NaviMumbai,
 };
-console.log(images);
+
 export const City = (props) => {
   const [showDialogCity, setShowDialogCity] = React.useState(false);
   const openCity = () => setShowDialogCity(true);
