@@ -29,6 +29,7 @@ import NearMe from "../images/Random-India-image.png";
 import "@reach/dialog/styles.css";
 import { API_ENDPOINT_STAGING } from "../constant";
 import Footer from "./Footer";
+import OtpDialog from "./OtpDialog";
 
 toast.configure();
 const options = {
@@ -111,6 +112,7 @@ export const City = (props) => {
   const [otp, setOtp] = useState("");
   const [otperr, setOtperr] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
+  const [otpScreen, setOtpScreen] = useState(false);
 
   let url = "";
   let reg = /^[0-9]{10}$/;
@@ -149,7 +151,8 @@ export const City = (props) => {
       .then(function (response) {
         console.log("city", response);
         console.log(response.status);
-        setShowDialogCity(true);
+        // setShowDialogCity(true);
+        setOtpScreen(true);
       })
       .catch(function (error) {
         // toast.error(error.response.data.message, { ...options });
@@ -215,6 +218,16 @@ export const City = (props) => {
   return (
     <>
       <Header {...props} />
+      {otpScreen ? (
+          <OtpDialog
+          {...props}
+            name={name}
+            email={email}
+            phone={phone}
+            lead_from="GETLOAN"
+            
+          />
+        ) : null}
       <div className="container">
         <div className="row">
           <div className="col col-md-6 hideMobile">
@@ -432,7 +445,7 @@ export const City = (props) => {
       </div>
       <Footer {...props} />
 
-      <Dialog
+      {/* <Dialog
         isOpen={showDialogCity}
         onDismiss={closeCity}
         style={{ width: 400 }}>
@@ -478,7 +491,7 @@ export const City = (props) => {
             Submit
           </button>
         </div>
-      </Dialog>
+      </Dialog> */}
     </>
   );
 };
