@@ -10,7 +10,7 @@ import googlePay from "../images/svg/google-play.svg";
 import appStore from "../images/svg/app-store.svg";
 export const CarouselPic = (props) => {
     return (
-            <Carousel>
+            <Carousel autoPlay={true} infiniteLoop={true} showStatus={false} showArrows={true}>
                 <div className="get-instant-loan banner">
                     <div className="container">
                         <div className="row align-items-center ">

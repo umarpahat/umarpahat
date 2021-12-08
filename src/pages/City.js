@@ -151,41 +151,15 @@ export const City = (props) => {
       .then(function (response) {
         console.log("city", response);
         console.log(response.status);
-        // setShowDialogCity(true);
+       
         setOtpScreen(true);
       })
       .catch(function (error) {
-        // toast.error(error.response.data.message, { ...options });
+        toast.error(error.response.data.message, { ...options });
         console.log(error);
       });
   };
-  const SubmitOtp = () => {
-    if (otp === "") {
-      setOtperr("Otp can't be empty");
-      return;
-    }
-    let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
-    let data = {
-      otp: otp,
-      name: name,
-      email: email,
-      phone_number: phone,
-
-      lead_from: "GETLOAN",
-      residential_address: cityName,
-    };
-
-    axios
-      .put(url, data)
-      .then(function (response) {
-        fbq("track", "Lead");
-        window.location.href =
-          "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
-      })
-      .catch(function (error) {
-        toast.error(error.response?.data.message, { ...options });
-      });
-  };
+  
   const GoogleCliendId =
     "435990090197-cjdhhppfhvq8e9n0cullbtco1u22mf1g.apps.googleusercontent.com";
   const responseGoogle = (res) => {
@@ -445,53 +419,7 @@ export const City = (props) => {
       </div>
       <Footer {...props} />
 
-      {/* <Dialog
-        isOpen={showDialogCity}
-        onDismiss={closeCity}
-        style={{ width: 400 }}>
-        <button className="close-button" onClick={closeCity}>
-          <span aria-hidden>×</span>
-        </button>
-
-        <div className="rightSection ">
-          {cityName === "NearMe" ? (
-            <h4 className="text-center">Get Instant Loan Online</h4>
-          ) : (
-            <h4 className="text-center">Get Loan In {cityName}</h4>
-          )}
-
-          <div className="form-group ms-input-group">
-            <label className="form-label pb-2">Enter OTP</label>
-            <input
-              name="otp"
-              type="number"
-              className="form-control input-field"
-              placeholder="Enter 4 digits OTP"
-              value={otp}
-              onChange={(e) => {
-                setOtperr("");
-                setOtp(e.target.value);
-              }}
-            />
-            {otperr ? (
-              <span style={{ color: "red", fontSize: "16px" }}>{otperr}</span>
-            ) : null}
-          </div>
-
-          <button
-            type="button"
-            className="btnLarge m-t-40"
-            style={{
-              display: "block",
-              cursor: "pointer",
-              color: "#fff",
-            }}
-            onClick={SubmitOtp}
-          >
-            Submit
-          </button>
-        </div>
-      </Dialog> */}
+     
     </>
   );
 };
