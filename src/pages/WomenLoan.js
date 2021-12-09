@@ -221,6 +221,7 @@ export const WomenLoan = (props) => {
                 display: "block",
                 cursor: "pointer",
                 color: "#fff",
+                background: "#F60093",
               }}
               onClick={getOtp}
             >
@@ -419,7 +420,7 @@ export const WomenLoan = (props) => {
           </div>
         </div>
         <div className="row p-t-50 p-b-30 justify-content-md-center">
-          <div className="col-md-5 col-sm-12 text-center">
+          <div className="col-md-5 col-sm-12 text-center p-b-30">
             <img className="img_google" src={feature} alt="Pay Me India" />
           </div>
           <div className="col-md-5 col-sm-12 ">

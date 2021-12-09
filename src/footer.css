@@ -232,7 +232,27 @@ footer ul li {
     z-index: 10000;
 }
 
+.imgSize img {
+    width: 140px !important;
+}
+
+.dflex {
+    display: table;
+}
+
+.dflex > div {
+    display: table-cell;
+}
+
+.dflex > div:nth-child(1) {
+    width: 100px;
+}
+
 @media (max-width: 600px) {
+    .dflex > div:nth-child(1) {
+        width: 50px;
+    }
+
     .CookieConsent {
         flex-direction: revert !important;
     }
