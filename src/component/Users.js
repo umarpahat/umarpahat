@@ -216,7 +216,7 @@ export const Users = (props) => {
                                 </div>
                             </div>
                             <p className="content p-b-30 pt-3 px-4 ">
-                                Needed moneyy It was a miracle for me that Payme India
+                                Needed moneyy It was a miracle for me that PayMe India
                                 approved my loan and disbursed the amount. I was not aware
                                 of it they took the cheque from my doorstep. I wasn't sure
                                 about the loan. However my loan was approved and I was

@@ -43,20 +43,20 @@ const Footer = (props) => {
                                                            src={whiteLogo} alt="PayMe India"/></div>
                             <div className='clearfix p-t-20'>
                                 <Link to={{pathname: 'https://www.facebook.com/PaymeIndiaofficial/'}} target={"_blank"}>
-                                    <img className="social-img" src={Facebook} alt="PayMe india Facebook"/>
+                                    <img className="social-img" src={Facebook} alt="PayMe India Facebook"/>
                                 </Link>
                                 <Link to={{pathname: 'https://twitter.com/PayMeIndia?s=08'}} target={"_blank"}>
-                                    <img className="social-img" src={Twitter} alt="PayMe india Twitter"/>
+                                    <img className="social-img" src={Twitter} alt="PayMe India Twitter"/>
                                 </Link>
                                 <Link to={{pathname: 'https://www.linkedin.com/company/payme-india'}} target={"_blank"}>
-                                    <img className="social-img" src={Linkedin} alt="PayMe india Linkedin"/>
+                                    <img className="social-img" src={Linkedin} alt="PayMe India Linkedin"/>
                                 </Link>
                                 <Link to={{pathname: 'https://www.instagram.com/paymeindia/'}} target={"_blank"}>
-                                    <img className="social-img" src={instagram} alt="PayMe india Instagram"/>
+                                    <img className="social-img" src={instagram} alt="PayMe India Instagram"/>
                                 </Link>
                                 <Link to={{pathname: 'https://www.youtube.com/channel/UCeP0MLxaKLeVz0-2uWAtcFg'}}
                                       target={"_blank"}>
-                                    <img className="social-img" src={youtube} alt="PayMe india youtube"/>
+                                    <img className="social-img" src={youtube} alt="PayMe India youtube"/>
                                 </Link>
                             </div>
                         </div>

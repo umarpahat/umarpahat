@@ -26,7 +26,7 @@ export const Whatsup = (props) => {
                             <img className="img-fluid" alt="Btn" src={whiteBtn}/>
                         </button>
                         <div style={{paddingTop:15, fontSize:12}} className='white-color btn-checkbox'>
-                            <input type='checkbox' name='thing' value='valuable' id="thing"/><label htmlFor="thing">I accept the Terms & coditions of Payme India</label>
+                            <input type='checkbox' name='thing' value='valuable' id="thing"/><label htmlFor="thing">I accept the Terms & coditions of PayMe India</label>
 
                         </div>
                     </div>
