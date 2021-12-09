@@ -144,7 +144,6 @@ h6 {
 }
 
 .carousel .slide img {
-    width: auto !important;
     max-width: 100%;
 }
 
@@ -3287,5 +3286,13 @@ a {
         display: block;
         text-align: center;
     }
+    .footerStripe {
+        font-size: 12px;
+        line-height: 150.5%;
+    }
+    .footerStripe p{
+      margin-bottom: 5px;
+    }
+
 
 }
