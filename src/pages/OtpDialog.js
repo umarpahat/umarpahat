@@ -12,6 +12,7 @@ const options = {
   closeButton: false,
 };
 const OtpDialog = (props) => {
+  console.log("props", props);
   const [otp, setOtp] = useState("");
   const [otperr, setOtperr] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
@@ -24,6 +25,25 @@ const OtpDialog = (props) => {
       setOtperr("OTP can't be empty");
       return;
     }
+    if (props.lead_from === "WHATSAPP") {
+      let url = `${API_ENDPOINT_STAGING}/api/jwt-auth/verify-otp-phone/`;
+      let data = {
+        otp: otp,
+        phone_number: props.phone,
+      };
+
+      axios
+        .post(url, data)
+        .then(function (response) {
+          toast.success("data successfully submitted", { ...options });
+          closeCity();
+          console.log("confitm otp", response);
+        })
+        .catch(function (error) {
+          toast.error("wrong OTP", { ...options });
+        });
+    }
+    else{
 
     let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
     let data = {
@@ -46,6 +66,7 @@ const OtpDialog = (props) => {
       .catch(function (error) {
         toast.error("wrong OTP", { ...options });
       });
+    }
   };
   return (
     <div>

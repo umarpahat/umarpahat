@@ -63,7 +63,7 @@ const HomePage = (props) => {
   const [successcibilreport,setsuccesscibilreport]=useState(props.location.state?.success)
 
 
-
+  
   const notify = (err) => {
     toast.success(successcibilreport, { ...options });
     window.history.replaceState(null, '')
@@ -355,7 +355,7 @@ const HomePage = (props) => {
             </div>
           </div>
         </div>*/}
-        <Whatsup/>
+        <Whatsup {...props}/>
         <Blogs/>
         <Videos/>
         <div className="container-fluid px-3 px-sm-5 p-t-40">

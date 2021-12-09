@@ -151,7 +151,6 @@ export const City = (props) => {
       .then(function (response) {
         console.log("city", response);
         console.log(response.status);
-       
         setOtpScreen(true);
       })
       .catch(function (error) {
