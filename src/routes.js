@@ -103,7 +103,7 @@ function Routes() {
         <Route exact path="/bank-details-payme" component={Bankdetailspayme} />
         <Route exact path="/change-mpin" component={ChangeMpin} />
         <Route exact path="/sitemap" component={Sitemap} />
-        <Route exact path="/women-loan" component={womenLoan} />
+        <Route exact path="/personal-loan-for-women" component={womenLoan} />
         <Route exact path="/eligbility-criteria" component={EligbilityCriteria} />
 
         <Route
