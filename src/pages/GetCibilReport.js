@@ -1032,7 +1032,7 @@ const GetCibilReport = (props) => {
                               }}
                             >
                               I accept the Terms & Conditions of TU CIBIL and
-                              hereby authorize Payme India to check CIBIL score
+                              hereby authorize PayMe India to check CIBIL score
                               & report for my profile
                             </label>
 

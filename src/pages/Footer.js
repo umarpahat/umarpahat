@@ -35,27 +35,28 @@ const Footer = (props) => {
         <>
             <footer className='footer'>
                 <FooterTop/>
+                <PopularCity {...props}/>
                 <div className="container">
-                    <div className="row">
+                    <div className="row p-t-20">
                         <div className="ol col-md-2">
                             <div className='clearfix'><img className="img-fluid"
                                                            src={whiteLogo} alt="PayMe India"/></div>
                             <div className='clearfix p-t-20'>
                                 <Link to={{pathname: 'https://www.facebook.com/PaymeIndiaofficial/'}} target={"_blank"}>
-                                    <img className="social-img" src={Facebook} alt="PayMe india Facebook"/>
+                                    <img className="social-img" src={Facebook} alt="PayMe India Facebook"/>
                                 </Link>
                                 <Link to={{pathname: 'https://twitter.com/PayMeIndia?s=08'}} target={"_blank"}>
-                                    <img className="social-img" src={Twitter} alt="PayMe india Twitter"/>
+                                    <img className="social-img" src={Twitter} alt="PayMe India Twitter"/>
                                 </Link>
                                 <Link to={{pathname: 'https://www.linkedin.com/company/payme-india'}} target={"_blank"}>
-                                    <img className="social-img" src={Linkedin} alt="PayMe india Linkedin"/>
+                                    <img className="social-img" src={Linkedin} alt="PayMe India Linkedin"/>
                                 </Link>
                                 <Link to={{pathname: 'https://www.instagram.com/paymeindia/'}} target={"_blank"}>
-                                    <img className="social-img" src={instagram} alt="PayMe india Instagram"/>
+                                    <img className="social-img" src={instagram} alt="PayMe India Instagram"/>
                                 </Link>
                                 <Link to={{pathname: 'https://www.youtube.com/channel/UCeP0MLxaKLeVz0-2uWAtcFg'}}
                                       target={"_blank"}>
-                                    <img className="social-img" src={youtube} alt="PayMe india youtube"/>
+                                    <img className="social-img" src={youtube} alt="PayMe India youtube"/>
                                 </Link>
                             </div>
                         </div>
@@ -114,8 +115,6 @@ const Footer = (props) => {
 
                     </div>
                 </div>
-                <CibilScoreFooter/>
-                <PopularCity {...props}/>
             </footer>
             <Dialog isOpen={showDialog} onDismiss={close}>
                 <button className="close-button" onClick={close}>

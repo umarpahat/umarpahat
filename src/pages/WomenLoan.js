@@ -152,7 +152,7 @@ export const WomenLoan = (props) => {
           />
         ) : null}
         <div className="rightSection ">
-          <h4 className="text-center">Get loans for women</h4>
+          <h2 className="text-center heading4">Get loans for women</h2>
           <p className="text-center">
             Personal financing for all rising women evolving needs
           </p>
@@ -244,20 +244,19 @@ export const WomenLoan = (props) => {
                     </div>*/}
         </div>
       </div>
-      <div className="banner" style={{paddingTop:0}}>
+      <div className="banner" style={{paddingTop:0, paddingBottom:0}}>
         <div className="container">
           <div className="row align-items-center ">
-            <div className="col-sm-12 col-md-5 bannerAlign">
+            <div className="col-sm-12 col-md-6 bannerAlign p-t-20">
               <h1 className="heading1">Personal Loan for Women</h1>
-              <p className="heading6">PayMe India provide today’s women path to financial freedom by offering collateral-free personal loan at affordable interest rate.</p>
-              <br />
+              <p className="heading6 p-b-20">PayMe India provide today’s women path to financial freedom by offering collateral-free personal loan at affordable interest rate.</p>
               <a
                 className="btnLarge" style={{background:'#F60093'}}
                 href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
-                Get App Now
+                Get app now
               </a>
-              <div className=" p-t-50">
-                <h3 className=" p-t-30">Get Payme India App Now</h3>
+              <div className=" p-t-10">
+                <h3 className=" p-t-30">Get PayMe India app now</h3>
               </div>
               <div className="social_link">
                 <div>
@@ -280,15 +279,12 @@ export const WomenLoan = (props) => {
                 </div>
               </div>
             </div>
-            <div className="col-sm-12 col-md-2 ">&nbsp;</div>
-            <div className="col-sm-12 col-md-5">
-              <div className="p-b-30">
+            <div className="col-sm-12 col-md-6">
                 <img
                   className="img-fluid"
                   alt="Instant Loan"
                   src={womenFrame}
                 />
-              </div>
             </div>
           </div>
         </div>
@@ -298,7 +294,7 @@ export const WomenLoan = (props) => {
           <div className="container">
             <div className="row p-t-20 ">
               <div className="col-lg-12 col-md-12 col-sm-12 text-center p-t-50 p-b-30">
-                <h2 className="text-center heading4">Documents required for Women's Loan</h2>
+                <h2 className="text-center heading4">Documents required for women's loan</h2>
               </div>
             </div>
             <div className="row justify-content-md-center p-t-15">
@@ -313,10 +309,10 @@ export const WomenLoan = (props) => {
                         <img
                           className="img-fluid"
                           src={idProof}
-                          alt="For Identity proof"
+                          alt="For identity proof"
                         />
                       </div>
-                      <h3>For Identity proof</h3>
+                      <h3>For identity proof</h3>
                       <p>
                         KYC documents such as Aadhar card, voter ID, PAN card,
                         driving license, passport, or any other valid document
@@ -376,10 +372,10 @@ export const WomenLoan = (props) => {
       <div className="container">
         <div className="row">
           <div className="col-md-12 col-sm-12 p-t-50">
-            <h2 className="text-center heading4">Eligibility criteria for Personal Loan for Women?</h2>
+            <h2 className="text-center heading4">Eligibility criteria for personal loan for women</h2>
           </div>
         </div>
-        <div className="row p-t-50 p-b-30 justify-content-md-center">
+        <div className="row p-t-40 p-b-30 justify-content-md-center">
           <div className="col-md-5 col-sm-12">
             <div className="criteria ">
               <p>
@@ -413,13 +409,13 @@ export const WomenLoan = (props) => {
               </ul>
             </div>
           </div>
-          <div className="col-md-5 col-sm-12 text-center">
+          <div className="col-md-3 col-sm-12 text-center">
             <img className="img_google" src={criteria} alt="Pay Me India" />
           </div>
         </div>
         <div className="row">
           <div className="col-md-12">
-            <h2 className="text-center heading4">Features of Personal Loan for Women</h2>
+            <h2 className="text-center heading4">Features of personal loan for women</h2>
           </div>
         </div>
         <div className="row p-t-50 p-b-30 justify-content-md-center">
@@ -430,7 +426,7 @@ export const WomenLoan = (props) => {
             <ul className="feature ">
               <li>
                 <img className="icon-feature" src={easy} alt="Pay Me India" />
-                <h4>Easy Online Application</h4>
+                <h4>Easy online application</h4>
                 <p>You can start your loan application process right from the comfort of home. All you need to do is go to PayMe India's official website and apply for a Personal loan for women or Download the application.</p>
               </li>
               <li>
@@ -454,7 +450,7 @@ export const WomenLoan = (props) => {
               </li>
               <li>
                 <img className="icon-feature" src={secureSafety} alt="Pay Me India" />
-                <h4>Safe & Secure</h4>
+                <h4>Safe & secure</h4>
                 <p>From application to approval, all our processes are safe and secure. Your details are always at your fingertips.</p>
               </li>
             </ul>
@@ -466,7 +462,7 @@ export const WomenLoan = (props) => {
           </div>
           <div className="col-md-6 col-sm-12 hideMobile p-t-50">
             <div className="rightSection">
-              <h4 className="text-center">Get loans for women</h4>
+              <h2 className="text-center heading4">Get loans for women</h2>
               <p className="text-center">
                 Personal financing for all rising women evolving needs
               </p>

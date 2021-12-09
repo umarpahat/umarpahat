@@ -40,10 +40,10 @@ const Refund = (props) => {
                             </div>
                             <div className="col col-md-7">
                                 <h5 className='blue-color h3 p-t-20'>Refund:</h5>
-                                <p>At Payme India we value our customers and are committed to providing best services. Refund process will only be initiated by PayMe India in following conditions:</p>
+                                <p>At PayMe India we value our customers and are committed to providing best services. Refund process will only be initiated by PayMe India in following conditions:</p>
                                 <p>We will not pass your details on to any third party.</p>
                                 <p>(i)If repayment of the loan has been done by the borrower twice by any means.</p>
-                                <p>(ii)Any extra payment has been received by Payme India over and above the repayment value in any case.</p>
+                                <p>(ii)Any extra payment has been received by PayMe India over and above the repayment value in any case.</p>
                                 <p>(iii)Repayment has been done mistakenly by the borrower unintentionally before his/her the due date of loan repayment.</p>
                                 <p>If for some unforeseen reason, the client is not satisfied with our services, they may call us to seek direction on future calls. We will give our best effort to increase the satisfaction levels in such cases. We strongly recommend that before making a payment, our visitors and potential clients should read the refund policy. If the customer is eligible for the refund then the refund amount would be credited in the respective bank account within 7 working days.</p>
                             </div>
