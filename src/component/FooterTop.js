@@ -1,5 +1,10 @@
 import React, {useEffect, useState} from "react";
 import payrent from "../images/svg/payrent-icon.svg";
+import cibilBanner from "../images/svg/cibil-banner-pic.svg";
+import digiGold from "../images/svg/digi-gold-banner-pic.svg";
+import mutualFunds from "../images/svg/mutual-funds-banner-pic.svg";
+import payRentPic from "../images/svg/pay-rent-pic.svg";
+import refer from "../images/svg/refer-earn-banner-pic.svg";
 import {Link} from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import {Carousel} from 'react-responsive-carousel';
@@ -8,14 +13,14 @@ import appStore from "../images/svg/app-store.svg";
 
 export const FooterTop = (props) => {
     return (
-        <div className="container-fluid footerStripe p-t-40 ">
-            <div className="container p-t-40">
+        <div className="container-fluid footerStripe ">
+            <div className="container ">
                 <Carousel autoPlay={true}  infiniteLoop={true} stopOnHover={true} transitionTime={800} showArrows={false} showStatus={false}>
-                    <div className="row align-items-center">
+                    <div className="row align-items-center justify-content-center p-t-20 p-b-20 ">
                         <div className="col-sm-12 col-md-2">
-                            <img src={payrent} alt="pay rent" className="img-fluid"/>
+                            <img src={payRentPic} alt="pay rent" className="img-fluid"/>
                         </div>
-                        <div className="col-sm-12 col-md-8 justify-content-center p-b-20">
+                        <div className="col-sm-12 col-md-10 p-t-20">
                             <p>Experience instant benefits and cashbacks on every rent payment to your landlord with credit card.</p>
                             <div className="social_link">
                                 <div>
@@ -39,11 +44,11 @@ export const FooterTop = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="row align-items-center">
+                    <div className="row align-items-center justify-content-center p-t-20 p-b-20 ">
                         <div className="col-sm-12 col-md-2">
-                            <img src={payrent} alt="pay rent" className="img-fluid"/>
+                            <img src={digiGold} alt="pay rent" className="img-fluid"/>
                         </div>
-                        <div className="col-sm-12 col-md-8 justify-content-center p-b-20">
+                        <div className="col-sm-12 col-md-10 p-t-20">
                             <p>Invest In Digital Gold- The New Gold Standard for bright future.</p>
                             <div className="social_link">
                                 <div>
@@ -67,11 +72,11 @@ export const FooterTop = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="row align-items-center">
+                    <div className="row align-items-center justify-content-center p-t-20 p-b-20 ">
                         <div className="col-sm-12 col-md-2">
-                            <img src={payrent} alt="pay rent" className="img-fluid"/>
+                            <img src={refer} alt="pay rent" className="img-fluid"/>
                         </div>
-                        <div className="col-sm-12 col-md-8 justify-content-center p-b-20">
+                        <div className="col-sm-12 col-md-10 p-t-20">
                             <p>Get flat Rs. 100 on every time you refer PayMe India. The more you share, the more you earn.</p>
                             <div className="social_link">
                                 <div>
@@ -95,11 +100,11 @@ export const FooterTop = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="row align-items-center">
+                    <div className="row align-items-center justify-content-center p-t-20 p-b-20 ">
                         <div className="col-sm-12 col-md-2">
-                            <img src={payrent} alt="pay rent" className="img-fluid"/>
+                            <img src={cibilBanner} alt="pay rent" className="img-fluid"/>
                         </div>
-                        <div className="col-sm-12 col-md-8 justify-content-center p-b-20">
+                        <div className="col-sm-12 col-md-10 p-t-20">
                             <p>Check your CIBIL score for free before applying for a personal loan. Get CIBIL report worth Rs. 1500 for free. </p>
                             <div className="social_link">
                                 <div>
@@ -123,11 +128,11 @@ export const FooterTop = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="row align-items-center">
+                    <div className="row align-items-center justify-content-center p-t-20 p-b-20 ">
                         <div className="col-sm-12 col-md-2">
-                            <img src={payrent} alt="pay rent" className="img-fluid"/>
+                            <img src={mutualFunds} alt="pay rent" className="img-fluid"/>
                         </div>
-                        <div className="col-sm-12 col-md-8 justify-content-center p-b-20">
+                        <div className="col-sm-12 col-md-10 p-t-20">
                             <p>Diversify your investment portfolio by investing in mutual fund.</p>
                             <div className="social_link">
                                 <div>

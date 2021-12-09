@@ -35,8 +35,9 @@ const Footer = (props) => {
         <>
             <footer className='footer'>
                 <FooterTop/>
+                <PopularCity {...props}/>
                 <div className="container">
-                    <div className="row">
+                    <div className="row p-t-20">
                         <div className="ol col-md-2">
                             <div className='clearfix'><img className="img-fluid"
                                                            src={whiteLogo} alt="PayMe India"/></div>
@@ -114,8 +115,6 @@ const Footer = (props) => {
 
                     </div>
                 </div>
-                <CibilScoreFooter/>
-                <PopularCity {...props}/>
             </footer>
             <Dialog isOpen={showDialog} onDismiss={close}>
                 <button className="close-button" onClick={close}>
