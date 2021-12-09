@@ -12,13 +12,6 @@ const options = {
   closeButton: false,
 };
 const OtpDialog = (props) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [topic, setTopic] = useState("");
-  const [nameerr, setNameerr] = useState("");
-  const [emailerr, setEmailerr] = useState("");
-  const [phoneerr, setPhoneerr] = useState("");
   const [otp, setOtp] = useState("");
   const [otperr, setOtperr] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
