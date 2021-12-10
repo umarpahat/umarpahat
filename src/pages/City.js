@@ -175,7 +175,7 @@ export const City = (props) => {
     axios
       .put(url, data)
       .then(function (response) {
-        faq('track','LeadForCity')
+        fbq("track", "Lead");
         window.location.href =
           "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
       })
@@ -218,9 +218,7 @@ export const City = (props) => {
 
   return (
     <>
-
       <Header {...props} />
-
       <div className="container">
         <div className="row">
           <div className="col col-md-6 hideMobile">
