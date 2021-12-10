@@ -14,6 +14,7 @@ import printer from "../images/svg/printer.svg";
 import timer from "../images/svg/clock.svg";
 import MetaTags from "react-meta-tags";
 import mailBox from "../images/svg/mail-box.svg";
+import Footer from "./Footer";
 
 const Contact = (props) => {
   let [loader, setloader] = useState(false);
@@ -122,7 +123,7 @@ const Contact = (props) => {
           </div>
         </div>
       </div>
-     
+      <Footer/>
     </>
   );
 };

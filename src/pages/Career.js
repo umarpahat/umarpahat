@@ -23,6 +23,7 @@ import centralLocation from "../images/Central-Location.png";
 import health from "../images/Medical-Insurance.png";
 import environment from "../images/Cool-Environment.png";
 import MetaTags from "react-meta-tags";
+import Footer from "./Footer";
 
 const Career = (props) => {
   let [loader, setloader] = useState(false);
@@ -401,6 +402,7 @@ Join our team- Work hard, have fun & make history! </h2>
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

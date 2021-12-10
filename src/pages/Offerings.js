@@ -12,6 +12,7 @@ import mutualFund from "../images/svg/matual-fund.svg";
 import MetaTags from "react-meta-tags";
 import payRentLink from "../images/svg/pay-rent-link.svg";
 import benefit from "../images/svg/benefit.svg";
+import Footer from "./Footer";
 
 const Offerings = (props) => {
     let [loader, setloader] = useState(false);
@@ -126,7 +127,7 @@ financial goals</p>
 
 
             </div>
-         
+            <Footer/>
         </>
     );
 };

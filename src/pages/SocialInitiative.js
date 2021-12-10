@@ -13,6 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import mailBox from "../images/svg/mail-box.svg";
 import termsCondition from "../images/svg/terms-and-condition.svg";
+import Footer from "./Footer";
 
 toast.configure();
 const options = {
@@ -378,6 +379,7 @@ const SocialInitiative = (props) => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
