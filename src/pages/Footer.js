@@ -67,14 +67,14 @@ const Footer = (props) => {
                                 <li><Link to="/">Home</Link></li>
                                 <li><Link to="/about">About us</Link></li>
                                 <li><Link to="/contact">Contact us</Link></li>
-                                <li><Link to="/blog">Blogs</Link></li>
+                                {/*<li><Link to="/blog">Blogs</Link></li>*/}
                             </ul>
                         </div>
                         <div className="col-md-2 width50">
                             <h6 className='head6'>Policies</h6>
                             <ul>
                                 <li><Link to="/terms">Terms &amp; Conditions</Link></li>
-                                <li><Link to="/policy">Privacy Policy</Link></li>
+                                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                                 <li><Link to="/refund">Refund Policy</Link></li>
                                 <li><Link to="/disclaimer">Disclaimer</Link></li>
 
@@ -83,13 +83,13 @@ const Footer = (props) => {
                         <div className="col-md-2 width50">
                             <h6 className='head6'>Others</h6>
                             <ul>
-                                <li><Link to="/refer-earn">Refer & Earn</Link></li>
+                                {/*<li><Link to="/refer-earn">Refer & Earn</Link></li>*/}
                                 <li><Link to="/faq">FAQs</Link></li>
                                 <li><Link to="/ourNbfcPartners">Our NBFC Partners</Link></li>
                                 <li><Link to="/media-coverage">Media Coverage</Link></li>
-                                <li><Link to="/cCustmer-grievance">Custmer Grievance</Link></li>
-                                <li><Link to="/leave-a-message">Leave a message</Link></li>
-                                <li><Link to="/eligibility-criteria">Eligibility Criteria</Link></li>
+                                {/*<li><Link to="/custmer-grievance">Custmer Grievance</Link></li>*/}
+                                {/*<li><Link to="/leave-a-message">Leave a message</Link></li>*/}
+                                {/*<li><Link to="/eligibility-criteria">Eligibility Criteria</Link></li>*/}
                                 <li><Link to="/career">Career</Link></li>
                             </ul>
                         </div>
@@ -98,7 +98,7 @@ const Footer = (props) => {
                             <h6 className='head6 green-link p-r-desktop'>Grievance Redressal Officer</h6>
                             <ul>
                                 <li>Rohit Rai</li>
-                                <li className=""><strong>Contact:</strong> 7669929906</li>
+                                <li className=""><strong>Contact:</strong> 7669929905</li>
                                 <li className=""><strong>Email:</strong> <Link
                                     to={{pathname: 'mailto:rohit.rai@paymeindia.in'}}
                                     target={"_blank"}>rohit.rai@paymeindia.in</Link></li>
