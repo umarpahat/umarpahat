@@ -28,6 +28,7 @@ import Chennai from "../images/Chennai.png";
 import NearMe from "../images/Random-India-image.png";
 import "@reach/dialog/styles.css";
 import { API_ENDPOINT_STAGING } from "../constant";
+import {Helmet} from "react-helmet";
 
 toast.configure();
 const options = {
@@ -174,7 +175,7 @@ export const City = (props) => {
     axios
       .put(url, data)
       .then(function (response) {
-        fbq("track", "Lead");
+        faq('track','LeadForCity')
         window.location.href =
           "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
       })
@@ -217,7 +218,9 @@ export const City = (props) => {
 
   return (
     <>
+
       <Header {...props} />
+
       <div className="container">
         <div className="row">
           <div className="col col-md-6 hideMobile">
