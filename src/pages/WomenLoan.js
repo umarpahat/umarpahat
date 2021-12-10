@@ -457,7 +457,7 @@ export const WomenLoan = (props) => {
             </ul>
           </div>
         </div>
-        <div className="row">
+        <div className="row p-b-30">
           <div className="col-md-6 col-sm-12">
             <img className="img_google" src={women} alt="Pay Me India" />
           </div>
