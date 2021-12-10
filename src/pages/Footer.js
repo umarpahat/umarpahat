@@ -38,7 +38,7 @@ const Footer = (props) => {
                 <PopularCity {...props}/>
                 <div className="container">
                     <div className="row p-t-20">
-                        <div className="col-md-3">
+                        <div className="col-md-3 relative">
                             <div className='clearfix'><img className="img-fluid"
                                                            src={whiteLogo} alt="PayMe India"/></div>
                             <div className='clearfix p-t-20'>
@@ -59,6 +59,7 @@ const Footer = (props) => {
                                     <img className="social-img" src={youtube} alt="PayMe India youtube"/>
                                 </Link>
                             </div>
+                            <div className="footerSSLLogo hideDesktop"> <img className="middle_ssl_image" width="100" src={sslLogo} alt="PayMe India"/></div>
                         </div>
                         <div className="col-md-2 width50">
                             <h6 className='head6'>About Us</h6>
@@ -93,8 +94,8 @@ const Footer = (props) => {
                             </ul>
                         </div>
 
-                        <div className="col-md-3 relative">
-                            <h6 className='head6 green-link p-r-80'>Grievance Redressal Officer</h6>
+                        <div className="col-md-3 width50 relative">
+                            <h6 className='head6 green-link p-r-desktop'>Grievance Redressal Officer</h6>
                             <ul>
                                 <li>Rohit Rai</li>
                                 <li className=""><strong>Contact:</strong> 7669929906</li>
@@ -105,7 +106,7 @@ const Footer = (props) => {
                                     to={{pathname: 'https://openscecurityurl.s3.ap-south-1.amazonaws.com/NewAppAgreeDocs/grievance_redressal_mechanism.pdf'}}
                                     target={"_blank"}>Grievance Redressal Mechanism</Link></li>
                             </ul>
-                            <div className="footerSSLLogo"> <img className="middle_ssl_image" width="100" src={sslLogo} alt="PayMe India"/></div>
+                            <div className="footerSSLLogo hideMobile"> <img className="middle_ssl_image" width="100" src={sslLogo} alt="PayMe India"/></div>
 
                         </div>
 

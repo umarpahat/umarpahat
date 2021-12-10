@@ -252,7 +252,17 @@ footer ul li {
     right:0;
     top: 20px;
 }
+.p-r-desktop{
+    padding-right: 80px;
+}
 @media (max-width: 600px) {
+    .p-r-desktop{
+        padding-right: 0;
+    }
+    footer {
+        font-size: 13px;
+        line-height: 24px;
+    }
     .footerSSLLogo{
         right: 15px;
     }
