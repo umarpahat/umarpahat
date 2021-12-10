@@ -18,6 +18,7 @@ import "../../home.css";
 import Header from "../Header";
 import Cookies from "universal-cookie";
 import tip from "../../images/animated/kyc-option.gif";
+import Footer from "../Footer";
 
 const cookies = new Cookies();
 
@@ -473,9 +474,9 @@ const Bankdetailspayme = (props) => {
             </Container>
             </div>
           )}
-       
-     
-   
+
+
+      <Footer/>
     </>
   );
 };

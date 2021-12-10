@@ -39,10 +39,7 @@ const Offerings = (props) => {
 anytime-anywhere with no hassle.</p>
                                 <br/>
                                 <br/>
-                                <Link className="btnLarge" onClick={() => {
-                                    props.hitAppUseCase({useCase: 'apply-loan'})
-                                    props.history.push({pathname: '/apply-loan'})
-                                }}>
+                                <Link className="btnLarge" to={'/apply-loan'}>
                                     Apply now
                                 </Link>
                             </div>
