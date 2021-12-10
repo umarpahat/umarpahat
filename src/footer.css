@@ -7,8 +7,8 @@ footer {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 28px;
     color: #fff;
     text-decoration: none;
 }
@@ -247,8 +247,28 @@ footer ul li {
 .dflex > div:nth-child(1) {
     width: 100px;
 }
-
+.footerSSLLogo{
+    position: absolute;
+    right:0;
+    top: 20px;
+}
+.p-r-desktop{
+    padding-right: 80px;
+}
 @media (max-width: 600px) {
+    .p-r-desktop{
+        padding-right: 0;
+    }
+    footer {
+        font-size: 13px;
+        line-height: 24px;
+    }
+    .footerSSLLogo{
+        right: 15px;
+    }
+    .width50{
+        width: 50%;
+    }
     .dflex > div:nth-child(1) {
         width: 50px;
     }

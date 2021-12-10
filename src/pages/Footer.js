@@ -38,7 +38,7 @@ const Footer = (props) => {
                 <PopularCity {...props}/>
                 <div className="container">
                     <div className="row p-t-20">
-                        <div className="ol col-md-2">
+                        <div className="col-md-3 relative">
                             <div className='clearfix'><img className="img-fluid"
                                                            src={whiteLogo} alt="PayMe India"/></div>
                             <div className='clearfix p-t-20'>
@@ -59,26 +59,18 @@ const Footer = (props) => {
                                     <img className="social-img" src={youtube} alt="PayMe India youtube"/>
                                 </Link>
                             </div>
+                            <div className="footerSSLLogo hideDesktop"> <img className="middle_ssl_image" width="100" src={sslLogo} alt="PayMe India"/></div>
                         </div>
-                        <div className="ol col-md-2">
+                        <div className="col-md-2 width50">
                             <h6 className='head6'>About Us</h6>
                             <ul>
                                 <li><Link to="/">Home</Link></li>
                                 <li><Link to="/about">About us</Link></li>
                                 <li><Link to="/contact">Contact us</Link></li>
-                                <li><Link to="/sitemap">Sitemap</Link></li>
+                                <li><Link to="/blog">Blogs</Link></li>
                             </ul>
                         </div>
-                        <div className="ol col-md-2">
-                            <h6 className='head6'>Others</h6>
-                            <ul>
-                                <li><Link to="/faq">FAQs</Link></li>
-                                <li><Link to="/career">Career</Link></li>
-                                <li><Link to="/ourNbfcPartners">Our NBFC Partners</Link></li>
-                                <li><Link to="/media-coverage">Media Coverage</Link></li>
-                            </ul>
-                        </div>
-                        <div className="ol col-md-2">
+                        <div className="col-md-2 width50">
                             <h6 className='head6'>Policies</h6>
                             <ul>
                                 <li><Link to="/terms">Terms &amp; Conditions</Link></li>
@@ -88,8 +80,22 @@ const Footer = (props) => {
 
                             </ul>
                         </div>
-                        <div className="ol col-md-3">
-                            <h6 className='head6 green-link'>Grievance Redressal Officer</h6>
+                        <div className="col-md-2 width50">
+                            <h6 className='head6'>Others</h6>
+                            <ul>
+                                <li><Link to="/refer-earn">Refer & Earn</Link></li>
+                                <li><Link to="/faq">FAQs</Link></li>
+                                <li><Link to="/ourNbfcPartners">Our NBFC Partners</Link></li>
+                                <li><Link to="/media-coverage">Media Coverage</Link></li>
+                                <li><Link to="/cCustmer-grievance">Custmer Grievance</Link></li>
+                                <li><Link to="/leave-a-message">Leave a message</Link></li>
+                                <li><Link to="/eligibility-criteria">Eligibility Criteria</Link></li>
+                                <li><Link to="/career">Career</Link></li>
+                            </ul>
+                        </div>
+
+                        <div className="col-md-3 width50 relative">
+                            <h6 className='head6 green-link p-r-desktop'>Grievance Redressal Officer</h6>
                             <ul>
                                 <li>Rohit Rai</li>
                                 <li className=""><strong>Contact:</strong> 7669929906</li>
@@ -100,16 +106,14 @@ const Footer = (props) => {
                                     to={{pathname: 'https://openscecurityurl.s3.ap-south-1.amazonaws.com/NewAppAgreeDocs/grievance_redressal_mechanism.pdf'}}
                                     target={"_blank"}>Grievance Redressal Mechanism</Link></li>
                             </ul>
-                        </div>
-                        <div className="ol col-md-1">
-                            <img className="middle_ssl_image" width="100"
-                                 src={sslLogo} alt="PayMe India"/>
+                            <div className="footerSSLLogo hideMobile"> <img className="middle_ssl_image" width="100" src={sslLogo} alt="PayMe India"/></div>
+
                         </div>
 
                     </div>
 
                     <div className="row p-t-20">
-                        <div className="col col-md-12 text-center"><p className="p-t-20">Copyright@2021 Huey Tech Pvt.
+                        <div className="col-md-12 text-center"><p className="p-t-20">Copyright@2021 Huey Tech Pvt.
                             Ltd.</p>
                         </div>
 
@@ -121,7 +125,7 @@ const Footer = (props) => {
                     <span aria-hidden>×</span>
                 </button>
                 <div className="row">
-                    <div className="col col-md-6 ">
+                    <div className="col-md-6">
                         <div className="cardImg unsplash">
                             <h4>Looking for a Help?</h4>
                             <p>Please leave a message, our team will get back shortly to you and will help you with
@@ -162,7 +166,7 @@ const Footer = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="col col-md-6 ">
+                    <div className="col-md-6 ">
                         <div className="rightSection ">
                             <h4 className='text-center'>Leave a Message</h4>
                             <p className='text-center'>Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
@@ -230,14 +234,14 @@ const Footer = (props) => {
                     <span aria-hidden>×</span>
                 </button>
                 <div className="row">
-                    <div className="col col-md-6 ">
+                    <div className="col-md-6 ">
                         <div className="cuate">
 
                             <img src={cuate} alt="icon" className="img-fluid"/>
 
                         </div>
                     </div>
-                    <div className="col col-md-6 ">
+                    <div className="col-md-6 ">
                         <div className="rightSection ">
                             <h4 className='text-center'>Payme Grievance</h4>
                             <p className='text-center'>Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
