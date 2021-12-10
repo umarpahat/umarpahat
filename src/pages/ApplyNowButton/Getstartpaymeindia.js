@@ -200,7 +200,7 @@ const Getstartpaymeindia = (props) => {
           </div>
       </Container>
       </div>}
-     
+      <Footer/>
     </>
   );
 };

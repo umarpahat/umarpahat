@@ -13,6 +13,7 @@ import Header from "../Header";
 import "../../home.css";
 import letsStart from "../../images/animated/lets-start-animation.gif";
 import Cookies from "universal-cookie";
+import Footer from "../Footer";
 const cookies = new Cookies();
 
 const Getquikloneapply = (props) => {
@@ -190,7 +191,7 @@ const Getquikloneapply = (props) => {
             </Container>
       </div>
           )}
-     
+      <Footer/>
     </>
   );
 };

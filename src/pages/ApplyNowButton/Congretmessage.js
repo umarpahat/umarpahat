@@ -6,6 +6,7 @@ import Cookies from "universal-cookie";
 import successAnimation from "../../images/animated/success-animation.gif";
 import { API_ENDPOINT } from "../../constant";
 import axios from "axios";
+import Footer from "../Footer";
 const cookies = new Cookies();
 
 const Congretmessage = (props) => {
@@ -146,6 +147,7 @@ const Congretmessage = (props) => {
           </Container></>
         ):null}
       </div>
+      <Footer/>
     </>
   );
 };

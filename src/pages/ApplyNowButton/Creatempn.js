@@ -77,6 +77,7 @@ function Creatempn() {
         </Container>
 
       </div>
+      <Footer/>
     </>
   );
 }

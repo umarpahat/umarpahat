@@ -199,6 +199,7 @@ const Confirmotpmobile = (props) => {
         </>
       )}
       </div>
+      <Footer/>
     </>
   );
 };
