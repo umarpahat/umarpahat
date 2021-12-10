@@ -11,7 +11,7 @@ import contact from "./pages/contact"
 import faq from "./pages/faq"
 import disclaimer from "./pages/disclaimer"
 import refund from "./pages/refund"
-import policy from "./pages/policy"
+import PrivacyPolicy from "./pages/PrivacyPolicy"
 import terms from "./pages/terms"
 import OurNbfcPartners from "./pages/OurNbfcPartners"
 import Career from "./pages/Career"
@@ -89,7 +89,7 @@ function Routes() {
         <Route exact path="/faq" component={faq} />
         <Route exact path="/disclaimer" component={disclaimer} />
         <Route exact path="/refund" component={refund} />
-        <Route exact path="/policy" component={policy} />
+        <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         <Route exact path="/terms" component={terms} />
         <Route exact path="/ourNbfcPartners" component={OurNbfcPartners} />
         <Route exact path="/career" component={Career} />

@@ -126,7 +126,7 @@ const Getstartpaymeindia = (props) => {
                   <div>
                     <p className="stylepara">
                       By continuing, you agree to our
-                     <Link to='/policy'> <span style={{ color: "black" }}>
+                     <Link to='/privacy-policy'> <span style={{ color: "black" }}>
                         <u> Privacy Policy, </u>
                       </span></Link>
                       <Link  to='/terms'><span style={{ color: "black" }}>

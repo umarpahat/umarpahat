@@ -62,7 +62,7 @@ const Footer = () => {
                         <h6 className='head6'>Policies</h6>
                         <ul>
                             <li><Link to="/terms">Terms &amp; Conditions</Link></li>
-                            <li><Link to="/policy">Privacy Policy</Link></li>
+                            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                             <li><Link to="/refund">Refund Policy</Link></li>
                             <li><Link to="/disclaimer">Disclaimer</Link></li>
 
