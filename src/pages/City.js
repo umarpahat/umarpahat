@@ -28,7 +28,7 @@ import Chennai from "../images/Chennai.png";
 import NearMe from "../images/Random-India-image.png";
 import "@reach/dialog/styles.css";
 import { API_ENDPOINT_STAGING } from "../constant";
-import {Helmet} from "react-helmet";
+import Footer from "./Footer";
 
 toast.configure();
 const options = {
@@ -483,6 +483,7 @@ export const City = (props) => {
           </button>
         </div>
       </Dialog>
+      <Footer/>
     </>
   );
 };

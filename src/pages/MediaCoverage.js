@@ -8,6 +8,7 @@ import mediaCover from "../images/svg/media-cover.svg";
 import MetaTags from "react-meta-tags";
 import mailBox from "../images/svg/mail-box.svg";
 import {Link} from "@material-ui/core";
+import Footer from "./Footer";
 
 const MediaCoverage = (props) => {
     let [loader, setloader] = useState(false);
@@ -270,7 +271,7 @@ const MediaCoverage = (props) => {
                     </div>
                 </div>
             </div>
-          
+            <Footer/>
         </>
     )
         ;

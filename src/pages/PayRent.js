@@ -22,6 +22,7 @@ const cookies = new Cookies();
 
 import { Link } from "react-router-dom";
 import { API_ENDPOINT } from "../constant";
+import Footer from "./Footer";
 
 const PayRent = (props) => {
   const token = cookies.get('token')
@@ -371,6 +372,7 @@ const PayRent = (props) => {
           </div>
         </div>
       )}
+      <Footer/>
     </>
   );
 };
