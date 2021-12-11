@@ -98,6 +98,7 @@ export const WomenLoan = (props) => {
     axios
       .post(url, data)
       .then(function (response) {
+        fbq('track','LeadForWomen');
         console.log("city", response);
         setOtpScreen(true);
       })
