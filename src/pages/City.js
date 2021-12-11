@@ -116,6 +116,7 @@ export const City = (props) => {
   let reg = /^[0-9]{10}$/;
 
   const getOtp = () => {
+
     setOtp("");
     if (name.length === 0) {
       setNameerr("Name can't be empty");
@@ -134,6 +135,7 @@ export const City = (props) => {
       setPhoneerr("Phone number is Invalid");
       return;
     }
+    
     let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
     let data = {
       name: name,
@@ -175,7 +177,7 @@ export const City = (props) => {
     axios
       .put(url, data)
       .then(function (response) {
-        fbq("track", "Lead");
+        fbq('track','LeadForCity')
         window.location.href =
           "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
       })
