@@ -1021,7 +1021,7 @@ const OtherDetalisForm = (props) => {
           </Container>
           </div>
         )}
-     
+      <Footer/>
     </>
   );
 };

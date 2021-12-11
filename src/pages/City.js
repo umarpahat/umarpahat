@@ -28,7 +28,7 @@ import Chennai from "../images/Chennai.png";
 import NearMe from "../images/Random-India-image.png";
 import "@reach/dialog/styles.css";
 import { API_ENDPOINT_STAGING } from "../constant";
-import {Helmet} from "react-helmet";
+import Footer from "./Footer";
 
 toast.configure();
 const options = {
@@ -175,7 +175,7 @@ export const City = (props) => {
     axios
       .put(url, data)
       .then(function (response) {
-        faq('track','LeadForCity')
+        fbq("track", "Lead");
         window.location.href =
           "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
       })
@@ -217,20 +217,8 @@ export const City = (props) => {
   }, []);
 
   return (
-    <div>
-    <Helmet>
-     {/* Global site tag (gtag.js) - Google Analytics */}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1P4XMQV2BK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments)}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1P4XMQV2BK');
-</script>      
-            </Helmet>
+    <>
       <Header {...props} />
-      
       <div className="container">
         <div className="row">
           <div className="col col-md-6 hideMobile">
@@ -495,7 +483,8 @@ export const City = (props) => {
           </button>
         </div>
       </Dialog>
-    </div>
+      <Footer/>
+    </>
   );
 };
 export default City;

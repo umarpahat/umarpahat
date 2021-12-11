@@ -29,6 +29,7 @@ import Slider from "@material-ui/core/Slider";
 import MetaTags from "react-meta-tags";
 import Cookies from "universal-cookie";
 import { toast } from "react-toastify";
+import Footer from "./Footer";
 const cookies = new Cookies();
 
 toast.configure();
@@ -739,6 +740,7 @@ journey with PayMe India.<span className="font110 transform">“</span>
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

@@ -610,7 +610,7 @@ const Kycdetailsformpayme = (props) => {
           </Container>
           </div>
         )}
-     
+      <Footer/>
     </>
   );
 };

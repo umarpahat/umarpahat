@@ -12,6 +12,7 @@ import mutualFund from "../images/svg/matual-fund.svg";
 import MetaTags from "react-meta-tags";
 import payRentLink from "../images/svg/pay-rent-link.svg";
 import benefit from "../images/svg/benefit.svg";
+import Footer from "./Footer";
 
 const Offerings = (props) => {
     let [loader, setloader] = useState(false);
@@ -38,10 +39,7 @@ const Offerings = (props) => {
 anytime-anywhere with no hassle.</p>
                                 <br/>
                                 <br/>
-                                <Link className="btnLarge" onClick={() => {
-                                    props.hitAppUseCase({useCase: 'apply-loan'})
-                                    props.history.push({pathname: '/apply-loan'})
-                                }}>
+                                <Link className="btnLarge" to={'/apply-loan'}>
                                     Apply now
                                 </Link>
                             </div>
@@ -126,7 +124,7 @@ financial goals</p>
 
 
             </div>
-         
+            <Footer/>
         </>
     );
 };

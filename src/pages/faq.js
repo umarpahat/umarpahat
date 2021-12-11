@@ -10,6 +10,7 @@ import faqImg from "../images/svg/faqs.svg";
 import MetaTags from "react-meta-tags";
 import mailBox from "../images/svg/mail-box.svg";
 import mediaCover from "../images/svg/media-cover.svg";
+import Footer from "./Footer";
 
 const Faq = (props) => {
   let [loader, setloader] = useState(false);
@@ -237,7 +238,7 @@ const Faq = (props) => {
           </div>
         </div>
       </div>
-   
+        <Footer/>
     </>
   );
 };

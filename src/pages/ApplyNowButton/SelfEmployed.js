@@ -333,6 +333,7 @@ useEffect(() => {
           </div>
       </Container>
       </div>)}
+        <Footer/>
     </>
   );
 };
