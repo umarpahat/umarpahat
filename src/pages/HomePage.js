@@ -40,6 +40,8 @@ import {Blogs} from "../component/Blogs";
 import {Videos} from "../component/Videos";
 import {Whatsup} from "../component/Whatsup";
 import Footer from "./Footer";
+import googlePay from "../images/svg/google-play.svg";
+import appStore from "../images/svg/app-store.svg";
 const cookies = new Cookies();
 
 toast.configure();

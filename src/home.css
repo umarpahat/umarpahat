@@ -200,6 +200,9 @@ h6 {
 .carousel .slide img {
     max-width: 100%;
 }
+ .carousel .slide .banner img {
+    max-height: 500px;
+}
 
 .white-bg {
     background-color: #fff;
@@ -557,6 +560,7 @@ button.button-gray:hover {
     padding-bottom: 30px;
 }
 
+/*
 .carousel:after {
     content: '';
     height: 86px;
@@ -569,6 +573,7 @@ button.button-gray:hover {
     z-index: -1;
     background: url('images/svg/green-right-line.svg') no-repeat 0 0;
 }
+*/
 
 .heading3 {
     font-size: 38px;
@@ -1801,6 +1806,11 @@ a.button-small:hover {
     border-radius: 20px;
     text-align: center;
     padding: 20px;
+    height: 200px;
+}
+.blogPic img{
+   max-height: 200px;
+    width: auto!important;
 }
 
 .blue-color {
@@ -1836,8 +1846,35 @@ a.button-small:hover {
     font-weight: 500;
     font-size: 22px;
     color: #000;
+    margin: 0;
+}
+.our_rating {
+    font-size: 28px;
+    font-weight: 600;
+}
+.star-align img{
+    vertical-align: baseline;
 }
 
+.user-head {
+    background: #F7FCF5;
+    padding: 20px;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+}
+.user-head span{
+    font-size:14px;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.user-head h6 {
+    font-weight: 500;
+    font-size: 18px;
+    color: #000;
+    margin: 0;
+}
 .owl-carousel h6 {
     padding-top: 5px;
     color: #35668b;
@@ -2575,6 +2612,9 @@ hr.style {
     margin-top: 40px;
     margin-bottom: 40px;
 }
+.advertise img{
+   max-height: 100px;
+}
 
 .advertise h4 {
     font-weight: bold;
@@ -2654,13 +2694,6 @@ hr.style {
     padding: 20px 0;
     margin: 0;
     min-height: 130px;
-}
-
-.blog .blogPic {
-    border-radius: 9px;
-    overflow: hidden;
-    max-height: 100px;
-    min-height: 100px;
 }
 
 .green-link {
@@ -2813,22 +2846,22 @@ a {
 }
 
 .get-instant-loan {
-    background: url("images/svg/get-instant-loan-bg.svg") no-repeat 0 0 fixed;
+    background: #F4FBFC url("images/svg/get-instant-loan-bg.svg") no-repeat 0 0;
     background-size: 100%;
 }
 
 .gold-banner {
-    background: url("images/svg/gold-banner-bg.svg") no-repeat 0 0;
+    background:  #F4FBFC url("images/svg/gold-banner-bg.svg") no-repeat 0 0;
     background-size: 100%;
 }
 
 .pay-rent-banner {
-    background: url("images/svg/pay-rent-banner-bg.svg") no-repeat 0 0;
+    background:  #F4FBFC url("images/svg/pay-rent-banner-bg.svg") no-repeat 0 0;
     background-size: 100%;
 }
 
 .cibil-banner-banner {
-    background: url("images/svg/cibil-score-bg.svg") no-repeat 0 0;
+    background:  #F4FBFC url("images/svg/cibil-score-bg.svg") no-repeat 0 0;
     background-size: 100%;
 }
 

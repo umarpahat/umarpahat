@@ -89,7 +89,7 @@ footer ul li {
 
 }
 .unsplash {
-    /*background: url("./images/svg/unsplash.svg");*/
+    background: url("./images/svg/unsplash.svg") no-repeat 0 center;
 }
 .cuate {
     background: #F7FBF7;
@@ -146,10 +146,10 @@ footer ul li {
     width: 100%;
 }
 .footer-align-stripe > div{
-    padding: 0 20px;
+    padding: 0 10px;
 }
 .footer-align-stripe > div:nth-child(2){
-   width: calc(100% - 250px);
+   width: calc(100% - 200px);
 }
 .dialog-box .cardImg .footer-align-stripe h4 {
     font-weight: 600;
@@ -159,8 +159,8 @@ footer ul li {
 }
 .footer-align-stripe h4 {
     font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 12px;
+    line-height:16px;
     color: #fff;
 }
 
