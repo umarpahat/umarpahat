@@ -161,7 +161,7 @@ const Footer = (props) => {
                   <Link to={null} onClick={open}>Leave a message</Link>
                 </li>
                 <li>
-                  <Link to="/eligibility-criteria">Eligibility Criteria</Link>
+                  <Link to="/eligbility-criteria">Eligibility Criteria</Link>
                 </li>
                 <li>
                   <Link to="/career">Career</Link>

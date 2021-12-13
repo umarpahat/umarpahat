@@ -251,25 +251,6 @@ const MediaCoverage = (props) => {
                         </div>
                     </div>
                 </div>
-
-
-                <div className="contactBox p-t-80">
-                    <div className="container">
-                        <div className="row justify-content-md-center">
-                            <div className="col-md-9 text-center p-t-30 p-b-30 d-flex contactLine">
-                                <div className='mailPic'>
-                                    <img className="img-fluid" src={mailBox} alt="Mail"/>
-                                </div>
-                                <div className='contact'>
-                                    <h4 className="heading4">Contact Us</h4>
-                                    <p>Please contact us at<br/>
-                                        <Link style={{fontWeight:400}} to={{pathname:'mailto: admin@paymeindia.in'}} target={"_blank"}>admin@paymeindia.in</Link>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <Footer/>
         </>

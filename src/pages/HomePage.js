@@ -40,6 +40,8 @@ import {Blogs} from "../component/Blogs";
 import {Videos} from "../component/Videos";
 import {Whatsup} from "../component/Whatsup";
 import Footer from "./Footer";
+import googlePay from "../images/svg/google-play.svg";
+import appStore from "../images/svg/app-store.svg";
 const cookies = new Cookies();
 
 toast.configure();
@@ -120,7 +122,6 @@ const HomePage = (props) => {
 
   return (
     <>
-      <Header {...props} active="home" />
       <MetaTags>
         <title>
           Instant Personal Loans Online | Small Personal Loans - PayMe India
@@ -139,6 +140,7 @@ const HomePage = (props) => {
           content="Instant Personal Loans Online | Small Personal Loans - PayMe India"
         />
       </MetaTags>
+      <Header {...props} active="home" />
       <div className="content">
         <CarouselPic/>
         <Cibil/>

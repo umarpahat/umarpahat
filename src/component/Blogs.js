@@ -15,8 +15,10 @@ export const Blogs = (props) => {
 
   return (
     <div className="container-fluid px-3 px-sm-5 blog p-t-40">
+      <div className="row">
       <div className="col-sm-12 col-md-12 reg-second-heading text-center">
         <h4>Our Blogs</h4>
+      </div>
       </div>
       <div className="container p-t-40">
         <Carousel

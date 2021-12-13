@@ -74,6 +74,22 @@ body {
     height: 30px;
 
 }
+.home_social_link {
+    display: flex;
+}
+
+.home_social_link > div {
+    padding: 10px;
+
+}.home_social_link > div:nth-child(1) {
+    padding-left:0;
+
+}
+
+.home_social_link > div img{
+    height: 40px;
+
+}
 .carousel .thumbs-wrapper{
     display:none;
 }
@@ -610,6 +626,10 @@ a {
 
     .center-mobile {
         text-align: center;
+    }
+
+    .p-t-20-mobile{
+        padding-top: 20px;
     }
 
     .initiative p {

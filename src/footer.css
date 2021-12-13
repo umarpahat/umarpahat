@@ -32,7 +32,6 @@ footer {
     color: #33658A;
     padding: 2px 15px;
     font-size: 14px;
-    display: inline-block;
 }
 
 .popularCity a:hover {
@@ -90,7 +89,7 @@ footer ul li {
 
 }
 .unsplash {
-    /*background: url("./images/svg/unsplash.svg");*/
+    background: url("./images/svg/unsplash.svg") no-repeat 0 center;
 }
 .cuate {
     background: #F7FBF7;
@@ -147,10 +146,10 @@ footer ul li {
     width: 100%;
 }
 .footer-align-stripe > div{
-    padding: 0 20px;
+    padding: 0 10px;
 }
 .footer-align-stripe > div:nth-child(2){
-   width: calc(100% - 250px);
+   width: calc(100% - 200px);
 }
 .dialog-box .cardImg .footer-align-stripe h4 {
     font-weight: 600;
@@ -160,8 +159,8 @@ footer ul li {
 }
 .footer-align-stripe h4 {
     font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 12px;
+    line-height:16px;
     color: #fff;
 }
 
@@ -194,8 +193,8 @@ footer ul li {
     padding: 0;
     margin: 0;
     position: absolute;
-    top: -3px;
-    left: 5px;
+    top: -2px;
+    left: 4px;
 }
 .dialog-box .rightSection p{
     font-size: 12px;

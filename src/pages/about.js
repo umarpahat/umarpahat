@@ -76,12 +76,17 @@ const About = (props) => {
                   PayMe India is an innovative new-age Fintech company,
                   transforming the lending landscape. The company was founded in
                   2016, to eliminate the difficulty of getting financial
-                  assistance by leveraging modern technologies. The company
+                  assistance by leveraging modern technologies.
+                  <br/>
+                  <br/>
+                  The company
                   works with RBI registered NBFCs to facilitate advance salary
                   loans to bourgeois or any salaried employee who faces
                   financial constraints. Our lending model empowers loan seekers
-                  to borrow easy, fast, safe & affordable personal loans. Our
-                  passionate team of 150+ members aims to enrich you with a
+                  to borrow easy, fast, safe & affordable personal loans.
+                  <br/>
+                  <br/>
+                  Our passionate team of 150+ members aims to enrich you with a
                   platform where getting personal loans are instant and
                   hassle-free
                 </p>
@@ -106,7 +111,9 @@ const About = (props) => {
                   PayMe India is dedicated to the mission of becoming the
                   preferred choice of financial services, by providing
                   high-quality, moderate-priced, and transparent financial
-                  products approachable to everyone in society. Our vision is to
+                  products approachable to everyone in society.
+                  <br/>
+                  <br/> Our vision is to
                   become a globally acknowledged FinTech brand by spreading
                   “Financial Happiness” by utilizing the latest financial
                   technologies
@@ -283,27 +290,6 @@ const About = (props) => {
                   <div className="team-pic l-right">
                     <img className="img-fluid" src={team8} alt="Team" />
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="contactBox">
-          <div className="container">
-            <div className="row justify-content-md-center">
-              <div className="col-md-9 text-center p-t-30 p-b-30 d-flex contactLine">
-                <div className="mailPic">
-                  <img className="img-fluid" src={mailBox} alt="Mail" />
-                </div>
-                <div className="contact">
-                  <h4 className="heading4">Contact Us</h4>
-                  <p>
-                    Please contact us at
-                    <br />
-                    <a href="mailto: admin@paymeindia.in" target="_blank">
-                      admin@paymeindia.in
-                    </a>
-                  </p>
                 </div>
               </div>
             </div>

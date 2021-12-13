@@ -14,7 +14,7 @@ export const CorValue = (props) => {
                 <div className="col col-md-12 reg-second-heading ">
                     <h4 className="p-b-30 white-color">Our Core values</h4>
                 </div>
-                <div className="row align-items-center pb-3">
+                <div className="row align-items-center justify-content-md-center pb-3">
 
                     <ul className='colValue'>
                         <li>
