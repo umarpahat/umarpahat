@@ -612,6 +612,10 @@ a {
         text-align: center;
     }
 
+    .p-t-20-mobile{
+        padding-top: 20px;
+    }
+
     .initiative p {
         font-size: 14px;
         line-height: 26px;

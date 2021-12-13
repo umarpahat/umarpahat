@@ -120,7 +120,6 @@ const HomePage = (props) => {
 
   return (
     <>
-      <Header {...props} active="home" />
       <MetaTags>
         <title>
           Instant Personal Loans Online | Small Personal Loans - PayMe India
@@ -139,6 +138,7 @@ const HomePage = (props) => {
           content="Instant Personal Loans Online | Small Personal Loans - PayMe India"
         />
       </MetaTags>
+      <Header {...props} active="home" />
       <div className="content">
         <CarouselPic/>
         <Cibil/>

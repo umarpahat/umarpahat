@@ -68,7 +68,7 @@ h6 {
 
 .whatsup-bg {
     background: #1DBF73;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
 }
 
 
@@ -137,6 +137,60 @@ h6 {
     font-weight: 500;
     font-size: 28px;
     line-height: 150.5%;
+}
+
+.gray-bg {
+    background-color: #FCFCFC;
+}
+
+.border-round {
+    border: 1px solid rgba(111, 111, 111, 0.23);
+    background-color: #fff;
+    display: flex;
+    font-size: 16px;
+    line-height: 25px;
+    color: #000;
+    margin-bottom: 60px;
+    margin-top: 60px;
+    border-radius: 10px;
+}
+
+.border-round > .left_section {
+    border-right: 1px solid rgba(111, 111, 111, 0.23);
+    padding: 10px 20px;
+    width: 400px;
+}
+
+.grey-round {
+    background-color: #F8F8F8;
+    border-radius: 10px;
+
+}
+
+.border-round > .left_section > div, .border-round > .right_section > div {
+    padding: 18px;
+    text-align: center;
+}
+
+.head18 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.border-round > .right_section {
+    width: calc(100% - 400px);
+    padding: 10px 20px;
+}
+
+.rounded-shadow {
+    background: rgba(217, 217, 217, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .darkBg .container {
@@ -1550,7 +1604,8 @@ a.button-small:hover {
 }
 
 .nbfc_img img {
-    max-height: 100px;
+    max-height: 60px;
+    border-radius: 10px;
 }
 
 .product-link h5.heading5 {
@@ -3292,6 +3347,20 @@ a {
     }
     .footerStripe p{
       margin-bottom: 5px;
+    }
+    .border-round > .left_section{
+        width: 100%;
+        border: none;
+    }
+    .border-round > .right_section{
+        width: 100%;
+    }
+    .border-round{
+        display: block;
+    }
+    .border-round {
+        margin-bottom: 20px;
+        margin-top: 20px;
     }
 
 

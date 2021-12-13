@@ -33,23 +33,20 @@ export const Whatsup = (props) => {
   };
 
   return (
-    <div className="container-fluid px-3 px-sm-5 whatsup-bg p-t-40">
+    <div className="container-fluid whatsup-bg ">
       {otpScreen ? (
         <OtpDialog {...props} phone={phone} lead_from="WHATSAPP" />
       ) : null}
-      <div className="container p-t-20 p-b-30">
+      <div className="container ">
         <div className="row align-items-center">
-          <div className="col-sm-12 col-md-1 m-t-m-7 center-mobile">
+          <div className="col-sm-12 col-md-1 m-t-m-7 center-mobile p-t-20-mobile">
             <img className="img-fluid" alt="CIBIL" src={whatsup} />
           </div>
           <div className="col-sm-12 col-md-7 p-t-5 center-mobile">
-            <p className="white-color whatsup-text">
-              <strong>
-                {" "}
+              <strong className="white-color whatsup-text">
                 A credit score is more than just a number. Know your Cibil score
                 completely free with PayMe India.
               </strong>
-            </p>
           </div>
           <div className="col-sm-12 col-md-4 p-t-30 ">
             <div className=" center-mobile right-box">
