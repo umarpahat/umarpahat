@@ -84,8 +84,8 @@ export const WomenLoan = (props) => {
       return;
     }
 
-    console.log("hhh");
-    url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
+   
+   let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
 
     let data = {
       name: name,
@@ -167,7 +167,12 @@ export const WomenLoan = (props) => {
                 value={name}
                 onChange={(e) => {
                   setNameerr("");
-                  setName(e.target.value);
+                  if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                    setName(e.target.value);
+                  } else if (e.target.value.length === 0) {
+                    setName(e.target.value);
+                  }
+                  
                 }}
               />
               {nameerr ? (

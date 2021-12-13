@@ -60,6 +60,7 @@ const OtpDialog = (props) => {
         window.location.href =
           "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
         toast.success("data successfully submitted", { ...options });
+      
         closeCity();
         console.log("confitm otp", response);
       })
