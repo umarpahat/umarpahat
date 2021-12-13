@@ -22,15 +22,15 @@ export const Videos = (props) => {
                 <Carousel>
                     <div className="row">
                         <div className="col-sm-12 col-md-4">
-                            <object data='https://www.youtube.com/embed/ODylYT3vvQE?autoplay=1' width='450px'
+                            <object data='https://www.youtube.com/embed/ODylYT3vvQE?autoplay=1' width='100%'
                                     height='230px'/>
                         </div>
                         <div className="col-sm-12 col-md-4">
-                            <object data='https://www.youtube.com/embed/nH4yxYZpfeY?autoplay=1' width='450px'
+                            <object data='https://www.youtube.com/embed/nH4yxYZpfeY?autoplay=1' width='100%'
                                     height='230px'/>
                         </div>
                         <div className="col-sm-12 col-md-4">
-                            <object data='https://www.youtube.com/embed/M9uYTo_-_ow?autoplay=1' width='450px'
+                            <object data='https://www.youtube.com/embed/M9uYTo_-_ow?autoplay=1' width='100%'
                                     height='230px'/>
                         </div>
                     </div>
