@@ -68,7 +68,7 @@ h6 {
 
 .whatsup-bg {
     background: #1DBF73;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
 }
 
 
@@ -139,12 +139,69 @@ h6 {
     line-height: 150.5%;
 }
 
+.gray-bg {
+    background-color: #FCFCFC;
+}
+
+.border-round {
+    border: 1px solid rgba(111, 111, 111, 0.23);
+    background-color: #fff;
+    display: flex;
+    font-size: 16px;
+    line-height: 25px;
+    color: #000;
+    margin-bottom: 60px;
+    margin-top: 60px;
+    border-radius: 10px;
+}
+
+.border-round > .left_section {
+    border-right: 1px solid rgba(111, 111, 111, 0.23);
+    padding: 10px 20px;
+    width: 400px;
+}
+
+.grey-round {
+    background-color: #F8F8F8;
+    border-radius: 10px;
+
+}
+
+.border-round > .left_section > div, .border-round > .right_section > div {
+    padding: 18px;
+    text-align: center;
+}
+
+.head18 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.border-round > .right_section {
+    width: calc(100% - 400px);
+    padding: 10px 20px;
+}
+
+.rounded-shadow {
+    background: rgba(217, 217, 217, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
 .darkBg .container {
     padding-top: 30px;
 }
 
 .carousel .slide img {
     max-width: 100%;
+}
+ .carousel .slide .banner img {
+    max-height: 500px;
 }
 
 .white-bg {
@@ -503,6 +560,7 @@ button.button-gray:hover {
     padding-bottom: 30px;
 }
 
+/*
 .carousel:after {
     content: '';
     height: 86px;
@@ -515,6 +573,7 @@ button.button-gray:hover {
     z-index: -1;
     background: url('images/svg/green-right-line.svg') no-repeat 0 0;
 }
+*/
 
 .heading3 {
     font-size: 38px;
@@ -1334,6 +1393,7 @@ a.button-small:hover {
     color: #000;
     box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
     border-radius: 21px;
+    height: 100%;
 }
 
 .no-more-text {
@@ -1341,6 +1401,19 @@ a.button-small:hover {
     font-weight: 500;
 }
 
+.blog .carousel .slider-wrapper{
+    padding-bottom: 40px;
+ }
+
+.carousel .control-dots .dot{
+    border: 1px solid #728D96!important;
+    height: 12px!important;
+    width: 12px!important;
+}
+.carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover{
+    background-color: #0d47a1;
+    border: 1px solid #fff;
+}
 
 .loan-features .feature-box img {
     max-width: 60px;
@@ -1550,7 +1623,8 @@ a.button-small:hover {
 }
 
 .nbfc_img img {
-    max-height: 100px;
+    max-height: 60px;
+    border-radius: 10px;
 }
 
 .product-link h5.heading5 {
@@ -1746,6 +1820,11 @@ a.button-small:hover {
     border-radius: 20px;
     text-align: center;
     padding: 20px;
+    height: 200px;
+}
+.blogPic img{
+   max-height: 200px;
+    width: auto!important;
 }
 
 .blue-color {
@@ -1781,8 +1860,35 @@ a.button-small:hover {
     font-weight: 500;
     font-size: 22px;
     color: #000;
+    margin: 0;
+}
+.our_rating {
+    font-size: 28px;
+    font-weight: 600;
+}
+.star-align img{
+    vertical-align: baseline;
 }
 
+.user-head {
+    background: #F7FCF5;
+    padding: 20px;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+}
+.user-head span{
+    font-size:14px;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.user-head h6 {
+    font-weight: 500;
+    font-size: 18px;
+    color: #000;
+    margin: 0;
+}
 .owl-carousel h6 {
     padding-top: 5px;
     color: #35668b;
@@ -2327,7 +2433,7 @@ hr.style {
     border-radius: 20px !important;
     border: 0;
     padding: 0;
-    min-height: 515px;
+    height: 100%;
 }
 
 .mediaCover {
@@ -2520,6 +2626,9 @@ hr.style {
     margin-top: 40px;
     margin-bottom: 40px;
 }
+.advertise img{
+   max-height: 100px;
+}
 
 .advertise h4 {
     font-weight: bold;
@@ -2527,7 +2636,7 @@ hr.style {
 }
 
 .advertise div {
-    padding: 0 30px;
+    padding: 0 20px;
 }
 
 .small-green-link {
@@ -2599,13 +2708,6 @@ hr.style {
     padding: 20px 0;
     margin: 0;
     min-height: 130px;
-}
-
-.blog .blogPic {
-    border-radius: 9px;
-    overflow: hidden;
-    max-height: 100px;
-    min-height: 100px;
 }
 
 .green-link {
@@ -2758,22 +2860,22 @@ a {
 }
 
 .get-instant-loan {
-    background: url("images/svg/get-instant-loan-bg.svg") no-repeat 0 0 fixed;
+    background: #F4FBFC url("images/svg/get-instant-loan-bg.svg") no-repeat 0 0;
     background-size: 100%;
 }
 
 .gold-banner {
-    background: url("images/svg/gold-banner-bg.svg") no-repeat 0 0;
+    background:  #F4FBFC url("images/svg/gold-banner-bg.svg") no-repeat 0 0;
     background-size: 100%;
 }
 
 .pay-rent-banner {
-    background: url("images/svg/pay-rent-banner-bg.svg") no-repeat 0 0;
+    background:  #F4FBFC url("images/svg/pay-rent-banner-bg.svg") no-repeat 0 0;
     background-size: 100%;
 }
 
 .cibil-banner-banner {
-    background: url("images/svg/cibil-score-bg.svg") no-repeat 0 0;
+    background:  #F4FBFC url("images/svg/cibil-score-bg.svg") no-repeat 0 0;
     background-size: 100%;
 }
 
@@ -2990,7 +3092,9 @@ a {
     margin: 0;
     color: #333;
 }
-
+.blog .carousel .slide{
+    min-width: 100% !important;
+}
 @media (max-width: 600px) {
     .hideDesktop {
         display: block;
@@ -3180,7 +3284,16 @@ a {
     }
 
     .advertise div {
-        padding: 30px;
+        padding: 5px;
+        text-align: center;
+    }
+    .advertise h4 {
+         font-size: 14px;
+     }
+    .green-btn{
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
     }
 
     .bg-in-mobile {
@@ -3293,6 +3406,20 @@ a {
     }
     .footerStripe p{
       margin-bottom: 5px;
+    }
+    .border-round > .left_section{
+        width: 100%;
+        border: none;
+    }
+    .border-round > .right_section{
+        width: 100%;
+    }
+    .border-round{
+        display: block;
+    }
+    .border-round {
+        margin-bottom: 20px;
+        margin-top: 20px;
     }
 
 

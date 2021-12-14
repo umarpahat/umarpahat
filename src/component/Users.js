@@ -1,18 +1,23 @@
 import React, {Component} from "react";
 import goldStarIcon from "../images/svg/star.svg";
+import google from "../images/svg/google.svg";
 import userIcon from "../images/svg/user-icon.svg";
 
 export const Users = (props) => {
     return (
-        <div className="container-fluid px-3 px-sm-5 testimonial p-t-40 p-b-30">
+        <div className="container-fluid px-3 px-sm-5 testimonial p-t-20 p-b-30">
             <div className="col-sm-12 col-md-12 reg-second-heading text-center">
                 <h4>Listen Our Users</h4>
             </div>
-            <div className="container p-t-80">
-                <div className="row">
+            <div className="container p-t-50">
+                <div className="row ">
                     <div className="col col-md-7 ">
-                        <h4 className="">Our ratings on Google store</h4>
-                        <div><strong style={{fontSize:30, fontWeight:600}}>5.0 </strong>
+                        <h4 className="our_rating">Our ratings on  <img
+                            src={google}
+                            alt="G"
+                            className="img-fluid"
+                        />oogle store</h4>
+                        <div className='star-align'><strong style={{fontSize:30, fontWeight:600}}>5.0 </strong>
                             <img
                                 src={goldStarIcon}
                                 alt="Star"
@@ -40,50 +45,14 @@ export const Users = (props) => {
                             />
                         </div>
                     </div>
-                    <div className="col col-md-5 ">
-                        <h4 className="">Our ratings on Apple store</h4>
-                        <div><strong style={{fontSize:30, fontWeight:600}}>5.0 </strong>
-                            <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                            <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                            <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                            <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                            <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                        </div>
-                    </div>
+
                 </div>
             </div>
-            <div className="container p-t-80">
-                <div className="row">
-                    <div className="col-sm-12 col-md-4">
+            <div className="container p-t-50">
+                <div className="row justify-content-center">
+                    <div className="col-sm-12 col-md-3">
                         <div className="card">
-                            <div className="blog-head">
-                                <div className="profile-pic float-left">
-                                    <img
-                                        src={userIcon}
-                                        alt="User Icon"
-                                        className="img-fluid"
-                                    />
-                                </div>
+                            <div className="user-head">
                                 <h6>Aghilesh Nair</h6>
                                 <span>Bengaluru</span>
                                 <div>
@@ -124,16 +93,10 @@ export const Users = (props) => {
                             </p>
                         </div>
                     </div>
-                    <div className="col-sm-12 col-md-4">
+                    <div className="col-sm-12 col-md-3">
                         <div className="card">
-                            <div className="blog-head">
-                                <div className="profile-pic float-left">
-                                    <img
-                                        src={userIcon}
-                                        alt="User Icon"
-                                        className="img-fluid"
-                                    />
-                                </div>
+                            <div className="user-head">
+
                                 <h6>Sakar Verma</h6>
                                 <span>New Delhi</span>
                                 <div>
@@ -175,16 +138,54 @@ export const Users = (props) => {
                             </p>
                         </div>
                     </div>
-                    <div className="col-sm-12 col-md-4">
+                    <div className="col-sm-12 col-md-3">
                         <div className="card">
-                            <div className="blog-head">
-                                <div className="profile-pic float-left">
+                            <div className="user-head">
+
+                                <h6>Nasrin Jahan</h6>
+                                <span>New Delhi</span>
+                                <div>
                                     <img
-                                        src={userIcon}
-                                        alt="User Icon"
+                                        src={goldStarIcon}
+                                        alt="Star"
+                                        className="img-fluid"
+                                    />
+                                    <img
+                                        src={goldStarIcon}
+                                        alt="Star"
+                                        className="img-fluid"
+                                    />
+                                    <img
+                                        src={goldStarIcon}
+                                        alt="Star"
+                                        className="img-fluid"
+                                    />
+                                    <img
+                                        src={goldStarIcon}
+                                        alt="Star"
+                                        className="img-fluid"
+                                    />
+                                    <img
+                                        src={goldStarIcon}
+                                        alt="Star"
                                         className="img-fluid"
                                     />
                                 </div>
+                            </div>
+                            <p className="content p-b-30 pt-3 px-4 ">
+                                Needed moneyy It was a miracle for me that PayMe India
+                                approved my loan and disbursed the amount. I was not aware
+                                of it they took the cheque from my doorstep. I wasn't sure
+                                about the loan. However my loan was approved and I was
+                                intimated via mail. It was a great help. I would recommend
+                                them to others as well.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="col-sm-12 col-md-3">
+                        <div className="card">
+                            <div className="user-head">
+
                                 <h6>Nasrin Jahan</h6>
                                 <span>New Delhi</span>
                                 <div>

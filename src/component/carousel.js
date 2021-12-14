@@ -26,6 +26,27 @@ export const CarouselPic = (props) => {
                                 }}>
                                     Apply now
                                 </Link>
+
+                                <div className="home_social_link p-t-30">
+                                    <div>
+                                        <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
+                                            <img
+                                                className="img_google"
+                                                src={googlePay}
+                                                alt="Pay Me India"
+                                            />
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://apps.apple.com/us/app/payme-india/id1282142711" >
+                                            <img
+                                                className="img_google"
+                                                src={appStore}
+                                                alt="Pay Me India"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                             <div className="col-sm-12 col-md-2 ">
                                 &nbsp;
@@ -35,26 +56,6 @@ export const CarouselPic = (props) => {
                                     <img className="img-fluid"
                                          alt="Instant Loan"
                                          src={instantLoan}/>
-                                </div>
-                                <div className="tabularLess p-b-30">
-                                    <div >
-                                        <Link
-                                            to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
-                                            target={"_blank"}>
-                                            <img
-                                                className="img_google"
-                                                src={googlePay}
-                                                alt="Pay Me India"
-                                            />
-                                        </Link>
-                                    </div>
-                                    <div>
-                                        <img
-                                            className="img_google"
-                                            src={appStore}
-                                            alt="Pay Me India"
-                                        />
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -69,10 +70,30 @@ export const CarouselPic = (props) => {
                                 <br/>
                                 <br/>
                                 <Link className="btnLarge"  to={{
-                                    pathname: '/apply-loan'
+                                    pathname: '/'
                                 }}>
-                                    Apply now
+                                    Invest
                                 </Link>
+                                <div className="home_social_link p-t-30">
+                                    <div>
+                                        <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
+                                            <img
+                                                className="img_google"
+                                                src={googlePay}
+                                                alt="Pay Me India"
+                                            />
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://apps.apple.com/us/app/payme-india/id1282142711" >
+                                            <img
+                                                className="img_google"
+                                                src={appStore}
+                                                alt="Pay Me India"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                             <div className="col-sm-12 col-md-2 ">
                                 &nbsp;
@@ -83,26 +104,7 @@ export const CarouselPic = (props) => {
                                          alt="Instant Loan"
                                          src={goldBanner}/>
                                 </div>
-                                <div className="tabularLess p-b-30">
-                                    <div>
-                                        <Link
-                                            to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
-                                            target={"_blank"}>
-                                            <img
-                                                className="img_google"
-                                                src={googlePay}
-                                                alt="Pay Me India"
-                                            />
-                                        </Link>
-                                    </div>
-                                    <div>
-                                        <img
-                                            className="img_google"
-                                            src={appStore}
-                                            alt="Pay Me India"
-                                        />
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -120,6 +122,26 @@ export const CarouselPic = (props) => {
                                 }}>
                                     Pay Rent
                                 </Link>
+                                <div className="home_social_link p-t-30">
+                                    <div>
+                                        <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
+                                            <img
+                                                className="img_google"
+                                                src={googlePay}
+                                                alt="Pay Me India"
+                                            />
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://apps.apple.com/us/app/payme-india/id1282142711" >
+                                            <img
+                                                className="img_google"
+                                                src={appStore}
+                                                alt="Pay Me India"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                             <div className="col-sm-12 col-md-2 ">
                                 &nbsp;
@@ -130,26 +152,7 @@ export const CarouselPic = (props) => {
                                          alt="Instant Loan"
                                          src={payRentBanner}/>
                                 </div>
-                                <div className="tabularLess p-b-30">
-                                    <div>
-                                        <Link
-                                            to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
-                                            target={"_blank"}>
-                                            <img
-                                                className="img_google"
-                                                src={googlePay}
-                                                alt="Pay Me India"
-                                            />
-                                        </Link>
-                                    </div>
-                                    <div>
-                                        <img
-                                            className="img_google"
-                                            src={appStore}
-                                            alt="Pay Me India"
-                                        />
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -167,6 +170,26 @@ export const CarouselPic = (props) => {
                                 }}>
                                     Check your CIBIL
                                 </Link>
+                                <div className="home_social_link p-t-30">
+                                    <div>
+                                        <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
+                                            <img
+                                                className="img_google"
+                                                src={googlePay}
+                                                alt="Pay Me India"
+                                            />
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://apps.apple.com/us/app/payme-india/id1282142711" >
+                                            <img
+                                                className="img_google"
+                                                src={appStore}
+                                                alt="Pay Me India"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                             <div className="col-sm-12 col-md-2 ">
                                 &nbsp;
@@ -176,26 +199,6 @@ export const CarouselPic = (props) => {
                                     <img className="img-fluid"
                                          alt="CIBIL SCORE"
                                          src={cibilScoreBanner}/>
-                                </div>
-                                <div className="tabularLess p-b-30">
-                                    <div>
-                                        <Link
-                                            to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
-                                            target={"_blank"}>
-                                            <img
-                                                className="img_google"
-                                                src={googlePay}
-                                                alt="Pay Me India"
-                                            />
-                                        </Link>
-                                    </div>
-                                    <div>
-                                        <img
-                                            className="img_google"
-                                            src={appStore}
-                                            alt="Pay Me India"
-                                        />
-                                    </div>
                                 </div>
                             </div>
                         </div>
