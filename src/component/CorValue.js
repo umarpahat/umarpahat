@@ -16,7 +16,7 @@ export const CorValue = (props) => {
                 </div>
                 <div className="row align-items-center pb-3">
 
-                    <ul className='colValue'>
+                    <ul className='colValue '>
                         <li>
                             <img className="img-fluid" alt="Hand Sake" src={hand}/>
                             <h5>Committed</h5>

@@ -52,8 +52,8 @@ export const WomenLoan = (props) => {
   const [topicerr, setTopicErr] = useState("");
   const [otpScreen, setOtpScreen] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
-  const openCity = () => setShowDialogCity(true);
-  const closeCity = () => setShowDialogCity(false);
+  
+  const closeCity = () => setOtpScreen(false);
 
   let url = "";
   let reg = /^[0-9]{1,10}$/;
@@ -143,6 +143,7 @@ export const WomenLoan = (props) => {
       <div className="col-md-6 col-sm-12 hideDesktop">
         {otpScreen ? (
           <OtpDialog
+          closeCity={closeCity}
           {...props}
             name={name}
             email={email}
@@ -209,7 +210,7 @@ export const WomenLoan = (props) => {
                 value={phone}
                 onChange={(e) => {
                   setPhoneerr("");
-                  setPhone(e.target.value);
+                  setPhone(e.target.value.slice(0,10));
                 }}
               />
               {phoneerr ? (
@@ -534,7 +535,7 @@ export const WomenLoan = (props) => {
                     value={phone}
                     onChange={(e) => {
                       setPhoneerr("");
-                      setPhone(e.target.value);
+                      setPhone(e.target.value.slice(0,10));
                     }}
                   />
                   {phoneerr ? (
@@ -551,6 +552,7 @@ export const WomenLoan = (props) => {
                     display: "block",
                     cursor: "pointer",
                     color: "#fff",
+                    width:"100%",
                     background: "#F60093",
                   }}
                   onClick={getOtp}
