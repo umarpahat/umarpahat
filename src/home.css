@@ -1401,6 +1401,19 @@ a.button-small:hover {
     font-weight: 500;
 }
 
+.blog .carousel .slider-wrapper{
+    padding-bottom: 40px;
+ }
+
+.carousel .control-dots .dot{
+    border: 1px solid #728D96!important;
+    height: 12px!important;
+    width: 12px!important;
+}
+.carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover{
+    background-color: #0d47a1;
+    border: 1px solid #fff;
+}
 
 .loan-features .feature-box img {
     max-width: 60px;
@@ -2623,7 +2636,7 @@ hr.style {
 }
 
 .advertise div {
-    padding: 0 30px;
+    padding: 0 20px;
 }
 
 .small-green-link {
@@ -3078,7 +3091,9 @@ a {
     margin: 0;
     color: #333;
 }
-
+.blog .carousel .slide{
+    min-width: 100% !important;
+}
 @media (max-width: 600px) {
     .hideDesktop {
         display: block;
@@ -3268,7 +3283,16 @@ a {
     }
 
     .advertise div {
-        padding: 30px;
+        padding: 5px;
+        text-align: center;
+    }
+    .advertise h4 {
+         font-size: 14px;
+     }
+    .green-btn{
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
     }
 
     .bg-in-mobile {
