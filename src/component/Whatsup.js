@@ -42,13 +42,13 @@ export const Whatsup = (props) => {
           <div className="col-sm-12 col-md-1 m-t-m-7 center-mobile p-t-20-mobile">
             <img className="img-fluid" alt="CIBIL" src={whatsup} />
           </div>
-          <div className="col-sm-12 col-md-7 p-t-5 center-mobile">
+          <div className="col-sm-12 col-md-7 col-lg-6 p-t-5 center-mobile">
               <strong className="white-color whatsup-text">
                 A credit score is more than just a number. Know your Cibil score
                 completely free with PayMe India.
               </strong>
           </div>
-          <div className="col-sm-12 col-md-4 p-t-30 ">
+          <div className="col-sm-12 col-md-4 col-lg-5 p-t-30 ">
             <div className=" center-mobile right-box">
               <input
                 placeholder="Enter your number"

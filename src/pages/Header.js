@@ -68,7 +68,7 @@ const Header = (props) => {
                   </li>
 
                   <li>
-                    <div className="headerLink download">Download App</div>
+                    <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"> <div className="headerLink download">Download App</div></a>
                   </li>
 
                   <li>
@@ -99,7 +99,7 @@ const Header = (props) => {
                         </Link>
                         <ul className="dropdown-content">
                           <li>
-                            <Link to="/offerings#LoanApp">Loan App</Link>
+                            <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'>Loan App</a>
                           </li>
                           <li>
                             <Link to="/offerings#LoanApp">Gold App</Link>
@@ -111,7 +111,7 @@ const Header = (props) => {
                             <Link to="/offerings#LoanApp">Mutual Funds</Link>
                           </li>
                           <li>
-                            <Link to="/offerings#LoanApp">
+                            <Link to="/get-cibil-report">
                               Get CIBIL Score Now
                             </Link>
                           </li>
@@ -124,19 +124,19 @@ const Header = (props) => {
                         </Link>
                         <ul className="dropdown-content">
                           <li>
-                            <Link to="/offerings#LoanApp">Loan App</Link>
+                             <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'>Loan App</a>
                           </li>
                           <li>
-                            <Link to="/offerings#LoanApp">Gold App</Link>
+                            <Link to="/offerings">Gold App</Link>
                           </li>
                           <li>
-                            <Link to="/offerings#LoanApp">SALT App</Link>
+                            <Link to="/offerings">SALT App</Link>
                           </li>
                           <li>
-                            <Link to="/offerings#LoanApp">Mutual Funds</Link>
+                            <Link to="/offerings">Mutual Funds</Link>
                           </li>
                           <li>
-                            <Link to="/offerings#LoanApp">
+                            <Link to="/get-cibil-report">
                               Get CIBIL Score Now
                             </Link>
                           </li>

@@ -70,9 +70,9 @@ export const CarouselPic = (props) => {
                                 <br/>
                                 <br/>
                                 <Link className="btnLarge"  to={{
-                                    pathname: '/apply-loan'
+                                    pathname: '/'
                                 }}>
-                                    Apply now
+                                    Invest
                                 </Link>
                                 <div className="home_social_link p-t-30">
                                     <div>

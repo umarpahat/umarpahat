@@ -360,7 +360,7 @@ const HomePage = (props) => {
         <Whatsup {...props}/>
         <Blogs/>
         <Videos/>
-        <div className="container-fluid px-3 px-sm-5 p-t-40">
+        <div className="container-fluid px-3 px-sm-5">
           <div className="container">
             <div className="row">
               <div className="advertise">
