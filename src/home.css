@@ -2933,9 +2933,10 @@ a {
 
 .colValue {
     color: #fff;
-    text-align: center;
     list-style: none;
     display: flex;
+    
+    
     
    
 }

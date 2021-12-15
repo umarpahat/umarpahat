@@ -32,18 +32,15 @@ const LeaveMessage = (props) => {
   const [otpScreen, setOtpScreen] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
   const [otperr, setOtperr] = useState("");
-  
 
   const close = () => {
     props.close();
   };
-  const closeOtpScreen=()=>{
-    setOtpScreen(false)
-  }
+  const closeOtpScreenMess = () => {
+    setOtpScreen(false);
+  };
   let reg = /^[0-9]{1,10}$/;
   const getOtp = () => {
-    console.log("button");
-
     if (name === "") {
       setNameerr("Name can't be empty");
       return;
@@ -82,7 +79,7 @@ const LeaveMessage = (props) => {
     axios
       .post(url, data)
       .then(function (response) {
-        console.log("city", response);
+       
         setOtpScreen(true);
       })
       .catch(function (error) {
@@ -139,8 +136,9 @@ const LeaveMessage = (props) => {
           />
           {otpScreen ? (
             <OtpDialog
+              closeOtpScreenMess={closeOtpScreenMess}
               close={close}
-              closeOtpScreen={closeOtpScreen}
+             
               {...props}
               name={name}
               email={email}
@@ -220,7 +218,7 @@ const LeaveMessage = (props) => {
                       }
                     }}
                   />
-                   {nameerr ? (
+                  {nameerr ? (
                     <span style={{ color: "red", fontSize: "16px" }}>
                       {nameerr}
                     </span>
@@ -264,11 +262,10 @@ const LeaveMessage = (props) => {
                     value={phone}
                     onChange={(e) => {
                       setPhoneerr("");
-                      setPhone(e.target.value);
+                      setPhone(e.target.value.slice(0,10));
                     }}
-
                   />
-                   {phoneerr ? (
+                  {phoneerr ? (
                     <span style={{ color: "red", fontSize: "16px" }}>
                       {phoneerr}
                     </span>
@@ -293,18 +290,19 @@ const LeaveMessage = (props) => {
                     </span>
                   ) : null}
                 </div>
-                <Link
-                  to={null}
+                <button
+                 type="button"
                   onClick={getOtp}
                   className="btnLarge m-t-40"
                   style={{
                     display: "block",
                     cursor: "pointer",
                     color: "#fff",
+                    width: "100%",
                   }}
                 >
                   Submit
-                </Link>
+                </button>
               </form>
             </div>
           </div>

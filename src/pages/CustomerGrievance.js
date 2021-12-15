@@ -24,7 +24,7 @@ const CustomerGrievance = (props) => {
   const [emailerr, setEmailerr] = useState("");
   const [phoneerr, setPhoneerr] = useState("");
   const [topicerror, setTopicerr] = useState("");
-  const[otpScreen,setOtpScreen]=useState("")
+  const [otpScreen, setOtpScreen] = useState("");
   const [otp, setOtp] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
   const [otperr, setOtperr] = useState("");
@@ -33,13 +33,11 @@ const CustomerGrievance = (props) => {
   const closeGrievance = () => {
     props.closeGrievance();
   };
-  const closeOtpScreen=()=>{
-    setOtpScreen(false)
-  }
+  const closeOtpScreen = () => {
+    setOtpScreen(false);
+  };
   let reg = /^[0-9]{1,10}$/;
   const getOtp = () => {
-    console.log("button");
-
     if (name === "") {
       setNameerr("Name can't be empty");
       return;
@@ -78,7 +76,6 @@ const CustomerGrievance = (props) => {
     axios
       .post(url, data)
       .then(function (response) {
-       
         setOtpScreen(true);
       })
       .catch(function (error) {
@@ -86,6 +83,7 @@ const CustomerGrievance = (props) => {
         console.log(error);
       });
   };
+  
   const GoogleCliendId =
     "435990090197-cjdhhppfhvq8e9n0cullbtco1u22mf1g.apps.googleusercontent.com";
   const responseGoogle = (res) => {
@@ -140,7 +138,7 @@ const CustomerGrievance = (props) => {
 
           {otpScreen ? (
             <OtpDialog
-            closeOtpScreen={closeOtpScreen}
+              closeOtpScreen={closeOtpScreen}
               closeGrievance={closeGrievance}
               {...props}
               name={name}
@@ -224,7 +222,7 @@ const CustomerGrievance = (props) => {
                     value={phone}
                     onChange={(e) => {
                       setPhoneerr("");
-                      setPhone(e.target.value);
+                      setPhone(e.target.value.slice(0,10));
                     }}
                   />
                   {phoneerr ? (
@@ -252,18 +250,19 @@ const CustomerGrievance = (props) => {
                     </span>
                   ) : null}
                 </div>
-                <Link
-                  to={null}
+                <button
+                type="button"
                   onClick={getOtp}
                   className="btnLarge m-t-40"
                   style={{
                     display: "block",
                     cursor: "pointer",
                     color: "#fff",
+                    width: "100%",
                   }}
                 >
                   Submit
-                </Link>
+                </button>
               </form>
             </div>
           </div>

@@ -113,7 +113,9 @@ export const City = (props) => {
   const [otperr, setOtperr] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
   const [otpScreen, setOtpScreen] = useState(false);
-
+ const CloseOtpScreen =()=>{
+  setOtpScreen(false)
+ }
   let url = "";
   let reg = /^[0-9]{10}$/;
 
@@ -193,6 +195,7 @@ export const City = (props) => {
       <Header {...props} />
       {otpScreen ? (
           <OtpDialog
+          CloseOtpScreen={CloseOtpScreen}
           {...props}
             name={name}
             email={email}
@@ -326,7 +329,7 @@ export const City = (props) => {
                     value={phone}
                     onChange={(e) => {
                       setPhoneerr("");
-                      setPhone(e.target.value);
+                      setPhone(e.target.value.slice(0,10));
                     }}
                   />
                   {phoneerr ? (
@@ -343,6 +346,8 @@ export const City = (props) => {
                     display: "block",
                     cursor: "pointer",
                     color: "#fff",
+                    width:"100%"
+                    
                   }}
                   onClick={getOtp}
                 >
