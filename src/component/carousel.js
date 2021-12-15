@@ -15,11 +15,10 @@ export const CarouselPic = (props) => {
                     <div className="container">
                         <div className="row align-items-center ">
                             <div className="col-sm-12 col-md-5 bannerAlign">
-                                <h1 className="heading1">Get Instant Loan Approval</h1>
+                                <h1 className="heading2">Get Instant personal loan</h1>
                                 <p className="heading6">No more financial crunches with PayMe India. Avail instant loans
                                     upto Rs. 2 lakhs
                                     anytime-anywhere with no hassle.</p>
-                                <br/>
                                 <Link className="btnLarge" to={{
                                     pathname: '/apply-loan'
                                 }}>
@@ -64,10 +63,8 @@ export const CarouselPic = (props) => {
                     <div className="container">
                         <div className="row align-items-center ">
                             <div className="col-sm-12 col-md-5 bannerAlign">
-                                <h1 className="heading1">Invest in Gold as low as Rs.500</h1>
+                                <h2 className="heading2">Invest in Digital Gold as low as Rs. 500</h2>
                                 <p className="heading6">Accumulate Gold digitally to build your savings over time and save for future life events</p>
-                                <br/>
-
                                     <a className="btnLarge" href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'>
                                     Start Investing
                                     </a>
@@ -110,9 +107,8 @@ export const CarouselPic = (props) => {
                     <div className="container">
                         <div className="row align-items-center ">
                             <div className="col-sm-12 col-md-5 bannerAlign">
-                                <h1 className="heading1">Pay Rent Using Credit Card</h1>
+                                <h2 className="heading2">Pay Rent Using Credit Card</h2>
                                 <p className="heading6">Get exciting rewards and cashback by paying your rent online with your credit card</p>
-                                <br/>
                                 <Link className="btnLarge"  to={{
                                     pathname: '/pay-rent-details'
                                 }}>
@@ -157,9 +153,8 @@ export const CarouselPic = (props) => {
                     <div className="container">
                         <div className="row align-items-center ">
                             <div className="col-sm-12 col-md-5 bannerAlign">
-                                <h1 className="heading1">Check your CIBIL For Free</h1>
+                                <h2 className="heading2">Check your CIBIL score for free</h2>
                                 <p className="heading6">Check your personalized credit report worth Rs.1500 in simple steps here!!</p>
-                                <br/>
                                 <Link className="btnLarge" to={{
                                     pathname: '/get-cibil-report'
                                 }}>

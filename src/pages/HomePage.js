@@ -152,7 +152,7 @@ const HomePage = (props) => {
           <div className="container">
             <div className="row align-items-center">
               <div className="col-sm-12 col-md-6">
-                <h1 className="heading1">Calculate your loan EMI for better planning</h1>
+                <h2 className="heading2">Calculate your personal loan EMI for better planning</h2>
                 <p className="heading6">
                   Personal Loan EMI calculator is a valuable online automatic tool to determine how much will be your
                   EMI (Equated Monthly Installment) expenses. <br/>
