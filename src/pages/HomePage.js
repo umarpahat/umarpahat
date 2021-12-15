@@ -152,7 +152,7 @@ const HomePage = (props) => {
           <div className="container">
             <div className="row align-items-center">
               <div className="col-sm-12 col-md-6">
-                <h1 className="heading1">Calculate your Loan EMI for better planning</h1>
+                <h1 className="heading1">Calculate your loan EMI for better planning</h1>
                 <p className="heading6">
                   Personal Loan EMI calculator is a valuable online automatic tool to determine how much will be your
                   EMI (Equated Monthly Installment) expenses. <br/>
@@ -369,13 +369,13 @@ const HomePage = (props) => {
                 </div>
                 <div>
                   <h4 className="white-color">
-                    Get Instant Loan and Unlimited Offers
+                    Refer And Earn With PayMe india
                   </h4>
                 </div>
                 <div>
-                  <Link to="/apply-loan" className="green-btn">
-                    Apply Now
-                  </Link>
+                  <a className="green-btn" href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
+                    Refer Now
+                  </a>
                 </div>
               </div>
             </div>

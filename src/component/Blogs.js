@@ -35,7 +35,7 @@ export const Blogs = (props) => {
           
         >
           {posts.map((post, index) => (
-            <div className="col-sm-12 col-md-12">
+            <div className="col-sm-12 col-md-3">
               <div className="blogPic">
                 <img src={blogPic} alt="blog" className="img-fluid" />
               </div>

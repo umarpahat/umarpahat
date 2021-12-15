@@ -106,7 +106,7 @@ const Footer = (props) => {
               </div>
             </div>
             <div className="col-md-2 width50">
-              <h6 className="head6">About Us</h6>
+              <h6 className="head6">Quick links</h6>
               <ul>
                 <li>
                   <Link to="/">Home</Link>
@@ -117,9 +117,9 @@ const Footer = (props) => {
                 <li>
                   <Link to="/contact">Contact us</Link>
                 </li>
-                <li>
+               {/* <li>
                   <Link to="/blog">Blogs</Link>
-                </li>
+                </li>*/}
               </ul>
             </div>
             <div className="col-md-2 width50">
@@ -142,9 +142,9 @@ const Footer = (props) => {
             <div className="col-md-2 width50">
               <h6 className="head6">Others</h6>
               <ul>
-                <li>
+               {/* <li>
                   <Link to="/refer-earn">Refer & Earn</Link>
-                </li>
+                </li>*/}
                 <li>
                   <Link to="/faq">FAQs</Link>
                 </li>

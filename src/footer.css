@@ -122,7 +122,7 @@ footer ul li {
 }
 .rightSection h4{
     font-weight: bold;
-    font-size: 32px;
+    font-size: 22px;
     line-height: 37px;
     color: #000;
     margin: 0;
@@ -131,7 +131,7 @@ footer ul li {
 .rightSection p{
     font-weight: normal;
     font-size: 12px;
-    line-height: 210.5%;
+    line-height: 16px;
     text-align: center;
     color: #333333;
 }
@@ -204,7 +204,7 @@ footer ul li {
 }
 .dialog-box h4{
     font-weight: bold;
-    font-size: 32px;
+    font-size: 22px;
     line-height: 37px;
     color: #000000;
 }.dialog-box .form-label {
@@ -213,8 +213,8 @@ footer ul li {
      line-height: 20px;
      color: #333333;
  }
-.dialog-box .input-field {
-    height: 50px;
+.dialog-box .input-field ,.input-field{
+    height: 40px;
 }
 .dialog-box textarea {
     height: 100px!important;

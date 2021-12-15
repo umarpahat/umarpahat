@@ -135,8 +135,7 @@ h6 {
 
 .whatsup-text {
     font-weight: 500;
-    font-size: 28px;
-    line-height: 150.5%;
+    font-size: 20px;
 }
 
 .gray-bg {
@@ -1226,7 +1225,7 @@ a.button-small:hover {
     padding: 0;
     margin: 0;
     position: absolute;
-    right: 27px;
+    left: 327px;
     bottom: -30px;
     background: url("images/svg/cicle-blue-shade.svg") no-repeat 0 0;
     background-size: 100%;
@@ -1325,6 +1324,7 @@ a.button-small:hover {
     font-style: normal;
     font-weight: 500;
     font-size: 110px;
+    line-height:120px ;
     color: rgba(255, 255, 255, 0.7);
     position: absolute;
     left: -45px;
@@ -1867,7 +1867,7 @@ a.button-small:hover {
     font-weight: 600;
 }
 .star-align img{
-    vertical-align: baseline;
+    vertical-align: top;
 }
 
 .user-head {
@@ -3096,6 +3096,49 @@ a {
     min-width: 100% !important;
 }
 @media (max-width: 600px) {
+    .heading1 {
+        font-size: 28px;
+    }
+
+    .heading2 {
+        font-size: 24px;
+    }
+
+    .heading3 {
+        font-size: 22px;
+    }
+
+    .heading4 {
+        font-size: 18px;
+    }
+
+    .heading5 {
+        font-size: 16px;
+    }
+
+    .heading6 {
+        font-size: 14px;
+    }
+    .popularCity h4 {
+        font-size: 18px;
+    }
+    .testimonial .card {
+        height:auto;
+        margin-bottom: 20px;
+    }
+    .colValue {
+        display: block;
+    }
+    .colValue li {
+        width: 100%;
+    }
+    .light-bg{
+        padding-top: 20px;
+    }
+    .step-card, .product-list-card {
+       height: auto;
+        margin-bottom: 20px;
+    }
     .hideDesktop {
         display: block;
     }
