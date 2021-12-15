@@ -28,7 +28,7 @@ const CustomerGrievance = (props) => {
   const [otp, setOtp] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
   const [otperr, setOtperr] = useState("");
-  const [showDialogGrievance, setShowDialogGrievance] = React.useState(true);
+ 
 
   const closeGrievance = () => {
     props.closeGrievance();
@@ -116,7 +116,7 @@ const CustomerGrievance = (props) => {
   return (
     <div>
       <Dialog
-        isOpen={showDialogGrievance}
+        isOpen={true}
         className="dialog-box"
         onDismiss={closeGrievance}
       >
