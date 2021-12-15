@@ -91,7 +91,7 @@ const About = (props) => {
                   hassle-free
                 </p>
               </div>
-              <div className="col-lg-4 col-md-4 col-sm-4 relative">
+              <div className="col-lg-4 col-md-4 col-sm-4 relative text-right">
                 <img className="img-fluid" alt="About us" src={aboutUs}/>
                 <span className="circle-green-shape"></span>
               </div>

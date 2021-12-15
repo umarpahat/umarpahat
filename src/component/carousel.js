@@ -20,7 +20,6 @@ export const CarouselPic = (props) => {
                                     upto Rs. 2 lakhs
                                     anytime-anywhere with no hassle.</p>
                                 <br/>
-                                <br/>
                                 <Link className="btnLarge" to={{
                                     pathname: '/apply-loan'
                                 }}>
@@ -68,12 +67,10 @@ export const CarouselPic = (props) => {
                                 <h1 className="heading1">Invest in Gold as low as Rs.500</h1>
                                 <p className="heading6">Accumulate Gold digitally to build your savings over time and save for future life events</p>
                                 <br/>
-                                <br/>
-                                <Link className="btnLarge"  to={{
-                                    pathname: '/'
-                                }}>
-                                    Invest
-                                </Link>
+
+                                    <a className="btnLarge" href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'>
+                                    Start Investing
+                                    </a>
                                 <div className="home_social_link p-t-30">
                                     <div>
                                         <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
@@ -116,11 +113,10 @@ export const CarouselPic = (props) => {
                                 <h1 className="heading1">Pay Rent Using Credit Card</h1>
                                 <p className="heading6">Get exciting rewards and cashback by paying your rent online with your credit card</p>
                                 <br/>
-                                <br/>
                                 <Link className="btnLarge"  to={{
                                     pathname: '/pay-rent-details'
                                 }}>
-                                    Pay Rent
+                                    Pay your rent now
                                 </Link>
                                 <div className="home_social_link p-t-30">
                                     <div>
@@ -163,7 +159,6 @@ export const CarouselPic = (props) => {
                             <div className="col-sm-12 col-md-5 bannerAlign">
                                 <h1 className="heading1">Check your CIBIL For Free</h1>
                                 <p className="heading6">Check your personalized credit report worth Rs.1500 in simple steps here!!</p>
-                                <br/>
                                 <br/>
                                 <Link className="btnLarge" to={{
                                     pathname: '/get-cibil-report'

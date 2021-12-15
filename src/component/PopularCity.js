@@ -9,7 +9,7 @@ export const PopularCity = (props) => {
                     <h4>Popular Cities</h4>
                 </div>
                 <div className="row align-items-center p-b-30">
-                    <div className="col-sm-12 col-md-12 text-center ">
+                    <div className="text-center ">
                         <Link to="/personal-loan-in-bangalore" params={{city: "Bangalore"}}>
                             Personal Loan in Bangalore
                         </Link>
