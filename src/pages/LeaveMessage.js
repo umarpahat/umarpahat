@@ -20,7 +20,7 @@ const options = {
 };
 
 const LeaveMessage = (props) => {
-  const [showDialog, setShowDialog] = React.useState(true);
+ 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -118,7 +118,7 @@ const LeaveMessage = (props) => {
   };
   return (
     <div>
-      <Dialog isOpen={showDialog} onDismiss={close}>
+      <Dialog isOpen={true} onDismiss={close}>
         <button className="close-button" onClick={close}>
           <span aria-hidden>×</span>
         </button>
