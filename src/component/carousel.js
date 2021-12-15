@@ -14,7 +14,7 @@ export const CarouselPic = (props) => {
                 <div className="get-instant-loan banner">
                     <div className="container">
                         <div className="row align-items-center ">
-                            <div className="col-sm-12 col-md-5 bannerAlign">
+                            <div className="col-sm-6 col-md-6 bannerAlign">
                                 <h1 className="heading2">Get Instant personal loan</h1>
                                 <p className="heading6">No more financial crunches with PayMe India. Avail instant loans
                                     upto Rs. 2 lakhs
@@ -25,7 +25,7 @@ export const CarouselPic = (props) => {
                                     Apply now
                                 </Link>
 
-                                <div className="home_social_link p-t-30">
+                                <div className="home_social_link">
                                     <div>
                                         <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
                                             <img
@@ -46,11 +46,8 @@ export const CarouselPic = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-sm-12 col-md-2 ">
-                                &nbsp;
-                            </div>
-                            <div className="col-sm-12 col-md-5 m-t-40">
-                                <div className='p-b-30'>
+                            <div className="col-sm-6 col-md-6">
+                                <div className='p-b-20'>
                                     <img className="img-fluid"
                                          alt="Instant Loan"
                                          src={instantLoan}/>
@@ -62,13 +59,13 @@ export const CarouselPic = (props) => {
                 <div className="gold-banner banner">
                     <div className="container">
                         <div className="row align-items-center ">
-                            <div className="col-sm-12 col-md-5 bannerAlign">
+                            <div className="col-sm-6 col-md-6 bannerAlign">
                                 <h2 className="heading2">Invest in Digital Gold as low as Rs. 500</h2>
                                 <p className="heading6">Accumulate Gold digitally to build your savings over time and save for future life events</p>
                                     <a className="btnLarge" href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'>
                                     Start Investing
                                     </a>
-                                <div className="home_social_link p-t-30">
+                                <div className="home_social_link">
                                     <div>
                                         <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
                                             <img
@@ -89,11 +86,8 @@ export const CarouselPic = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-sm-12 col-md-2 ">
-                                &nbsp;
-                            </div>
-                            <div className="col-sm-12 col-md-5 m-t-40">
-                                <div className='p-b-30'>
+                            <div className="col-sm-6 col-md-6 ">
+                                <div className='p-b-20'>
                                     <img className="img-fluid"
                                          alt="Instant Loan"
                                          src={goldBanner}/>
@@ -106,7 +100,7 @@ export const CarouselPic = (props) => {
                 <div className="pay-rent-banner banner">
                     <div className="container">
                         <div className="row align-items-center ">
-                            <div className="col-sm-12 col-md-5 bannerAlign">
+                            <div className="col-sm-6 col-md-6 bannerAlign">
                                 <h2 className="heading2">Pay Rent Using Credit Card</h2>
                                 <p className="heading6">Get exciting rewards and cashback by paying your rent online with your credit card</p>
                                 <Link className="btnLarge"  to={{
@@ -114,7 +108,7 @@ export const CarouselPic = (props) => {
                                 }}>
                                     Pay your rent now
                                 </Link>
-                                <div className="home_social_link p-t-30">
+                                <div className="home_social_link">
                                     <div>
                                         <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
                                             <img
@@ -135,11 +129,9 @@ export const CarouselPic = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-sm-12 col-md-2 ">
-                                &nbsp;
-                            </div>
-                            <div className="col-sm-12 col-md-5 m-t-40">
-                                <div className='p-b-30'>
+
+                            <div className="col-sm-6 col-md-6 ">
+                                <div className='p-b-20'>
                                     <img className="img-fluid"
                                          alt="Instant Loan"
                                          src={payRentBanner}/>
@@ -152,7 +144,7 @@ export const CarouselPic = (props) => {
                 <div className="cibil-banner-banner banner">
                     <div className="container">
                         <div className="row align-items-center ">
-                            <div className="col-sm-12 col-md-5 bannerAlign">
+                            <div className="col-sm-6 col-md-6 bannerAlign">
                                 <h2 className="heading2">Check your CIBIL score for free</h2>
                                 <p className="heading6">Check your personalized credit report worth Rs.1500 in simple steps here!!</p>
                                 <Link className="btnLarge" to={{
@@ -160,7 +152,7 @@ export const CarouselPic = (props) => {
                                 }}>
                                     Check your CIBIL
                                 </Link>
-                                <div className="home_social_link p-t-30">
+                                <div className="home_social_link">
                                     <div>
                                         <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
                                             <img
@@ -181,11 +173,8 @@ export const CarouselPic = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-sm-12 col-md-2 ">
-                                &nbsp;
-                            </div>
-                            <div className="col-sm-12 col-md-5 m-t-40">
-                                <div className='p-b-30'>
+                            <div className="col-sm-6 col-md-6 ">
+                                <div className='p-b-20'>
                                     <img className="img-fluid"
                                          alt="CIBIL SCORE"
                                          src={cibilScoreBanner}/>

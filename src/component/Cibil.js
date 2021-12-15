@@ -7,7 +7,7 @@ export const Cibil = (props) => {
     return (
         <div className="container">
             <div className="row align-items-center pb-3">
-                <div className="col-sm-12 col-md-5 p-t-40">
+                <div className="col-sm-8 offset-sm-2 col-md-5 offset-md-0">
                     <img className="img-fluid" alt="CIBIL" src={scoreAnimation}/>
                 </div>
                 <div className="col-sm-12 col-md-2 ">&nbsp;</div>

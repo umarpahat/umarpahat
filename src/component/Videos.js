@@ -14,7 +14,7 @@ export const Videos = (props) => {
     }, []);
 
     return (
-        <div className="container-fluid px-3 px-sm-5 blog p-t-40">
+        <div className="container-fluid px-sm-5 blog p-t-40">
             <div className="col-sm-12 col-md-12 reg-second-heading text-center">
                 <h4>Our Videos to watch</h4>
             </div>
