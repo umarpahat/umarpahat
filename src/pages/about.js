@@ -4,10 +4,8 @@ import { connect } from "react-redux";
 import "./ApplyNowButton/Applybtnallcomponent.css";
 import Header from "./Header";
 import "../../src/home.css";
-import vision from "../images/svg/vision.png";
+import vision from "../images/svg/vision.svg";
 import team from "../images/logo-fav.png";
-import coreValue from "../images/Core-Values.png";
-import PhonecoreValue from "../images/phone-Core-Values.png";
 import team1 from "../images/Image-1.png";
 import team2 from "../images/Image-2.png";
 import team3 from "../images/Image-3.png";
@@ -16,16 +14,12 @@ import team5 from "../images/Image-5.png";
 import team6 from "../images/Image-6.png";
 import team7 from "../images/Image-7.png";
 import team8 from "../images/Image-8.png";
-import teamAll from "../images/team.jpg";
-import mailBox from "../images/svg/mail-box.svg";
 import thumbnail from "../images/svg/thumb.svg";
 import people from "../images/svg/will-stand.svg";
-import about from "../images/svg/about-us.png";
 import MetaTags from "react-meta-tags";
 import goldStarIcon from "../images/svg/star.svg";
 import  aboutUs from "../images/svg/about-us.svg";
 import * as url from "url";
-import Footer from "./Footer";
 
 const About = (props) => {
   let [loader, setloader] = useState(false);

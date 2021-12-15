@@ -17,7 +17,7 @@ export const Benefits = (props) => {
                         <h4>Benefits of PayMe India</h4>
                     </div>
                     <div className="row align-items-center">
-                        <div className="col-sm-12 col-md-6">
+                        <div className="col-sm-4 offset-sm-4 col-md-6  offset-md-0">
                             <div className="farmer text-center">
                                 <img
                                     src={benefit}
