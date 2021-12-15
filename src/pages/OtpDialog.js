@@ -33,8 +33,13 @@ const OtpDialog = (props) => {
   {
     props.closeOtpScreen();
   }
+  if(props.WhatsappOtpScreen)
+  {
+    props.WhatsappOtpScreen();
+  }
 };
   
+
 
   const SubmitOtp = () => {
     if (otp === "") {

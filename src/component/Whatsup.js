@@ -11,6 +11,9 @@ export const Whatsup = (props) => {
   const [phone, setPhone] = useState("");
   const [phoneerr, setPhoneerr] = useState("");
   const [otpScreen, setOtpScreen] = useState("");
+  const WhatsappOtpScreen =()=>{
+    setOtpScreen(false)
+  }
   const handleWhatsappApi = () => {
     if (phone === "") {
       setPhoneerr("Phone can't be empty");
@@ -35,7 +38,7 @@ export const Whatsup = (props) => {
   return (
     <div className="container-fluid whatsup-bg ">
       {otpScreen ? (
-        <OtpDialog {...props} phone={phone} lead_from="WHATSAPP" />
+        <OtpDialog {...props} phone={phone} lead_from="WHATSAPP" WhatsappOtpScreen={WhatsappOtpScreen} />
       ) : null}
       <div className="container ">
         <div className="row align-items-center">
