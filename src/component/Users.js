@@ -2,9 +2,44 @@ import React, {Component} from "react";
 import goldStarIcon from "../images/svg/star.svg";
 import halfStarIcon from "../images/svg/star-half.svg";
 import google from "../images/svg/google.svg";
-import userIcon from "../images/svg/user-icon.svg";
+import Slider from "react-slick";
 
 export const Users = (props) => {
+    var settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3,
+        autoplay: true,
+        slidesToScroll: 1,
+        initialSlide: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
     return (
         <div className="container-fluid px-3 px-sm-5 testimonial p-t-20 p-b-30">
             <div className="col-sm-12 col-md-12 reg-second-heading text-center">
@@ -29,9 +64,8 @@ export const Users = (props) => {
 
                 </div>
             </div>
-            <div className="container p-t-50">
-                <div className="row justify-content-center">
-                    <div className="col-sm-12 col-md-4">
+            <div className="container p-t-50 userSection">
+                    <Slider {...settings}>
                         <div className="card">
                             <div className="user-head">
                                 <h6>Aghilesh Nair</h6>
@@ -73,8 +107,6 @@ export const Users = (props) => {
                                 recommend this to everyone.
                             </p>
                         </div>
-                    </div>
-                    <div className="col-sm-12 col-md-4">
                         <div className="card">
                             <div className="user-head">
 
@@ -118,8 +150,6 @@ export const Users = (props) => {
                                 business. Thank you team PayMe India.
                             </p>
                         </div>
-                    </div>
-                    <div className="col-sm-12 col-md-4">
                         <div className="card">
                             <div className="user-head">
 
@@ -162,8 +192,7 @@ export const Users = (props) => {
                                 them to others as well.
                             </p>
                         </div>
-                    </div>
-                </div>
+                    </Slider>
             </div>
         </div>
     );

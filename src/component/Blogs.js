@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import blogPic from "../images/logo.png";
 import { Link } from "react-router-dom";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+import Slider from "react-slick";
 
 export const Blogs = (props) => {
   const [posts, setPosts] = useState([]);
@@ -12,7 +11,41 @@ export const Blogs = (props) => {
       .then((res) => res.json())
       .then((res) => setPosts(res.posts));
   }, []);
-
+    var settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        autoplay: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        initialSlide: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
   return (
     <div className="container-fluid px-3 px-sm-5 blog p-t-40">
       <div className="row">
@@ -21,23 +54,13 @@ export const Blogs = (props) => {
       </div>
       </div>
       <div className="container p-t-40">
-        <Carousel
-          centerMode={true}
-          autoPlay={true}
-          stopOnHover={true}
-          centerSlidePercentage={33}
-         
-          useKeyboardArrows={true}
-          interval={2000}
-          transitionTime={1000}
-          infiniteLoop={true}
-          showStatus={false}
-          
-        >
-          {posts.map((post, index) => (
-            <div className="col-sm-12 col-md-3">
+          <Slider {...settings}>
+            {posts.map((post, index) => (
+            <div className="blog-div">
+              <div className="blog-section">
               <div className="blogPic">
                 <img src={blogPic} alt="blog" className="img-fluid" />
+              </div>
               </div>
               <h5>
                 {post.title} 
@@ -57,7 +80,7 @@ export const Blogs = (props) => {
               </Link>
             </div>
           ))}
-        </Carousel>
+          </Slider>
       </div>
     </div>
   );

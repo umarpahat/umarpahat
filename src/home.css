@@ -1814,17 +1814,22 @@ a.button-small:hover {
 .white-color {
     color: #fff;
 }
-
-.blogPic {
+.blog-section{
+    display: table;
     background: #33658a;
     border-radius: 20px;
-    text-align: center;
     padding: 20px;
-    height: 200px;
+    width: 100%;
+}
+.blogPic {
+    text-align: center;
+    height: 150px;
+    display: table-cell;
+    vertical-align: middle;
 }
 .blogPic img{
-   max-height: 200px;
     width: auto!important;
+    display: initial;
 }
 
 .blue-color {
@@ -1888,6 +1893,26 @@ a.button-small:hover {
     font-size: 18px;
     color: #000;
     margin: 0;
+}
+.user-head img{
+    max-width: 20px!important;
+    display: initial!important;
+}
+.slick-next:before, .slick-prev:before{
+    color: #33658A;
+}
+.slick-next:before, .slick-prev:before{
+    font-size: 24px;
+}
+.blog-div {
+    padding: 5px 10px;
+    width: 100%;
+}
+.userSection .slick-slide{
+    padding: 0 10px;
+}
+.card > .content{
+    min-height: 230px;
 }
 .owl-carousel h6 {
     padding-top: 5px;
@@ -2707,7 +2732,7 @@ hr.style {
     color: #000;
     padding: 20px 0;
     margin: 0;
-    min-height: 130px;
+    min-height: 100px;
 }
 
 .green-link {
