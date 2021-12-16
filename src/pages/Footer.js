@@ -155,10 +155,10 @@ const Footer = (props) => {
                   <Link to="/media-coverage">Media Coverage</Link>
                 </li>
                 <li>
-                  <Link to={null} onClick={openGrievance}>Custmer Grievance</Link>
+                  <a  className="MessGrieForm"  onClick={openGrievance}>Custmer Grievance</a>
                 </li>
                 <li>
-                  <Link to={null} onClick={open}>Leave a message</Link>
+                  <a className="MessGrieForm" onClick={open}>Leave a message</a>
                 </li>
                 <li>
                   <Link to="/eligbility-criteria">Eligibility Criteria</Link>
