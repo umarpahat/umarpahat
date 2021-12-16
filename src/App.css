@@ -127,6 +127,9 @@ h6 {
   padding-top: 180px;
   padding-left: 120px;
 }
+.MessGrieForm{
+  cursor: pointer;
+}
 .Btndrop .btn {
   color: #040b4d !important;
   background: none !important;
