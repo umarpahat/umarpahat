@@ -245,7 +245,7 @@ const Header = (props) => {
                                 <Link to="/eligbility-criteria">
                                   Eligbility Criteria
                                 </Link>
-                                <a className="MessGrieForm" onClick={open}>
+                                <a href="#" onClick={open}>
                                   Leave a message
                                 </a>
                               </li>
@@ -262,7 +262,7 @@ const Header = (props) => {
                             <ul>
                               <li>
                                 <a
-                                  className="MessGrieForm"
+                                  href="#"
                                   onClick={openGrievance}
                                 >
                                   Customer Grievance
