@@ -46,7 +46,7 @@ const About = (props) => {
       <div className="content">
         <div className="aboutUs">
           <div className="container">
-            <div className="col col-md-12 reg-second-heading">
+            <div className="col-md-12 reg-second-heading">
               <h1 className="heading1 white-color">Who we are</h1>
               <span className="reg-second-subheading white-color">
                 PayMe India is an innovative FinTech organization
@@ -58,14 +58,13 @@ const About = (props) => {
           <span className="circle-small-shape"></span>
           <div className="container">
             <div className="row p-t-30 p-b-30 ">
-              <div className="col-lg-8 col-md-8 col-sm-8 textAlign">
+              <div className="col-lg-8 col-md-8 col-sm-12 textAlign">
                 <h3 className="heading3 relative blue-color d-none d-md-block">
                  About Us
                 </h3>
 
                 <h3 className="heading3 relative blue-color text-center d-md-none">
-                  {" "}
-                  <span className="circle-small-shape"></span> About Us{" "}
+                  <span className="circle-small-shape"></span> About Us
                 </h3>
                 <p className="heading6">
                   PayMe India is an innovative new-age Fintech company,
@@ -86,7 +85,7 @@ const About = (props) => {
                   hassle-free
                 </p>
               </div>
-              <div className="col-lg-4 col-md-4 col-sm-4 relative text-right">
+              <div className="col-lg-4 col-md-4 col-sm-12 relative text-right">
                 <img className="img-fluid" alt="About us" src={aboutUs}/>
                 <span className="circle-green-shape"></span>
               </div>
@@ -96,11 +95,11 @@ const About = (props) => {
         <div className="mission">
           <div className="container p-b-30 p-t-25">
             <div className="row align-items-center pb-3">
-              <div className="col-lg-4 col-md-4 col-sm-4 relative">
+              <div className="col-lg-4 col-md-4 col-sm-12 order-sm-2 order-md-1 relative">
                 <img className="img-fluid" alt="About us" src={vision}/>
                 <span className="circle-blue-shape"></span>
               </div>
-              <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 textAlign">
+              <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 textAlign order-sm-1 order-md-2">
                 <h4 className="heading4 blue-color">Our Mission and Vision</h4>
                 <p className="heading6">
                   PayMe India is dedicated to the mission of becoming the
@@ -215,7 +214,7 @@ const About = (props) => {
         <div className="team-section">
           <div className="container">
             <div className="row justify-content-md-center">
-              <div className="col col-md-8 text-center p-t-40">
+              <div className="col-md-8 text-center p-t-40">
                 <h4 className="heading4 blue-color">Our Team</h4>
                 <p className="p-t-10">
                   Team PayMe India is a set of customer-oriented personalities,
@@ -236,7 +235,7 @@ const About = (props) => {
               </div>
             </div>
             <div className="row justify-content-md-center">
-              <div className="col col-md-8 text-center">
+              <div className="col-md-8 text-center">
                 <div className="clearfix topFav">
                   <div className="team-pic">
                     <img
