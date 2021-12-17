@@ -958,7 +958,7 @@ const OtherDetalisForm = (props) => {
                           style={{
                             opacity: "0.59",
                             right: "200px",
-                            fontFamily: "Montserrat",
+                            fontFamily: 'Poppins, sans-serif',
                           }}
                         >
                           Kyc status:{" "}
@@ -977,7 +977,7 @@ const OtherDetalisForm = (props) => {
                               color: "#ff8000",
                               opacity: "0.59",
                               right: "200px",
-                              fontFamily: "Montserrat",
+                              fontFamily: 'Poppins, sans-serif',
                             }}
                           >
                             {kycStatus}
@@ -991,7 +991,7 @@ const OtherDetalisForm = (props) => {
                         <br></br>
                         <b
                           style={{
-                            fontFamily: "Montserrat",
+                            fontFamily: "Poppins, sans-serif",
                             fontSize: "18px",
                             fontStyle: "bold",
                           }}

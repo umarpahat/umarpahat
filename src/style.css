@@ -51,7 +51,7 @@ button:focus {
   color: #040b4d;
   font-size: 4em;
   font-weight: 700;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-transform: capitalize;
 }
 .home-contact-form {
@@ -265,7 +265,7 @@ button:focus {
   color: #363c71;
   margin-top: 30px;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .section-heading {
   text-align: center;
@@ -296,7 +296,7 @@ button:focus {
   font-weight: 700;
   letter-spacing: 2px;
   color: #040b4d;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .content-heading {
   font-size: 1.3em;
@@ -485,7 +485,7 @@ button:focus {
   margin-right: auto;
   height: 65px !important;
   font-size: 2em;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: rgba(172, 187, 199, 0.07);
   border: 1px solid rgba(51, 101, 138, 0.3);
   border-radius: 8px;
@@ -496,7 +496,7 @@ button:focus {
 }
 
 .montserrat-600 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
 }
 .resent-btn {
