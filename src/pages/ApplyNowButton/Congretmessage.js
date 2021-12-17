@@ -89,7 +89,7 @@ const Congretmessage = (props) => {
                     <b
                       className="preApprovePara text-capitalize"
                       style={{
-                        fontFamily: "Montserrat",
+                        fontFamily: "Poppins, sans-serif",
                         fontSize: "18px",
                         fontStyle: "bold",
                       }}

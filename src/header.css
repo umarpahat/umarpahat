@@ -10,7 +10,7 @@ header {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     padding: 0;
     margin: 0;
     font-size: 18px;
@@ -40,7 +40,7 @@ body {
 }
 
 .borderTop h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -520,7 +520,7 @@ nav a:hover {
     line-height: 24pt;
     opacity: 1;
     filter: alpha(opacity=100);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .full-height {
