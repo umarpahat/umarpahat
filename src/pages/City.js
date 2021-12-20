@@ -177,7 +177,7 @@ export const City = (props) => {
     axios
       .put(url, data)
       .then(function (response) {
-        fbq('track','LeadForCity')
+        window.fbq('track','LeadForCity')
         window.location.href =
           "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
       })
@@ -185,6 +185,8 @@ export const City = (props) => {
         toast.error(error.response?.data.message, { ...options });
       });
   };
+
+ 
   const GoogleCliendId =
     "435990090197-cjdhhppfhvq8e9n0cullbtco1u22mf1g.apps.googleusercontent.com";
   const responseGoogle = (res) => {

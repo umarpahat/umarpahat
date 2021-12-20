@@ -57,6 +57,7 @@ const OtpDialog = (props) => {
     axios
       .put(url, data)
       .then(function (response) {
+        window.fbq('track','LeadForWomen')
         window.location.href =
           "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
         toast.success("data successfully submitted", { ...options });
