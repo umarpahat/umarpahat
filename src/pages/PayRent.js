@@ -54,7 +54,7 @@ const PayRent = (props) => {
   }, []);
 
   const handleSubmit = (event) => {
-    fbq('track', 'Lead');
+    window.fbq('track', 'Lead');
     cookies.set("userCase", "pay-rent");
     event.preventDefault();
     /^[6-9]\d{9}$/.test(number)

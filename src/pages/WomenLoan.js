@@ -98,7 +98,7 @@ export const WomenLoan = (props) => {
     axios
       .post(url, data)
       .then(function (response) {
-        fbq('track','LeadForWomen');
+        
         console.log("city", response);
         setOtpScreen(true);
       })
@@ -107,6 +107,7 @@ export const WomenLoan = (props) => {
         console.log(error);
       });
   };
+
 
   const GoogleCliendId =
     "435990090197-cjdhhppfhvq8e9n0cullbtco1u22mf1g.apps.googleusercontent.com";
