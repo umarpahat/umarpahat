@@ -168,7 +168,6 @@ export const City = (props) => {
       name: name,
       email: email,
       phone_number: phone,
-
       lead_from: "GETLOAN",
       residential_address: cityName,
     };
