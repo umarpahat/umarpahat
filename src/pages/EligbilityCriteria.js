@@ -71,7 +71,7 @@ const EligbilityCriteria = (props) => {
                                     <div className='right_section'>
                                         <div className='head18'>Salaried</div>
                                         <div className='grey-round'> 21-58 years</div>
-                                        <div>Salaried individuals with minimum monthly income Rs.30,000.</div>
+                                        <div>Salaried individuals with minimum monthly income Rs.15,000.</div>
                                         <div className='grey-round'>Indian Resident Citizen only</div>
                                         <div> Must have all required KYC documents</div>
                                     </div>

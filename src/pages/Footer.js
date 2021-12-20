@@ -166,6 +166,9 @@ const Footer = (props) => {
                 <li>
                   <Link to="/career">Career</Link>
                 </li>
+                <li>
+                  <Link to="/sitemap">Sitemap</Link>
+                </li>
               </ul>
             </div>
 
@@ -213,7 +216,7 @@ const Footer = (props) => {
           { showDialog ? <LeaveMessage close={close} {...props} /> :null }
           {showDialogGrievance ? <CustomerGrievance  closeGrievance={closeGrievance} {...props} /> : null}
 
-          <div className="row p-t-20">
+          <div className="row">
             <div className="col-md-12 text-center">
               <p className="p-t-20">Copyright@2021 Huey Tech Pvt. Ltd.</p>
             </div>

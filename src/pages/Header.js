@@ -101,7 +101,7 @@ const Header = (props) => {
                         </Link>
                         <ul className="dropdown-content">
                           <li>
-                            <Link to="/apply-loan">Instant loan</Link>
+                            <Link to="/apply-loan">Personal loan</Link>
                           </li>
 
                           <li>
@@ -138,7 +138,7 @@ const Header = (props) => {
                         </Link>
                         <ul className="dropdown-content">
                           <li>
-                            <Link to="/apply-loan">Instant loan</Link>
+                            <Link to="/apply-loan">Personal loan</Link>
                           </li>
 
                           <li>
@@ -221,15 +221,18 @@ const Header = (props) => {
                                 <Link to="/about">About us</Link>
                               </li>
                               <li>
+                                <Link to="/offerings">Our Products</Link>
+                              </li>
+                              <li>
+                                <Link to="/social-initiative">Social Initiative</Link>
+                              </li>
+                              <li>
                                 <Link to="/media-coverage">Media Coverage</Link>
                               </li>
                               <li>
                                 <Link to="/ourNbfcPartners">
                                   Our NBFC Partners
                                 </Link>
-                              </li>
-                              <li>
-                                <Link to="/sitemap">Sitemap</Link>
                               </li>
                               <li>
                                 <Link to="/career">Career</Link>
@@ -245,6 +248,8 @@ const Header = (props) => {
                                 <Link to="/eligbility-criteria">
                                   Eligbility Criteria
                                 </Link>
+                                </li>
+                                <li>
                                 <a href="#" onClick={open}>
                                   Leave a message
                                 </a>
@@ -281,7 +286,11 @@ const Header = (props) => {
                             <ul>
                               <li>
                                 <Link to="/policy">Privacy Policy</Link>
+                              </li>
+                              <li>
                                 <Link to="/refund">Refund Policy</Link>
+                              </li>
+                              <li>
                                 <Link to="/disclaimer">Disclaimer</Link>
                               </li>
                             </ul>

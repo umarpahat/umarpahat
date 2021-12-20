@@ -148,10 +148,10 @@ const HomePage = (props) => {
         <Services/>
         <GetLoanStep/>
         <Products/>
-        <div className="clearfix light-bg p-b-30">
+        <div className="clearfix light-bg ">
           <div className="container">
             <div className="row align-items-center">
-              <div className="col-sm-12 col-md-6">
+              <div className="col-sm-12 col-md-7 order-sm-2 order-md-1 re">
                 <h2 className="heading2">Calculate your personal loan EMI for better planning</h2>
                 <p className="heading6">
                   Personal Loan EMI calculator is a valuable online automatic tool to determine how much will be your
@@ -160,15 +160,12 @@ const HomePage = (props) => {
                   loan and repayment better. All you need to do is enter the loan amount, and select the tenure of your
                   loan. The online calculator will provide you with the answer in a split second!
                 </p>
-                <br/>
-                <br/>
-                <Link className="btnLarge" target='_blank'
+                <Link className="btnLarge m-t-10" target='_blank'
                       to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}>
                   Get App Now
                 </Link>
               </div>
-              <div className="col-sm-12 col-md-1 ">&nbsp;</div>
-              <div className="col-sm-12 col-md-5 m-t-40 p-b-30">
+              <div className="col-sm-12 col-md-5 order-sm-1 order-md-2">
                 <div className="price-box">
                   <form className="form-horizontal form-pricing" role="form">
                     <h4>EMI Calculator</h4>

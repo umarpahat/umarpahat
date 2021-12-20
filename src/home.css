@@ -22,7 +22,7 @@ body {
     line-height: 25px;
     color: #565656;
 }
-
+.collapse{ color: #000}
 h1 {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
@@ -2121,8 +2121,9 @@ h4.great {
 }
 
 .price-slider {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
+
 
 .down-payment {
     background: #FFFFFF;
@@ -2155,7 +2156,7 @@ h4.great {
     font-size: 38px;
     line-height: 150.5%;
     color: rgba(51, 101, 138, 0.7);
-    padding: 25px 0;
+    padding: 10px 0;
     text-align: center;
 }
 
@@ -2950,6 +2951,7 @@ a {
 
 .light-bg {
     background: #F5FDED;
+    padding: 40px 0;
 }
 
 .dark-bg {
@@ -3352,9 +3354,12 @@ a {
         height:auto;
         margin-bottom: 20px;
     }
+    .price-box {
+        margin-bottom: 20px;
+    }
 
-    .light-bg{
-        padding-top: 20px;
+    .light-bg {
+        padding: 20px 0;
     }
     .step-card, .product-list-card {
        height: auto;
