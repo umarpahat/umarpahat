@@ -116,7 +116,6 @@ export const City = (props) => {
   let reg = /^[0-9]{10}$/;
 
   const getOtp = () => {
-
     setOtp("");
     if (name.length === 0) {
       setNameerr("Name can't be empty");
@@ -135,7 +134,7 @@ export const City = (props) => {
       setPhoneerr("Phone number is Invalid");
       return;
     }
-    
+
     let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
     let data = {
       name: name,
@@ -177,7 +176,8 @@ export const City = (props) => {
     axios
       .put(url, data)
       .then(function (response) {
-        window.fbq('track','LeadForCity')
+        gtag_report_conversion();
+        window.fbq("track", "LeadForCity");
         window.location.href =
           "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
       })
@@ -186,7 +186,6 @@ export const City = (props) => {
       });
   };
 
- 
   const GoogleCliendId =
     "435990090197-cjdhhppfhvq8e9n0cullbtco1u22mf1g.apps.googleusercontent.com";
   const responseGoogle = (res) => {
@@ -219,6 +218,19 @@ export const City = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof url != "undefined") {
+        window.location = url;
+      }
+    };
+    gtag("event", "conversion", {
+      send_to: "AW-875618776/9y-ACJaIgosDENjDw6ED",
+      event_callback: callback,
+    });
+    return false;
+  }
 
   return (
     <>
@@ -392,9 +404,9 @@ export const City = (props) => {
               style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
             >
               {cityName === "NearMe" ? (
-                  <h4 className="text-center">Get Instant Loan Online</h4>
+                <h4 className="text-center">Get Instant Loan Online</h4>
               ) : (
-                  <h4 className="text-center">Get Loan In {cityName}</h4>
+                <h4 className="text-center">Get Loan In {cityName}</h4>
               )}
               <p>
                 PayMe India’s Instant Personal Loan comes with a hassle-free
@@ -487,7 +499,7 @@ export const City = (props) => {
           </button>
         </div>
       </Dialog>
-      <Footer/>
+      <Footer />
     </>
   );
 };
