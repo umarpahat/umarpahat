@@ -30,6 +30,7 @@ import "@reach/dialog/styles.css";
 import { API_ENDPOINT_STAGING } from "../constant";
 import Footer from "./Footer";
 
+
 toast.configure();
 const options = {
   position: "top-center",
@@ -57,7 +58,7 @@ const images = {
   NearMe,
   NaviMumbai,
 };
-console.log(images);
+
 export const City = (props) => {
   const [showDialogCity, setShowDialogCity] = React.useState(false);
   const openCity = () => setShowDialogCity(true);
