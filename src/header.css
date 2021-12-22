@@ -358,11 +358,13 @@ button.button-gray:hover {
     padding-top: 70px;
 }
 
+nav li{
+    padding: 5px 0;
+}
 nav li a {
-    display: block;
+    display: initial;
     text-decoration: none !important;
     color: #fff;
-    padding: 10px 0;
     transition: color 0.3s ease;
     font-weight: 500;
     font-size: 14px;

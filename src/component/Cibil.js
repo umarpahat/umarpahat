@@ -11,7 +11,7 @@ export const Cibil = (props) => {
                     <img className="img-fluid" alt="CIBIL" src={scoreAnimation}/>
                 </div>
                 <div className="col-sm-12 col-md-2 ">&nbsp;</div>
-                <div className="col-sm-12 col-md-5">
+                <div className="col-sm-12 col-md-5 p-t-20">
                     <h3 className="heading3 relative">
                         <span className="circle-small"></span> Get CIBIL report worth
                         Rs 1500
