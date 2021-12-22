@@ -217,7 +217,18 @@ export const City = (props) => {
   };
   useEffect(() => {
     window.scrollTo(0, 0);
+   GoogleAnalytics()
+    
   }, []);
+
+  const GoogleAnalytics =()=>{
+    window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-1P4XMQV2BK');
+(window,document,'script','https://www.googletagmanager.com/gtag/js?id=G-1P4XMQV2BK','ga');
+  }
 
   function gtag_report_conversion(url) {
     var callback = function () {
