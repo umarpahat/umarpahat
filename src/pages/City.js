@@ -50,7 +50,7 @@ const options = {
 ReactPixel.init('699730774332173', optionsPixel);
 
 ReactPixel.pageView(); // For tracking page view
-ReactPixel.track(LeadForCity); // For tracking default events. More info about standard events: https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events
+// For tracking default events. More info about standard events: https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events
 
 const images = {
   Delhi,
@@ -191,7 +191,7 @@ export const City = (props) => {
       .put(url, data)
       .then(function (response) {
         gtag_report_conversion();
-        window.fbq("track", "LeadForCity");
+        ReactPixel.trackSingleCustom('699730774332173');
         window.location.href =
           "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
       })
@@ -233,7 +233,7 @@ export const City = (props) => {
     window.scrollTo(0, 0);
    GoogleAnalytics();
    const ReactPixel =  require('react-facebook-pixel');
-    ReactPixel.default.init('yourPixelIdGoesHere');
+    ReactPixel.default.init('699730774332173');
     
   }, []);
 
