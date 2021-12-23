@@ -31,14 +31,10 @@ import { API_ENDPOINT_STAGING } from "../constant";
 import Footer from "./Footer";
 import ReactPixel from 'react-facebook-pixel';
 
-const options = {
+const optionsPixel = {
   autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
   debug: false, // enable logs
 };
-ReactPixel.init('699730774332173', advancedMatching, options);
-
-ReactPixel.pageView(); // For tracking page view
-ReactPixel.track(LeadForCity); // For tracking default events. More info about standard events: https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events
 
 
 
@@ -49,6 +45,13 @@ const options = {
   limit: 1,
   closeButton: false,
 };
+
+
+ReactPixel.init('699730774332173', optionsPixel);
+
+ReactPixel.pageView(); // For tracking page view
+ReactPixel.track(LeadForCity); // For tracking default events. More info about standard events: https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events
+
 const images = {
   Delhi,
   Bangalore,
@@ -228,7 +231,9 @@ export const City = (props) => {
   };
   useEffect(() => {
     window.scrollTo(0, 0);
-   GoogleAnalytics()
+   GoogleAnalytics();
+   const ReactPixel =  require('react-facebook-pixel');
+    ReactPixel.default.init('yourPixelIdGoesHere');
     
   }, []);
 
