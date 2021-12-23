@@ -228,7 +228,9 @@ export const City = (props) => {
   };
   useEffect(() => {
     window.scrollTo(0, 0);
-   GoogleAnalytics()
+   GoogleAnalytics();
+   const ReactPixel =  require('react-facebook-pixel');
+    ReactPixel.default.init('yourPixelIdGoesHere');
     
   }, []);
 
