@@ -46,8 +46,9 @@ const options = {
   closeButton: false,
 };
 
-
+console.log("initiate before")
 ReactPixel.init('699730774332173', optionsPixel);
+console.log("initiate after")
 
 ReactPixel.pageView(); // For tracking page view
 // For tracking default events. More info about standard events: https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events
