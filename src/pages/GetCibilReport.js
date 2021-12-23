@@ -555,25 +555,24 @@ const GetCibilReport = (props) => {
 
   return (
     <>
+      <MetaTags>
+        <title>Cibil Score for Personal Loan – PayMe India</title>
+        <meta
+            name="description"
+            content="Get your cibil score for personal loan & minimum cibil score required. Visit PayMe India to know your cibil score required for personal loan."
+        />
+        <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+        />
+        <meta
+            property="og:title"
+            content="Cibil Score for Personal Loan – PayMe India"
+        />
+      </MetaTags>
       <Header {...props} />
-
       {!loader ? (
         <>
-          <MetaTags>
-            <title>Get CIBIL score for Free - PayMeIndia</title>
-            <meta
-              name="description"
-              content=""
-            />
-            <meta
-              name="keyword"
-              content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
-            />
-            <meta
-              property="og:title"
-              content=" Get CIBIL score - PayMeIndia"
-            />
-          </MetaTags>
           <div className="content">
             <div className="banner">
               <div className="container">

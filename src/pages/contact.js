@@ -21,16 +21,13 @@ const Contact = (props) => {
 
   return (
     <>
-      <Header {...props} />
       <MetaTags>
-        <title>Contact Us - PayMeIndia</title>
-        <meta name="description" content="PayMeIndia is a direct lender providing short terms and instant personal
-              loans to the salaries employees at low interest rates. We offer advance salary loans, instant
-        flexi loans, quick short term loans online. Contact us now via mail at support@paymeindia.in
-        or on call at +91-1206748963." />
+        <title>Contact Information - PayMe India</title>
+        <meta name="description" content="Get instant answers to your queries. Concern or complaints by submitting a form or email us on admin@paymeindia.in or call us on 0120-6905690 to get the earliest response from us." />
         <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
-        <meta property="og:title" content="Contact Us - PayMeIndia" />
+        <meta property="og:title" content="Contact Information - PayMe India" />
       </MetaTags>
+      <Header {...props} />
       <div className='content'>
         <div className="container p-b-30">
           <div className="col col-md-12 reg-second-heading">

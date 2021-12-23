@@ -133,19 +133,18 @@ const SocialInitiative = (props) => {
 
   return (
     <>
-      <Header {...props} />
       <MetaTags>
-        <title>Social Initiative</title>
+        <title>PayMe India providing Job opportunities during Covid-19</title>
         <meta
           name="description"
-          content="PayMe India launches project ‘Saarthi’ to support families impacted by Coivd-19, through skill building and creation of employment opportunities."
-        />
+          content="PayMe India is working to support families impacted by Covid-19, through skill building and creation of employment opportunities."/>
         <meta
           name="keyword"
           content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
         />
-        <meta property="og:title" content="Social Initiative" />
+        <meta property="og:title" content="PayMe India providing Job opportunities during Covid-19" />
       </MetaTags>
+      <Header {...props} />
       <div className="content">
         <div className="banner">
           <div className="container">

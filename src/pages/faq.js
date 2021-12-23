@@ -17,14 +17,13 @@ const Faq = (props) => {
 
   return (
     <>
-      <Header {...props} />
       <MetaTags>
-        <title>Frequently Asked Questions - PayMeIndia</title>
-        <meta name="description" content="Do you have questions about how the loan app works? Frequently asked questions for all
-			loan related queries - PayMeIndia." />
+        <title>Personal Loan FAQs – Get Solution for your Personal Queries – PayMe India</title>
+        <meta name="description" content="Check all Personal loan FAQs here! Get answers of your personal loan queries related to its details, application process, documentation, eligibility, calculator, interest rates, processing fees etc. Visit PayMe India to know more." />
         <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
-        <meta property="og:title" content="Frequently Asked Questions - PayMeIndia" />
+        <meta property="og:title" content="Personal Loan FAQs – Get Solution for your Personal Queries – PayMe India" />
       </MetaTags>
+      <Header {...props} />
       <div className='content'>
         <div className="banner">
           <div className="container">

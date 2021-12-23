@@ -20,16 +20,13 @@ const Offerings = (props) => {
 
     return (
         <>
-            <Header {...props} active="offer"/>
             <MetaTags>
-            <title>Corporate - Instant Loans for Corporate - PayMeIndia</title>
-            <meta name="description" content="PayMeIndia offers an exclusive lending programme for the corporate
-			employees of organisations that are partnered or not partnered with PayMeIndia for Advance
-			Salary. We allow them to borrow up to a whopping 50% of their net monthly income, payable
-			against the following month’s salary." />
+            <title>Products & Features – PayMe India</title>
+            <meta name="description" content="PayMe India offers instant personal loan, pay rent, cibil report, Buy digital Gold, invest mutual fund, saarthi – job opportunity during covid-19." />
             <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
-            <meta property="og:title" content="Corporate - Instant Loans for Corporate - PayMeIndia" />
-        </MetaTags>
+            <meta property="og:title" content="Products & Features – PayMe India" />
+            </MetaTags>
+            <Header {...props} active="offer"/>
             <div className='content'>
                 <div className="banner">
                     <div className="container">
@@ -38,14 +35,10 @@ const Offerings = (props) => {
                                 <h1 className="heading1">Get Instant Loan Approval</h1>
                                 <p className="heading6">No more financial crunches with PayMe India. Avail instant loans upto Rs. 2 lakhs 
 anytime-anywhere with no hassle.</p>
-                                <br/>
-                                <br/>
-                                <Link className="btnLarge" onClick={() => {
-                                    props.hitAppUseCase({useCase: 'apply-loan'})
-                                    props.history.push({pathname: '/apply-loan'})
-                                }}>
+                                <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia' target='_blank'
+                                   className="btnLarge m-t-40">
                                     Apply now
-                                </Link>
+                                </a>
                             </div>
                             <div className="col-sm-12 col-md-2 ">
                                 &nbsp;
@@ -83,10 +76,9 @@ India in few simple steps.</p>
 
                             <div className="col-sm-12 col-md-6 bg-in-mobile-black">
                                 <h6 className="heading5 relative white-color">Payme Gold app</h6>
-                                <h3 className="heading3 relative white-color">Buy Gold Products, Coins and jewlleries now at Payme gold app.</h3>
-                                <p className="white-color">Shopping online is easy checkout options aren’t. Salt brings you the advantage of 
-buying now and paying later, Increasing the affordability of the purchase</p>
-                               <a href='https://creditscore.paymeindia.in' target='_blank'
+                                <h3 className="heading3 relative white-color">Invest in Digital Gold as low as Rs. 500</h3>
+                                <p className="white-color">Accumulate Gold digitally to build your savings over time and save for future life events</p>
+                               <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia' target='_blank'
                                    className="btnLarge m-t-40">Get App Now</a>
                             </div>
                             <div className="col-sm-12 col-md-6">

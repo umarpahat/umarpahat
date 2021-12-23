@@ -21,15 +21,14 @@ const OurNbfcPartners = (props) => {
 
     return (
         <>
-            <Header {...props} />
             <MetaTags>
-                <title>NBFC Partners - PayMeIndia</title>
-                <meta name="description" content="No more financial crunch. PayMeIndia gives you the amount of loan you require,
-		anytime-anywhere. Fill the application to apply now!"/>
+                <title>Our NBFC Partners – PayMe India</title>
+                <meta name="description" content="PayMe India with the help of its NBFC partners Arvog (Finkurve Financial Services Limited), Money2money Finance Private Limited, and PayMe India Financial Services Private Limited work with the objective of providing best-in-class service to its customers."/>
                 <meta name="keyword"
                       content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-                <meta property="og:title" content="NBFC Partners - PayMeIndia"/>
+                <meta property="og:title" content="Our NBFC Partners – PayMe India"/>
             </MetaTags>
+            <Header {...props} />
             <div className='content'>
                 <div className="partners" style={{background:'#082D48'}}>
                     <div className="container" >

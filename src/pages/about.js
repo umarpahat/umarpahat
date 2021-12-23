@@ -27,22 +27,16 @@ const About = (props) => {
 
   return (
     <>
-      <Header {...props} />
       <MetaTags>
-        <title>About Us - PayMeIndia</title>
+        <title>Avail Instant Advance Salary Loan - About us - PayMe India</title>
+        <meta name="description" content="PayMe India is an innovative fintech organization in India, it offers you a truly modern solution for an instant personal loan, salary loan, and pay rent."/>
         <meta
-          name="description"
-          content="PayMeIndia is an innovative FinTech organization that offers advance salary
-              loans, instant flexi loans, short term cash loans to the salaried corporate employees at
-        lowest interest rates. These loans are designed to meet all your short term financial needs such
-        as medical emergency or any other personal needs."
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
         />
-        <meta
-          name="keyword"
-          content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
-        />
-        <meta property="og:title" content="About Us - PayMeIndia" />
+        <meta property="og:title" content="Avail Instant Advance Salary Loan - About us - PayMe India" />
       </MetaTags>
+      <Header {...props} />
       <div className="content">
         <div className="aboutUs">
           <div className="container">

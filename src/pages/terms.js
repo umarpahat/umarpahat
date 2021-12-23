@@ -21,16 +21,15 @@ const Terms = (props) => {
 
     return (
         <>
-            <Header {...props} />
             <MetaTags>
-                <title>Terms and Conditions - PayMeIndia</title>
-                <meta name="description" content="Read PayMeIndia  Terms and Conditions now. This Agreement is a contract between customer
-			and PayMeIndia for using PayMeIndia Services." />
+                <title>Terms & Conditions – PayMe India</title>
+                <meta name="description" content="A complete agreement that contains all the terms and conditions that apply to the participation of individuals or legal entities in the approval or rejection of loans" />
                 <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
-                <meta property="og:title" content="Terms and Conditions - PayMeIndia" />
+                <meta property="og:title" content="Terms & Conditions – PayMe India" />
             </MetaTags>
+            <Header {...props} />
             <div className='content'>
-            <div className="services">
+                <div className="services">
                 <div className="container p-b-30">
                     <div className="row">
                         <div className="col col-md-12 reg-second-heading">

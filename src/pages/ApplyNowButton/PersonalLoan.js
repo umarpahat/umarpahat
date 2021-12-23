@@ -84,11 +84,15 @@ const Getquikloneapply = (props) => {
   return (
     <>
       <MetaTags>
-        <title>Instant Loans Online | Small Personal Loans - PayMe India</title>
+        <title> Instant Loans Online | Small Personal Loans - PayMe India</title>
         <meta name="description" content="Apply for an online Personal loan, Cash loan, small loan and get instant/ fast approval. To apply for a paperless loan, fill the application form and get the best interest rates."/>
         <meta
             name="keyword"
             content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+        />
+        <meta
+            property="og:title"
+            content="Instant Personal Loans Online | Small Personal Loans - PayMe India"
         />
       </MetaTags>
       <Header {...props} />

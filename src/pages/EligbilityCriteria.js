@@ -21,12 +21,20 @@ import criteria from "../images/svg/criteria-pic.svg";
 import googlePay from "../images/svg/google-play.svg";
 import appStore from "../images/svg/app-store.svg";
 import Header from "./Header";
+import MetaTags from "react-meta-tags";
 
 
 const EligbilityCriteria = (props) => {
 
     return (
-        <>  <Header {...props} />
+        <>
+            <MetaTags>
+                <title>Personal loan Eligibility criteria & Documents– PayMe India</title>
+                <meta name="description" content="Personal Loan Eligibility Online: Check your personal loan eligibility before applying – age, minimum salary, and work experience, etc. Know your eligibility and documents required for personal loan." />
+                <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+                <meta property="og:title" content="Personal loan Eligibility criteria & Documents– PayMe India" />
+            </MetaTags>
+            <Header {...props} />
             <div className="content">
                 <div className="banner">
                     <div className="container">
