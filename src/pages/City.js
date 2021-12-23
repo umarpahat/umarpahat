@@ -29,6 +29,17 @@ import NearMe from "../images/Random-India-image.png";
 import "@reach/dialog/styles.css";
 import { API_ENDPOINT_STAGING } from "../constant";
 import Footer from "./Footer";
+import ReactPixel from 'react-facebook-pixel';
+
+const options = {
+  autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
+  debug: false, // enable logs
+};
+ReactPixel.init('699730774332173', advancedMatching, options);
+
+ReactPixel.pageView(); // For tracking page view
+ReactPixel.track(LeadForCity); // For tracking default events. More info about standard events: https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events
+
 
 
 toast.configure();
@@ -222,7 +233,7 @@ export const City = (props) => {
   }, []);
 
   const GoogleAnalytics =()=>{
-    window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
@@ -242,6 +253,10 @@ gtag('config', 'G-1P4XMQV2BK');
     });
     return false;
   }
+
+
+
+
 
   return (
     <>
