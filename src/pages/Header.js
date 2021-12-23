@@ -101,7 +101,7 @@ const Header = (props) => {
                         </Link>
                         <ul className="dropdown-content">
                           <li>
-                            <Link to="/apply-loan">Personal loan</Link>
+                            <Link to="/personal-loan">Personal loan</Link>
                           </li>
 
                           <li>
@@ -138,7 +138,7 @@ const Header = (props) => {
                         </Link>
                         <ul className="dropdown-content">
                           <li>
-                            <Link to="/apply-loan">Personal loan</Link>
+                            <Link to="/personal-loan">Personal loan</Link>
                           </li>
 
                           <li>
@@ -278,7 +278,7 @@ const Header = (props) => {
                                 <Link to="/faq">FAQ</Link>
                               </li>
                               <li>
-                                <Link to="/terms">T&C</Link>
+                                <Link to="/terms">Terms & Conditions</Link>
                               </li>
                             </ul>
                           </div>

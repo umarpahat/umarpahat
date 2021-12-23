@@ -20,15 +20,14 @@ const Policy = (props) => {
 
     return (
         <>
-            <Header {...props} />
             <MetaTags>
-                <title>Privacy Policy - PayMeIndia</title>
-                <meta name="description" content="Privacy Policy - The following statement is about our information gathering and dissemination
-			practices - PayMeIndia."/>
+                <title>Privacy Policy - PayMe India</title>
+                <meta name="description" content="Check out Loan against Privacy Policy Interest Rates, calculate EMI and check your Eligibility for loans against Insurance Policies like etc."/>
                 <meta name="keyword"
                       content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-                <meta property="og:title" content="Privacy Policy - PayMeIndia"/>
+                <meta property="og:title" content="Privacy Policy - PayMe India"/>
             </MetaTags>
+            <Header {...props} />
             <div className='content'>
                 <div className="services">
                     <div className="container">

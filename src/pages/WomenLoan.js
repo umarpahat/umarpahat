@@ -40,6 +40,7 @@ import timeline from "../images/Organization-Events.png";
 import centralLocation from "../images/Central-Location.png";
 import health from "../images/Medical-Insurance.png";
 import environment from "../images/Cool-Environment.png";
+import MetaTags from "react-meta-tags";
 
 export const WomenLoan = (props) => {
   const [name, setName] = useState("");
@@ -138,8 +139,13 @@ export const WomenLoan = (props) => {
   };
   return (
     <>
+      <MetaTags>
+        <title>Mahila Loan: Get Personal Loan for Women - PayMe India</title>
+        <meta name="description" content="Avail of instant approved personal loans from PayMe India. We provide loan facilities at competitive interest rates to women with an aim to help them meet their financial needs. " />
+        <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+        <meta property="og:title" content="Mahila Loan: Get Personal Loan for Women - PayMe India" />
+      </MetaTags>
       <Header />
-
       <div className="col-md-6 col-sm-12 hideDesktop">
         {otpScreen ? (
           <OtpDialog

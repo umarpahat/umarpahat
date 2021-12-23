@@ -347,15 +347,14 @@ const MediaCoverage = (props) => {
 
     return (
         <>
-            <Header {...props} />
             <MetaTags>
-                <title>Instant Personal Loans Online | Small Personal Loans - PayMe India</title>
-                <meta name="description" content="Instant personal loans online at an attractive interest rates.
-		Apply small personal loans and get your loan approve instantly. Download PayMe India app now!!"/>
+                <title>Media Coverage - PayMe India</title>
+                <meta name="description" content="Descriptions: Know what the world is buzzing about PayMe India. Our new and exciting innovation always keeps us in media coverage."/>
                 <meta name="keyword"
                       content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-                <meta property="og:title" content="Instant Personal Loans Online | Small Personal Loans - PayMe India"/>
+                <meta property="og:title" content="Media Coverage - PayMe India"/>
             </MetaTags>
+            <Header {...props} />
             <div className='content'>
                 <div className="banner">
                     <div className="container">

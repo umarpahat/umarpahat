@@ -41,6 +41,7 @@ import GetCibilReport from "./pages/GetCibilReport";
 import womenLoan from "./pages/WomenLoan";
 import EligbilityCriteria from "./pages/EligbilityCriteria";
 import City from "./pages/City"
+import PersonalLoan from "./pages/ApplyNowButton/PersonalLoan";
 
 
 function Routes() {
@@ -49,6 +50,7 @@ function Routes() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/apply-loan" component={Getquikloneapply} />
+        <Route exact path="/personal-loan" component={PersonalLoan} />
         <Route exact path="/pay-rent" component={Getquikloneapply} />
         <Route
           exact

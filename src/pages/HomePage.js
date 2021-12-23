@@ -124,20 +124,16 @@ const HomePage = (props) => {
     <>
       <MetaTags>
         <title>
-          Instant Personal Loans Online | Small Personal Loans - PayMe India
+          Apply for Instant Personal loan app| Quick Cash loan - Pay Me India
         </title>
-        <meta
-          name="description"
-          content="Instant personal loans online at an attractive interest rates.
-		Apply small personal loans and get your loan approve instantly. Download PayMe India app now!!"
-        />
+        <meta name="description" content="Get a pre-approved instant personal loan online in India with the lowest interest rate. Apply for Quick Cash Loans up to 2L at PayMe India. Check your offers & eligibility now."/>
         <meta
           name="keyword"
           content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
         />
         <meta
           property="og:title"
-          content="Instant Personal Loans Online | Small Personal Loans - PayMe India"
+          content="Apply for Instant Personal loan app| Quick Cash loan - Pay Me India"
         />
       </MetaTags>
       <Header {...props} active="home" />

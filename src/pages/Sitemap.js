@@ -15,15 +15,14 @@ const Sitemap = (props) => {
 
     return (
         <>
-            <Header {...props} />
             <MetaTags>
-                <title>Sitemap - PayMeIndia</title>
-                <meta name="description"
-                      content=" Vist PayMeIndia Sitemap to easily navigate the website and explore new pages every day."/>
+                <title>Apply Instant Personal Loan Online | Quick Loan Approval – PayMe India</title>
+                <meta name="description" content="Apply for a best & instant personal loan online at PayMe India. We offer quick and instant loan approval to those who are in need of emergency loan. Apply now!"/>
                 <meta name="keyword"
                       content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-                <meta property="og:title" content="Sitemap - PayMeIndia"/>
+                <meta property="og:title" content="Apply Instant Personal Loan Online | Quick Loan Approval – PayMe India"/>
             </MetaTags>
+            <Header {...props} />
             <div className='content'>
                 <div className="services">
                     <div className="container p-b-30">
