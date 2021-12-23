@@ -30,7 +30,7 @@ import "@reach/dialog/styles.css";
 import { API_ENDPOINT_STAGING } from "../constant";
 import Footer from "./Footer";
 import ReactPixel from 'react-facebook-pixel';
-
+const advancedMatching = { em: 'pramodsinghiit2016@email.com' };
 const optionsPixel = {
   autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
   debug: false, // enable logs
@@ -47,7 +47,7 @@ const options = {
 };
 
 console.log("initiate before")
-ReactPixel.init('699730774332173', optionsPixel);
+ReactPixel.init('699730774332173',advancedMatching, optionsPixel);
 console.log("initiate after")
 
 ReactPixel.pageView(); // For tracking page view
