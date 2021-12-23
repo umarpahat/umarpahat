@@ -29,12 +29,12 @@ import NearMe from "../images/Random-India-image.png";
 import "@reach/dialog/styles.css";
 import { API_ENDPOINT_STAGING } from "../constant";
 import Footer from "./Footer";
-import ReactPixel from 'react-facebook-pixel';
-const advancedMatching = { em: 'pramodsinghiit2016@email.com' };
-const optionsPixel = {
-  autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
-  debug: false, // enable logs
-};
+
+
+// const optionsPixel = {
+//   autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
+//   debug: false, // enable logs
+// };
 
 
 
@@ -46,12 +46,12 @@ const options = {
   closeButton: false,
 };
 
-console.log("initiate before")
-ReactPixel.init('699730774332173',advancedMatching, optionsPixel);
-console.log("initiate after")
+// console.log("initiate before")
+// ReactPixel.init('699730774332173',advancedMatching, optionsPixel);
+// console.log("initiate after")
 
-ReactPixel.pageView(); // For tracking page view
-// For tracking default events. More info about standard events: https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events
+// ReactPixel.pageView(); // For tracking page view
+// // For tracking default events. More info about standard events: https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events
 
 const images = {
   Delhi,
@@ -192,7 +192,7 @@ export const City = (props) => {
       .put(url, data)
       .then(function (response) {
         gtag_report_conversion();
-        ReactPixel.trackSingleCustom('699730774332173');
+window.fbq('track', 'Lead');
         window.location.href =
           "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia";
       })
@@ -233,19 +233,18 @@ export const City = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
    GoogleAnalytics();
-   const ReactPixel =  require('react-facebook-pixel');
-    ReactPixel.default.init('699730774332173');
-    
+   faceBook()
+   fbq("init", "699730774332173");
   }, []);
 
-  const GoogleAnalytics =()=>{
+const GoogleAnalytics =()=>{
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 gtag('config', 'G-1P4XMQV2BK');
 (window,document,'script','https://www.googletagmanager.com/gtag/js?id=G-1P4XMQV2BK','ga');
-  }
+}
 
   function gtag_report_conversion(url) {
     var callback = function () {
@@ -260,7 +259,35 @@ gtag('config', 'G-1P4XMQV2BK');
     return false;
   }
 
-
+const faceBook=()=>{
+  !(function (f, b, e, v, n, t, s) {
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod
+        ? n.callMethod.apply(n, arguments)
+        : n.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = !0;
+    n.version = "2.0";
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = !0;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s);
+  })(
+    window,
+    document,
+    "script",
+    "https://connect.facebook.net/en_US/fbevents.js"
+  );
+  fbq("init", "699730774332173");
+  fbq("track", "PageView");
+  fbq('track', 'Lead');
+  fbq('track', 'LeadForCity');
+}
 
 
 
