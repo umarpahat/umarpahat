@@ -154,6 +154,8 @@ export const City = (props) => {
       .then(function (response) {
         console.log("city", response);
         console.log(response.status);
+        gtag_report_conversion();
+        window.fbq('track', 'Lead');
         setOtpScreen(true);
       })
       .catch(function (error) {
@@ -191,6 +193,64 @@ export const City = (props) => {
     toast.error("Please login google account in your device", { ...options });
     setTimeout(() => setIsButtonDisabled(false), 3000);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    GoogleAnalytics();
+    faceBook()
+    fbq("init", "699730774332173");
+  }, []);
+
+  const GoogleAnalytics =()=>{
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1P4XMQV2BK');
+    (window,document,'script','https://www.googletagmanager.com/gtag/js?id=G-1P4XMQV2BK','ga');
+  }
+
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof url != "undefined") {
+        window.location = url;
+      }
+    };
+    gtag("event", "conversion", {
+      send_to: "AW-875618776/9y-ACJaIgosDENjDw6ED",
+      event_callback: callback,
+    });
+    return false;
+  }
+
+  const faceBook=()=>{
+    !(function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+    );
+    fbq("init", "699730774332173");
+    fbq("track", "PageView");
+    fbq('track', 'Lead');
+    fbq('track', 'LeadForCity');
+  }
   return (
     <>
       {
