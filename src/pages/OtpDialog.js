@@ -17,37 +17,32 @@ const OtpDialog = (props) => {
   const [otperr, setOtperr] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
   const [showDialogCity, setShowDialogCity] = useState(true);
+  const [disableToast, setDisableToast] = useState(true);
 
   const CloseOtpScreen = () => {
-    if(props.CloseOtpScreen){
-  props.CloseOtpScreen()}
-  if(props.closeCity)
-  {
-  props.closeCity()
-  }
-  if(props.closeOtpScreenMess)
-  {
-    props.closeOtpScreenMess();
-  }
-  if(props.closeOtpScreen)
-  {
-    props.closeOtpScreen();
-  }
-  if(props.WhatsappOtpScreen)
-  {
-    props.WhatsappOtpScreen();
-  }
-};
-  
-
+    if (props.CloseOtpScreen) {
+      props.CloseOtpScreen();
+    }
+    if (props.closeCity) {
+      props.closeCity();
+    }
+    if (props.closeOtpScreenMess) {
+      props.closeOtpScreenMess();
+    }
+    if (props.closeOtpScreen) {
+      props.closeOtpScreen();
+    }
+    if (props.WhatsappOtpScreen) {
+      props.WhatsappOtpScreen();
+    }
+  };
 
   const SubmitOtp = () => {
     if (otp === "") {
       setOtperr("OTP can't be empty");
       return;
     }
-    if(otp.length!==4)
-    {
+    if (otp.length !== 4) {
       setOtperr("OTP should be 4 digits");
       return;
     }
@@ -61,7 +56,10 @@ const OtpDialog = (props) => {
       axios
         .post(url, data)
         .then(function (response) {
-          toast.success("data successfully submitted", { ...options });
+          if (disableToast) {
+            setDisableToast(false);
+            toast.success("data successfully submitted", { ...options });
+          }
           CloseOtpScreen();
           console.log("confitm otp", response);
         })
@@ -115,7 +113,7 @@ const OtpDialog = (props) => {
               value={otp}
               onChange={(e) => {
                 setOtperr("");
-                setOtp(e.target.value.slice(0,4));
+                setOtp(e.target.value.slice(0, 4));
               }}
             />
             {otperr ? (
