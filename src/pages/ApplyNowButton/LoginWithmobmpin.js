@@ -226,7 +226,7 @@ function LoginWithMobMpin(props) {
             </Container>
              </div>
         )}
-     
+      <Footer/>
     </>
   );
 }

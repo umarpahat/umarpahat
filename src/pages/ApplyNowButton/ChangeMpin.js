@@ -195,7 +195,7 @@ function ChangeMpin(props) {
           </Container>
           </div>
         )}
-     
+      <Footer/>
     </>
   );
 }

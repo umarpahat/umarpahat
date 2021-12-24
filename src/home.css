@@ -46,19 +46,8 @@ h3 {
 h4 {
     font-weight: 500;
     font-size: 18px;
-    line-height: 135.19%;
-}
-
-h5 {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 135.19%;
-}
-
-h6 {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 135.19%;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 .darkBg {
@@ -3367,7 +3356,6 @@ a {
     .hideDesktop {
         display: block;
     }
-
     .mailPic, .contact {
         width: 100%;
     }
@@ -3408,7 +3396,7 @@ a {
         font-size: 24px;
     }
 
-    .btnLarge {
+    .btnLarge{
         display: block;
         height: 30px;
         font-size: 14px;
@@ -3416,7 +3404,6 @@ a {
         padding: 0 5px;
         white-space: nowrap;
     }
-
     .MuiSlider-thumb {
         top: 21px;
     }

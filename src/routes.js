@@ -42,6 +42,7 @@ import womenLoan from "./pages/WomenLoan";
 import EligbilityCriteria from "./pages/EligbilityCriteria";
 import City from "./pages/City"
 import PersonalLoan from "./pages/ApplyNowButton/PersonalLoan";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 
 function Routes() {
@@ -103,6 +104,7 @@ function Routes() {
         <Route exact path="/kycoption" component={KycOption} />
         <Route exact path="/get-cibil-report" component={GetCibilReport} />
         <Route exact path="/bank-details-payme" component={Bankdetailspayme} />
+        <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         <Route exact path="/change-mpin" component={ChangeMpin} />
         <Route exact path="/sitemap" component={Sitemap} />
         <Route exact path="/personal-loan-for-women" component={womenLoan} />
