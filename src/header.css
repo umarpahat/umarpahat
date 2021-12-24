@@ -10,7 +10,7 @@ header {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     padding: 0;
     margin: 0;
     font-size: 18px;
@@ -40,7 +40,7 @@ body {
 }
 
 .borderTop h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -58,6 +58,7 @@ body {
 
 }
 
+
 .social_link {
     display: flex;
 }
@@ -66,12 +67,28 @@ body {
     padding: 10px;
 
 }.social_link > div:nth-child(1) {
-     padding-left:0;
+    padding-left:0;
 
- }
+}
 
 .social_link > div img{
     height: 30px;
+
+}
+.home_social_link {
+    display: flex;
+}
+
+.home_social_link > div {
+    padding: 10px;
+
+}.home_social_link > div:nth-child(1) {
+    padding-left:0;
+
+}
+
+.home_social_link > div img{
+    height: 40px;
 
 }
 .carousel .thumbs-wrapper{
@@ -105,7 +122,7 @@ body {
     width: 30px;
     position: absolute;
     right: 10px;
-    top: 48px
+    top:48px
 }
 
 .img_google {
@@ -317,16 +334,8 @@ button.button-gray:hover {
     margin-top: 10px;
 }
 
-.m-t-40 {
-    margin-top: 40px;
-}
-
 .p-t-20 {
     padding-top: 20px;
-}
-
-.p-t-30 {
-    padding-top: 30px;
 }
 
 .p-b-30 {
@@ -349,11 +358,13 @@ button.button-gray:hover {
     padding-top: 70px;
 }
 
+nav li{
+    padding: 5px 0;
+}
 nav li a {
-    display: block;
+    display: initial;
     text-decoration: none !important;
     color: #fff;
-    padding: 10px 0;
     transition: color 0.3s ease;
     font-weight: 500;
     font-size: 14px;
@@ -444,16 +455,13 @@ nav a:hover {
     opacity: 1;
     transform: rotate(-45deg) translate(1px, 0);
 }
-
-.input-range__label--value, .input-range__label--min {
+.input-range__label--value, .input-range__label--min{
     display: none;
 }
-
-.input-range__track--background, .input-range__track--background {
-    background-color: #eee !important;
+.input-range__track--background,.input-range__track--background{
+    background-color:#eee !important;
 }
-
-.input-range__label {
+.input-range__label{
     margin-right: 20px;
     display: none;
 }
@@ -511,7 +519,7 @@ nav a:hover {
     line-height: 24pt;
     opacity: 1;
     filter: alpha(opacity=100);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .full-height {
@@ -610,6 +618,10 @@ a {
 
     .center-mobile {
         text-align: center;
+    }
+
+    .p-t-20-mobile{
+        padding-top: 20px;
     }
 
     .initiative p {

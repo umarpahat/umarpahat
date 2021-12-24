@@ -10,7 +10,7 @@ import {Link} from "react-router-dom";
 import $ from "jquery";
 import arvog from "../images/arvog.jpg";
 import money2me from "../images/money2me.jpg";
-import paymeindia from "../images/paymeindia.png";
+import paymeindia from "../images/logo.png";
 import arthmate from "../images/Arthmatelogo.png";
 import MetaTags from "react-meta-tags";
 import mailBox from "../images/svg/mail-box.svg";
@@ -21,42 +21,53 @@ const OurNbfcPartners = (props) => {
 
     return (
         <>
-            <Header {...props} />
             <MetaTags>
-                <title>NBFC Partners - PayMeIndia</title>
-                <meta name="description" content="No more financial crunch. PayMeIndia gives you the amount of loan you require,
-		anytime-anywhere. Fill the application to apply now!"/>
+                <title>Our NBFC Partners – PayMe India</title>
+                <meta name="description" content="PayMe India with the help of its NBFC partners Arvog (Finkurve Financial Services Limited), Money2money Finance Private Limited, and PayMe India Financial Services Private Limited work with the objective of providing best-in-class service to its customers."/>
                 <meta name="keyword"
                       content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-                <meta property="og:title" content="NBFC Partners - PayMeIndia"/>
+                <meta property="og:title" content="Our NBFC Partners – PayMe India"/>
             </MetaTags>
+            <Header {...props} />
             <div className='content'>
-                <div className="partners">
-                    <div className="container">
+                <div className="partners" style={{background:'#082D48'}}>
+                    <div className="container" >
                         <div className="col col-md-12 reg-second-heading ">
-                            <h1 className='heading1 blue-color p-t-80'>Our NBFC Partners</h1>
+                            <h1 className='heading1 white-color p-t-50'>Our NBFC Partners</h1>
                         </div>
-                        <div className="row p-b-30 nbfc_img row justify-content-md-center p-t-80">
+                        <div className="row p-b-30 nbfc_img row justify-content-md-center p-t-50">
 
-                            <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                            <div className="col-lg-3 col-md-2 col-sm-12 col-xs-12">
+                            <div className="rounded-shadow">
                                 <img className='img-fluid' src={paymeindia} alt="paymeindia"/>
                             </div>
-                            <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                            </div>
+                            <div className="col-lg-3 col-md-2 col-sm-12 col-xs-12">
+                            <div className="rounded-shadow">
                                 <img className='img-fluid' src={money2me} alt="paymeindia"/>
                             </div>
-                            <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                            </div>
+                            <div className="col-lg-3 col-md-2 col-sm-12 col-xs-12">
+                            <div className="rounded-shadow">
                                 <img className='img-fluid' src={arvog} alt="paymeindia"/>
                             </div>
-                            <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                            </div>
+                            <div className="col-lg-3 col-md-2 col-sm-12 col-xs-12">
+                            <div className="rounded-shadow">
                                 <img className='img-fluid' src={arthmate} alt="Arthmate"/>
+                            </div>
                             </div>
 
                         </div>
+                        </div>
+                        </div>
+                <div className="partners">
+                    <div className="container">
                         <div className="row p-b-30 nbfc_img row justify-content-md-center p-t-80">
 
                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                                <h4 className="heading4" style={{fontSize:"34px"}}>About our partners</h4>
+                                <h4 className="heading4 p-b-20" style={{fontSize:"34px"}}>About our partners</h4>
                                 <p>We work with an objective to provide best in class service to our customers with help
                                     of our NBFCs Partners Arvog (Finkurve Financial Services Limited), Money2money
                                     Finance Private Limited, and PayMe India financial services private limited.</p>
@@ -135,23 +146,7 @@ const OurNbfcPartners = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="contactBox p-t-80">
-                    <div className="container">
-                        <div className="row justify-content-md-center">
-                            <div className="col-md-9 text-center p-t-30 p-b-30 d-flex contactLine">
-                                <div className='mailPic'>
-                                    <img className="img-fluid" src={mailBox} alt="Mail"/>
-                                </div>
-                                <div className='contact'>
-                                    <h4 className="heading4">Contact Us</h4>
-                                    <p>Please contact us at<br/>
-                                        <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <Footer/>
         </>

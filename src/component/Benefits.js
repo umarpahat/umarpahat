@@ -16,8 +16,8 @@ export const Benefits = (props) => {
                     <div className="col col-md-12 reg-second-heading white-color">
                         <h4>Benefits of PayMe India</h4>
                     </div>
-                    <div className="row align-items-center p-t-80">
-                        <div className="col-sm-12 col-md-6">
+                    <div className="row align-items-center">
+                        <div className="col-sm-4 offset-sm-4 col-md-6  offset-md-0">
                             <div className="farmer text-center">
                                 <img
                                     src={benefit}
@@ -27,7 +27,7 @@ export const Benefits = (props) => {
                             </div>
                         </div>
                         <div className="col-sm-12 col-md-6 bg-in-mobile">
-                            <p className="p-b-30  relative" style={{color: "#fff"}}>
+                            <p className="relative" style={{color: "#fff"}}>
                                 <span className="font110">“</span>
                                 <Link
                                     className="white-color"
@@ -40,10 +40,6 @@ export const Benefits = (props) => {
                                 journey with PayMe India.<span className="font110 transform">“</span>
 
                             </p>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
                         </div>
                     </div>
                 </div>

@@ -17,14 +17,13 @@ const Faq = (props) => {
 
   return (
     <>
-      <Header {...props} />
       <MetaTags>
-        <title>Frequently Asked Questions - PayMeIndia</title>
-        <meta name="description" content="Do you have questions about how the loan app works? Frequently asked questions for all
-			loan related queries - PayMeIndia." />
+        <title>Personal Loan FAQs – Get Solution for your Personal Queries – PayMe India</title>
+        <meta name="description" content="Check all Personal loan FAQs here! Get answers of your personal loan queries related to its details, application process, documentation, eligibility, calculator, interest rates, processing fees etc. Visit PayMe India to know more." />
         <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
-        <meta property="og:title" content="Frequently Asked Questions - PayMeIndia" />
+        <meta property="og:title" content="Personal Loan FAQs – Get Solution for your Personal Queries – PayMe India" />
       </MetaTags>
+      <Header {...props} />
       <div className='content'>
         <div className="banner">
           <div className="container">
@@ -56,7 +55,7 @@ const Faq = (props) => {
                     1. What is a short-term loans and how does it work?
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="0">
-                  <p className="heading6 p-t-15" style={{marginLeft:20}}>
+                  <p className="heading6 " style={{marginLeft:20}}>
                       
                       Short-term loans designed to help you for immediate
                       expenses. You are required to pay the full amount latest
@@ -73,7 +72,7 @@ const Faq = (props) => {
                     2. Do you offer services in my city?
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="1">
-                  <p className="heading6 p-t-15" style={{marginLeft:20}}>
+                  <p className="heading6 " style={{marginLeft:20}}>
                       PayMe India is currently offering its sevices in
                       Delhi/NCR, Mumbai, Pune, Hyderabad, Bengaluru and Chennai.
                    </p>
@@ -84,7 +83,7 @@ const Faq = (props) => {
                     3. What is my Loan eligibility/How much i can borrow?
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="2">
-                  <p className="heading6 p-t-15" style={{marginLeft:20}}>
+                  <p className="heading6 " style={{marginLeft:20}}>
                       Your loan eligibility is decided by our system basis some
                       internal lending criteria/algo. However the same may
                       increase over the period depending upon your repayment
@@ -97,7 +96,7 @@ const Faq = (props) => {
                     4. What all documents are required to apply for a loan?
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="3">
-                  <p className="heading6 p-t-15" style={{marginLeft:20}}>
+                  <p className="heading6 " style={{marginLeft:20}}>
                       Post downloading our app, it will reflect a number of
                       documents which are mandatory from RBI to complete you
                       KYC. We need all those documents e.g. your salary slip,
@@ -111,7 +110,7 @@ const Faq = (props) => {
                     same?
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="4">
-                  <p className="heading6 p-t-15" style={{marginLeft:20}}>
+                  <p className="heading6 " style={{marginLeft:20}}>
                       We regret to inform that we need your salary entry in your
                       bank statement and PF deduction on your payslip to process
                       your loan.
@@ -123,7 +122,7 @@ const Faq = (props) => {
                     6. How can i repay the loan?
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="5">
-                  <p className="heading6 p-t-15" style={{marginLeft:20}}>
+                  <p className="heading6 " style={{marginLeft:20}}>
                       You will be provided an account number which can be used
                       for repayment. As an alternative the same shall get
                       deducted from your provided account automatically via
@@ -137,7 +136,7 @@ const Faq = (props) => {
                     fund?
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="6">
-                  <p className="heading6 p-t-15" style={{marginLeft:20}}>
+                  <p className="heading6 " style={{marginLeft:20}}>
                       You will receive a notification via mobile app as well as
                       SMS on registered mobile once the loan is approved. The
                       amount will be credited into your account either same or
@@ -150,7 +149,7 @@ const Faq = (props) => {
                     8. What if i am unable to pay the loan agreed time?
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="7">
-                  <p className="heading6 p-t-15" style={{marginLeft:20}}>
+                  <p className="heading6 " style={{marginLeft:20}}>
                       If you feel that you would not be able to pay the dues on
                       agreed repayment date. please contact us five working days
                       prior to your repayment date to stop the NACH and rollover
@@ -165,7 +164,7 @@ const Faq = (props) => {
                     loan?
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="8">
-                  <p className="heading6 p-t-15" style={{marginLeft:20}}>
+                  <p className="heading6 " style={{marginLeft:20}}>
                       You can re-apply for a new loan post five days of your
                       repayment.
                    </p>
@@ -176,7 +175,7 @@ const Faq = (props) => {
                     10. What if I change my job or contact details?
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="9">
-                  <p className="heading6 p-t-15" style={{marginLeft:20}}>
+                  <p className="heading6 " style={{marginLeft:20}}>
                       Ideally you should inform PayMe India immediately about
                       any such change. if our executive will not be able to
                       reach you they may approach the references asking about
@@ -189,7 +188,7 @@ const Faq = (props) => {
                     11. What if i default the loan?
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="10">
-                  <p className="heading6 p-t-15" style={{marginLeft:20}}>
+                  <p className="heading6 " style={{marginLeft:20}}>
                       A: If in case you have some challenges in repayment you
                       can discuss the same with your executive and find n
                       solution. However if you will stop responding our
@@ -220,23 +219,7 @@ const Faq = (props) => {
           </div>
         </div>
       </div>
-        <div className="contactBox p-t-80">
-          <div className="container">
-            <div className="row justify-content-md-center">
-              <div className="col-md-9 text-center p-t-30 p-b-30 d-flex contactLine">
-                <div className='mailPic'>
-                  <img className="img-fluid" src={mailBox} alt="Mail"/>
-                </div>
-                <div className='contact'>
-                  <h4 className="heading4">Contact Us</h4>
-                  <p>Please contact us at<br/>
-                    <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
         <Footer/>
     </>

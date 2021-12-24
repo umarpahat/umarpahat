@@ -40,6 +40,7 @@ import timeline from "../images/Organization-Events.png";
 import centralLocation from "../images/Central-Location.png";
 import health from "../images/Medical-Insurance.png";
 import environment from "../images/Cool-Environment.png";
+import MetaTags from "react-meta-tags";
 
 export const WomenLoan = (props) => {
   const [name, setName] = useState("");
@@ -52,8 +53,8 @@ export const WomenLoan = (props) => {
   const [topicerr, setTopicErr] = useState("");
   const [otpScreen, setOtpScreen] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
-  const openCity = () => setShowDialogCity(true);
-  const closeCity = () => setShowDialogCity(false);
+  
+  const closeCity = () => setOtpScreen(false);
 
   let url = "";
   let reg = /^[0-9]{1,10}$/;
@@ -84,8 +85,8 @@ export const WomenLoan = (props) => {
       return;
     }
 
-    console.log("hhh");
-    url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
+   
+   let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
 
     let data = {
       name: name,
@@ -98,7 +99,6 @@ export const WomenLoan = (props) => {
     axios
       .post(url, data)
       .then(function (response) {
-        
         console.log("city", response);
         setOtpScreen(true);
       })
@@ -107,7 +107,6 @@ export const WomenLoan = (props) => {
         console.log(error);
       });
   };
-
 
   const GoogleCliendId =
     "435990090197-cjdhhppfhvq8e9n0cullbtco1u22mf1g.apps.googleusercontent.com";
@@ -140,11 +139,17 @@ export const WomenLoan = (props) => {
   };
   return (
     <>
+      <MetaTags>
+        <title>Mahila Loan: Get Personal Loan for Women - PayMe India</title>
+        <meta name="description" content="Avail of instant approved personal loans from PayMe India. We provide loan facilities at competitive interest rates to women with an aim to help them meet their financial needs. " />
+        <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+        <meta property="og:title" content="Mahila Loan: Get Personal Loan for Women - PayMe India" />
+      </MetaTags>
       <Header />
-
       <div className="col-md-6 col-sm-12 hideDesktop">
         {otpScreen ? (
           <OtpDialog
+          closeCity={closeCity}
           {...props}
             name={name}
             email={email}
@@ -169,7 +174,12 @@ export const WomenLoan = (props) => {
                 value={name}
                 onChange={(e) => {
                   setNameerr("");
-                  setName(e.target.value);
+                  if (e.target.value.match(/^[A-Za-z{" "}]+$/)) {
+                    setName(e.target.value);
+                  } else if (e.target.value.length === 0) {
+                    setName(e.target.value);
+                  }
+                  
                 }}
               />
               {nameerr ? (
@@ -206,7 +216,7 @@ export const WomenLoan = (props) => {
                 value={phone}
                 onChange={(e) => {
                   setPhoneerr("");
-                  setPhone(e.target.value);
+                  setPhone(e.target.value.slice(0,10));
                 }}
               />
               {phoneerr ? (
@@ -531,7 +541,7 @@ export const WomenLoan = (props) => {
                     value={phone}
                     onChange={(e) => {
                       setPhoneerr("");
-                      setPhone(e.target.value);
+                      setPhone(e.target.value.slice(0,10));
                     }}
                   />
                   {phoneerr ? (
@@ -548,6 +558,7 @@ export const WomenLoan = (props) => {
                     display: "block",
                     cursor: "pointer",
                     color: "#fff",
+                    width:"100%",
                     background: "#F60093",
                   }}
                   onClick={getOtp}

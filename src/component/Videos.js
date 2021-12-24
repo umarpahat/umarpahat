@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
-import blogPic from "../images/logo.png";
-import {Link} from "react-router-dom";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import {Carousel} from 'react-responsive-carousel';
+import Slider from "react-slick";
+
 
 export const Videos = (props) => {
     const [posts, setPosts] = useState([]);
@@ -12,29 +10,60 @@ export const Videos = (props) => {
             .then((res) => res.json())
             .then((res) => setPosts(res.posts));
     }, []);
-
+    var settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
     return (
-        <div className="container-fluid px-3 px-sm-5 blog p-t-40">
+        <div className="container-fluid px-sm-5 blog p-t-40">
             <div className="col-sm-12 col-md-12 reg-second-heading text-center">
                 <h4>Our Videos to watch</h4>
             </div>
             <div className="container p-t-40">
-                <Carousel>
-                    <div className="row">
-                        <div className="col-sm-12 col-md-4">
-                            <object data='https://www.youtube.com/embed/ODylYT3vvQE?autoplay=1' width='450px'
+                        <Slider {...settings}>
+                            <div className="blog-div">
+                            <object data='https://www.youtube.com/embed/ODylYT3vvQE?autoplay=1' width='100%'
                                     height='230px'/>
                         </div>
-                        <div className="col-sm-12 col-md-4">
-                            <object data='https://www.youtube.com/embed/nH4yxYZpfeY?autoplay=1' width='450px'
+                        <div className="blog-div">
+                            <object data='https://www.youtube.com/embed/nH4yxYZpfeY?autoplay=1' width='100%'
                                     height='230px'/>
                         </div>
-                        <div className="col-sm-12 col-md-4">
-                            <object data='https://www.youtube.com/embed/M9uYTo_-_ow?autoplay=1' width='450px'
+                        <div className="blog-div">
+                            <object data='https://www.youtube.com/embed/M9uYTo_-_ow?autoplay=1' width='100%'
                                     height='230px'/>
                         </div>
-                    </div>
-                </Carousel>
+                        </Slider>
             </div>
         </div>
     );

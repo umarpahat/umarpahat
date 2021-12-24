@@ -13,6 +13,7 @@ import Header from "../Header";
 import "../../home.css";
 import letsStart from "../../images/animated/lets-start-animation.gif";
 import Cookies from "universal-cookie";
+import MetaTags from "react-meta-tags";
 import Footer from "../Footer";
 const cookies = new Cookies();
 
@@ -83,7 +84,14 @@ const Getquikloneapply = (props) => {
 
   return (
     <>
-      {/* {!newUser ? <Header /> : null } */}
+      <MetaTags>
+        <title>Instant Loans Online | Small Personal Loans - PayMe India</title>
+        <meta name="description" content="Apply for an online Personal loan, Cash loan, small loan and get instant/ fast approval. To apply for a paperless loan, fill the application form and get the best interest rates."/>
+        <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+        />
+      </MetaTags>
       <Header {...props} />
      
           {loader ? (

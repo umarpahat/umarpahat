@@ -1,89 +1,73 @@
 import React, {Component} from "react";
 import goldStarIcon from "../images/svg/star.svg";
-import userIcon from "../images/svg/user-icon.svg";
+import halfStarIcon from "../images/svg/star-half.svg";
+import google from "../images/svg/google.svg";
+import Slider from "react-slick";
 
 export const Users = (props) => {
+    var settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3,
+        autoplay: true,
+        slidesToScroll: 1,
+        initialSlide: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
     return (
-        <div className="container-fluid px-3 px-sm-5 testimonial p-t-40 p-b-30">
+        <div className="container-fluid px-3 px-sm-5 testimonial p-t-20 p-b-30">
             <div className="col-sm-12 col-md-12 reg-second-heading text-center">
                 <h4>Listen Our Users</h4>
             </div>
-            <div className="container p-t-80">
-                <div className="row">
+            <div className="container p-t-20">
+                <div className="row ">
                     <div className="col col-md-7 ">
-                        <h4 className="">Our ratings on Google store</h4>
-                        <div><strong style={{fontSize:30, fontWeight:600}}>5.0 </strong>
+                        <h4 className="our_rating">Our ratings on  <img
+                            src={google}
+                            alt="G"
+                            className="img-fluid"
+                        />oogle store</h4>
+                        <div className='star-align'><strong style={{fontSize:30, fontWeight:600}}>4.3 </strong>
                             <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                            <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                            <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                            <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                            <img
-                                src={goldStarIcon}
+                                src={halfStarIcon}
                                 alt="Star"
                                 className="img-fluid"
                             />
                         </div>
                     </div>
-                    <div className="col col-md-5 ">
-                        <h4 className="">Our ratings on Apple store</h4>
-                        <div><strong style={{fontSize:30, fontWeight:600}}>5.0 </strong>
-                            <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                            <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                            <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                            <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                            <img
-                                src={goldStarIcon}
-                                alt="Star"
-                                className="img-fluid"
-                            />
-                        </div>
-                    </div>
+
                 </div>
             </div>
-            <div className="container p-t-80">
-                <div className="row">
-                    <div className="col-sm-12 col-md-4">
+            <div className="container p-t-50 userSection">
+                    <Slider {...settings}>
                         <div className="card">
-                            <div className="blog-head">
-                                <div className="profile-pic float-left">
-                                    <img
-                                        src={userIcon}
-                                        alt="User Icon"
-                                        className="img-fluid"
-                                    />
-                                </div>
+                            <div className="user-head">
                                 <h6>Aghilesh Nair</h6>
                                 <span>Bengaluru</span>
                                 <div>
@@ -123,17 +107,9 @@ export const Users = (props) => {
                                 recommend this to everyone.
                             </p>
                         </div>
-                    </div>
-                    <div className="col-sm-12 col-md-4">
                         <div className="card">
-                            <div className="blog-head">
-                                <div className="profile-pic float-left">
-                                    <img
-                                        src={userIcon}
-                                        alt="User Icon"
-                                        className="img-fluid"
-                                    />
-                                </div>
+                            <div className="user-head">
+
                                 <h6>Sakar Verma</h6>
                                 <span>New Delhi</span>
                                 <div>
@@ -174,17 +150,9 @@ export const Users = (props) => {
                                 business. Thank you team PayMe India.
                             </p>
                         </div>
-                    </div>
-                    <div className="col-sm-12 col-md-4">
                         <div className="card">
-                            <div className="blog-head">
-                                <div className="profile-pic float-left">
-                                    <img
-                                        src={userIcon}
-                                        alt="User Icon"
-                                        className="img-fluid"
-                                    />
-                                </div>
+                            <div className="user-head">
+
                                 <h6>Nasrin Jahan</h6>
                                 <span>New Delhi</span>
                                 <div>
@@ -224,8 +192,7 @@ export const Users = (props) => {
                                 them to others as well.
                             </p>
                         </div>
-                    </div>
-                </div>
+                    </Slider>
             </div>
         </div>
     );

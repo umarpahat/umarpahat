@@ -133,19 +133,18 @@ const SocialInitiative = (props) => {
 
   return (
     <>
-      <Header {...props} />
       <MetaTags>
-        <title>Social Initiative</title>
+        <title>PayMe India providing Job opportunities during Covid-19</title>
         <meta
           name="description"
-          content="PayMe India launches project ‘Saarthi’ to support families impacted by Coivd-19, through skill building and creation of employment opportunities."
-        />
+          content="PayMe India is working to support families impacted by Covid-19, through skill building and creation of employment opportunities."/>
         <meta
           name="keyword"
           content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
         />
-        <meta property="og:title" content="Social Initiative" />
+        <meta property="og:title" content="PayMe India providing Job opportunities during Covid-19" />
       </MetaTags>
+      <Header {...props} />
       <div className="content">
         <div className="banner">
           <div className="container">
@@ -354,27 +353,6 @@ const SocialInitiative = (props) => {
                   />
                 </div>
               </form>
-            </div>
-          </div>
-        </div>
-        <div className="contactBox p-t-80">
-          <div className="container">
-            <div className="row justify-content-md-center">
-              <div className="col-md-9 text-center p-t-30 p-b-30 d-flex contactLine">
-                <div className="mailPic">
-                  <img className="img-fluid" src={mailBox} alt="Mail" />
-                </div>
-                <div className="contact">
-                  <h4 className="heading4">Contact Us</h4>
-                  <p>
-                    Please contact us at
-                    <br />
-                    <a href="mailto: admin@paymeindia.in" target="_blank">
-                      admin@paymeindia.in
-                    </a>
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -21,16 +21,15 @@ const Terms = (props) => {
 
     return (
         <>
-            <Header {...props} />
             <MetaTags>
-                <title>Terms and Conditions - PayMeIndia</title>
-                <meta name="description" content="Read PayMeIndia  Terms and Conditions now. This Agreement is a contract between customer
-			and PayMeIndia for using PayMeIndia Services." />
+                <title>Terms & Conditions – PayMe India</title>
+                <meta name="description" content="A complete agreement that contains all the terms and conditions that apply to the participation of individuals or legal entities in the approval or rejection of loans" />
                 <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
-                <meta property="og:title" content="Terms and Conditions - PayMeIndia" />
+                <meta property="og:title" content="Terms & Conditions – PayMe India" />
             </MetaTags>
+            <Header {...props} />
             <div className='content'>
-            <div className="services">
+                <div className="services">
                 <div className="container p-b-30">
                     <div className="row">
                         <div className="col col-md-12 reg-second-heading">
@@ -1232,23 +1231,7 @@ const Terms = (props) => {
 
                 </div>
             </div>
-                <div className="contactBox p-t-80">
-                    <div className="container">
-                        <div className="row justify-content-md-center">
-                            <div className="col-md-9 text-center p-t-30 p-b-30 d-flex contactLine">
-                                <div className='mailPic'>
-                                    <img className="img-fluid" src={mailBox} alt="Mail"/>
-                                </div>
-                                <div className='contact'>
-                                    <h4 className="heading4">Contact Us</h4>
-                                    <p>Please contact us at<br/>
-                                        <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <Footer/>
         </>
