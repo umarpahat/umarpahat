@@ -23,24 +23,23 @@ import centralLocation from "../images/Central-Location.png";
 import health from "../images/Medical-Insurance.png";
 import environment from "../images/Cool-Environment.png";
 import MetaTags from "react-meta-tags";
+import Footer from "./Footer";
 
 const Career = (props) => {
   let [loader, setloader] = useState(false);
 
   return (
     <>
-      <Header {...props} />
       <MetaTags>
-        <title>How We Works - PayMeIndia</title>
+        <title>Career & Job opportunities – PayMe India</title>
         <meta
           name="description"
-          content="PayMeIndia offers a unique money lending program to the salaried
-			employees. We take care of your urgent cash needs in just 4 easy steps. Apply online and your
-			loans will get approved in an instant. Visit us now and get quick and fast solution for your
-			financial crunch!"
-        />
-        <meta property="og:title" content="How We Works - PayMeIndia" />
+          content="Learn about careers at PayMe India in IT, Marketing, sales, and operations. Check out the current openings and apply now to be a part of our vision!"/>
+        <meta name="keyword"
+              content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
+        <meta property="og:title" content="Career & Job opportunities – PayMe India" />
       </MetaTags>
+      <Header {...props} />
       <div className="content">
         <div className="banner">
           <div className="container">
@@ -401,6 +400,7 @@ Join our team- Work hard, have fun & make history! </h2>
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

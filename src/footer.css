@@ -4,15 +4,13 @@
 }
 
 footer {
-    font-family: Montserrat;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 28px;
     color: #fff;
     text-decoration: none;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .popularCity h4 {
@@ -34,7 +32,6 @@ footer {
     color: #33658A;
     padding: 2px 15px;
     font-size: 14px;
-    display: inline-block;
 }
 
 .popularCity a:hover {
@@ -71,6 +68,9 @@ footer ul li {
     max-height: 40px;
 }
 
+
+
+
 .cibil-footer {
     background: #D9F4E7
 }
@@ -92,7 +92,7 @@ footer ul li {
 
 }
 .unsplash {
-    /*background: url("./images/svg/unsplash.svg");*/
+    background: url("./images/svg/unsplash.svg") no-repeat 0 center;
 }
 .cuate {
     background: #F7FBF7;
@@ -125,7 +125,7 @@ footer ul li {
 }
 .rightSection h4{
     font-weight: bold;
-    font-size: 32px;
+    font-size: 22px;
     line-height: 37px;
     color: #000;
     margin: 0;
@@ -134,7 +134,7 @@ footer ul li {
 .rightSection p{
     font-weight: normal;
     font-size: 12px;
-    line-height: 210.5%;
+    line-height: 16px;
     text-align: center;
     color: #333333;
 }
@@ -149,10 +149,10 @@ footer ul li {
     width: 100%;
 }
 .footer-align-stripe > div{
-    padding: 0 20px;
+    padding: 0 10px;
 }
 .footer-align-stripe > div:nth-child(2){
-   width: calc(100% - 250px);
+   width: calc(100% - 200px);
 }
 .dialog-box .cardImg .footer-align-stripe h4 {
     font-weight: 600;
@@ -162,8 +162,8 @@ footer ul li {
 }
 .footer-align-stripe h4 {
     font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 12px;
+    line-height:16px;
     color: #fff;
 }
 
@@ -196,8 +196,8 @@ footer ul li {
     padding: 0;
     margin: 0;
     position: absolute;
-    top: -3px;
-    left: 5px;
+    top: -2px;
+    left: 4px;
 }
 .dialog-box .rightSection p{
     font-size: 12px;
@@ -207,7 +207,7 @@ footer ul li {
 }
 .dialog-box h4{
     font-weight: bold;
-    font-size: 32px;
+    font-size: 22px;
     line-height: 37px;
     color: #000000;
 }.dialog-box .form-label {
@@ -216,8 +216,8 @@ footer ul li {
      line-height: 20px;
      color: #333333;
  }
-.dialog-box .input-field {
-    height: 50px;
+.dialog-box .input-field ,.input-field{
+    height: 40px;
 }
 .dialog-box textarea {
     height: 100px!important;
@@ -234,7 +234,47 @@ footer ul li {
     z-index: 10000;
 }
 
+.imgSize img {
+    width: 140px !important;
+}
+
+.dflex {
+    display: table;
+}
+
+.dflex > div {
+    display: table-cell;
+}
+
+.dflex > div:nth-child(1) {
+    width: 100px;
+}
+.footerSSLLogo{
+    position: absolute;
+    right:0;
+    top: 20px;
+}
+.p-r-desktop{
+    padding-right: 80px;
+}
 @media (max-width: 600px) {
+    .p-r-desktop{
+        padding-right: 0;
+    }
+    footer {
+        font-size: 13px;
+        line-height: 24px;
+    }
+    .footerSSLLogo{
+        right: 15px;
+    }
+    .width50{
+        width: 50%;
+    }
+    .dflex > div:nth-child(1) {
+        width: 50px;
+    }
+
     .CookieConsent {
         flex-direction: revert !important;
     }
@@ -253,5 +293,6 @@ footer ul li {
     }
     .btnLarge{
         margin: auto;
+        
     }
 }

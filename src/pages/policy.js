@@ -10,6 +10,7 @@ import '../../src/home.css';
 import MetaTags from "react-meta-tags";
 import mailBox from "../images/svg/mail-box.svg";
 import termsCondition from "../images/svg/terms-and-condition.svg";
+import Footer from "./Footer";
 
 
 const Policy = (props) => {
@@ -19,15 +20,14 @@ const Policy = (props) => {
 
     return (
         <>
-            <Header {...props} />
             <MetaTags>
-                <title>Privacy Policy - PayMeIndia</title>
-                <meta name="description" content="Privacy Policy - The following statement is about our information gathering and dissemination
-			practices - PayMeIndia."/>
+                <title>Privacy Policy - PayMe India</title>
+                <meta name="description" content="Check out Loan against Privacy Policy Interest Rates, calculate EMI and check your Eligibility for loans against Insurance Policies like etc."/>
                 <meta name="keyword"
                       content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-                <meta property="og:title" content="Privacy Policy - PayMeIndia"/>
+                <meta property="og:title" content="Privacy Policy - PayMe India"/>
             </MetaTags>
+            <Header {...props} />
             <div className='content'>
                 <div className="services">
                     <div className="container">
@@ -36,54 +36,28 @@ const Policy = (props) => {
                                 <h1 className='heading1 blue-color'>Privacy Policy</h1>
                             </div>
                             </div>
+                        <div className="row align-items-center">
+                            <div className="col col-md-12">
+                                <p>PayMe India is committed to protecting the privacy of the personally-identifiable information that we collect from you as you use this website/app. The scope of our commitment is detailed in this privacy policy. By submitting information on the website/app, you agree to our use of such information as described herein.</p>
+                            </div>
+                        </div>
                             <div className="row">
                                 <div className="col col-md-5 reg-second-heading hideMobile">
                                     <img className="img-fluid" src={termsCondition} alt="Icons"/>
                                 </div>
                                 <div className="col col-md-7">
-                                    <h5 className='blue-color h3 p-t-20'>DATA Protection Notice</h5>
-                                    <p>Details of your name, e-mail address and any other personal information about you
-                                        which you include in response to parts of this website comprise "personal data"
-                                        for the purposes of the Data Protection Act 1998. We therefore require you to
-                                        give you the following information.</p>
-                                    <p>We will not pass your details on to any third party.</p>
-                                    <p>If you ask to be included on the list to receive any of our newsletters, we will
-                                        use this personal data to send them to you each quarter.</p>
-                                    <p>We will not pass your details on to any third party and you may request to be
-                                        removed from our lists at any time by e-mailing or writing to us and stating
-                                        which lists and /or newsletters you wish to be removed from.</p>
-                                    <p>By providing us with your mailing details on the appropriate page, you are deemed
-                                        to have consented to these forms of processing.</p>
-                                    <p>Under the Data Protection Act you have the right to access your personal data
-                                        held by us and to correct any inaccuracies in that information.</p>
-
+                                    <h5 className='blue-color h3 p-t-20'>MINORS</h5>
+                                    <p>This website/app is not intentionally designed for or directed at persons 18 years of age or younger, and PayMe India will not intentionally collect or maintain information about anyone under the age of 18. By law any individual under the age of 18 is not allowed to enter into a contract, thus as a practice PayMe India would like to refrain from interacting with any such person.</p>
                                 </div>
                             </div>
                             <div className="row">
 
                                 <div className="col col-md-12">
-                                    <h5 className='blue-color h3 p-t-20'>Disclaimer of Liability</h5>
-                                    <p>The contents of these pages and content reproduction is prohibited other than in
-                                        accordance with the following full copyright notice and limited reproduction
-                                        permissions.</p>
-                                    <p>These pages and any e-zines which we may send you from time to time contain
-                                        general information only and do not constitute advice on any specific legal
-                                        matter.</p>
-                                    <p>If you require advice on any specific legal problem or matter please contact one
-                                        of our lawyers listed.</p>
-                                    <p>PayMe India assumes no responsibility for information contained on this site and
-                                        disclaims all liability in respect of such information.</p>
-                                    <p>Copyright© 2021 PayMe India.in</p>
-                                    <p>PayMe India has no control over, and will accept no responsibility or liability
-                                        in respect of, material on any web site that is not under the control of PayMe
-                                        India.</p>
-                                    <p>The inclusion of links to Third Party Web Sites does not imply any endorsement of
-                                        the material on them or any association with their operators. PayMe India is not
-                                        responsible for the privacy or data protection practices of third party
-                                        websites.</p>
-                                    <p>By following a link from this website to a third party website you may be
-                                        supplying data directly to a third party.</p>
-
+                                    <h5 className='blue-color h3 p-t-20'>NO DISCLOSURE OF PERSONALLY-IDENTIFIABLE INFORMATION TO THIRD PARTIES</h5>
+                                    <p>PayMe India shall not intentionally disclose to third parties without your permission (and will take commercially reasonable steps to prevent the accidental disclosure of) any personally-identifiable information you may provide while visiting this website/app, subject to the following exceptions:</p>
+                                    <p>i. PayMe India may disclose your personally-identifiable information to third parties as required or permitted by applicable laws, rules or regulations.</p>
+                                    <p>ii. PayMe India may disclose your contact information in response to inquiries by bona-fide rights owners in connection with allegations of infringement of copyright or other proprietary rights arising from information you have submitted on this website/app or otherwise provided to PayMe India.</p>
+                                    <p>iii. If PayMe India (and/or one or more of its affiliates) merges with or sells all or substantially all of its assets to a third party, information collected about you on this website/app may be disclosed to such third party.</p>
                                 </div>
                             </div>
                             <div className="row">
@@ -91,59 +65,28 @@ const Policy = (props) => {
                                     <img className="img-fluid" src={termsCondition} alt="Icons"/>
                                 </div>
                                 <div className="col col-md-7">
-                                    <h5 className='blue-color h3 p-t-20'>Copyright and Limited Reproduction
-                                        Permissions</h5>
-                                    <p>Licence to copy for personal use</p>
-                                    <p>You may print or download to a local hard disk extracts from these pages for your
-                                        personal use only.</p>
-                                    <p>Licence to recopy for limited purposes.</p>
-                                    <p>You may recopy the material to individual third parties for their personal
-                                        information only, but only if:</p>
-                                    <p>you acknowledge PayMe India web pages as the source of the material. You must
-                                        include such acknowledgement and Batchelors Solicitors web address (
-                                        http://www.paymeindia.in) in the copy of the material; and</p>
-                                    <p>you inform the third party that these conditions apply to him or her and that he
-                                        or she must comply with them. This licence to recopy does not permit
-                                        incorporation of the material or any part of it in any other work or
-                                        publication, whether in hard copy or electronic or any other form. In particular
-                                        (but without limitation) no part of the PayMe India web pages may be distributed
-                                        or copied for any commercial purpose.</p>
-                                    <p>No part of PayMe India web pages may be reproduced on or transmitted to or stored
-                                        in any other web site or other form of electronic retrieval system.</p>
+                                    <h5 className='blue-color h3 p-t-20'>SECURITY</h5>
+                                    <p>PayMe India ensures to protect personally-identifiable information from loss, misuse, alteration or destruction. Only authorized PayMe India personnel are provided access to personally-identifiable information, and such employees are required to treat this information as confidential. Notwithstanding these precautions, we cannot guarantee that unauthorized persons will not obtain access to your personally-identifiable information. Data security & privacy is a top priority at Payme India. We use SHA-2 and 2,048-bit encryption (the strongest security system in the market) security and comply with SSL certificate.</p>
+                                     </div>
+                            </div>
+                            <div className="row justify-content-md-center p-t-30">
 
+                                <div className="col-md-12">
+                                    <h5 className='blue-color h3 '>CONSENT</h5>
+                                    <p>By using this website/app, you consent to the collection, use and storage of your information by PayMe India in the manner described in this privacy policy. PayMe India reserves the right to make changes to this privacy policy from time to time. When using this website/app, you should review the current Terms of Use and privacy policy to determine if they have been amended since your last visit. You understand and acknowledge that the Company reserves the right to track your location (Track) during the provision of the Services, and also in the event that you stop, cease, discontinue to use or avail the Services, through the deletion or uninstallation of the Mobile App or otherwise, till the event that your obligations to pay the Outstanding Amount(s) to LENDER, exist. Deletion, uninstallation, and/or discontinuation of our Services, shall not release you from the responsibility, obligation and liability to repay the Outstanding Amount(s). We will retain your Personal Information for as long as your registration with us is valid and the Outstanding Amount(s) is due and payable to LENDER. We may also retain and use your Personal Information as necessary to comply with our legal obligations, resolve disputes, and enforce our agreements. Subject to this section, we will try to delete your Personal Information upon reasonable written request for the same. Please note, however, that there might be latency in deleting Personal Information from our servers and backed-up versions might exist even after deletion.</p>
                                 </div>
                             </div>
-                            <div className="row justify-content-md-center text-center p-t-30">
-
-                                <div className="col col-md-7">
-                                    <h5 className='blue-color h3 p-t-20'>Downloads and e-mail</h5>
-                                    <p>This site allows for downloading of files. We do not accept liability for any
-                                        loss or damage which may result from the downloading or e mailing of any of
-                                        these files.</p>
-                                    <p>Email is not secure and can be intercepted, corrupted or amended.</p>
+                        <div className="row justify-content-md-center ">
+                                <div className="col-md-12">
+                                    <h5 className='blue-color h3 p-t-20'>ACCESSING AND MODIFYING PERSONAL INFORMATION</h5>
+                                    <p>In case you need to access, review, and/or make changes to the Personal Information, you shall have to login to your User Account and change the requisite details. You shall keep your Personal Information updated to help us better serve you.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                <div className="contactBox p-t-80">
-                    <div className="container">
-                        <div className="row justify-content-md-center">
-                            <div className="col-md-9 text-center p-t-30 p-b-30 d-flex contactLine">
-                                <div className='mailPic'>
-                                    <img className="img-fluid" src={mailBox} alt="Mail"/>
-                                </div>
-                                <div className='contact'>
-                                    <h4 className="heading4">Contact Us</h4>
-                                    <p>Please contact us at<br/>
-                                        <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
-         
+            <Footer/>
         </>
     )
 };

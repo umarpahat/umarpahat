@@ -8,21 +8,21 @@ import {Link} from "react-router-dom";
 import $ from "jquery";
 import MetaTags from "react-meta-tags";
 import mailBox from "../images/svg/mail-box.svg";
+import Footer from "./Footer";
 
 
 const Sitemap = (props) => {
 
     return (
         <>
-            <Header {...props} />
             <MetaTags>
-                <title>Sitemap - PayMeIndia</title>
-                <meta name="description"
-                      content=" Vist PayMeIndia Sitemap to easily navigate the website and explore new pages every day."/>
+                <title>Apply Instant Personal Loan Online | Quick Loan Approval – PayMe India</title>
+                <meta name="description" content="Apply for a best & instant personal loan online at PayMe India. We offer quick and instant loan approval to those who are in need of emergency loan. Apply now!"/>
                 <meta name="keyword"
                       content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-                <meta property="og:title" content="Sitemap - PayMeIndia"/>
+                <meta property="og:title" content="Apply Instant Personal Loan Online | Quick Loan Approval – PayMe India"/>
             </MetaTags>
+            <Header {...props} />
             <div className='content'>
                 <div className="services">
                     <div className="container p-b-30">
@@ -56,25 +56,9 @@ const Sitemap = (props) => {
 
                     </div>
                 </div>
-                <div className="contactBox p-t-80">
-                    <div className="container">
-                        <div className="row justify-content-md-center">
-                            <div className="col-md-9 text-center p-t-30 p-b-30 d-flex contactLine">
-                                <div className='mailPic'>
-                                    <img className="img-fluid" src={mailBox} alt="Mail"/>
-                                </div>
-                                <div className='contact'>
-                                    <h4 className="heading4">Contact Us</h4>
-                                    <p>Please contact us at<br/>
-                                        <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
-            
+            <Footer/>
         </>
     )
 };

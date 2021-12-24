@@ -1,18 +1,6 @@
 User-agent: *
 Disallow: /search
 Allow: /
-Allow: /about
-Allow: /contact
-Allow: /faq
-Allow: /ourNbfcPartners
-Allow: /how-we-work
-Allow: /media-coverage
-Allow: /social-initiative
-Allow: /terms
-Allow: /policy
-Allow: /refund
-Allow: /disclaimer
-Allow: /https://creditscore.paymeindia.in
 Disallow: /images
 
-Sitemap: https://www.google.com/sitemap.xml
+Sitemap: https://www.paymeindia.in/sitemap.xml

@@ -1,25 +1,25 @@
-import React from "react"
-import { Route,BrowserRouter as Router, Switch } from "react-router-dom";
+import React from "react";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import "react-input-range/lib/css/index.css";
 import "./style.css";
 import "./App.css";
 
 import Error from "./pages/Error";
-import HomePage from "./pages/HomePage"
-import about from "./pages/about"
-import contact from "./pages/contact"
-import faq from "./pages/faq"
-import disclaimer from "./pages/disclaimer"
-import refund from "./pages/refund"
-import policy from "./pages/policy"
-import terms from "./pages/terms"
-import OurNbfcPartners from "./pages/OurNbfcPartners"
-import Career from "./pages/Career"
-import NotFoundPage from "./pages/NotFoundPage"
-import Sitemap from "./pages/Sitemap"
-    import MediaCoverage from "./pages/MediaCoverage"
-import PayRent from "./pages/PayRent"
-import Offerings from "./pages/Offerings"
+import HomePage from "./pages/HomePage";
+import about from "./pages/about";
+import contact from "./pages/contact";
+import faq from "./pages/faq";
+import disclaimer from "./pages/disclaimer";
+import refund from "./pages/refund";
+import policy from "./pages/policy";
+import terms from "./pages/terms";
+import OurNbfcPartners from "./pages/OurNbfcPartners";
+import Career from "./pages/Career";
+import NotFoundPage from "./pages/NotFoundPage";
+import Sitemap from "./pages/Sitemap";
+import MediaCoverage from "./pages/MediaCoverage";
+import PayRent from "./pages/PayRent";
+import Offerings from "./pages/Offerings";
 import OtherDetalisForm from "./pages/Payrent/OtherDetalisForm";
 import DetailsSummary from "./pages/Payrent/DetailsSummary";
 import TransactionHistory from "./pages/Payrent/TransactionHistory";
@@ -36,23 +36,23 @@ import ChangeMpin from "./pages/ApplyNowButton/ChangeMpin";
 import SocialInitiative from "./pages/SocialInitiative";
 import Creatempn from "./pages/ApplyNowButton/Creatempn";
 import KycOption from "./pages/ApplyNowButton/KycOption";
-import Header from "./pages/Header";
-import Footer from "./pages/Footer";
 import StepManual from "./pages/ApplyNowButton/StepManualKYC";
 import GetCibilReport from "./pages/GetCibilReport";
+import womenLoan from "./pages/WomenLoan";
+import EligbilityCriteria from "./pages/EligbilityCriteria";
 import City from "./pages/City"
- 
+import PersonalLoan from "./pages/ApplyNowButton/PersonalLoan";
+
 
 function Routes() {
-    return (
-      <>
-        <Switch>
-        <Route exact path="/header" component={Header}/>
-        <Route exact path="/footer" component={Footer}/>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/apply-loan" component={Getquikloneapply} />
-          <Route exact path="/pay-rent" component={Getquikloneapply} />
-             <Route
+  return (
+    <>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/apply-loan" component={Getquikloneapply} />
+        <Route exact path="/personal-loan" component={PersonalLoan} />
+        <Route exact path="/pay-rent" component={Getquikloneapply} />
+        <Route
           exact
           path="/get-start-paymeindia"
           component={Getstartpaymeindia}
@@ -104,8 +104,9 @@ function Routes() {
         <Route exact path="/get-cibil-report" component={GetCibilReport} />
         <Route exact path="/bank-details-payme" component={Bankdetailspayme} />
         <Route exact path="/change-mpin" component={ChangeMpin} />
-            <Route exact path="/404" component={NotFoundPage} />
-            <Route exact path="/sitemap" component={Sitemap} />
+        <Route exact path="/sitemap" component={Sitemap} />
+        <Route exact path="/personal-loan-for-women" component={womenLoan} />
+        <Route exact path="/eligbility-criteria" component={EligbilityCriteria} />
 
         <Route
           exact
@@ -120,18 +121,17 @@ function Routes() {
           component={OtherDetalisForm}
         />
         <Route exact path="/detail-summary" component={DetailsSummary} />
-    
+
         <Route
           exact
           path="/payrent-transaction-history"
           component={TransactionHistory}
         />
-       
-        <Route component={Error} />
-          </Switch>
-          <Footer/>
-          </>
-    )
+
+        <Route component={NotFoundPage} />
+      </Switch>
+    </>
+  );
 }
 
 export default Routes;

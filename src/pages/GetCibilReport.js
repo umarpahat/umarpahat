@@ -22,6 +22,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
 import { GoogleLogin } from "react-google-login";
+import Footer from "./Footer";
 
 toast.configure();
 const options = {
@@ -554,25 +555,24 @@ const GetCibilReport = (props) => {
 
   return (
     <>
+      <MetaTags>
+        <title>Cibil Score for Personal Loan – PayMe India</title>
+        <meta
+            name="description"
+            content="Get your cibil score for personal loan & minimum cibil score required. Visit PayMe India to know your cibil score required for personal loan."
+        />
+        <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+        />
+        <meta
+            property="og:title"
+            content="Cibil Score for Personal Loan – PayMe India"
+        />
+      </MetaTags>
       <Header {...props} />
-
       {!loader ? (
         <>
-          <MetaTags>
-            <title>Get CIBIL score for Free - PayMeIndia</title>
-            <meta
-              name="description"
-              content=""
-            />
-            <meta
-              name="keyword"
-              content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
-            />
-            <meta
-              property="og:title"
-              content=" Get CIBIL score - PayMeIndia"
-            />
-          </MetaTags>
           <div className="content">
             <div className="banner">
               <div className="container">
@@ -1031,7 +1031,7 @@ const GetCibilReport = (props) => {
                               }}
                             >
                               I accept the Terms & Conditions of TU CIBIL and
-                              hereby authorize Payme India to check CIBIL score
+                              hereby authorize PayMe India to check CIBIL score
                               & report for my profile
                             </label>
 
@@ -1182,6 +1182,7 @@ const GetCibilReport = (props) => {
       ) : (
         <Loader />
       )}
+      <Footer/>
     </>
   );
 };

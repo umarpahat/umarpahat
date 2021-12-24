@@ -14,22 +14,20 @@ import printer from "../images/svg/printer.svg";
 import timer from "../images/svg/clock.svg";
 import MetaTags from "react-meta-tags";
 import mailBox from "../images/svg/mail-box.svg";
+import Footer from "./Footer";
 
 const Contact = (props) => {
   let [loader, setloader] = useState(false);
 
   return (
     <>
-      <Header {...props} />
       <MetaTags>
-        <title>Contact Us - PayMeIndia</title>
-        <meta name="description" content="PayMeIndia is a direct lender providing short terms and instant personal
-              loans to the salaries employees at low interest rates. We offer advance salary loans, instant
-        flexi loans, quick short term loans online. Contact us now via mail at support@paymeindia.in
-        or on call at +91-1206748963." />
+        <title>Contact Information - PayMe India</title>
+        <meta name="description" content="Get instant answers to your queries. Concern or complaints by submitting a form or email us on admin@paymeindia.in or call us on 0120-6905690 to get the earliest response from us." />
         <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
-        <meta property="og:title" content="Contact Us - PayMeIndia" />
+        <meta property="og:title" content="Contact Information - PayMe India" />
       </MetaTags>
+      <Header {...props} />
       <div className='content'>
         <div className="container p-b-30">
           <div className="col col-md-12 reg-second-heading">
@@ -104,25 +102,9 @@ const Contact = (props) => {
             </div>
           </div>
         </div>
-        <div className="contactBox p-t-80">
-          <div className="container">
-            <div className="row justify-content-md-center">
-              <div className="col-md-9 text-center p-t-30 p-b-30 d-flex contactLine">
-                <div className='mailPic'>
-                  <img className="img-fluid" src={mailBox} alt="Mail"/>
-                </div>
-                <div className='contact'>
-                  <h4 className="heading4">Contact Us</h4>
-                  <p>Please contact us at<br/>
-                    <a href="mailto: admin@paymeindia.in" target='_blank'>admin@paymeindia.in</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
-     
+      <Footer/>
     </>
   );
 };

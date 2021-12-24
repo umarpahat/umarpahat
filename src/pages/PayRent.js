@@ -22,6 +22,7 @@ const cookies = new Cookies();
 
 import { Link } from "react-router-dom";
 import { API_ENDPOINT } from "../constant";
+import Footer from "./Footer";
 
 const PayRent = (props) => {
   const token = cookies.get('token')
@@ -98,6 +99,18 @@ const PayRent = (props) => {
 
   return (
     <>
+      <MetaTags>
+        <title>Loan for Rent | Pay rent online with credit card - PayMe India</title>
+        <meta name="description" content="PayMe India offers quick pay rent loans at the lowest interest rates with 100% transparency, no hidden costs, and no collaterals."/>
+        <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+        />
+        <meta
+            property="og:title"
+            content="Loan for Rent | Pay rent online with credit card - PayMe India"
+        />
+      </MetaTags>
       <Header {...props} active="payrent" />
 
       <div className="info">
@@ -371,6 +384,7 @@ const PayRent = (props) => {
           </div>
         </div>
       )}
+      <Footer/>
     </>
   );
 };
