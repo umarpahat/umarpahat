@@ -179,7 +179,7 @@ function Referralcode(props) {
           </p>
           {/* </Link> */}
         </div>
-     
+      <Footer/>
     </>
   );
 }

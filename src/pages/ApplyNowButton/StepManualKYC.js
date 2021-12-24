@@ -233,6 +233,7 @@ const StepManual = (props) => {
                 </div>
               </Container>
         </div>
+        <Footer/>
       </>
     );
 };

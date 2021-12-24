@@ -15,6 +15,7 @@ import axios from "axios";
 import { API_ENDPOINT_STAGING } from "../../constant";
 import Cookies from "universal-cookie";
 import tip from "../../images/svg/tip.png";
+import Footer from "../Footer";
 toast.configure();
 const options = {
   position: toast.POSITION.TOP_CENTER,
@@ -177,6 +178,7 @@ const DetailsSummary = (props) => {
           </div>
         </Container>
       </div>
+      <Footer/>
     </>
   );
 };

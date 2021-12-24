@@ -198,7 +198,7 @@ const Getquikloneapply = (props) => {
             </Container>
       </div>
           )}
-     
+      <Footer/>
     </>
   );
 };

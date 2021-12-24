@@ -13,7 +13,7 @@ import termsCondition from "../images/svg/terms-and-condition.svg";
 import Footer from "./Footer";
 
 
-const Policy = (props) => {
+const PrivacyPolicy = (props) => {
 
     let [loader, setloader] = useState(false);
 
@@ -163,4 +163,4 @@ const mapStateToProps = state => {
 
 const dispatchToProps = {hitAppUseCase};
 
-export default connect(mapStateToProps, dispatchToProps)(Policy)
+export default connect(mapStateToProps, dispatchToProps)(PrivacyPolicy)

@@ -118,7 +118,9 @@ const GetCibilReport = (props) => {
       axios
         .get(`https://api.postalpincode.in/Pincode/${value}`)
         .then((res) => {
-          setCity(res.data[0].PostOffice[0].Region);
+          console.log("res",res)
+          console.log("res",res.data[0].PostOffice[0].Block.split(" ").join(""))
+          setCity(res.data[0].PostOffice[0].Block.split(" ").join(""));
           const region = res.data[0].PostOffice[0].State;
 
           axios
