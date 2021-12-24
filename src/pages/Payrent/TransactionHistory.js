@@ -176,6 +176,7 @@ const TransactionHistory = (props) => {
           </div>
         </Container>
       </div>
+      <Footer/>
     </>
   );
 };

@@ -129,7 +129,7 @@ const Footer = (props) => {
                   <Link to="/terms">Terms &amp; Conditions</Link>
                 </li>
                 <li>
-                  <Link to="/policy">Privacy Policy</Link>
+                  <Link to="/privacy-policy">Privacy Policy</Link>
                 </li>
                 <li>
                   <Link to="/refund">Refund Policy</Link>

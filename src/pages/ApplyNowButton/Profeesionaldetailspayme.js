@@ -638,7 +638,7 @@ const Professionaldetailspayme = (props) => {
             </Container>
       </div>
         )}
-     
+      <Footer/>
     </>
   );
 };
