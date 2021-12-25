@@ -179,7 +179,7 @@ const Footer = (props) => {
               <ul>
                 <li>Rohit Rai</li>
                 <li className="">
-                  <strong>Contact:</strong> 7669929906
+                  <strong>Contact:</strong> 7669929905
                 </li>
                 <li className="">
                   <strong>Email:</strong>{" "}

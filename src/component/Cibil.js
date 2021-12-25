@@ -11,7 +11,7 @@ export const Cibil = (props) => {
                     <img className="img-fluid" alt="CIBIL" src={scoreAnimation}/>
                 </div>
                 <div className="col-sm-12 col-md-2 ">&nbsp;</div>
-                <div className="col-sm-12 col-md-5 p-t-20">
+                <div className="col-sm-12 col-md-5">
                     <h3 className="heading3 relative">
                         <span className="circle-small"></span> Get CIBIL report worth
                         Rs 1500
@@ -19,12 +19,12 @@ export const Cibil = (props) => {
                     <h3 className="heading3">
                         <span className="blue-color">Absolutely free!</span>
                     </h3>
-                    <p className="heading6">
+                    <p className="heading6 p-b-20">
                         A credit score is more than just a number. Know your Cibil
                         score completely free with PayMe India.
                     </p>
 
-                    <Link style={{color: "#fff", cursor: "pointer"}} to="get-cibil-report" className="btnLarge m-t-40">
+                    <Link style={{color: "#fff", cursor: "pointer"}} to="get-cibil-report" className="btnLarge ">
                         Get CIBIL Report
                     </Link>
                 </div>
