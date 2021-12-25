@@ -43,7 +43,7 @@ export const Users = (props) => {
     return (
         <div className="container-fluid px-3 px-sm-5 testimonial p-t-20 p-b-30">
             <div className="col-sm-12 col-md-12 reg-second-heading text-center">
-                <h4>Listen Our Users</h4>
+                <h4>Listen to our users</h4>
             </div>
             <div className="container p-t-20">
                 <div className="row ">

@@ -155,10 +155,7 @@ const CustomerGrievance = (props) => {
           <div className="col-md-6 ">
             <div className="rightSection ">
               <h4 className="text-center">Payme Grievance</h4>
-              <p className="text-center">
-                Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
-                aliquam. Totam quae eos et aut rerum maxime. Provident id non.
-              </p>
+              <p className="text-center">Customers can raise their concern regarding EMI schedule, Facility Type, Processing fee or any other queries.</p>
               <form id="form" name="form">
                 <div className="form-group ms-input-group">
                   <label className="form-label pb-2">Full Name</label>

@@ -196,10 +196,7 @@ const LeaveMessage = (props) => {
           <div className="col-md-6 ">
             <div className="rightSection ">
               <h4 className="text-center">Leave a Message</h4>
-              <p className="text-center">
-                Quibusdam nobis est voluptatibus voluptatem. Deleniti sunt
-                aliquam. Totam quae eos et aut rerum maxime. Provident id non.
-              </p>
+              <p className="text-center">Kindly leave a message, our team will contact you shortly</p>
               <form id="form" name="form">
                 <div className="form-group ms-input-group">
                   <label className="form-label pb-2">Full Name</label>
