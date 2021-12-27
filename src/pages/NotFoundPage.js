@@ -13,8 +13,8 @@ function NotFoundPage(props) {
           </div>
           <div className="col-sm-12 col-md-1 ">&nbsp;</div>
           <div className="col-sm-12 col-md-5 p-b-30">
-            <h1>Opps Page Not Found</h1>
-            <p className="heading6 p-t-10 p-b-20">Consequatur quod quam. Tempore ipsam delectus ipsam voluptates voluptate dolorem hic rerum recusandae. Quod dolores non vero cum reprehenderit. Doloremque perspiciatis placeat consequatur.</p>
+            <h1>Oops... Error 404</h1>
+            <p className="heading6 p-t-10 p-b-20">Sorry, but the page you are looking for doesn't exist</p>
             <Link className="btnLarge" to="/">
               Go to Home
             </Link>

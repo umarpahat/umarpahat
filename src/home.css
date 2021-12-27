@@ -3685,6 +3685,19 @@ a {
         margin-bottom: 20px;
         margin-top: 20px;
     }
+    .rightSection {
+        padding: 30px!important;
+    }
 
-
+}
+@media only screen and (min-width: 411px) and (max-width: 731px) {
+    .hideDesktop {
+        display: block;
+    }
+    .hideMobile {
+        display: none !important;
+    }
+    .rightSection {
+        padding: 30px!important;
+    }
 }
