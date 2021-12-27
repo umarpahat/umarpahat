@@ -201,6 +201,15 @@ export const City = (props) => {
   }, []);
 
   const GoogleAnalytics =()=>{
+    const script = document.createElement('script')
+    script.id = 'G-1P4XMQV2BK'
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-1P4XMQV2BK'
+    script.async = true
+    script.defer = true
+    script.crossOrigin = 'anonymous'
+    script.onload = () => setHasLoaded(true)
+    document.body.append(script)
+
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
