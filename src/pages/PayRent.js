@@ -131,22 +131,6 @@ const PayRent = (props) => {
         />
       ) : (
         <div>
-          <MetaTags>
-            <title>Frequently Asked Questions - PayMeIndia</title>
-            <meta
-              name="description"
-              content="Do you have questions about how the loan app works? Frequently asked questions for all
-			loan related queries - PayMeIndia."
-            />
-            <meta
-              name="keyword"
-              content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
-            />
-            <meta
-              property="og:title"
-              content="Frequently Asked Questions - PayMeIndia"
-            />
-          </MetaTags>
           <div className="content">
             <div className="banner">
               <div className="container">
