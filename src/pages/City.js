@@ -380,7 +380,7 @@ export const City = (props) => {
         ) : null}
       <div className="container">
         <div className="row">
-          <div className="col col-md-6 hideMobile">
+          <div className="col-md-6 col-sm-12 hideMobile">
             <div
               className="cardImg"
               style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
@@ -430,7 +430,7 @@ export const City = (props) => {
               </div>
             </div>
           </div>
-          <div className="col col-md-6 ">
+          <div className="col-md-6 col-sm-12 ">
             <div className="rightSection ">
               {cityName === "NearMe" ? (
                 <h4 className="text-center">Get Instant Loan Online</h4>
@@ -547,7 +547,7 @@ export const City = (props) => {
               </div>*/}
             </div>
           </div>
-          <div className="col col-md-6 hideDesktop">
+          <div className="col-md-6 col-sm-12 hideDesktop">
             <div
               className="cardImg"
               style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
