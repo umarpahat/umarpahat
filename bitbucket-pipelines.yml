@@ -6,5 +6,5 @@ pipelines:
         # trigger: manual  # Uncomment to make this a manual deployment.
         script:
           - echo "Deploying"
-          - cat ./post-push.sh | ssh ubuntu@13.127.245.252
+          - cat ./post-push.sh | ssh ubuntu@15.207.235.144
           - echo "deployed"
