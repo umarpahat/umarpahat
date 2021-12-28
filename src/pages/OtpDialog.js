@@ -12,7 +12,7 @@ const options = {
   closeButton: false,
 };
 const OtpDialog = (props) => {
-  console.log("props", props);
+  console.log("props testing ", props);
   const [otp, setOtp] = useState("");
   const [otperr, setOtperr] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
@@ -56,6 +56,7 @@ const OtpDialog = (props) => {
       axios
         .post(url, data)
         .then(function (response) {
+         
           if (disableToast) {
             setDisableToast(false);
             toast.success("data successfully submitted", { ...options });
@@ -128,7 +129,7 @@ const OtpDialog = (props) => {
               display: "block",
               cursor: "pointer",
               color: "#fff",
-              width: "100%",
+             
             }}
             onClick={SubmitOtp}
           >
