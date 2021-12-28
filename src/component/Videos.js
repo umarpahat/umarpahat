@@ -1,15 +1,18 @@
 import React, {useEffect, useState} from "react";
 import Slider from "react-slick";
+import playBtn from "../images/svg/youtube-icon.svg";
+import YoutubeVideos from "../pages/YoutubeVideos";
 
-
+let json = [{'videoId': 'ODylYT3vvQE', 'title': ''},
+    {'videoId': 'nH4yxYZpfeY', 'title': ''},
+    {'videoId': 'M9uYTo_-_ow', 'title': ''}
+]
 export const Videos = (props) => {
-    const [posts, setPosts] = useState([]);
-    useEffect(() => {
-        const url = "https://blog.paymeindia.in/?json=get_recent_posts&count=3";
-        fetch(url)
-            .then((res) => res.json())
-            .then((res) => setPosts(res.posts));
-    }, []);
+    const [videoId, setVideoId] = useState()
+    const [videoTitle, setVideoTitle] = useState()
+    const [showDialog, setShowDialog] = useState(false);
+    const open = () => setShowDialog(true);
+    const close = () => setShowDialog(false);
     var settings = {
         dots: true,
         infinite: false,
@@ -44,26 +47,31 @@ export const Videos = (props) => {
             }
         ]
     };
+
     return (
         <div className="container-fluid px-sm-5 blog p-t-40">
             <div className="col-sm-12 col-md-12 reg-second-heading text-center">
                 <h4>Our Videos to watch</h4>
             </div>
             <div className="container p-t-40">
-                        <Slider {...settings}>
-                            <div className="blog-div">
-                            <object data='https://www.youtube.com/embed/ODylYT3vvQE?autoplay=1' width='100%'
-                                    height='230px'/>
-                        </div>
-                        <div className="blog-div">
-                            <object data='https://www.youtube.com/embed/nH4yxYZpfeY?autoplay=1' width='100%'
-                                    height='230px'/>
-                        </div>
-                        <div className="blog-div">
-                            <object data='https://www.youtube.com/embed/M9uYTo_-_ow?autoplay=1' width='100%'
-                                    height='230px'/>
-                        </div>
-                        </Slider>
+                <Slider {...settings}>
+                    {json.map((item, index) => {
+                        console.log(item)
+                        //
+                        let imgUrl = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`
+                        return (
+                    <div className="blog-div relative">
+                        <img className='img-fluid' src={imgUrl} alt={item.title}/>
+                        <img className='play-btn' onClick={()=>{
+                            setVideoId(item.videoId)
+                            open()
+                        }} src={playBtn} alt='Play'/>
+                        <p>{item.title}</p>
+                    </div>)}
+                    )}
+                </Slider>
+                {showDialog ?
+                    <YoutubeVideos close={close} {...props} videoId={videoId} videoTitle={videoTitle}/> : null}
             </div>
         </div>
     );
