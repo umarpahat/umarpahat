@@ -144,7 +144,8 @@ const Getquikloneapply = (props) => {
                               placeholder="Enter new mobile number"
                               value={number || ""}
                               onChange={(event) => {
-                                setnumber(event.target.value.slice(0, 10));
+                                setnumber(event.target.value.slice(0, 10)
+                                .replace(/\D/g, ""));
                                 if (
                                   event.target.value.length === 0 ||
                                   event.target.value.length === 10
