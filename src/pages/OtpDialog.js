@@ -96,7 +96,7 @@ const OtpDialog = (props) => {
       <Dialog
         isOpen={showDialogCity}
         onDismiss={CloseOtpScreen}
-        style={{ width: 600 }}
+        style={{ maxWidth: 600 }}
       >
         <button className="close-button" onClick={CloseOtpScreen}>
           <span aria-hidden>×</span>

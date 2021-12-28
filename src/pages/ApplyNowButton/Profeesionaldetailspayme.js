@@ -353,7 +353,7 @@ const Professionaldetailspayme = (props) => {
                       value={workExp}
                       onChange={(event) => {
                         setErrorworkExp("");
-                        setWorkExp(event.target.value.slice(0,2));
+                        setWorkExp(event.target.value.slice(0,2).replace(/\D/g, ""));
                       }}
                     />
                     {errorworkExp ? (
@@ -369,7 +369,7 @@ const Professionaldetailspayme = (props) => {
                       value={inhandsalary}
                       onChange={(event) => {
                         setErrorSalary("");
-                        setInhandsalary(event.target.value.slice(0,10));
+                        setInhandsalary(event.target.value.slice(0,10).replace(/\D/g, ""));
                       }}
                     />
                     {errorSalary ? (
