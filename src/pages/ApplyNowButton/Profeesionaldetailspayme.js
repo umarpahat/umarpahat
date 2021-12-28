@@ -347,7 +347,7 @@ const Professionaldetailspayme = (props) => {
                   <div className="form-group ms-input-group">
                     <label className="form-label">Work Experience(years)</label>
                     <input
-                      type="number"
+                      type="text"
                       className="form-input"
                       placeholder="Enter Work Experience"
                       value={workExp}
@@ -363,7 +363,7 @@ const Professionaldetailspayme = (props) => {
                   <div className="form-group ms-input-group">
                     <label className="form-label">Salary</label>
                     <input
-                      type="number"
+                      type="text"
                       className="form-input"
                       placeholder="Enter Salary"
                       value={inhandsalary}
