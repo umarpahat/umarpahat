@@ -32,7 +32,7 @@ import Footer from "./Footer";
 import OtpDialog from "./OtpDialog";
 import MetaTags from "react-meta-tags";
 import { fbq } from "react-facebook-pixel";
-import {Helmet} from "react-helmet"
+import { Helmet } from "react-helmet";
 
 toast.configure();
 const options = {
@@ -63,7 +63,7 @@ const images = {
 };
 
 export const City = (props) => {
-  console.log("testing for pixel code")
+  console.log("testing for pixel code");
   const [showDialogCity, setShowDialogCity] = React.useState(false);
   const openCity = () => setShowDialogCity(true);
   const closeCity = () => setShowDialogCity(false);
@@ -196,12 +196,12 @@ export const City = (props) => {
     toast.error("Please login google account in your device", { ...options });
     setTimeout(() => setIsButtonDisabled(false), 3000);
   };
+
   useEffect(() => {
     window.scrollTo(0, 0);
     GoogleAnalytics();
     faceBook();
-    fbq("init", "4712656898789321");
-   
+    window.fbq("init", "4712656898789321");
   }, []);
 
   const GoogleAnalytics = () => {
@@ -299,16 +299,13 @@ export const City = (props) => {
   // }
   return (
     <>
-    <Helmet>
-      
-    <noscript>
- <img height="1" width="1" 
-src="https://www.facebook.com/tr?id=4712656898789321&ev=PageView
-&noscript=1"/>
-</noscript>
-
-               
-            </Helmet>
+      <Helmet>
+        <img
+          height="1"
+          width="1"
+          src="https://www.facebook.com/tr?id=4712656898789321&ev=PageView&noscript=1"
+        />
+      </Helmet>
       {cityName === "Delhi" ? (
         <MetaTags>
           <title>
@@ -623,7 +620,6 @@ src="https://www.facebook.com/tr?id=4712656898789321&ev=PageView
           />
         </MetaTags>
       )}
-   
 
       <Header {...props} />
       {otpScreen ? (
