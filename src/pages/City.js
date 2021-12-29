@@ -32,6 +32,7 @@ import Footer from "./Footer";
 import OtpDialog from "./OtpDialog";
 import MetaTags from "react-meta-tags";
 import { fbq } from "react-facebook-pixel";
+import {Helmet} from "react-helmet"
 
 toast.configure();
 const options = {
@@ -198,7 +199,7 @@ export const City = (props) => {
     window.scrollTo(0, 0);
     GoogleAnalytics();
     faceBook();
-    fbq("init", "699730774332173");
+   
   }, []);
 
   const GoogleAnalytics = () => {
@@ -296,6 +297,15 @@ export const City = (props) => {
   // }
   return (
     <>
+    <Helmet>
+      
+    <noscript>
+ <img height="1" width="1" 
+src="https://www.facebook.com/tr?id=4712656898789321&ev=PageView
+&noscript=1"/>
+</noscript>
+               
+            </Helmet>
       {cityName === "Delhi" ? (
         <MetaTags>
           <title>
@@ -610,12 +620,7 @@ export const City = (props) => {
           />
         </MetaTags>
       )}
-      <img
-        height="1"
-        width="1"
-        src="https://www.facebook.com/tr?id=419685329868622&ev=PageView
-&noscript=1"
-      />
+   
 
       <Header {...props} />
       {otpScreen ? (
