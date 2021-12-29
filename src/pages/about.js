@@ -1,26 +1,12 @@
 import React, { useState } from "react";
 import { hitAppUseCase } from "../store/modules/userDetails/actions";
 import { connect } from "react-redux";
+import MetaTags from "react-meta-tags";
 import "./ApplyNowButton/Applybtnallcomponent.css";
 import Header from "./Header";
-import "../../src/home.css";
-import vision from "../images/svg/vision.svg";
-import team from "../images/logo-fav.png";
-import team1 from "../images/Image-1.png";
-import team2 from "../images/Image-2.png";
-import team3 from "../images/Image-3.png";
-import team4 from "../images/Image-4.png";
-import team5 from "../images/Image-5.png";
-import team6 from "../images/Image-6.png";
-import team7 from "../images/Image-7.png";
-import team8 from "../images/Image-8.png";
-import thumbnail from "../images/svg/thumb.svg";
-import people from "../images/svg/will-stand.svg";
-import MetaTags from "react-meta-tags";
-import goldStarIcon from "../images/svg/star.svg";
-import  aboutUs from "../images/svg/about-us.svg";
-import * as url from "url";
 import Footer from "./Footer";
+import {S3_IMAGES_URL} from '../constant'
+import "../../src/home.css";
 
 const About = (props) => {
   let [loader, setloader] = useState(false);
@@ -80,7 +66,7 @@ const About = (props) => {
                 </p>
               </div>
               <div className="col-lg-4 col-md-4 col-sm-12 relative text-right">
-                <img className="img-fluid" alt="About us" src={aboutUs}/>
+                <img className="img-fluid" alt="About us" src={S3_IMAGES_URL +'/svg/about-us.svg'}/>
                 <span className="circle-green-shape"></span>
               </div>
             </div>
@@ -90,7 +76,7 @@ const About = (props) => {
           <div className="container p-b-30 p-t-25">
             <div className="row align-items-center pb-3">
               <div className="col-lg-4 col-md-4 col-sm-12 order-sm-2 order-md-1 relative">
-                <img className="img-fluid" alt="About us" src={vision}/>
+                <img className="img-fluid" alt="About us" src={S3_IMAGES_URL+'/svg/vision.svg'}/>
                 <span className="circle-blue-shape"></span>
               </div>
               <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 textAlign order-sm-1 order-md-2">
@@ -145,7 +131,7 @@ const About = (props) => {
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={thumbnail}
+                          src={S3_IMAGES_URL +'/svg/thumb.svg'}
                           alt="PayMe India"
                         />
                       </div>
@@ -157,27 +143,27 @@ const About = (props) => {
                     <div className="box-align justify-content-md-center text-center">
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
-                          src={goldStarIcon}
+                          src={S3_IMAGES_URL +'/svg/star.svg'}
                           alt="Star"
                           className="img-fluid"
                         />
                         <img
-                          src={goldStarIcon}
+                          src={S3_IMAGES_URL +'/svg/star.svg'}
                           alt="Star"
                           className="img-fluid"
                         />
                         <img
-                          src={goldStarIcon}
+                          src={S3_IMAGES_URL +'/svg/star.svg'}
                           alt="Star"
                           className="img-fluid"
                         />
                         <img
-                          src={goldStarIcon}
+                          src={S3_IMAGES_URL +'/svg/star.svg'}
                           alt="Star"
                           className="img-fluid"
                         />
                         <img
-                          src={goldStarIcon}
+                          src={S3_IMAGES_URL +'/svg/star.svg'}
                           alt="Star"
                           className="img-fluid"
                         />
@@ -191,7 +177,7 @@ const About = (props) => {
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={people}
+                          src={S3_IMAGES_URL + '/svg/will-stand.svg'}
                           alt="PayMe India"
                         />
                       </div>
@@ -234,49 +220,49 @@ const About = (props) => {
                   <div className="team-pic">
                     <img
                       className="img-fluid circleImg"
-                      src={team}
+                      src={S3_IMAGES_URL +'/logo-fav.png'}
                       alt="Team"
                     />
                   </div>
                 </div>
                 <div className="clearfix clearboth right">
                   <div className="team-pic f-right">
-                    <img className="img-fluid" src={team1} alt="Team" />
+                    <img className="img-fluid" src={S3_IMAGES_URL +'/Image-1.png'} alt="Team" />
                   </div>
                 </div>
                 <div className="clearboth clearfix">
                   <div className="team-pic l-right">
-                    <img className="img-fluid" src={team5} alt="Team" />
+                    <img className="img-fluid" src={S3_IMAGES_URL +'/Image-5.png'} alt="Team" />
                   </div>
                 </div>
                 <div className="clearfix clearboth right">
                   <div className="team-pic f-right">
-                    <img className="img-fluid" src={team3} alt="Team" />
+                    <img className="img-fluid" src={S3_IMAGES_URL +'/Image-3.png'} alt="Team" />
                   </div>
                 </div>
                 <div className="clearboth clearfix">
                   <div className="team-pic l-right">
-                    <img className="img-fluid" src={team2} alt="Team" />
+                    <img className="img-fluid" src={S3_IMAGES_URL +'/Image-2.png'} alt="Team" />
                   </div>
                 </div>
                 <div className="clearfix clearboth right">
                   <div className="team-pic f-right">
-                    <img className="img-fluid" src={team4} alt="Team" />
+                    <img className="img-fluid" src={S3_IMAGES_URL +'/Image-4.png'} alt="Team" />
                   </div>
                 </div>
                 <div className="clearboth clearfix">
                   <div className="team-pic l-right">
-                    <img className="img-fluid" src={team6} alt="Team" />
+                    <img className="img-fluid"src={S3_IMAGES_URL +'/Image-6.png'} alt="Team" />
                   </div>
                 </div>
                 <div className="clearfix clearboth right">
                   <div className="team-pic f-right">
-                    <img className="img-fluid" src={team7} alt="Team" />
+                    <img className="img-fluid" src={S3_IMAGES_URL +'/Image-7.png'} alt="Team" />
                   </div>
                 </div>
                 <div className="clearboth clearfix">
                   <div className="team-pic l-right">
-                    <img className="img-fluid" src={team8} alt="Team" />
+                    <img className="img-fluid" src={S3_IMAGES_URL +'/Image-8.png'} alt="Team" />
                   </div>
                 </div>
               </div>

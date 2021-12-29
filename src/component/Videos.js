@@ -60,7 +60,7 @@ export const Videos = (props) => {
                         //
                         let imgUrl = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`
                         return (
-                    <div className="blog-div relative">
+                    <div className="blog-div relative" key={item.videoId} >
                         <img className='img-fluid' src={imgUrl} alt={item.title}/>
                         <img className='play-btn' onClick={()=>{
                             setVideoId(item.videoId)

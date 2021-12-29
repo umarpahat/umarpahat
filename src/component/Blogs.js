@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import blogPic from "../images/logo.png";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+import {S3_IMAGES_URL} from "../constant";
 
 export const Blogs = (props) => {
   const [posts, setPosts] = useState([]);
@@ -56,10 +56,10 @@ export const Blogs = (props) => {
       <div className="container p-t-40">
           <Slider {...settings}>
             {posts.map((post, index) => (
-            <div className="blog-div">
+            <div className="blog-div" key={post.title}>
               <div className="blog-section">
               <div className="blogPic">
-                <img src={blogPic} alt="blog" className="img-fluid" />
+                <img src={S3_IMAGES_URL +'/logo.png'}  alt="blog" className="img-fluid" />
               </div>
               </div>
               <h5>

@@ -82,7 +82,12 @@ body {
 .home_social_link > div {
     padding: 10px;
 
-}.home_social_link > div:nth-child(1) {
+}
+.home_social_link a {
+    display: block;
+
+}
+.home_social_link > div:nth-child(1) {
     padding-left:0;
 
 }

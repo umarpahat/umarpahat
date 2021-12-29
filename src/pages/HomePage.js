@@ -1,27 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { hitAppUseCase } from "../store/modules/userDetails/actions";
 import { connect } from "react-redux";
-import { Container } from "react-bootstrap";
-import Loader from "../component/Loader";
 import "./ApplyNowButton/Applybtnallcomponent.css";
 import Header from "./Header";
 import "../../src/home.css";
-import benefit from "../images/svg/benefit.svg";
-import loginImg from "../images/svg/login-icon.svg";
 import getLoan from "../images/svg/get-loan-pic.svg";
-import assementImg from "../images/svg/accurate-icon.svg";
-import blogPic from "../images/logo.png";
-import aprovedImg from "../images/svg/swift-transfer.svg";
-import advisoryImg from "../images/svg/advisory-loan.svg";
-import shortImg from "../images/svg/short-loan.svg";
-import corporateImg from "../images/svg/corporate-loan.svg";
-import goldStarIcon from "../images/svg/star.svg";
-import userIcon from "../images/svg/user-icon.svg";
-import register from "../images/svg/signup-icon.svg";
-import uploadImg from "../images/svg/kyc-icon.svg";
-import promptImg from "../images/svg/bank-doc.svg";
-import easyRepay from "../images/svg/boost-icon.svg";
-import InstantCash from "../images/svg/instant-icon.svg";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
@@ -40,8 +23,6 @@ import {Blogs} from "../component/Blogs";
 import {Videos} from "../component/Videos";
 import {Whatsup} from "../component/Whatsup";
 import Footer from "./Footer";
-import googlePay from "../images/svg/google-play.svg";
-import appStore from "../images/svg/app-store.svg";
 const cookies = new Cookies();
 
 toast.configure();
@@ -163,7 +144,7 @@ const HomePage = (props) => {
               </div>
               <div className="col-sm-12 col-md-5 order-sm-1 order-md-2">
                 <div className="price-box">
-                  <form className="form-horizontal form-pricing" role="form">
+                  {/*<form className="form-horizontal form-pricing" role="form">
                     <h4>EMI Calculator</h4>
                     <div className="relative">
                       <div className="totalAmount">
@@ -269,7 +250,7 @@ const HomePage = (props) => {
                         </div>
                       </div>
                     </div>
-                  </form>
+                  </form>*/}
                 </div>
               </div>
             </div>
@@ -277,79 +258,6 @@ const HomePage = (props) => {
         </div>
         <CorValue/>
         <Users/>
-
-        {/*<div className="float-full how-it-works">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col col-md-12 reg-second-heading">
-                <h4>How to get started</h4>
-              </div>
-              <div className="steps">
-                <div className="home-steps relative">
-                  <div>
-                    <img
-                      className="icon"
-                      src={register}
-                      alt="Create an account"
-                    />
-                  </div>
-                  <div className="home-steps-in">
-                    <h5 className="steps-heading">Create an account</h5>
-                    <p>Sign up to the App. Fill in the basic details.</p>
-                  </div>
-                </div>
-                <div className="home-steps relative">
-                  <div>
-                    <img
-                      className="icon"
-                      src={uploadImg}
-                      alt="Get your KYC done"
-                    />
-                  </div>
-                  <div className="home-steps-in">
-                    <h5 className="steps-heading">Get your KYC done</h5>
-                    <p>
-                      Upload your Aadhaar and Pan details for an instant loan.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="home-steps relative">
-                  <div>
-                    <img
-                      className="icon"
-                      src={promptImg}
-                      alt="Provide Bank details"
-                    />
-                  </div>
-                  <div className="home-steps-in">
-                    <h5 className="steps-heading">Provide Bank details</h5>
-                    <p>
-                      Provide Bank account details and bank statement to
-                      facilitate the disbursement.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="home-steps relative">
-                  <div>
-                    <img
-                      className="icon"
-                      src={easyRepay}
-                      alt="Get boost limit & benefits"
-                    />
-                  </div>
-                  <div className="home-steps-in">
-                    <h5 className="steps-heading">
-                      Get boost limit & benefits
-                    </h5>
-                    <p>Provide your Salary slip and get a boost limit.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>*/}
         <Whatsup {...props}/>
         <Blogs/>
         <Videos/>

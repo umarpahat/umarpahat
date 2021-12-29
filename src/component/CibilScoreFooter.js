@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import icon from "../images/svg/cibil-icon.svg";
+import {S3_IMAGES_URL} from "../constant";
 export const CibilScoreFooter = (props) => {
     return (
         <div className="container-fluid cibil-footer">
@@ -9,7 +9,7 @@ export const CibilScoreFooter = (props) => {
                     <div className="row align-items-center">
                         <div className="footer-align">
                             <div>
-                                <img src={icon} alt="icon" className="img-fluid" />
+                                <img src={S3_IMAGES_URL +'/svg/cibil-icon.svg'} alt="icon" className="img-fluid" />
                             </div>
                             <div>
                                 <h4>

@@ -1,8 +1,6 @@
 import React, {Component} from "react";
-import goldStarIcon from "../images/svg/star.svg";
-import halfStarIcon from "../images/svg/star-half.svg";
-import google from "../images/svg/google.svg";
 import Slider from "react-slick";
+import {S3_IMAGES_URL} from "../constant";
 
 export const Users = (props) => {
     var settings = {
@@ -49,13 +47,13 @@ export const Users = (props) => {
                 <div className="row ">
                     <div className="col col-md-7 ">
                         <h4 className="our_rating">Our ratings on  <img
-                            src={google}
+                            src={S3_IMAGES_URL +'/svg/google.svg'}
                             alt="G"
                             className="img-fluid"
                         />oogle store</h4>
                         <div className='star-align'><strong style={{fontSize:30, fontWeight:600}}>4.3 </strong>
                             <img
-                                src={halfStarIcon}
+                                src={S3_IMAGES_URL +'/svg/star-half.svg'}
                                 alt="Star"
                                 className="img-fluid"
                             />
@@ -72,27 +70,27 @@ export const Users = (props) => {
                                 <span>Bengaluru</span>
                                 <div>
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
@@ -114,27 +112,27 @@ export const Users = (props) => {
                                 <span>New Delhi</span>
                                 <div>
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
@@ -157,27 +155,27 @@ export const Users = (props) => {
                                 <span>New Delhi</span>
                                 <div>
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
                                     <img
-                                        src={goldStarIcon}
+                                        src={S3_IMAGES_URL +'/svg/star.svg'}
                                         alt="Star"
                                         className="img-fluid"
                                     />
