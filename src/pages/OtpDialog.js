@@ -107,13 +107,13 @@ const OtpDialog = (props) => {
             <label className="form-label pb-2 text-center">Enter OTP</label>
             <input
               name="otp"
-              type="number"
+              type="text"
               className="form-control input-field"
               placeholder="Enter 4 digits OTP"
               value={otp}
               onChange={(e) => {
                 setOtperr("");
-                setOtp(e.target.value.slice(0, 4));
+                setOtp(e.target.value.slice(0, 4).replace(/\D/g, ""));
               }}
             />
             {otperr ? (
