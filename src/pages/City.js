@@ -63,6 +63,7 @@ const images = {
 };
 
 export const City = (props) => {
+  console.log("testing for pixel code")
   const [showDialogCity, setShowDialogCity] = React.useState(false);
   const openCity = () => setShowDialogCity(true);
   const closeCity = () => setShowDialogCity(false);
