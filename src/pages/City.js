@@ -199,6 +199,7 @@ export const City = (props) => {
     window.scrollTo(0, 0);
     GoogleAnalytics();
     faceBook();
+    fbq("init", "4712656898789321");
    
   }, []);
 
@@ -304,6 +305,7 @@ export const City = (props) => {
 src="https://www.facebook.com/tr?id=4712656898789321&ev=PageView
 &noscript=1"/>
 </noscript>
+
                
             </Helmet>
       {cityName === "Delhi" ? (
