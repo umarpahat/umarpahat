@@ -1892,10 +1892,32 @@ a.button-small:hover {
 .slick-next:before, .slick-prev:before{
     font-size: 24px;
 }
+
 .blog-div {
     padding: 5px 10px;
     width: 100%;
 }
+
+.blog-div .img-fluid {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.blog-div p {
+    padding: 5px 0 0;
+}
+.play-btn{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
 .userSection .slick-slide{
     padding: 0 10px;
 }
@@ -2356,7 +2378,6 @@ hr.style {
 
 
 .sticky-bot {
-    bottom: 0;
     left: 5%;
     line-height: normal;
     overflow: visible;
@@ -3306,6 +3327,7 @@ a {
 .home_social_link{
     padding-top: 25px;
 }
+
 @media (max-width: 600px) {
     .colValue img{
         max-height: 40%;

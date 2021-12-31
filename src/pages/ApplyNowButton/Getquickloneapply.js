@@ -138,14 +138,13 @@ const Getquikloneapply = (props) => {
                             <label className="form-label">Mobile Number</label>
 
                             <input
-                              type="number"
+                              type="text"
                               minLength={10}
                               className="form-control ms-form-input"
                               placeholder="Enter new mobile number"
                               value={number || ""}
                               onChange={(event) => {
-                                setnumber(event.target.value.slice(0, 10)
-                                .replace(/\D/g, ""));
+                                setnumber(event.target.value.slice(0, 10).replace(/\D/g, ""));
                                 if (
                                   event.target.value.length === 0 ||
                                   event.target.value.length === 10

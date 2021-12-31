@@ -331,11 +331,11 @@ const Professionaldetailspayme = (props) => {
                       onChange={(event) => {
                         seterrororganizationName("");
                         if(event.target.value.match(/^[A-Za-z{" "}]+$/)){ 
-                        setorganizationName(event.target.value);
+                        setorganizationName(event.target.value.slice(0,140));
                       }
                     else if (event.target.value.length===0)
                   {
-                    setorganizationName(event.target.value);
+                    setorganizationName(event.target.value.slice(0,140));
                   }}}
                     />
                     {errororganizationName ? (
@@ -347,13 +347,13 @@ const Professionaldetailspayme = (props) => {
                   <div className="form-group ms-input-group">
                     <label className="form-label">Work Experience(years)</label>
                     <input
-                      type="number"
+                      type="text"
                       className="form-input"
                       placeholder="Enter Work Experience"
                       value={workExp}
                       onChange={(event) => {
                         setErrorworkExp("");
-                        setWorkExp(event.target.value.slice(0,2));
+                        setWorkExp(event.target.value.slice(0,2).replace(/\D/g, ""));
                       }}
                     />
                     {errorworkExp ? (
@@ -363,13 +363,13 @@ const Professionaldetailspayme = (props) => {
                   <div className="form-group ms-input-group">
                     <label className="form-label">Salary</label>
                     <input
-                      type="number"
+                      type="text"
                       className="form-input"
                       placeholder="Enter Salary"
                       value={inhandsalary}
                       onChange={(event) => {
                         setErrorSalary("");
-                        setInhandsalary(event.target.value.slice(0,10));
+                        setInhandsalary(event.target.value.slice(0,10).replace(/\D/g, ""));
                       }}
                     />
                     {errorSalary ? (

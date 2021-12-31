@@ -97,7 +97,7 @@ const OtpDialog = (props) => {
       <Dialog
         isOpen={showDialogCity}
         onDismiss={CloseOtpScreen}
-        style={{ width: 600 }}
+        style={{ maxWidth: 600 }}
       >
         <button className="close-button" onClick={CloseOtpScreen}>
           <span aria-hidden>×</span>
@@ -108,13 +108,13 @@ const OtpDialog = (props) => {
             <label className="form-label pb-2 text-center">Enter OTP</label>
             <input
               name="otp"
-              type="number"
+              type="text"
               className="form-control input-field"
               placeholder="Enter 4 digits OTP"
               value={otp}
               onChange={(e) => {
                 setOtperr("");
-                setOtp(e.target.value.slice(0, 4));
+                setOtp(e.target.value.slice(0, 4).replace(/\D/g, ""));
               }}
             />
             {otperr ? (

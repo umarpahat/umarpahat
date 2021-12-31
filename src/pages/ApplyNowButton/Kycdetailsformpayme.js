@@ -310,6 +310,8 @@ const Kycdetailsformpayme = (props) => {
                             </label>
                             <input
                               type="date"
+                              min="1920-01-01"
+                              max="2003-01-01"
                               className="form-input"
                               value={date}
                               onChange={(event) => {
