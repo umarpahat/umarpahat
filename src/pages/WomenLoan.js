@@ -601,7 +601,8 @@ export const WomenLoan = (props) => {
                     value={phone}
                     onChange={(e) => {
                       setPhoneerr("");
-                      setPhone(e.target.value.slice(0, 10));
+                      setPhone(e.target.value.slice(0, 10)
+                      .replace(/\D/g, ""));
                     }}
                   />
                   {phoneerr ? (
