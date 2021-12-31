@@ -405,7 +405,7 @@ const OtherDetalisForm = (props) => {
                             value={RentAmount}
                             onChange={(e) => {
                               seterrorRentAmount("");
-                              setRentAmount(e.target.value);
+                              setRentAmount(e.target.value.slice(0,6).replace(/\D/g, ""));
                             }}
                           />
                           {errorRentAmount ? (
@@ -627,14 +627,14 @@ const OtherDetalisForm = (props) => {
                                   +91
                                 </span>
                                 <input
-                                  type="number"
+                                  type="text"
                                   className="form-input"
                                   placeholder="9999999999"
                                   value={mobileNumber}
                                   onChange={(e) => {
                                     seterrormobileNumber("");
                                     setmobileNumber(
-                                      e.target.value.slice(0, 10)
+                                      e.target.value.slice(0, 10).replace(/\D/g, "")
                                     );
                                   }}
                                 />
@@ -657,7 +657,7 @@ const OtherDetalisForm = (props) => {
                                 value={AddressLine1}
                                 onChange={(e) => {
                                   seterrorAddressLine1("");
-                                  setAddressLine1(e.target.value);
+                                  setAddressLine1(e.target.value.slice(0,120));
                                 }}
                               />
                               {errorAddressLine1 ? (
@@ -671,20 +671,20 @@ const OtherDetalisForm = (props) => {
                                 placeholder="Address Line 2"
                                 value={AddressLine2}
                                 onChange={(e) => {
-                                  setAddressLine2(e.target.value);
+                                  setAddressLine2(e.target.value.slice(0,120));
                                 }}
                               />
                             </div>
                             <div className="form-group ms-input-group">
                               <label className="form-label">Pin Code</label>
                               <input
-                                type="number"
+                                type="text"
                                 className="form-input"
                                 placeholder="Enter Pincode Of Your Property"
                                 value={pinCode}
                                 onChange={(e) => {
                                   seterrorPincode("");
-                                  setpinCode(e.target.value.slice(0, 6));
+                                  setpinCode(e.target.value.slice(0, 6).replace(/\D/g, ""));
                                 }}
                               />
                               {errorPincode ? (
@@ -707,7 +707,7 @@ const OtherDetalisForm = (props) => {
                                     if (
                                       e.target.value.match(/^[A-Za-z{" "}]+$/)
                                     ) {
-                                      setstate(e.target.value);
+                                      setstate(e.target.value.slice(0,20));
                                     } else if (e.target.value.length === 0) {
                                       setstate(e.target.value);
                                     }
@@ -731,7 +731,7 @@ const OtherDetalisForm = (props) => {
                                     if (
                                       e.target.value.match(/^[A-Za-z{" "}]+$/)
                                     ) {
-                                      setcity(e.target.value);
+                                      setcity(e.target.value.slice(0,30));
                                     } else if (e.target.value.length === 0) {
                                       setcity(e.target.value);
                                     }
@@ -845,7 +845,7 @@ const OtherDetalisForm = (props) => {
                                 value={ifscCode}
                                 onChange={(e) => {
                                   seterrorifscCode("");
-                                  setifscCode(e.target.value.toUpperCase());
+                                  setifscCode(e.target.value.slice(0,30).toUpperCase());
                                 }}
                               />
                               {errorifscCode ? (
@@ -863,7 +863,7 @@ const OtherDetalisForm = (props) => {
                                 value={bankName}
                                 onChange={(e) => {
                                   seterrorbankName("");
-                                  setbankName(e.target.value);
+                                  setbankName(e.target.value.slice(0,30));
                                 }}
                               />
                               {errorbankName ? (
