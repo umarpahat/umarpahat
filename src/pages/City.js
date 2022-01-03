@@ -197,7 +197,7 @@ export const City = (props) => {
     window.scrollTo(0, 0);
     GoogleAnalytics();
     faceBook()
-    fbq("init", "4712656898789321");
+    fbq('init', "4712656898789321");
     // hotJarForCity();
   }, []);
 
