@@ -270,8 +270,7 @@ export const City = (props) => {
     fbq("init", "4712656898789321");
     fbq("track", "PageView");
     fbq('track', 'Lead');
-    fbq('track', 'LeadForCity');
-    fbq('track', 'LeadWomen');
+  
   }
   return (
     <>
