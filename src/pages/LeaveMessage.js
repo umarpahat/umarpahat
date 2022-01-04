@@ -247,7 +247,7 @@ const LeaveMessage = (props) => {
                   <label className="form-label pb-2">Phone Number</label>
                   <input
                     name="phone"
-                    type="number"
+                    type="text"
                     maxLength="10"
                     pattern="[0-9]+"
                     className="form-control input-field"
@@ -255,7 +255,7 @@ const LeaveMessage = (props) => {
                     value={phone}
                     onChange={(e) => {
                       setPhoneerr("");
-                      setPhone(e.target.value.slice(0,10));
+                      setPhone(e.target.value.slice(0,10).replace(/\D/g, ""));
                     }}
                   />
                   {phoneerr ? (

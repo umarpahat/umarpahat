@@ -38,7 +38,7 @@ export const WomenLoan = (props) => {
   const [topicerr, setTopicErr] = useState("");
   const [otpScreen, setOtpScreen] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
-  
+
   const closeCity = () => setOtpScreen(false);
 
   let url = "";
@@ -51,10 +51,9 @@ export const WomenLoan = (props) => {
       setNameerr("Name can't be empty");
       return;
     }
-    if(email==="")
-    {
-        setEmailerr("Email Id can't be empty")
-        return;
+    if (email === "") {
+      setEmailerr("Email Id can't be empty");
+      return;
     }
 
     if (phone.length === 0) {
@@ -70,15 +69,13 @@ export const WomenLoan = (props) => {
       return;
     }
 
-   
-   let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
+    let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
 
     let data = {
       name: name,
       email: email,
       phone_number: phone,
       lead_from: "WOMEN",
-      
     };
 
     axios
@@ -117,6 +114,27 @@ export const WomenLoan = (props) => {
         console.log(error);
       });
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    hotJarForWomen();
+  }, []);
+
+  const hotJarForWomen = () => {
+    (function (h, o, t, j, a, r) {
+      h.hj =
+        h.hj ||
+        function () {
+          (h.hj.q = h.hj.q || []).push(arguments);
+        };
+      h._hjSettings = { hjid: 2759149, hjsv: 6 };
+      a = o.getElementsByTagName("head")[0];
+      r = o.createElement("script");
+      r.async = 1;
+      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+  };
 
   const responseGoogleFail = (res) => {
     toast.error("Please login google account in your device", { ...options });
@@ -134,13 +152,12 @@ export const WomenLoan = (props) => {
       <div className="col-md-6 col-sm-12 hideDesktop">
         {otpScreen ? (
           <OtpDialog
-          closeCity={closeCity}
-          {...props}
+            closeCity={closeCity}
+            {...props}
             name={name}
             email={email}
             phone={phone}
             lead_from="WOMEN"
-            
           />
         ) : null}
         <div className="rightSection ">
@@ -164,7 +181,6 @@ export const WomenLoan = (props) => {
                   } else if (e.target.value.length === 0) {
                     setName(e.target.value);
                   }
-                  
                 }}
               />
               {nameerr ? (
@@ -195,13 +211,13 @@ export const WomenLoan = (props) => {
               <label className="form-label pb-2">Phone Number</label>
               <input
                 name="phone"
-                type="number"
+                type="text"
                 className="form-control input-field"
                 placeholder="Enter your Phone Number"
                 value={phone}
                 onChange={(e) => {
                   setPhoneerr("");
-                  setPhone(e.target.value.slice(0,10));
+                  setPhone(e.target.value.slice(0, 10).replace(/\D/g, ""));
                 }}
               />
               {phoneerr ? (
@@ -242,15 +258,21 @@ export const WomenLoan = (props) => {
                     </div>*/}
         </div>
       </div>
-      <div className="banner" style={{paddingTop:0, paddingBottom:0}}>
+      <div className="banner" style={{ paddingTop: 0, paddingBottom: 0 }}>
         <div className="container">
           <div className="row align-items-center ">
             <div className="col-sm-12 col-md-6 bannerAlign p-t-20">
               <h1 className="heading1">Personal Loan for Women</h1>
-              <p className="heading6 p-b-20">PayMe India provide today’s women path to financial freedom by offering collateral-free personal loan at affordable interest rate.</p>
+              <p className="heading6 p-b-20">
+                PayMe India provide today’s women path to financial freedom by
+                offering collateral-free personal loan at affordable interest
+                rate.
+              </p>
               <a
-                className="btnLarge" style={{background:'#F60093'}}
-                href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
+                className="btnLarge"
+                style={{ background: "#F60093" }}
+                href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia"
+              >
                 Get app now
               </a>
               <div className=" p-t-10">
@@ -267,7 +289,7 @@ export const WomenLoan = (props) => {
                   </a>
                 </div>
                 <div>
-                  <a href="https://apps.apple.com/us/app/payme-india/id1282142711" >
+                  <a href="https://apps.apple.com/us/app/payme-india/id1282142711">
                     <img
                       className="img_google"
                       src={appStore}
@@ -292,7 +314,9 @@ export const WomenLoan = (props) => {
           <div className="container">
             <div className="row p-t-20 ">
               <div className="col-lg-12 col-md-12 col-sm-12 text-center p-t-50 p-b-30">
-                <h2 className="text-center heading4">Documents required for women's loan</h2>
+                <h2 className="text-center heading4">
+                  Documents required for women's loan
+                </h2>
               </div>
             </div>
             <div className="row justify-content-md-center p-t-15">
@@ -526,7 +550,7 @@ export const WomenLoan = (props) => {
                     value={phone}
                     onChange={(e) => {
                       setPhoneerr("");
-                      setPhone(e.target.value.slice(0,10));
+                      setPhone(e.target.value.slice(0, 10));
                     }}
                   />
                   {phoneerr ? (
@@ -543,7 +567,7 @@ export const WomenLoan = (props) => {
                     display: "block",
                     cursor: "pointer",
                     color: "#fff",
-                    width:"100%",
+                    width: "100%",
                     background: "#F60093",
                   }}
                   onClick={getOtp}

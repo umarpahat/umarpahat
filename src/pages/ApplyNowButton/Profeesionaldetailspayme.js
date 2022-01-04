@@ -331,11 +331,11 @@ const Professionaldetailspayme = (props) => {
                       onChange={(event) => {
                         seterrororganizationName("");
                         if(event.target.value.match(/^[A-Za-z{" "}]+$/)){ 
-                        setorganizationName(event.target.value);
+                        setorganizationName(event.target.value.slice(0,140));
                       }
                     else if (event.target.value.length===0)
                   {
-                    setorganizationName(event.target.value);
+                    setorganizationName(event.target.value.slice(0,140));
                   }}}
                     />
                     {errororganizationName ? (

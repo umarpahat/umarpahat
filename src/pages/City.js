@@ -198,6 +198,7 @@ export const City = (props) => {
     GoogleAnalytics();
     faceBook()
     fbq("init", "699730774332173");
+    hotJarForCity();
   }, []);
 
   const GoogleAnalytics =()=>{
@@ -229,6 +230,17 @@ export const City = (props) => {
       event_callback: callback,
     });
     return false;
+  }
+
+  const hotJarForCity=()=>{
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:2758326,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   }
 
   const faceBook=()=>{
@@ -506,13 +518,13 @@ export const City = (props) => {
                   <label className="form-label pb-2">Phone Number</label>
                   <input
                     name="phone"
-                    type="number"
+                    type="text"
                     className="form-control input-field"
                     placeholder="Enter your phone number"
                     value={phone}
                     onChange={(e) => {
                       setPhoneerr("");
-                      setPhone(e.target.value.slice(0,10));
+                      setPhone(e.target.value.slice(0,10).replace(/\D/g, ""));
                     }}
                   />
                   {phoneerr ? (
