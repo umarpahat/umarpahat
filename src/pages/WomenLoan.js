@@ -115,9 +115,10 @@ export const WomenLoan = (props) => {
       });
   };
   useEffect(() => {
+    hotJarForWomen();
     window.scrollTo(0, 0);
 
-    hotJarForWomen();
+  
   }, []);
 
   const hotJarForWomen = () => {
