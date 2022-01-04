@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
+import React, { useState } from "react";
+import { Dialog  } from "@reach/dialog";
 import "@reach/dialog/styles.css";
-import { Link } from "react-router-dom";
-import cuate from "../images/svg/cuate.svg";
 import OtpDialog from "./OtpDialog";
 import { GoogleLogin } from "react-google-login";
-import { API_ENDPOINT_STAGING } from "../constant";
+import {API_ENDPOINT_STAGING, S3_IMAGES_URL} from "../constant";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 toast.configure();
@@ -149,7 +147,7 @@ const CustomerGrievance = (props) => {
           ) : null}
           <div className="col-md-6 ">
             <div className="cuate">
-              <img src={cuate} alt="icon" className="img-fluid" />
+              <img src={S3_IMAGES_URL+'/svg/cuate.svg'} alt="icon" className="img-fluid" />
             </div>
           </div>
           <div className="col-md-6 ">

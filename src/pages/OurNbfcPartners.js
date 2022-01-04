@@ -1,24 +1,11 @@
-import React, {useState, useEffect} from "react";
-import {hitAppUseCase} from "../store/modules/userDetails/actions";
-import {connect} from "react-redux";
-import {Accordion, Card, Container} from "react-bootstrap";
-import "./ApplyNowButton/Applybtnallcomponent.css";
+import React from "react";
 import Header from "./Header";
 import "../../src/home.css";
-
-import {Link} from "react-router-dom";
-import $ from "jquery";
-import arvog from "../images/arvog.jpg";
-import money2me from "../images/money2me.jpg";
-import paymeindia from "../images/logo.png";
-import arthmate from "../images/Arthmatelogo.png";
 import MetaTags from "react-meta-tags";
-import mailBox from "../images/svg/mail-box.svg";
 import Footer from "./Footer";
+import {S3_IMAGES_URL} from "../constant";
 
 const OurNbfcPartners = (props) => {
-    let [loader, setloader] = useState(false);
-
     return (
         <>
             <MetaTags>
@@ -39,22 +26,22 @@ const OurNbfcPartners = (props) => {
 
                             <div className="col-lg-3 col-md-2 col-sm-12 col-xs-12">
                             <div className="rounded-shadow">
-                                <img className='img-fluid' src={paymeindia} alt="paymeindia"/>
+                                <img className='img-fluid' src={S3_IMAGES_URL+'/logo.png'} alt="paymeindia"/>
                             </div>
                             </div>
                             <div className="col-lg-3 col-md-2 col-sm-12 col-xs-12">
                             <div className="rounded-shadow">
-                                <img className='img-fluid' src={money2me} alt="paymeindia"/>
+                                <img className='img-fluid' src={S3_IMAGES_URL+'/money2me.jpg'} alt="paymeindia"/>
                             </div>
                             </div>
                             <div className="col-lg-3 col-md-2 col-sm-12 col-xs-12">
                             <div className="rounded-shadow">
-                                <img className='img-fluid' src={arvog} alt="paymeindia"/>
+                                <img className='img-fluid' src={S3_IMAGES_URL+'/arvog.jpg'} alt="paymeindia"/>
                             </div>
                             </div>
                             <div className="col-lg-3 col-md-2 col-sm-12 col-xs-12">
                             <div className="rounded-shadow">
-                                <img className='img-fluid' src={arthmate} alt="Arthmate"/>
+                                <img className='img-fluid' src={S3_IMAGES_URL+'/Arthmatelogo.png'} alt="Arthmate"/>
                             </div>
                             </div>
 
@@ -152,10 +139,4 @@ const OurNbfcPartners = (props) => {
         </>
     );
 };
-const mapStateToProps = (state) => {
-    return {};
-};
-
-const dispatchToProps = {hitAppUseCase};
-
-export default connect(mapStateToProps, dispatchToProps)(OurNbfcPartners);
+export default OurNbfcPartners;

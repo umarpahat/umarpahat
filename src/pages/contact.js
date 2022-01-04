@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { hitAppUseCase } from "../store/modules/userDetails/actions";
-import { connect } from "react-redux";
-import { Container } from "react-bootstrap";
-import Loader from "../component/Loader";
+import React, { useState} from "react";
 import "./ApplyNowButton/Applybtnallcomponent.css";
-
 import Header from "./Header";
 import "../../src/home.css";
-import contact from "../images/svg/contact-us.svg";
-import pointer from "../images/svg/map-pin.svg";
-import phone from "../images/svg/phone-call.svg";
-import printer from "../images/svg/printer.svg";
-import timer from "../images/svg/clock.svg";
 import MetaTags from "react-meta-tags";
-import mailBox from "../images/svg/mail-box.svg";
 import Footer from "./Footer";
+import {S3_IMAGES_URL} from "../constant";
 
 const Contact = (props) => {
   let [loader, setloader] = useState(false);
@@ -38,7 +28,7 @@ const Contact = (props) => {
           </div>
           <div className="row align-items-center p-b-30 p-t-30">
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center main-img p-t-20">
-              <img alt="About us" src={contact} />
+              <img alt="About us" src={S3_IMAGES_URL+'/svg/contact-us.svg'} />
             </div>
             <div className="col-lg-1 col-md-1 col-sm-12 col-xs-12 "></div>
             <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 p-t-20">
@@ -48,7 +38,7 @@ const Contact = (props) => {
                 <div className="col-md-12 col-sm-12 col-xd-12 ">
                   <div className="icon-left">
                     <img
-                      src={pointer}
+                      src={S3_IMAGES_URL+'/svg/map-pin.svg'}
                       alt="PayMe India"
                       className="contact-payme"
                     />
@@ -64,7 +54,7 @@ const Contact = (props) => {
                 <div className="col-md-12 col-sm-12 col-xd-12">
                   <div className="icon-left">
                     <img
-                      src={phone}
+                      src={S3_IMAGES_URL+'/svg/phone-call.svg'}
                       alt="PayMe India"
                       className="contact-payme"
                     />
@@ -76,7 +66,7 @@ const Contact = (props) => {
                 <div className="col-md-12 col-sm-12 col-xd-12">
                   <div className="icon-left">
                     <img
-                      src={printer}
+                      src={S3_IMAGES_URL+'/svg/printer.svg'}
                       alt="PayMe India"
                       className="contact-payme"
                     />
@@ -88,7 +78,7 @@ const Contact = (props) => {
                 <div className="col-md-12 col-sm-12 col-xd-12">
                   <div className="icon-left">
                     <img
-                      src={timer}
+                      src={S3_IMAGES_URL+'/svg/clock.svg'}
                       alt="PayMe India"
                       className="contact-payme"
                     />
@@ -108,10 +98,4 @@ const Contact = (props) => {
     </>
   );
 };
-const mapStateToProps = (state) => {
-  return {};
-};
-
-const dispatchToProps = { hitAppUseCase };
-
-export default connect(mapStateToProps, dispatchToProps)(Contact);
+export default Contact;

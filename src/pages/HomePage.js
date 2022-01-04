@@ -42,11 +42,9 @@ const HomePage = (props) => {
   const classes = useStyles();
   let [loader, setloader] = useState(false);
   const [amount, setAmount] = useState(0);
+  const [rate, setRate] = useState(0);
   const [time, setTime] = useState(0);
   const [successcibilreport,setsuccesscibilreport]=useState(props.location.state?.success)
-
-
-  
   const notify = (err) => {
     toast.success(successcibilreport, { ...options });
     window.history.replaceState(null, '')
@@ -62,6 +60,10 @@ const HomePage = (props) => {
     setAmount(newValue);
   };
 
+  const handleSliderChangeRate = (event, newValue) => {
+    setRate(newValue);
+  };
+
   const handleInputChange = (event) => {
     if (event.target.value > 200000) {
       setAmount(200000);
@@ -73,6 +75,9 @@ const HomePage = (props) => {
   function valuetext(value1) {
     $("#total-amount1").text(amount);
     $("#total-amount").text(amount);
+  }
+  function valuetextRate(value1) {
+    $("#interestId").text(rate);
   }
 
   function valuetext2(value2) {
@@ -88,14 +93,14 @@ const HomePage = (props) => {
       amount * ((roi * (1 + roi) ** time) / ((1 + roi) ** time - 1))
     );
 
-    $("#interest").text(36);
+    $("#interest").text(rate);
     $("#interestId").text(result);
     $("#roi").text(roi);
     $("#pfee").text(pfee);
     $("#amountInput").val(pfee);
     let repay = time * result;
     $("#repayment").text(repay);
-    $("#roi2").text(36);
+    $("#roi2").text(rate);
 
     return result;
   }
@@ -144,7 +149,7 @@ const HomePage = (props) => {
               </div>
               <div className="col-sm-12 col-md-5 order-sm-1 order-md-2">
                 <div className="price-box">
-                  {/*<form className="form-horizontal form-pricing" role="form">
+                  <form className="form-horizontal form-pricing" role="form">
                     <h4>EMI Calculator</h4>
                     <div className="relative">
                       <div className="totalAmount">
@@ -175,6 +180,22 @@ const HomePage = (props) => {
                             value={amount}
                             onChange={handleInputChange}
                         />
+                      </div>
+                    </div>
+                    <div className="price-slider">
+                      <h4>Interest Rate</h4>
+                      <div className="relative">
+                        <div className={classes.root}>
+                          <Slider
+                              getAriaValueText={valuetextRate}
+                              aria-labelledby="discrete-slider-always"
+                              step={.50}
+                              max={36}
+                              value={rate}
+                              onChange={handleSliderChangeRate}
+                              valueLabelDisplay="on"
+                          />
+                        </div>
                       </div>
                     </div>
                     <div className="price-slider">
@@ -250,13 +271,13 @@ const HomePage = (props) => {
                         </div>
                       </div>
                     </div>
-                  </form>*/}
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <CorValue/>
+
         <Users/>
         <Whatsup {...props}/>
         <Blogs/>

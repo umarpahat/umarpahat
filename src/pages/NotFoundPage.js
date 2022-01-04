@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import fourZeoFour from "../images/svg/404.svg";
 import Header from "./Header";
+import {S3_IMAGES_URL} from "../constant";
 
 function NotFoundPage(props) {
   return <>
@@ -9,7 +10,7 @@ function NotFoundPage(props) {
       <div className="container p-t-80" >
         <div className="row align-items-center p-t-20">
           <div className="col-sm-12 col-md-6">
-            <img className="img-fluid" alt="404" src={fourZeoFour}/>
+            <img className="img-fluid" alt="404" src={S3_IMAGES_URL+'/svg/404.svg'} />
           </div>
           <div className="col-sm-12 col-md-1 ">&nbsp;</div>
           <div className="col-sm-12 col-md-5 p-b-30">

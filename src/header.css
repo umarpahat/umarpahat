@@ -3,6 +3,7 @@ header {
     padding-top: 3px;
     background: #33658a;
     box-sizing: border-box;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
 
 .fixed-bottom {

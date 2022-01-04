@@ -7,13 +7,10 @@ import "./ApplyNowButton/Applybtnallcomponent.css";
 import Header from "./Header";
 import "../../src/home.css";
 import {Link} from "react-router-dom";
-import instantLoan from "../images/svg/instant-loan.svg";
-import mutualFund from "../images/svg/matual-fund.svg";
 import MetaTags from "react-meta-tags";
-import payRentLink from "../images/svg/pay-rent-link.svg";
-import benefit from "../images/svg/benefit.svg";
 import {Cibil} from "../component/Cibil";
 import Footer from "./Footer";
+import {S3_IMAGES_URL} from "../constant";
 
 const Offerings = (props) => {
     let [loader, setloader] = useState(false);
@@ -32,7 +29,7 @@ const Offerings = (props) => {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-5">
-                                <h1 className="heading1">Get Instant Loan Approval</h1>
+                                <h1 className="heading2">Get Instant Loan Approval</h1>
                                 <p className="heading6">No more financial crunches with PayMe India. Avail instant loans upto Rs. 2 lakhs 
 anytime-anywhere with no hassle.</p>
                                 <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia' target='_blank'
@@ -46,7 +43,8 @@ anytime-anywhere with no hassle.</p>
                             <div className="col-sm-12 col-md-5 m-t-40">
                                 <img className="img-fluid scoreAnimate"
                                      alt="Instant Loan"
-                                     src={instantLoan}/>
+                                     src={S3_IMAGES_URL+'/svg/instant-loan.svg'}
+                                     />
                             </div>
                         </div>
                     </div>
@@ -56,12 +54,13 @@ anytime-anywhere with no hassle.</p>
                         <div className="row align-items-center pb-3">
                             <div className="col-sm-12 col-md-4 p-t-40"><img className="img-fluid"
                                                                             alt="Pay Rent using Payme app"
-                                                                            src={payRentLink}/></div>
+                                                                            src={S3_IMAGES_URL+'/svg/pay-rent-link.svg'}
+                                                                            /></div>
                             <div className="col-sm-12 col-md-2 ">
                                 &nbsp;
                             </div>
                             <div className="col-sm-12 col-md-6">
-                                <h3 className="heading3 relative"><span className='circle-small'></span> Pay rent using the PayMe app and avail exciting rewards</h3>
+                                <h3 className="heading2 relative"><span className='circle-small'></span> Pay rent using the PayMe app and avail exciting rewards</h3>
                                 <p className="heading6">Paying rent online is easier than ever! Make rent payment using your credit card with PayMe 
 India in few simple steps.</p>
                                 <Link to={{pathname:'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}} target={"_blank"}
@@ -76,13 +75,13 @@ India in few simple steps.</p>
 
                             <div className="col-sm-12 col-md-6 bg-in-mobile-black">
                                 <h6 className="heading5 relative white-color">Payme Gold app</h6>
-                                <h3 className="heading3 relative white-color">Invest in Digital Gold as low as Rs. 500</h3>
+                                <h3 className="heading2 relative white-color">Invest in Digital Gold as low as Rs. 500</h3>
                                 <p className="white-color">Accumulate Gold digitally to build your savings over time and save for future life events</p>
                                <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia' target='_blank'
                                    className="btnLarge m-t-40">Get App Now</a>
                             </div>
                             <div className="col-sm-12 col-md-6">
-                                <div className="farmer text-center"><img src={benefit} className="farmer-img img-fluid"
+                                <div className="farmer text-center"><img src={S3_IMAGES_URL+'/svg/benefit.svg'} className="farmer-img img-fluid"
                                                                          alt="App Icon"/></div>
                             </div>
                         </div>
@@ -93,17 +92,11 @@ India in few simple steps.</p>
                     <div className="container p-b-30">
                         <div className="row align-items-center">
                             <div className="col-sm-12 col-md-5">
-                                <h1 className="heading1 relative"><span className='circle-small'></span> Stop Thinking, Start Investing today in mutual funds</h1>
+                                <h3 className="heading2 relative"><span className='circle-small'></span> Stop Thinking, Start Investing today in mutual funds</h3>
                                 <p className="heading6">Build your wealth by investing in the right mutual funds by selecting funds that suit your 
 financial goals</p>
                                 <br/>
                                 <br/>
-                               {/* <Link className="btnLarge" onClick={() => {
-                                    props.hitAppUseCase({useCase: 'apply-loan'})
-                                    props.history.push({pathname: '/apply-loan'})
-                                }}>
-                                    Explore now
-                                </Link>*/}
                             </div>
                             <div className="col-sm-12 col-md-2 ">
                                 &nbsp;
@@ -111,7 +104,8 @@ financial goals</p>
                             <div className="col-sm-12 col-md-5 m-t-40">
                                 <img className="img-fluid"
                                      alt="Matual Fund"
-                                     src={mutualFund}/>
+                                     src={S3_IMAGES_URL+'/svg/matual-fund.svg'}
+                                     />
                             </div>
                         </div>
                     </div>
@@ -123,17 +117,15 @@ financial goals</p>
                     <div className="container">
                         <div className="row align-items-center p-t-80">
                             <div className="col-sm-12 col-md-6">
-                                <div className="farmer text-center"><img src={benefit} className="farmer-img img-fluid"
+                                <div className="farmer text-center"><img src={S3_IMAGES_URL+'/svg/benefit.svg'} className="farmer-img img-fluid"
                                                                          alt="App Icon"/></div>
                             </div>
                             <div className="col-sm-12 col-md-6 bg-in-mobile-black">
                                 <h6 className="heading5 relative white-color">SALT- Buy Now Pay Later</h6>
-                                <h3 className="heading3 relative white-color">Buy anything with one Tap and Pay later
+                                <h3 className="heading2 relative white-color">Buy anything with one Tap and Pay later
                                 </h3>
                                 <p className="white-color">Shopping online is easy checkout options aren’t. Salt brings you the advantage of
                                     buying now and paying later, Increasing the affordability of the purchase</p>
-                                {/*<a href='https://creditscore.paymeindia.in' target='_blank'
-                                   className="btnLarge m-t-40">Get App Now</a>*/}
                             </div>
                         </div>
                     </div>

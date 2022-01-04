@@ -1,16 +1,12 @@
-import React, { useState } from "react";
-import { hitAppUseCase } from "../store/modules/userDetails/actions";
-import { connect } from "react-redux";
+import React from "react";
 import MetaTags from "react-meta-tags";
-import "./ApplyNowButton/Applybtnallcomponent.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import {S3_IMAGES_URL} from '../constant'
 import "../../src/home.css";
+import {CorValue} from "../component/CorValue";
 
 const About = (props) => {
-  let [loader, setloader] = useState(false);
-
   return (
     <>
       <MetaTags>
@@ -96,6 +92,7 @@ const About = (props) => {
             </div>
           </div>
         </div>
+        <CorValue/>
         <div className="promise">
           <div className="container">
             <div className="row justify-content-md-center">
@@ -190,7 +187,6 @@ const About = (props) => {
             </div>
           </div>
         </div>
-
         <div className="team-section">
           <div className="container">
             <div className="row justify-content-md-center">
@@ -274,10 +270,4 @@ const About = (props) => {
     </>
   );
 };
-const mapStateToProps = (state) => {
-  return {};
-};
-
-const dispatchToProps = { hitAppUseCase };
-
-export default connect(mapStateToProps, dispatchToProps)(About);
+export default About;

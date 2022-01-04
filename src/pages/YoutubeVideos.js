@@ -1,16 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
+import React, { useState } from "react";
+import { Dialog} from "@reach/dialog";
 import "@reach/dialog/styles.css";
-import { Link } from "react-router-dom";
-import cuate from "../images/svg/cuate.svg";
-import googlePay from "../images/svg/google-play.svg";
-import appStore from "../images/svg/app-store.svg";
-import cibilScoreIcon from "../images/svg/cibil-score-icon.svg";
-import OtpDialog from "./OtpDialog";
-import { GoogleLogin } from "react-google-login";
-import { API_ENDPOINT_STAGING } from "../constant";
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 toast.configure();
 const options = {
   position: "top-center",

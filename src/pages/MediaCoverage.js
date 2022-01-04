@@ -4,12 +4,10 @@ import {connect} from "react-redux";
 import "./ApplyNowButton/Applybtnallcomponent.css";
 import Header from "./Header";
 import "../../src/home.css";
-import mediaCover from "../images/svg/media-cover.svg";
 import MetaTags from "react-meta-tags";
-import mailBox from "../images/svg/mail-box.svg";
 import {Link} from "@material-ui/core";
 import Footer from "./Footer";
-import {lazyStartIndex} from "react-slick/lib/utils/innerSliderUtils";
+import {S3_IMAGES_URL} from "../constant";
 
 const MediaCoverage = (props) => {
     let [loader, setloader] = useState(false);
@@ -370,7 +368,8 @@ const MediaCoverage = (props) => {
                             <div className="col-sm-12 col-md-5 m-t-40">
                                 <img className="img-fluid"
                                      alt="Media"
-                                     src={mediaCover}/>
+                                     src={S3_IMAGES_URL+'/svg/media-cover.svg'}
+                                    />
                             </div>
                         </div>
                     </div>

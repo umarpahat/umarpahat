@@ -1,28 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import fourZeoFour from "../images/svg/404.svg";
-import {hitAppUseCase} from "../store/modules/userDetails/actions";
-import {connect} from "react-redux";
 import Footer from "./Footer";
-import {CarouselPic} from "../component/carousel";
-import {Cibil} from "../component/Cibil";
-import {Benefits} from "../component/Benefits";
-import {Services} from "../component/Services";
-import {GetLoanStep} from "../component/GetLoanStep";
-import {Products} from "../component/Products";
-import Slider from "@material-ui/core/Slider";
-import {CorValue} from "../component/CorValue";
-import {Users} from "../component/Users";
-import {Whatsup} from "../component/Whatsup";
-import {Blogs} from "../component/Blogs";
-import {Videos} from "../component/Videos";
-import getLoan from "../images/svg/get-loan-pic.svg";
-import criteria from "../images/svg/criteria-pic.svg";
-import googlePay from "../images/svg/google-play.svg";
-import appStore from "../images/svg/app-store.svg";
 import Header from "./Header";
 import MetaTags from "react-meta-tags";
-
+import {S3_IMAGES_URL} from "../constant";
 
 const EligbilityCriteria = (props) => {
 
@@ -55,7 +36,7 @@ const EligbilityCriteria = (props) => {
                                 <div className='p-b-30'>
                                     <img className="img-fluid"
                                          alt="Instant Loan"
-                                         src={criteria}/>
+                                         src={S3_IMAGES_URL+'/svg/criteria-pic.svg'}/>
                                 </div>
                             </div>
                         </div>
@@ -97,9 +78,4 @@ const EligbilityCriteria = (props) => {
         </>
     );
 };
-const mapStateToProps = (state) => {
-    return {};
-};
-
-const dispatchToProps = {hitAppUseCase};
-export default connect(mapStateToProps, dispatchToProps)(EligbilityCriteria);
+export default EligbilityCriteria;

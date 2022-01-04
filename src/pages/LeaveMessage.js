@@ -2,13 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 import { Link } from "react-router-dom";
-import cuate from "../images/svg/cuate.svg";
-import googlePay from "../images/svg/google-play.svg";
-import appStore from "../images/svg/app-store.svg";
-import cibilScoreIcon from "../images/svg/cibil-score-icon.svg";
 import OtpDialog from "./OtpDialog";
 import { GoogleLogin } from "react-google-login";
-import { API_ENDPOINT_STAGING } from "../constant";
+import {API_ENDPOINT_STAGING, S3_IMAGES_URL} from "../constant";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 toast.configure();
@@ -165,7 +161,7 @@ const LeaveMessage = (props) => {
                   >
                     <img
                       className="img_google"
-                      src={googlePay}
+                      src={S3_IMAGES_URL+'/svg/google-play.svg'}
                       alt="Pay Me India"
                     />
                   </Link>
@@ -173,14 +169,14 @@ const LeaveMessage = (props) => {
                 <div>
                   <img
                     className="img_google"
-                    src={appStore}
+                    src={S3_IMAGES_URL+'/svg/app-store.svg'}
                     alt="Pay Me India"
                   />
                 </div>
               </div>
               <div className="footer-align-stripe">
                 <div>
-                  <img src={cibilScoreIcon} alt="icon" className="img-fluid" />
+                  <img src={S3_IMAGES_URL+'/svg/cibil-score-icon.svg'} alt="icon" className="img-fluid" />
                 </div>
                 <div>
                   <h4>Check your Loan eligibility now in free of cost</h4>
