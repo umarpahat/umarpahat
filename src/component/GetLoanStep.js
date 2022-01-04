@@ -1,8 +1,6 @@
-import React, {Component} from "react";
+import React  from "react";
 import {Link} from "react-router-dom";
-import createAccount from "../images/svg/create-account.svg";
-import kyc from "../images/svg/kyc.svg";
-import bank from "../images/svg/bank.svg";
+import {S3_IMAGES_URL} from "../constant";
 
 export const GetLoanStep = (props) => {
     return (
@@ -20,7 +18,7 @@ export const GetLoanStep = (props) => {
                                         <div className='step-btn'>Step - 1</div>
                                         <Link to="/" className="product-link">
                                             <div className='img-circle-round'>
-                                                <img src={createAccount} alt="Create an account"/>
+                                                <img  src={S3_IMAGES_URL +'/svg/create-account.svg'} alt="Create an account"/>
                                             </div>
                                             <h5 className="heading5">Create an account</h5>
                                             <p className="heading6">Sign up to the app</p>
@@ -33,7 +31,7 @@ export const GetLoanStep = (props) => {
                                         <div className='step-btn'>Step - 2</div>
                                         <Link to="/" className="product-link">
                                             <div className='img-circle-round'>
-                                                <img src={kyc} alt="Get your KYC done"/>
+                                                <img src={S3_IMAGES_URL +'/svg/kyc.svg'} alt="Get your KYC done"/>
                                             </div>
                                             <h5 className="heading5">Get your KYC done</h5>
                                             <p className="heading6">Provide your Aadhaar and PAN details</p>
@@ -45,7 +43,7 @@ export const GetLoanStep = (props) => {
                                         <div className='step-btn'>Step - 3</div>
                                         <Link to="/" className="product-link">
                                             <div className='img-circle-round'>
-                                                <img src={bank} alt="Provide Bank details"/>
+                                                <img src={S3_IMAGES_URL +'/svg/bank.svg'} alt="Provide Bank details"/>
                                             </div>
                                             <h5 className="heading5">Provide Bank details</h5>
                                             <p className="heading6">Bank account details & bank statement</p>

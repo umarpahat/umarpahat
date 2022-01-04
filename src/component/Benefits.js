@@ -1,12 +1,5 @@
-import React, {Component} from "react";
-import {Link} from "react-router-dom";
-
-import scoreAnimation from "../images/animated/credit.gif";
-import benefit from "../images/svg/benefit.svg";
-import loginImg from "../images/svg/login-icon.svg";
-import assementImg from "../images/svg/accurate-icon.svg";
-import aprovedImg from "../images/svg/swift-transfer.svg";
-import InstantCash from "../images/svg/instant-icon.svg";
+import React from "react";
+import {S3_IMAGES_URL} from "../constant";
 
 export const Benefits = (props) => {
     return (
@@ -20,7 +13,7 @@ export const Benefits = (props) => {
                         <div className="col-sm-4 offset-sm-4 col-md-6  offset-md-0">
                             <div className="farmer text-center">
                                 <img
-                                    src={benefit}
+                                    src={S3_IMAGES_URL +'/svg/benefit.svg'}
                                     className="farmer-img img-fluid"
                                     alt="App Icon"
                                 />
@@ -29,15 +22,14 @@ export const Benefits = (props) => {
                         <div className="col-sm-12 col-md-6 bg-in-mobile">
                             <p className="relative" style={{color: "#fff"}}>
                                 <span className="font110">“</span>
-                                <Link
+                                <a
                                     className="white-color"
-                                    to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
-                                    target="_blank"
-                                >PayMe India</Link> is a one-stop answer for your financial crunches, endowing you with
+                                    href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'
+                                >PayMe India is a one-stop answer for your financial crunches, endowing you with
                                 an in-depth range of benefits. Whether it’s last-minute rent payment, planning a
                                 vacation, or even a flash sale online, PayMe India features a loan for all processes.
                                 Let’s get a quick sneak peek of the benefits you’ll experience on your financial
-                                journey with PayMe India.<span className="font110 transform">“</span>
+                                journey with PayMe India.</a><span className="font110 transform">“</span>
 
                             </p>
                         </div>
@@ -56,7 +48,7 @@ export const Benefits = (props) => {
                                     <div className="credit-history feature-box">
                                         <div className="content-box">
                                             <div>
-                                                <img src={loginImg} alt="Easy Login"/>
+                                                <img  src={S3_IMAGES_URL +'/svg/login-icon.svg'}  alt="Easy Login"/>
                                             </div>
                                             <div>
                                                 <h4>Easy Login</h4>
@@ -72,7 +64,7 @@ export const Benefits = (props) => {
                                     <div className="instant-approval feature-box feature-box2">
                                         <div className="content-box">
                                             <div>
-                                                <img src={assementImg} alt="Accurate Assessment"/>
+                                                <img src={S3_IMAGES_URL +'/svg/accurate-icon.svg'}  alt="Accurate Assessment"/>
                                             </div>
                                             <div>
                                                 <h4>Accurate Assessment</h4>
@@ -87,7 +79,7 @@ export const Benefits = (props) => {
                                     <div className="convinient-repayment feature-box feature-box3">
                                         <div className="content-box">
                                             <div>
-                                                <img src={aprovedImg} alt="Swift Approval"/>
+                                                <img src={S3_IMAGES_URL +'/svg/swift-transfer.svg'} alt="Swift Approval"/>
                                             </div>
                                             <div>
                                                 <h4>Swift approval</h4>
@@ -102,7 +94,7 @@ export const Benefits = (props) => {
                                     <div className="credit-history feature-box feature-box4">
                                         <div className="content-box">
                                             <div>
-                                                <img src={InstantCash} alt="Instant Cash"/>
+                                                <img src={S3_IMAGES_URL +'/svg/instant-icon.svg'} alt="Instant Cash"/>
                                             </div>
                                             <div>
                                                 <h4>Instant Cash</h4>

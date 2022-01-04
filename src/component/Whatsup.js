@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import blogPic from "../images/logo.png";
-import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import whatsup from "../images/svg/whatsup.svg"; // requires a loader
-import whiteBtn from "../images/svg/arrow-white.svg"; // requires a loader
-import { API_ENDPOINT_STAGING } from "../constant";
+import {API_ENDPOINT_STAGING, S3_IMAGES_URL} from "../constant";
 import OtpDialog from "../pages/OtpDialog";
 import { toast } from "react-toastify";
 
@@ -42,7 +38,7 @@ if(phone.length!==10)
   setIsButtonDisabled(false)
   setTimeout(() => setIsButtonDisabled(true), 6000);
   }
- 
+
   return;
 }
     let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
@@ -68,7 +64,7 @@ if(phone.length!==10)
       <div className="container ">
         <div className="row align-items-center">
           <div className="col-sm-12 col-md-1 m-t-m-7 center-mobile p-t-20-mobile">
-            <img className="img-fluid" alt="CIBIL" src={whatsup} />
+            <img className="img-fluid" alt="whatsup"  src={S3_IMAGES_URL +'/svg/whatsup.svg'} />
           </div>
           <div className="col-sm-12 col-md-7 col-lg-6 p-t-5 center-mobile">
               <strong className="white-color whatsup-text">
@@ -88,14 +84,13 @@ if(phone.length!==10)
                   setPhone(e.target.value.slice(0,10).replace(/\D/g, ""));
                 }}
               />
-              
+
               <button
                 className="whatsup-btn"
                 type="submit"
                 onClick={handleWhatsappApi}
               >
-                <img className="img-fluid" alt="Btn" src={whiteBtn} />
-               
+                <img className="img-fluid" alt="arrow-white" src={S3_IMAGES_URL +'/svg/arrow-white.svg'} />
               </button>
               <br/>
               {phoneerr?<span style={{color:"red"}}>{phoneerr}</span>:null}

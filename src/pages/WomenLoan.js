@@ -1,24 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import criteria from "../images/svg/eligibility-criteria.svg";
-import feature from "../images/svg/feature.svg";
-import women from "../images/svg/women-pic.svg";
-import easy from "../images/svg/easy-online.svg";
-import hassle from "../images/svg/watch.svg";
-import unsecure from "../images/svg/unsecure.svg";
-import secureSafety from "../images/svg/secure-safety.svg";
-import shield from "../images/svg/shield.svg";
-import dotshadow from "../images/svg/dot-shadow.svg";
-import womenFrame from "../images/svg/loans-for-women.svg";
-import idProof from "../images/svg/id_proof.svg";
-import addressProof from "../images/svg/address_proof.svg";
-import doc from "../images/svg/doc.svg";
-import employeeId from "../images/svg/employee_id.svg";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import OtpDialog from "./OtpDialog";
 import { GoogleLogin } from "react-google-login";
-import { API_ENDPOINT_STAGING } from "../constant";
+import {API_ENDPOINT_STAGING, S3_IMAGES_URL} from "../constant";
 toast.configure();
 const options = {
   position: "top-center",
@@ -159,18 +144,9 @@ export const WomenLoan = (props) => {
     <>
       <MetaTags>
         <title>Mahila Loan: Get Personal Loan for Women - PayMe India</title>
-        <meta
-          name="description"
-          content="Avail of instant approved personal loans from PayMe India. We provide loan facilities at competitive interest rates to women with an aim to help them meet their financial needs. "
-        />
-        <meta
-          name="keyword"
-          content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
-        />
-        <meta
-          property="og:title"
-          content="Mahila Loan: Get Personal Loan for Women - PayMe India"
-        />
+        <meta name="description" content="Avail of instant approved personal loans from PayMe India. We provide loan facilities at competitive interest rates to women with an aim to help them meet their financial needs. " />
+        <meta name="keyword" content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online" />
+        <meta property="og:title" content="Mahila Loan: Get Personal Loan for Women - PayMe India" />
       </MetaTags>
       <Header />
       <div className="col-md-6 col-sm-12 hideDesktop">
@@ -324,7 +300,11 @@ export const WomenLoan = (props) => {
               </div>
             </div>
             <div className="col-sm-12 col-md-6">
-              <img className="img-fluid" alt="Instant Loan" src={womenFrame} />
+                <img
+                  className="img-fluid"
+                  alt="Instant Loan"
+                  src={S3_IMAGES_URL+'/svg/loans-for-women.svg'}
+                />
             </div>
           </div>
         </div>
@@ -350,7 +330,7 @@ export const WomenLoan = (props) => {
                       <div className="d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={idProof}
+                          src={S3_IMAGES_URL+'/svg/id_proof.svg'}
                           alt="For identity proof"
                         />
                       </div>
@@ -367,7 +347,7 @@ export const WomenLoan = (props) => {
                       <div className=" d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={addressProof}
+                          src={S3_IMAGES_URL+'/svg/address_proof.svg'}
                           alt="Address proof"
                         />
                       </div>
@@ -384,7 +364,7 @@ export const WomenLoan = (props) => {
                       <div className="d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={doc}
+                          src={S3_IMAGES_URL+'/svg/doc.svg'}
                           alt="Financial documents"
                         />
                       </div>
@@ -397,7 +377,7 @@ export const WomenLoan = (props) => {
                       <div className="d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={employeeId}
+                          src={S3_IMAGES_URL+'/svg/employee_id.svg'}
                           alt="Employment proof"
                         />
                       </div>
@@ -414,24 +394,20 @@ export const WomenLoan = (props) => {
       <div className="container">
         <div className="row">
           <div className="col-md-12 col-sm-12 p-t-50">
-            <h2 className="text-center heading4">
-              Eligibility criteria for personal loan for women
-            </h2>
+            <h2 className="text-center heading4">Eligibility criteria for personal loan for women</h2>
           </div>
         </div>
         <div className="row p-t-40 p-b-30 justify-content-md-center">
           <div className="col-md-5 col-sm-12">
             <div className="criteria ">
               <p>
-                PayMe India finances ambitious females through instant personal
-                loans on simple terms and conditions. Below is the list of
-                eligibility requirements to avail of loans for women.
+                PayMe India finances ambitious females through instant personal loans on simple terms and conditions. Below is the list of eligibility requirements to avail of loans for women.
               </p>
               <ul>
                 <li>
                   <img
                     className="icon-criteria"
-                    src={dotshadow}
+                    src={S3_IMAGES_URL+'/svg/dot-shadow.svg'}
                     alt="Pay Me India"
                   />
                   <p>The woman must be an Indian citizen </p>
@@ -439,7 +415,7 @@ export const WomenLoan = (props) => {
                 <li>
                   <img
                     className="icon-criteria"
-                    src={dotshadow}
+                    src={S3_IMAGES_URL+'/svg/dot-shadow.svg'}
                     alt="Pay Me India"
                   />
                   <p>The age group must be between 21 to 58 years.</p>
@@ -447,7 +423,7 @@ export const WomenLoan = (props) => {
                 <li>
                   <img
                     className="icon-criteria"
-                    src={dotshadow}
+                    src={S3_IMAGES_URL+'/svg/dot-shadow.svg'}
                     alt="Pay Me India"
                   />
                   <p>The minimum salary must be above Rs. 12,000</p>
@@ -456,82 +432,55 @@ export const WomenLoan = (props) => {
             </div>
           </div>
           <div className="col-md-3 col-sm-12 text-center">
-            <img className="img_google" src={criteria} alt="Pay Me India" />
+            <img className="img_google" src={S3_IMAGES_URL+'/svg/eligibility-criteria.svg'} alt="Pay Me India" />
           </div>
         </div>
         <div className="row">
           <div className="col-md-12">
-            <h2 className="text-center heading4">
-              Features of personal loan for women
-            </h2>
+            <h2 className="text-center heading4">Features of personal loan for women</h2>
           </div>
         </div>
         <div className="row p-t-50 p-b-30 justify-content-md-center">
           <div className="col-md-5 col-sm-12 text-center p-b-30">
-            <img className="img_google" src={feature} alt="Pay Me India" />
+            <img className="img_google" src={S3_IMAGES_URL+'/svg/feature.svg'} alt="Pay Me India" />
           </div>
           <div className="col-md-5 col-sm-12 ">
             <ul className="feature ">
               <li>
-                <img className="icon-feature" src={easy} alt="Pay Me India" />
+                <img className="icon-feature" src={S3_IMAGES_URL+'/svg/easy-online.svg'} alt="Pay Me India" />
                 <h4>Easy online application</h4>
-                <p>
-                  You can start your loan application process right from the
-                  comfort of home. All you need to do is go to PayMe India's
-                  official website and apply for a Personal loan for women or
-                  Download the application.
-                </p>
+                <p>You can start your loan application process right from the comfort of home. All you need to do is go to PayMe India's official website and apply for a Personal loan for women or Download the application.</p>
               </li>
               <li>
-                <img className="icon-feature" src={hassle} alt="Pay Me India" />
+                <img className="icon-feature"  src={S3_IMAGES_URL+'/svg/watch.svg'} alt="Pay Me India" />
                 <h4>Hassle-free loan</h4>
-                <p>
-                  PayMe India offers easy and quick small business loans of up
-                  to Rs.2 lakh at affordable interest rates. With approval in as
-                  little as 24 hours*. These high-value loans offer the ideal
-                  financial option to meet unexpected expenditures.
-                </p>
+                <p>PayMe India offers easy and quick small business loans of up to Rs.2 lakh at affordable interest rates. With approval in as little as 24 hours*. These high-value loans offer the ideal financial option to meet unexpected expenditures.</p>
               </li>
               <li>
                 <img
                   className="icon-feature"
-                  src={unsecure}
+                  src={S3_IMAGES_URL+'/svg/unsecure.svg'}
                   alt="Pay Me India"
                 />
                 <h4>Unsecured loan with minimal paperwork</h4>
-                <p>
-                  PayMe India provides unsecured loans that require no
-                  collateral, which means you need not worry about giving assets
-                  to get funds.
-                </p>
+                <p>PayMe India provides unsecured loans that require no collateral, which means you need not worry about giving assets to get funds.</p>
               </li>
               <li>
-                <img className="icon-feature" src={shield} alt="Pay Me India" />
+                <img className="icon-feature" src={S3_IMAGES_URL+'/svg/shield.svg'} alt="Pay Me India" />
                 <h4>No end-use restriction</h4>
-                <p>
-                  How you use the money from a personal loan for women is up to
-                  you. There is no restriction on the end-use of the loan for
-                  women.
-                </p>
+                <p>How you use the money from a personal loan for women is up to you. There is no restriction on the end-use of the loan for women.</p>
               </li>
               <li>
-                <img
-                  className="icon-feature"
-                  src={secureSafety}
-                  alt="Pay Me India"
-                />
+                <img className="icon-feature" src={S3_IMAGES_URL+'/svg/secure-safety.svg'} alt="Pay Me India" />
                 <h4>Safe & secure</h4>
-                <p>
-                  From application to approval, all our processes are safe and
-                  secure. Your details are always at your fingertips.
-                </p>
+                <p>From application to approval, all our processes are safe and secure. Your details are always at your fingertips.</p>
               </li>
             </ul>
           </div>
         </div>
         <div className="row p-b-30">
           <div className="col-md-6 col-sm-12">
-            <img className="img_google" src={women} alt="Pay Me India" />
+            <img className="img_google" src={S3_IMAGES_URL+'/svg/women-pic.svg'} alt="Pay Me India" />
           </div>
           <div className="col-md-6 col-sm-12 hideMobile p-t-50">
             <div className="rightSection">

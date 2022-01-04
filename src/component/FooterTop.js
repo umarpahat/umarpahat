@@ -10,6 +10,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import {Carousel} from 'react-responsive-carousel';
 import googlePay from "../images/svg/google-play.svg";
 import appStore from "../images/svg/app-store.svg";
+import {SocialLink} from "./SocialLink";
 
 export const FooterTop = (props) => {
     return (
@@ -24,24 +25,7 @@ export const FooterTop = (props) => {
                         <div className="order-2 p-3"><p>Experience instant benefits and cashbacks on every rent payment
                             to your landlord with credit card.</p>
                             <div className="social_link">
-                                <div>
-                                    <a href="https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia">
-                                        <img
-                                            className="img_google"
-                                            src={googlePay}
-                                            alt="Pay Me India"
-                                        />
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="https://apps.apple.com/us/app/payme-india/id1282142711">
-                                        <img
-                                            className="img_google"
-                                            src={appStore}
-                                            alt="Pay Me India"
-                                        />
-                                    </a>
-                                </div>
+                                <SocialLink/>
                             </div>
                         </div>
                     </div>

@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import { hitAppUseCase } from "../store/modules/userDetails/actions";
 import { connect } from "react-redux";
 import "../header.css";
-import logo from "../images/svg/payme-logo.svg";
-import appStore from "../images/svg/app-store.svg";
-import googlePay from "../images/svg/google-play.svg";
 import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 import LeaveMessage from "./LeaveMessage";
 import CustomerGrievance from "./CustomerGrievance";
+import {S3_IMAGES_URL} from "../constant";
 
 const cookies = new Cookies();
 
@@ -53,7 +51,7 @@ const Header = (props) => {
             <div className="row">
               <div className="col-md-2 col-sm-2 p-t-10">
                 <Link to="/">
-                  <img className="home_logo" src={logo} alt="Pay Me India" />
+                  <img className="home_logo" src={S3_IMAGES_URL+'/svg/payme-logo.svg'}  alt="Pay Me India" />
                 </Link>
               </div>
               <div className="col-md-10 p-t-13 p-r-80">
@@ -316,7 +314,7 @@ const Header = (props) => {
                                     >
                                       <img
                                         className="img_google"
-                                        src={googlePay}
+                                        src={S3_IMAGES_URL+'/svg/google-play.svg'}
                                         alt="Pay Me India"
                                       />
                                     </Link>
@@ -331,7 +329,7 @@ const Header = (props) => {
                                     >
                                       <img
                                         className="img_google"
-                                        src={appStore}
+                                        src={S3_IMAGES_URL+'/svg/app-store.svg'}
                                         alt="Pay Me India"
                                       />
                                     </Link>

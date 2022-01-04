@@ -1,23 +1,11 @@
-import React, {useState, useEffect} from "react";
-import {hitAppUseCase} from '../store/modules/userDetails/actions';
-import {connect} from 'react-redux'
-import {Container} from "react-bootstrap";
-import Loader from '../component/Loader'
-import "./ApplyNowButton/Applybtnallcomponent.css";
+import React  from "react";
 import Header from "./Header";
 import '../../src/home.css';
-
 import MetaTags from "react-meta-tags";
-import mailBox from "../images/svg/mail-box.svg";
-import termsCondition from "../images/svg/terms-and-condition.svg";
 import Footer from "./Footer";
-
+import {S3_IMAGES_URL} from "../constant";
 
 const PrivacyPolicy = (props) => {
-
-    let [loader, setloader] = useState(false);
-
-
     return (
         <>
             <MetaTags>
@@ -43,7 +31,7 @@ const PrivacyPolicy = (props) => {
                         </div>
                             <div className="row">
                                 <div className="col col-md-5 reg-second-heading hideMobile">
-                                    <img className="img-fluid" src={termsCondition} alt="Icons"/>
+                                    <img className="img-fluid" src={S3_IMAGES_URL+'/svg/terms-and-condition.svg'} alt="Icons"/>
                                 </div>
                                 <div className="col col-md-7">
                                     <h5 className='blue-color h3 p-t-20'>MINORS</h5>
@@ -62,7 +50,7 @@ const PrivacyPolicy = (props) => {
                             </div>
                             <div className="row">
                                 <div className="col col-md-5 reg-second-heading hideMobile">
-                                    <img className="img-fluid" src={termsCondition} alt="Icons"/>
+                                    <img className="img-fluid" src={S3_IMAGES_URL+'/svg/terms-and-condition.svg'} alt="Icons"/>
                                 </div>
                                 <div className="col col-md-7">
                                     <h5 className='blue-color h3 p-t-20'>SECURITY</h5>
@@ -109,7 +97,7 @@ const PrivacyPolicy = (props) => {
                         </div>
                             <div className="row">
                                 <div className="col col-md-5 reg-second-heading hideMobile">
-                                    <img className="img-fluid" src={termsCondition} alt="Icons"/>
+                                    <img className="img-fluid" src={S3_IMAGES_URL+'/svg/terms-and-condition.svg'}  alt="Icons"/>
                                 </div>
                                 <div className="col col-md-7">
                                     <h5 className='blue-color h3 p-t-20'>MINORS</h5>
@@ -128,7 +116,7 @@ const PrivacyPolicy = (props) => {
                             </div>
                             <div className="row">
                                 <div className="col col-md-5 reg-second-heading hideMobile">
-                                    <img className="img-fluid" src={termsCondition} alt="Icons"/>
+                                    <img className="img-fluid" src={S3_IMAGES_URL+'/svg/terms-and-condition.svg'}  alt="Icons"/>
                                 </div>
                                 <div className="col col-md-7">
                                     <h5 className='blue-color h3 p-t-20'>SECURITY</h5>
@@ -156,11 +144,4 @@ const PrivacyPolicy = (props) => {
         </>
     )
 };
-const mapStateToProps = state => {
-    return {}
-}
-
-
-const dispatchToProps = {hitAppUseCase};
-
-export default connect(mapStateToProps, dispatchToProps)(PrivacyPolicy)
+export default PrivacyPolicy;

@@ -1,27 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { hitAppUseCase } from "../store/modules/userDetails/actions";
 import { connect } from "react-redux";
-import { Container } from "react-bootstrap";
-import Loader from "../component/Loader";
 import "./ApplyNowButton/Applybtnallcomponent.css";
 import Header from "./Header";
 import "../../src/home.css";
-import benefit from "../images/svg/benefit.svg";
-import loginImg from "../images/svg/login-icon.svg";
 import getLoan from "../images/svg/get-loan-pic.svg";
-import assementImg from "../images/svg/accurate-icon.svg";
-import blogPic from "../images/logo.png";
-import aprovedImg from "../images/svg/swift-transfer.svg";
-import advisoryImg from "../images/svg/advisory-loan.svg";
-import shortImg from "../images/svg/short-loan.svg";
-import corporateImg from "../images/svg/corporate-loan.svg";
-import goldStarIcon from "../images/svg/star.svg";
-import userIcon from "../images/svg/user-icon.svg";
-import register from "../images/svg/signup-icon.svg";
-import uploadImg from "../images/svg/kyc-icon.svg";
-import promptImg from "../images/svg/bank-doc.svg";
-import easyRepay from "../images/svg/boost-icon.svg";
-import InstantCash from "../images/svg/instant-icon.svg";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
@@ -40,8 +23,6 @@ import {Blogs} from "../component/Blogs";
 import {Videos} from "../component/Videos";
 import {Whatsup} from "../component/Whatsup";
 import Footer from "./Footer";
-import googlePay from "../images/svg/google-play.svg";
-import appStore from "../images/svg/app-store.svg";
 const cookies = new Cookies();
 
 toast.configure();
@@ -61,11 +42,9 @@ const HomePage = (props) => {
   const classes = useStyles();
   let [loader, setloader] = useState(false);
   const [amount, setAmount] = useState(0);
+  const [rate, setRate] = useState(0);
   const [time, setTime] = useState(0);
   const [successcibilreport,setsuccesscibilreport]=useState(props.location.state?.success)
-
-
-  
   const notify = (err) => {
     toast.success(successcibilreport, { ...options });
     window.history.replaceState(null, '')
@@ -81,6 +60,10 @@ const HomePage = (props) => {
     setAmount(newValue);
   };
 
+  const handleSliderChangeRate = (event, newValue) => {
+    setRate(newValue);
+  };
+
   const handleInputChange = (event) => {
     if (event.target.value > 200000) {
       setAmount(200000);
@@ -92,6 +75,9 @@ const HomePage = (props) => {
   function valuetext(value1) {
     $("#total-amount1").text(amount);
     $("#total-amount").text(amount);
+  }
+  function valuetextRate(value1) {
+    $("#interestId").text(rate);
   }
 
   function valuetext2(value2) {
@@ -107,14 +93,14 @@ const HomePage = (props) => {
       amount * ((roi * (1 + roi) ** time) / ((1 + roi) ** time - 1))
     );
 
-    $("#interest").text(36);
+    $("#interest").text(rate);
     $("#interestId").text(result);
     $("#roi").text(roi);
     $("#pfee").text(pfee);
     $("#amountInput").val(pfee);
     let repay = time * result;
     $("#repayment").text(repay);
-    $("#roi2").text(36);
+    $("#roi2").text(rate);
 
     return result;
   }
@@ -197,6 +183,22 @@ const HomePage = (props) => {
                       </div>
                     </div>
                     <div className="price-slider">
+                      <h4>Interest Rate</h4>
+                      <div className="relative">
+                        <div className={classes.root}>
+                          <Slider
+                              getAriaValueText={valuetextRate}
+                              aria-labelledby="discrete-slider-always"
+                              step={.50}
+                              max={36}
+                              value={rate}
+                              onChange={handleSliderChangeRate}
+                              valueLabelDisplay="on"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="price-slider">
                       <h4>Tenure (Months)</h4>
                       <div className="relative">
                         <div className={classes.root}>
@@ -275,81 +277,8 @@ const HomePage = (props) => {
             </div>
           </div>
         </div>
-        <CorValue/>
+
         <Users/>
-
-        {/*<div className="float-full how-it-works">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col col-md-12 reg-second-heading">
-                <h4>How to get started</h4>
-              </div>
-              <div className="steps">
-                <div className="home-steps relative">
-                  <div>
-                    <img
-                      className="icon"
-                      src={register}
-                      alt="Create an account"
-                    />
-                  </div>
-                  <div className="home-steps-in">
-                    <h5 className="steps-heading">Create an account</h5>
-                    <p>Sign up to the App. Fill in the basic details.</p>
-                  </div>
-                </div>
-                <div className="home-steps relative">
-                  <div>
-                    <img
-                      className="icon"
-                      src={uploadImg}
-                      alt="Get your KYC done"
-                    />
-                  </div>
-                  <div className="home-steps-in">
-                    <h5 className="steps-heading">Get your KYC done</h5>
-                    <p>
-                      Upload your Aadhaar and Pan details for an instant loan.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="home-steps relative">
-                  <div>
-                    <img
-                      className="icon"
-                      src={promptImg}
-                      alt="Provide Bank details"
-                    />
-                  </div>
-                  <div className="home-steps-in">
-                    <h5 className="steps-heading">Provide Bank details</h5>
-                    <p>
-                      Provide Bank account details and bank statement to
-                      facilitate the disbursement.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="home-steps relative">
-                  <div>
-                    <img
-                      className="icon"
-                      src={easyRepay}
-                      alt="Get boost limit & benefits"
-                    />
-                  </div>
-                  <div className="home-steps-in">
-                    <h5 className="steps-heading">
-                      Get boost limit & benefits
-                    </h5>
-                    <p>Provide your Salary slip and get a boost limit.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>*/}
         <Whatsup {...props}/>
         <Blogs/>
         <Videos/>

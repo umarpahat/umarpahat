@@ -2,17 +2,9 @@ import React, { useState, useEffect } from "react";
 import { hitAppUseCase } from "../store/modules/userDetails/actions";
 import { connect } from "react-redux";
 import { Accordion, Card, Container } from "react-bootstrap";
-import "./ApplyNowButton/Applybtnallcomponent.css";
 import Header from "./Header";
 import "../../src/home.css";
 import MetaTags from "react-meta-tags";
-import faqImg from "../images/svg/faqs.svg";
-import mailBox from "../images/svg/mail-box.svg";
-import starIcon from "../images/svg/creditcard.svg";
-import homeIcon from "../images/svg/homeIcon.svg";
-import starIconLight from "../images/svg/reward.svg";
-import starIconAqua from "../images/svg/secure.svg";
-import starIconGreen from "../images/svg/green-star.svg";
 import { api } from "../services/api";
 import Loader from "../component/Loader";
 import Confirmotpmobile from "./ApplyNowButton/Confirmotpmobile";
@@ -21,7 +13,7 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 import { Link } from "react-router-dom";
-import { API_ENDPOINT } from "../constant";
+import {API_ENDPOINT, S3_IMAGES_URL} from "../constant";
 import Footer from "./Footer";
 
 const PayRent = (props) => {
@@ -146,7 +138,7 @@ const PayRent = (props) => {
                       <div className="advertisePay" style={{ marginTop: 0 }}>
                         <div>
                           <img
-                            src={starIconGreen}
+                            src={S3_IMAGES_URL+'/svg/green-star.svg'}
                             alt="Totam corrupti"
                             className="img-fluid"
                           />
@@ -197,7 +189,7 @@ const PayRent = (props) => {
                     <div className="advertisePay ">
                       <div>
                         <img
-                          src={starIcon}
+                          src={S3_IMAGES_URL+'/svg/creditcard.svg'}
                           alt="Get instant"
                           className="img-fluid"
                         />
@@ -215,7 +207,7 @@ const PayRent = (props) => {
                     <div className="advertisePay">
                       <div>
                         <img
-                          src={homeIcon}
+                          src={S3_IMAGES_URL+'/svg/homeIcon.svg'}
                           alt="Home icon"
                           className="img-fluid"
                         />
@@ -237,7 +229,7 @@ const PayRent = (props) => {
                     <div className="advertisePay">
                       <div>
                         <img
-                          src={starIconLight}
+                          src={S3_IMAGES_URL+'/svg/reward.svg'}
                           alt="Milestone icon"
                           className="img-fluid"
                         />
@@ -258,7 +250,7 @@ const PayRent = (props) => {
                     <div className="advertisePay">
                       <div>
                         <img
-                          src={starIconAqua}
+                            src={S3_IMAGES_URL+'/svg/secure.svg'}
                           alt="secure"
                           className="img-fluid"
                         />
@@ -285,7 +277,7 @@ const PayRent = (props) => {
                       <div className="advertisePay" style={{ marginTop: 0 }}>
                         <div>
                           <img
-                            src={starIconGreen}
+                            src={S3_IMAGES_URL+'/svg/green-star.svg'}
                             alt="card"
                             className="img-fluid"
                           />

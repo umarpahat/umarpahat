@@ -1,33 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { hitAppUseCase } from "../store/modules/userDetails/actions";
-import { connect } from "react-redux";
-import { Container } from "react-bootstrap";
-import Loader from "../component/Loader";
-import "./ApplyNowButton/Applybtnallcomponent.css";
-
+import React from "react";
 import Header from "./Header";
 import "../../src/home.css";
-import { Link } from "react-router-dom";
-import career from "../images/svg/career.svg";
-import craftsmanship from "../images/svg/craftman.svg";
-import workspace from "../images/svg/workspace.svg";
-import awesomness from "../images/svg/awsomework.svg";
-import happyWork from "../images/svg/happy-work.svg";
-import tea from "../images/Sharp-Growth.png";
-import timeline from "../images/Organization-Events.png";
-import lead from "../images/svg/lead.svg";
-import backend from "../images/svg/backend.svg";
-import business from "../images/svg/business.svg";
-import remote from "../images/Productive-Challenges.png";
-import centralLocation from "../images/Central-Location.png";
-import health from "../images/Medical-Insurance.png";
-import environment from "../images/Cool-Environment.png";
 import MetaTags from "react-meta-tags";
 import Footer from "./Footer";
+import {S3_IMAGES_URL} from "../constant";
 
 const Career = (props) => {
-  let [loader, setloader] = useState(false);
-
   return (
     <>
       <MetaTags>
@@ -70,7 +48,7 @@ const Career = (props) => {
                 <img
                   className="img-fluid scoreAnimate"
                   alt="Career "
-                  src={career}
+                  src={S3_IMAGES_URL+'/svg/career.svg'}
                 />
               </div>
             </div>
@@ -111,7 +89,7 @@ const Career = (props) => {
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={business}
+                          src={S3_IMAGES_URL+'/svg/business.svg'}
                           alt="PayMe India"
                         />
                       </div>
@@ -129,7 +107,7 @@ const Career = (props) => {
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={lead}
+                          src={S3_IMAGES_URL+'/svg/lead.svg'}
                           alt="Remote works"
                         />
                       </div>
@@ -147,7 +125,7 @@ const Career = (props) => {
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={backend}
+                          src={S3_IMAGES_URL+'/svg/backend.svg'}
                           alt="Flexible Timeline"
                         />
                       </div>
@@ -169,7 +147,7 @@ const Career = (props) => {
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={business}
+                          src={S3_IMAGES_URL+'/svg/business.svg'}
                           alt="PayMe India"
                         />
                       </div>
@@ -199,7 +177,7 @@ const Career = (props) => {
                 <img
                   className="img-fluid"
                   alt="Craftsmanship"
-                  src={craftsmanship}
+                  src={S3_IMAGES_URL+'/svg/craftman.svg'}
                 />
               </div>
               <div className="col-sm-12 col-md-1 ">&nbsp;</div>
@@ -230,7 +208,7 @@ integrity
               </div>
               <div className="col-sm-12 col-md-2 ">&nbsp;</div>
               <div className="col-sm-12 col-md-5 m-t-40">
-                <img className="img-fluid" alt="Matual Fund" src={happyWork} />
+                <img className="img-fluid" alt="Matual Fund" src={S3_IMAGES_URL+'/svg/happy-work.svg'} />
               </div>
             </div>
           </div>
@@ -242,7 +220,7 @@ integrity
                 <img
                   className="img-fluid"
                   alt="Pay Rent using Payme app"
-                  src={workspace}
+                  src={S3_IMAGES_URL+'/svg/workspace.svg'}
                 />
               </div>
               <div className="col-sm-12 col-md-1 ">&nbsp;</div>
@@ -279,7 +257,7 @@ integrity
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={tea}
+                          src={S3_IMAGES_URL+'/Sharp-Growth.png'}
                           alt="PayMe India"
                           style={{width:"170px",height:"170px"}}
                         />
@@ -293,7 +271,7 @@ integrity
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={remote}
+                          src={S3_IMAGES_URL+'/Productive-Challenges.png'}
                           alt="Productive Challenges"
                           style={{width:"170px",height:"170px"}}
                         />
@@ -310,7 +288,7 @@ integrity
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={timeline}
+                          src={S3_IMAGES_URL+'/Organization-Events.png'}
                           alt="Organization Events "
                           style={{width:"170px",height:"170px"}}
                         />
@@ -331,7 +309,7 @@ integrity
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={centralLocation}
+                          src={S3_IMAGES_URL+'/Central-Location.png'}
                           alt="PayMe India"
                           style={{width:"170px",height:"170px"}}
                         />
@@ -346,7 +324,7 @@ integrity
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={health}
+                          src={S3_IMAGES_URL+'/Medical-Insurance.png'}
                           alt="Health allowance"
                           style={{width:"170px",height:"170px"}}
                         />
@@ -362,7 +340,7 @@ integrity
                       <div className="img-box d-flex align-items-center justify-content-center">
                         <img
                           className="img-fluid"
-                          src={environment}
+                          src={S3_IMAGES_URL+'/Cool-Environment.png'}
                           alt="Cool Environment"
                           style={{width:"170px",height:"170px"}}
                         />
@@ -383,7 +361,7 @@ integrity
           <div className="container">
             <div className="row align-items-center">
               <div className="col-sm-12 col-md-6 m-t-40">
-                <img className="img-fluid " alt="Career " src={awesomness} />
+                <img className="img-fluid " alt="Career " src={S3_IMAGES_URL+'/svg/awsomework.svg'} />
               </div>
               <div className="col-sm-12 col-md-6">
                 <h2 className="heading2"> 
@@ -404,10 +382,4 @@ Join our team- Work hard, have fun & make history! </h2>
     </>
   );
 };
-const mapStateToProps = (state) => {
-  return {};
-};
-
-const dispatchToProps = { hitAppUseCase };
-
-export default connect(mapStateToProps, dispatchToProps)(Career);
+export default Career;

@@ -3,6 +3,7 @@ header {
     padding-top: 3px;
     background: #33658a;
     box-sizing: border-box;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
 
 .fixed-bottom {
@@ -82,7 +83,12 @@ body {
 .home_social_link > div {
     padding: 10px;
 
-}.home_social_link > div:nth-child(1) {
+}
+.home_social_link a {
+    display: block;
+
+}
+.home_social_link > div:nth-child(1) {
     padding-left:0;
 
 }
