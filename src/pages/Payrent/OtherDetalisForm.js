@@ -70,7 +70,7 @@ const OtherDetalisForm = (props) => {
   const [screen3, setScreen3] = useState(false);
   const [correctPan, setcorrectPan] = useState("");
 
-  const [kycStatus, setKycStatus] = useState("VERIFIED");
+  const [kycStatus, setKycStatus] = useState("");
 
   function gtag_report_conversion(url) {
     var callback = function () {
@@ -117,7 +117,7 @@ const OtherDetalisForm = (props) => {
       axios
         .get(url, config)
         .then((response) => {
-         //setKycStatus(response.data.data[0].kyc_verified);
+         setKycStatus(response.data.data[0].kyc_verified);
           //console.log("stepmanual", response.data.data[0]);
         })
         .catch((err) => {
@@ -912,7 +912,7 @@ console.log("kcy",kycStatus)
                   ) : null}
                 </div>
               </form>
-            ) : kycStatus === "NOT_SUBMITTED" || kycStatus === "NOT_VALID" ? (
+            ) : kycStatus === "NOT_SUBMITTED" || kycStatus === "NOT_VALID" || kycStatus === "PENDING_VERIFICATION"? (
               <div className="row" style={{ marginBottom: "10%" }}>
                 <div className="col-lg-3 col-md-3 col-sm-12 text-center">
                   <br />
