@@ -383,9 +383,6 @@ const Bankdetailspayme = (props) => {
                             value={bankName}
                             readOnly
 
-                            //  onChange={(e)=>{
-                            //   setbankName(e.target.value)
-                            // }}
                           />
                         </div>
                       </div>
