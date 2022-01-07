@@ -370,9 +370,7 @@ const Bankdetailspayme = (props) => {
                             className="form-input"
                             placeholder="Delhi"
                             value={branchName}
-                            // onChange={(e)=>{
-                            //   setbranchName(e.target.value)
-                            // }}
+                           
                             readOnly
                           />
                         </div>
@@ -385,9 +383,6 @@ const Bankdetailspayme = (props) => {
                             value={bankName}
                             readOnly
 
-                            //  onChange={(e)=>{
-                            //   setbankName(e.target.value)
-                            // }}
                           />
                         </div>
                       </div>
