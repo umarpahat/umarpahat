@@ -31,6 +31,7 @@ import { API_ENDPOINT_STAGING } from "../constant";
 import Footer from "./Footer";
 import OtpDialog from "./OtpDialog";
 import MetaTags from "react-meta-tags";
+import { fbq } from "react-facebook-pixel";
 
 toast.configure();
 const options = {
@@ -198,7 +199,7 @@ export const City = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     GoogleAnalytics();
-    
+
     hotJarForCity();
   }, []);
 
@@ -279,12 +280,9 @@ export const City = (props) => {
       "script",
       "https://connect.facebook.net/en_US/fbevents.js"
     );
-    fbq("init", "334681608590004");
+    fbq("init", "4228619230573663");
     fbq("track", "PageView");
-    fbq("track", "Lead");
-
-   
-
+    fbq("track","CityLeads")
   };
   return (
     <>
