@@ -101,7 +101,7 @@ const TransactionHistory = (props) => {
           <div className="row">
             <div className="col-lg-2 col-md-2 col-sm-12 text-center">
               <br />
-              <a className="back-arrow" href="">
+              <a className="back-arrow" href="/payrent-other-details">
                 Back
               </a>
             </div>

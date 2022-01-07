@@ -374,7 +374,7 @@ console.log("kcy",kycStatus)
                   <div className="row">
                     <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                       <br />
-                      <a className="back-arrow" href="">
+                      <a className="back-arrow" href="/">
                         Back
                       </a>
                       <br />
@@ -552,7 +552,7 @@ console.log("kcy",kycStatus)
                     <div className="row">
                       <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                         <br />
-                        <a className="back-arrow" href="">
+                        <a className="back-arrow" href="/">
                           Back
                         </a>
                       </div>
@@ -788,7 +788,7 @@ console.log("kcy",kycStatus)
                     <div className="row">
                       <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                         <br />
-                        <a className="back-arrow" href="">
+                        <a className="back-arrow" href="/">
                           Back
                         </a>
                       </div>
@@ -916,7 +916,7 @@ console.log("kcy",kycStatus)
               <div className="row" style={{ marginBottom: "10%" }}>
                 <div className="col-lg-3 col-md-3 col-sm-12 text-center">
                   <br />
-                  <a className="back-arrow" href="">
+                  <a className="back-arrow" href="/">
                     Back
                   </a>
                 </div>
