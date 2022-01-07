@@ -52,7 +52,12 @@ if(phone.length!==10)
         setOtpScreen(true);
       })
       .catch(function (error) {
-        toast.error("wrong OTP", { ...options });
+        if(isButtonDisabled)
+        {
+        toast.error("Something Went Wrong", { ...options });
+        setIsButtonDisabled(false)
+        setTimeout(() => setIsButtonDisabled(true), 6000);
+        }
       });
   };
 

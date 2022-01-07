@@ -12,10 +12,10 @@ const options = {
   closeButton: false,
 };
 const OtpDialog = (props) => {
-  console.log("props", props);
+  console.log("props testing ", props);
   const [otp, setOtp] = useState("");
   const [otperr, setOtperr] = useState("");
-  const [isButtonDisabled, setIsButtonDisabled] = useState("");
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [showDialogCity, setShowDialogCity] = useState(true);
   const [disableToast, setDisableToast] = useState(true);
 
@@ -64,7 +64,11 @@ const OtpDialog = (props) => {
           console.log("confitm otp", response);
         })
         .catch(function (error) {
-          toast.error("wrong OTP", { ...options });
+          if (isButtonDisabled) {
+            setIsButtonDisabled(false);
+            toast.error("wrong OTP", { ...options });
+            setTimeout(() => setIsButtonDisabled(true), 3000);
+          }
         });
     } else {
       let url = `${API_ENDPOINT_STAGING}/api/customer-lead/customer-query/`;
@@ -87,7 +91,11 @@ const OtpDialog = (props) => {
           console.log("confitm otp", response);
         })
         .catch(function (error) {
-          toast.error("wrong OTP", { ...options });
+          if (isButtonDisabled) {
+            setDisableToast(false);
+            toast.error("wrong OTP", { ...options });
+            setTimeout(() => setIsButtonDisabled(true), 3000);
+          }
         });
     }
   };
@@ -128,7 +136,6 @@ const OtpDialog = (props) => {
               display: "block",
               cursor: "pointer",
               color: "#fff",
-              width: "100%",
             }}
             onClick={SubmitOtp}
           >
