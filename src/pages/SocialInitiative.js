@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { hitAppUseCase } from "../store/modules/userDetails/actions";
 import { connect } from "react-redux";
-import Loader from "../component/Loader";
-import "./ApplyNowButton/Applybtnallcomponent.css";
 import Header from "./Header";
 import "../../src/home.css";
-import saarthi from "../images/sarthi-logo.png";
 import MetaTags from "react-meta-tags";
-import { API_ENDPOINT_SAARTHI } from "../constant";
+import {API_ENDPOINT_SAARTHI, S3_IMAGES_URL} from "../constant";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import mailBox from "../images/svg/mail-box.svg";
-import termsCondition from "../images/svg/terms-and-condition.svg";
 import Footer from "./Footer";
 
 toast.configure();
@@ -158,14 +152,14 @@ const SocialInitiative = (props) => {
                 <img
                   className="img-fluid maxLimitWidth"
                   alt="Saarthi"
-                  src={saarthi}
+                  src={S3_IMAGES_URL+'/sarthi-logo.png'}
                 />
               </div>
             </div>
 
             <div className="row">
               <div className="col col-md-5 reg-second-heading hideMobile">
-                <img className="img-fluid" src={termsCondition} alt="Icons" />
+                <img className="img-fluid" src={S3_IMAGES_URL+'/svg/terms-and-condition.svg'}  alt="Icons" />
               </div>
               <div className="col col-md-7">
                 <h5 className="blue-color h3 p-t-20">
@@ -229,7 +223,7 @@ const SocialInitiative = (props) => {
                 </p>
               </div>
               <div className="col col-md-5 reg-second-heading hideMobile">
-                <img className="img-fluid" src={termsCondition} alt="Icons" />
+                <img className="img-fluid"src={S3_IMAGES_URL+'/svg/terms-and-condition.svg'} alt="Icons" />
               </div>
             </div>
             <div
@@ -364,7 +358,4 @@ const SocialInitiative = (props) => {
 const mapStateToProps = (state) => {
   return {};
 };
-
-const dispatchToProps = { hitAppUseCase };
-
-export default connect(mapStateToProps, dispatchToProps)(SocialInitiative);
+export default connect(mapStateToProps)(SocialInitiative);

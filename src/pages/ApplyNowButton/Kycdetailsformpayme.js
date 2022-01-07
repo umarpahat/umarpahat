@@ -133,19 +133,17 @@ const Kycdetailsformpayme = (props) => {
       seterrorDob("Please enter date");
       return;
     }
-    if (!gender) {
-      seterrorGender("Please enter gender");
-      return;
-    }
     if (!panNumber) {
       seterrorPan("Please enter pan number");
       return;
     }
-
-    if (!panFile.name) {
-      seterrorUploadPan("Please upload pan");
+    if (!gender) {
+      seterrorGender("Please enter gender");
       return;
     }
+   
+
+  
     if (!aadhaarFileFront.name) {
       seterrorUploadAdhaarFront("Please upload adhaar front");
       return;
@@ -154,6 +152,10 @@ const Kycdetailsformpayme = (props) => {
       seterrorUploadAdhaarBack("Please upload adhaar Back");
       return;
     }
+  if(!panFile.name){
+    seterrorUploadPan("Please Upload PAN Card")
+    return;
+  }
     if (!profile.name) {
       seterrorProfile("Please Upload Profile");
       return;
@@ -429,6 +431,16 @@ const Kycdetailsformpayme = (props) => {
                               {aadhaarFileBack.name}
                             </span>
                           ) : null}
+                           {errorUploadAdhaarFront ? (
+                              <span style={{ color: "red" }}>
+                                {errorUploadAdhaarFront}
+                              </span>
+                            ) : null}
+                              {errorUploadAdhaarBack ? (
+                              <span style={{ color: "red" }}>
+                                {errorUploadAdhaarBack}
+                              </span>
+                            ) : null}
                         </div>
                         {/* <div className='wrapper-button'>
                                                     <a className="green-button" >Upload</a>
@@ -451,11 +463,7 @@ const Kycdetailsformpayme = (props) => {
                               hidden
                               onChange={handleAadhaarUploadFront}
                             />
-                            {errorUploadAdhaarFront ? (
-                              <span style={{ color: "red" }}>
-                                {errorUploadAdhaarFront}
-                              </span>
-                            ) : null}
+                           
                           </div>
                           <div>
                             <a
@@ -472,11 +480,7 @@ const Kycdetailsformpayme = (props) => {
                               hidden
                               onChange={handleAadhaarUploadBack}
                             />
-                            {errorUploadAdhaarBack ? (
-                              <span style={{ color: "red" }}>
-                                {errorUploadAdhaarBack}
-                              </span>
-                            ) : null}
+                          
                           </div>
                         </div>
                       </div>
@@ -496,6 +500,9 @@ const Kycdetailsformpayme = (props) => {
                               {panFile.name}
                             </span>
                           ) : null}
+                           {errorUploadPan ? (
+                        <span style={{ color: "red" }}>{errorUploadPan}</span>
+                      ) : null}
                         </div>
                         <div className="wrapper-button">
                           <a
@@ -522,6 +529,10 @@ const Kycdetailsformpayme = (props) => {
                               {profile.name}
                             </span>
                           ) : null}
+                           {errorProfile ? (
+                        <span style={{ color: "red" }}>{errorProfile}</span>
+                      ) : null}
+                          
                         </div>
                         <div className="wrapper-button">
                           <a
@@ -541,9 +552,7 @@ const Kycdetailsformpayme = (props) => {
                         id="upload-pan"
                         onChange={handlePanUpload}
                       />
-                      {errorUploadPan ? (
-                        <span style={{ color: "red" }}>{errorUploadPan}</span>
-                      ) : null}
+                     
 
                       <input
                         type="file"
@@ -553,9 +562,7 @@ const Kycdetailsformpayme = (props) => {
                         id="upload-profile"
                         onChange={handleProfileUpload}
                       />
-                      {errorProfile ? (
-                        <span style={{ color: "red" }}>{errorProfile}</span>
-                      ) : null}
+                     
                     </div>
 
                     <input

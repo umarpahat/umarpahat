@@ -3,18 +3,11 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { hitAppUseCase } from "../store/modules/userDetails/actions";
 import "../../src/footer.css";
-import instagram from "../images/svg/instagram.svg";
-import youtube from "../images/svg/youtube.svg";
-import Linkedin from "../images/svg/linkedin.svg";
-import Twitter from "../images/svg/twitter.svg";
-import Facebook from "../images/svg/facebook.svg";
-import sslLogo from "../images/svg/ssl.svg";
-import whiteLogo from "../images/svg/logo.svg";
 import { PopularCity } from "../component/PopularCity";
 import { FooterTop } from "../component/FooterTop";
-import { CibilScoreFooter } from "../component/CibilScoreFooter";
 import LeaveMessage from "./LeaveMessage";
 import CustomerGrievance from "./CustomerGrievance";
+import {S3_IMAGES_URL} from "../constant";
 
 const Footer = (props) => {
   const [showDialogGrievance, setShowDialogGrievance] = React.useState(false);
@@ -34,7 +27,7 @@ const Footer = (props) => {
           <div className="row p-t-20">
             <div className="col-md-3 relative">
               <div className="clearfix">
-                <img className="img-fluid" src={whiteLogo} alt="PayMe India" />
+                <img className="img-fluid" src={S3_IMAGES_URL+'/svg/logo.svg'} alt="PayMe India" />
               </div>
               <div className="clearfix p-t-20">
                 <Link
@@ -45,7 +38,7 @@ const Footer = (props) => {
                 >
                   <img
                     className="social-img"
-                    src={Facebook}
+                    src={S3_IMAGES_URL+'/svg/facebook.svg'}
                     alt="PayMe India Facebook"
                   />
                 </Link>
@@ -55,7 +48,7 @@ const Footer = (props) => {
                 >
                   <img
                     className="social-img"
-                    src={Twitter}
+                    src={S3_IMAGES_URL+'/svg/twitter.svg'}
                     alt="PayMe India Twitter"
                   />
                 </Link>
@@ -67,7 +60,7 @@ const Footer = (props) => {
                 >
                   <img
                     className="social-img"
-                    src={Linkedin}
+                    src={S3_IMAGES_URL+'/svg/linkedin.svg'}
                     alt="PayMe India Linkedin"
                   />
                 </Link>
@@ -77,7 +70,7 @@ const Footer = (props) => {
                 >
                   <img
                     className="social-img"
-                    src={instagram}
+                    src={S3_IMAGES_URL+'/svg/instagram.svg'}
                     alt="PayMe India Instagram"
                   />
                 </Link>
@@ -90,7 +83,7 @@ const Footer = (props) => {
                 >
                   <img
                     className="social-img"
-                    src={youtube}
+                    src={S3_IMAGES_URL+'/svg/youtube.svg'}
                     alt="PayMe India youtube"
                   />
                 </Link>
@@ -100,7 +93,7 @@ const Footer = (props) => {
                 <img
                   className="middle_ssl_image"
                   width="100"
-                  src={sslLogo}
+                  src={S3_IMAGES_URL+'/svg/ssl.svg'}
                   alt="PayMe India"
                 />
               </div>
@@ -207,7 +200,7 @@ const Footer = (props) => {
                 <img
                   className="middle_ssl_image"
                   width="100"
-                  src={sslLogo}
+                  src={S3_IMAGES_URL+'/svg/ssl.svg'}
                   alt="PayMe India"
                 />
               </div>

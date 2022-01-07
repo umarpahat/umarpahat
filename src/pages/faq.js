@@ -5,12 +5,9 @@ import { Accordion, Card, Container } from "react-bootstrap";
 import "./ApplyNowButton/Applybtnallcomponent.css";
 import Header from "./Header";
 import "../../src/home.css";
-
-import faqImg from "../images/svg/faqs.svg";
 import MetaTags from "react-meta-tags";
-import mailBox from "../images/svg/mail-box.svg";
-import mediaCover from "../images/svg/media-cover.svg";
 import Footer from "./Footer";
+import {S3_IMAGES_URL} from "../constant";
 
 const Faq = (props) => {
   let [loader, setloader] = useState(false);
@@ -39,7 +36,8 @@ const Faq = (props) => {
               <div className="col-sm-12 col-md-5 m-t-40">
                 <img className="img-fluid"
                      alt="Media"
-                     src={faqImg}/>
+                     src={S3_IMAGES_URL+'/svg/faqs.svg'}
+                     />
               </div>
             </div>
           </div>

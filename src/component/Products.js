@@ -1,15 +1,6 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
-import payRent from "../images/svg/pay-rent-logo.svg";
-import gold from "../images/svg/gold.svg";
-import salt from "../images/svg/salt-logo.svg";
-import matualFund from "../images/svg/pay-rent-logo.svg";
-import googlePay from "../images/svg/google-play.svg";
-import pRent from "../images/svg/pay-rent-small-logo.svg";
-import slogo from "../images/svg/salt-small-logo.svg";
-import glaon from "../images/svg/gold-small-logo.svg";
-import mflaon from "../images/svg/mutual-funds-logo.svg";
-import appStore from "../images/svg/app-store.svg";
+import {S3_IMAGES_URL} from "../constant";
 
 export const Products = (props) => {
     return (
@@ -21,26 +12,24 @@ export const Products = (props) => {
                     <div className="row justify-content-center">
                         <div className="col-sm-6 col-md-3">
                             <div className='product-list-card'>
-                                    <img src={pRent} alt="Create an account"/>
+                                    <img src={S3_IMAGES_URL +'/svg/pay-rent-small-logo.svg'} alt="Create an account"/>
                                 <Link to="/" className="product-list-d"><h5 className="heading5">Pay Rent</h5></Link>
                                 <div className="p-b-30 apsAlign">
                                     <div className=" p-b-20">
-                                        <Link
-                                            to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
-                                            target={"_blank"}>
+                                        <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'>
                                             <img
                                                 className="img_google"
-                                                src={googlePay}
+                                                src={S3_IMAGES_URL +'/svg/google-play.svg'}
                                                 alt="Pay Me India"
                                                 height='35px'
                                             />
-                                        </Link>
+                                        </a>
                                     </div>
                                     <div>
                                         <a href="https://apps.apple.com/us/app/payme-india/id1282142711" >
                                             <img
                                                 className="img_google"
-                                                src={appStore}
+                                                src={S3_IMAGES_URL +'/svg/app-store.svg'}
                                                 alt="Pay Me India"
                                                 height='35px'
                                             />
@@ -52,26 +41,24 @@ export const Products = (props) => {
                         </div>
                         <div className="col-sm-6 col-md-3">
                             <div className='product-list-card'>
-                                    <img src={glaon} alt="Create an account"/>
+                                    <img src={S3_IMAGES_URL +'/svg/gold-small-logo.svg'} alt="Create an account"/>
                                 <Link to="/" className="product-list-d"><h5 className="heading5">Gold</h5></Link>
                                 <div className="p-b-30 apsAlign">
                                     <div className=" p-b-20">
-                                        <Link
-                                            to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
-                                            target={"_blank"}>
+                                        <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'>
                                             <img
                                                 className="img_google"
-                                                src={googlePay}
+                                                src={S3_IMAGES_URL +'/svg/google-play.svg'}
                                                 alt="Pay Me India"
                                                 height='35px'
                                             />
-                                        </Link>
+                                        </a>
                                     </div>
                                     <div>
                                         <a href="https://apps.apple.com/us/app/payme-india/id1282142711" >
                                             <img
                                                 className="img_google"
-                                                src={appStore}
+                                                src={S3_IMAGES_URL +'/svg/app-store.svg'}
                                                 alt="Pay Me India"
                                                 height='35px'
                                             />
@@ -83,26 +70,24 @@ export const Products = (props) => {
                         </div>
                         <div className="col-sm-6 col-md-3">
                             <div className='product-list-card'>
-                                    <img src={slogo} alt="Create an account"/>
+                                    <img src={S3_IMAGES_URL +'/svg/salt-small-logo.svg'} alt="Create an account"/>
                                 <Link to="/" className="product-list-d"><h5 className="heading5">SALT BNPL</h5></Link>
                                 <div className="p-b-30 apsAlign">
                                     <div className=" p-b-20">
-                                        <Link
-                                            to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
-                                            target={"_blank"}>
+                                        <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'>
                                             <img
                                                 className="img_google"
-                                                src={googlePay}
+                                                src={S3_IMAGES_URL +'/svg/google-play.svg'}
                                                 alt="Pay Me India"
                                                 height='35px'
                                             />
-                                        </Link>
+                                        </a>
                                     </div>
                                     <div>
                                         <a href="https://apps.apple.com/us/app/payme-india/id1282142711" >
                                             <img
                                                 className="img_google"
-                                                src={appStore}
+                                                src={S3_IMAGES_URL +'/svg/app-store.svg'}
                                                 alt="Pay Me India"
                                                 height='35px'
                                             />
@@ -114,26 +99,24 @@ export const Products = (props) => {
                         </div>
                         <div className="col-sm-6 col-md-3">
                             <div className='product-list-card'>
-                                    <img src={mflaon} alt="Create an account"/>
+                                    <img src={S3_IMAGES_URL +'/svg/mutual-funds-logo.svg'} alt="Create an account"/>
                                 <Link to="/" className="product-list-d"><h5 className="heading5">Mutual Funds</h5></Link>
                                 <div className="p-b-30 apsAlign">
                                     <div className=" p-b-20">
-                                        <Link
-                                            to={{pathname: 'https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'}}
-                                            target={"_blank"}>
+                                        <a href='https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia'>
                                             <img
                                                 className="img_google"
-                                                src={googlePay}
+                                                src={S3_IMAGES_URL +'/svg/google-play.svg'}
                                                 alt="Pay Me India"
                                                 height='35px'
                                             />
-                                        </Link>
+                                        </a>
                                     </div>
                                     <div>
                                         <a href="https://apps.apple.com/us/app/payme-india/id1282142711" >
                                             <img
                                                 className="img_google"
-                                                src={appStore}
+                                                src={S3_IMAGES_URL +'/svg/app-store.svg'}
                                                 alt="Pay Me India"
                                                 height='35px'
                                             />
