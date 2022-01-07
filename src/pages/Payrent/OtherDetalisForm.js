@@ -19,6 +19,7 @@ import { Container } from "react-bootstrap";
 import tip from "../../images/svg/tip.png";
 import { bindActionCreators } from "redux";
 import kycIcon from "../../images/svg/professional-details.svg";
+import yesIcon from "../../images/yes.png";
 const cookies = new Cookies();
 
 const OtherDetalisForm = (props) => {
@@ -69,7 +70,7 @@ const OtherDetalisForm = (props) => {
   const [screen3, setScreen3] = useState(false);
   const [correctPan, setcorrectPan] = useState("");
 
-  const [kycStatus, setKycStatus] = useState("");
+  const [kycStatus, setKycStatus] = useState("VERIFIED");
 
   function gtag_report_conversion(url) {
     var callback = function () {
@@ -116,7 +117,7 @@ const OtherDetalisForm = (props) => {
       axios
         .get(url, config)
         .then((response) => {
-          setKycStatus(response.data.data[0].kyc_verified);
+         //setKycStatus(response.data.data[0].kyc_verified);
           //console.log("stepmanual", response.data.data[0]);
         })
         .catch((err) => {
@@ -451,13 +452,14 @@ console.log("kcy",kycStatus)
                                       )
                                     ) {
                                       setcorrectPan("Correct");
+                                      seterrorpanNumber("");
                                     }
                                     else
-                                    {
+                                    { setcorrectPan("")
                                       seterrorpanNumber("Please input correct PAN Number")
                                     }
 
-                                    seterrorpanNumber("");
+                                   
                                     setpanNumber(e.target.value.toUpperCase());
                                   }}
                                 />
@@ -466,6 +468,9 @@ console.log("kcy",kycStatus)
                                     {errorpanNumber}
                                   </span>
                                 ) : null}
+                                {correctPan ? (
+                                <img className='yes-icon_payrent' alt='Yes icons' src={yesIcon} />
+                            ) : null}
                               </div>
                               <div className="step-step p-t-30 border-btm">
                                 <div className="img-wrapper">
