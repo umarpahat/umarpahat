@@ -156,7 +156,7 @@ export const City = (props) => {
         console.log("city", response);
         console.log(response.status);
         gtag_report_conversion();
-
+        faceBook()
        
         setOtpScreen(true);
       })
