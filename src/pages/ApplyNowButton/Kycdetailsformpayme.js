@@ -15,6 +15,8 @@ import aadhaarCard from "../../images/svg/aadhaar-card.svg";
 import panCard from "../../images/svg/pan-card.svg";
 import selfie from "../../images/svg/selfie.svg";
 import tip from "../../images/animated/kyc-option.gif";
+import yesIcon from "../../images/yes.png";
+
 
 const cookies = new Cookies();
 
@@ -364,10 +366,8 @@ const Kycdetailsformpayme = (props) => {
                             />
                        
 
-                            {correctPan ? (
-                              <span style={{ color: "green" ,fontSize:"small"}}>
-                                {correctPan}
-                              </span>
+                       {correctPan ? (
+                                <img className='yes-icon_kyc' alt='Yes icons' src={yesIcon} />
                             ) : null}
 
                             {errorPan1 ? (
