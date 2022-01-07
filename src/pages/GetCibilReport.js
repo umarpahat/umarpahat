@@ -162,72 +162,72 @@ const GetCibilReport = (props) => {
     } else {
       var forename = "Ms";
     }
-    if (fname.length === 0) {
-      setNameerr("Name can't be empty");
-      return false;
-    }
-    if (!lname) {
-      setLnameerr("Last name can't empty");
-      return false;
-    }
-    if (phone.length === 0) {
-      setPhoneerr("Phone can't be empty");
-      return false;
-    }
-    if (phone.length < 10) {
-      setPhoneerr("Phone should be 10 digit");
-      return false;
-    }
+    // if (fname.length === 0) {
+    //   setNameerr("Name can't be empty");
+    //   return false;
+    // }
+    // if (!lname) {
+    //   setLnameerr("Last name can't empty");
+    //   return false;
+    // }
+    // if (phone.length === 0) {
+    //   setPhoneerr("Phone can't be empty");
+    //   return false;
+    // }
+    // if (phone.length < 10) {
+    //   setPhoneerr("Phone should be 10 digit");
+    //   return false;
+    // }
 
-    if (!reg.test(phone)) {
-      setPhoneerr("Phone number is Invalid");
-      return false;
-    }
-    if (correctpan.length === 0) {
-      setPanerr("Please Enter correct PAN Number");
-      return;
-    }
-    if (date === "") {
-      setDoberr("Enter Date of Birth");
-      return;
-    }
-    if (pincode.length !== 6) {
-      setPinCodeerr("Please Enter 6 Digits PinCode ");
-      return;
-    }
-    if (email.length < 5) {
-      setEmailerr("Email should be at least 5 charcters long");
-      return false;
-    }
-    if (email.split("").filter((x) => x === "@").length !== 1) {
-      setEmailerr("Email should contain a @");
-      return false;
-    }
-    if (email.indexOf(".") === -1) {
-      setEmailerr("Email should contain at least one dot");
-      return false;
-    }
-    if (!emailReg.test(email)) {
-      setEmailerr("Email id is Invalid");
-      return false;
-    }
-    if (addresstype.length === 0) {
-      setAddresstypeerr("Please select Address type");
-      return;
-    }
+    // if (!reg.test(phone)) {
+    //   setPhoneerr("Phone number is Invalid");
+    //   return false;
+    // }
+    // if (correctpan.length === 0) {
+    //   setPanerr("Please Enter correct PAN Number");
+    //   return;
+    // }
+    // if (date === "") {
+    //   setDoberr("Enter Date of Birth");
+    //   return;
+    // }
+    // if (pincode.length !== 6) {
+    //   setPinCodeerr("Please Enter 6 Digits PinCode ");
+    //   return;
+    // }
+    // if (email.length < 5) {
+    //   setEmailerr("Email should be at least 5 charcters long");
+    //   return false;
+    // }
+    // if (email.split("").filter((x) => x === "@").length !== 1) {
+    //   setEmailerr("Email should contain a @");
+    //   return false;
+    // }
+    // if (email.indexOf(".") === -1) {
+    //   setEmailerr("Email should contain at least one dot");
+    //   return false;
+    // }
+    // if (!emailReg.test(email)) {
+    //   setEmailerr("Email id is Invalid");
+    //   return false;
+    // }
+    // if (addresstype.length === 0) {
+    //   setAddresstypeerr("Please select Address type");
+    //   return;
+    // }
 
-    if (street.length === 0) {
-      setAddresserr("Address Cant be empty");
-      return;
-    }
-    if (streetSecond.length === 0) {
-      setSecondaddresserr("Address can't be empty");
-      return;
-    }
-    if (!agree) {
-      setTermserr("Please accept term & conditions");
-      return;
-    }
+    // if (street.length === 0) {
+    //   setAddresserr("Address Cant be empty");
+    //   return;
+    // }
+    // if (streetSecond.length === 0) {
+    //   setSecondaddresserr("Address can't be empty");
+    //   return;
+    // }
+    // if (!agree) {
+    //   setTermserr("Please accept term & conditions");
+    //   return;
+    // }
 
     let url = "https://cibil.paymeindia.in/v1/fullfilloffer";
     let data = {
@@ -644,6 +644,7 @@ const GetCibilReport = (props) => {
                             <input
                               style={{ cursor: "pointer" }}
                               type="radio"
+                              value="true"
                               className="others"
                               name="gender"
                               onChange={(e) => {
@@ -658,6 +659,7 @@ const GetCibilReport = (props) => {
                             <input
                               style={{ cursor: "pointer" }}
                               type="radio"
+                              value={gender}
                               className="others"
                               name="gender"
                               onChange={(e) => {
@@ -670,10 +672,12 @@ const GetCibilReport = (props) => {
                               Female
                             </label>
                             <input
+                            
                               style={{ cursor: "pointer" }}
                               type="radio"
                               className="others"
                               name="gender"
+                              value={gender}
                               onChange={(e) => {
                                 setGender("other");
                                 setGendererr("");
@@ -1032,7 +1036,7 @@ const GetCibilReport = (props) => {
                               fontSize: 11,
                               }}
                             >
-                              I accept the Terms & Conditions of TU CIBIL and
+                              I accept the <a style={{cursor:"pointer" }} href="/terms" target={"_blank"}>Terms & Conditions</a>  of TU CIBIL and
                               hereby authorize PayMe India to check CIBIL score
                               & report for my profile
                             </label>

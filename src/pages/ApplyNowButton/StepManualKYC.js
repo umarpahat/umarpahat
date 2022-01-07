@@ -42,6 +42,7 @@ const StepManual = (props) => {
       axios
         .get(url, config)
         .then((response) => {
+          console.log("manual",response)
           //console.log("step",response.data.data[0])
           setDocumentstatus(response.data.data[0]);
           setProfessionalStatus(
@@ -105,7 +106,7 @@ const StepManual = (props) => {
                                 <p>
                                 Provide your Aadhaar and Pan details.
                                 </p>
-                                { kycstatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
+                                { kycstatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Rejected Please Reupload</p>):null}
                               </div>
                               <div className="wrapper-button">
                                 {kycstatus === "PENDING_VERIFICATION" ? (
@@ -116,7 +117,18 @@ const StepManual = (props) => {
                                   <a className="green-button" >
                                     Verified
                                   </a>
-                                ) : null}
+                                ) :  (
+                                
+                                <a
+                                  className="green-button"
+                                  href=""
+                                  onClick={(e) => {
+                                    props.history.push("/kycoption");
+                                  }}
+                                >
+                              
+                                  Continue
+                                </a>)}
                               </div>
                             </div>
                             <div className="step-step">
@@ -130,7 +142,7 @@ const StepManual = (props) => {
                               <div className="img-text">
                                 <h6>Bank Details</h6>
                                 <p>Upload your latest bank statement and bank details.</p>
-                                { bankstatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
+                                { bankstatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Rejected Please Reupload</p>):null}
                               </div>
                               <div className="wrapper-button">
                                 {bankstatus === "VERIFIED" ? (
@@ -142,7 +154,7 @@ const StepManual = (props) => {
                                   Pending
                                 </a>
                                 ) : kycstatus === "PENDING_VERIFICATION" ||
-                                  kycstatus === "VERIFIED" ? (
+                                  kycstatus === "VERIFIED" || bankstatus==="NOT_VALID" ? (
                                   
                                   <a
                                     className="green-button"
@@ -155,7 +167,9 @@ const StepManual = (props) => {
                                     Continue
                                   </a>
                                 ) : (
-                                  <a className="disbled-button" href="">
+                                  <a  className="green-button" href=""  onClick={(e) => {
+                                    props.history.push("/bank-details-payme");
+                                  }}>
                                     Continue
                                   </a>
                                 )}
@@ -174,7 +188,7 @@ const StepManual = (props) => {
                                 <p>
                                   Provide your Salary slip and office details.
                                 </p>
-                                { professionalStatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Please Reupload</p>):null}
+                                { professionalStatus === "NOT_VALID" ? (<p style={{color:"red"}} >Your Document Rejected Please Reupload</p>):null}
                               </div>
                               <div className="wrapper-button">
                                 {professionalStatus === "VERIFIED" ? (
@@ -187,7 +201,7 @@ const StepManual = (props) => {
                                     Pending
                                   </a>
                                 ) : bankstatus === "PENDING_VERIFICATION" ||
-                                  bankstatus === "VERIFIED" ? (
+                                  bankstatus === "VERIFIED" || professionalStatus==="NOT_VALID" ? (
                                   <a
                                     className="green-button"
                                     href=""

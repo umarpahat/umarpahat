@@ -189,6 +189,7 @@ const Bankdetailspayme = (props) => {
 
           <img
             src={Cancelicon}
+            style={{height:"16px",width:"16px"}}
             onClick={() => handleRemoveBankObj(index)}
             alt="bank"
           />

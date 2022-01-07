@@ -128,7 +128,7 @@ const OtherDetalisForm = (props) => {
         });
     }
   });
-
+console.log("kcy",kycStatus)
   async function getSignedUrl() {
     const pathArray = [
       `pay_rent/${props.user.userData?.id}/rent_agreement.jpeg`,
@@ -446,11 +446,15 @@ const OtherDetalisForm = (props) => {
                                   value={panNumber}
                                   onChange={(e) => {
                                     if (
-                                      e.target.value.match(
+                                      e.target.value.toUpperCase().match(
                                         /^([A-Z]){5}([0-9]){4}([A-Z]){1}$/
                                       )
                                     ) {
                                       setcorrectPan("Correct");
+                                    }
+                                    else
+                                    {
+                                      seterrorpanNumber("Please input correct PAN Number")
                                     }
 
                                     seterrorpanNumber("");
