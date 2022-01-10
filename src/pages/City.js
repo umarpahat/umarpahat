@@ -277,7 +277,7 @@ export const City = (props) => {
     );
     fbq("init", "699730774332173");
     fbq("track", "PageView");
-    fbq("track", "Lead");
+    
   };
   return (
     <>
