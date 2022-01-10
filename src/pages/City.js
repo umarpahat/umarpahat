@@ -153,8 +153,7 @@ export const City = (props) => {
     axios
       .post(url, data)
       .then(function (response) {
-        console.log("city", response);
-        console.log(response.status);
+       
         gtag_report_conversion();
         faceBook()
        
@@ -279,9 +278,9 @@ export const City = (props) => {
       "script",
       "https://connect.facebook.net/en_US/fbevents.js"
     );
-    fbq("init", "454211849715851");
+    fbq("init", "699730774332173");
     fbq("track", "PageView");
-    fbq('track', 'LeadForCity');
+    fbq('track', 'Lead');
     
    
   };
