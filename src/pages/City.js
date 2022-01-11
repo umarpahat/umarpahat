@@ -114,9 +114,9 @@ export const City = (props) => {
   const [otperr, setOtperr] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
   const [otpScreen, setOtpScreen] = useState(false);
- const CloseOtpScreen =()=>{
-  setOtpScreen(false)
- }
+  const CloseOtpScreen = () => {
+    setOtpScreen(false);
+  };
   let url = "";
   let reg = /^[0-9]{10}$/;
 
@@ -152,11 +152,8 @@ export const City = (props) => {
     axios
       .post(url, data)
       .then(function (response) {
-        console.log("city", response);
-        console.log(response.status);
         gtag_report_conversion();
-        window.fbq('track', 'Lead');
-        setOtpScreen(true);
+         setOtpScreen(true);
       })
       .catch(function (error) {
         toast.error(error.response.data.message, { ...options });
@@ -196,28 +193,34 @@ export const City = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     GoogleAnalytics();
-    faceBook()
-    fbq("init", "699730774332173");
+    faceBook();
+
     hotJarForCity();
   }, []);
 
-  const GoogleAnalytics =()=>{
-    const script = document.createElement('script')
-    script.id = 'G-1P4XMQV2BK'
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-1P4XMQV2BK'
-    script.async = true
-    script.defer = true
-    script.crossOrigin = 'anonymous'
-    script.onload = () => setHasLoaded(true)
-    document.body.append(script)
+  const GoogleAnalytics = () => {
+    const script = document.createElement("script");
+    script.id = "G-1P4XMQV2BK";
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-1P4XMQV2BK";
+    script.async = true;
+    script.defer = true;
+    script.crossOrigin = "anonymous";
+    script.onload = () => setHasLoaded(true);
+    document.body.append(script);
 
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    gtag('config', 'G-1P4XMQV2BK');
-    (window,document,'script','https://www.googletagmanager.com/gtag/js?id=G-1P4XMQV2BK','ga');
-  }
+    gtag("config", "G-1P4XMQV2BK");
+    window,
+      document,
+      "script",
+      "https://www.googletagmanager.com/gtag/js?id=G-1P4XMQV2BK",
+      "ga";
+  };
 
   function gtag_report_conversion(url) {
     var callback = function () {
@@ -232,24 +235,29 @@ export const City = (props) => {
     return false;
   }
 
-  const hotJarForCity=()=>{
-    (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:2758326,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+  const hotJarForCity = () => {
+    (function (h, o, t, j, a, r) {
+      h.hj =
+        h.hj ||
+        function () {
+          (h.hj.q = h.hj.q || []).push(arguments);
+        };
+      h._hjSettings = { hjid: 2758326, hjsv: 6 };
+      a = o.getElementsByTagName("head")[0];
+      r = o.createElement("script");
+      r.async = 1;
+      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
       a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  }
+    })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+  };
 
-  const faceBook=()=>{
+  const faceBook = () => {
     !(function (f, b, e, v, n, t, s) {
       if (f.fbq) return;
       n = f.fbq = function () {
         n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
       };
       if (!f._fbq) f._fbq = n;
       n.push = n;
@@ -262,143 +270,343 @@ export const City = (props) => {
       s = b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t, s);
     })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js"
     );
     fbq("init", "699730774332173");
     fbq("track", "PageView");
-    fbq('track', 'Lead');
-    fbq('track', 'LeadForCity');
-  }
+    
+  };
   return (
     <>
-      {
-        cityName === "Delhi"? <MetaTags>
-          <title>Instant Personal loan in Delhi NCR – Check eligibility & apply online</title>
-          <meta name="description" content="Looking for a low-interest personal loan in Delhi NCR? Get PayMe India’s instant loan at affordable interest rates. Get loan up to Rs. 2 lakhs hassle-free with PayMe India. "/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant Personal loan in Delhi NCR – Check eligibility & apply online"/>
-        </MetaTags> : cityName === "Bangalore"? <MetaTags>
-          <title>Instant Personal loan for low Cibil score in Bangalore – PayMe India</title>
-          <meta name="description" content="Are you unable to get a personal loan in Bangalore due to a low CIBIL score? PayMe India offers you a hassle-free loan at low-interest rates. Apply for a personal loan now!"/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant Personal loan for low Cibil score in Bangalore – PayMe India"/>
-        </MetaTags> : cityName === "Hyderabad"? <MetaTags>
-          <title>Instant personal loan in Hyderabad – PayMe India</title>
-          <meta name="description" content="Know your eligibility for an instant personal loan in Hyderabad and find competitive interest rates for applying online at paymeindia.in."/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant personal loan in Hyderabad – PayMe India"/>
-        </MetaTags>  : cityName === "Pune"? <MetaTags>
-          <title>Instant Online Personal loan in Pune | Urgent cash in Pune – PayMe India</title>
-          <meta name="description" content="Looking for a low-interest rate instant online personal loan in Pune? PayMe India is here to offer flexible and easy to apply for quick/urgent cash loans in Pune."/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant Online Personal loan in Pune | Urgent cash in Pune – PayMe India"/>
-        </MetaTags>  : cityName === "Mumbai"? <MetaTags>
-          <title>Instant Personal loan online in Mumbai – PayMe India</title>
-          <meta name="description" content="Get a personal loan in Mumbai at the lowest interest rate with PayMe India. Visit the website to apply online for an instant/quick personal loan in Mumbai. "/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant Personal loan online in Mumbai – PayMe India"/>
-        </MetaTags>  : cityName === "Chennai"? <MetaTags>
-          <title>Instant online Personal loan at low interest in Chennai – PayMe India</title>
-          <meta name="description" content="Looking for a low-interest personal loan in Chennai? Apply now to get an instant loan at affordable interest rates in Chennai up to 2 lakhs without any hassle with PayMe India. "/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant online Personal loan at low interest in Chennai – PayMe India"/>
-        </MetaTags>  : cityName === "Kolkata"? <MetaTags>
-          <title>Instant Personal Loan in Kolkata - PayMe India</title>
-          <meta name="description" content="Know your eligibility for an instant personal loan in Kolkata and find competitive interest rates for applying online at paymeindia.in."/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant Personal Loan in Kolkata - PayMe India"/>
-        </MetaTags>  : cityName === "Noida"? <MetaTags>
-          <title>Instant Personal Loan in Noida – PayMe India</title>
-          <meta name="description" content="Personal loan in Noida: Apply for an online instant personal loan and get loan approval today from 500 to 2 lakh in a few hours for salaried professionals at flexible EMI."/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant Personal Loan in Noida – PayMe India"/>
-        </MetaTags>  : cityName === "Vadodara"? <MetaTags>
-          <title>Instant Personal Loan in Vadodara – PayMe India</title>
-          <meta name="description" content="Personal Loan - Get an instant personal loan in Vadodara at low-interest rates at PayMe India. Apply for a personal loan online to fulfill your urgent financial needs."/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant Personal Loan in Vadodara – PayMe India"/>
-        </MetaTags>  : cityName === "Coimbatore"? <MetaTags>
-          <title>Instant personal loan in Coimbatore – PayMe India</title>
-          <meta name="description" content="Know your eligibility for an instant personal loan in Coimbatore and find competitive interest rates for applying online at paymeindia.in."/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant personal loan in Coimbatore – PayMe India"/>
-        </MetaTags>  : cityName === "Bhopal"? <MetaTags>
-          <title>Apply Personal Loan online in Bhopal | Check your eligibility – PayMe India</title>
-          <meta name="description" content="et up to Rs 2 lakh with a PayMe India Instant personal loan in Bhopal and meet various financial like vacation, education, wedding, and home renovation, etc."/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Apply Personal Loan online in Bhopal | Check your eligibility – PayMe India"/>
-        </MetaTags>  : cityName === "Jaipur"? <MetaTags>
-          <title>Instant Personal loan in Jaipur, Urgent Cash loan – PayMe India</title>
-          <meta name="description" content="Looking for a low-interest rate instant personal loan in Jaipur? PayMe India is here to offer flexible and easy-to-apply quick/urgent cash loans in Jaipur."/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant Personal loan in Jaipur, Urgent Cash loan – PayMe India"/>
-        </MetaTags>  : cityName === "NaviMumbai"? <MetaTags>
-          <title>Instant Personal Loan in Navi Mumbai - PayMe India</title>
-          <meta name="description" content="Get a personal loan in Navi Mumbai at the lowest interest rate with PayMe India. Visit the website to apply online for an instant personal loan in Navi Mumbai."/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant Personal Loan in Navi Mumbai - PayMe India"/>
-        </MetaTags>  : cityName === "Lucknow"? <MetaTags>
-          <title>Instant Personal loan in Lucknow, Urgent Cash loan – PayMe India</title>
-          <meta name="description" content="Looking for a low-interest rate instant personal loan in Lucknow? PayMe India is here to offer flexible and easy to apply for quick/urgent cash loans in Lucknow. "/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant Personal loan in Lucknow, Urgent Cash loan – PayMe India"/>
-        </MetaTags>  : cityName === "Ahmedabad"? <MetaTags>
-          <title>Personal Loan in Ahmedabad - Check Eligibility & Apply Online – PayMe India</title>
-          <meta name="description" content="Apply for an instant personal loan in Ahmedabad of up to ₹2 lakhs at affordable interest rates, zero collateral, and flexible EMIs. Best instant personal loan app in Ahmedabad that offers instant loans for every financing need."/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Personal Loan in Ahmedabad - Check Eligibility & Apply Online – PayMe India"/>
-        </MetaTags>  : cityName === "Bhubaneswar"? <MetaTags>
-          <title>Apply for Instant personal loan in Bhubaneswar - PayMe India</title>
-          <meta name="description" content="Apply for an instant personal loan in Bhubaneswar online and get an approval of instant cash loan in a few hours up to Rs. 2 lakh from PayMe India. We offer online urgent personal loans and cash loans online for salaried professionals in Bhubaneswar."/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Apply for Instant personal loan in Bhubaneswar - PayMe India"/>
-        </MetaTags>  : cityName === "Nashik"? <MetaTags>
-          <title>Instant online Personal loan at low interest in Nashik – PayMe India</title>
-          <meta name="description" content="Looking for a low-interest personal loan in Nashik? Get PayMe India’s instant loan at affordable interest rates. Get a loan up to Rs. 2 lakhs hassle-free with PayMe India."/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Instant online Personal loan at low interest in Nashik – PayMe India"/>
-        </MetaTags>  : <MetaTags>
-          <title>Personal Loan near me – PayMe India</title>
-          <meta name="description" content="Get instant personal loan near me at low interest rates at PayMe India. Apply for personal loan online to fulfil your urgent financial needs."/>
-          <meta name="keyword"
-                content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"/>
-          <meta property="og:title" content="Personal Loan near me – PayMe India"/>
+      {cityName === "Delhi" ? (
+        <MetaTags>
+          <title>
+            Instant Personal loan in Delhi NCR – Check eligibility & apply
+            online
+          </title>
+          <meta
+            name="description"
+            content="Looking for a low-interest personal loan in Delhi NCR? Get PayMe India’s instant loan at affordable interest rates. Get loan up to Rs. 2 lakhs hassle-free with PayMe India. "
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant Personal loan in Delhi NCR – Check eligibility & apply online"
+          />
         </MetaTags>
-      }
-
+      ) : cityName === "Bangalore" ? (
+        <MetaTags>
+          <title>
+            Instant Personal loan for low Cibil score in Bangalore – PayMe India
+          </title>
+          <meta
+            name="description"
+            content="Are you unable to get a personal loan in Bangalore due to a low CIBIL score? PayMe India offers you a hassle-free loan at low-interest rates. Apply for a personal loan now!"
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant Personal loan for low Cibil score in Bangalore – PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Hyderabad" ? (
+        <MetaTags>
+          <title>Instant personal loan in Hyderabad – PayMe India</title>
+          <meta
+            name="description"
+            content="Know your eligibility for an instant personal loan in Hyderabad and find competitive interest rates for applying online at paymeindia.in."
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant personal loan in Hyderabad – PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Pune" ? (
+        <MetaTags>
+          <title>
+            Instant Online Personal loan in Pune | Urgent cash in Pune – PayMe
+            India
+          </title>
+          <meta
+            name="description"
+            content="Looking for a low-interest rate instant online personal loan in Pune? PayMe India is here to offer flexible and easy to apply for quick/urgent cash loans in Pune."
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant Online Personal loan in Pune | Urgent cash in Pune – PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Mumbai" ? (
+        <MetaTags>
+          <title>Instant Personal loan online in Mumbai – PayMe India</title>
+          <meta
+            name="description"
+            content="Get a personal loan in Mumbai at the lowest interest rate with PayMe India. Visit the website to apply online for an instant/quick personal loan in Mumbai. "
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant Personal loan online in Mumbai – PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Chennai" ? (
+        <MetaTags>
+          <title>
+            Instant online Personal loan at low interest in Chennai – PayMe
+            India
+          </title>
+          <meta
+            name="description"
+            content="Looking for a low-interest personal loan in Chennai? Apply now to get an instant loan at affordable interest rates in Chennai up to 2 lakhs without any hassle with PayMe India. "
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant online Personal loan at low interest in Chennai – PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Kolkata" ? (
+        <MetaTags>
+          <title>Instant Personal Loan in Kolkata - PayMe India</title>
+          <meta
+            name="description"
+            content="Know your eligibility for an instant personal loan in Kolkata and find competitive interest rates for applying online at paymeindia.in."
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant Personal Loan in Kolkata - PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Noida" ? (
+        <MetaTags>
+          <title>Instant Personal Loan in Noida – PayMe India</title>
+          <meta
+            name="description"
+            content="Personal loan in Noida: Apply for an online instant personal loan and get loan approval today from 500 to 2 lakh in a few hours for salaried professionals at flexible EMI."
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant Personal Loan in Noida – PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Vadodara" ? (
+        <MetaTags>
+          <title>Instant Personal Loan in Vadodara – PayMe India</title>
+          <meta
+            name="description"
+            content="Personal Loan - Get an instant personal loan in Vadodara at low-interest rates at PayMe India. Apply for a personal loan online to fulfill your urgent financial needs."
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant Personal Loan in Vadodara – PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Coimbatore" ? (
+        <MetaTags>
+          <title>Instant personal loan in Coimbatore – PayMe India</title>
+          <meta
+            name="description"
+            content="Know your eligibility for an instant personal loan in Coimbatore and find competitive interest rates for applying online at paymeindia.in."
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant personal loan in Coimbatore – PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Bhopal" ? (
+        <MetaTags>
+          <title>
+            Apply Personal Loan online in Bhopal | Check your eligibility –
+            PayMe India
+          </title>
+          <meta
+            name="description"
+            content="et up to Rs 2 lakh with a PayMe India Instant personal loan in Bhopal and meet various financial like vacation, education, wedding, and home renovation, etc."
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Apply Personal Loan online in Bhopal | Check your eligibility – PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Jaipur" ? (
+        <MetaTags>
+          <title>
+            Instant Personal loan in Jaipur, Urgent Cash loan – PayMe India
+          </title>
+          <meta
+            name="description"
+            content="Looking for a low-interest rate instant personal loan in Jaipur? PayMe India is here to offer flexible and easy-to-apply quick/urgent cash loans in Jaipur."
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant Personal loan in Jaipur, Urgent Cash loan – PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "NaviMumbai" ? (
+        <MetaTags>
+          <title>Instant Personal Loan in Navi Mumbai - PayMe India</title>
+          <meta
+            name="description"
+            content="Get a personal loan in Navi Mumbai at the lowest interest rate with PayMe India. Visit the website to apply online for an instant personal loan in Navi Mumbai."
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant Personal Loan in Navi Mumbai - PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Lucknow" ? (
+        <MetaTags>
+          <title>
+            Instant Personal loan in Lucknow, Urgent Cash loan – PayMe India
+          </title>
+          <meta
+            name="description"
+            content="Looking for a low-interest rate instant personal loan in Lucknow? PayMe India is here to offer flexible and easy to apply for quick/urgent cash loans in Lucknow. "
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant Personal loan in Lucknow, Urgent Cash loan – PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Ahmedabad" ? (
+        <MetaTags>
+          <title>
+            Personal Loan in Ahmedabad - Check Eligibility & Apply Online –
+            PayMe India
+          </title>
+          <meta
+            name="description"
+            content="Apply for an instant personal loan in Ahmedabad of up to ₹2 lakhs at affordable interest rates, zero collateral, and flexible EMIs. Best instant personal loan app in Ahmedabad that offers instant loans for every financing need."
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Personal Loan in Ahmedabad - Check Eligibility & Apply Online – PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Bhubaneswar" ? (
+        <MetaTags>
+          <title>
+            Apply for Instant personal loan in Bhubaneswar - PayMe India
+          </title>
+          <meta
+            name="description"
+            content="Apply for an instant personal loan in Bhubaneswar online and get an approval of instant cash loan in a few hours up to Rs. 2 lakh from PayMe India. We offer online urgent personal loans and cash loans online for salaried professionals in Bhubaneswar."
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Apply for Instant personal loan in Bhubaneswar - PayMe India"
+          />
+        </MetaTags>
+      ) : cityName === "Nashik" ? (
+        <MetaTags>
+          <title>
+            Instant online Personal loan at low interest in Nashik – PayMe India
+          </title>
+          <meta
+            name="description"
+            content="Looking for a low-interest personal loan in Nashik? Get PayMe India’s instant loan at affordable interest rates. Get a loan up to Rs. 2 lakhs hassle-free with PayMe India."
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Instant online Personal loan at low interest in Nashik – PayMe India"
+          />
+        </MetaTags>
+      ) : (
+        <MetaTags>
+          <title>Personal Loan near me – PayMe India</title>
+          <meta
+            name="description"
+            content="Get instant personal loan near me at low interest rates at PayMe India. Apply for personal loan online to fulfil your urgent financial needs."
+          />
+          <meta
+            name="keyword"
+            content="personal loans online, quick personal loans, instant personal loan, small personal loans, instant personal loan online, instant loan online"
+          />
+          <meta
+            property="og:title"
+            content="Personal Loan near me – PayMe India"
+          />
+        </MetaTags>
+      )}
 
       <Header {...props} />
       {otpScreen ? (
-          <OtpDialog
+        <OtpDialog
           CloseOtpScreen={CloseOtpScreen}
           {...props}
-            name={name}
-            email={email}
-            phone={phone}
-            lead_from="GETLOAN"
-
-          />
-        ) : null}
+          name={name}
+          email={email}
+          phone={phone}
+          lead_from="GETLOAN"
+        />
+      ) : null}
       <div className="container">
         <div className="row">
           <div className="col-md-6 col-sm-12 hideMobile">
@@ -524,7 +732,7 @@ export const City = (props) => {
                     value={phone}
                     onChange={(e) => {
                       setPhoneerr("");
-                      setPhone(e.target.value.slice(0,10).replace(/\D/g, ""));
+                      setPhone(e.target.value.slice(0, 10).replace(/\D/g, ""));
                     }}
                   />
                   {phoneerr ? (
@@ -541,8 +749,7 @@ export const City = (props) => {
                     display: "block",
                     cursor: "pointer",
                     color: "#fff",
-                    width:"100%"
-
+                    width: "100%",
                   }}
                   onClick={getOtp}
                 >
@@ -574,9 +781,9 @@ export const City = (props) => {
               style={{ backgroundImage: `url(${images[`${cityName}`]})` }}
             >
               {cityName === "NearMe" ? (
-                  <h4 className="text-center">Get Instant Loan Online</h4>
+                <h4 className="text-center">Get Instant Loan Online</h4>
               ) : (
-                  <h4 className="text-center">Get Loan In {cityName}</h4>
+                <h4 className="text-center">Get Loan In {cityName}</h4>
               )}
               <p>
                 PayMe India’s Instant Personal Loan comes with a hassle-free
@@ -621,8 +828,6 @@ export const City = (props) => {
         </div>
       </div>
       <Footer {...props} />
-
-
     </>
   );
 };
