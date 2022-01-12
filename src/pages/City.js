@@ -153,7 +153,7 @@ export const City = (props) => {
       .post(url, data)
       .then(function (response) {
         gtag_report_conversion();
-         setOtpScreen(true);
+        setOtpScreen(true);
       })
       .catch(function (error) {
         toast.error(error.response.data.message, { ...options });
@@ -194,6 +194,7 @@ export const City = (props) => {
     window.scrollTo(0, 0);
     GoogleAnalytics();
     faceBook();
+    fbq("init", "699730774332173");
 
     hotJarForCity();
   }, []);
@@ -277,7 +278,6 @@ export const City = (props) => {
     );
     fbq("init", "699730774332173");
     fbq("track", "PageView");
-    
   };
   return (
     <>
