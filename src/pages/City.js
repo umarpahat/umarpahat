@@ -31,6 +31,7 @@ import { API_ENDPOINT_STAGING } from "../constant";
 import Footer from "./Footer";
 import OtpDialog from "./OtpDialog";
 import MetaTags from "react-meta-tags";
+import { fbq } from "react-facebook-pixel";
 
 toast.configure();
 const options = {
@@ -153,6 +154,7 @@ export const City = (props) => {
       .post(url, data)
       .then(function (response) {
         gtag_report_conversion();
+
         setOtpScreen(true);
       })
       .catch(function (error) {
@@ -193,8 +195,6 @@ export const City = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     GoogleAnalytics();
-    faceBook();
-    fbq("init", "699730774332173");
 
     hotJarForCity();
   }, []);
@@ -243,7 +243,7 @@ export const City = (props) => {
         function () {
           (h.hj.q = h.hj.q || []).push(arguments);
         };
-      h._hjSettings = { hjid: 2758326, hjsv: 6 };
+      h._hjSettings = { hjid: 2782997, hjsv: 6 };
       a = o.getElementsByTagName("head")[0];
       r = o.createElement("script");
       r.async = 1;
@@ -252,33 +252,6 @@ export const City = (props) => {
     })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
   };
 
-  const faceBook = () => {
-    !(function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod
-          ? n.callMethod.apply(n, arguments)
-          : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = "2.0";
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(
-      window,
-      document,
-      "script",
-      "https://connect.facebook.net/en_US/fbevents.js"
-    );
-    fbq("init", "699730774332173");
-    fbq("track", "PageView");
-  };
   return (
     <>
       {cityName === "Delhi" ? (

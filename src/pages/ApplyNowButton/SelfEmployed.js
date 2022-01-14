@@ -84,7 +84,7 @@ useEffect(() => {
   }
 
   const handleSubmit = (event) => {
-    setloader(true)
+    
     event.preventDefault();
     if (!uploadItr.name) {
       seterroruploadItr("Please upload your latest ITR");
@@ -98,7 +98,7 @@ useEffect(() => {
       seterrorpresentPincode("Please enter pin code");
       return;
     }
-
+    setloader(true)
     const uploadItrFront = postS3({
       res: uploadItr,
       presignedPostData:
@@ -234,7 +234,7 @@ useEffect(() => {
                         value={presentAddLine1}
                         onChange={(event) => {
                           seterrorpresentAddLine1("");
-                          setpresentAddLine1(event.target.value);
+                          setpresentAddLine1(event.target.value.slice(0,100));
                         }}
                       />
                       <br/>
@@ -245,7 +245,7 @@ useEffect(() => {
                         placeholder="Address Line 2"
                         value={presentAddLine2}
                         onChange={(event) => {
-                          setpresentAddLine2(event.target.value);
+                          setpresentAddLine2(event.target.value.slice(0,100));
                         }}
                       />
                       {errorpresentAddLine1 ? (

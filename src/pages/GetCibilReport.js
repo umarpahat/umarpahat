@@ -644,6 +644,8 @@ const GetCibilReport = (props) => {
                             <input
                               style={{ cursor: "pointer" }}
                               type="radio"
+                              value={gender}
+                              checked={gender==="Male"}
                               className="others"
                               name="gender"
                               onChange={(e) => {
@@ -658,6 +660,8 @@ const GetCibilReport = (props) => {
                             <input
                               style={{ cursor: "pointer" }}
                               type="radio"
+                              value={gender}
+                              checked={gender==="Female"}
                               className="others"
                               name="gender"
                               onChange={(e) => {
@@ -670,10 +674,13 @@ const GetCibilReport = (props) => {
                               Female
                             </label>
                             <input
+                            
                               style={{ cursor: "pointer" }}
                               type="radio"
                               className="others"
                               name="gender"
+                              value={gender}
+                              checked={gender==="other"}
                               onChange={(e) => {
                                 setGender("other");
                                 setGendererr("");
@@ -906,6 +913,7 @@ const GetCibilReport = (props) => {
                               type="radio"
                               className="others"
                               name="registration"
+                              checked={addresstype==="01"}
                               onChange={(e) => {
                                 setAddresstype("01");
                                 setAddresstypeerr("");
@@ -920,6 +928,7 @@ const GetCibilReport = (props) => {
                               type="radio"
                               className="others"
                               name="registration"
+                              checked={addresstype==="02"}
                               onChange={(e) => {
                                 setAddresstype("02");
                                 setAddresstypeerr("");
@@ -934,6 +943,7 @@ const GetCibilReport = (props) => {
                               type="radio"
                               className="others"
                               name="registration"
+                              checked={addresstype==="03"}
                               onChange={(e) => {
                                 setAddresstype("03");
                                 setAddresstypeerr("");
@@ -1032,7 +1042,7 @@ const GetCibilReport = (props) => {
                               fontSize: 11,
                               }}
                             >
-                              I accept the Terms & Conditions of TU CIBIL and
+                              I accept the <a style={{cursor:"pointer" }} href="/terms" target={"_blank"}>Terms & Conditions</a>  of TU CIBIL and
                               hereby authorize PayMe India to check CIBIL score
                               & report for my profile
                             </label>

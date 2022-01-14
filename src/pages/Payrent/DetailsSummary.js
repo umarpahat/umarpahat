@@ -41,6 +41,7 @@ const DetailsSummary = (props) => {
     //console.log(23232323, props.location.state);
   }, []);
 
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     let url = `${API_ENDPOINT_STAGING}/api/pay-rent/get-jwt-initiate-payment/`;

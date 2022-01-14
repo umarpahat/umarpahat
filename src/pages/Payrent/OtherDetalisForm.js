@@ -19,6 +19,7 @@ import { Container } from "react-bootstrap";
 import tip from "../../images/svg/tip.png";
 import { bindActionCreators } from "redux";
 import kycIcon from "../../images/svg/professional-details.svg";
+import yesIcon from "../../images/yes.png";
 const cookies = new Cookies();
 
 const OtherDetalisForm = (props) => {
@@ -86,26 +87,11 @@ const OtherDetalisForm = (props) => {
 
   useEffect(() => {
     if (payrentConversion) {
-      hotJarForPayrent();
+     
       gtag_report_conversion("");
       cookies.remove("payrentconversion");
     }
-    const hotJarForPayrent = () => {
-      (function (h, o, t, j, a, r) {
-        h.hj =
-          h.hj ||
-          function () {
-            (h.hj.q = h.hj.q || []).push(arguments);
-          };
-        h._hjSettings = { hjid: 2759152, hjsv: 6 };
-        a = o.getElementsByTagName("head")[0];
-        r = o.createElement("script");
-        r.async = 1;
-        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-        a.appendChild(r);
-      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-    };
-
+   
     if (token) {
       let url = `${API_ENDPOINT}/api/get_document_status/`;
       let config = {
@@ -116,7 +102,7 @@ const OtherDetalisForm = (props) => {
       axios
         .get(url, config)
         .then((response) => {
-          setKycStatus(response.data.data[0].kyc_verified);
+         setKycStatus(response.data.data[0].kyc_verified);
           //console.log("stepmanual", response.data.data[0]);
         })
         .catch((err) => {
@@ -128,7 +114,7 @@ const OtherDetalisForm = (props) => {
         });
     }
   });
-
+console.log("kcy",kycStatus)
   async function getSignedUrl() {
     const pathArray = [
       `pay_rent/${props.user.userData?.id}/rent_agreement.jpeg`,
@@ -373,7 +359,7 @@ const OtherDetalisForm = (props) => {
                   <div className="row">
                     <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                       <br />
-                      <a className="back-arrow" href="">
+                      <a className="back-arrow" href="/">
                         Back
                       </a>
                       <br />
@@ -405,7 +391,7 @@ const OtherDetalisForm = (props) => {
                             value={RentAmount}
                             onChange={(e) => {
                               seterrorRentAmount("");
-                              setRentAmount(e.target.value);
+                              setRentAmount(e.target.value.slice(0,6).replace(/\D/g, ""));
                             }}
                           />
                           {errorRentAmount ? (
@@ -446,14 +432,19 @@ const OtherDetalisForm = (props) => {
                                   value={panNumber}
                                   onChange={(e) => {
                                     if (
-                                      e.target.value.match(
+                                      e.target.value.toUpperCase().match(
                                         /^([A-Z]){5}([0-9]){4}([A-Z]){1}$/
                                       )
                                     ) {
                                       setcorrectPan("Correct");
+                                      seterrorpanNumber("");
+                                    }
+                                    else
+                                    { setcorrectPan("")
+                                      seterrorpanNumber("Please input correct PAN Number")
                                     }
 
-                                    seterrorpanNumber("");
+                                   
                                     setpanNumber(e.target.value.toUpperCase());
                                   }}
                                 />
@@ -462,6 +453,9 @@ const OtherDetalisForm = (props) => {
                                     {errorpanNumber}
                                   </span>
                                 ) : null}
+                                {correctPan ? (
+                                <img className='yes-icon_payrent' alt='Yes icons' src={yesIcon} />
+                            ) : null}
                               </div>
                               <div className="step-step p-t-30 border-btm">
                                 <div className="img-wrapper">
@@ -543,7 +537,7 @@ const OtherDetalisForm = (props) => {
                     <div className="row">
                       <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                         <br />
-                        <a className="back-arrow" href="">
+                        <a className="back-arrow" href="/">
                           Back
                         </a>
                       </div>
@@ -627,14 +621,14 @@ const OtherDetalisForm = (props) => {
                                   +91
                                 </span>
                                 <input
-                                  type="number"
+                                  type="text"
                                   className="form-input"
                                   placeholder="9999999999"
                                   value={mobileNumber}
                                   onChange={(e) => {
                                     seterrormobileNumber("");
                                     setmobileNumber(
-                                      e.target.value.slice(0, 10)
+                                      e.target.value.slice(0, 10).replace(/\D/g, "")
                                     );
                                   }}
                                 />
@@ -657,7 +651,7 @@ const OtherDetalisForm = (props) => {
                                 value={AddressLine1}
                                 onChange={(e) => {
                                   seterrorAddressLine1("");
-                                  setAddressLine1(e.target.value);
+                                  setAddressLine1(e.target.value.slice(0,120));
                                 }}
                               />
                               {errorAddressLine1 ? (
@@ -671,20 +665,20 @@ const OtherDetalisForm = (props) => {
                                 placeholder="Address Line 2"
                                 value={AddressLine2}
                                 onChange={(e) => {
-                                  setAddressLine2(e.target.value);
+                                  setAddressLine2(e.target.value.slice(0,120));
                                 }}
                               />
                             </div>
                             <div className="form-group ms-input-group">
                               <label className="form-label">Pin Code</label>
                               <input
-                                type="number"
+                                type="text"
                                 className="form-input"
                                 placeholder="Enter Pincode Of Your Property"
                                 value={pinCode}
                                 onChange={(e) => {
                                   seterrorPincode("");
-                                  setpinCode(e.target.value.slice(0, 6));
+                                  setpinCode(e.target.value.slice(0, 6).replace(/\D/g, ""));
                                 }}
                               />
                               {errorPincode ? (
@@ -707,7 +701,7 @@ const OtherDetalisForm = (props) => {
                                     if (
                                       e.target.value.match(/^[A-Za-z{" "}]+$/)
                                     ) {
-                                      setstate(e.target.value);
+                                      setstate(e.target.value.slice(0,20));
                                     } else if (e.target.value.length === 0) {
                                       setstate(e.target.value);
                                     }
@@ -731,7 +725,7 @@ const OtherDetalisForm = (props) => {
                                     if (
                                       e.target.value.match(/^[A-Za-z{" "}]+$/)
                                     ) {
-                                      setcity(e.target.value);
+                                      setcity(e.target.value.slice(0,30));
                                     } else if (e.target.value.length === 0) {
                                       setcity(e.target.value);
                                     }
@@ -779,7 +773,7 @@ const OtherDetalisForm = (props) => {
                     <div className="row">
                       <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                         <br />
-                        <a className="back-arrow" href="">
+                        <a className="back-arrow" href="/">
                           Back
                         </a>
                       </div>
@@ -845,7 +839,7 @@ const OtherDetalisForm = (props) => {
                                 value={ifscCode}
                                 onChange={(e) => {
                                   seterrorifscCode("");
-                                  setifscCode(e.target.value.toUpperCase());
+                                  setifscCode(e.target.value.slice(0,30).toUpperCase());
                                 }}
                               />
                               {errorifscCode ? (
@@ -863,7 +857,7 @@ const OtherDetalisForm = (props) => {
                                 value={bankName}
                                 onChange={(e) => {
                                   seterrorbankName("");
-                                  setbankName(e.target.value);
+                                  setbankName(e.target.value.slice(0,30));
                                 }}
                               />
                               {errorbankName ? (
@@ -903,11 +897,11 @@ const OtherDetalisForm = (props) => {
                   ) : null}
                 </div>
               </form>
-            ) : kycStatus === "NOT_SUBMITTED" || kycStatus === "NOT_VALID" ? (
+            ) : kycStatus === "NOT_SUBMITTED" || kycStatus === "NOT_VALID" || kycStatus === "PENDING_VERIFICATION"? (
               <div className="row" style={{ marginBottom: "10%" }}>
                 <div className="col-lg-3 col-md-3 col-sm-12 text-center">
                   <br />
-                  <a className="back-arrow" href="">
+                  <a className="back-arrow" href="/">
                     Back
                   </a>
                 </div>

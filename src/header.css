@@ -133,9 +133,17 @@ body {
 .yes-icon_kyc {
     width: 30px;
     position: absolute;
-    right: 14px;
+    right: 19px;
     top:63px
 }
+.yes-icon_payrent {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: 60px;
+    top:360px
+}
+
 
 .img_google {
     max-width: 100%;
