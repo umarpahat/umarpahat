@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import OtpDialog from "./OtpDialog";
@@ -115,27 +115,13 @@ export const WomenLoan = (props) => {
       });
   };
   useEffect(() => {
-    hotJarForWomen();
+   
     window.scrollTo(0, 0);
 
   
   }, []);
 
-  const hotJarForWomen = () => {
-    (function (h, o, t, j, a, r) {
-      h.hj =
-        h.hj ||
-        function () {
-          (h.hj.q = h.hj.q || []).push(arguments);
-        };
-      h._hjSettings = { hjid: 2759149, hjsv: 6 };
-      a = o.getElementsByTagName("head")[0];
-      r = o.createElement("script");
-      r.async = 1;
-      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-      a.appendChild(r);
-    })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-  };
+ 
 
   const responseGoogleFail = (res) => {
     toast.error("Please login google account in your device", { ...options });
