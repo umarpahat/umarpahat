@@ -278,6 +278,7 @@ export const City = (props) => {
     );
     fbq("init", "3148492622099570");
     fbq("track", "PageView");
+  }
     return (
       <>
         <img
