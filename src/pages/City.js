@@ -278,9 +278,7 @@ export const City = (props) => {
     );
     fbq("init", "3148492622099570");
     fbq("track", "PageView");
-    <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=3148492622099570&ev=PageView&noscript=1"
-/></noscript> 
+
    
   }
 
