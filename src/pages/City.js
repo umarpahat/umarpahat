@@ -275,10 +275,15 @@ export const City = (props) => {
       "script",
       "https://connect.facebook.net/en_US/fbevents.js"
     );
-    fbq("init", "603922820714690");
+    fbq("init", "3148492622099570");
     fbq("track", "PageView");
    
   }
+
+{/* <noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=3148492622099570&ev=PageView&noscript=1"
+/></noscript> */}
+
 
   return (
     <>
