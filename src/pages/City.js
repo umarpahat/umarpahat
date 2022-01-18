@@ -193,11 +193,11 @@ export const City = (props) => {
     setTimeout(() => setIsButtonDisabled(false), 3000);
   };
   useEffect(() => {
-    window.scrollTo(0, 0);
+    fbq('init', '3148492622099570');
     GoogleAnalytics();
-    facebookPixel()
-    fbq("init", "3148492622099570");
+    facebookPixel();
     hotJarForCity();
+    window.scrollTo(0, 0);
   }, []);
 
   const GoogleAnalytics = () => {
@@ -252,7 +252,7 @@ export const City = (props) => {
       a.appendChild(r);
     })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
   };
-  const facebookPixel =()=>{
+  const facebookPixel = () => {
     !(function (f, b, e, v, n, t, s) {
       if (f.fbq) return;
       n = f.fbq = function () {
@@ -278,14 +278,17 @@ export const City = (props) => {
     );
     fbq("init", "3148492622099570");
     fbq("track", "PageView");
-  return( <><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=3148492622099570&ev=PageView&noscript=1"
-/> </>)
-   
-  }
-
-
-
+    return (
+      <>
+        <img
+          height="1"
+          width="1"
+          style="display:none"
+          src="https://www.facebook.com/tr?id=3148492622099570&ev=PageView&noscript=1"
+        />{" "}
+      </>
+    );
+  };
 
   return (
     <>
