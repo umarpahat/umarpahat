@@ -23,6 +23,7 @@ import {Blogs} from "../component/Blogs";
 import {Videos} from "../component/Videos";
 import {Whatsup} from "../component/Whatsup";
 import Footer from "./Footer";
+import {Download} from "../component/Download";
 const cookies = new Cookies();
 
 toast.configure();
@@ -126,6 +127,7 @@ const HomePage = (props) => {
       <div className="content">
         <CarouselPic/>
         <Cibil/>
+        <Download/>
         <Benefits/>
         <Services/>
         <GetLoanStep/>
