@@ -1544,7 +1544,7 @@ a:hover {
   font-size: 22px;
 }
 .home-page-header-section {
-  background-image: url("/src/component/img/Homeimg.png");
+  background-image: url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images//Homeimg.png");
   background-position: right;
   background-repeat: no-repeat;
   background-size: inherit;

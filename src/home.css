@@ -108,7 +108,7 @@ h4 {
 }
 
 .btn-checkbox input[type=checkbox] + label {
-    /*background: url("images/svg/checkbox-blank.svg") no-repeat 0 0;*/
+    background: url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/checkbox-blank.svg") no-repeat 0 0;
     height: 28px;
     display: inline-block;
     padding: 6px 0 0 35px;
@@ -119,7 +119,7 @@ h4 {
 }
 
 .btn-checkbox input[type=checkbox]:checked + label {
-    /*background: url("images/svg/yes-icon.svg") no-repeat 0 0;*/
+    background: url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/yes-icon.svg") no-repeat 0 0;
 }
 
 .whatsup-text {
@@ -453,7 +453,7 @@ button.button-gray:hover {
 }
 
 .back-arrow {
-    /*background: #fff url("images/svg/arrow-left.svg") no-repeat 10px center;*/
+    background: #fff url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/arrow-left.svg") no-repeat 10px center;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
     border-radius: 50px;
     font-weight: 600;
@@ -664,7 +664,7 @@ button.button-gray:hover {
     left: 0;
     top: 20px;
     z-index: 0;
-    /*background: url('images/svg/left-shape.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/left-shape.svg') no-repeat 0 0;
 }
 
 .box-offer {
@@ -709,7 +709,7 @@ button.button-gray:hover {
     position: absolute;
     right: 0;
     top: -45px;
-    /*background: url('images/svg/green-slash.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/green-slash.svg') no-repeat 0 0;
 }
 
 .document-wrapper:after {
@@ -721,7 +721,7 @@ button.button-gray:hover {
     position: absolute;
     right: 0;
     bottom: -125px;
-    /*background: url('images/svg/blue-slash.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/blue-slash.svg') no-repeat 0 0;
 }
 
 .document-box {
@@ -808,7 +808,7 @@ button.button-gray:hover {
     left: -5px;
     top: 150px;
     z-index: -1;
-    /*background: url('images/svg/green-line.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/green-line.svg') no-repeat 0 0;
 }
 
 .team-section:before {
@@ -821,7 +821,7 @@ button.button-gray:hover {
     right: 0;
     top: 55%;
     z-index: -1;
-    /*background: url('images/svg/right-half.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/right-half.svg') no-repeat 0 0;
 }
 
 .clearboth {
@@ -851,7 +851,7 @@ button.button-gray:hover {
     margin: auto;
     width: 60px;
     height: 60px;
-    /*background: url("images/dot.png") no-repeat 0 0;*/
+    background: url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/dot.png") no-repeat 0 0;
     z-index: 2;
     background-size: 100% 100%;
 
@@ -918,7 +918,7 @@ button.button-gray:hover {
     left: 0;
     top: 20px;
     z-index: -1;
-    /*background: url('images/svg/left-shape.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/left-shape.svg') no-repeat 0 0;
 }
 
 .contactBox:before {
@@ -931,7 +931,7 @@ button.button-gray:hover {
     right: 0;
     bottom: 40px;
     z-index: -1;
-    /*background: url('images/svg/green-right-line.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/green-right-line.svg') no-repeat 0 0;
 }
 
 .contact {
@@ -967,7 +967,7 @@ button.button-gray:hover {
     right: -71px;
     bottom: 52px;
     z-index: 0;
-    /*background: url('images/svg/email.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/email.svg') no-repeat 0 0;
 }
 
 .contactLine:before {
@@ -1055,7 +1055,7 @@ button.button-gray:hover {
     padding: 20px 20px 20px 60px;
     letter-spacing: 0.02em;
     color: #000000;
-    /*background: #fff url("images/svg/search.svg") no-repeat 20px center;*/
+    background: #fff url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/search.svg") no-repeat 20px center;
 }
 
 .search_icon:focus, .search_icon:active, .search_icon:hover {
@@ -1123,7 +1123,7 @@ button.button-gray:hover {
     z-index: -3;
     width: 123px;
     height: 86px;
-    /*background: url("images/svg/right-side-line.svg") no-repeat 0 0;*/
+    background: url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/right-side-line.svg") no-repeat 0 0;
 }
 
 a.button-blue {
@@ -1203,7 +1203,7 @@ a.button-small:hover {
 .aboutUs {
     padding: 100px 0 150px;
     position: relative;
-    /*background: url('images/svg/aboutus-bg.svg') no-repeat center 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/aboutus-bg.svg') no-repeat center 0;
     background-size: cover;
 }
 
@@ -1215,7 +1215,7 @@ a.button-small:hover {
     position: absolute;
     left: 327px;
     bottom: -30px;
-    /*background: url("images/svg/cicle-blue-shade.svg") no-repeat 0 0;*/
+    background: url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/cicle-blue-shade.svg") no-repeat 0 0;
     background-size: 100%;
 }
 
@@ -1227,7 +1227,7 @@ a.button-small:hover {
     position: absolute;
     right: 27px;
     bottom: -30px;
-    /*background: url("images/svg/cicle-green-shade.svg") no-repeat 0 0;*/
+    background: url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/cicle-green-shade.svg") no-repeat 0 0;
     background-size: 100%;
 }
 
@@ -1241,7 +1241,7 @@ a.button-small:hover {
     left: 0;
     top: 20px;
     z-index: -1;
-    /*background: url('images/svg/left-shape.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/left-shape.svg') no-repeat 0 0;
 }
 
 .aboutUs:after {
@@ -1254,7 +1254,7 @@ a.button-small:hover {
     right: 0;
     bottom: 240px;
     z-index: -1;
-    /*background: url('images/svg/green-right-line.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/green-right-line.svg') no-repeat 0 0;
 }
 
 .mission:after {
@@ -1267,7 +1267,7 @@ a.button-small:hover {
     right: 0;
     bottom: -62px;
     z-index: -1;
-    /*background: url('images/svg/right-up-arrow.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/right-up-arrow.svg') no-repeat 0 0;
 }
 
 .banner {
@@ -1285,7 +1285,7 @@ a.button-small:hover {
     left: 0;
     top: 20px;
     z-index: -1;
-    /*background: url('images/svg/left-shape.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/left-shape.svg') no-repeat 0 0;
 }
 
 .banner:after {
@@ -1298,7 +1298,7 @@ a.button-small:hover {
     left: -5px;
     bottom: 10px;
     z-index: -1;
-    /*background: url('images/svg/green-line.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/green-line.svg') no-repeat 0 0;
 }
 
 
@@ -1441,7 +1441,7 @@ a.button-small:hover {
     left: 140px;
     bottom: -40px;
     z-index: -1;
-    /*background: url('images/svg/bottom-line.svg') no-repeat 0 bottom;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/bottom-line.svg') no-repeat 0 bottom;
 }
 
 .services {
@@ -1460,7 +1460,7 @@ a.button-small:hover {
     z-index: 0;
     width: 53px;
     height: 178px;
-    /*background: url("images/svg/half-circle-right.svg") no-repeat 0 0;*/
+    background: url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/half-circle-right.svg") no-repeat 0 0;
 }
 
 .mission {
@@ -1492,7 +1492,7 @@ a.button-small:hover {
     z-index: -1;
     width: 123px;
     height: 86px;
-    /*background: url("images/svg/right-side-line.svg") no-repeat 0 0;*/
+    background: url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/right-side-line.svg") no-repeat 0 0;
 }
 
 .steps {
@@ -1579,7 +1579,7 @@ a.button-small:hover {
     z-index: 0;
     width: 9px;
     height: 17px;
-    /*background: url("images/svg/arrow-right.svg") no-repeat 0 0;*/
+    background: url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/arrow-right.svg") no-repeat 0 0;
 }
 
 .home-steps div:first-child {
@@ -1641,7 +1641,7 @@ a.button-small:hover {
     left: -5px;
     top: 100px;
     z-index: -1;
-    /*background: url('images/svg/green-line.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/green-line.svg') no-repeat 0 0;
 }
 
 .partners:before {
@@ -1654,7 +1654,7 @@ a.button-small:hover {
     right: 0;
     bottom: 30%;
     z-index: -1;
-    /*background: url('images/svg/green-right-line.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/green-right-line.svg') no-repeat 0 0;
 }
 
 .partners .heading4 {
@@ -1681,7 +1681,7 @@ a.button-small:hover {
     z-index: 0;
     width: 53px;
     height: 178px;
-    /*background: url("images/svg/half-circle-right.svg") no-repeat 0 0;*/
+    background: url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/half-circle-right.svg") no-repeat 0 0;
 }
 
 .faqSection:before {
@@ -1694,7 +1694,7 @@ a.button-small:hover {
     right: 0;
     bottom: 20%;
     z-index: -1;
-    /*background: url('images/svg/right-up-arrow.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/right-up-arrow.svg') no-repeat 0 0;
 }
 
 .payRentSection {
@@ -1726,7 +1726,7 @@ a.button-small:hover {
     z-index: 0;
     width: 53px;
     height: 178px;
-    /*background: url("images/svg/half-circle-right.svg") no-repeat 0 0;*/
+    background: url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/half-circle-right.svg") no-repeat 0 0;
 }
 
 .payRentSection:before {
@@ -1739,7 +1739,7 @@ a.button-small:hover {
     right: 0;
     bottom: 20%;
     z-index: -1;
-    /*background: url('images/svg/right-up-arrow.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/right-up-arrow.svg') no-repeat 0 0;
 }
 
 .boxlink {
@@ -2287,7 +2287,7 @@ h4.great {
     left: -40px;
     top: 17px;
     z-index: -1;
-    /*background: url('images/svg/right-shape.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/right-shape.svg') no-repeat 0 0;
 }
 
 .circle-small {
@@ -2299,7 +2299,7 @@ h4.great {
     left: -24px;
     top: -20px;
     z-index: -1;
-    /*background: url('images/svg/right-shape.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/right-shape.svg') no-repeat 0 0;
 }
 
 .circle-small-shape {
@@ -2310,7 +2310,7 @@ h4.great {
     position: absolute;
     left: -27px;
     top: 10px;
-    /*background: url('images/svg/small-circle.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/small-circle.svg') no-repeat 0 0;
 }
 
 .price-form label {
@@ -2537,7 +2537,7 @@ hr.style {
     position: absolute;
     right: 0;
     top: 30px;
-    /*background: url('images/svg/green-right-line.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/green-right-line.svg') no-repeat 0 0;
 }
 
 .mediaCover:after {
@@ -2548,7 +2548,7 @@ hr.style {
     z-index: 0;
     width: 53px;
     height: 178px;
-    /*background: url("images/svg/half-circle-right.svg") no-repeat 0 0;*/
+    background: url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/half-circle-right.svg") no-repeat 0 0;
 }
 
 
@@ -2730,7 +2730,7 @@ hr.style {
     left: -5px;
     top: 150px;
     z-index: -1;
-    /*background: url('images/svg/green-line.svg') no-repeat 0 0;*/
+    background: url('https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/green-line.svg') no-repeat 0 0;
 }
 
 
@@ -2894,22 +2894,22 @@ a {
 }
 
 .get-instant-loan {
-    /*background: #F4FBFC url("images/svg/get-instant-loan-bg.svg") no-repeat 0 0;*/
+    background: #F4FBFC url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/get-instant-loan-bg.svg") no-repeat 0 0;
     background-size: 100%;
 }
 
 .gold-banner {
-    /*background:  #F4FBFC url("images/svg/gold-banner-bg.svg") no-repeat 0 0;*/
+    background:  #F4FBFC url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/gold-banner-bg.svg") no-repeat 0 0;
     background-size: 100%;
 }
 
 .pay-rent-banner {
-    /*background:  #F4FBFC url("images/svg/pay-rent-banner-bg.svg") no-repeat 0 0;*/
+    background:  #F4FBFC url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/pay-rent-banner-bg.svg") no-repeat 0 0;
     background-size: 100%;
 }
 
 .cibil-banner-banner {
-    /*background:  #F4FBFC url("images/svg/cibil-score-bg.svg") no-repeat 0 0;*/
+    background:  #F4FBFC url("https://payme-static-document.s3.ap-south-1.amazonaws.com/website_images/svg/cibil-score-bg.svg") no-repeat 0 0;
     background-size: 100%;
 }
 

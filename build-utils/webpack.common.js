@@ -2,7 +2,8 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
- 
+const TerserPlugin = require("terser-webpack-plugin");
+
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.js'),
   module: {
@@ -39,12 +40,23 @@ module.exports = {
   optimization: {
     moduleIds: 'deterministic',
     runtimeChunk: 'single',
+    minimize: true,
+    minimizer: [new TerserPlugin({
+          terserOptions: {
+            format: {
+              comments: false,
+            },
+          },
+          extractComments: false,
+          parallel: true}
+    )],
     splitChunks: {
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
+          name: "node_vendors",
+          chunks: "all",
+
         },
       },
     },

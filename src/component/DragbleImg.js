@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import ReactDropzone, { useDropzone } from "react-dropzone";
-import Camra from "../component/img/Camra.png";
+import {S3_IMAGES_URL} from "../constant";
 
 function DragbleImg() {
   const [yourImage, setImage] = useState([]);
@@ -25,7 +25,7 @@ function DragbleImg() {
           <p>Drop the Image here...</p>
         ) : (
           <div>
-            <img src={Camra} alt='Drop the Image' style={{ padding: "10px" }} />
+            <img src={S3_IMAGES_URL+'/Camra.png'} alt='Drop the Image' style={{ padding: "10px" }} />
             <p>Drag and Drop </p>
           </div>
         )}

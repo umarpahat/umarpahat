@@ -6,7 +6,7 @@ import "../../src/footer.css";
 import { PopularCity } from "../component/PopularCity";
 import { FooterTop } from "../component/FooterTop";
 import LeaveMessage from "./LeaveMessage";
-// import CustomerGrievance from "./CustomerGrievance";
+import CustomerGrievance from "./CustomerGrievance";
 import {S3_IMAGES_URL} from "../constant";
 
 const Footer = (props) => {
@@ -207,7 +207,7 @@ const Footer = (props) => {
             </div>
           </div>
           { showDialog ? <LeaveMessage close={close} {...props} /> :null }
-          {showDialogGrievance ? ff : null}
+          {showDialogGrievance ? <CustomerGrievance  closeGrievance={closeGrievance} {...props} /> : null}
 
           <div className="row">
             <div className="col-md-12 text-center">

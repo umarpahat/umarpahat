@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
+import React, { useState } from "react";
+import { Dialog  } from "@reach/dialog";
 import "@reach/dialog/styles.css";
-import { Link } from "react-router-dom";
 import OtpDialog from "./OtpDialog";
 import { GoogleLogin } from "react-google-login";
 import {API_ENDPOINT_STAGING, S3_IMAGES_URL} from "../constant";
@@ -14,9 +13,7 @@ const options = {
   limit: 1,
   closeButton: false,
 };
-
-const LeaveMessage = (props) => {
- 
+const CustomerGrievance = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -24,15 +21,17 @@ const LeaveMessage = (props) => {
   const [nameerr, setNameerr] = useState("");
   const [emailerr, setEmailerr] = useState("");
   const [phoneerr, setPhoneerr] = useState("");
-  const [topicerror, setTopicerr] = useState(false);
+  const [topicerror, setTopicerr] = useState("");
   const [otpScreen, setOtpScreen] = useState("");
+  const [otp, setOtp] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState("");
   const [otperr, setOtperr] = useState("");
+ 
 
-  const close = () => {
-    props.close();
+  const closeGrievance = () => {
+    props.closeGrievance();
   };
-  const closeOtpScreenMess = () => {
+  const closeOtpScreen = () => {
     setOtpScreen(false);
   };
   let reg = /^[0-9]{1,10}$/;
@@ -67,15 +66,14 @@ const LeaveMessage = (props) => {
     let data = {
       name: name,
       email: email,
-      comment: topic,
       phone_number: phone,
-      lead_from: "MESSAGE",
+      comment: topic,
+      lead_from: "GRIEVANCE",
     };
 
     axios
       .post(url, data)
       .then(function (response) {
-       
         setOtpScreen(true);
       })
       .catch(function (error) {
@@ -83,10 +81,10 @@ const LeaveMessage = (props) => {
         console.log(error);
       });
   };
+  
   const GoogleCliendId =
     "435990090197-cjdhhppfhvq8e9n0cullbtco1u22mf1g.apps.googleusercontent.com";
   const responseGoogle = (res) => {
-    console.log("cibil", res, res.accessToken);
     let access_token = res.tokenId;
     let url = `https://oauth2.googleapis.com/tokeninfo?id_token=${access_token}`;
     axios
@@ -112,10 +110,15 @@ const LeaveMessage = (props) => {
     toast.error("Please login google account in your device", { ...options });
     setTimeout(() => setIsButtonDisabled(false), 3000);
   };
+
   return (
     <div>
-      <Dialog isOpen={true} onDismiss={close}>
-        <button className="close-button" onClick={close}>
+      <Dialog
+        isOpen={true}
+        className="dialog-box"
+        onDismiss={closeGrievance}
+      >
+        <button className="close-button" onClick={closeGrievance}>
           <span aria-hidden>×</span>
         </button>
         <div className="row">
@@ -130,69 +133,27 @@ const LeaveMessage = (props) => {
             draggable
             pauseOnHover
           />
+
           {otpScreen ? (
             <OtpDialog
-              closeOtpScreenMess={closeOtpScreenMess}
-              close={close}
-             
+              closeOtpScreen={closeOtpScreen}
+              closeGrievance={closeGrievance}
               {...props}
               name={name}
               email={email}
               phone={phone}
-              lead_from="MESSAGE"
+              lead_from="GRIEVANCE"
             />
           ) : null}
-          <div className="col-md-6">
-            <div className="cardImg unsplash">
-              <h4>Looking for a Help?</h4>
-              <p>
-                Please leave a message, our team will get back shortly to you
-                and will help you with whatever possible.
-              </p>
-              <strong>Get Payme App Now</strong>
-              <div className="tabularLess p-b-30">
-                <div>
-                  <Link
-                    to={{
-                      pathname:
-                        "https://play.google.com/store/apps/details?id=io.attabot.app.paymeindia",
-                    }}
-                    target={"_blank"}
-                  >
-                    <img
-                      className="img_google"
-                      src={S3_IMAGES_URL+'/svg/google-play.svg'}
-                      alt="Pay Me India"
-                    />
-                  </Link>
-                </div>
-                <div>
-                  <img
-                    className="img_google"
-                    src={S3_IMAGES_URL+'/svg/app-store.svg'}
-                    alt="Pay Me India"
-                  />
-                </div>
-              </div>
-              <div className="footer-align-stripe">
-                <div>
-                  <img src={S3_IMAGES_URL+'/svg/cibil-score-icon.svg'} alt="icon" className="img-fluid" />
-                </div>
-                <div>
-                  <h4>Check your Loan eligibility now in free of cost</h4>
-                </div>
-                <div>
-                  <Link to="/get-cibil-report" className="green-btn-stripe">
-                    click here
-                  </Link>
-                </div>
-              </div>
+          <div className="col-md-6 ">
+            <div className="cuate">
+              <img src={S3_IMAGES_URL+'/svg/cuate.svg'} alt="icon" className="img-fluid" />
             </div>
           </div>
           <div className="col-md-6 ">
             <div className="rightSection ">
-              <h4 className="text-center">Leave a Message</h4>
-              <p className="text-center">Kindly leave a message, our team will contact you shortly</p>
+              <h4 className="text-center">Payme Grievance</h4>
+              <p className="text-center">Customers can raise their concern regarding EMI schedule, Facility Type, Processing fee or any other queries.</p>
               <form id="form" name="form">
                 <div className="form-group ms-input-group">
                   <label className="form-label pb-2">Full Name</label>
@@ -219,12 +180,13 @@ const LeaveMessage = (props) => {
                 </div>
                 <div className="form-group ms-input-group">
                   <label className="form-label pb-2">Email address</label>
+
                   <GoogleLogin
                     clientId={GoogleCliendId}
                     render={(renderProps) => (
                       <input
                         onClick={renderProps.onClick}
-                        name="name"
+                        name="email"
                         type="text"
                         value={email}
                         className="form-control input-field"
@@ -284,7 +246,7 @@ const LeaveMessage = (props) => {
                   ) : null}
                 </div>
                 <button
-                 type="button"
+                type="button"
                   onClick={getOtp}
                   className="btnLarge m-t-40"
                   style={{
@@ -305,4 +267,4 @@ const LeaveMessage = (props) => {
   );
 };
 
-export default LeaveMessage;
+export default CustomerGrievance;

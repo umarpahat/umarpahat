@@ -16,8 +16,8 @@ export const SocialLink = (props) => {
         <>
             {
                 image.map((item, index) => (
+                    <>
                     <div key={item.socialLinkApple}>
-                    <div>
                         <a href={item.socialLinkAndroid}>
                             <img
                                 className="img_google"
@@ -35,7 +35,7 @@ export const SocialLink = (props) => {
                 />
                 </a>
                 </div>
-                </div>
+                </>
                 ))
             }
         </>

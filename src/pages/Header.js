@@ -5,7 +5,7 @@ import "../header.css";
 import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 import LeaveMessage from "./LeaveMessage";
-// import CustomerGrievance from "./CustomerGrievance";
+import CustomerGrievance from "./CustomerGrievance";
 import {S3_IMAGES_URL} from "../constant";
 
 const cookies = new Cookies();
@@ -43,7 +43,7 @@ const Header = (props) => {
     <>
       {showDialog ? <LeaveMessage close={close} {...props} /> : null}
       {showDialogGrievance ? (
-       ddd // <CustomerGrievance closeGrievance={closeGrievance} {...props} />
+        <CustomerGrievance closeGrievance={closeGrievance} {...props} />
       ) : null}
       <div className="sticky-top">
         <header className="header">
