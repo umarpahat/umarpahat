@@ -146,6 +146,10 @@ const Professionaldetailspayme = (props) => {
       alert("Please Enter Work Experience");
       return;
     }
+    if(officePincode.length!==6){
+      setErrorOfficePinCode("Enter 6 digit pin code")
+      return;
+    }
     if (!inhandsalary) {
       setErrorSalary("Please Enter salary");
       alert("Please Enter salary");
@@ -158,18 +162,17 @@ const Professionaldetailspayme = (props) => {
     }
     if (!uploadSalarySlip.name) {
       seterroruploadSalarySlip("Please upload your latest salary slip");
-      alert("Please upload your latest salary slip");
+
       return;
     }
     if (!presentAddLine1) {
       seterrorpresentAddLine1("please enter adress.");
-      alert("Please enter adress");
 
       return;
     }
-    if (!presentPincode) {
+    if (presentPincode.length!==6) {
       seterrorpresentPincode("Please enter pin code");
-      alert("Please enter pin code");
+
       return;
     }
      setloader(true);
@@ -408,6 +411,7 @@ const Professionaldetailspayme = (props) => {
                         if (
                           event.target.value.match(/^[1-9]{1}[0-9]{2}[0-9]{3}$/)
                         ) {
+                          setOfficePincode(event.target.value.slice(0,6));
                           setErrorOfficePinCode("");
                         } else {
                           setErrorOfficePinCode("PinCode must have 6 digit");

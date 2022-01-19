@@ -21,6 +21,7 @@ import {Blogs} from "../component/Blogs";
 import {Videos} from "../component/Videos";
 import {Whatsup} from "../component/Whatsup";
 import Footer from "./Footer";
+import {Download} from "../component/Download";
 import {S3_IMAGES_URL} from "../constant";
 const cookies = new Cookies();
 
@@ -125,6 +126,7 @@ const HomePage = (props) => {
       <div className="content">
         <CarouselPic/>
         <Cibil/>
+        <Download/>
         <Benefits/>
         <Services/>
         <GetLoanStep/>
