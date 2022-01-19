@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {hitAppUseCase} from "../store/modules/userDetails/actions";
 import {connect} from "react-redux";
-import "./ApplyNowButton/Applybtnallcomponent.css";
+// import "./ApplyNowButton/Applybtnallcomponent.css";
 import Header from "./Header";
 import "../../src/home.css";
 import MetaTags from "react-meta-tags";

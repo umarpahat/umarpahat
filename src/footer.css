@@ -92,7 +92,7 @@ footer ul li {
 
 }
 .unsplash {
-    background: url("./images/svg/unsplash.svg") no-repeat 0 center;
+    /*background: url("../images/svg/unsplash.svg") no-repeat 0 center;*/
 }
 .cuate {
     background: #F7FBF7;

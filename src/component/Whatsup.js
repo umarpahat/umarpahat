@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {API_ENDPOINT_STAGING, S3_IMAGES_URL} from "../constant";
-import OtpDialog from "../pages/OtpDialog";
+// import OtpDialog from "../pages/OtpDialog";
 import { toast } from "react-toastify";
 
 toast.configure();
@@ -64,7 +64,8 @@ if(phone.length!==10)
   return (
     <div className="container-fluid whatsup-bg ">
       {otpScreen ? (
-        <OtpDialog {...props} phone={phone} lead_from="WHATSAPP" WhatsappOtpScreen={WhatsappOtpScreen} />
+          dd
+        // <OtpDialog {...props} phone={phone} lead_from="WHATSAPP" WhatsappOtpScreen={WhatsappOtpScreen} />
       ) : null}
       <div className="container ">
         <div className="row align-items-center">

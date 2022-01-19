@@ -1,6 +1,5 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import fourZeoFour from "../images/svg/404.svg";
 import Header from "./Header";
 import {S3_IMAGES_URL} from "../constant";
 

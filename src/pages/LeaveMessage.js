@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 import { Link } from "react-router-dom";
-import OtpDialog from "./OtpDialog";
+// import OtpDialog from "./OtpDialog";
 import { GoogleLogin } from "react-google-login";
 import {API_ENDPOINT_STAGING, S3_IMAGES_URL} from "../constant";
 import axios from "axios";
@@ -131,7 +131,8 @@ const LeaveMessage = (props) => {
             pauseOnHover
           />
           {otpScreen ? (
-            <OtpDialog
+              dd
+            /*<OtpDialog
               closeOtpScreenMess={closeOtpScreenMess}
               close={close}
              
@@ -140,7 +141,7 @@ const LeaveMessage = (props) => {
               email={email}
               phone={phone}
               lead_from="MESSAGE"
-            />
+            />*/
           ) : null}
           <div className="col-md-6">
             <div className="cardImg unsplash">

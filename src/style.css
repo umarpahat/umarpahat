@@ -114,7 +114,7 @@ button:focus {
   height: 20px;
   width: 35px;
   display: block;
-  background: url("images/svg/arrow-r.svg") no-repeat 0 center;
+  /*background: url("images/svg/arrow-r.svg") no-repeat 0 center;*/
 }
 
 .step-step {

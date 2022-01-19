@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import Slider from "react-slick";
-import playBtn from "../images/svg/youtube-icon.svg";
-import YoutubeVideos from "../pages/YoutubeVideos";
+import {S3_IMAGES_URL} from "../constant";
+// import playBtn from "../images/svg/youtube-icon.svg";
+// import YoutubeVideos from "../pages/YoutubeVideos";
 
 let json = [{'videoId': 'ODylYT3vvQE', 'title': ''},
     {'videoId': 'nH4yxYZpfeY', 'title': ''},
@@ -65,13 +66,13 @@ export const Videos = (props) => {
                         <img className='play-btn' onClick={()=>{
                             setVideoId(item.videoId)
                             open()
-                        }} src={playBtn} alt='Play'/>
+                        }}  src={S3_IMAGES_URL+'/svg/youtube-icon.svg'} alt='Play'/>
                         <p>{item.title}</p>
                     </div>)}
                     )}
                 </Slider>
                 {showDialog ?
-                    <YoutubeVideos close={close} {...props} videoId={videoId} videoTitle={videoTitle}/> : null}
+                    fff: null}
             </div>
         </div>
     );
